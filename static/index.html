@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Haskell Antenna </title>
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <h2> Haskell Antenna </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="three columns">
+          <div id="js-menu">
+            <div v-for="category in categories">
+              <strong> {{ category.name }} </strong><br />
+              <div v-for="source in category.sources ">
+                <input type="checkbox" v-model="source.show" @change="updateSource(source.label, source.show)" /> {{ source.name }} <br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nine columns">
+          <table id="js-feed">
+            <tbody>
+              <tr v-for="feed in feeds">
+                <td>
+                  <img class="logo" :src='"image/logo/" + feed.label + ".png"' />
+                </td>
+                <td>
+                  <a v-bind:href="feed.urls[0]"> {{ feed.title }} </a> - {{ feed.datetime }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="js/axios.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+port: 8080
+redisHost: localhost
+redisPort: 6379

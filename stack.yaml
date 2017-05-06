@@ -1,0 +1,9 @@
+resolver: lts-8.8
+packages:
+- '.'
+extra-deps:
+- rss-conduit-0.3.1.0
+- atom-conduit-0.4.0.2
+- xml-conduit-1.5.0
+flags: {}
+extra-package-dbs: []
