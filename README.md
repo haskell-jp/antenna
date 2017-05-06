@@ -6,7 +6,7 @@ Haskellに関する日本語情報の更新をまとめて表示するWebサイ�
 使い方
 ------
 
-事前にlocalhost:3306でRedis Serverをたてておく必要があります。
+事前にlocalhost:6379でRedis Serverをたてておく必要があります。
 
 ```shell
 $ stack build
