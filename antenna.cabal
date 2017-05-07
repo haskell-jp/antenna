@@ -63,4 +63,4 @@ test-suite antenna-test
 
 source-repository head
   type:     git
-  location: https://github.com/lotz84/antenna
+  location: https://github.com/haskell-jp/antenna

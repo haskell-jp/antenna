@@ -25,7 +25,7 @@ $ stack haddock --open antenna
 
 1. config/feed.yaml に情報を記載
 2. static/image/logo にアイコンを追加
-3. <https://github.com/lotz84/antenna/compare> よりPull Requestを送って下さい
+3. <https://github.com/haskell-jp/antenna/compare> よりPull Requestを送って下さい
 
 アイコンに関するガイドライン
 ----------------------------
