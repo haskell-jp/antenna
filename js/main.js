@@ -4,6 +4,7 @@ var baseURL = "https://safe-lowlands-68371.herokuapp.com"
 var feed = new Vue({
   el: '#js-feed',
   data: {
+    isLoading: true,
     feeds: [],
     sources: {}
   },
@@ -46,6 +47,7 @@ var feed = new Vue({
 var menu = new Vue({
   el: '#js-menu',
   data: {
+    isLoading: true,
     categories: []
   },
   computed: {
@@ -103,14 +105,15 @@ axios
   .post(baseURL + "/menu")
   .then(function(res){
     menu.setCategories(res.data);
+    menu.isLoading = false;
     var labels = menu.showingLabels;
     axios
       .post(baseURL + "/feed/" + labels.join(","))
       .then(function(res){
         Object.keys(res.data).forEach(function(label){
-          this.feed.addSource(label, res.data[label]);
+          feed.addSource(label, res.data[label]);
         });
+        feed.isLoading = false;
       })
   })
-
 
