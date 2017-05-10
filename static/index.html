@@ -15,6 +15,7 @@
       <div class="row">
         <div class="three columns">
           <div id="js-menu">
+            <div v-if="isLoading">読み込み中...</div>
             <div v-for="category in categories">
               <strong> {{ category.name }} </strong><br />
               <div v-for="source in category.sources ">
@@ -24,18 +25,21 @@
           </div>
         </div>
         <div class="nine columns">
-          <table id="js-feed">
-            <tbody>
-              <tr v-for="feed in feeds">
-                <td>
-                  <img class="logo" :src='"image/logo/" + feed.label + ".png"' />
-                </td>
-                <td>
-                  <a v-bind:href="feed.urls[0]"> {{ feed.title }} </a> - {{ feed.datetime }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div id="js-feed">
+            <div v-if="isLoading">読み込み中...</div>
+            <table>
+              <tbody>
+                <tr v-for="feed in feeds">
+                  <td>
+                    <img class="logo" :src='"image/logo/" + feed.label + ".png"' />
+                  </td>
+                  <td>
+                    <a v-bind:href="feed.urls[0]"> {{ feed.title }} </a> - {{ feed.datetime }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
