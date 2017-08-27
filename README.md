@@ -23,7 +23,7 @@ $ stack haddock --open antenna
 フィードの追加方法
 ------------------
 
-1. config/feed.yaml に情報を記載
+1. config/feeds.yaml に情報を記載
 2. static/image/logo にアイコンを追加
 3. <https://github.com/haskell-jp/antenna/compare> よりPull Requestを送って下さい
 
