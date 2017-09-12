@@ -8,7 +8,7 @@
       label: stack-overflow
       url: http://ja.stackoverflow.com/feeds/tag?tagnames=haskell&sort=newest
     - name: はてなブックマーク
-      label: hatena
+      label: hatena-bookmark
       url: http://b.hatena.ne.jp/search/tag?safe=on&q=haskell&mode=rss
 - name: ブログ
   show-default: No
