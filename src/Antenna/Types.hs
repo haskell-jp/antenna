@@ -8,7 +8,7 @@ import Data.Text (Text)
 import Data.Time.LocalTime (ZonedTime)
 import Data.Time.Format
 import GHC.Generics (Generic)
-import Network.HTTP.Simple (Request, parseRequest_)
+import Network.HTTP.Simple (Request, parseRequest_, setRequestHeader)
 import Text.Atom.Types (AtomFeed)
 import Text.RSS.Types (RssDocument)
 
@@ -61,7 +61,7 @@ instance FromJSON Source where
       <$> v .: "name"
       <*> v .: "label"
       <*> v .: "url"
-      <*> (parseRequest_ <$> v .: "url")
+      <*> (setRequestHeader "User-Agent" ["Haskell Antenna"] . parseRequest_ <$> v .: "url")
 
 instance ToJSON Source where
   toJSON (Source name label url _) =
