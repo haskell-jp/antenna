@@ -46,11 +46,11 @@ generate path config = either (error . show) pure <=< collect $ do
 
   writeFeed (dropFileName path ++ name) =<< write config feed' posts
 
-  writeHtml "./index.html" $ tabNav baseUrl Posts $ mapM_
+  writeHtml config "./index.html" $ tabNav baseUrl Posts $ mapM_
     postToHtml
     (take 50 . reverse $ sortOn (view #date) posts)
 
-  writeHtml "./sites.html" $ tabNav baseUrl Sites $ mapM_
+  writeHtml config "./sites.html" $ tabNav baseUrl Sites $ mapM_
     siteToHtml
     (sortOn (view #title) sites)
  where
@@ -79,15 +79,16 @@ tabNav baseUrl selectedTab list = do
 writeFeed :: FilePath -> Text -> ScrapBook.Collecter ()
 writeFeed path txt = liftIO $ writeFileWithDir path txt
 
-writeHtml :: FilePath -> Html -> ScrapBook.Collecter ()
-writeHtml path bodyHtml =
+writeHtml :: ScrapBook.Config -> FilePath -> Html -> ScrapBook.Collecter ()
+writeHtml config path bodyHtml =
   liftIO . TL.writeFile path . renderHtml $ docTypeHtml ! lang "jp" $ do
     head $ do
-      title "Planet Haskell (JP)"
+      title $ toHtml (maybe "No Title" (view #title) $ config ^. #feed)
       link ! rel "stylesheet" ! type_ "text/css" ! href
         "https://cdnjs.cloudflare.com/ajax/libs/Primer/10.0.0-rc.21/build.css"
     body $ div ! class_ "container-md" $ do
-      h1 ! id "header" $ "Planet Haskell (JP)"
+      h1 ! id "header" $
+        toHtml (maybe "No Title" (view #title) $ config ^. #feed)
       bodyHtml
 
 postToHtml :: ScrapBook.Post -> Html
