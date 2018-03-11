@@ -1,9 +1,10 @@
-resolver: lts-10.8
+resolver: lts-10.9
 packages:
 - .
 extra-deps:
+- data-default-instances-text-0.0.1
 - drinkery-0.1
 - git: https://github.com/matsubara0507/scrapbook.git
-  commit: ebc9f7067558c890a1c225c9b8bbbe2bd2b109ca
+  commit: b7cfedba0e34dc117389452b9a61f1e2bbe117fa
 - git: https://github.com/matsubara0507/extensible-instances.git
-  commit: 8dabe7a3dd9cf162e2d81e4ca16dbe73b98a3809
+  commit: a5b543cede63890c84d3f62f9c26349ae9f2e4fc
