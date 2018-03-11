@@ -17,7 +17,7 @@ ghc-options:
 - -Wall
 
 executables:
-  generator:
+  antenna:
     main:                Main.hs
     source-dirs:         app
     ghc-options:

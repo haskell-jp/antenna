@@ -12,14 +12,14 @@ install:
 - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 jobs:
   include:
-    - stage: install anttena generator
+    - stage: install anttena
       script: stack --no-terminal install
-    - stage: exec antenna generator
+    - stage: exec antenna
       script: git clone -b gh-pages "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" temp
       after_success:
         - cp sites.yaml temp/sites.yaml
         - cd temp
-        - stack exec -- generator sites.yaml
+        - stack exec -- antenna sites.yaml
         - git config user.name "${GIT_NAME}"
         - git status
         - git add -A
