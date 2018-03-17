@@ -1,9 +1,10 @@
-resolver: lts-8.8
+resolver: lts-10.9
 packages:
-- '.'
+- .
 extra-deps:
-- rss-conduit-0.3.1.0
-- atom-conduit-0.4.0.2
-- xml-conduit-1.5.0
-flags: {}
-extra-package-dbs: []
+- data-default-instances-text-0.0.1
+- drinkery-0.1
+- git: https://github.com/matsubara0507/scrapbook.git
+  commit: b7cfedba0e34dc117389452b9a61f1e2bbe117fa
+- git: https://github.com/matsubara0507/extensible-instances.git
+  commit: a5b543cede63890c84d3f62f9c26349ae9f2e4fc

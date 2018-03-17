@@ -1,0 +1,27 @@
+sudo: false
+language: generic
+cache:
+  timeout: 360
+  directories:
+  - "$HOME/.stack/"
+  - "$HOME/.local/bin/"
+  - ".stack-work/"
+install:
+- mkdir -p ~/.local/bin
+- export PATH=$HOME/.local/bin:$PATH
+- travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+jobs:
+  include:
+    - stage: install anttena
+      script: stack --no-terminal install
+    - stage: exec antenna
+      script: git clone -b gh-pages "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" temp
+      after_success:
+        - cp sites.yaml temp/sites.yaml
+        - cd temp
+        - stack exec -- antenna sites.yaml
+        - git config user.name "${GIT_NAME}"
+        - git status
+        - git add -A
+        - git diff --quiet && git diff --staged --quiet || git commit -am "[skip ci] Update planet haskell"
+        - git push origin gh-pages
