@@ -8,6 +8,10 @@ sites:
     author: "Qiita"
     url: https://qiita.com/tags/haskell/
     feed: https://qiita.com/tags/haskell/feed
+  - title: "Haskell-jp Blog"
+    author: "Haskell-jp"
+    url: https://haskell.jp/blog/
+    feed: https://haskell.jp/blog/feed
   - title: "ひげメモ"
     author: "matsubara0507"
     url: https://matsubara0507.github.io
