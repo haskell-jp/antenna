@@ -1,0 +1,14 @@
+feed:
+  title: "Haskel Antenna"
+  baseUrl: "https://haskell.jp/antenna"
+  name: feed.xml
+
+sites:
+  - title: "Haskellタグが付けられた新着投稿 - Qiita"
+    author: "Qiita"
+    url: https://qiita.com/tags/haskell/
+    feed: https://qiita.com/tags/haskell/feed
+  - title: "ひげメモ"
+    author: "matsubara0507"
+    url: https://matsubara0507.github.io
+    feed: https://matsubara0507.github.io/feed
