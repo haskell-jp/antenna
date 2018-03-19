@@ -1,5 +1,5 @@
 feed:
-  title: "Haskel Antenna"
+  title: "Haskell Antenna"
   baseUrl: "https://haskell.jp/antenna"
   name: feed.xml
 
