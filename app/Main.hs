@@ -4,6 +4,7 @@
 
 module Main where
 
+import           Antenna.Config
 import           Antenna.Html
 import           Control.Lens       (view, (^.))
 import           Control.Monad      ((<=<))
@@ -21,29 +22,25 @@ main = (listToMaybe <$> getArgs) >>= \case
   Nothing   -> error "please input config file path."
   Just path -> generate path =<< readConfig path
 
-readConfig :: FilePath -> IO ScrapBook.Config
-readConfig = either (error . show) pure <=< decodeFileEither'
- where
-  decodeFileEither' path =
-    fmap (ScrapBook.updateFileName feed' path) <$> Y.decodeFileEither path
+readConfig :: FilePath -> IO Config
+readConfig = either (error . show) pure <=< Y.decodeFileEither
 
-generate :: FilePath -> ScrapBook.Config -> IO ()
-generate path config = either (error . show) pure <=< collect $ do
-  let sites = fmap toSite $ config ^. #sites
-  posts <- concat <$> mapM fetch sites
+generate :: FilePath -> Config -> IO ()
+generate path config = either (error . show) pure <=< ScrapBook.collect $ do
+  posts <- concat <$> mapM ScrapBook.fetch sites
+  writeFeed (dropFileName path ++ name) =<< ScrapBook.write sconfig feed' posts
 
-  writeFeed (dropFileName path ++ name) =<< write config feed' posts
-
-  writeHtml config "./index.html" $ tabNav baseUrl Posts $ mapM_
-    postToHtml
+  writeHtml config "./index.html" $ tabNav (config ^. #baseUrl) Posts $ mapM_
+    (postToHtml config)
     (take 50 . reverse $ sortOn (view #date) posts)
 
-  writeHtml config "./sites.html" $ tabNav baseUrl Sites $ mapM_
-    siteToHtml
+  writeHtml config "./sites.html" $ tabNav (config ^. #baseUrl) Sites $ mapM_
+    (siteToHtml config)
     (sortOn (view #title) sites)
  where
-  name    = ScrapBook.fileName config feed'
-  baseUrl = maybe "" (view #baseUrl) $ config ^. #feed
+   sconfig = toScrapBookConfig config
+   name    = ScrapBook.fileName sconfig feed'
+   sites   = fmap ScrapBook.toSite $ sconfig ^. #sites
 
 feed' :: ScrapBook.Format
 feed' = embedAssoc $ #feed @= ()
