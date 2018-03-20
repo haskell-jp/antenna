@@ -18,8 +18,8 @@ import           System.Directory              (createDirectoryIfMissing)
 import           System.FilePath               (dropFileName)
 import           Text.Blaze.Html.Renderer.Text (renderHtml)
 import           Text.Blaze.Html5
-import           Text.Blaze.Html5.Attributes   (class_, href, id, lang, rel,
-                                                type_)
+import           Text.Blaze.Html5.Attributes   (class_, height, href, id, lang,
+                                                rel, src, type_, width)
 
 data Tab
   = Posts
@@ -55,20 +55,30 @@ writeHtml config path bodyHtml =
         toHtml (config ^. #title)
       bodyHtml
 
-postToHtml :: ScrapBook.Post -> Html
-postToHtml post = li ! class_ "border-bottom" $ do
-  h3 $ a' ! href (fromText $ post ^. #url) $ toHtml (post ^. #title)
-  p $ do
-    let site = post ^. #site
-    toHtml $ mconcat ["by ", site ^. #author]
-    " on "
-    span $ a' ! href (fromText $ site ^. #url) $ toHtml (site ^. #title)
-    toHtml $ mconcat [" at ", formatTimeToDate $ unpack (post ^. #date)]
+postToHtml :: Config -> ScrapBook.Post -> Html
+postToHtml config post = li ! class_ "d-flex border-bottom py-2" $ do
+  span ! class_ "m-2 mr-3" $
+    img ! class_ "avatar avatar-small" ! width "32" ! height "32"
+        ! src (maybe "" fromText $ imagePath' config $ post ^. #site)
+  div ! class_ "d-flex flex-justify-between flex-items-baseline width-full" $
+    div $ do
+      h3 $ a' ! href (fromText $ post ^. #url) $ toHtml (post ^. #title)
+      div $ do
+        let site = post ^. #site
+        toHtml $ mconcat ["by ", site ^. #author]
+        " on "
+        span $ a' ! href (fromText $ site ^. #url) $ toHtml (site ^. #title)
+        toHtml $ mconcat [" at ", formatTimeToDate $ unpack (post ^. #date)]
 
-siteToHtml :: ScrapBook.Site -> Html
-siteToHtml site = li ! class_ "border-bottom" $ do
-  h3 $ a' ! href (fromText $ site ^. #url) $ toHtml (site ^. #title)
-  p $ toHtml $ mconcat ["by ", site ^. #author]
+siteToHtml :: Config -> ScrapBook.Site -> Html
+siteToHtml config site = li ! class_ "d-flex border-bottom py-2" $ do
+  span ! class_ "m-2 mr-3" $
+    img ! class_ "avatar avatar-small" ! width "32" ! height "32"
+        ! src (maybe "" fromText $ imagePath' config site)
+  div ! class_ "d-flex flex-justify-between flex-items-baseline width-full" $
+    div $ do
+      h3 $ a' ! href (fromText $ site ^. #url) $ toHtml (site ^. #title)
+      div $ toHtml $ mconcat ["by ", site ^. #author]
 
 a' :: Html -> Html
 a' = a ! class_ "link-gray-dark"

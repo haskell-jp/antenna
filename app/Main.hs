@@ -31,11 +31,11 @@ generate path config = either (error . show) pure <=< ScrapBook.collect $ do
   writeFeed (dropFileName path ++ name) =<< ScrapBook.write sconfig feed' posts
 
   writeHtml config "./index.html" $ tabNav (config ^. #baseUrl) Posts $ mapM_
-    postToHtml
+    (postToHtml config)
     (take 50 . reverse $ sortOn (view #date) posts)
 
   writeHtml config "./sites.html" $ tabNav (config ^. #baseUrl) Sites $ mapM_
-    siteToHtml
+    (siteToHtml config)
     (sortOn (view #title) sites)
  where
    sconfig = toScrapBookConfig config
