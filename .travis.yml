@@ -19,7 +19,7 @@ jobs:
       if: branch = master AND type IN (push)
       after_success:
         - cp sites.yaml temp/sites.yaml
-        - cp -r image/** temp/image
+        - cp -r image/* temp/image
         - cd temp
         - stack exec -- antenna sites.yaml
         - git config user.name "${GIT_NAME}"
