@@ -42,6 +42,16 @@ sites:
     author: "サイトの作者"
     url: "サイトの URL"
     feed: "フィードの URL"
+    logo:
+      # 下のいずれか
+      url: "ロゴ画像のURL"
+      github: "GitHubのアカウント(GitHubのアカウント画像を利用)"
 ```
 
 現状、フィードは Atom と RSS 2.0 に対応しています。
+
+## アイコンに関するガイドライン
+
+各サービスのアイコンは以下のガイドラインに沿って使用しています。
+
+- Qiita - <http://help.qiita.com/ja/articles/others-brand-guideline>
