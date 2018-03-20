@@ -1,18 +1,24 @@
-feed:
-  title: "Haskell Antenna"
-  baseUrl: "https://haskell.jp/antenna"
-  name: feed.xml
+title: "Haskell Antenna"
+baseUrl: "https://haskell.jp/antenna"
+feedName: feed.xml
+blankAvatar: ./static/image/logo/blank-avatar.png
 
 sites:
   - title: "Haskellタグが付けられた新着投稿 - Qiita"
     author: "Qiita"
     url: https://qiita.com/tags/haskell/
     feed: https://qiita.com/tags/haskell/feed
+    logo:
+      url: ./static/image/logo/qiita.png
   - title: "Haskell-jp Blog"
     author: "Haskell-jp"
     url: https://haskell.jp/blog/
     feed: https://haskell.jp/blog/feed
+    logo:
+      github: haskell-jp
   - title: "ひげメモ"
     author: "matsubara0507"
     url: https://matsubara0507.github.io
     feed: https://matsubara0507.github.io/feed
+    logo:
+      github: matsubara0507
