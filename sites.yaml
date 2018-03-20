@@ -1,6 +1,7 @@
 title: "Haskell Antenna"
 baseUrl: "https://haskell.jp/antenna"
 feedName: feed.xml
+blankAvatar: ./static/image/logo/blank-avatar.png
 
 sites:
   - title: "Haskellタグが付けられた新着投稿 - Qiita"

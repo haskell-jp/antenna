@@ -59,7 +59,7 @@ postToHtml :: Config -> ScrapBook.Post -> Html
 postToHtml config post = li ! class_ "d-flex border-bottom py-2" $ do
   span ! class_ "m-2 mr-3" $
     img ! class_ "avatar avatar-small" ! width "32" ! height "32"
-        ! src (maybe "" fromText $ imagePath' config $ post ^. #site)
+        ! src (fromText $ imagePath' config $ post ^. #site)
   div ! class_ "d-flex flex-justify-between flex-items-baseline width-full" $
     div $ do
       h3 $ a' ! href (fromText $ post ^. #url) $ toHtml (post ^. #title)
@@ -74,7 +74,7 @@ siteToHtml :: Config -> ScrapBook.Site -> Html
 siteToHtml config site = li ! class_ "d-flex border-bottom py-2" $ do
   span ! class_ "m-2 mr-3" $
     img ! class_ "avatar avatar-small" ! width "32" ! height "32"
-        ! src (maybe "" fromText $ imagePath' config site)
+        ! src (fromText $ imagePath' config site)
   div ! class_ "d-flex flex-justify-between flex-items-baseline width-full" $
     div $ do
       h3 $ a' ! href (fromText $ site ^. #url) $ toHtml (site ^. #title)

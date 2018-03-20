@@ -11,14 +11,16 @@ import           Control.Lens        (view, (&), (.~), (^.))
 import           Data.Default        (def)
 import           Data.Extensible
 import           Data.List           (find)
+import           Data.Maybe          (fromMaybe)
 import           Data.Text           (Text)
 import qualified ScrapBook
 
 type Config = Record
-  '[ "title"    >: Text
-   , "baseUrl"  >: Text
-   , "feedName" >: Text
-   , "sites"    >: [SiteConfig]
+  '[ "title"       >: Text
+   , "baseUrl"     >: Text
+   , "feedName"    >: Text
+   , "blankAvatar" >: Text
+   , "sites"       >: [SiteConfig]
    ]
 
 toScrapBookConfig :: Config -> ScrapBook.Config
@@ -47,7 +49,7 @@ imagePath config
     = mappend "https://avatars.githubusercontent.com/" <$> (config ^. #github)
   <|> (config ^. #url)
 
-imagePath' :: Config -> ScrapBook.Site -> Maybe Text
+imagePath' :: Config -> ScrapBook.Site -> Text
 imagePath' config site =
-  imagePath =<< view #logo
+  fromMaybe (config ^. #blankAvatar) $ imagePath =<< view #logo
     =<< find ((==) site . ScrapBook.toSite . shrink) (config ^. #sites)
