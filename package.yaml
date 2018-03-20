@@ -26,6 +26,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - blaze-html
+    - data-default
     - extensible
     - directory
     - filepath

@@ -5,8 +5,9 @@ module Antenna.Html where
 
 import           Prelude                       hiding (div, head, id, span)
 
-import           Control.Lens                  (view, (^.))
-import           Control.Monad.IO.Class        (liftIO)
+import           Antenna.Config
+import           Control.Lens                  ((^.))
+import           Control.Monad.IO.Class        (MonadIO, liftIO)
 import           Data.String                   (IsString, fromString)
 import           Data.Text                     (Text, unpack)
 import qualified Data.Text.IO                  as T
@@ -39,19 +40,19 @@ tabNav baseUrl selectedTab list = do
     class_ ("tabnav-tab " `mappend` if selected then "selected" else "")
   addBaseUrl = fromText . mappend baseUrl
 
-writeFeed :: FilePath -> Text -> ScrapBook.Collecter ()
+writeFeed :: MonadIO m => FilePath -> Text -> m ()
 writeFeed path txt = liftIO $ writeFileWithDir path txt
 
-writeHtml :: ScrapBook.Config -> FilePath -> Html -> ScrapBook.Collecter ()
+writeHtml :: MonadIO m => Config -> FilePath -> Html -> m ()
 writeHtml config path bodyHtml =
   liftIO . TL.writeFile path . renderHtml $ docTypeHtml ! lang "jp" $ do
     head $ do
-      title $ toHtml (maybe "No Title" (view #title) $ config ^. #feed)
+      title $ toHtml (config ^. #title)
       link ! rel "stylesheet" ! type_ "text/css" ! href
         "https://cdnjs.cloudflare.com/ajax/libs/Primer/10.0.0-rc.21/build.css"
     body $ div ! class_ "container-md" $ do
       h1 ! id "header" $
-        toHtml (maybe "No Title" (view #title) $ config ^. #feed)
+        toHtml (config ^. #title)
       bodyHtml
 
 postToHtml :: ScrapBook.Post -> Html
