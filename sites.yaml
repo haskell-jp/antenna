@@ -28,3 +28,9 @@ sites:
     feed: http://ccvanishing.hateblo.jp/feed
     logo:
       github: y-taka-23
+  - title: "BIGMOON Haskeller's BLOG"
+    author: "e-bigmoon"
+    url: https://haskell.e-bigmoon.com
+    feed: https://haskell.e-bigmoon.com/feed.xml
+    logo:
+      github: e-bigmoon
