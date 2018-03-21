@@ -22,3 +22,9 @@ sites:
     feed: https://matsubara0507.github.io/feed
     logo:
       github: matsubara0507
+  - title: "チェシャ猫の消滅定理"
+    author: "y_taka_23"
+    url: http://ccvanishing.hateblo.jp
+    feed: http://ccvanishing.hateblo.jp/feed
+    logo:
+      github: y-taka-23
