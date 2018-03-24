@@ -40,3 +40,9 @@ sites:
     feed: http://fumieval.hatenablog.com/feed
     logo:
       github: fumieval
+  - title: "flip map"
+    author: "lotz"
+    url: https://lotz84.github.io
+    feed: https://lotz84.github.io/feed.xml
+    logo:
+      github: lotz84
