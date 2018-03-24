@@ -34,3 +34,9 @@ sites:
     feed: https://haskell.e-bigmoon.com/feed.xml
     logo:
       github: e-bigmoon
+  - title: "モナドとわたしとコモナド"
+    author: "Fumiaki Kinoshita"
+    url: http://fumieval.hatenablog.com
+    feed: http://fumieval.hatenablog.com/feed
+    logo:
+      github: fumieval
