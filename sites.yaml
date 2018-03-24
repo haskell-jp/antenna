@@ -34,3 +34,21 @@ sites:
     feed: https://haskell.e-bigmoon.com/feed.xml
     logo:
       github: e-bigmoon
+  - title: "モナドとわたしとコモナド"
+    author: "Fumiaki Kinoshita"
+    url: http://fumieval.hatenablog.com
+    feed: http://fumieval.hatenablog.com/feed
+    logo:
+      github: fumieval
+  - title: "flip map"
+    author: "lotz"
+    url: https://lotz84.github.io
+    feed: https://lotz84.github.io/feed.xml
+    logo:
+      github: lotz84
+  - title: "syocy’s diary"
+    author: "syocy"
+    url: http://syocy.hatenablog.com/
+    feed: http://syocy.hatenablog.com/feed
+    logo:
+      github: syocy
