@@ -46,3 +46,9 @@ sites:
     feed: https://lotz84.github.io/feed.xml
     logo:
       github: lotz84
+  - title: "syocy’s diary"
+    author: "syocy"
+    url: http://syocy.hatenablog.com/
+    feed: http://syocy.hatenablog.com/feed
+    logo:
+      github: syocy
