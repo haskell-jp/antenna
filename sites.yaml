@@ -27,7 +27,7 @@ sites:
     url: http://ccvanishing.hateblo.jp
     feed: http://ccvanishing.hateblo.jp/feed
     logo:
-      github: y-taka-23
+      hatena: y_taka_23
   - title: "BIGMOON Haskeller's BLOG"
     author: "e-bigmoon"
     url: https://haskell.e-bigmoon.com
@@ -39,7 +39,7 @@ sites:
     url: http://fumieval.hatenablog.com
     feed: http://fumieval.hatenablog.com/feed
     logo:
-      github: fumieval
+      hatena: fumiexcel
   - title: "flip map"
     author: "lotz"
     url: https://lotz84.github.io
@@ -52,3 +52,9 @@ sites:
     feed: http://syocy.hatenablog.com/feed
     logo:
       github: syocy
+  - title: "趣味はデバッグ……"
+    author: "岡本和樹"
+    url: http://kakkun61.hatenablog.com/archive/category/Haskell
+    feed: http://kakkun61.hatenablog.com/feed/category/Haskell
+    logo:
+      hatena: kakkun61
