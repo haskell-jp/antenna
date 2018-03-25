@@ -42,12 +42,18 @@ type SiteConfig = Record
 type ImageConfig = Record
   '[ "url"    >: Maybe Text
    , "github" >: Maybe Text
+   , "hatena" >: Maybe Text
    ]
 
 imagePath :: ImageConfig -> Maybe Text
 imagePath config
     = mappend "https://avatars.githubusercontent.com/" <$> (config ^. #github)
+  <|> hatenaProfileImageLink <$> (config ^. #hatena)
   <|> (config ^. #url)
+  where
+    hatenaProfileImageLink user =
+      mconcat ["https://cdn.profile-image.st-hatena.com/users/", user, "/profile.png"]
+
 
 imagePath' :: Config -> ScrapBook.Site -> Text
 imagePath' config site =
