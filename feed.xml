@@ -1,13 +1,286 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-03-25T19:21:06+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/nka0/items/d44f0c6d4df1ef582fd3</id><title type="text">Typing Haskell in Haskellを読んでみる</title><updated>2018-03-25T19:21:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nka0/items/d44f0c6d4df1ef582fd3"/></entry><entry><id>https://qiita.com/tkch_pe/items/d6cfbc333d6c60751184</id><title type="text">Haskellの行列計算 - 保存と読み出し、複素行列について</title><updated>2018-03-25T18:11:26+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tkch_pe/items/d6cfbc333d6c60751184"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-25-quiz-2.html</id><title type="text">Haskell Quiz No.2 foldl と foldr</title><updated>2018-03-25T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-25-quiz-2.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.2"&gt;Haskell Quiz No.2&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-03-27T11:36:08+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/bra_cat_ket/items/da0f1ddeeccfc129dadb</id><title type="text">AtCoder に登録したら解くべき精選過去問 10 問を Haskell で解いてみた　（$n+1$ 番煎じ）</title><updated>2018-03-27T11:36:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/bra_cat_ket/items/da0f1ddeeccfc129dadb"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-27-quiz-3.html</id><title type="text">Haskell Quiz No.3 QuickCheck の Arbitrary 型クラス</title><updated>2018-03-27T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-27-quiz-3.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.3"&gt;Haskell Quiz No.3&lt;/h2&gt;
+&lt;p&gt;難易度: λ&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;propIsDigit&lt;/code&gt; テストをパスするように &lt;code&gt;Digit&lt;/code&gt; 型の &lt;code&gt;Arbitrary&lt;/code&gt; インスタンスを定義してみましょう。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Quiz3&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Test.QuickCheck&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Char&lt;/span&gt; (isDigit)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;&lt;span class="kw"&gt;newtype&lt;/span&gt; &lt;span class="dt"&gt;Digit&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Digit&lt;/span&gt; &lt;span class="dt"&gt;Char&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;  &lt;span class="kw"&gt;deriving&lt;/span&gt; &lt;span class="dt"&gt;Show&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-8" data-line-number="8"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-9" data-line-number="9"&gt;&lt;span class="ot"&gt;propIsDigit ::&lt;/span&gt; &lt;span class="dt"&gt;Digit&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-10" data-line-number="10"&gt;propIsDigit (&lt;span class="dt"&gt;Digit&lt;/span&gt; c) &lt;span class="fu"&gt;=&lt;/span&gt; isDigit c&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-11" data-line-number="11"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-12" data-line-number="12"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Arbitrary&lt;/span&gt; &lt;span class="dt"&gt;Digit&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-13" data-line-number="13"&gt;  arbitrary &lt;span class="fu"&gt;=&lt;/span&gt; undefined&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;テストは以下のように実行します。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; repl --package QuickCheck -- Quiz3.hs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;&lt;span class="ex"&gt;*Quiz3&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; quickCheck propIsDigit&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;&lt;span class="ex"&gt;+++&lt;/span&gt; OK, passed 100 tests.&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上記のように &lt;code&gt;OK&lt;/code&gt; になれば (たぶん) 正解です！&lt;/p&gt;
+&lt;p&gt;ヒント: 生成される値をデバッグしたい場合は &lt;code&gt;sample'&lt;/code&gt; 関数が便利です。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="ex"&gt;*Quiz3&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; sample&lt;span class="st"&gt;&amp;#39; (arbitrary :: Gen Digit)&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;答えは次回。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href="./03-25-quiz-2.html"&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
+&lt;h3 id="問題"&gt;問題&lt;/h3&gt;
+&lt;p&gt;難易度: λλ&lt;/p&gt;
+&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;foldr (&lt;span class="fu"&gt;&amp;amp;&amp;amp;&lt;/span&gt;) &lt;span class="dt"&gt;True&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; cycle [&lt;span class="dt"&gt;True&lt;/span&gt;, &lt;span class="dt"&gt;False&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;foldl (&lt;span class="fu"&gt;&amp;amp;&amp;amp;&lt;/span&gt;) &lt;span class="dt"&gt;True&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; cycle [&lt;span class="dt"&gt;True&lt;/span&gt;, &lt;span class="dt"&gt;False&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上記の2つの式の挙動の違いを説明してください。&lt;/p&gt;
+&lt;p&gt;また、なぜそうなるのか考えてみましょう！&lt;/p&gt;
+&lt;h3 id="こたえ"&gt;こたえ&lt;/h3&gt;
+&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="fu"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; foldr (&lt;span class="fu"&gt;&amp;amp;&amp;amp;&lt;/span&gt;) &lt;span class="dt"&gt;True&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; cycle [&lt;span class="dt"&gt;True&lt;/span&gt;, &lt;span class="dt"&gt;False&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;&lt;span class="dt"&gt;False&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-4" data-line-number="4"&gt;&lt;span class="fu"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; foldl (&lt;span class="fu"&gt;&amp;amp;&amp;amp;&lt;/span&gt;) &lt;span class="dt"&gt;True&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; cycle [&lt;span class="dt"&gt;True&lt;/span&gt;, &lt;span class="dt"&gt;False&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-5" data-line-number="5"&gt;&lt;span class="fu"&gt;^&lt;/span&gt;&lt;span class="dt"&gt;CInterrupted&lt;/span&gt;&lt;span class="fu"&gt;.&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ということで &lt;code&gt;foldr&lt;/code&gt; は無限リストに対しても停止して値を返しますが、&lt;code&gt;foldl&lt;/code&gt; は停止せず、値を返さない。&lt;/p&gt;
+&lt;p&gt;でした。&lt;/p&gt;
+&lt;h2 id="haskell-quiz-no.2-の解説"&gt;Haskell Quiz No.2 の解説&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Haskell&lt;/code&gt; は遅延評価なので &lt;code&gt;foldr&lt;/code&gt; が無限リストを扱えるということは、知っておいて欲しいです。&lt;/p&gt;
+&lt;p&gt;また実際のアプリケーションではスペースリークの問題があるため &lt;code&gt;foldr&lt;/code&gt; &amp;lt; &lt;code&gt;foldl&lt;/code&gt; &amp;lt; &lt;code&gt;foldl'&lt;/code&gt; の順で好まれるかもしません。(最適化されるから気にしなくても良いという話も聞いたことありますが、詳しくないので良くわかんないです。)&lt;/p&gt;
+&lt;h3 id="cycle"&gt;cycle&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/src/GHC-List.html#cycle"&gt;cycle&lt;/a&gt; 関数は &lt;code&gt;base&lt;/code&gt; パッケージの &lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/src/GHC-List.html#cycle"&gt;GHC.List&lt;/a&gt; で定義されています。また &lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/Prelude.html#v:cycle"&gt;Prelude&lt;/a&gt; モジュールにも含まれています。&lt;/p&gt;
+&lt;p&gt;以下は実際の定義です。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;cycle&lt;span class="ot"&gt; ::&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;cycle [] &lt;span class="fu"&gt;=&lt;/span&gt; errorEmptyList &lt;span class="st"&gt;&amp;quot;cycle&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;cycle xs &lt;span class="fu"&gt;=&lt;/span&gt; xs&amp;#39;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt; xs&amp;#39; &lt;span class="fu"&gt;=&lt;/span&gt; xs &lt;span class="fu"&gt;++&lt;/span&gt; xs&amp;#39;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この定義を見ればわかるように &lt;code&gt;cycle&lt;/code&gt; 関数は空リストを与えると実行時エラーになります。&lt;/p&gt;
+&lt;p&gt;それ以外の場合では与えられたリストを繰り返して無限リストを作ります。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="op"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="ex"&gt;cycle&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;Haskell&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;&lt;span class="st"&gt;&amp;quot;HaskellHaskellHaskell...&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="prelude-モジュールについて"&gt;Prelude モジュールについて&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Prelude&lt;/code&gt; モジュールは良く使う基本的な関数や型の集まりです。とても良く使うので自動的に &lt;code&gt;import&lt;/code&gt; されています。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Prelude&lt;/code&gt; で定義されている関数の &lt;code&gt;型&lt;/code&gt;・&lt;code&gt;定義&lt;/code&gt;・&lt;code&gt;動作&lt;/code&gt; は全部わかるようにしておきましょう。&lt;/p&gt;
+&lt;p&gt;これは本当に基礎知識です。(Haskell が苦手だなーと思う人はまずは &lt;code&gt;Prelude&lt;/code&gt; で定義されている関数に慣れてください。それだけでも十分楽しめます。)&lt;/p&gt;
+&lt;p&gt;また、暗記して覚えることは非常に無駄なのでやめましょう。&lt;/p&gt;
+&lt;p&gt;何年か &lt;code&gt;Haskell&lt;/code&gt; を使っていれば自然に覚えますし、感覚的には覚えている関数を書き下すのではなく、&lt;code&gt;関数名&lt;/code&gt; と &lt;code&gt;型&lt;/code&gt; または &lt;code&gt;関数の動作&lt;/code&gt; から実装を導いている感じです。&lt;/p&gt;
+&lt;h3 id="foldable"&gt;Foldable&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/src/Data-Foldable.html#line-117"&gt;Foldable&lt;/a&gt; 型クラスは &lt;code&gt;base&lt;/code&gt; パッケージの &lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/Data-Foldable.html"&gt;Data.Foldable&lt;/a&gt; で定義されています。また &lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/Prelude.html#t:Foldable"&gt;Prelude&lt;/a&gt; モジュールにも含まれています。&lt;/p&gt;
+&lt;p&gt;昔の &lt;code&gt;foldr&lt;/code&gt; はリストに対してのみ適用可能な関数でしたが、比較的最近 &lt;code&gt;Foldable&lt;/code&gt; クラスのメソッドになりました。そのため、リスト以外でも利用できます。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Foldable&lt;/code&gt; のクラス定義とリストのインスタンス定義はこんな感じです。(実際にはもっと多くのメソッドがあります)&lt;/p&gt;
+&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="kw"&gt;class&lt;/span&gt; &lt;span class="dt"&gt;Foldable&lt;/span&gt; t &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="ot"&gt;  foldr ::&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; t a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;  foldr f z t &lt;span class="fu"&gt;=&lt;/span&gt; appEndo (foldMap (&lt;span class="dt"&gt;Endo&lt;/span&gt; &lt;span class="fu"&gt;#.&lt;/span&gt; f) t) z&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-5" data-line-number="5"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Foldable&lt;/span&gt; [] &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-6" data-line-number="6"&gt;  foldr &lt;span class="fu"&gt;=&lt;/span&gt; List.foldr&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;初学者に優しくない世界になりましたね・・・。なかなか定義にたどり着きません。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;import&lt;/code&gt; 宣言のあたりを見ると &lt;code&gt;import qualified GHC.List as List&lt;/code&gt; とあるので &lt;code&gt;List.foldr&lt;/code&gt; は &lt;code&gt;GHC.List.foldr&lt;/code&gt; だとわかります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;GHC.List&lt;/code&gt; を &lt;code&gt;base&lt;/code&gt; パッケージの&lt;a href="https://www.stackage.org/lts-11.2/package/base-4.10.1.0"&gt;一覧&lt;/a&gt;から探しても見つかりません。これはわざと利用者に見えないようにしているためです。&lt;/p&gt;
+&lt;p&gt;実際に &lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/src/GHC-List.html"&gt;GHC.List&lt;/a&gt; は存在しますが &lt;code&gt;{-# OPTIONS_HADDOCK hide #-}&lt;/code&gt; プラグマによって隠されているのです。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;GHC.List&lt;/code&gt; を探してもリストの &lt;code&gt;foldr&lt;/code&gt; の定義は見つかりません。どうやら &lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/src/GHC-Base.html"&gt;GHC.Base&lt;/a&gt; で定義しているようです。&lt;/p&gt;
+&lt;h3 id="foldr"&gt;foldr&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.stackage.org/haddock/lts-11.2/base-4.10.1.0/src/GHC-Base.html#line-850"&gt;foldr&lt;/a&gt; の実際の定義は以下の通りです。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;foldr&lt;span class="ot"&gt; ::&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;foldr k z &lt;span class="fu"&gt;=&lt;/span&gt; go&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;    go [] &lt;span class="fu"&gt;=&lt;/span&gt; z&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;    go (y&lt;span class="fu"&gt;:&lt;/span&gt;ys) &lt;span class="fu"&gt;=&lt;/span&gt; y &lt;span class="ot"&gt;`k`&lt;/span&gt; go ys&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これではわかりずらいので少し変形してみましょう。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;foldr&lt;span class="ot"&gt; ::&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;foldr k z []     &lt;span class="fu"&gt;=&lt;/span&gt; z&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;foldr k z (y&lt;span class="fu"&gt;:&lt;/span&gt;ys) &lt;span class="fu"&gt;=&lt;/span&gt; y &lt;span class="ot"&gt;`k`&lt;/span&gt; foldr k z ys&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;変数名もいつもの感じに変えちゃいましょう。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;foldr&lt;span class="ot"&gt; ::&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;foldr _  e []     &lt;span class="fu"&gt;=&lt;/span&gt; e&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-3" data-line-number="3"&gt;foldr f  e (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; x &lt;span class="ot"&gt;`f`&lt;/span&gt; foldr f e xs &lt;span class="co"&gt;-- f x (foldr f e xs) と同じ&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;だいぶ見慣れた形に近づいてきました。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;foldr&lt;/code&gt; (&lt;code&gt;foldl&lt;/code&gt;) はほどよく抽象化されているので、色々な理解があると思いますので、僕がいつも使っている説明をいくつかご紹介します。&lt;/p&gt;
+&lt;p&gt;ここからの &lt;code&gt;foldr&lt;/code&gt;, &lt;code&gt;foldl&lt;/code&gt; は全てリストについての話です。&lt;/p&gt;
+&lt;h4 id="直感的な説明"&gt;直感的な説明&lt;/h4&gt;
+&lt;p&gt;例えば &lt;code&gt;foldr (+) 0 [1,2,3,4,5]&lt;/code&gt; は以下のように考えることができます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;[&lt;span class="dv"&gt;1&lt;/span&gt; , &lt;span class="dv"&gt;2&lt;/span&gt; , &lt;span class="dv"&gt;3&lt;/span&gt; , &lt;span class="dv"&gt;4&lt;/span&gt; , &lt;span class="dv"&gt;5&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;&lt;span class="co"&gt;-- リストの括弧 (`[`, `]`) を外します&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-3" data-line-number="3"&gt;&lt;span class="dv"&gt;1&lt;/span&gt; , &lt;span class="dv"&gt;2&lt;/span&gt; , &lt;span class="dv"&gt;3&lt;/span&gt; , &lt;span class="dv"&gt;4&lt;/span&gt; , &lt;span class="dv"&gt;5&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-4" data-line-number="4"&gt;&lt;span class="co"&gt;-- foldr(ight) なのでに 0 を追加します&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-5" data-line-number="5"&gt;&lt;span class="dv"&gt;1&lt;/span&gt; , &lt;span class="dv"&gt;2&lt;/span&gt; , &lt;span class="dv"&gt;3&lt;/span&gt; , &lt;span class="dv"&gt;4&lt;/span&gt; , &lt;span class="dv"&gt;5&lt;/span&gt; , &lt;span class="dv"&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-6" data-line-number="6"&gt;&lt;span class="co"&gt;-- , を (+) に置き換えます&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-7" data-line-number="7"&gt;&lt;span class="dv"&gt;1&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; &lt;span class="dv"&gt;2&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; &lt;span class="dv"&gt;3&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; &lt;span class="dv"&gt;4&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; &lt;span class="dv"&gt;5&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; &lt;span class="dv"&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-8" data-line-number="8"&gt;&lt;span class="co"&gt;-- foldr(ight) なので右結合で括弧をつけていきます&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-9" data-line-number="9"&gt;&lt;span class="dv"&gt;1&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; (&lt;span class="dv"&gt;2&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; (&lt;span class="dv"&gt;3&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; (&lt;span class="dv"&gt;4&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; (&lt;span class="dv"&gt;5&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; &lt;span class="dv"&gt;0&lt;/span&gt;))))&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-10" data-line-number="10"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-11" data-line-number="11"&gt;&lt;span class="co"&gt;-- 一般化すると&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-12" data-line-number="12"&gt;x1 &lt;span class="ot"&gt;`f`&lt;/span&gt; (x2 &lt;span class="ot"&gt;`f`&lt;/span&gt; (x3 &lt;span class="ot"&gt;`f`&lt;/span&gt; (x4 &lt;span class="ot"&gt;`f`&lt;/span&gt; (x5 &lt;span class="ot"&gt;`f`&lt;/span&gt; e))))&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;簡単ですね！この考え方をすれば &lt;code&gt;foldr&lt;/code&gt; の型を暗記する必要はありません。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;foldr f e xs&lt;/code&gt; の型はこのように考えれば良いのです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;f :: a -&amp;gt; b -&amp;gt; ?&lt;/code&gt;。この時 &lt;code&gt;?&lt;/code&gt; が &lt;code&gt;a&lt;/code&gt; か &lt;code&gt;b&lt;/code&gt; か迷いそうですが、上の図で考えれば &lt;code&gt;x5 `f` e&lt;/code&gt; の結果は &lt;code&gt;x4 `f`&lt;/code&gt; の第二引数に再び適用されます。そのため &lt;code&gt;f :: a -&amp;gt; b -&amp;gt; b&lt;/code&gt; でなければ型が合いません。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;f&lt;/code&gt; の型がわかれば &lt;code&gt;e&lt;/code&gt; の型は自然に &lt;code&gt;b&lt;/code&gt; しか有りえません。&lt;/li&gt;
+&lt;li&gt;当然 &lt;code&gt;xs&lt;/code&gt; は &lt;code&gt;x1, x2, x3, ・・・&lt;/code&gt; とリストの形式なので &lt;code&gt;[a]&lt;/code&gt; しかありえません。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;foldr&lt;/code&gt; の結果の型は最終的に &lt;code&gt;x1 `f` ...&lt;/code&gt; となるので &lt;code&gt;f :: a -&amp;gt; b -&amp;gt; b&lt;/code&gt; から &lt;code&gt;b&lt;/code&gt; です。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上により &lt;code&gt;foldr :: (a -&amp;gt; b -&amp;gt; b) -&amp;gt; b -&amp;gt; [a] -&amp;gt; b&lt;/code&gt; が導かれました。&lt;/p&gt;
+&lt;h4 id="universal-property-を使った説明"&gt;universal property を使った説明&lt;/h4&gt;
+&lt;p&gt;普遍性 (&lt;code&gt;universal property&lt;/code&gt;) の詳しいことは有識者の方に任せるとして&lt;/p&gt;
+&lt;div class="sourceCode" id="cb13"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb13-1" data-line-number="1"&gt;myFunc []     &lt;span class="fu"&gt;=&lt;/span&gt; e&lt;/a&gt;
+&lt;a class="sourceLine" id="cb13-2" data-line-number="2"&gt;myFunc (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; f x (myFunc xs)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上記のような再帰パターンの関数は全て &lt;code&gt;foldr f e&lt;/code&gt; として書けるという性質です。この説明はどちらかと言うと、ベタに再帰で書いた関数を &lt;code&gt;foldr&lt;/code&gt; を使った形式に書き直す際の理解の手助けとして有用かと思います。&lt;/p&gt;
+&lt;p&gt;具体例を見ればすぐにわかります。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;sum [] &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dv"&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-2" data-line-number="2"&gt;sum (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; x &lt;span class="fu"&gt;+&lt;/span&gt; sum xs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;sum&lt;/code&gt; 関数は &lt;code&gt;foldr (+) 0&lt;/code&gt; と同じです。(この時の &lt;code&gt;e&lt;/code&gt; は &lt;code&gt;0&lt;/code&gt;, &lt;code&gt;f&lt;/code&gt; は &lt;code&gt;(+)&lt;/code&gt; に対応します)&lt;/p&gt;
+&lt;p&gt;では先程の &lt;code&gt;cycle&lt;/code&gt; は普遍性を使って &lt;code&gt;foldr&lt;/code&gt; で書けるの？という疑問になりますよね。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb15"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb15-1" data-line-number="1"&gt;cycle [] &lt;span class="fu"&gt;=&lt;/span&gt; errorEmptyList &lt;span class="st"&gt;&amp;quot;cycle&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-2" data-line-number="2"&gt;cycle xs &lt;span class="fu"&gt;=&lt;/span&gt; xs&amp;#39;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt; xs&amp;#39; &lt;span class="fu"&gt;=&lt;/span&gt; xs &lt;span class="fu"&gt;++&lt;/span&gt; xs&amp;#39;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;先程のパターンと微妙に違うので合わせてみましょう。&lt;/p&gt;
+&lt;p&gt;また &lt;code&gt;xs' = cycle xs&lt;/code&gt; なので以下のように変形できます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb16"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb16-1" data-line-number="1"&gt;cycle [] &lt;span class="fu"&gt;=&lt;/span&gt; errorEmptyList &lt;span class="st"&gt;&amp;quot;cycle&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-2" data-line-number="2"&gt;cycle xs &lt;span class="fu"&gt;=&lt;/span&gt; xs &lt;span class="fu"&gt;++&lt;/span&gt; cycle xs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;さらに変形します。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb17"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb17-1" data-line-number="1"&gt;cycle []     &lt;span class="fu"&gt;=&lt;/span&gt; errorEmptyList &lt;span class="st"&gt;&amp;quot;cycle&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb17-2" data-line-number="2"&gt;cycle (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;++&lt;/span&gt; cycle (x&lt;span class="fu"&gt;:&lt;/span&gt;xs)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ここで、最初のパターンと比較しやすいように &lt;code&gt;cycle&lt;/code&gt; を &lt;code&gt;myFunc&lt;/code&gt; という名前に変更します。&lt;/p&gt;
+&lt;p&gt;ついでに &lt;code&gt;++&lt;/code&gt; の位置も変更しておきます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb18"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb18-1" data-line-number="1"&gt;&lt;span class="co"&gt;-- cycle&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb18-2" data-line-number="2"&gt;myFunc []     &lt;span class="fu"&gt;=&lt;/span&gt; errorEmptyList &lt;span class="st"&gt;&amp;quot;cycle&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb18-3" data-line-number="3"&gt;myFunc (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; (&lt;span class="fu"&gt;++&lt;/span&gt;) (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) (myFunc (x&lt;span class="fu"&gt;:&lt;/span&gt;xs))&lt;/a&gt;
+&lt;a class="sourceLine" id="cb18-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb18-5" data-line-number="5"&gt;&lt;span class="co"&gt;-- foldr として書き直すことが出来る再帰パターン&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb18-6" data-line-number="6"&gt;myFunc []     &lt;span class="fu"&gt;=&lt;/span&gt; e&lt;/a&gt;
+&lt;a class="sourceLine" id="cb18-7" data-line-number="7"&gt;myFunc (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; f x (myFunc xs)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;どうですか、微妙に違いますよね。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;x&lt;/code&gt; と &lt;code&gt;xs&lt;/code&gt; に分解しなければいけないのにどちらも &lt;code&gt;(x:xs)&lt;/code&gt; になってしまっています。&lt;/p&gt;
+&lt;p&gt;ということで &lt;code&gt;foldr&lt;/code&gt; を使った &lt;code&gt;cycle&lt;/code&gt; の定義を普遍性を使って導出することはできません。&lt;/p&gt;
+&lt;h3 id="cycle-関数を-foldr-を使って定義する"&gt;cycle 関数を foldr を使って定義する&lt;/h3&gt;
+&lt;p&gt;普遍性を使った方法では &lt;code&gt;cycle&lt;/code&gt; を導出することができませんでした。&lt;/p&gt;
+&lt;p&gt;けど、本当に &lt;code&gt;foldr&lt;/code&gt; を使って定義することはできないのでしょうか？ (参考: &lt;a href="https://mail.haskell.org/pipermail/beginners/2009-March/001184.html"&gt;[Haskell-beginners] folds again – myCycle&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;僕はいつもこのような感じで &lt;code&gt;foldr&lt;/code&gt; の定義を考えます。&lt;code&gt;acc&lt;/code&gt; は蓄積変数 (&lt;code&gt;accumulate variable&lt;/code&gt;) の略です。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;go&lt;/code&gt; の第二引数は常に &lt;code&gt;foldr&lt;/code&gt; で畳み込んだ結果として考えることができます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb19"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb19-1" data-line-number="1"&gt;cycle&lt;span class="ot"&gt; ::&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb19-2" data-line-number="2"&gt;cycle xs &lt;span class="fu"&gt;=&lt;/span&gt; foldr go e undefined&lt;/a&gt;
+&lt;a class="sourceLine" id="cb19-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb19-4" data-line-number="4"&gt;    e        &lt;span class="fu"&gt;=&lt;/span&gt; undefined&lt;/a&gt;
+&lt;a class="sourceLine" id="cb19-5" data-line-number="5"&gt;    go x acc &lt;span class="fu"&gt;=&lt;/span&gt; undefined&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;少し考えると &lt;code&gt;xs&lt;/code&gt; を &lt;code&gt;xs ++ xs ++ xs ...&lt;/code&gt; という形式にできれば良さそうです。&lt;/p&gt;
+&lt;p&gt;無限リストになるため初期値 &lt;code&gt;e&lt;/code&gt; は絶対に評価されません。そのため &lt;code&gt;[]&lt;/code&gt; でも &lt;code&gt;xs&lt;/code&gt; でも &lt;code&gt;undefined&lt;/code&gt; でも好きな値が使えそうです。ここでは何となく &lt;code&gt;xs&lt;/code&gt; にしておきます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb20"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb20-1" data-line-number="1"&gt;cycle&lt;span class="ot"&gt; ::&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb20-2" data-line-number="2"&gt;cycle xs &lt;span class="fu"&gt;=&lt;/span&gt; foldr go e undefined&lt;/a&gt;
+&lt;a class="sourceLine" id="cb20-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb20-4" data-line-number="4"&gt;    e        &lt;span class="fu"&gt;=&lt;/span&gt; xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb20-5" data-line-number="5"&gt;    go x acc &lt;span class="fu"&gt;=&lt;/span&gt; undefined&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;次に &lt;code&gt;go&lt;/code&gt; 関数ですが &lt;code&gt;xs ++ (xs ++ (xs ++ (...)))&lt;/code&gt; となれば良いので、 &lt;code&gt;go x acc = xs ++ acc&lt;/code&gt; です。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;go&lt;/code&gt; が &lt;code&gt;cycle&lt;/code&gt; の引数 &lt;code&gt;xs&lt;/code&gt; を参照している点が通常の使い方と異なる点です。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb21"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb21-1" data-line-number="1"&gt;cycle&lt;span class="ot"&gt; ::&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb21-2" data-line-number="2"&gt;cycle xs &lt;span class="fu"&gt;=&lt;/span&gt; foldr go e undefined&lt;/a&gt;
+&lt;a class="sourceLine" id="cb21-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb21-4" data-line-number="4"&gt;    e        &lt;span class="fu"&gt;=&lt;/span&gt; xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb21-5" data-line-number="5"&gt;    go _ acc &lt;span class="fu"&gt;=&lt;/span&gt; xs &lt;span class="fu"&gt;++&lt;/span&gt; acc&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ここが一番のポイントですが &lt;code&gt;foldr&lt;/code&gt; に与えるリストは &lt;code&gt;xs&lt;/code&gt; ではありません。&lt;/p&gt;
+&lt;p&gt;無限リストを生成するために適当な無限リストを与えます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb22"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb22-1" data-line-number="1"&gt;cycle&lt;span class="ot"&gt; ::&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-2" data-line-number="2"&gt;cycle xs &lt;span class="fu"&gt;=&lt;/span&gt; foldr go e [&lt;span class="dv"&gt;0&lt;/span&gt;&lt;span class="fu"&gt;..&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-4" data-line-number="4"&gt;    e        &lt;span class="fu"&gt;=&lt;/span&gt; xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-5" data-line-number="5"&gt;    go _ acc &lt;span class="fu"&gt;=&lt;/span&gt; xs &lt;span class="fu"&gt;++&lt;/span&gt; acc&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;つまりこのような感じです。&lt;/p&gt;
+&lt;pre class="text"&gt;&lt;code&gt;0 `go` (1 `go` (2 `go` (3 `go` ...)))
+xs ++ (1 `go` (2 `go` (3 `go` ...)))
+xs ++ (xs ++ (2 `go` (3 `go` ...)))
+xs ++ (xs ++ (xs ++ (3 `go` ...)))
+xs ++ (xs ++ (xs ++ (xs ++ ...)))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これは完全に &lt;code&gt;cycle&lt;/code&gt; ですね！&lt;/p&gt;
+&lt;p&gt;こんな感じで頑張れば &lt;code&gt;foldr&lt;/code&gt; を使って &lt;code&gt;cycle&lt;/code&gt; を定義することができます。&lt;/p&gt;
+&lt;p&gt;ただ、本質的には &lt;code&gt;unfoldr&lt;/code&gt; を使うべき問題だと思います！(そのうちクイズにします)&lt;/p&gt;
+&lt;h3 id="遅延評価を追ってみよう"&gt;遅延評価を追ってみよう！&lt;/h3&gt;
+&lt;p&gt;やっと問題の本題です・・・。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;foldr&lt;/code&gt;, &lt;code&gt;cycle&lt;/code&gt;, &lt;a href="https://www.stackage.org/haddock/lts-11.2/ghc-prim-0.5.1.1/src/GHC-Classes.html#%26%26"&gt;(&amp;amp;&amp;amp;)&lt;/a&gt; の定義は以下を使います。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb24"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb24-1" data-line-number="1"&gt;foldr&lt;span class="ot"&gt; ::&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-2" data-line-number="2"&gt;foldr _  e []     &lt;span class="fu"&gt;=&lt;/span&gt; e&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-3" data-line-number="3"&gt;foldr f  e (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; x &lt;span class="ot"&gt;`f`&lt;/span&gt; foldr f e xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-5" data-line-number="5"&gt;cycle&lt;span class="ot"&gt; ::&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-6" data-line-number="6"&gt;cycle xs &lt;span class="fu"&gt;=&lt;/span&gt; xs &lt;span class="fu"&gt;++&lt;/span&gt; cycle xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-7" data-line-number="7"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-8" data-line-number="8"&gt;&lt;span class="ot"&gt;(&amp;amp;&amp;amp;) ::&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-9" data-line-number="9"&gt;&lt;span class="dt"&gt;True&lt;/span&gt;  &lt;span class="fu"&gt;&amp;amp;&amp;amp;&lt;/span&gt; x  &lt;span class="fu"&gt;=&lt;/span&gt;  x&lt;/a&gt;
+&lt;a class="sourceLine" id="cb24-10" data-line-number="10"&gt;&lt;span class="dt"&gt;False&lt;/span&gt; &lt;span class="fu"&gt;&amp;amp;&amp;amp;&lt;/span&gt; _ &lt;span class="fu"&gt;=&lt;/span&gt;  &lt;span class="dt"&gt;False&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;それでは実際に遅延評価で簡約していきましょう。&lt;/p&gt;
+&lt;pre class="text"&gt;&lt;code&gt;foldr (&amp;amp;&amp;amp;) True (cycle [True, False])
+  = { cycle を適用 }
+foldr (&amp;amp;&amp;amp;) True ([True, False] ++ cycle [True, False])
+  = { foldr を適用 }
+True &amp;amp;&amp;amp; foldr (&amp;amp;&amp;amp;) True ([False] ++ cycle [True, False])
+  = { (&amp;amp;&amp;amp;) を適用 }
+foldr (&amp;amp;&amp;amp;) True ([False] ++ cycle [True, False])
+  = { fodlr を適用 }
+False &amp;amp;&amp;amp; foldr (&amp;amp;&amp;amp;) True (cycle [True, False])
+  = { (&amp;amp;&amp;amp;) を適用 }
+False&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;つまり、&lt;code&gt;(&amp;amp;&amp;amp;)&lt;/code&gt; の定義に秘密があったのです。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(&amp;amp;&amp;amp;)&lt;/code&gt; 第一引数が &lt;code&gt;False&lt;/code&gt; であれば第二引数を評価することなく &lt;code&gt;False&lt;/code&gt; を返します。そのため &lt;code&gt;False &amp;amp;&amp;amp; _ =  False&lt;/code&gt; のような定義になっています。(このような関数を非正格関数 (&lt;code&gt;non-strict function&lt;/code&gt;) と言います。定義は &lt;code&gt;f undefined = undefined&lt;/code&gt; であれば正格関数 (&lt;code&gt;strict function&lt;/code&gt;) です。&lt;code&gt;(&amp;amp;&amp;amp;)&lt;/code&gt; は第一引数に関しては正格ですが、第二引数に関しては非正格です)&lt;/p&gt;
+&lt;p&gt;これが &lt;code&gt;foldr&lt;/code&gt; の場合に計算が停止する理由です。&lt;/p&gt;
+&lt;p&gt;ではなぜ &lt;code&gt;foldl&lt;/code&gt; の場合は停止しないのでしょうか？&lt;/p&gt;
+&lt;div class="sourceCode" id="cb26"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb26-1" data-line-number="1"&gt;foldl&lt;span class="ot"&gt; ::&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [b] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a&lt;/a&gt;
+&lt;a class="sourceLine" id="cb26-2" data-line-number="2"&gt;foldl _ acc []     &lt;span class="fu"&gt;=&lt;/span&gt; acc&lt;/a&gt;
+&lt;a class="sourceLine" id="cb26-3" data-line-number="3"&gt;foldl f acc (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; foldl f (acc &lt;span class="ot"&gt;`f`&lt;/span&gt; x) xs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;foldl&lt;/code&gt; の場合も同様に簡約してみましょう。&lt;/p&gt;
+&lt;pre class="text"&gt;&lt;code&gt;foldl (&amp;amp;&amp;amp;) True (cycle [True, False])
+  = { cycle を適用 }
+foldl (&amp;amp;&amp;amp;) True ([True, False] ++ cycle [True, False])
+  = { foldl を適用 }
+foldl (&amp;amp;&amp;amp;) (True &amp;amp;&amp;amp; True) ([False] ++ cycle [True, False])
+  = { foldl を適用 }
+foldl (&amp;amp;&amp;amp;) ((True &amp;amp;&amp;amp; True) &amp;amp;&amp;amp; False) (cycle [True, False])
+  = ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ということで &lt;code&gt;foldl&lt;/code&gt; はリストの最後にたどり着くまで値を返せないのです。&lt;/p&gt;
+&lt;p&gt;そのため、無限リストを処理しようとすると停止しなくなります。&lt;/p&gt;
+&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;いつも解説が長くなってしまいます・・・。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fold&lt;/code&gt; の融合則とかめちゃめちゃ好きなのでいつかまとめたいですね。&lt;/p&gt;
+&lt;p&gt;また、&lt;code&gt;fold&lt;/code&gt; が好きな人には &lt;a href="https://www.stackage.org/package/foldl"&gt;foldl&lt;/a&gt; パッケージがオススメです。&lt;/p&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/nka0i/items/d44f0c6d4df1ef582fd3</id><title type="text">Typing Haskell in Haskellを読んでみる</title><updated>2018-03-26T21:44:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nka0i/items/d44f0c6d4df1ef582fd3"/></entry><entry><id>https://qiita.com/tkch_pe/items/d6cfbc333d6c60751184</id><title type="text">Haskellの行列計算 - 保存と読み出し、複素行列について</title><updated>2018-03-26T17:40:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tkch_pe/items/d6cfbc333d6c60751184"/></entry><entry><id>https://qiita.com/ttatsf/items/da6a973d21f58d08aae5</id><title type="text">JavaScript:関数を無限iterate して map して filter して take とかできるジェネレーターを考えてみた</title><updated>2018-03-26T09:05:28+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ttatsf/items/da6a973d21f58d08aae5"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-26-hie-emacs.html</id><title type="text">Haskell IDE Engine を Emacs で使う</title><updated>2018-03-26T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-26-hie-emacs.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/haskell/haskell-ide-engine"&gt;HIE (Haskell IDE Engine)&lt;/a&gt; を &lt;code&gt;Emacs&lt;/code&gt; に導入する方法が &lt;code&gt;HIE&lt;/code&gt; の &lt;a href="https://github.com/haskell/haskell-ide-engine/pull/502/files"&gt;README.md&lt;/a&gt; に追記されたので、それに従いインストールしてみました。&lt;/p&gt;
+&lt;p&gt;本記事では、導入手順を紹介します。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id="導入手順"&gt;導入手順&lt;/h2&gt;
+&lt;h3 id="hie-をインストールする"&gt;1. HIE をインストールする。&lt;/h3&gt;
+&lt;pre class="bssh"&gt;&lt;code&gt;$ git clone https://github.com/haskell/haskell-ide-engine.git
+$ cd haskell-ide-engine
+$ make
+
+...
+
+* Missing C libraries: icuuc, icui18n, icudata&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;make&lt;/code&gt; 実行時、以下のようにライブラリが足りなかったので、必要なパッケージをインストールして、もう一度 &lt;code&gt;make&lt;/code&gt; しました。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode bash"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;$ &lt;span class="fu"&gt;sudo&lt;/span&gt; apt install libicu-dev&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;$ &lt;span class="fu"&gt;make&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;普通に &lt;code&gt;stack install&lt;/code&gt; で導入することもできますが、 &lt;code&gt;HIE&lt;/code&gt; はビルド時の &lt;code&gt;GHC&lt;/code&gt; バージョンでしか使えないという弱点があるため、&lt;code&gt;GHC&lt;/code&gt; の バージョンが異なるプロジェクトでは利用できません。&lt;/p&gt;
+&lt;p&gt;そのため &lt;code&gt;make&lt;/code&gt; を使って &lt;code&gt;hie-8.2.1&lt;/code&gt; のように &lt;code&gt;GHC&lt;/code&gt; のそれぞれのバージョンでビルドした &lt;code&gt;HIE&lt;/code&gt; のバイナリを用意して解決しています。&lt;/p&gt;
+&lt;h3 id="必要なパッケージを入手する"&gt;2. 必要なパッケージを入手する。&lt;/h3&gt;
+&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode bash"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;$ &lt;span class="fu"&gt;git&lt;/span&gt; clone git@github.com:emacs-lsp/lsp-mode.git&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;$ &lt;span class="fu"&gt;git&lt;/span&gt; clone git@github.com:emacs-lsp/lsp-ui.git&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;$ &lt;span class="fu"&gt;git&lt;/span&gt; clone git@github.com:emacs-lsp/lsp-haskell.git&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="emacs-の設定ファイル-init.el-など-に以下を追加する"&gt;3. emacs の設定ファイル (init.el など) に以下を追加する。&lt;/h3&gt;
+&lt;pre class="elisp"&gt;&lt;code&gt;(add-to-list &amp;#39;load-path &amp;quot;/path/to/lsp-mode&amp;quot;)
+(add-to-list &amp;#39;load-path &amp;quot;/path/to/lsp-ui&amp;quot;)
+(add-to-list &amp;#39;load-path &amp;quot;/path/to/lsp-haskell&amp;quot;)
+
+(require &amp;#39;lsp-mode)
+(require &amp;#39;lsp-ui)
+(require &amp;#39;lsp-haskell)
+
+(add-hook &amp;#39;lsp-mode-hook &amp;#39;lsp-ui-mode)
+(add-hook &amp;#39;haskell-mode-hook #&amp;#39;lsp-haskell-enable)
+(add-hook &amp;#39;haskell-mode-hook &amp;#39;flycheck-mode)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上記内容を記述した後で Emacs を起動したときに、依存するパッケージのインストールを要求される場合があるので、&lt;code&gt;Cask&lt;/code&gt; や &lt;code&gt;package-install&lt;/code&gt; などでインストールしましょう。&lt;/p&gt;
+&lt;p&gt;インストールが成功すると、&lt;code&gt;Haskell&lt;/code&gt; のファイルを読み込んだときに、カーソルを当てたところにある関数の型の表示、エラーの表示、補完、コマンド &lt;code&gt;M-.&lt;/code&gt; で定義のところにジャンプなどができるようになります。&lt;/p&gt;
+&lt;h2 id="おわりに"&gt;おわりに&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;HIE&lt;/code&gt; は &lt;code&gt;ghc-mod&lt;/code&gt; の実行ファイルを使っているかのように見えますが、実際はライブラリを通しているだけでバイナリは使っていないそうです。&lt;/p&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-25-quiz-2.html</id><title type="text">Haskell Quiz No.2 foldl と foldr</title><updated>2018-03-25T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-25-quiz-2.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.2"&gt;Haskell Quiz No.2&lt;/h2&gt;
 &lt;p&gt;難易度: λλ&lt;/p&gt;
 &lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;foldr (&lt;span class="fu"&gt;&amp;amp;&amp;amp;&lt;/span&gt;) &lt;span class="dt"&gt;True&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; cycle [&lt;span class="dt"&gt;True&lt;/span&gt;, &lt;span class="dt"&gt;False&lt;/span&gt;]&lt;/a&gt;
 &lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;foldl (&lt;span class="fu"&gt;&amp;amp;&amp;amp;&lt;/span&gt;) &lt;span class="dt"&gt;True&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; cycle [&lt;span class="dt"&gt;True&lt;/span&gt;, &lt;span class="dt"&gt;False&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;上記の2つの式の挙動の違いを説明してください。&lt;/p&gt;
 &lt;p&gt;また、なぜそうなるのか考えてみましょう！&lt;/p&gt;
-&lt;p&gt;答えは次回。&lt;/p&gt;
+&lt;p&gt;答えは&lt;a href="03-27-quiz-3.html"&gt;次回&lt;/a&gt;。&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;&lt;a href="./03-24-quiz-1.md"&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
+&lt;p&gt;&lt;a href="./03-24-quiz-1.html"&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
 &lt;h3 id="問題"&gt;問題&lt;/h3&gt;
 &lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Foo&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
 &lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;&lt;/a&gt;
@@ -297,7 +570,7 @@ O
 &lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;y3   &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;
 &lt;a class="sourceLine" id="cb2-7" data-line-number="7"&gt;yInt &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;全部正解できたら普通にすごいです。&lt;/p&gt;
-&lt;p&gt;答えは&lt;a href="./03-25-quiz-2.md"&gt;次回&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;答えは&lt;a href="./03-25-quiz-2.html"&gt;次回&lt;/a&gt;！&lt;/p&gt;
 &lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-03-24-poly-variant-with-haskell.html</id><title type="text">多相バリアントを使いこなそう with Haskell</title><updated>2018-03-24T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-03-24-poly-variant-with-haskell.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
@@ -577,7 +850,7 @@ O
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/hsjoihs/items/25a08b426196ab2b9bb0</id><title type="text">AtCoder に登録したら解くべき精選過去問 10 問を Haskell で解いてみた</title><updated>2018-03-20T06:11:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hsjoihs/items/25a08b426196ab2b9bb0"/></entry><entry><id>https://qiita.com/ttatsf/items/da6a973d21f58d08aae5</id><title type="text">JavaScript:関数を無限iterate して map して filter して take とかできるジェネレーターを考えてみた</title><updated>2018-03-20T00:30:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ttatsf/items/da6a973d21f58d08aae5"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-20-gitrev.html</id><title type="text">アプリケーションのバージョンに Git の情報を出してみよう！</title><updated>2018-03-20T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-20-gitrev.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+</summary></entry><entry><id>https://qiita.com/hsjoihs/items/25a08b426196ab2b9bb0</id><title type="text">AtCoder に登録したら解くべき精選過去問 10 問を Haskell で解いてみた</title><updated>2018-03-20T06:11:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hsjoihs/items/25a08b426196ab2b9bb0"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-20-gitrev.html</id><title type="text">アプリケーションのバージョンに Git の情報を出してみよう！</title><updated>2018-03-20T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-20-gitrev.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;今回は &lt;a href="https://www.stackage.org/package/gitrev"&gt;gitrev&lt;/a&gt; パッケージと &lt;a href="https://www.stackage.org/package/optparse-simple"&gt;optparse-simple&lt;/a&gt; パッケージを使ってアプリケーションに &lt;code&gt;Git&lt;/code&gt; の情報を含めてみようと思います！&lt;/p&gt;
 &lt;p&gt;利用者の多いアプリケーションだと、バグ報告時にどのコミットでビルドしたものなのか知りたい場合に便利です。&lt;/p&gt;
 &lt;p&gt;表示されるバージョン情報はこんな感じになります。&lt;/p&gt;
@@ -1092,7 +1365,7 @@ Building test suite &amp;#39;a-little-longer-name-project-test&amp;#39; for a-li
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/nobsun/items/b96d6532a94c7dd6e361</id><title type="text">Haskellプログラミング中のエラー記録</title><updated>2018-03-09T22:02:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/b96d6532a94c7dd6e361"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/8a8a78b637b03771c8d5</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 4/5</title><updated>2018-03-09T18:33:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/8a8a78b637b03771c8d5"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/085fa142b0591cb4cb2b</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 3/5</title><updated>2018-03-09T18:32:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/085fa142b0591cb4cb2b"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/f63c1be3ff07c3048aba</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 2/5</title><updated>2018-03-09T18:31:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/f63c1be3ff07c3048aba"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/436bd6bb2e0a84a61131</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 1/5</title><updated>2018-03-09T18:29:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/436bd6bb2e0a84a61131"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 5/5</title><updated>2018-03-09T18:14:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/02/11/185306</id><title type="text">HaskellでDiscordのBotを作る</title><updated>2018-03-09T13:45:13+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/02/11/185306"/><summary type="html">Discordはゲーミング向けのテキストチャットと音声通話を兼ねるプラットフォームであり、「テキストチャンネル」と「ボイスチャンネル」の二種を好きなだけ作ることができる。もちろん音声を全チャンネルに常時垂れ流すわけには行かないので、通話するにはボイスチャンネルに参加するという手順を踏む必要がある。しかし、例えば誰かがやっているゲームに混ざろうとしてボイスチャンネルに参加しても、チャンネル外のユーザーにはいかなる通知も発生しないため、気づかれないままのことがよくある。 そこで、ボイスチャンネルに参加したとき、テキストチャンネルにその旨を投稿するボットを用意すれば、気軽に通話の合図を送れる。全員に…</summary></entry><entry><id>https://qiita.com/TTsurutani/items/d069363e9f4d613abf10</id><title type="text">Haskellのソートあれこれ</title><updated>2018-03-08T22:03:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TTsurutani/items/d069363e9f4d613abf10"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-07-The-wizard-monoid.html</id><title type="text">wizard モノイド</title><updated>2018-03-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-07-The-wizard-monoid.html"/><summary type="html">&lt;h2 id="wizard-モノイド-翻訳"&gt;wizard モノイド (翻訳)&lt;/h2&gt;
+</summary></entry><entry><id>https://qiita.com/nobsun/items/b96d6532a94c7dd6e361</id><title type="text">Haskellプログラミング中のエラー記録</title><updated>2018-03-09T22:02:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/b96d6532a94c7dd6e361"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/8a8a78b637b03771c8d5</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 4/5</title><updated>2018-03-09T18:33:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/8a8a78b637b03771c8d5"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/085fa142b0591cb4cb2b</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 3/5</title><updated>2018-03-09T18:32:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/085fa142b0591cb4cb2b"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/f63c1be3ff07c3048aba</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 2/5</title><updated>2018-03-09T18:31:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/f63c1be3ff07c3048aba"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/436bd6bb2e0a84a61131</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 1/5</title><updated>2018-03-09T18:29:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/436bd6bb2e0a84a61131"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 5/5</title><updated>2018-03-09T18:14:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/02/11/185306</id><title type="text">HaskellでDiscordのBotを作る</title><updated>2018-03-09T13:45:13+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/02/11/185306"/><summary type="html">Discordはゲーミング向けのテキストチャットと音声通話を兼ねるプラットフォームであり、「テキストチャンネル」と「ボイスチャンネル」の二種を好きなだけ作ることができる。もちろん音声を全チャンネルに常時垂れ流すわけには行かないので、通話するにはボイスチャンネルに参加するという手順を踏む必要がある。しかし、例えば誰かがやっているゲームに混ざろうとしてボイスチャンネルに参加しても、チャンネル外のユーザーにはいかなる通知も発生しないため、気づかれないままのことがよくある。 そこで、ボイスチャンネルに参加したとき、テキストチャンネルにその旨を投稿するボットを用意すれば、気軽に通話の合図を送れる。全員に…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-07-The-wizard-monoid.html</id><title type="text">wizard モノイド</title><updated>2018-03-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-07-The-wizard-monoid.html"/><summary type="html">&lt;h2 id="wizard-モノイド-翻訳"&gt;wizard モノイド (翻訳)&lt;/h2&gt;
 &lt;p&gt;Original post: &lt;a href="http://www.haskellforall.com/2018/02/the-wizard-monoid.html"&gt;The wizard monoid&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;最近の GHC 8.0 は、&lt;code&gt;IO&lt;/code&gt; 用の &lt;code&gt;Monoid&lt;/code&gt; インスタンスを提供しています。このブログ記事では、組み合わせ可能な “wizard” を作りつつ、なぜこのインスタンスが便利なのかを示す例をお見せします。&lt;/p&gt;
 &lt;!--more--&gt;
@@ -1990,106 +2263,7 @@ Working 100% [=================================================================]
 &lt;li&gt;&lt;code&gt;LiquidHaskell&lt;/code&gt; はすごい&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;この良くわからない挙動について一緒に考えてくれた友人の tkg さんありがとうございました。&lt;/p&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2017/12/23/082635</id><title type="text">猫でもわかる rkt + Kubernetes</title><updated>2018-02-28T00:36:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2017/12/23/082635"/><summary type="html">このエントリは Kubernetes Advent Calendar 2017 の 23 日目の記事です。ちなみに昨日は takezaki さんの「GCBを利用したContinuous Delivery環境」でした。 LT で使用したスライド 先日、市ヶ谷Geek★Night #16 の 10 分 LT 枠で、CoreOS 社によるコンテナ実装 rkt とその Kubernetes 連携について発表してきました。今回のエントリはこの LT の内容を補足しつつ、実際に手を動かして rkt を試せるような構成にしてあります。 Hello, rkt! rkt は、Docker の対抗馬として Cor…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/02-26-Announcing-the-debug-package.html</id><title type="text">debug パッケージのアナウンス (翻訳)</title><updated>2018-02-26T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/02-26-Announcing-the-debug-package.html"/><summary type="html">&lt;h2 id="debug-パッケージのアナウンス-翻訳"&gt;debug パッケージのアナウンス (翻訳)&lt;/h2&gt;
-&lt;p&gt;Original post: &lt;a href="http://neilmitchell.blogspot.jp/2017/12/announcing-debug-package.html"&gt;Announcing the ‘debug’ package&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Haskell は素晴らしい言語ですが、Haskell のデバッグは間違いなく弱い部分です。この問題をどうにかするために、&lt;a href="https://hackage.haskell.org/package/debug"&gt;debug ライブラリ&lt;/a&gt; をリリースしました。このライブラリは全てのことを解決するのではなく、一般的なデバッグのタスクに対してシンプルで簡単に使えるような設計を目指しました。デバッグをするにあたって、みなさんが興味を持ってくれるような関数を例に取って見てみましょう。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;QuickSort&lt;/span&gt;(quicksort) &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.List&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;&lt;span class="ot"&gt;quicksort ::&lt;/span&gt; &lt;span class="dt"&gt;Ord&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [a]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;quicksort [] &lt;span class="fu"&gt;=&lt;/span&gt; []&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;quicksort (x&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; quicksort lt &lt;span class="fu"&gt;++&lt;/span&gt; [x] &lt;span class="fu"&gt;++&lt;/span&gt; quicksort gt&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;    &lt;span class="kw"&gt;where&lt;/span&gt; (lt, gt) &lt;span class="fu"&gt;=&lt;/span&gt; partition (&lt;span class="fu"&gt;&amp;lt;=&lt;/span&gt; x) xs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;TemplateHaskell&lt;/code&gt; と &lt;code&gt;ViewPatterns&lt;/code&gt; を有効にしてから、&lt;code&gt;Debug&lt;/code&gt; をインポートし、コードをインデントして &lt;code&gt;debug&lt;/code&gt; の引数に渡してやりましょう。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE TemplateHaskell, ViewPatterns #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;QuickSort&lt;/span&gt;(quicksort) &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.List&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Debug&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;debug [d|&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-7" data-line-number="7"&gt;   quicksort :: Ord a =&amp;gt; [a] -&amp;gt; [a]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-8" data-line-number="8"&gt;   quicksort [] = []&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-9" data-line-number="9"&gt;   quicksort (x:xs) = quicksort lt ++ [x] ++ quicksort gt&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-10" data-line-number="10"&gt;       where (lt, gt) = partition (&amp;lt;= x) xs&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-11" data-line-number="11"&gt;   |]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;以下のコマンドでデバッガを走らせることができます。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ ghci QuickSort.hs
-GHCi, version 8.2.1: http://www.haskell.org/ghc/  :? for help
-[1 of 1] Compiling QuickSort        ( QuickSort.hs, interpreted )
-Ok, 1 module loaded.
-*QuickSort&amp;gt; quicksort &amp;quot;haskell&amp;quot;
-&amp;quot;aehklls&amp;quot;
-*QuickSort&amp;gt; debugView&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;debugView&lt;/code&gt; を呼ぶと Webブラウザが起動して、記録されたデバッグの結果を見ることができます。こんな感じです。&lt;/p&gt;
-&lt;figure&gt;
-&lt;img src="https://cdn.rawgit.com/ndmitchell/debug/f6e8dbc9/debug.png" alt="debugView の実行結果" /&gt;&lt;figcaption&gt;debugView の実行結果&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;ここから、計算の経過をクリックしつつ探すことができます。&lt;/p&gt;
-&lt;p&gt;私は &lt;code&gt;debug&lt;/code&gt; を使った感想や、これを改善できるようなアイディアを求めています。そのため、フィードバックや&lt;a href="https://github.com/ndmitchell/debug/issues"&gt;バグトラッカー&lt;/a&gt;経由のお手伝いなどをお待ちしています。&lt;/p&gt;
-&lt;p&gt;また別の Haskell のデバッガに興味があるのなら、&lt;a href="https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/ghci.html#the-ghci-debugger"&gt;GHCi デバッガ&lt;/a&gt;や &lt;a href="https://hackage.haskell.org/package/Hoed"&gt;Hood/Hoed&lt;/a&gt; などを試してみるべきでしょう。&lt;/p&gt;</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B</id><title type="text">なぜ Haskell が好きなのか</title><updated>2018-02-25T14:53:18+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B"/><summary type="html">自分は Haskell が好きで休日は Haskell を書いています。そういうことを言うと関数型が好きなんですねと言われるのですが、Haskell のよさはそこじゃないと感じているので書き起こそうかと、筆を執りました。 というわけで、この記事は技術的文書というよりもお話です。Haskell を知らない人向けです。 この記事は Haskell Advent Calendar 2017 その3の6日めの記事です。6日が過ぎても担当のいない日だったため担当します。 関数型プログラミングだから Haskell が好きというわけではない まず、「Haskell というと手続き型とは全然違う関数型なんで…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/02-25-SLURP.html</id><title type="text">SLURP (翻訳)</title><updated>2018-02-25T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/02-25-SLURP.html"/><summary type="html">&lt;h2 id="slurp"&gt;SLURP&lt;/h2&gt;
-&lt;p&gt;Great original post: &lt;a href="https://www.snoyman.com/blog/2018/01/slurp"&gt;SLURP&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;すでにコミュニティの多くの人々が SLURP の提案を見ていると思います。何人かの人たちに私の意見を聞かれたり、私が議論に参加しないことについて、まぁいろいろな意見をもらいました。この議題を私が避けてきた理由を今ここで書かせてください。作者はその提案をリリース前に教えてくれましたが、その時はサポートしないことを伝えました。私はまた、失礼にならないような形で SLURP へのコメントを控えていることも伝えました。残念ながら、その結果2つのことが起こりました。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;人によっては、とても良くない影響を与えてしまいました。&lt;/li&gt;
-&lt;li&gt;“fork” という用語の使い方の誤解、そして残念ながら作者はその間違いを訂正していません。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;つまりまとめると: 提案は私のものではなく、変更を頼んだわけでも、誰かの頭に銃を向けているわけでもありません。この説明は間違っています。他に出すことができるコメントはいくらでもありますが、正直価値はないでしょう。&lt;/p&gt;
-&lt;p&gt;間違ってはいないことは、私は日常的に多くの人や Haskell のコミュニティやエコシステムマネジメントチームと直面している問題についてコミュニケーションを取っています。仕事で幅広いユーザーと交流し、不満を聞けばそれを誰かに伝えます。私も不満を持つことがあって、それを誰かに聞いてもらいます。この不満の中には、全てが同じようなものを指しているものもあります。&lt;/p&gt;
-&lt;p&gt;私が公開できる情報というのは限られています。なぜなら、私に寄せられるかなり多くのコメントが、公にされることを嫌うようなプライベートなメールで書かれているからです。そして経験上、私のことを嘘つきだと誹謗中傷する人たちがいることも分かっています。この絶え間ない誹謗中傷を理由に発言を避けてきましたが、私はここに残しておくべきだと決断しました。わかったのは次の2つのことです。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;私のやること成すこと全てが悪だと信じている人は、私が何か根拠を持っていてもそれを見ようとはしません。&lt;/li&gt;
-&lt;li&gt;私が悪魔ではないという可能性を否定しない人は、もしかしたら私の声明をその通りに受け取ってくれるかもしれないということです。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以前の私は、アーキテクチャとエコシステム開発についてオープンに議論していました。これはオープンソースコミュニティを作る唯一無二の方法だと私は信じています。Stack 対 cabal の時代の緊張が最も高まったときに、多くの人がオープンな議論に異論を唱えたため、私はより静かなコミュニケーションのチャネルに移ることにしました。これはとても残念なことだったと感じています。私はエコシステムの計画についてもっとオープンに、声高に議論をしたいと思っています。他の人たちが簡単に情報にたどり着けるようにしたいと思っています。私は閉じた扉の裏側で全てを議論することを強く反対します。オープンな議論が再開できるかどうかはいずれわかることでしょう。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id="fork-ってなに"&gt;“fork” ってなに?&lt;/h2&gt;
-&lt;p&gt;SLURP に関する議論の大部分が SLURP そのものとはなんの関係もないことは明らかですが、fork に関するコメントは関係があります。作者がドキュメントの中で fork という言葉を使うつもりだったのなら、まずは fork についてしっかりと説明することが望ましかったのではないでしょうか。これから Stackage と Stack の世界で使われている fork という言葉の意味について、私が知っていることをお話しようと思います。この話が本当に作者たちの意図を反映しているのかどうか、それは作者たちの発言を待って確認するしかありません。&lt;/p&gt;
-&lt;p&gt;ここでいう “fork” という用語は、「何かソフトウェアのプロジェクトを取ってきて、ソースコードを他の場所にホストして、別名で開発を続ける」といった文字通りの意味で使われているわけではありません (私の定義ですが)。この用語は、より一般的なものです。例えば、Stack はコードなんて何も共有していないのに、多くの人に cabal-install の fork だと言われています (もちろん、Cabal のようなベースとなるライブラリは共有していますが)。&lt;/p&gt;
-&lt;p&gt;誰もが固執していることについて、明確に言及しておきましょう。誰もが考えるような Hackage の直接の競争相手を作ろうとするやりとりには、全く関わっていません。私が知っている人で、こういうことをしたい人はいませんし、私もしたくありません。なぜなら、今日の Stackage と Stack は Hackage あってこそのものだからです。そして私の知人で、この構図を変えたい人は誰一人としていません。Hackage をコントロールしたいなどと考えている人はいないのです。&lt;/p&gt;
-&lt;p&gt;Hackage の “fork” というと、論理的にそういう結論に至るかもしれませんが、そうではないのです。&lt;/p&gt;
-&lt;p&gt;次に、この “fork” に関する具体的な頭痛のタネについてお話しましょう。&lt;/p&gt;
-&lt;h2 id="hackage-のリビジョン"&gt;Hackage のリビジョン&lt;/h2&gt;
-&lt;p&gt;多くの人が Hackage のリビジョンについて嫌悪感を示しています。私も Hackage リビジョンは嫌いです。そして、他の誰よりも嫌悪感を抱く理由を持っています。私は数週間から数ヶ月ほどの自分の人生を使って、いくつかのツールにリビジョンをサポートさせたことがあります。この凄惨な歴史を辿ることもできますが、プログラマの戦記になるだけで価値はないでしょう。それよりも今に向き合うことにします。&lt;/p&gt;
-&lt;p&gt;私はついに Stack 1.6 で、リビジョンの指定 (pinning) を完全にサポートしました。Stackage は既に長い間リビジョンの指定をサポートし続けています。Stackage にはいくつかのパッケージのリビジョンを無視しているものとしてリストアップする機能があります。&lt;/p&gt;
-&lt;p&gt;もし仮に、今聞かれたら私はリビジョンが悪いアイディアで、無効にすべきだと答えるでしょう。そして、依存関係の解決に関する問題について、より良い解決方法があると依然として答えるでしょう (これらについては、過去に長々と議論したことがあります)。同時に、そのコストは下がっています。ユーザーが extra-deps に特定のリビジョンを付けていないこと、そして Hackage におけるリビジョンのルールが緩すぎることについては実際、いまだに心配です。これについて懸念を抱いていることは確かですが、私の中の最優先事項ではありません。&lt;/p&gt;
-&lt;p&gt;ところが他の人は違う考えを持っているようです。私は Hackage Truestee が強制的に cabalファイルを編集することについて腹を立てている多くの人を知っています。彼らに反対することはありませんが、この話題に情熱を持っているわけでもありません。コミュニティのリーダーとの会話の中で、私はこの区別を明確に強調しました (少なくともそうしようとはしました)。&lt;/p&gt;
-&lt;p&gt;リビジョンに関する最大の懸念は、それの持つ社会的な影響です。すなわち、誰か別のものが自分のビルドの安定性を担うということです。これまでに何度も言及してきましたが、社会的緊張の原因の最たるものに、ビルドがいきなり止まったので上流の開発者に文句を言う、というものがあります。これは大惨事への第一歩で、PVP (Package Versioning Policy) + 依存解決という手法が持つ原理的な欠陥でした。そのため、固定ビルドプランに焦点を当てたツールが必要となるのです。私はこれを何年も主張してきましたが、結局は上流を説得することができなかったので Stack を大々的に作りました。&lt;/p&gt;
-&lt;p&gt;以上のことから、リビジョンとはフォークのような何かなのでしょうか? 違います。&lt;/p&gt;
-&lt;h2 id="キュレーション"&gt;キュレーション&lt;/h2&gt;
-&lt;p&gt;数週間前、私はこんなツイートをしました。&lt;/p&gt;
-&lt;blockquote class="twitter-tweet" data-lang="en"&gt;
-&lt;p lang="en" dir="ltr"&gt;
-I did that initially. When collaborating on GPS Haskell, I removed that functionality as a requirement of the Hackage, Cabal, and Haskell Platform teams. Then GPS died and we're stuck unable to work around upstream breakage like this.
-&lt;/p&gt;
-— Michael Snoyman (&lt;span class="citation" data-cites="snoyberg"&gt;@snoyberg&lt;/span&gt;) &lt;a href="https://twitter.com/snoyberg/status/949385673982730240?ref_src=twsrc%5Etfw"&gt;January 5, 2018&lt;/a&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Stackage のオリジナルデザインは、標準的な Linux ディストリビューションモデルに準拠していました。Hackage は私たちの上流でしたが、バージョンの境界が大きく壊れるのを防ぐために一連のパッチを整備し、あまりありませんでしたが時折 (たとえそうでも、正直覚えていませんが)、バグを修正するためにソースを編集したりしました。&lt;/p&gt;
-&lt;p&gt;2014年に Stackage を cabal と Haskell のプラットフォームに組み込む計画 (GPS Haskell のコードネームで開発していました。それが地面から飛び立つことは一度もありませんでしたが) について議論をしたとき、cabal, Hackage, そして Haskell Platform のメンテナに、ローカルの変更を Stackage が整備しないことを要求されました。なので私はその機能を削除したのですが、それは私たちが今までいた世界の話です。&lt;/p&gt;
-&lt;p&gt;この機能を復活させるかどうかは再検討中です。その理由を簡潔に説明しますと、これはフォークと捉えることができます。ソフトフォークと呼ぶ人もいるかもしれません。正直なところ、一連のパッチを整備するのは重労働なので Stackage に追加し直したい機能ではありません。しかし、多くのコミュニティがこの作業を必要としています。私がこのことを理解しているように、Nix も理解しています。もしもこれをフォークと言うのなら、私たちのエコシステムに広く浸透しているフォークなんでしょう。&lt;/p&gt;
-&lt;p&gt;このキュレーションで扱う理由としては、新しい依存バージョンへの更新が遅いパッケージを避けるため、というものがあります。Stackage のパッケージメンテナにとって、誰か他の人がその上限に満足しないからといって、自分のパッケージのバージョンを下げるのはかなりイライラするものがあるでしょう。キュレーションはこの辺の問題を何とかできるかもしれません。私はこれをおまけの特典のように考えていますが、必要なものではないです。&lt;/p&gt;
-&lt;p&gt;しかし、キュレーションには cabal-install 界隈では問題になっていないものの、Stackage や Stack 界隈で問題を引き起こしているパッケージをどうにかする、というもっと重要な理由があります。ここ数ヶ月の間に何回も問題が起こるまで、私は本当の問題だとは認識していませんでした。&lt;a href="https://github.com/haskell-hvr/cassava/pull/155"&gt;例えばこんな例があります&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;私はこの記事で、作者の誰かに何かを要求するつもりはありません。でも私は結局、これらの類の問題に多くの自分の時間を費やして対処してきています。これが現実です。私の友達や同僚は、緊急のリリースポイントを切ったり、様々な持ち越し作業に巻き込まれています。Cabal のライブラリの仕様に明記されているべきだが文書化されていないような何かのために、多くの時間を割いて Stack を変更しなければならないような現状に私の人生を浪費したくはありません。&lt;/p&gt;
-&lt;p&gt;Hackage は cabal-install を壊さないために、既に大きな苦労をしています。多くの人が、 &lt;code&gt;^&amp;gt;=&lt;/code&gt; 演算子の導入がどのように Stack 1.5 を破壊したか聞いたことがあるのではないでしょうか。しかし、実はこの演算子の導入は cabal-install 1.24 も壊していたのです。この事実を知っている人がいないのは、&lt;a href="https://github.com/haskell/cabal/issues/4624"&gt;Hackage がこれらのファイルを古いバージョンの cabal-install から隠すような措置を導入した&lt;/a&gt;からです。このキュレーションのアイディアは Stack の破壊に対応する術を Stackage に対して提供するものです。Hackage も同じ方法で cabal-install へのダメージに対処するでしょう。&lt;/p&gt;
-&lt;p&gt;そして、私は同じ類の処置を、Hackage から Stack へしてもらえないかとお願いしました。このお願いは、優先的な処置を求める声に後押しされています。この記事の読者は、各々の判断で自分がどう感じるか考えてください。&lt;/p&gt;
-&lt;p&gt;まとめると: 私は Stackage に上流のパッケージのパッチを当てられるようにしようとしています。他の人はフォークという言葉を使うかもしれませんが、私はこれをフォークではなくキュレーションだと考えています。&lt;/p&gt;
-&lt;h2 id="hackage-へのアップロードを避ける"&gt;Hackage へのアップロードを避ける&lt;/h2&gt;
-&lt;p&gt;まず、これは私の好みですが、私のパッケージは Hackage に上げ続けたいと考えています。conduit や yesod, その他鋭意 Hackage でメンテ中の 80 を超えるパッケージの更新をやめるつもりも、そうしたいという願望もありません。そうは言っても、全員が全員同じように感じているわけではありません。&lt;/p&gt;
-&lt;p&gt;現在 Stackage は Hackage の下流になっています。最初にパッケージが Hackage にアップロードされない限り、そのパッケージを Stackage に入れることはできません。しかし、この状況は終わりを告げようとしています。およそ、現状を変えようとしているグループは以下の 3 パターンに分けられるでしょう。&lt;/p&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;少なくとも一部の PVP 支持者は、PVP に従わないパッケージ作成者に対して、そのパッケージを Hackage にアップロードしないように要請 (要求) しています。これは私が幾度となく指摘してきたように、Hackage 公式のガイドラインと完全に矛盾しているにも関わらず、彼らはしつこく同じ趣旨の発言を続けています。&lt;/li&gt;
-&lt;li&gt;PVP に反対する人の中には、基本的に (1) の理由で、Hackage にアップロードしたくない、という人もいます。PVP の遵守という観点で、たくさんの張りつめた議論がありました。これを避けるための最も簡単な方法は Hackage にアップロードしない、というものでした。私はこういった事情があって Hackage や Stackage にコードをリリースしない人たちを知っています。しぶしぶこうしている人もいますが、その全員が同じ理由で Hackage を避けたがっています。&lt;/li&gt;
-&lt;li&gt;技術的に見て、中央リポジトリに手作業で tarball をアップロードするようなモデルは、時代遅れになってきていると感じる人もいます。そういった人たちは、タグやリリースブランチを使って自動化された、Git ベースのリリースに基づいたワークフローを考えています。これによる社会的な影響は何もなく、どちらかと言うと Hackage が現在サポートしていない、技術的に違うものを探してみたいという願望です。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;番目の状況は、私の大きな頭痛の種でした。私は Hackage Trustee のガイドラインと Hackage のルールを変更して、彼らの言動 (Hackage にアップロードしないように私的なメールで要求したり、個人や企業に対して PVP に従っていないことを公に批判したり) について明確に禁止するように要望を出していました。実際、私が思うに、この要望は究極的には SLURP に結びつくものです。私は変更しなければフォークするぞと脅したりしたでしょうか? あー、そう思いたいならそれでもいいでしょう。私は Hackage を使うのをやめようと言い続けてきました。完全にです。私はこのような Hackage の使い方が許可されるように、公式のポリシーに対して変更を求めました。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;現状を見たらわかりますが、Hackage のポリシーにそんな変更はされませんでした。私は (2) と (3) のグループに対して何を思うのか、言及していませんでしたね。しかし (3) の主張からもわかるように、Hackage とは別の代替パッケージリポジトリをホストしたりするのは全くもって意味がありません。なので、私はまたここで保証します。最も文字通りの Hackage の fork は、私も私が話しかけているあなたも誰も望んでいないものになるでしょう。&lt;/p&gt;
-&lt;p&gt;また他の選択肢は Stackage に Hackage に加え、Git リポジトリから直接パッケージをプルできるようにする、というものです。これは先に挙げた 問題 (1) に対するワークアラウンドとして議論されています。あることを主張して、一度離れてもう一度それを主張するようになる… なんてことはありません。私はむしろ、Hackage が全員からパッケージのアップロードを受け付けることを明確にすることを望んでいますし、それと比べれば Stackage を別のソースに対して解放するような要求は少なくなります (3 番目のグループは純粋に技術的な観点から実験したいと思っているようですが)。&lt;/p&gt;
-&lt;p&gt;私は銃で誰かの頭を狙っているでしょうか? それはあなたが決めることです。これが私が知る限りの本当の物語です。&lt;/p&gt;
-&lt;p&gt;まとめると、これは潜在的な fork に最も近いもので、Git リポジトリが Hackage の代替のソースとして許可されたらこうなります。&lt;/p&gt;
-&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;私は上記の問題を解決するための努力をするにあたって、複数の人と長く非公開な議論をしてきました。先ほども話したように、私はいつも公の場で行われる議論が好きです。SLURP の提案がどうなったかを鑑み、私はやはり公の議論はより良いという立場を取ろうと思います。“fork” という言葉を使って、とても多くの人を怖がらせてしまったことは申し訳なく思っています。本当に怖がっていた人に対して、私は鬼のようなことをしてしまっていたようです。説明に 2 日間待たせてしまい、申し訳ありませんでした。&lt;/p&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-02-22-fun-of-extensible-3.html</id><title type="text">拡張可能タングルでDo記法レスプログラミング♪ (Haskell)</title><updated>2018-02-22T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-02-22-fun-of-extensible-3.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2017/12/23/082635</id><title type="text">猫でもわかる rkt + Kubernetes</title><updated>2018-02-28T00:36:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2017/12/23/082635"/><summary type="html">このエントリは Kubernetes Advent Calendar 2017 の 23 日目の記事です。ちなみに昨日は takezaki さんの「GCBを利用したContinuous Delivery環境」でした。 LT で使用したスライド 先日、市ヶ谷Geek★Night #16 の 10 分 LT 枠で、CoreOS 社によるコンテナ実装 rkt とその Kubernetes 連携について発表してきました。今回のエントリはこの LT の内容を補足しつつ、実際に手を動かして rkt を試せるような構成にしてあります。 Hello, rkt! rkt は、Docker の対抗馬として Cor…</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B</id><title type="text">なぜ Haskell が好きなのか</title><updated>2018-02-25T14:53:18+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B"/><summary type="html">自分は Haskell が好きで休日は Haskell を書いています。そういうことを言うと関数型が好きなんですねと言われるのですが、Haskell のよさはそこじゃないと感じているので書き起こそうかと、筆を執りました。 というわけで、この記事は技術的文書というよりもお話です。Haskell を知らない人向けです。 この記事は Haskell Advent Calendar 2017 その3の6日めの記事です。6日が過ぎても担当のいない日だったため担当します。 関数型プログラミングだから Haskell が好きというわけではない まず、「Haskell というと手続き型とは全然違う関数型なんで…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-02-22-fun-of-extensible-3.html</id><title type="text">拡張可能タングルでDo記法レスプログラミング♪ (Haskell)</title><updated>2018-02-22T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-02-22-fun-of-extensible-3.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;拡張可能タングルでDo記法レスプログラミング♪ (Haskell)&lt;/h1&gt;
