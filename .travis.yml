@@ -16,7 +16,7 @@ jobs:
       script: stack --no-terminal install
     - stage: exec antenna
       script: git clone -b gh-pages "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" temp
-      if: branch = master AND type IN (push)
+      if: branch = master AND type IN (push, cron)
       after_success:
         - cp sites.yaml temp/sites.yaml
         - cp -r image/* temp/image
