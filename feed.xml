@@ -1,4 +1,248 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-03-30T00:57:10+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/bra_cat_ket/items/da0f1ddeeccfc129dadb</id><title type="text">AtCoder に登録したら解くべき精選過去問 10 問を Haskell で解いてみた　（$n+1$ 番煎じ）</title><updated>2018-03-30T00:57:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/bra_cat_ket/items/da0f1ddeeccfc129dadb"/></entry><entry><id>https://qiita.com/HirotoShioi/items/39fc492401e4dcbc8cba</id><title type="text">Haskellにおける型レベルプログラミングの基本(翻訳)</title><updated>2018-03-29T14:57:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/HirotoShioi/items/39fc492401e4dcbc8cba"/></entry><entry><id>https://qiita.com/takehilo/items/7b65d32e47510cd1fe48</id><title type="text">とにかくすぐにHaskellを動かしたい人のためのHaskellインストール方法</title><updated>2018-03-28T18:55:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takehilo/items/7b65d32e47510cd1fe48"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-28-quiz-4.html</id><title type="text">Haskell Quiz No.4 幅優先探索と深さ優先探索</title><updated>2018-03-28T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-28-quiz-4.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.4"&gt;Haskell Quiz No.4&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-03-31T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-31-quiz-5.html</id><title type="text">Haskell Quiz No.5 Conduit Part.1</title><updated>2018-03-31T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-31-quiz-5.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.5"&gt;Haskell Quiz No.5&lt;/h2&gt;
+&lt;p&gt;難易度: λλ&lt;/p&gt;
+&lt;p&gt;以下の &lt;code&gt;Conduit&lt;/code&gt; を使ったコードの実行結果を予想してみてください！&lt;/p&gt;
+&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="ot"&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;span class="co"&gt;-- stack script --resolver lts-11.0&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Conduit&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;&lt;span class="ot"&gt;sink ::&lt;/span&gt; &lt;span class="dt"&gt;Monad&lt;/span&gt; m &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ConduitM&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; o m (&lt;span class="dt"&gt;String&lt;/span&gt;, &lt;span class="dt"&gt;Int&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;sink &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;  x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; takeC &lt;span class="dv"&gt;5&lt;/span&gt; &lt;span class="fu"&gt;.|&lt;/span&gt; mapC show &lt;span class="fu"&gt;.|&lt;/span&gt; foldC&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-8" data-line-number="8"&gt;  y &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; sumC&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-9" data-line-number="9"&gt;  return (x, y)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-10" data-line-number="10"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-11" data-line-number="11"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-12" data-line-number="12"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-13" data-line-number="13"&gt;  &lt;span class="kw"&gt;let&lt;/span&gt; res &lt;span class="fu"&gt;=&lt;/span&gt; runConduitPure &lt;span class="fu"&gt;$&lt;/span&gt; yieldMany [&lt;span class="dv"&gt;1&lt;/span&gt;&lt;span class="fu"&gt;..&lt;/span&gt;&lt;span class="dv"&gt;10&lt;/span&gt;] &lt;span class="fu"&gt;.|&lt;/span&gt; sink&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-14" data-line-number="14"&gt;  print res&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;答えは次回。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href="./03-28-quiz-4.html"&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
+&lt;h3 id="問題"&gt;問題&lt;/h3&gt;
+&lt;p&gt;難易度: λ&lt;/p&gt;
+&lt;p&gt;今回は、与えられた値がリストのリストに含まれているかどうかを判定する問題です。&lt;/p&gt;
+&lt;p&gt;幅優先で探索する関数 &lt;code&gt;bfs&lt;/code&gt; と深さ優先で探索する関数 &lt;code&gt;dfs&lt;/code&gt; をそれぞれ定義してみましょう。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="ot"&gt;bfs ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[&lt;span class="dt"&gt;Int&lt;/span&gt;]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;bfs &lt;span class="fu"&gt;=&lt;/span&gt; undefined&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;&lt;span class="ot"&gt;dfs ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[&lt;span class="dt"&gt;Int&lt;/span&gt;]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;dfs &lt;span class="fu"&gt;=&lt;/span&gt; undefined&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行結果はだいたいこんな感じです。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; repl -- Quiz4.hs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;&lt;span class="ex"&gt;*Quiz4&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; xs = [[10..],[4,5,6],[7,8,9]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;&lt;span class="ex"&gt;*Quiz4&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; bfs 9 xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-4" data-line-number="4"&gt;&lt;span class="ex"&gt;True&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-5" data-line-number="5"&gt;&lt;span class="ex"&gt;*Quiz4&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; dfs 9 xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-6" data-line-number="6"&gt;&lt;span class="ex"&gt;.....&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="こたえ"&gt;こたえ&lt;/h3&gt;
+&lt;p&gt;素晴らしい回答が &lt;strong&gt;Haskeller&lt;/strong&gt; から届きました。(一部修正)&lt;/p&gt;
+&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;dfs x &lt;span class="fu"&gt;=&lt;/span&gt; elem x &lt;span class="fu"&gt;.&lt;/span&gt; concat&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;bfs x &lt;span class="fu"&gt;=&lt;/span&gt; elem x &lt;span class="fu"&gt;.&lt;/span&gt; concat &lt;span class="fu"&gt;.&lt;/span&gt; transpose&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;まさに &lt;code&gt;Haskell&lt;/code&gt; ！！！って感じのコードですよね。&lt;/p&gt;
+&lt;h2 id="haskell-quiz-no.4-の解説"&gt;Haskell Quiz No.4 の解説&lt;/h2&gt;
+&lt;p&gt;完全なコードはこちら&lt;/p&gt;
+&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Quiz4&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.List&lt;/span&gt; (transpose)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-5" data-line-number="5"&gt;&lt;span class="ot"&gt;dfs ::&lt;/span&gt; &lt;span class="dt"&gt;Eq&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[a]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-6" data-line-number="6"&gt;dfs x &lt;span class="fu"&gt;=&lt;/span&gt; elem x &lt;span class="fu"&gt;.&lt;/span&gt; concat&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-7" data-line-number="7"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-8" data-line-number="8"&gt;&lt;span class="ot"&gt;bfs ::&lt;/span&gt; &lt;span class="dt"&gt;Eq&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[a]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-9" data-line-number="9"&gt;bfs x &lt;span class="fu"&gt;=&lt;/span&gt; elem x &lt;span class="fu"&gt;.&lt;/span&gt; concat &lt;span class="fu"&gt;.&lt;/span&gt; transpose&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dfs&lt;/strong&gt; は &lt;code&gt;depth farst search&lt;/code&gt; なので、深さ優先探索を行います。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;bfs&lt;/strong&gt; は &lt;code&gt;breadth first search&lt;/code&gt; なので、幅優先探索を行います。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="data.list-モジュール"&gt;Data.List モジュール&lt;/h3&gt;
+&lt;p&gt;リスト操作系の関数は基本的に &lt;a href="http://hackage.haskell.org/package/base-4.11.0.0/docs/Data-List.html"&gt;Data.List&lt;/a&gt; を探せば見つかります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Prelude&lt;/code&gt; に含まれている関数と重複するものもありますが、それ以外にも有用な関数がいくつも定義されているため、 &lt;code&gt;Data.List&lt;/code&gt; モジュールにどんな関数があるか把握しておくと良いと思います。&lt;/p&gt;
+&lt;p&gt;ここで定義されている関数の命名規則は別のパッケージでも慣習的に利用されていることが多いため、関数がどんな操作なのか&lt;strong&gt;理解&lt;/strong&gt; (暗記ではない) しておくと、全く知らないパッケージでも何となく読める時があります。&lt;/p&gt;
+&lt;p&gt;例えば今回の &lt;code&gt;transpose&lt;/code&gt; 関数は &lt;code&gt;Data.List&lt;/code&gt; 以外にも色々なモジュールで同様に定義されています。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://hackage.haskell.org/package/bytestring-0.10.8.2/docs/Data-ByteString-Char8.html#v:transpose"&gt;ByteString&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://hackage.haskell.org/package/text-1.2.3.0/docs/Data-Text-Lazy.html#v:transpose"&gt;Text&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;つまり、データ構造はリストとは違うけども、操作としては同じと言うことです。&lt;/p&gt;
+&lt;h3 id="transpose"&gt;transpose&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://hackage.haskell.org/package/base-4.11.0.0/docs/Data-List.html#v:transpose"&gt;transpose&lt;/a&gt; は &lt;code&gt;base&lt;/code&gt; パッケージの &lt;code&gt;Data.List&lt;/code&gt; で定義されています。&lt;code&gt;Prelude&lt;/code&gt; には含まれていないため、明示的に &lt;code&gt;import&lt;/code&gt; する必要があります。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;haddock&lt;/code&gt; の説明通り、リストを転置させる関数です。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;&lt;span class="fu"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; transpose [[&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;2&lt;/span&gt;,&lt;span class="dv"&gt;3&lt;/span&gt;],[&lt;span class="dv"&gt;4&lt;/span&gt;,&lt;span class="dv"&gt;5&lt;/span&gt;,&lt;span class="dv"&gt;6&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;[[&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;4&lt;/span&gt;],[&lt;span class="dv"&gt;2&lt;/span&gt;,&lt;span class="dv"&gt;5&lt;/span&gt;],[&lt;span class="dv"&gt;3&lt;/span&gt;,&lt;span class="dv"&gt;6&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt;&lt;span class="fu"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; transpose [[&lt;span class="dv"&gt;10&lt;/span&gt;,&lt;span class="dv"&gt;11&lt;/span&gt;],[&lt;span class="dv"&gt;20&lt;/span&gt;],[],[&lt;span class="dv"&gt;30&lt;/span&gt;,&lt;span class="dv"&gt;31&lt;/span&gt;,&lt;span class="dv"&gt;32&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-5" data-line-number="5"&gt;[[&lt;span class="dv"&gt;10&lt;/span&gt;,&lt;span class="dv"&gt;20&lt;/span&gt;,&lt;span class="dv"&gt;30&lt;/span&gt;],[&lt;span class="dv"&gt;11&lt;/span&gt;,&lt;span class="dv"&gt;31&lt;/span&gt;],[&lt;span class="dv"&gt;32&lt;/span&gt;]]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;その際、空リストは取り除かれるようですね。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;transpose&lt;/code&gt; 関数の実装は &lt;a href="http://hackage.haskell.org/package/base-4.11.0.0/docs/src/Data.OldList.html#transpose"&gt;Data.OldList&lt;/a&gt; で以下のように定義されています。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="ot"&gt;transpose ::&lt;/span&gt; [[a]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[a]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;transpose []           &lt;span class="fu"&gt;=&lt;/span&gt; []&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-3" data-line-number="3"&gt;transpose ([]&lt;span class="fu"&gt;:&lt;/span&gt;xss)     &lt;span class="fu"&gt;=&lt;/span&gt; transpose xss&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-4" data-line-number="4"&gt;transpose ((x&lt;span class="fu"&gt;:&lt;/span&gt;xs)&lt;span class="fu"&gt;:&lt;/span&gt;xss) &lt;span class="fu"&gt;=&lt;/span&gt; (x &lt;span class="fu"&gt;:&lt;/span&gt; [h &lt;span class="fu"&gt;|&lt;/span&gt; (h&lt;span class="fu"&gt;:&lt;/span&gt;_) &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; xss]) &lt;span class="fu"&gt;:&lt;/span&gt; transpose (xs &lt;span class="fu"&gt;:&lt;/span&gt; [ t &lt;span class="fu"&gt;|&lt;/span&gt; (_&lt;span class="fu"&gt;:&lt;/span&gt;t) &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; xss])&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;たしかに2つ目の等式で空白が除去されていることがわかりますね。&lt;/p&gt;
+&lt;p&gt;3つ目の等式は少し複雑ですが、面白いので見てみましょう。&lt;/p&gt;
+&lt;p&gt;それぞれのリストの &lt;code&gt;head&lt;/code&gt; を取りたいので &lt;code&gt;map head xss&lt;/code&gt; がすぐに思いつきそうですが &lt;code&gt;[h | (h:_) &amp;lt;- xss]&lt;/code&gt; となっています。うまいやりかたですね。&lt;/p&gt;
+&lt;p&gt;普通に &lt;code&gt;head&lt;/code&gt; をかけてしまうと空リストで実行時エラーとなってしまいます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="fu"&gt;*&lt;/span&gt;&lt;span class="dt"&gt;Quiz4&lt;/span&gt;&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; xss &lt;span class="fu"&gt;=&lt;/span&gt; [[&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;2&lt;/span&gt;],[],[&lt;span class="dv"&gt;3&lt;/span&gt;,&lt;span class="dv"&gt;4&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="fu"&gt;*&lt;/span&gt;&lt;span class="dt"&gt;Quiz4&lt;/span&gt;&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; map head xss&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;[&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="fu"&gt;***&lt;/span&gt; &lt;span class="dt"&gt;Exception&lt;/span&gt;&lt;span class="fu"&gt;:&lt;/span&gt; Prelude.head&lt;span class="fu"&gt;:&lt;/span&gt; empty list&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;しかし &lt;code&gt;[h | (h:_) &amp;lt;- xss]&lt;/code&gt; ではどうでしょうか？&lt;/p&gt;
+&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="fu"&gt;*&lt;/span&gt;&lt;span class="dt"&gt;Quiz4&lt;/span&gt;&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; xss &lt;span class="fu"&gt;=&lt;/span&gt; [[&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;2&lt;/span&gt;],[],[&lt;span class="dv"&gt;3&lt;/span&gt;,&lt;span class="dv"&gt;4&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;&lt;span class="fu"&gt;*&lt;/span&gt;&lt;span class="dt"&gt;Quiz4&lt;/span&gt;&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; [h &lt;span class="fu"&gt;|&lt;/span&gt; (h&lt;span class="fu"&gt;:&lt;/span&gt;_) &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; xss]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;[&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;3&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;はい。空リストを含んでいたとしてもエラーにならずに、良い感じに先頭の要素から成るリストが生成できました。&lt;/p&gt;
+&lt;p&gt;では、なぜこのような動作になるのでしょうか？&lt;/p&gt;
+&lt;p&gt;それを理解するためには &lt;strong&gt;Haskell 2010 Language Report&lt;/strong&gt; の &lt;a href="https://www.haskell.org/onlinereport/haskell2010/haskellch3.html#x8-420003.11"&gt;3.11 List Comprehensions&lt;/a&gt; を参照する必要があります。&lt;/p&gt;
+&lt;p&gt;ここにリスト内包表記がどのように変換されるか、変換規則が載っています。(ここでは一部のみ掲載)&lt;/p&gt;
+&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="co"&gt;-- ルール1&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;[ e &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;True&lt;/span&gt; ] &lt;span class="fu"&gt;=&lt;/span&gt; [e]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;&lt;span class="co"&gt;-- ルール2&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;[ e &lt;span class="fu"&gt;|&lt;/span&gt; q ] &lt;span class="fu"&gt;=&lt;/span&gt; [ e &lt;span class="fu"&gt;|&lt;/span&gt; q, &lt;span class="dt"&gt;True&lt;/span&gt; ]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-6" data-line-number="6"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-7" data-line-number="7"&gt;&lt;span class="co"&gt;-- ルール3&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-8" data-line-number="8"&gt;[ e &lt;span class="fu"&gt;|&lt;/span&gt; p &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; l, &lt;span class="dt"&gt;Q&lt;/span&gt; ] &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;let&lt;/span&gt; ok p &lt;span class="fu"&gt;=&lt;/span&gt; [ e &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;Q&lt;/span&gt; ]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-9" data-line-number="9"&gt;                        ok _ &lt;span class="fu"&gt;=&lt;/span&gt; []&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-10" data-line-number="10"&gt;                    &lt;span class="kw"&gt;in&lt;/span&gt; concatMap ok l&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上記の規則により、先程の &lt;code&gt;[h | (h:_) &amp;lt;- xss]&lt;/code&gt; は以下のように変換できます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;[ h &lt;span class="fu"&gt;|&lt;/span&gt; (h&lt;span class="fu"&gt;:&lt;/span&gt;_) &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; xss ]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; { ルール2 より }&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-3" data-line-number="3"&gt;[ h &lt;span class="fu"&gt;|&lt;/span&gt; (h&lt;span class="fu"&gt;:&lt;/span&gt;_) &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; xss, &lt;span class="dt"&gt;True&lt;/span&gt; ]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-4" data-line-number="4"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; { ルール3 より }&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-5" data-line-number="5"&gt;&lt;span class="kw"&gt;let&lt;/span&gt; ok (h&lt;span class="fu"&gt;:&lt;/span&gt;_) &lt;span class="fu"&gt;=&lt;/span&gt; [ h &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;True&lt;/span&gt; ]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-6" data-line-number="6"&gt;    ok _ &lt;span class="fu"&gt;=&lt;/span&gt; []&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-7" data-line-number="7"&gt;&lt;span class="kw"&gt;in&lt;/span&gt; concatMap ok xss&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-8" data-line-number="8"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; { ルール1 より }&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-9" data-line-number="9"&gt;&lt;span class="kw"&gt;let&lt;/span&gt; ok (h&lt;span class="fu"&gt;:&lt;/span&gt;_) &lt;span class="fu"&gt;=&lt;/span&gt; [h]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-10" data-line-number="10"&gt;    ok _ &lt;span class="fu"&gt;=&lt;/span&gt; []&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-11" data-line-number="11"&gt;&lt;span class="kw"&gt;in&lt;/span&gt; concatMap ok xss&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;最終的には &lt;code&gt;f = [h | (h:_) &amp;lt;- xss]&lt;/code&gt; とすると&lt;/p&gt;
+&lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;f &lt;span class="fu"&gt;=&lt;/span&gt; concatMap ok xss&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-3" data-line-number="3"&gt;    ok (h&lt;span class="fu"&gt;:&lt;/span&gt;_) &lt;span class="fu"&gt;=&lt;/span&gt; [h]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-4" data-line-number="4"&gt;    ok _     &lt;span class="fu"&gt;=&lt;/span&gt; []&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;になります。&lt;/p&gt;
+&lt;p&gt;パターンマッチに失敗した場合は &lt;code&gt;ok _ = []&lt;/code&gt; ということで自動的に空リストになるという部分が実行時エラーにならない秘密のようですね。&lt;/p&gt;
+&lt;p&gt;最終的に &lt;code&gt;concatMap&lt;/code&gt; によって、空リストが自然に除去されていることがわかります。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb13"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb13-1" data-line-number="1"&gt;&lt;span class="fu"&gt;*&lt;/span&gt;&lt;span class="dt"&gt;Quiz4&lt;/span&gt;&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; concatMap ok [[&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;2&lt;/span&gt;], [], [&lt;span class="dv"&gt;3&lt;/span&gt;,&lt;span class="dv"&gt;4&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb13-2" data-line-number="2"&gt;[&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;2&lt;/span&gt;,&lt;span class="dv"&gt;3&lt;/span&gt;,&lt;span class="dv"&gt;4&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ということで、もとの式に戻ると &lt;code&gt;transpose&lt;/code&gt; 関数の主張はこういうことです。&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/2018/03-31/transpose.png" alt="transpose 関数の処理" /&gt;&lt;figcaption&gt;transpose 関数の処理&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;transpose []           &lt;span class="fu"&gt;=&lt;/span&gt; []&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-2" data-line-number="2"&gt;transpose ([]&lt;span class="fu"&gt;:&lt;/span&gt;xss)     &lt;span class="fu"&gt;=&lt;/span&gt; transpose xss&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-3" data-line-number="3"&gt;transpose ((x&lt;span class="fu"&gt;:&lt;/span&gt;xs)&lt;span class="fu"&gt;:&lt;/span&gt;xss) &lt;span class="fu"&gt;=&lt;/span&gt; (x &lt;span class="fu"&gt;:&lt;/span&gt; [h &lt;span class="fu"&gt;|&lt;/span&gt; (h&lt;span class="fu"&gt;:&lt;/span&gt;_) &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; xss]) &lt;span class="fu"&gt;:&lt;/span&gt; transpose (xs &lt;span class="fu"&gt;:&lt;/span&gt; [ t &lt;span class="fu"&gt;|&lt;/span&gt; (_&lt;span class="fu"&gt;:&lt;/span&gt;t) &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; xss])&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="幅優先探索と深さ優先探索"&gt;幅優先探索と深さ優先探索&lt;/h3&gt;
+&lt;p&gt;アルゴリズムの本などを読むと、必ずこの &lt;strong&gt;幅優先探索&lt;/strong&gt; と &lt;strong&gt;深さ優先探索&lt;/strong&gt; というキーワードを目にすると思います。(また、同時に説明に利用されるのは木構造のデータでしょう)&lt;/p&gt;
+&lt;p&gt;幅優先探索と深さ優先探索の概念を理解するために木構造に触れる必要は無く、リストだけで十分です。&lt;/p&gt;
+&lt;p&gt;本質は以下のように凄く簡単なことです。&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/2018/03-31/search.png" alt="リストを使った幅優先探索と深さ優先探索" /&gt;&lt;figcaption&gt;リストを使った幅優先探索と深さ優先探索&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;そのため &lt;code&gt;[10..]&lt;/code&gt; のような無限リストが与えられた場合に &lt;strong&gt;深さ優先探索&lt;/strong&gt; では結果を返すことができないのです。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb15"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb15-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; repl -- Quiz4.hs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-2" data-line-number="2"&gt;&lt;span class="ex"&gt;*Quiz4&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; xs = [[10..],[4,5,6],[7,8,9]]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-3" data-line-number="3"&gt;&lt;span class="ex"&gt;*Quiz4&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; bfs 9 xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-4" data-line-number="4"&gt;&lt;span class="ex"&gt;True&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-5" data-line-number="5"&gt;&lt;span class="ex"&gt;*Quiz4&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; dfs 9 xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-6" data-line-number="6"&gt;&lt;span class="ex"&gt;.....&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="コードの解説"&gt;コードの解説&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;dfs&lt;/code&gt; は &lt;code&gt;concat&lt;/code&gt; によってリストのリストを直列につないだ結果に対して &lt;code&gt;elem x&lt;/code&gt; で要素を検索すれば良いということになります。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb16"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb16-1" data-line-number="1"&gt;&lt;span class="ot"&gt;dfs ::&lt;/span&gt; &lt;span class="dt"&gt;Eq&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[a]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-2" data-line-number="2"&gt;dfs x &lt;span class="fu"&gt;=&lt;/span&gt; elem x &lt;span class="fu"&gt;.&lt;/span&gt; concat&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;それに対して &lt;code&gt;bfs&lt;/code&gt; は各リストの先頭要素だけを先に処理していく必要があります。自分でその辺りの処理を書いても良いのですが &lt;code&gt;transpose&lt;/code&gt; で一発です。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb17"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb17-1" data-line-number="1"&gt;&lt;span class="ot"&gt;bfs ::&lt;/span&gt; &lt;span class="dt"&gt;Eq&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[a]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb17-2" data-line-number="2"&gt;bfs x &lt;span class="fu"&gt;=&lt;/span&gt; elem x &lt;span class="fu"&gt;.&lt;/span&gt; concat &lt;span class="fu"&gt;.&lt;/span&gt; transpose&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;bfs&lt;/code&gt; はこのように書くこともできます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb18"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb18-1" data-line-number="1"&gt;&lt;span class="ot"&gt;bfs ::&lt;/span&gt; &lt;span class="dt"&gt;Eq&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[a]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb18-2" data-line-number="2"&gt;bfs x &lt;span class="fu"&gt;=&lt;/span&gt; dfs &lt;span class="fu"&gt;.&lt;/span&gt; transpose&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;つまり、リストのリストのようなデータ構造に対して幅優先探索を行うということは、リストを転置した結果に対して深さ優先探索を行うことと等しいということです。&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/2018/03-31/bfs.png" alt="bfs と dfs の関係" /&gt;&lt;figcaption&gt;bfs と dfs の関係&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;Haskell 2010 Language Report ってどういう時に利用するんだろう？って思っている人もいるとは思いますが、こういう場合に参照すると便利です。&lt;/p&gt;
+&lt;p&gt;今回は幅優先探索と深さ優先探索を &lt;strong&gt;リストのリスト&lt;/strong&gt; で説明しましたが、一般的に説明される木構造では、これが少し複雑になっただけです。&lt;/p&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/bra_cat_ket/items/da0f1ddeeccfc129dadb</id><title type="text">AtCoder に登録したら解くべき精選過去問 10 問を Haskell で解いてみた　（$n+1$ 番煎じ）</title><updated>2018-03-30T00:57:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/bra_cat_ket/items/da0f1ddeeccfc129dadb"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-30-prettyprinter.html</id><title type="text">prettyprinter パッケージ</title><updated>2018-03-30T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-30-prettyprinter.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;今回は &lt;a href="https://www.stackage.org/package/prettyprinter"&gt;prettyprinter&lt;/a&gt; を使ってみました。&lt;/p&gt;
+&lt;p&gt;使おうと思ったモチベーションとしては、以下のようなデータ型をデバッグ表示させる際に &lt;code&gt;prettyprinter&lt;/code&gt; 系パッケージを使って良い感じに表示してみようかな？という感じです。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Person&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Person&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;表示をカスタマイズするために &lt;code&gt;Show&lt;/code&gt; クラスのインスタンスを書き換えることは、経験上嫌なことしか起きないです・・。&lt;/p&gt;
+&lt;p&gt;自分でそれっぽい型クラスを作っても良いのですが、普通は素直に &lt;code&gt;prettyprinter&lt;/code&gt; 系のパッケージを使った方が良いと思います！&lt;/p&gt;
+&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; repl --package text&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;&lt;span class="ex"&gt;Prelude&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; import Data.Text&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;&lt;span class="ex"&gt;Prelude&lt;/span&gt; Data.Text&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; data Person = Person Text String deriving Show&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;&lt;span class="ex"&gt;Prelude&lt;/span&gt; Data.Text&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; :set -XOverloadedStrings&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;&lt;span class="ex"&gt;Prelude&lt;/span&gt; Data.Text&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; Person &lt;span class="st"&gt;&amp;quot;はすける&amp;quot;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;らむだ&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;&lt;span class="ex"&gt;Person&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;\12399\12377\12369\12427&amp;quot;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;\12425\12416\12384&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;!--more--&gt;
+&lt;h2 id="パッケージの選定理由"&gt;パッケージの選定理由&lt;/h2&gt;
+&lt;p&gt;ぐぐって一番始めに出てきたのは &lt;a href="https://github.com/haskell/pretty"&gt;pretty&lt;/a&gt; というパッケージだったんですが &lt;code&gt;String&lt;/code&gt; にしか対応してない感じだったので見送りました。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;prettyprinter&lt;/code&gt; は &lt;strong&gt;A modern, easy to use, well-documented, extensible prettyprinter.&lt;/strong&gt; というコメント通り、とても使いやすいです。&lt;/p&gt;
+&lt;h2 id="使ってみました"&gt;使ってみました&lt;/h2&gt;
+&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="ot"&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;&lt;span class="co"&gt;-- stack --resolver lts-11.2 script&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;&lt;span class="ot"&gt;{-# LANGUAGE OverloadedStrings #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-5" data-line-number="5"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Main&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-6" data-line-number="6"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-7" data-line-number="7"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Text.Prettyprint.Doc&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-8" data-line-number="8"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Text.Prettyprint.Doc.Render.Text&lt;/span&gt; (putDoc)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-9" data-line-number="9"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Text&lt;/span&gt; (&lt;span class="dt"&gt;Text&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-10" data-line-number="10"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-11" data-line-number="11"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;A&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;A&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-12" data-line-number="12"&gt;  &lt;span class="kw"&gt;deriving&lt;/span&gt; &lt;span class="dt"&gt;Show&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-13" data-line-number="13"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-14" data-line-number="14"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;B&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;B&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-15" data-line-number="15"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-16" data-line-number="16"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Pretty&lt;/span&gt; &lt;span class="dt"&gt;B&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-17" data-line-number="17"&gt;  pretty (&lt;span class="dt"&gt;B&lt;/span&gt; l r) &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;B&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;+&amp;gt;&lt;/span&gt; pretty l &lt;span class="fu"&gt;&amp;lt;+&amp;gt;&lt;/span&gt; pretty r&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-18" data-line-number="18"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-19" data-line-number="19"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-20" data-line-number="20"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-21" data-line-number="21"&gt;  print &lt;span class="fu"&gt;$&lt;/span&gt; &lt;span class="dt"&gt;A&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;あ&amp;quot;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-22" data-line-number="22"&gt;  putDoc &lt;span class="fu"&gt;$&lt;/span&gt; pretty &lt;span class="fu"&gt;$&lt;/span&gt; &lt;span class="dt"&gt;B&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;あ&amp;quot;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-23" data-line-number="23"&gt;  putStrLn &lt;span class="st"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;$ &lt;span class="fu"&gt;chmod&lt;/span&gt; u+x Pretty.hs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;$ &lt;span class="ex"&gt;./Pretty.hs&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-3" data-line-number="3"&gt;&lt;span class="ex"&gt;A&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;\12354&amp;quot;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-4" data-line-number="4"&gt;&lt;span class="ex"&gt;B&lt;/span&gt; あ a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://www.stackage.org/haddock/lts-11.2/prettyprinter-1.2.0.1/Data-Text-Prettyprint-Doc.html#t:Pretty"&gt;Pretty&lt;/a&gt; 型クラスのインスタンスを普通に定義するだけです。&lt;/p&gt;
+&lt;p&gt;適当に改行したい場合は &lt;a href="https://www.stackage.org/haddock/lts-11.2/prettyprinter-1.2.0.1/Data-Text-Prettyprint-Doc.html#v:line"&gt;line&lt;/a&gt; を追加するだけです。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Pretty&lt;/span&gt; &lt;span class="dt"&gt;B&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;  pretty (&lt;span class="dt"&gt;B&lt;/span&gt; l r) &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;B&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; line&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;                &lt;span class="fu"&gt;&amp;lt;+&amp;gt;&lt;/span&gt; pretty l &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; line&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-4" data-line-number="4"&gt;                &lt;span class="fu"&gt;&amp;lt;+&amp;gt;&lt;/span&gt; pretty r&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;./test.hs&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;&lt;span class="ex"&gt;A&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;\12354&amp;quot;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;&lt;span class="ex"&gt;B&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt; あ&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-5" data-line-number="5"&gt; &lt;span class="ex"&gt;a&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;区切りの空白が不要な場合は &lt;a href="https://www.stackage.org/haddock/lts-11.2/prettyprinter-1.2.0.1/Data-Text-Prettyprint-Doc.html#v:-60--43--62-"&gt;&amp;lt;+&amp;gt;&lt;/a&gt; を &lt;a href="https://www.stackage.org/haddock/lts-11.2/prettyprinter-1.2.0.1/Data-Text-Prettyprint-Doc.html#v:-60--62-"&gt;&amp;lt;&amp;gt;&lt;/a&gt; にするだけです。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Pretty&lt;/span&gt; &lt;span class="dt"&gt;B&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;  pretty (&lt;span class="dt"&gt;B&lt;/span&gt; l r) &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;B&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; line&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-3" data-line-number="3"&gt;                &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; pretty l &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; line&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-4" data-line-number="4"&gt;                &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; pretty r&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;./test.hs&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="ex"&gt;A&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;\12354&amp;quot;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;&lt;span class="ex"&gt;B&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-4" data-line-number="4"&gt;あ&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-5" data-line-number="5"&gt;&lt;span class="ex"&gt;a&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;適当にネストさせたい場合も簡単です。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Pretty&lt;/span&gt; &lt;span class="dt"&gt;B&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;  pretty (&lt;span class="dt"&gt;B&lt;/span&gt; l r) &lt;span class="fu"&gt;=&lt;/span&gt; nest &lt;span class="dv"&gt;4&lt;/span&gt; (&lt;span class="st"&gt;&amp;quot;B&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; line&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;                &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; pretty l &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; line&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;                &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; pretty r)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;./test.hs&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;&lt;span class="ex"&gt;A&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;\12354&amp;quot;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;a&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;&lt;span class="ex"&gt;B&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;    あ&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;    &lt;span class="ex"&gt;a&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;めちゃめちゃ簡単だったので、使ってみると楽しいですよー。ドキュメントが充実しているのが良いですね。&lt;/p&gt;
+&lt;p&gt;今回は短めでした。&lt;/p&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/HirotoShioi/items/39fc492401e4dcbc8cba</id><title type="text">Haskellにおける型レベルプログラミングの基本(翻訳)</title><updated>2018-03-29T14:57:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/HirotoShioi/items/39fc492401e4dcbc8cba"/></entry><entry><id>https://qiita.com/takehilo/items/7b65d32e47510cd1fe48</id><title type="text">とにかくすぐにHaskellを動かしたい人のためのHaskellインストール方法</title><updated>2018-03-28T18:55:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takehilo/items/7b65d32e47510cd1fe48"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-28-quiz-4.html</id><title type="text">Haskell Quiz No.4 幅優先探索と深さ優先探索</title><updated>2018-03-28T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-28-quiz-4.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.4"&gt;Haskell Quiz No.4&lt;/h2&gt;
 &lt;p&gt;難易度: λ&lt;/p&gt;
 &lt;p&gt;今回は、与えられた値がリストのリストに含まれているかどうかを判定する問題です。&lt;/p&gt;
 &lt;p&gt;幅優先で探索する関数 &lt;code&gt;bfs&lt;/code&gt; と深さ優先で探索する関数 &lt;code&gt;dfs&lt;/code&gt; をそれぞれ定義してみましょう。&lt;/p&gt;
@@ -14,7 +258,7 @@
 &lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;&lt;span class="ex"&gt;True&lt;/span&gt;&lt;/a&gt;
 &lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;&lt;span class="ex"&gt;*Quiz4&lt;/span&gt;&lt;span class="op"&gt;&amp;gt;&lt;/span&gt; dfs 9 xs&lt;/a&gt;
 &lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;&lt;span class="ex"&gt;.....&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;答えは次回。&lt;/p&gt;
+&lt;p&gt;答えは&lt;a href="03-31-quiz-5.html"&gt;次回&lt;/a&gt;。&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href="./03-27-quiz-3.html"&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
@@ -1564,290 +1808,7 @@ Building test suite &amp;#39;a-little-longer-name-project-test&amp;#39; for a-li
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/nobsun/items/b96d6532a94c7dd6e361</id><title type="text">Haskellプログラミング中のエラー記録</title><updated>2018-03-09T22:02:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/b96d6532a94c7dd6e361"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/8a8a78b637b03771c8d5</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 4/5</title><updated>2018-03-09T18:33:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/8a8a78b637b03771c8d5"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/085fa142b0591cb4cb2b</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 3/5</title><updated>2018-03-09T18:32:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/085fa142b0591cb4cb2b"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/f63c1be3ff07c3048aba</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 2/5</title><updated>2018-03-09T18:31:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/f63c1be3ff07c3048aba"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 5/5</title><updated>2018-03-09T18:14:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/02/11/185306</id><title type="text">HaskellでDiscordのBotを作る</title><updated>2018-03-09T13:45:13+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/02/11/185306"/><summary type="html">Discordはゲーミング向けのテキストチャットと音声通話を兼ねるプラットフォームであり、「テキストチャンネル」と「ボイスチャンネル」の二種を好きなだけ作ることができる。もちろん音声を全チャンネルに常時垂れ流すわけには行かないので、通話するにはボイスチャンネルに参加するという手順を踏む必要がある。しかし、例えば誰かがやっているゲームに混ざろうとしてボイスチャンネルに参加しても、チャンネル外のユーザーにはいかなる通知も発生しないため、気づかれないままのことがよくある。 そこで、ボイスチャンネルに参加したとき、テキストチャンネルにその旨を投稿するボットを用意すれば、気軽に通話の合図を送れる。全員に…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-07-The-wizard-monoid.html</id><title type="text">wizard モノイド</title><updated>2018-03-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-07-The-wizard-monoid.html"/><summary type="html">&lt;h2 id="wizard-モノイド-翻訳"&gt;wizard モノイド (翻訳)&lt;/h2&gt;
-&lt;p&gt;Original post: &lt;a href="http://www.haskellforall.com/2018/02/the-wizard-monoid.html"&gt;The wizard monoid&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;最近の GHC 8.0 は、&lt;code&gt;IO&lt;/code&gt; 用の &lt;code&gt;Monoid&lt;/code&gt; インスタンスを提供しています。このブログ記事では、組み合わせ可能な “wizard” を作りつつ、なぜこのインスタンスが便利なのかを示す例をお見せします。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h3 id="wizard"&gt;Wizard&lt;/h3&gt;
-&lt;p&gt;ここで使う “wizard” とは、ユーザーに複数の入力を促し、全ての入力が完了したら、いくつかのアクションを実行するようなプログラムです。&lt;/p&gt;
-&lt;p&gt;簡単な wizard の例です:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;    &lt;span class="co"&gt;-- First, we request all inputs:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your name?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;    name &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your age?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-8" data-line-number="8"&gt;    age &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-9" data-line-number="9"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-10" data-line-number="10"&gt;    &lt;span class="co"&gt;-- Then, we perform all actions:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-11" data-line-number="11"&gt;    putStrLn (&lt;span class="st"&gt;&amp;quot;Your name is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; name)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-12" data-line-number="12"&gt;    putStrLn (&lt;span class="st"&gt;&amp;quot;Your age is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; age)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;… 実行例:&lt;/p&gt;
-&lt;pre class="plain"&gt;&lt;code&gt;What is your name?
-Gabriel&amp;lt;Enter&amp;gt;
-What is your age?
-31&amp;lt;Enter&amp;gt;
-Your name is: Gabriel
-Your age is: 31&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;… それで、以下はもう少し複雑な wizard の例です:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="kw"&gt;qualified&lt;/span&gt; &lt;span class="dt"&gt;System.Directory&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-4" data-line-number="4"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-5" data-line-number="5"&gt;    &lt;span class="co"&gt;-- First, we request all inputs:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-6" data-line-number="6"&gt;    files &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; System.Directory.listDirectory &lt;span class="st"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-7" data-line-number="7"&gt;    &lt;span class="kw"&gt;let&lt;/span&gt; askFile file &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-8" data-line-number="8"&gt;            putStrLn (&lt;span class="st"&gt;&amp;quot;Would you like to delete &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; file &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;?&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-9" data-line-number="9"&gt;            response &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-10" data-line-number="10"&gt;            &lt;span class="kw"&gt;case&lt;/span&gt; response &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-11" data-line-number="11"&gt;                &lt;span class="st"&gt;&amp;quot;y&amp;quot;&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; return [file]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-12" data-line-number="12"&gt;                _   &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; return []&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-13" data-line-number="13"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-14" data-line-number="14"&gt;    listOfListOfFilesToRemove &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; mapM askFile files&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-15" data-line-number="15"&gt;    &lt;span class="kw"&gt;let&lt;/span&gt; listOfFilesToRemove &lt;span class="fu"&gt;=&lt;/span&gt; concat listOfListOfFilesToRemove&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-16" data-line-number="16"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-17" data-line-number="17"&gt;    &lt;span class="co"&gt;-- Then, we perform all actions:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-18" data-line-number="18"&gt;    &lt;span class="kw"&gt;let&lt;/span&gt; removeFile file &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-19" data-line-number="19"&gt;            putStrLn (&lt;span class="st"&gt;&amp;quot;Removing &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; file)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-20" data-line-number="20"&gt;            System.Directory.removeFile file&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-21" data-line-number="21"&gt;    mapM_ removeFile listOfFilesToRemove&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;… 実行例:&lt;/p&gt;
-&lt;pre class="plain"&gt;&lt;code&gt;Would you like to delete file1.txt?
-y&amp;lt;Enter&amp;gt;
-Would you like to delete file2.txt?
-n&amp;lt;Enter&amp;gt;
-Would you like to delete file3.txt?
-y&amp;lt;Enter&amp;gt;
-Removing file1.txt
-Removing file3.txt&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上に挙げた例では、ユーザーが要求された入力を全て入力し終えるまで、変更ができないアクションを実行するのは避けたいという要求があります。&lt;/p&gt;
-&lt;h3 id="モジュール性"&gt;モジュール性&lt;/h3&gt;
-&lt;p&gt;最初の例を見直してみましょう:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;    &lt;span class="co"&gt;-- First, we request all inputs:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-4" data-line-number="4"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your name?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-5" data-line-number="5"&gt;    name &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-7" data-line-number="7"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your age?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-8" data-line-number="8"&gt;    age &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-9" data-line-number="9"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-10" data-line-number="10"&gt;    &lt;span class="co"&gt;-- Then, we perform all actions:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-11" data-line-number="11"&gt;    putStrLn (&lt;span class="st"&gt;&amp;quot;Your name is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; name)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-12" data-line-number="12"&gt;    putStrLn (&lt;span class="st"&gt;&amp;quot;Your age is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; age)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;この例は、実質的には2つの独立した wizard を組み合わせています:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;最初の wizard はユーザーの名前を要求し、表示している&lt;/li&gt;
-&lt;li&gt;2つ目の wizard はユーザーの年齢を要求し、表示している&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;しかし、アクションを実行する前に全ての入力が必要だったので、2つの wizard のロジックをそれぞれ混ぜる必要がありました。&lt;/p&gt;
-&lt;p&gt;これら2つの wizard を別々に定義し、より大きな wizard に合体させる方法があったらどうでしょう? &lt;code&gt;IO&lt;/code&gt; の &lt;code&gt;Monoid&lt;/code&gt; インスタンスの長所を活かせば可能です。こんな感じ:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Monoid&lt;/span&gt; ((&amp;lt;&amp;gt;))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;&lt;span class="ot"&gt;name ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt;name &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-5" data-line-number="5"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your name?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-6" data-line-number="6"&gt;    x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-7" data-line-number="7"&gt;    return (putStrLn (&lt;span class="st"&gt;&amp;quot;Your name is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; x))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-8" data-line-number="8"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-9" data-line-number="9"&gt;&lt;span class="ot"&gt;age ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-10" data-line-number="10"&gt;age &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-11" data-line-number="11"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your age?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-12" data-line-number="12"&gt;    x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-13" data-line-number="13"&gt;    return (putStrLn (&lt;span class="st"&gt;&amp;quot;Your age is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; x))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-14" data-line-number="14"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-15" data-line-number="15"&gt;&lt;span class="ot"&gt;runWizard ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; a) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; a&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-16" data-line-number="16"&gt;runWizard request &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-17" data-line-number="17"&gt;    respond &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-18" data-line-number="18"&gt;    respond&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-19" data-line-number="19"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-20" data-line-number="20"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-21" data-line-number="21"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; runWizard (name &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; age)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このプログラムはさっきの例と完全に同じ動きをします。が、ユーザーの名前を扱うロジックは、ユーザーの年齢を扱うロジックと完全に分離されています。&lt;/p&gt;
-&lt;p&gt;この方法でうまくいくのは、それぞれの wizard を2つの部分に分けたからです:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;リクエストの部分 (ユーザーに入力を求める部分など)&lt;/li&gt;
-&lt;li&gt;レスポンスの部分 (その入力に応じたアクションを実行する部分など)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;… そしてそれぞれの wizard に &lt;code&gt;IO (IO ())&lt;/code&gt; という型を与えることによって、型レベルでこれを実現しています:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="ot"&gt;name ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-3" data-line-number="3"&gt;&lt;span class="ot"&gt;age ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;外側の &lt;code&gt;IO&lt;/code&gt; アクションは“リクエスト”です。リクエストが終了したとき、外側の &lt;code&gt;IO&lt;/code&gt; アクションは内側の &lt;code&gt;IO&lt;/code&gt; アクション、つまり“レスポンス”を返します。例えば:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="co"&gt;--      ↓ リクエスト&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="ot"&gt;name ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;&lt;span class="co"&gt;--          ↑ レスポンス&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-4" data-line-number="4"&gt;name &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-5" data-line-number="5"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your name?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-6" data-line-number="6"&gt;    x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-7" data-line-number="7"&gt;    &lt;span class="co"&gt;-- ↑ ここから上の部分全てが、外側の `IO` アクションの一部 (例えばリクエスト)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-8" data-line-number="8"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-9" data-line-number="9"&gt;    &lt;span class="co"&gt;--      ↓ この return される値は、内側の `IO` アクション (例えばレスポンス)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-10" data-line-number="10"&gt;    return (putStrLn (&lt;span class="st"&gt;&amp;quot;Your name is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; x))&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;wizard は &lt;code&gt;(&amp;lt;&amp;gt;)&lt;/code&gt; 演算子を使って組み合わせることができます。&lt;code&gt;IO&lt;/code&gt; アクションに限って言うなら、以下のような動作をします:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;ioLeft &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; ioRight&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;&lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt; resultLeft  &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; ioLeft&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;     resultRight &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; ioRight&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;     return (resultLeft &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; resultRight)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;言い換えるなら、&lt;code&gt;IO&lt;/code&gt; アクションを2つ組み合わせるということは、それぞれの &lt;code&gt;IO&lt;/code&gt; アクションを実行して結果を組み合わせるということなのです。これは、2つの &lt;code&gt;IO&lt;/code&gt; アクションをネストさせると、アクションを実行して結果を組み合わせるという処理を2回実行する、ということも示しています:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;requestLeft &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; requestRight&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;&lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt; respondLeft  &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; requestLeft&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;     respondRight &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; requestRight&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;     return (respondLeft &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; respondRight)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-7" data-line-number="7"&gt;&lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt; respondLeft  &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; requestLeft&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-8" data-line-number="8"&gt;     respondRight &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; requestRight&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-9" data-line-number="9"&gt;     return (&lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-10" data-line-number="10"&gt;         unitLeft  &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; respondLeft&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-11" data-line-number="11"&gt;         unitRight &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; respondRight&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-12" data-line-number="12"&gt;         return (unitLeft &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; unitRight) )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-13" data-line-number="13"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-14" data-line-number="14"&gt;&lt;span class="co"&gt;-- Both `unitLeft` and `unitRight` are `()` and `() &amp;lt;&amp;gt; () = ()`, so we can&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-15" data-line-number="15"&gt;&lt;span class="co"&gt;-- simplify this further to:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-16" data-line-number="16"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-17" data-line-number="17"&gt;&lt;span class="co"&gt;-- `unitLeft` も `unitRight` も `()` で、`() &amp;lt;&amp;gt; () = ()` なので、&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-18" data-line-number="18"&gt;&lt;span class="co"&gt;-- 以下のように簡約化することができます:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-19" data-line-number="19"&gt;&lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt; respondLeft  &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; requestLeft&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-20" data-line-number="20"&gt;     respondRight &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; requestRight&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-21" data-line-number="21"&gt;     return (&lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-22" data-line-number="22"&gt;         respondLeft&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-23" data-line-number="23"&gt;         respondRight )&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;つまり、2つの wizard を組み合わせると、リクエストを組み合わせてレスポンスも組み合わせたことになるのです。&lt;/p&gt;
-&lt;p&gt;この方法は2つ以上の wizard でもうまくいきます。例えば:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;request0 &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; request1 &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; request2 &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; request3&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-3" data-line-number="3"&gt;&lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt; respond0 &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request0&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-4" data-line-number="4"&gt;     respond1 &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request1&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-5" data-line-number="5"&gt;     respond2 &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request2&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-6" data-line-number="6"&gt;     respond3 &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request3&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-7" data-line-number="7"&gt;     return (&lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-8" data-line-number="8"&gt;         respond0&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-9" data-line-number="9"&gt;         respond1&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-10" data-line-number="10"&gt;         respond2&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-11" data-line-number="11"&gt;         respond3 )&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これをアクションの形で表現するために、さっきの例をもう一度見てみましょう:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Monoid&lt;/span&gt; ((&amp;lt;&amp;gt;))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-3" data-line-number="3"&gt;&lt;span class="ot"&gt;name ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-4" data-line-number="4"&gt;name &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-5" data-line-number="5"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your name?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-6" data-line-number="6"&gt;    x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-7" data-line-number="7"&gt;    return (putStrLn (&lt;span class="st"&gt;&amp;quot;Your name is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; x))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-8" data-line-number="8"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-9" data-line-number="9"&gt;&lt;span class="ot"&gt;age ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-10" data-line-number="10"&gt;age &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-11" data-line-number="11"&gt;    putStrLn &lt;span class="st"&gt;&amp;quot;What is your age?&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-12" data-line-number="12"&gt;    x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-13" data-line-number="13"&gt;    return (putStrLn (&lt;span class="st"&gt;&amp;quot;Your age is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; x))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-14" data-line-number="14"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-15" data-line-number="15"&gt;&lt;span class="ot"&gt;runWizard ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; a) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; a&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-16" data-line-number="16"&gt;runWizard request &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-17" data-line-number="17"&gt;    respond &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-18" data-line-number="18"&gt;    respond&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-19" data-line-number="19"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-20" data-line-number="20"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-21" data-line-number="21"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; runWizard (name &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; age)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;…&lt;code&gt;name&lt;/code&gt; と &lt;code&gt;age&lt;/code&gt; はかなり似ているので、共通の関数を使うような実装にすることができますね:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb13"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb13-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Monoid&lt;/span&gt; ((&amp;lt;&amp;gt;))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-3" data-line-number="3"&gt;&lt;span class="ot"&gt;prompt ::&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-4" data-line-number="4"&gt;prompt attribute &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-5" data-line-number="5"&gt;    putStrLn (&lt;span class="st"&gt;&amp;quot;What is your &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; attribute &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;?&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-6" data-line-number="6"&gt;    x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-7" data-line-number="7"&gt;    return (putStrLn (&lt;span class="st"&gt;&amp;quot;Your &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; attribute &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot; is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; x))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-8" data-line-number="8"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-9" data-line-number="9"&gt;&lt;span class="ot"&gt;runWizard ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; a) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; a&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-10" data-line-number="10"&gt;runWizard request &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-11" data-line-number="11"&gt;    respond &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-12" data-line-number="12"&gt;    respond&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-13" data-line-number="13"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-14" data-line-number="14"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-15" data-line-number="15"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; runWizard (prompt &lt;span class="st"&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; prompt &lt;span class="st"&gt;&amp;quot;age&amp;quot;&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;2つの wizard のロジックが混ざっていたとき、この共通化のロジックを使うことはできませんでした。しかしロジック毎に別々の wizard に分割すると、プログラムを小さくするための共通構造を突くことができます。&lt;/p&gt;
-&lt;p&gt;このプログラムの圧縮によって、簡単に新しい wizard を追加することができます:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Monoid&lt;/span&gt; ((&amp;lt;&amp;gt;))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-3" data-line-number="3"&gt;&lt;span class="ot"&gt;prompt ::&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-4" data-line-number="4"&gt;prompt attribute &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-5" data-line-number="5"&gt;    putStrLn (&lt;span class="st"&gt;&amp;quot;What is your &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; attribute &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;?&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-6" data-line-number="6"&gt;    x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-7" data-line-number="7"&gt;    return (putStrLn (&lt;span class="st"&gt;&amp;quot;Your &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; attribute &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot; is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; x))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-8" data-line-number="8"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-9" data-line-number="9"&gt;&lt;span class="ot"&gt;runWizard ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; a) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; a&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-10" data-line-number="10"&gt;runWizard request &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-11" data-line-number="11"&gt;    respond &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-12" data-line-number="12"&gt;    respond&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-13" data-line-number="13"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-14" data-line-number="14"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-15" data-line-number="15"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; runWizard (prompt &lt;span class="st"&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; prompt &lt;span class="st"&gt;&amp;quot;age&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; prompt &lt;span class="st"&gt;&amp;quot;favorite color&amp;quot;&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;… そして、モノイド関連の標準ライブラリ関数を活用しましょう。例えば &lt;code&gt;foldMap&lt;/code&gt; を使えば wizard を大量に作ることができます。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb15"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb15-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Monoid&lt;/span&gt; ((&amp;lt;&amp;gt;))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-3" data-line-number="3"&gt;&lt;span class="ot"&gt;prompt ::&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-4" data-line-number="4"&gt;prompt attribute &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-5" data-line-number="5"&gt;    putStrLn (&lt;span class="st"&gt;&amp;quot;What is your &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; attribute &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;?&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-6" data-line-number="6"&gt;    x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-7" data-line-number="7"&gt;    return (putStrLn (&lt;span class="st"&gt;&amp;quot;Your &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; attribute &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot; is: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; x))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-8" data-line-number="8"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-9" data-line-number="9"&gt;&lt;span class="ot"&gt;runWizard ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; a) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; a&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-10" data-line-number="10"&gt;runWizard request &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-11" data-line-number="11"&gt;    respond &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-12" data-line-number="12"&gt;    respond&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-13" data-line-number="13"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-14" data-line-number="14"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-15" data-line-number="15"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; runWizard (foldMap prompt [ &lt;span class="st"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;, &lt;span class="st"&gt;&amp;quot;age&amp;quot;&lt;/span&gt;, &lt;span class="st"&gt;&amp;quot;favorite color&amp;quot;&lt;/span&gt;, &lt;span class="st"&gt;&amp;quot;sign&amp;quot;&lt;/span&gt; ])&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;より重要なのは、プログラムが何をしているのか一目瞭然になりました。読みやすさは書きやすさに比べ、大きな美徳です。&lt;/p&gt;
-&lt;h3 id="最後の例"&gt;最後の例&lt;/h3&gt;
-&lt;p&gt;ファイル削除の例も同じ観点から見直してみましょう:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb16"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb16-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="kw"&gt;qualified&lt;/span&gt; &lt;span class="dt"&gt;System.Directory&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-3" data-line-number="3"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-4" data-line-number="4"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-5" data-line-number="5"&gt;    &lt;span class="co"&gt;-- 最初に全ての入力をリクエストする:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-6" data-line-number="6"&gt;    files &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; System.Directory.listDirectory &lt;span class="st"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-7" data-line-number="7"&gt;    &lt;span class="kw"&gt;let&lt;/span&gt; askFile file &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-8" data-line-number="8"&gt;            putStrLn (&lt;span class="st"&gt;&amp;quot;Would you like to delete &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; file &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;?&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-9" data-line-number="9"&gt;            response &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-10" data-line-number="10"&gt;            &lt;span class="kw"&gt;case&lt;/span&gt; response &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-11" data-line-number="11"&gt;                &lt;span class="st"&gt;&amp;quot;y&amp;quot;&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; return [file]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-12" data-line-number="12"&gt;                _   &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; return []&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-13" data-line-number="13"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-14" data-line-number="14"&gt;    listOfListOfFilesToRemove &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; mapM askFile files&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-15" data-line-number="15"&gt;    &lt;span class="kw"&gt;let&lt;/span&gt; listOfFilesToRemove &lt;span class="fu"&gt;=&lt;/span&gt; concat listOfListOfFilesToRemove&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-16" data-line-number="16"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-17" data-line-number="17"&gt;    &lt;span class="co"&gt;-- 次に全てのアクションを実行する&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-18" data-line-number="18"&gt;    &lt;span class="kw"&gt;let&lt;/span&gt; removeFile file &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-19" data-line-number="19"&gt;            putStrLn (&lt;span class="st"&gt;&amp;quot;Removing &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; file)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-20" data-line-number="20"&gt;            System.Directory.removeFile file&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-21" data-line-number="21"&gt;    mapM_ removeFile listOfFilesToRemove&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;さっきと同じパターンで、シンプルにすることができます:&lt;/p&gt;
-&lt;div class="sourceCode" id="cb17"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb17-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="kw"&gt;qualified&lt;/span&gt; &lt;span class="dt"&gt;System.Directory&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-3" data-line-number="3"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-4" data-line-number="4"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-5" data-line-number="5"&gt;    files &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; System.Directory.listDirectory &lt;span class="st"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-6" data-line-number="6"&gt;    runWizard (foldMap prompt files)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-7" data-line-number="7"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-8" data-line-number="8"&gt;&lt;span class="ot"&gt;prompt ::&lt;/span&gt; FilePath &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-9" data-line-number="9"&gt;prompt file &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-10" data-line-number="10"&gt;    putStrLn (&lt;span class="st"&gt;&amp;quot;Would you like to delete &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; file &lt;span class="fu"&gt;++&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;?&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-11" data-line-number="11"&gt;    response &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-12" data-line-number="12"&gt;    &lt;span class="kw"&gt;case&lt;/span&gt; response &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-13" data-line-number="13"&gt;        &lt;span class="st"&gt;&amp;quot;y&amp;quot;&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; return (&lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-14" data-line-number="14"&gt;            putStrLn (&lt;span class="st"&gt;&amp;quot;Removing &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;++&lt;/span&gt; file)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-15" data-line-number="15"&gt;            System.Directory.removeFile file )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-16" data-line-number="16"&gt;        _   &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; return (return ())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-17" data-line-number="17"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-18" data-line-number="18"&gt;&lt;span class="ot"&gt;runWizard ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; (&lt;span class="dt"&gt;IO&lt;/span&gt; a) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; a&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-19" data-line-number="19"&gt;runWizard request &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-20" data-line-number="20"&gt;    respond &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; request&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-21" data-line-number="21"&gt;    respond&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;やるべきなのは、1つのファイルに対して処理を行う wizard を定義すること、そして &lt;code&gt;foldMap&lt;/code&gt; を使って wizard を大量に生成することだけです。&lt;code&gt;IO&lt;/code&gt; の &lt;code&gt;Monoid&lt;/code&gt; インスタンスは、全てのリクエストを束ねて表示し、後で選択したファイルを削除してくれます。&lt;/p&gt;
-&lt;h3 id="結論"&gt;結論&lt;/h3&gt;
-&lt;p&gt;ユーザーが望む wizard の全てにこのパターンが適用できるわけではありません。例えば、wizard が互いに依存しているような状況では、このパターンはすぐに使い物にならなくなります。しかし、このパターンは &lt;code&gt;Monoid&lt;/code&gt; の &lt;code&gt;IO&lt;/code&gt; インスタンスを他の &lt;code&gt;Monoid&lt;/code&gt; のインスタンスと (もしくは自分自身と!) 連結させ、新しい動作を生成するような一例にはなっています。&lt;/p&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-03-04-fix-tasty-discover-windows.html</id><title type="text">tasty-discover が Windows+日本語環境で動かなかったので直す</title><updated>2018-03-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-03-04-fix-tasty-discover-windows.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+</summary></entry><entry><id>https://qiita.com/nobsun/items/b96d6532a94c7dd6e361</id><title type="text">Haskellプログラミング中のエラー記録</title><updated>2018-03-09T22:02:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/b96d6532a94c7dd6e361"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/8a8a78b637b03771c8d5</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 4/5</title><updated>2018-03-09T18:33:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/8a8a78b637b03771c8d5"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/085fa142b0591cb4cb2b</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 3/5</title><updated>2018-03-09T18:32:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/085fa142b0591cb4cb2b"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/f63c1be3ff07c3048aba</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 2/5</title><updated>2018-03-09T18:31:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/f63c1be3ff07c3048aba"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 5/5</title><updated>2018-03-09T18:14:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/02/11/185306</id><title type="text">HaskellでDiscordのBotを作る</title><updated>2018-03-09T13:45:13+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/02/11/185306"/><summary type="html">Discordはゲーミング向けのテキストチャットと音声通話を兼ねるプラットフォームであり、「テキストチャンネル」と「ボイスチャンネル」の二種を好きなだけ作ることができる。もちろん音声を全チャンネルに常時垂れ流すわけには行かないので、通話するにはボイスチャンネルに参加するという手順を踏む必要がある。しかし、例えば誰かがやっているゲームに混ざろうとしてボイスチャンネルに参加しても、チャンネル外のユーザーにはいかなる通知も発生しないため、気づかれないままのことがよくある。 そこで、ボイスチャンネルに参加したとき、テキストチャンネルにその旨を投稿するボットを用意すれば、気軽に通話の合図を送れる。全員に…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-03-04-fix-tasty-discover-windows.html</id><title type="text">tasty-discover が Windows+日本語環境で動かなかったので直す</title><updated>2018-03-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-03-04-fix-tasty-discover-windows.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;tasty-discover が Windows+日本語環境で動かなかったので直す&lt;/h1&gt;
@@ -1919,298 +1880,7 @@ ghc.EXE: could not execute: tasty-discover&lt;/code&gt;&lt;/pre&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
-</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-03-liquidhaskell-intro.html</id><title type="text">Liquid Haskell のインストールと学習方法</title><updated>2018-03-03T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-03-liquidhaskell-intro.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Liquid Haskell&lt;/code&gt; を半年ほど勉強した結果、色々と出来ることが増えて楽しくなってきました。&lt;/p&gt;
-&lt;p&gt;現状、日本語で詳しく説明しているブログ記事や &lt;code&gt;Qiita&lt;/code&gt; 記事はほとんどありません。&lt;/p&gt;
-&lt;p&gt;とても面白いツールだと思いますので、色々と紹介していけたらと思います。&lt;/p&gt;
-&lt;p&gt;今回は &lt;code&gt;Liquid Haskell&lt;/code&gt; の導入方法について簡単に説明したいと思います。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id="liquid-haskell-とは"&gt;Liquid Haskell とは？&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Liquid Haskell&lt;/code&gt; は &lt;code&gt;GHC&lt;/code&gt; の型よりも、さらに厳密な &lt;code&gt;篩型 (Refinement Type)&lt;/code&gt; の型検査器です。&lt;/p&gt;
-&lt;p&gt;既存のコードを変更 (さらには実行すら) することなく利用できるため、既存のプロジェクトの一部にだけ導入することも可能です。&lt;/p&gt;
-&lt;p&gt;また、つい最近も &lt;code&gt;GADT&lt;/code&gt; をサポートしたりと、開発はとても活発に行われています。&lt;/p&gt;
-&lt;p&gt;正しいソフトウェアを楽しく作るために、&lt;code&gt;Liquid Haskell&lt;/code&gt; を学習してみるのはどうでしょうか！&lt;/p&gt;
-&lt;p&gt;ちなみに &lt;code&gt;Liquid&lt;/code&gt; という単語は &lt;code&gt;液体&lt;/code&gt; と言いたくなりますが、それとはあまり関係なく、実際は &lt;code&gt;Logically Qualified Data&lt;/code&gt; の略です。(ロゴは &lt;code&gt;水滴&lt;/code&gt; + &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; なので、全く無関係では無いかもですが)&lt;/p&gt;
-&lt;h2 id="インストール"&gt;インストール&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Liquid Haskell&lt;/code&gt; は以下の2つのリポジトリで開発が進められています。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/ucsd-progsys/liquidhaskell"&gt;ucsd-progsys/liquidhaskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/ucsd-progsys/liquid-fixpoint"&gt;ucsd-progsys/liquid-fixpoint&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;liquidhaskell&lt;/code&gt; がフロントエンド (コマンドライン処理やパーサーなどの処理等) を行い &lt;code&gt;liquid-fixpoint&lt;/code&gt; が &lt;code&gt;SMT&lt;/code&gt; ソルバに投げるための処理を色々とやっている印象です。(詳しくないので間違ってたらすみません)&lt;/p&gt;
-&lt;p&gt;なので、僕らが関係するのは基本的に &lt;code&gt;liquidhaskell&lt;/code&gt; リポジトリの方です。(&lt;code&gt;liquid-fixpoint&lt;/code&gt; はサブモジュールになっています)&lt;/p&gt;
-&lt;p&gt;また、実際にチェックを行うのは &lt;code&gt;SMT&lt;/code&gt; ソルバなので、そちらも同様にインストールが必要です。&lt;/p&gt;
-&lt;h3 id="smt-ソルバのインストール"&gt;SMT ソルバのインストール&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;SMT&lt;/code&gt; ソルバも色々と種類があるようで、公式では以下の3種類が紹介されています。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Z3&lt;/li&gt;
-&lt;li&gt;CVC4&lt;/li&gt;
-&lt;li&gt;MathSat&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;どれでもちゃんと動くので好きなソルバを使えば良いのですが、どれを選んだら良いかわからない人は &lt;code&gt;Z3&lt;/code&gt; にしましょう。&lt;/p&gt;
-&lt;p&gt;理由としてはインストール方法が簡単で、性能も良いそうです。&lt;/p&gt;
-&lt;h4 id="ubuntu"&gt;Ubuntu&lt;/h4&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ sudo apt install z3
-
-$ z3 --version
-Z3 version 4.4.1&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id="mac-brew"&gt;Mac (brew)&lt;/h4&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ brew install z3
-
-$ z3 --version
-Z3 version 4.6.0 - 64 bit&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="liquid-haskell-のインストール"&gt;Liquid Haskell のインストール&lt;/h3&gt;
-&lt;p&gt;現状、一番安定しているのは &lt;code&gt;github&lt;/code&gt; の &lt;a href="https://github.com/ucsd-progsys/liquidhaskell"&gt;&lt;strong&gt;develop&lt;/strong&gt;&lt;/a&gt; ブランチを &lt;code&gt;stack&lt;/code&gt; でビルドしてインストールする方法だと思います。&lt;/p&gt;
-&lt;p&gt;また、その他のインストール方法等は &lt;a href="https://github.com/ucsd-progsys/liquidhaskell/blob/develop/INSTALL.md"&gt;INSTALL.md&lt;/a&gt; をご参照下さい。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ git clone --recursive git@github.com:ucsd-progsys/liquidhaskell.git
-$ cd liquidhaskell
-$ stack install
-
-$ liquid
-LiquidHaskell Version 0.8.2.4, Git revision d641244775cd842776cecf2c5d3e9afa01549e76 (dirty)
-Copyright 2013-18 Regents of the University of California. All Rights Reserved.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;stack プロジェクトで利用する場合は、以下のように &lt;code&gt;stack exec&lt;/code&gt; コマンドで呼び出します。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack exec -- liquid
-LiquidHaskell Version 0.8.2.4, Git revision d641244775cd842776cecf2c5d3e9afa01549e76 (dirty)
-Copyright 2013-18 Regents of the University of California. All Rights Reserved.&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="サンプルプログラム"&gt;サンプルプログラム&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;myDiv&lt;/code&gt; 関数の例を使って &lt;code&gt;LiquidHaskell&lt;/code&gt; に慣れましょう！&lt;/p&gt;
-&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="co"&gt;-- MyDiv.hs&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;MyDiv&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-4" data-line-number="4"&gt;&lt;span class="ot"&gt;myDiv ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-5" data-line-number="5"&gt;myDiv &lt;span class="fu"&gt;=&lt;/span&gt; div&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;myDiv&lt;/code&gt; の実装は単に &lt;code&gt;div&lt;/code&gt; をラップしただけです。&lt;/p&gt;
-&lt;p&gt;この関数はだいたい上手く動きますが、もし第二引数に &lt;strong&gt;0&lt;/strong&gt; が与えられたらどうでしょうか？そう、実行時エラーになります・・・。試してみましょう。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack repl -- MyDiv.hs
-*MyDiv&amp;gt; myDiv 10 2
-5
-*MyDiv&amp;gt; myDiv 10 0
-*** Exception: divide by zero&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;全然安全ではありませんね。&lt;/p&gt;
-&lt;p&gt;では、どうしたら本当に安全な &lt;code&gt;myDiv&lt;/code&gt; を作れるのでしょうか？&lt;/p&gt;
-&lt;p&gt;その答えは&lt;code&gt;篩(ふるい)型&lt;/code&gt;にあります。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Liquid Haskell&lt;/code&gt; では &lt;code&gt;篩型&lt;/code&gt; を &lt;code&gt;{-@ ... @-}&lt;/code&gt; のコメント形式で記述します。&lt;code&gt;Liquid Haskell&lt;/code&gt; を利用するメリットの1つは、篩型の自動推論です。(推論できない場合も多々ありますが、結構色々と推論してくれます)&lt;/p&gt;
-&lt;p&gt;先程の &lt;code&gt;myDiv&lt;/code&gt; には篩型を書いていませんが、こういう場合に &lt;code&gt;Liquid Haskell&lt;/code&gt; は &lt;code&gt;Haskell&lt;/code&gt; の型をそのまま篩型として利用します。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;myDiv&lt;/code&gt; に対して明示的に篩型を書いてみましょう！&lt;/p&gt;
-&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ myDiv :: Int -&amp;gt; Int -&amp;gt; Int @-}&lt;/span&gt; &lt;span class="co"&gt;-- これが篩型&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;&lt;span class="ot"&gt;myDiv ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-3" data-line-number="3"&gt;myDiv &lt;span class="fu"&gt;=&lt;/span&gt; div&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;この &lt;code&gt;myDiv&lt;/code&gt; 関数を &lt;code&gt;LquidHaskell&lt;/code&gt; でチェックしてみましょう。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ liquid MyDiv.hs
-**** RESULT: UNSAFE ************************************************************
-
- MyDiv.hs:4:11-13: Error: Liquid Type Mismatch
-
- 4 | myDiv = div
-             ^^^
-
-   Inferred type
-     VV : Int
-
-   not a subtype of Required type
-     VV : {VV : Int | VV /= 0}
-
-   In Context&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;なぜか &lt;code&gt;UNSAFE&lt;/code&gt; が表示されましたね。これは &lt;code&gt;Liquid Haskell&lt;/code&gt; で既に &lt;code&gt;div&lt;/code&gt; の篩型が定義されているからです。(&lt;a href="https://github.com/ucsd-progsys/liquidhaskell/blob/develop/include/GHC/Real.spec#L19"&gt;div&lt;/a&gt; 以外にも色々ありますが、充実しているとは言い難いと思います)&lt;/p&gt;
-&lt;p&gt;だいたいこんな感じで、第二引数に &lt;strong&gt;0を含まないInt型&lt;/strong&gt; という事前条件がついているのです。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ div :: Int -&amp;gt; {v:Int | v /= 0} -&amp;gt; Int @-}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;そのため、先程のエラーメッセージで以下のように指摘されてしまったのです。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;not a subtype of Required type
-     VV : {VV : Int | VV /= 0}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;つまり、僕らの定義した篩型は &lt;code&gt;0&lt;/code&gt; を含む &lt;code&gt;Int&lt;/code&gt; 型なので、このままだと &lt;code&gt;div&lt;/code&gt; に &lt;code&gt;0&lt;/code&gt; が与えられてしまう可能性があるよ！ということを教えてくれています。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ myDiv :: Int -&amp;gt; Int -&amp;gt; Int @-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;&lt;span class="ot"&gt;myDiv ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-3" data-line-number="3"&gt;myDiv &lt;span class="fu"&gt;=&lt;/span&gt; div&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;myDiv&lt;/code&gt; にも同じ篩型をつけてみましょう。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ myDiv :: Int -&amp;gt; {v:Int | v /= 0} -&amp;gt; Int @-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;&lt;span class="ot"&gt;myDiv ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-3" data-line-number="3"&gt;myDiv &lt;span class="fu"&gt;=&lt;/span&gt; div&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これで &lt;code&gt;SAFE&lt;/code&gt; になります。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ liquid MyDiv.hs
-**** RESULT: SAFE **************************************************************&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;0&lt;/code&gt; を含まない &lt;code&gt;Int&lt;/code&gt; 型というのは、よく使いそうなので篩型のエイリアスとして定義してみます。&lt;/p&gt;
-&lt;p&gt;篩型のエイリアスは &lt;code&gt;type&lt;/code&gt; キーワードを使います。&lt;code&gt;Haskell&lt;/code&gt; と同じですね。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ type NonZero = {v:Int | v /= 0} @-}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;そして &lt;code&gt;myDiv&lt;/code&gt; の篩型も &lt;code&gt;NonZero&lt;/code&gt; で置き換えます。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb15"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb15-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ type NonZero = {v:Int | v /= 0} @-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-3" data-line-number="3"&gt;&lt;span class="co"&gt;{-@ myDiv :: Int -&amp;gt; NonZero -&amp;gt; Int @-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-4" data-line-number="4"&gt;&lt;span class="ot"&gt;myDiv ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-5" data-line-number="5"&gt;myDiv &lt;span class="fu"&gt;=&lt;/span&gt; div&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;意味は全く同じですが、先程よりもわかりやすくなりました。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ liquid MyDiv.hs
-**** RESULT: SAFE **************************************************************&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;最後に &lt;code&gt;myDiv&lt;/code&gt; を呼び出す関数を定義してみましょう。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;good&lt;/code&gt; は問題の無い使い方です。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb17"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb17-1" data-line-number="1"&gt;&lt;span class="ot"&gt;good ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-2" data-line-number="2"&gt;good &lt;span class="fu"&gt;=&lt;/span&gt; myDiv &lt;span class="dv"&gt;10&lt;/span&gt; &lt;span class="dv"&gt;2&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;しかし、以下のような関数 &lt;code&gt;bad&lt;/code&gt; が定義された場合、&lt;code&gt;Liquid Haskell&lt;/code&gt; は &lt;code&gt;UNSAFE&lt;/code&gt; を返します。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb18"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb18-1" data-line-number="1"&gt;&lt;span class="ot"&gt;bad ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb18-2" data-line-number="2"&gt;bad &lt;span class="fu"&gt;=&lt;/span&gt; myDiv &lt;span class="dv"&gt;10&lt;/span&gt; &lt;span class="dv"&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ liquid MyDiv.hs
-**** RESULT: UNSAFE ************************************************************
-
- MyDiv.hs:13:7-16: Error: Liquid Type Mismatch
-
- 13 | bad = myDiv 10 0
-            ^^^^^^^^^^
-
-   Inferred type
-     VV : {v : Int | v == (0 : int)
-                     &amp;amp;&amp;amp; v == ?a}
-
-   not a subtype of Required type
-     VV : {VV : Int | VV /= 0}
-
-   In Context
-     ?a : {?a : Int | ?a == (0 : int)}&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="問題"&gt;問題&lt;/h2&gt;
-&lt;p&gt;以下のプログラムは標準入力から入力された数 &lt;code&gt;n&lt;/code&gt;, &lt;code&gt;m&lt;/code&gt; で &lt;code&gt;safeDiv n m&lt;/code&gt; を計算します。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;safeDiv&lt;/code&gt; の &lt;code&gt;check&lt;/code&gt; を正しく実装して &lt;code&gt;Liquid Haskell&lt;/code&gt; の結果を &lt;code&gt;SAFE&lt;/code&gt; にしてみましょう。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb20"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb20-1" data-line-number="1"&gt;&lt;span class="co"&gt;-- Main.hs&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-2" data-line-number="2"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Main&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-4" data-line-number="4"&gt;&lt;span class="co"&gt;{-@ type NonZero = {v:Int | v /= 0} @-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-5" data-line-number="5"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-6" data-line-number="6"&gt;&lt;span class="co"&gt;{-@ myDiv :: Int -&amp;gt; NonZero -&amp;gt; Int @-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-7" data-line-number="7"&gt;&lt;span class="ot"&gt;myDiv ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-8" data-line-number="8"&gt;myDiv &lt;span class="fu"&gt;=&lt;/span&gt; div&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-9" data-line-number="9"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-10" data-line-number="10"&gt;&lt;span class="co"&gt;{-@ lazy main @-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-11" data-line-number="11"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-12" data-line-number="12"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-13" data-line-number="13"&gt;  n &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-14" data-line-number="14"&gt;  m &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getLine&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-15" data-line-number="15"&gt;  &lt;span class="kw"&gt;case&lt;/span&gt; safeDiv (read n) (read m) &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-16" data-line-number="16"&gt;    &lt;span class="dt"&gt;Just&lt;/span&gt; res &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; print res&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-17" data-line-number="17"&gt;    &lt;span class="dt"&gt;Nothing&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-18" data-line-number="18"&gt;      putStrLn &lt;span class="st"&gt;&amp;quot;第二引数に0が入力されています&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-19" data-line-number="19"&gt;      putStrLn &lt;span class="st"&gt;&amp;quot;もう一度入力してください&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-20" data-line-number="20"&gt;      main&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-21" data-line-number="21"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-22" data-line-number="22"&gt;&lt;span class="co"&gt;{-@ safeDiv :: Int -&amp;gt; Int -&amp;gt; Maybe Int @-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-23" data-line-number="23"&gt;&lt;span class="ot"&gt;safeDiv ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Maybe&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-24" data-line-number="24"&gt;safeDiv n m&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-25" data-line-number="25"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; check     &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Just&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; div n m&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-26" data-line-number="26"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; otherwise &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Nothing&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-27" data-line-number="27"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb20-28" data-line-number="28"&gt;   check &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;True&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Hint: &lt;code&gt;div&lt;/code&gt; に &lt;code&gt;0&lt;/code&gt; を通さないよう &lt;code&gt;check&lt;/code&gt; でバリデーションすれば良いです。&lt;/p&gt;
-&lt;h3 id="エラーメッセージ"&gt;エラーメッセージ&lt;/h3&gt;
-&lt;p&gt;現状では、&lt;code&gt;Liquid Haskell&lt;/code&gt; は以下のエラーメッセージを返します。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ liquid Main.hs
-**** RESULT: UNSAFE ************************************************************
-
- Main.hs:24:24-30: Error: Liquid Type Mismatch
-
- 24 |   | check     = Just $ div n m
-                             ^^^^^^^
-
-   Inferred type
-     VV : {v : Int | v == m}
-
-   not a subtype of Required type
-     VV : {VV : Int | VV /= 0}
-
-   In Context
-     m : Int&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="実行例"&gt;実行例&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Liquid Haskell&lt;/code&gt; が &lt;code&gt;UNSAFE&lt;/code&gt; の場合は実行時エラーが発生します。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack repl -- Main.hs
-*Main&amp;gt; main
-10
-2
-5
-
-*Main&amp;gt; main
-10
-0
-*** Exception: divide by zero&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;Liquid Haskell&lt;/code&gt; を &lt;code&gt;SAFE&lt;/code&gt; にすると、再入力を促すようになります。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;*Main&amp;gt; main
-10
-0
-第二引数に0が入力されています
-もう一度入力してください
-10
-2
-5&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="興味を持った方へ"&gt;興味を持った方へ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Liquid Haskell&lt;/code&gt; に興味を持った方は以下の文献を読んで &lt;code&gt;Liquid Haskell&lt;/code&gt; に詳しくなりましょう！(個人的にまとめているやつを貼り付けただけなので雑ですみません・・・)&lt;/p&gt;
-&lt;p&gt;たぶん、おすすめは以下のチュートリアルです。(僕はまだ読んでないですが、かなり最近できたものなので情報が新しく良いのではないかと思います)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://liquid.kosmikus.org/"&gt;Liquid Haskell Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="日本語の情報"&gt;日本語の情報&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://ccvanishing.hateblo.jp/entry/2016/12/24/193038"&gt;LiquidHaskell コトハジメ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://dodgsonlabs.booth.pm/items/490689"&gt;入門 LiquidHaskell −篩型による静的コード解析−&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://demand-side-science.jp/blog/2014/flops2014%E5%A0%B1%E5%91%8A/"&gt;FLOPS2014報告&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="ブログ"&gt;ブログ&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ucsd-progsys.github.io/liquidhaskell-blog/"&gt;liquidhaskell-blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.haskellforall.com/2015/12/compile-time-memory-safety-using-liquid.html"&gt;Compile-time memory safety using Liquid Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://conscientiousprogrammer.com/blog/2015/12/23/24-days-of-hackage-2015-day-23-liquid-haskell-refinement-types-for-the-real-world/"&gt;Liquid Haskell: refinement types for the real world&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="チュートリアル"&gt;チュートリアル&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://liquid.kosmikus.org/"&gt;Liquid Haskell Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/ucsd-progsys/liquidhaskell-tutorial"&gt;liquidhaskell-tutorial&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;long tutorial&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://ucsd-progsys.github.io/liquidhaskell-tutorial/book.pdf"&gt;book&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/ucsd-progsys/liquidhaskell-tutorial/blob/master/pdf/programming-with-refinement-types.pdf"&gt;programming-with-refinement-types.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/ucsd-progsys/lh-workshop"&gt;lh-workshop&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;short tutorial&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~nvazou/presentations/shonan17/01-index.html"&gt;Liquid Haskell: Verification of Haskell Code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="スライド"&gt;スライド&lt;/h3&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/flops14/lhs/00_Index.lhs.slides.html#/"&gt;Liquid Types For Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/flops14/lhs/01_SimpleRefinements.lhs.slides.html#/"&gt;Simple Refinement Types&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/flops14/lhs/02_Measures.lhs.slides.html#/"&gt;Measuring Data Types&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/flops14/lhs/03_HigherOrderFunctions.lhs.slides.html#/"&gt;Higher-Order Specifications&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/flops14/lhs/04_AbstractRefinements.lhs.slides.html#/"&gt;Abstract Refinements&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/flops14/lhs/09_Laziness.lhs.slides.html#/"&gt;Lazy Evaluation?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/flops14/lhs/10_Termination.lhs.slides.html#/"&gt;Refinements &amp;amp; Termination&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/flops14/lhs/11_Evaluation.lhs.slides.html#/"&gt;Evaluation&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://web.eecs.umich.edu/~weimerw/students/anish-ms-pres.pdf"&gt;Finding and Fixing Bugs in Liquid Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/Gabriel439/slides/blob/master/liquidhaskell/slides.md"&gt;Scrap your Bounds Checks with Liquid Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://nikivazou.github.io/static/popl18/reflection.pdf"&gt;Refinement Reflection: Complete Verification with SMT&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://popl18.sigplan.org/event/plmw-popl-2018-liquidhaskell-overview"&gt;Liquid Haskell: Refinement Types for Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="論文"&gt;論文&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~pmr/papers/rondon-liquid-types.pdf"&gt;Pat Rondon’s Ph.D Dissertation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/liquid/liquid_types_techrep.pdf"&gt;Tech Report&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/papers/refinement_types_for_haskell.pdf"&gt;Refinement Types For Haskell, ICFP 2014&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/papers/real_world_liquid.pdf"&gt;LiquidHaskell in the Real World, Haskell 2014&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~rjhala/papers/abstract_refinement_types.pdf"&gt;Abstract Refinement Types, ESOP 2013&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://arxiv.org/pdf/1701.03320.pdf"&gt;An Introduction to Liquid Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://goto.ucsd.edu/~nvazou/thesis/main.pdf"&gt;Liquid Haskell: Haskell as a Theorem Prover&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://nikivazou.github.io/static/Haskell17/a-tale.pdf"&gt;A Tale of Two Provers Verifying Monoidal String Matching in Liquid Haskell and Coq&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="youtube"&gt;Youtube&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=LEsEME7JwEE"&gt;Liquid Types for Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=vYh27zz9530"&gt;Ranjit Jhala - Liquid Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=vQrutfPAERQ"&gt;LambdaConf 2015 - LiquidHaskell Refinement Types for Haskell Ranjit Jhala&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=vqvNQixKr6w"&gt;Haskell 2014: LiquidHaskell: Refinement Types for the Real World, Eric L. Seidel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=nd3buP97Ryw"&gt;07 Bounded Refinement Types&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;篩型は &lt;code&gt;{-@ ... @-}&lt;/code&gt; で記述する&lt;/li&gt;
-&lt;li&gt;篩型の型エイリアスは &lt;code&gt;{-@ type @-}&lt;/code&gt; で記述する&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2017/12/23/082635</id><title type="text">猫でもわかる rkt + Kubernetes</title><updated>2018-02-28T00:36:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2017/12/23/082635"/><summary type="html">このエントリは Kubernetes Advent Calendar 2017 の 23 日目の記事です。ちなみに昨日は takezaki さんの「GCBを利用したContinuous Delivery環境」でした。 LT で使用したスライド 先日、市ヶ谷Geek★Night #16 の 10 分 LT 枠で、CoreOS 社によるコンテナ実装 rkt とその Kubernetes 連携について発表してきました。今回のエントリはこの LT の内容を補足しつつ、実際に手を動かして rkt を試せるような構成にしてあります。 Hello, rkt! rkt は、Docker の対抗馬として Cor…</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B</id><title type="text">なぜ Haskell が好きなのか</title><updated>2018-02-25T14:53:18+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B"/><summary type="html">自分は Haskell が好きで休日は Haskell を書いています。そういうことを言うと関数型が好きなんですねと言われるのですが、Haskell のよさはそこじゃないと感じているので書き起こそうかと、筆を執りました。 というわけで、この記事は技術的文書というよりもお話です。Haskell を知らない人向けです。 この記事は Haskell Advent Calendar 2017 その3の6日めの記事です。6日が過ぎても担当のいない日だったため担当します。 関数型プログラミングだから Haskell が好きというわけではない まず、「Haskell というと手続き型とは全然違う関数型なんで…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-02-22-fun-of-extensible-3.html</id><title type="text">拡張可能タングルでDo記法レスプログラミング♪ (Haskell)</title><updated>2018-02-22T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-02-22-fun-of-extensible-3.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2017/12/23/082635</id><title type="text">猫でもわかる rkt + Kubernetes</title><updated>2018-02-28T00:36:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2017/12/23/082635"/><summary type="html">このエントリは Kubernetes Advent Calendar 2017 の 23 日目の記事です。ちなみに昨日は takezaki さんの「GCBを利用したContinuous Delivery環境」でした。 LT で使用したスライド 先日、市ヶ谷Geek★Night #16 の 10 分 LT 枠で、CoreOS 社によるコンテナ実装 rkt とその Kubernetes 連携について発表してきました。今回のエントリはこの LT の内容を補足しつつ、実際に手を動かして rkt を試せるような構成にしてあります。 Hello, rkt! rkt は、Docker の対抗馬として Cor…</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B</id><title type="text">なぜ Haskell が好きなのか</title><updated>2018-02-25T14:53:18+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B"/><summary type="html">自分は Haskell が好きで休日は Haskell を書いています。そういうことを言うと関数型が好きなんですねと言われるのですが、Haskell のよさはそこじゃないと感じているので書き起こそうかと、筆を執りました。 というわけで、この記事は技術的文書というよりもお話です。Haskell を知らない人向けです。 この記事は Haskell Advent Calendar 2017 その3の6日めの記事です。6日が過ぎても担当のいない日だったため担当します。 関数型プログラミングだから Haskell が好きというわけではない まず、「Haskell というと手続き型とは全然違う関数型なんで…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-02-22-fun-of-extensible-3.html</id><title type="text">拡張可能タングルでDo記法レスプログラミング♪ (Haskell)</title><updated>2018-02-22T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-02-22-fun-of-extensible-3.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;拡張可能タングルでDo記法レスプログラミング♪ (Haskell)&lt;/h1&gt;
