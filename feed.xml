@@ -52,8 +52,8 @@
 &lt;a class="sourceLine" id="cb5-8" data-line-number="8"&gt;&lt;span class="ot"&gt;bfs ::&lt;/span&gt; &lt;span class="dt"&gt;Eq&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[a]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
 &lt;a class="sourceLine" id="cb5-9" data-line-number="9"&gt;bfs x &lt;span class="fu"&gt;=&lt;/span&gt; elem x &lt;span class="fu"&gt;.&lt;/span&gt; concat &lt;span class="fu"&gt;.&lt;/span&gt; transpose&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;dfs&lt;/strong&gt; は &lt;code&gt;depth farst search&lt;/code&gt; なので、深さ優先探索を行います。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;bfs&lt;/strong&gt; は &lt;code&gt;breadth first search&lt;/code&gt; なので、幅優先探索を行います。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dfs&lt;/strong&gt; は &lt;code&gt;depth farst search&lt;/code&gt; なので、&lt;strong&gt;深さ優先探索&lt;/strong&gt;を行うように実装しています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;bfs&lt;/strong&gt; は &lt;code&gt;breadth first search&lt;/code&gt; なので、&lt;strong&gt;幅優先探索&lt;/strong&gt;を行うように実装しています。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="data.list-モジュール"&gt;Data.List モジュール&lt;/h3&gt;
 &lt;p&gt;リスト操作系の関数は基本的に &lt;a href="http://hackage.haskell.org/package/base-4.11.0.0/docs/Data-List.html"&gt;Data.List&lt;/a&gt; を探せば見つかります。&lt;/p&gt;
@@ -156,7 +156,7 @@
 &lt;a class="sourceLine" id="cb17-2" data-line-number="2"&gt;bfs x &lt;span class="fu"&gt;=&lt;/span&gt; elem x &lt;span class="fu"&gt;.&lt;/span&gt; concat &lt;span class="fu"&gt;.&lt;/span&gt; transpose&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;bfs&lt;/code&gt; はこのように書くこともできます。&lt;/p&gt;
 &lt;div class="sourceCode" id="cb18"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb18-1" data-line-number="1"&gt;&lt;span class="ot"&gt;bfs ::&lt;/span&gt; &lt;span class="dt"&gt;Eq&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [[a]] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb18-2" data-line-number="2"&gt;bfs x &lt;span class="fu"&gt;=&lt;/span&gt; dfs &lt;span class="fu"&gt;.&lt;/span&gt; transpose&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a class="sourceLine" id="cb18-2" data-line-number="2"&gt;bfs x &lt;span class="fu"&gt;=&lt;/span&gt; dfs x &lt;span class="fu"&gt;.&lt;/span&gt; transpose&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;つまり、リストのリストのようなデータ構造に対して幅優先探索を行うということは、リストを転置した結果に対して深さ優先探索を行うことと等しいということです。&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="/images/2018/03-31/bfs.png" alt="bfs と dfs の関係" /&gt;&lt;figcaption&gt;bfs と dfs の関係&lt;/figcaption&gt;
