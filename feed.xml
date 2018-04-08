@@ -1,4 +1,82 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-04-06T12:58:53+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/YoshikuniJujo/items/980775598e65fda36d33</id><title type="text">GHCの最新のソースコードをビルドし、すこしいじる</title><updated>2018-04-06T12:58:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/980775598e65fda36d33"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/04-06-quiz-6.html</id><title type="text">Haskell Quiz No.6 Conduit Part.2</title><updated>2018-04-06T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/04-06-quiz-6.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.6"&gt;Haskell Quiz No.6&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-04-08T15:22:47+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/Lugendre/items/741ea90f22f688145313</id><title type="text">GHC言語拡張の一覧</title><updated>2018-04-08T15:22:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Lugendre/items/741ea90f22f688145313"/></entry><entry><id>https://qiita.com/sgsh/items/25eef2aa1c0477a816f7</id><title type="text">ABC093 in Haskell</title><updated>2018-04-08T01:45:26+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sgsh/items/25eef2aa1c0477a816f7"/></entry><entry><id>https://qiita.com/Taira815/items/14c21d92d53dc237c59b</id><title type="text">[Haskell] 純粋関数型言語と圏論：序論</title><updated>2018-04-08T01:25:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Taira815/items/14c21d92d53dc237c59b"/></entry><entry><id>https://qiita.com/tkch_pe/items/1510338cf9fb324b7ab9</id><title type="text">Haskellで図の描画(gnuplot)</title><updated>2018-04-07T19:16:26+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tkch_pe/items/1510338cf9fb324b7ab9"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/04-07-quiz-7.html</id><title type="text">Haskell Quiz No.7 Conduit Part.3</title><updated>2018-04-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/04-07-quiz-7.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.7"&gt;Haskell Quiz No.7&lt;/h2&gt;
+&lt;p&gt;難易度: λλ&lt;/p&gt;
+&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="ot"&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;span class="co"&gt;-- stack script --resolver lts-11.3&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Conduit&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;&lt;span class="ot"&gt;myTakeWhileC ::&lt;/span&gt; &lt;span class="dt"&gt;Monad&lt;/span&gt; m &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; (i &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Bool&lt;/span&gt;) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ConduitM&lt;/span&gt; i i m ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;myTakeWhileC f &lt;span class="fu"&gt;=&lt;/span&gt; loop&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;  &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-8" data-line-number="8"&gt;    loop &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-9" data-line-number="9"&gt;      mx &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; await&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-10" data-line-number="10"&gt;      &lt;span class="kw"&gt;case&lt;/span&gt; mx &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-11" data-line-number="11"&gt;        &lt;span class="dt"&gt;Nothing&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; return ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-12" data-line-number="12"&gt;        &lt;span class="dt"&gt;Just&lt;/span&gt; x&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-13" data-line-number="13"&gt;          &lt;span class="fu"&gt;|&lt;/span&gt; f x       &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; yield x &lt;span class="fu"&gt;&amp;gt;&amp;gt;&lt;/span&gt; loop&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-14" data-line-number="14"&gt;          &lt;span class="fu"&gt;|&lt;/span&gt; otherwise &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; return ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-15" data-line-number="15"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-16" data-line-number="16"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-17" data-line-number="17"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; print &lt;span class="fu"&gt;$&lt;/span&gt; runConduitPure &lt;span class="fu"&gt;$&lt;/span&gt; yieldMany [&lt;span class="dv"&gt;1&lt;/span&gt;&lt;span class="fu"&gt;..&lt;/span&gt;&lt;span class="dv"&gt;10&lt;/span&gt;] &lt;span class="fu"&gt;.|&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-18" data-line-number="18"&gt;  x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; myTakeWhileC (&lt;span class="fu"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="dv"&gt;5&lt;/span&gt;) &lt;span class="fu"&gt;.|&lt;/span&gt; sinkList&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-19" data-line-number="19"&gt;  y &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; sinkList&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-20" data-line-number="20"&gt;  return (x, y)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;答えは次回。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href="./04-06-quiz-6.html"&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
+&lt;h3 id="問題"&gt;問題&lt;/h3&gt;
+&lt;p&gt;難易度: λλ&lt;/p&gt;
+&lt;p&gt;以下の &lt;code&gt;Conduit&lt;/code&gt; を使ったコードの実行結果を予想してみてください！&lt;/p&gt;
+&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="ot"&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;&lt;span class="co"&gt;-- stack script --resolver lts-11.2&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Conduit&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;&lt;span class="ot"&gt;trans ::&lt;/span&gt; &lt;span class="dt"&gt;Monad&lt;/span&gt; m &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ConduitM&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; m ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;trans &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-7" data-line-number="7"&gt;  takeC &lt;span class="dv"&gt;5&lt;/span&gt; &lt;span class="fu"&gt;.|&lt;/span&gt; mapC (&lt;span class="fu"&gt;+&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-8" data-line-number="8"&gt;  mapC (&lt;span class="fu"&gt;*&lt;/span&gt; &lt;span class="dv"&gt;2&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-9" data-line-number="9"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-10" data-line-number="10"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-11" data-line-number="11"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; runConduit &lt;span class="fu"&gt;$&lt;/span&gt; yieldMany [&lt;span class="dv"&gt;1&lt;/span&gt;&lt;span class="fu"&gt;..&lt;/span&gt;&lt;span class="dv"&gt;10&lt;/span&gt;] &lt;span class="fu"&gt;.|&lt;/span&gt; trans &lt;span class="fu"&gt;.|&lt;/span&gt; mapM_C print&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="こたえ"&gt;こたえ&lt;/h3&gt;
+&lt;p&gt;実際に実行してみましょう！&lt;/p&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;$ ./Quiz6.hs
+2
+3
+4
+5
+6
+12
+14
+16
+18
+20&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="haskell-quiz-no.6-の解説"&gt;Haskell Quiz No.6 の解説&lt;/h2&gt;
+&lt;p&gt;この問題で重要なのは &lt;code&gt;trans&lt;/code&gt; 関数です。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="ot"&gt;trans ::&lt;/span&gt; &lt;span class="dt"&gt;Monad&lt;/span&gt; m &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ConduitM&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; m ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;trans &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-3" data-line-number="3"&gt;  takeC &lt;span class="dv"&gt;5&lt;/span&gt; &lt;span class="fu"&gt;.|&lt;/span&gt; mapC (&lt;span class="fu"&gt;+&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-4" data-line-number="4"&gt;  mapC (&lt;span class="fu"&gt;*&lt;/span&gt; &lt;span class="dv"&gt;2&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;1つめのパイプ &lt;code&gt;takeC 5 .| mapC (+ 1)&lt;/code&gt; によって &lt;code&gt;[1..10]&lt;/code&gt; のうち &lt;code&gt;[1..5]&lt;/code&gt; が &lt;code&gt;mapC (+ 1)&lt;/code&gt; によって処理されます。&lt;/li&gt;
+&lt;li&gt;2つめのパイプ &lt;code&gt;mapC (* 2)&lt;/code&gt; によって残りの &lt;code&gt;[6..10]&lt;/code&gt; が &lt;code&gt;mapC (* 2)&lt;/code&gt; によって処理されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;そのため、結果として以下のような出力となりました。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="dv"&gt;2&lt;/span&gt;  &lt;span class="co"&gt;-- 1+1&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;&lt;span class="dv"&gt;3&lt;/span&gt;  &lt;span class="co"&gt;-- 2+1&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;&lt;span class="dv"&gt;4&lt;/span&gt;  &lt;span class="co"&gt;-- 3+1&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-4" data-line-number="4"&gt;&lt;span class="dv"&gt;5&lt;/span&gt;  &lt;span class="co"&gt;-- 4+1&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-5" data-line-number="5"&gt;&lt;span class="dv"&gt;6&lt;/span&gt;  &lt;span class="co"&gt;-- 5+1&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-6" data-line-number="6"&gt;&lt;span class="dv"&gt;12&lt;/span&gt; &lt;span class="co"&gt;-- 6*2&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-7" data-line-number="7"&gt;&lt;span class="dv"&gt;14&lt;/span&gt; &lt;span class="co"&gt;-- 7*2&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-8" data-line-number="8"&gt;&lt;span class="dv"&gt;16&lt;/span&gt; &lt;span class="co"&gt;-- 8*2&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-9" data-line-number="9"&gt;&lt;span class="dv"&gt;18&lt;/span&gt; &lt;span class="co"&gt;-- 9*2&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-10" data-line-number="10"&gt;&lt;span class="dv"&gt;20&lt;/span&gt; &lt;span class="co"&gt;-- 10*2&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;大前提として、このパイプにデータが流れるのは &lt;code&gt;mapM_C print&lt;/code&gt; によって上流のデータが無くなるまでデータを要求するという操作があるためです。&lt;/p&gt;
+&lt;p&gt;そのため、 &lt;code&gt;mapM_C print&lt;/code&gt; を &lt;code&gt;sinkNull&lt;/code&gt; にすると何も表示されなくなります。&lt;/p&gt;
+&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Conduit&lt;/code&gt; は何も知らずにいつも通りの感覚で利用すると、直感と違う動きをすることがあるので、簡単な例を通して慣れていくと良いと思います。&lt;/p&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/YoshikuniJujo/items/980775598e65fda36d33</id><title type="text">GHCの最新のソースコードをビルドし、すこしいじる</title><updated>2018-04-06T12:58:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/980775598e65fda36d33"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/04-06-quiz-6.html</id><title type="text">Haskell Quiz No.6 Conduit Part.2</title><updated>2018-04-06T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/04-06-quiz-6.html"/><summary type="html">&lt;h2 id="haskell-quiz-no.6"&gt;Haskell Quiz No.6&lt;/h2&gt;
 &lt;p&gt;難易度: λλ&lt;/p&gt;
 &lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="ot"&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
 &lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;span class="co"&gt;-- stack script --resolver lts-11.2&lt;/span&gt;&lt;/a&gt;
@@ -11,7 +89,7 @@
 &lt;a class="sourceLine" id="cb1-9" data-line-number="9"&gt;&lt;/a&gt;
 &lt;a class="sourceLine" id="cb1-10" data-line-number="10"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
 &lt;a class="sourceLine" id="cb1-11" data-line-number="11"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; runConduit &lt;span class="fu"&gt;$&lt;/span&gt; yieldMany [&lt;span class="dv"&gt;1&lt;/span&gt;&lt;span class="fu"&gt;..&lt;/span&gt;&lt;span class="dv"&gt;10&lt;/span&gt;] &lt;span class="fu"&gt;.|&lt;/span&gt; trans &lt;span class="fu"&gt;.|&lt;/span&gt; mapM_C print&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;答えは次回。&lt;/p&gt;
+&lt;p&gt;答えは&lt;a href="04-07-quiz-7.html"&gt;次回&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;最近は &lt;code&gt;Conduit&lt;/code&gt; にはまっているので、クイズも &lt;code&gt;Conduit&lt;/code&gt; が続きます。&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
@@ -35,8 +113,8 @@
 &lt;a class="sourceLine" id="cb2-14" data-line-number="14"&gt;  print res&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="こたえ"&gt;こたえ&lt;/h3&gt;
 &lt;p&gt;実際に実行してみましょう！&lt;/p&gt;
-&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="fu"&gt;$&lt;/span&gt; &lt;span class="fu"&gt;./&lt;/span&gt;Quiz5.hs&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;(&lt;span class="st"&gt;&amp;quot;12345&amp;quot;&lt;/span&gt;,&lt;span class="dv"&gt;40&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;$ ./Quiz5.hs
+(&amp;quot;12345&amp;quot;,40)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;どうですか？予想通りでしたか？？&lt;/p&gt;
 &lt;h2 id="haskell-quiz-no.5-の解説"&gt;Haskell Quiz No.5 の解説&lt;/h2&gt;
 &lt;p&gt;この問題を解くためには &lt;a href="https://www.stackage.org/lts-11.3/package/conduit-1.3.0.2"&gt;conduit&lt;/a&gt; というストリーム処理ライブラリの知識が必要になります。&lt;/p&gt;
@@ -83,32 +161,32 @@
 &lt;a class="sourceLine" id="cb4-31" data-line-number="31"&gt;      &lt;span class="kw"&gt;let&lt;/span&gt; summary &lt;span class="fu"&gt;=&lt;/span&gt; (accCnt &lt;span class="fu"&gt;+&lt;/span&gt; length files, accSize &lt;span class="fu"&gt;+&lt;/span&gt; size)&lt;/a&gt;
 &lt;a class="sourceLine" id="cb4-32" data-line-number="32"&gt;      loop summary &lt;span class="fu"&gt;$&lt;/span&gt; fps &lt;span class="fu"&gt;++&lt;/span&gt; childDirs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;実際に、プロファイリングを取得しつつ動かしてみます。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; ghc Ex &lt;span class="kw"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="fu"&gt;sudo&lt;/span&gt; ./Ex /home/bm12/Desktop/ +RTS -s&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;総ファイル数: &lt;span class="ex"&gt;338866&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;総ファイルサイズ: &lt;span class="ex"&gt;37870090712&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;$ stack ghc Ex &amp;amp;&amp;amp; sudo ./Ex /home/bm12/Desktop/ +RTS -s
+総ファイル数: 338866
+総ファイルサイズ: 37870090712&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;とりあえず、上手く動いているような気がします。&lt;/p&gt;
 &lt;p&gt;しかし、メモリ使用量は・・・&lt;/p&gt;
-&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;  &lt;span class="ex"&gt;13&lt;/span&gt;,440,124,048 bytes allocated in the heap&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;   &lt;span class="ex"&gt;8&lt;/span&gt;,760,418,592 bytes copied during GC&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;   &lt;span class="ex"&gt;1&lt;/span&gt;,225,650,008 bytes maximum residency (23 sample(s))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt;      &lt;span class="ex"&gt;19&lt;/span&gt;,423,400 bytes maximum slop&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-5" data-line-number="5"&gt;            &lt;span class="ex"&gt;2599&lt;/span&gt; MB total memory in use (0 MB lost due to fragmentation)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-7" data-line-number="7"&gt;                                     &lt;span class="ex"&gt;Tot&lt;/span&gt; time (elapsed)  &lt;span class="ex"&gt;Avg&lt;/span&gt; pause  Max pause&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-8" data-line-number="8"&gt;  &lt;span class="ex"&gt;Gen&lt;/span&gt;  0      9869 colls,     0 par    7.821s   9.831s     0.0010s    1.1223s&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-9" data-line-number="9"&gt;  &lt;span class="ex"&gt;Gen&lt;/span&gt;  1        23 colls,     0 par    0.011s   0.013s     0.0006s    0.0009s&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-10" data-line-number="10"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-11" data-line-number="11"&gt;  &lt;span class="ex"&gt;INIT&lt;/span&gt;    time    0.000s  (  0.000s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-12" data-line-number="12"&gt;  &lt;span class="ex"&gt;MUT&lt;/span&gt;     time    5.255s  (  6.347s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-13" data-line-number="13"&gt;  &lt;span class="ex"&gt;GC&lt;/span&gt;      time    7.832s  (  9.845s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-14" data-line-number="14"&gt;  &lt;span class="ex"&gt;EXIT&lt;/span&gt;    time    0.032s  (  0.123s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-15" data-line-number="15"&gt;  &lt;span class="ex"&gt;Total&lt;/span&gt;   time   13.118s  ( 16.315s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-16" data-line-number="16"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-17" data-line-number="17"&gt;  &lt;span class="ex"&gt;%GC&lt;/span&gt;     time      59.7%  (60.3% elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-18" data-line-number="18"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-19" data-line-number="19"&gt;  &lt;span class="ex"&gt;Alloc&lt;/span&gt; rate    2,557,607,298 bytes per MUT second&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-20" data-line-number="20"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-21" data-line-number="21"&gt;  &lt;span class="ex"&gt;Productivity&lt;/span&gt;  40.3% of total user, 39.7% of total elapsed&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;  13,440,124,048 bytes allocated in the heap
+   8,760,418,592 bytes copied during GC
+   1,225,650,008 bytes maximum residency (23 sample(s))
+      19,423,400 bytes maximum slop
+            2599 MB total memory in use (0 MB lost due to fragmentation)
+
+                                     Tot time (elapsed)  Avg pause  Max pause
+  Gen  0      9869 colls,     0 par    7.821s   9.831s     0.0010s    1.1223s
+  Gen  1        23 colls,     0 par    0.011s   0.013s     0.0006s    0.0009s
+
+  INIT    time    0.000s  (  0.000s elapsed)
+  MUT     time    5.255s  (  6.347s elapsed)
+  GC      time    7.832s  (  9.845s elapsed)
+  EXIT    time    0.032s  (  0.123s elapsed)
+  Total   time   13.118s  ( 16.315s elapsed)
+
+  %GC     time      59.7%  (60.3% elapsed)
+
+  Alloc rate    2,557,607,298 bytes per MUT second
+
+  Productivity  40.3% of total user, 39.7% of total elapsed&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;2599 MB total memory in use&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;%GC time 59.7% (60.3% elapsed)&lt;/strong&gt;&lt;/li&gt;
@@ -151,31 +229,31 @@
 &lt;a class="sourceLine" id="cb7-30" data-line-number="30"&gt;    size &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; liftIO &lt;span class="fu"&gt;$&lt;/span&gt; getFileSize path&lt;/a&gt;
 &lt;a class="sourceLine" id="cb7-31" data-line-number="31"&gt;    yield size&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;では、同様にプロファイルを取得しつつ、実行してみましょう。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; ghc Ex2 &lt;span class="kw"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="fu"&gt;sudo&lt;/span&gt; ./Ex2 /home/bm12/Desktop/ +RTS -s&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;総ファイル数: &lt;span class="ex"&gt;338866&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;総ファイルサイズ: &lt;span class="ex"&gt;37870092264&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;$ stack ghc Ex2 &amp;amp;&amp;amp; sudo ./Ex2 /home/bm12/Desktop/ +RTS -s
+総ファイル数: 338866
+総ファイルサイズ: 37870092264&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;肝心のメモリ使用量はと言うと・・・&lt;/p&gt;
-&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;  &lt;span class="ex"&gt;10&lt;/span&gt;,742,224,392 bytes allocated in the heap&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;      &lt;span class="ex"&gt;86&lt;/span&gt;,720,088 bytes copied during GC&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;          &lt;span class="ex"&gt;87&lt;/span&gt;,576 bytes maximum residency (19 sample(s))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;          &lt;span class="ex"&gt;33&lt;/span&gt;,320 bytes maximum slop&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;               &lt;span class="ex"&gt;3&lt;/span&gt; MB total memory in use (0 MB lost due to fragmentation)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-7" data-line-number="7"&gt;                                     &lt;span class="ex"&gt;Tot&lt;/span&gt; time (elapsed)  &lt;span class="ex"&gt;Avg&lt;/span&gt; pause  Max pause&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-8" data-line-number="8"&gt;  &lt;span class="ex"&gt;Gen&lt;/span&gt;  0     10347 colls,     0 par    0.146s   0.198s     0.0000s    0.0008s&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-9" data-line-number="9"&gt;  &lt;span class="ex"&gt;Gen&lt;/span&gt;  1        19 colls,     0 par    0.000s   0.001s     0.0000s    0.0001s&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-10" data-line-number="10"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-11" data-line-number="11"&gt;  &lt;span class="ex"&gt;INIT&lt;/span&gt;    time    0.000s  (  0.000s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-12" data-line-number="12"&gt;  &lt;span class="ex"&gt;MUT&lt;/span&gt;     time    5.252s  (  7.444s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-13" data-line-number="13"&gt;  &lt;span class="ex"&gt;GC&lt;/span&gt;      time    0.146s  (  0.198s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-14" data-line-number="14"&gt;  &lt;span class="ex"&gt;EXIT&lt;/span&gt;    time    0.000s  (  0.000s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-15" data-line-number="15"&gt;  &lt;span class="ex"&gt;Total&lt;/span&gt;   time    5.398s  (  7.642s elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-16" data-line-number="16"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-17" data-line-number="17"&gt;  &lt;span class="ex"&gt;%GC&lt;/span&gt;     time       2.7%  (2.6% elapsed)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-18" data-line-number="18"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-19" data-line-number="19"&gt;  &lt;span class="ex"&gt;Alloc&lt;/span&gt; rate    2,045,428,118 bytes per MUT second&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-20" data-line-number="20"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-21" data-line-number="21"&gt;  &lt;span class="ex"&gt;Productivity&lt;/span&gt;  97.3% of total user, 97.4% of total elapsed&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;  10,742,224,392 bytes allocated in the heap
+      86,720,088 bytes copied during GC
+          87,576 bytes maximum residency (19 sample(s))
+          33,320 bytes maximum slop
+               3 MB total memory in use (0 MB lost due to fragmentation)
+
+                                     Tot time (elapsed)  Avg pause  Max pause
+  Gen  0     10347 colls,     0 par    0.146s   0.198s     0.0000s    0.0008s
+  Gen  1        19 colls,     0 par    0.000s   0.001s     0.0000s    0.0001s
+
+  INIT    time    0.000s  (  0.000s elapsed)
+  MUT     time    5.252s  (  7.444s elapsed)
+  GC      time    0.146s  (  0.198s elapsed)
+  EXIT    time    0.000s  (  0.000s elapsed)
+  Total   time    5.398s  (  7.642s elapsed)
+
+  %GC     time       2.7%  (2.6% elapsed)
+
+  Alloc rate    2,045,428,118 bytes per MUT second
+
+  Productivity  97.3% of total user, 97.4% of total elapsed&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;3 MB total memory in use&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;%GC time 2.7% (2.6% elapsed)&lt;/strong&gt;&lt;/li&gt;
@@ -183,8 +261,8 @@
 &lt;p&gt;どうですか？ストリーム処理って凄いですよね。&lt;/p&gt;
 &lt;h3 id="解説"&gt;解説&lt;/h3&gt;
 &lt;p&gt;この問題の重要なポイントは、実行すると &lt;code&gt;(&amp;quot;12345&amp;quot;, 6+7+8+9+10)&lt;/code&gt; という結果のように、&lt;code&gt;[1..10]&lt;/code&gt; のリストの前半と後半で異なる処理になっているという点です。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="fu"&gt;$&lt;/span&gt; &lt;span class="fu"&gt;./&lt;/span&gt;Quiz5.hs&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;(&lt;span class="st"&gt;&amp;quot;12345&amp;quot;&lt;/span&gt;,&lt;span class="dv"&gt;40&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;$ ./Quiz5.hs
+(&amp;quot;12345&amp;quot;,40)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;ここで理解しておきたい知識は以下の3点です。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;データは&lt;strong&gt;パイプ&lt;/strong&gt; (ストリーム) を流れて処理されます&lt;/li&gt;
@@ -197,16 +275,16 @@
 &lt;a class="sourceLine" id="cb11-4" data-line-number="4"&gt;  print res&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;sink&lt;/code&gt; 関数は &lt;code&gt;takeC 5 .| mapC show .| foldC&lt;/code&gt; というパイプと &lt;code&gt;sumC&lt;/code&gt; というパイプからなる、大きなパイプです。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;takeC 5 .| mapC show .| foldC&lt;/code&gt; 関数は &lt;code&gt;takeC 5&lt;/code&gt; の部分でデータを &lt;strong&gt;5つだけ&lt;/strong&gt; 上流のパイプに要求します。そのため、残りの5つのデータは次の &lt;code&gt;sumC&lt;/code&gt; に流れることになります。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sink :: Monad m =&amp;gt; ConduitM Int o m (String, Int)
-sink = do
-  x &amp;lt;- takeC 5 .| mapC show .| foldC -- 1,2,3,4,5  のデータが処理される
-  y &amp;lt;- sumC                          -- 6,7,8,9,10 のデータが処理される
-  return (x, y)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;&lt;span class="ot"&gt;sink ::&lt;/span&gt; &lt;span class="dt"&gt;Monad&lt;/span&gt; m &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ConduitM&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; o m (&lt;span class="dt"&gt;String&lt;/span&gt;, &lt;span class="dt"&gt;Int&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;sink &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-3" data-line-number="3"&gt;  x &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; takeC &lt;span class="dv"&gt;5&lt;/span&gt; &lt;span class="fu"&gt;.|&lt;/span&gt; mapC show &lt;span class="fu"&gt;.|&lt;/span&gt; foldC &lt;span class="co"&gt;-- 1,2,3,4,5  のデータが処理される&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-4" data-line-number="4"&gt;  y &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; sumC                          &lt;span class="co"&gt;-- 6,7,8,9,10 のデータが処理される&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb12-5" data-line-number="5"&gt;  return (x, y)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;そのため、最終的には &lt;code&gt;(&amp;quot;12345&amp;quot;,40)&lt;/code&gt; となりました。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&amp;quot;12345&amp;quot;&lt;/code&gt; はそれぞれの &lt;strong&gt;Int&lt;/strong&gt; 型が &lt;code&gt;mapC show&lt;/code&gt; によって &lt;strong&gt;String&lt;/strong&gt; 型に変換され、&lt;code&gt;foldC&lt;/code&gt; の &lt;code&gt;mappend&lt;/code&gt; による畳込みによって文字列連結されます。&lt;/p&gt;
 &lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
 &lt;p&gt;実用的なアプリケーションを作ろうと考えている方は &lt;code&gt;Conduit&lt;/code&gt; などのストリームライブラリを理解していると、色々と面倒なことを考えなくて済むのでとても良いですよ。&lt;/p&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/aiya000/items/e2fd7567cebc461b3de1</id><title type="text">関数、where句に書くか トップレベルに書くか（Haskell）</title><updated>2018-04-03T21:25:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aiya000/items/e2fd7567cebc461b3de1"/></entry><entry><id>https://qiita.com/Taira815/items/14c21d92d53dc237c59b</id><title type="text">[Haskell] 純粋関数型言語と圏論：序論</title><updated>2018-04-03T10:21:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Taira815/items/14c21d92d53dc237c59b"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-04-02-ml-day-1.html</id><title type="text">ML Day ＃1 に行ってきた</title><updated>2018-04-02T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-04-02-ml-day-1.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/aiya000/items/e2fd7567cebc461b3de1</id><title type="text">関数、where句に書くか トップレベルに書くか（Haskell）</title><updated>2018-04-03T21:25:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aiya000/items/e2fd7567cebc461b3de1"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-04-02-ml-day-1.html</id><title type="text">ML Day ＃1 に行ってきた</title><updated>2018-04-02T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-04-02-ml-day-1.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;ML Day ＃1 に行ってきた&lt;/h1&gt;
@@ -1827,224 +1905,7 @@ O
 &lt;p&gt;めちゃめちゃ簡単なのでオススメの方法です。&lt;/p&gt;
 &lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
 &lt;p&gt;自分のアプリケーションがとてもカッコよくなるので是非ためしてみてください！&lt;/p&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/taashi/items/d48e6cb875930538a302</id><title type="text">Haskellでコマンドライン引数を受け取る</title><updated>2018-03-19T14:52:46+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/taashi/items/d48e6cb875930538a302"/></entry><entry><id>https://qiita.com/lotz/items/fbc4788b8ea8313cbf76</id><title type="text">コモナドを使った抽象化の威力をライフゲームで試してみた</title><updated>2018-03-19T08:27:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/fbc4788b8ea8313cbf76"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-19-yesod-subsite.html</id><title type="text">Yesod v1.6 のサブサイト</title><updated>2018-03-19T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-19-yesod-subsite.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;今回は &lt;code&gt;Yesod&lt;/code&gt; を使っているマニア向け情報です。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Yesod&lt;/code&gt; にはサブサイトという機能があり、Yesod Book の &lt;a href="https://www.yesodweb.com/book/creating-a-subsite"&gt;Creating a Subsite&lt;/a&gt; で一通りの使い方が説明されています。&lt;/p&gt;
-&lt;p&gt;簡単に言えば、異なる &lt;code&gt;Yesod&lt;/code&gt; アプリケーションで共通のコンポーネント (認証システム等) を利用するために使えるようです。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;scaffolded site&lt;/code&gt; を使っている人は &lt;a href="https://www.stackage.org/lts-11.1/package/yesod-static-1.6.0"&gt;yesod-static&lt;/a&gt; パッケージで提供されている &lt;code&gt;Static&lt;/code&gt; 型をサブサイトとして利用していることでしょう。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Yesod&lt;/code&gt; のバージョンが &lt;code&gt;1.6&lt;/code&gt; に上がった影響により &lt;code&gt;Yesod Book&lt;/code&gt; の内容がそのままでは動かなくなっていたため、コードを修正して実際に動かしてみたいと思います。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id="修正ポイント"&gt;修正ポイント&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;HandlerT site IO a&lt;/code&gt; のような形式は何も考えずに &lt;code&gt;HandlerFor site a&lt;/code&gt; に書き換える&lt;/li&gt;
-&lt;li&gt;サブサイトのハンドラ関数の型は &lt;code&gt;SubHandlerFor sub master a&lt;/code&gt; という形式に書き換える&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;HandlerFor&lt;/code&gt; から &lt;code&gt;SubHandlerFor&lt;/code&gt; へ持ち上げる時は &lt;code&gt;liftHandler&lt;/code&gt; を使う&lt;/li&gt;
-&lt;li&gt;サブサイトの &lt;code&gt;YesodDispatch&lt;/code&gt; 型クラスのインスタンスは &lt;code&gt;HandlerT&lt;/code&gt; ではなく &lt;code&gt;instance Yesod master =&amp;gt; YesodSubDispatch HelloSub master where&lt;/code&gt; のように &lt;code&gt;Yesod&lt;/code&gt; 型クラスのインスタンスを直接指定できるようになった&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="修正後のソースコード"&gt;修正後のソースコード&lt;/h2&gt;
-&lt;p&gt;ここでは公式サイトのコードと同様のディレクトリ構造及び、ファイル名とします。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;tree&lt;/span&gt; .&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;span class="ex"&gt;.&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;├── &lt;span class="ex"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;│   └── &lt;span class="ex"&gt;Data.hs&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;├── &lt;span class="ex"&gt;HelloSub.hs&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;└── &lt;span class="ex"&gt;Main.hs&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-8" data-line-number="8"&gt;&lt;span class="ex"&gt;1&lt;/span&gt; directory, 3 files&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ファイルを分割しているのは &lt;code&gt;TH&lt;/code&gt; の &lt;code&gt;GHC stage restriction&lt;/code&gt; を回避するためです。&lt;/p&gt;
-&lt;h3 id="hellosubdata.hs"&gt;HelloSub/Data.hs&lt;/h3&gt;
-&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE QuasiQuotes     #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;&lt;span class="ot"&gt;{-# LANGUAGE TemplateHaskell #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;&lt;span class="ot"&gt;{-# LANGUAGE TypeFamilies    #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;HelloSub.Data&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;Yesod&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-7" data-line-number="7"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-8" data-line-number="8"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-9" data-line-number="9"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-10" data-line-number="10"&gt;mkYesodSubData &lt;span class="st"&gt;&amp;quot;HelloSub&amp;quot;&lt;/span&gt; [parseRoutes|&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-11" data-line-number="11"&gt;/ SubHomeR GET&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-12" data-line-number="12"&gt;|]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;サブサイトのファウンデーション型 &lt;code&gt;HelloSub&lt;/code&gt; とルートを定義しています。&lt;/p&gt;
-&lt;p&gt;通常であれば &lt;code&gt;mkYesod&lt;/code&gt; を利用しますが &lt;code&gt;mkYesodSubData&lt;/code&gt; を利用している点がサブサイトの特徴です。&lt;/p&gt;
-&lt;h3 id="hellosub.hs"&gt;HelloSub.hs&lt;/h3&gt;
-&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE FlexibleInstances     #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;&lt;span class="ot"&gt;{-# LANGUAGE MultiParamTypeClasses #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;&lt;span class="ot"&gt;{-# LANGUAGE OverloadedStrings     #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-4" data-line-number="4"&gt;&lt;span class="ot"&gt;{-# LANGUAGE QuasiQuotes           #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-5" data-line-number="5"&gt;&lt;span class="ot"&gt;{-# LANGUAGE TemplateHaskell       #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-6" data-line-number="6"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-7" data-line-number="7"&gt;  ( &lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;HelloSub.Data&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-8" data-line-number="8"&gt;  , &lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-9" data-line-number="9"&gt;  ) &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-10" data-line-number="10"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-11" data-line-number="11"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;HelloSub.Data&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-12" data-line-number="12"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;Yesod&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-13" data-line-number="13"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;Yesod.Core.Types&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-14" data-line-number="14"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-15" data-line-number="15"&gt;&lt;span class="ot"&gt;getSubHomeR ::&lt;/span&gt; &lt;span class="dt"&gt;Yesod&lt;/span&gt; master &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;SubHandlerFor&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt; master &lt;span class="dt"&gt;Html&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-16" data-line-number="16"&gt;getSubHomeR &lt;span class="fu"&gt;=&lt;/span&gt; liftHandler &lt;span class="fu"&gt;$&lt;/span&gt; defaultLayout [whamlet|Welcome to the subsite!|]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-17" data-line-number="17"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-18" data-line-number="18"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Yesod&lt;/span&gt; master &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;YesodSubDispatch&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt; master &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-19" data-line-number="19"&gt;  yesodSubDispatch &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt;(mkYesodSubDispatch resourcesHelloSub)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;サブサイトのハンドラと &lt;code&gt;dispatch&lt;/code&gt; の定義です。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;resourcesHelloSub&lt;/code&gt; は &lt;code&gt;HelloSub/Data.hs&lt;/code&gt; で定義した &lt;code&gt;mkYesodSubData&lt;/code&gt; でコンパイル時に自動生成されます。&lt;/p&gt;
-&lt;h3 id="main.hs"&gt;Main.hs&lt;/h3&gt;
-&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="ot"&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;&lt;span class="co"&gt;-- stack --resolver lts-11.0 script --package yesod-core --package yesod&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-4" data-line-number="4"&gt;&lt;span class="ot"&gt;{-# LANGUAGE OverloadedStrings #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-5" data-line-number="5"&gt;&lt;span class="ot"&gt;{-# LANGUAGE QuasiQuotes       #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-6" data-line-number="6"&gt;&lt;span class="ot"&gt;{-# LANGUAGE TemplateHaskell   #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-7" data-line-number="7"&gt;&lt;span class="ot"&gt;{-# LANGUAGE TypeFamilies      #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-8" data-line-number="8"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-9" data-line-number="9"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;Yesod&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-10" data-line-number="10"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-11" data-line-number="11"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Master&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Master&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-12" data-line-number="12"&gt;  {&lt;span class="ot"&gt; getHelloSub ::&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-13" data-line-number="13"&gt;  }&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-14" data-line-number="14"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-15" data-line-number="15"&gt;mkYesod &lt;span class="st"&gt;&amp;quot;Master&amp;quot;&lt;/span&gt; [parseRoutes|&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-16" data-line-number="16"&gt;/ HomeR GET&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-17" data-line-number="17"&gt;/subsite SubsiteR HelloSub getHelloSub&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-18" data-line-number="18"&gt;|]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-19" data-line-number="19"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-20" data-line-number="20"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Yesod&lt;/span&gt; &lt;span class="dt"&gt;Master&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-21" data-line-number="21"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-22" data-line-number="22"&gt;&lt;span class="ot"&gt;getHomeR ::&lt;/span&gt; &lt;span class="dt"&gt;HandlerFor&lt;/span&gt; &lt;span class="dt"&gt;Master&lt;/span&gt; &lt;span class="dt"&gt;Html&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-23" data-line-number="23"&gt;getHomeR &lt;span class="fu"&gt;=&lt;/span&gt; defaultLayout&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-24" data-line-number="24"&gt;  [whamlet|&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-25" data-line-number="25"&gt;    &lt;span class="kw"&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Welcome to the homepage&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-26" data-line-number="26"&gt;    &lt;span class="kw"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-27" data-line-number="27"&gt;      Feel free to visit the #&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-28" data-line-number="28"&gt;      &lt;span class="kw"&gt;&amp;lt;a&lt;/span&gt;&lt;span class="ot"&gt; href=&lt;/span&gt;&lt;span class="kw"&gt;@{&lt;/span&gt;&lt;span class="dt"&gt;SubsiteR&lt;/span&gt; &lt;span class="dt"&gt;SubHomeR&lt;/span&gt;&lt;span class="kw"&gt;}&amp;gt;&lt;/span&gt;subsite&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-29" data-line-number="29"&gt;      \ as well.&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-30" data-line-number="30"&gt;  |]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-31" data-line-number="31"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-32" data-line-number="32"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; warp &lt;span class="dv"&gt;3000&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; &lt;span class="dt"&gt;Master&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;重要なポイントは以下の3点です。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Master&lt;/code&gt; ファウンデーション型にサブサイトの型を含ませる (さらにアクセサ &lt;code&gt;getHelloSub&lt;/code&gt; を定義)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/subsite SubsiteR HelloSub getHelloSub&lt;/code&gt; という形式でサブサイトへのルートを定義&lt;/li&gt;
-&lt;li&gt;サブサイトへの参照は &lt;code&gt;@{SubsiteR SubHomeR}&lt;/code&gt; という形式の型安全URLとなる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="実行"&gt;実行&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;stack interpreter&lt;/code&gt; 形式で実行します。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;$ &lt;span class="fu"&gt;chmod&lt;/span&gt; u+x Main.hs&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;$ &lt;span class="ex"&gt;./Main.hs&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;&lt;span class="ex"&gt;19/Mar&lt;/span&gt;/2018:&lt;span class="ex"&gt;00&lt;/span&gt;:37:27 +0900 [Info#yesod-core] Application launched @(yesod-core-1.6.2-JztYji0NiLuH8rcbB3eMBP:Yesod.Core.Dispatch ./Yesod/Core/Dispatch.hs:167:11)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;この状態で &lt;a href="http://localhost:3000/" class="uri"&gt;http://localhost:3000/&lt;/a&gt; にアクセスしてみましょう。以下のようなページが表示されるはずです。&lt;/p&gt;
-&lt;figure&gt;
-&lt;img src="/images/2018/03-19/img01.png" alt="トップページ" /&gt;&lt;figcaption&gt;トップページ&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;p&gt;サブサイトにアクセスするとこんな感じです。&lt;/p&gt;
-&lt;figure&gt;
-&lt;img src="/images/2018/03-19/img02.png" alt="サブサイト" /&gt;&lt;figcaption&gt;サブサイト&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;h2 id="scaffolded-site"&gt;Scaffolded Site&lt;/h2&gt;
-&lt;p&gt;ここではさらに一歩踏み込んで &lt;code&gt;Scaffolded Site&lt;/code&gt; を利用する際、どのファイルに何を書いたら良いのか簡単に解説しておこうと思います。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Scaffolded Site&lt;/code&gt; は一番素朴な &lt;code&gt;yesod-simple&lt;/code&gt; を利用することとします。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; new example-subsite yesod-simple&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;$ &lt;span class="bu"&gt;cd&lt;/span&gt; example-subsite&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;サブサイトの内容は上記で定義した内容を再利用します。&lt;/p&gt;
-&lt;h3 id="stack.yaml"&gt;stack.yaml&lt;/h3&gt;
-&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode yaml"&gt;&lt;code class="sourceCode yaml"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="fu"&gt;resolver:&lt;/span&gt;&lt;span class="at"&gt; lts-11.0&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;&lt;span class="fu"&gt;packages:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-3" data-line-number="3"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; .&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;現状落ちてくるものは &lt;code&gt;yesod-1.6.0&lt;/code&gt; ではないので、書き換えます。&lt;/p&gt;
-&lt;h3 id="package.yaml"&gt;package.yaml&lt;/h3&gt;
-&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode yaml"&gt;&lt;code class="sourceCode yaml"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="fu"&gt;dependencies:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; base&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; classy-prelude-yesod&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-4" data-line-number="4"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; yesod&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-5" data-line-number="5"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; yesod-core&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-6" data-line-number="6"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; yesod-static&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-7" data-line-number="7"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; yesod-form&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-8" data-line-number="8"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; classy-prelude&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-9" data-line-number="9"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; classy-prelude-conduit&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-10" data-line-number="10"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; bytestring&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-11" data-line-number="11"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; text&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-12" data-line-number="12"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; template-haskell&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-13" data-line-number="13"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; shakespeare&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-14" data-line-number="14"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; hjsmin&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-15" data-line-number="15"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; monad-control&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-16" data-line-number="16"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; wai-extra&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-17" data-line-number="17"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; yaml&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-18" data-line-number="18"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; http-conduit&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-19" data-line-number="19"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; directory&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-20" data-line-number="20"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; warp&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-21" data-line-number="21"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; data-default&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-22" data-line-number="22"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; aeson&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-23" data-line-number="23"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; conduit&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-24" data-line-number="24"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; monad-logger&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-25" data-line-number="25"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; fast-logger&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-26" data-line-number="26"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; wai-logger&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-27" data-line-number="27"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; file-embed&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-28" data-line-number="28"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; safe&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-29" data-line-number="29"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; unordered-containers&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-30" data-line-number="30"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; containers&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-31" data-line-number="31"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; vector&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-32" data-line-number="32"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; time&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-33" data-line-number="33"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; case-insensitive&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-34" data-line-number="34"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; wai&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-35" data-line-number="35"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; foreign-store&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;バージョンを全部消しただけです。&lt;/p&gt;
-&lt;h3 id="srcfoundation.hs"&gt;src/Foundation.hs&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;App&lt;/code&gt; データ型にサブサイトを含め、さらに &lt;code&gt;import&lt;/code&gt; を追加します。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;App&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;App&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;  {&lt;span class="ot"&gt; appSettings    ::&lt;/span&gt; &lt;span class="dt"&gt;AppSettings&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;  ,&lt;span class="ot"&gt; appStatic      ::&lt;/span&gt; &lt;span class="dt"&gt;Static&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-6" data-line-number="6"&gt;  ,&lt;span class="ot"&gt; appHttpManager ::&lt;/span&gt; &lt;span class="dt"&gt;Manager&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-7" data-line-number="7"&gt;  ,&lt;span class="ot"&gt; appLogger      ::&lt;/span&gt; &lt;span class="dt"&gt;Logger&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-8" data-line-number="8"&gt;  ,&lt;span class="ot"&gt; getHelloSub    ::&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-9" data-line-number="9"&gt;  }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;yesod-1.6.0&lt;/code&gt; した影響でコンパイルエラーが出るため、&lt;code&gt;shouldLog&lt;/code&gt; をコメントアウトします。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;    &lt;span class="co"&gt;-- shouldLog app _source level =&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;    &lt;span class="co"&gt;--     appShouldLogAll (appSettings app)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;    &lt;span class="co"&gt;--         || level == LevelWarn&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;    &lt;span class="co"&gt;--         || level == LevelError&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="configroute"&gt;config/route&lt;/h3&gt;
-&lt;p&gt;サブサイトへのルートを追加します。&lt;/p&gt;
-&lt;pre class="txt"&gt;&lt;code&gt;/subsite SubsiteR HelloSub getHelloSub&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="srcapplication.hs"&gt;src/Application.hs&lt;/h3&gt;
-&lt;p&gt;以下の2点を追記します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;import HelloSub&lt;/code&gt; を追加&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;makeFoundation&lt;/code&gt; 関数に &lt;code&gt;let getHelloSub = HelloSub&lt;/code&gt; を追記&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-3" data-line-number="3"&gt;&lt;span class="ot"&gt;makeFoundation ::&lt;/span&gt; &lt;span class="dt"&gt;AppSettings&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; &lt;span class="dt"&gt;App&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-4" data-line-number="4"&gt;makeFoundation appSettings &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-5" data-line-number="5"&gt;  &lt;span class="kw"&gt;let&lt;/span&gt; getHelloSub &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;HelloSub&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-7" data-line-number="7"&gt;  appHttpManager &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; newManager&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-8" data-line-number="8"&gt;  appLogger &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; newStdoutLoggerSet defaultBufSize &lt;span class="fu"&gt;&amp;gt;&amp;gt;=&lt;/span&gt; makeYesodLogger&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-9" data-line-number="9"&gt;  appStatic &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-10" data-line-number="10"&gt;    (&lt;span class="kw"&gt;if&lt;/span&gt; appMutableStatic appSettings &lt;span class="kw"&gt;then&lt;/span&gt; staticDevel &lt;span class="kw"&gt;else&lt;/span&gt; static)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-11" data-line-number="11"&gt;    (appStaticDir appSettings)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-12" data-line-number="12"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-13" data-line-number="13"&gt;  return &lt;span class="dt"&gt;App&lt;/span&gt; {&lt;span class="fu"&gt;..&lt;/span&gt;}&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;App {..}&lt;/code&gt; は &lt;code&gt;GHC&lt;/code&gt; の &lt;code&gt;RecordWildCards&lt;/code&gt; 言語拡張です。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb13"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb13-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Example&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-2" data-line-number="2"&gt;  { a &lt;span class="fu"&gt;=&lt;/span&gt; a&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-3" data-line-number="3"&gt;  , b &lt;span class="fu"&gt;=&lt;/span&gt; b&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-4" data-line-number="4"&gt;  , c &lt;span class="fu"&gt;=&lt;/span&gt; c&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-5" data-line-number="5"&gt;  }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;僕はあまり使いませんが、雰囲気はこんな感じです。&lt;/p&gt;
-&lt;h3 id="実行-1"&gt;実行&lt;/h3&gt;
-&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode sh"&gt;&lt;code class="sourceCode bash"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; build&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-2" data-line-number="2"&gt;$ &lt;span class="ex"&gt;stack&lt;/span&gt; exec example-subsite&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href="http://localhost:3000/subsite" class="uri"&gt;http://localhost:3000/subsite&lt;/a&gt; にアクセスすると次のような画面が現れます。&lt;/p&gt;
-&lt;figure&gt;
-&lt;img src="/images/2018/03-19/img03.png" alt="実行結果" /&gt;&lt;figcaption&gt;実行結果&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Yesod&lt;/code&gt; を使っていてもサブサイトについて知らないという人は多いと思いますが、&lt;code&gt;Yesod&lt;/code&gt; のアプリケーションが増えてきた時に使える、とても便利な仕組みだと思います。&lt;/p&gt;
-&lt;p&gt;サブサイトについて、もっと詳しく知りたい人は &lt;a href="https://www.stackage.org/lts-11.1/package/yesod-static-1.6.0"&gt;yesod-static&lt;/a&gt; パッケージの実装を見てみると良いでしょう。&lt;/p&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/ayase/items/0deb22e34787ddcd3132</id><title type="text">Haskellで自然言語処理100本ノックの1章を解いてみる。(後編その１)</title><updated>2018-03-13T00:26:13+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ayase/items/0deb22e34787ddcd3132"/></entry><entry><id>https://haskell.jp/blog/posts/2018/windows-long-path.html</id><title type="text">WindowsでHaskellを扱う時によく遭遇するNo such file or directoryについて</title><updated>2018-03-13T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/windows-long-path.html"/><summary type="html">&lt;article&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/taashi/items/d48e6cb875930538a302</id><title type="text">Haskellでコマンドライン引数を受け取る</title><updated>2018-03-19T14:52:46+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/taashi/items/d48e6cb875930538a302"/></entry><entry><id>https://qiita.com/lotz/items/fbc4788b8ea8313cbf76</id><title type="text">コモナドを使った抽象化の威力をライフゲームで試してみた</title><updated>2018-03-19T08:27:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/fbc4788b8ea8313cbf76"/></entry><entry><id>https://haskell.jp/blog/posts/2018/windows-long-path.html</id><title type="text">WindowsでHaskellを扱う時によく遭遇するNo such file or directoryについて</title><updated>2018-03-13T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/windows-long-path.html"/><summary type="html">&lt;article&gt;
     &lt;div class="container"&gt;
         &lt;div class="row"&gt;
             &lt;div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10"&gt;
@@ -2167,7 +2028,7 @@ Building test suite &amp;#39;a-little-longer-name-project-test&amp;#39; for a-li
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/nobsun/items/b96d6532a94c7dd6e361</id><title type="text">Haskellプログラミング中のエラー記録</title><updated>2018-03-09T22:02:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/b96d6532a94c7dd6e361"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a</id><title type="text">Haskell入門ハンズオン! #3: 当日用資料 5/5</title><updated>2018-03-09T18:14:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/2d2b28598f6dbb45b44a"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/02/11/185306</id><title type="text">HaskellでDiscordのBotを作る</title><updated>2018-03-09T13:45:13+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/02/11/185306"/><summary type="html">Discordはゲーミング向けのテキストチャットと音声通話を兼ねるプラットフォームであり、「テキストチャンネル」と「ボイスチャンネル」の二種を好きなだけ作ることができる。もちろん音声を全チャンネルに常時垂れ流すわけには行かないので、通話するにはボイスチャンネルに参加するという手順を踏む必要がある。しかし、例えば誰かがやっているゲームに混ざろうとしてボイスチャンネルに参加しても、チャンネル外のユーザーにはいかなる通知も発生しないため、気づかれないままのことがよくある。 そこで、ボイスチャンネルに参加したとき、テキストチャンネルにその旨を投稿するボットを用意すれば、気軽に通話の合図を送れる。全員に…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-03-04-fix-tasty-discover-windows.html</id><title type="text">tasty-discover が Windows+日本語環境で動かなかったので直す</title><updated>2018-03-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-03-04-fix-tasty-discover-windows.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/02/11/185306</id><title type="text">HaskellでDiscordのBotを作る</title><updated>2018-03-09T13:45:13+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/02/11/185306"/><summary type="html">Discordはゲーミング向けのテキストチャットと音声通話を兼ねるプラットフォームであり、「テキストチャンネル」と「ボイスチャンネル」の二種を好きなだけ作ることができる。もちろん音声を全チャンネルに常時垂れ流すわけには行かないので、通話するにはボイスチャンネルに参加するという手順を踏む必要がある。しかし、例えば誰かがやっているゲームに混ざろうとしてボイスチャンネルに参加しても、チャンネル外のユーザーにはいかなる通知も発生しないため、気づかれないままのことがよくある。 そこで、ボイスチャンネルに参加したとき、テキストチャンネルにその旨を投稿するボットを用意すれば、気軽に通話の合図を送れる。全員に…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-03-04-fix-tasty-discover-windows.html</id><title type="text">tasty-discover が Windows+日本語環境で動かなかったので直す</title><updated>2018-03-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-03-04-fix-tasty-discover-windows.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;tasty-discover が Windows+日本語環境で動かなかったので直す&lt;/h1&gt;
