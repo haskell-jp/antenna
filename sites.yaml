@@ -58,3 +58,9 @@ sites:
     feed: http://kakkun61.hatenablog.com/feed/category/Haskell
     logo:
       hatena: kakkun61
+  - title: "Hash λ Bye"
+    author: "ilyaletre"
+    url: http://ilyaletre.hatenablog.com/archive/category/Haskell
+    feed: http://ilyaletre.hatenablog.com/feed/category/Haskell
+    logo:
+      hatena: ilyaletre
