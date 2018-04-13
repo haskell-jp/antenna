@@ -1,4 +1,244 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-04-11T02:22:41+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/Lugendre/items/741ea90f22f688145313</id><title type="text">GHC言語拡張の一覧</title><updated>2018-04-11T02:22:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Lugendre/items/741ea90f22f688145313"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/980775598e65fda36d33</id><title type="text">GHCの最新のソースコードをビルドし、すこしいじる</title><updated>2018-04-10T09:29:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/980775598e65fda36d33"/></entry><entry><id>https://qiita.com/sand/items/e0880651c384cdd92975</id><title type="text">関数定義におけるパターンマッチング - Haskell vs Elm vs Elixir</title><updated>2018-04-09T23:00:28+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/e0880651c384cdd92975"/></entry><entry><id>https://qiita.com/keigoi/items/4aaa6090361b53cce24a</id><title type="text">Haskell Stack のグローバル環境を雑に使う</title><updated>2018-04-09T18:54:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/keigoi/items/4aaa6090361b53cce24a"/></entry><entry><id>https://qiita.com/aiya000/items/e2fd7567cebc461b3de1</id><title type="text">関数、where句に書くか トップレベルに書くか（Haskell）</title><updated>2018-04-09T10:45:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aiya000/items/e2fd7567cebc461b3de1"/></entry><entry><id>https://qiita.com/suzuki-hoge/items/220e36eb34b160ada527</id><title type="text">段階を踏みつつリファクタリングしてみる</title><updated>2018-04-09T00:55:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/suzuki-hoge/items/220e36eb34b160ada527"/></entry><entry><id>https://haskell.jp/blog/posts/2018/main-tester.html</id><title type="text">CLIアプリのE2Eテストを行うためのライブラリー main-testerをリリースしました</title><updated>2018-04-09T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/main-tester.html"/><summary type="html">&lt;article&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-04-13T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://matsubara0507.github.io/posts/2018-04-13-try-rio-1.html</id><title type="text">rio ライブラリを試す その１</title><updated>2018-04-13T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-04-13-try-rio-1.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+ &lt;div class="card-content"&gt;
+  &lt;header class="post-header"&gt;
+    &lt;h1 class="post-title" itemprop="name headline"&gt;rio ライブラリを試す その１&lt;/h1&gt;
+    &lt;p class="post-meta"&gt;
+      &lt;time datetime="2018-04-13" itemprop="datePublished"&gt;
+        Apr 13, 2018
+      &lt;/time&gt;
+      
+      
+      &lt;div class="tags"&gt;
+          &lt;i class="fa fa-tags"&gt;&lt;/i&gt; &lt;a href="/tags/Haskell.html"&gt;Haskell&lt;/a&gt; &lt;a href="/tags/rio.html"&gt;rio&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class="post-content" itemprop="articleBody"&gt;
+    &lt;p&gt;先日，alt. &lt;code&gt;Prelude&lt;/code&gt; を目指している &lt;a href="https://hackage.haskell.org/package/rio"&gt;&lt;code&gt;rio&lt;/code&gt;&lt;/a&gt; ライブラリの ver.0.1 がリリースされました． 自作している CLI ツールを試しに &lt;code&gt;rio&lt;/code&gt; で置き換えようかとしてまして，自分の整理のためにまとめてみようと思います．&lt;/p&gt;
+&lt;h2 id="section"&gt;&lt;/h2&gt;
+&lt;p&gt;ただし，&lt;code&gt;rio&lt;/code&gt; 作者ではないし，全部をちゃんと追っていないので間違っているかも． 間違っている場合は&lt;a href="https://github.com/matsubara0507/source-gh-pages"&gt;このリポジトリに Issue&lt;/a&gt; するか &lt;a href="https://www.reddit.com/r/haskell_jp"&gt;Reddit&lt;/a&gt; でコメントでもしてください m(_ _ )m&lt;/p&gt;
+&lt;h1 id="readme-でひとめぐり"&gt;README でひとめぐり&lt;/h1&gt;
+&lt;p&gt;もともとはビルドツール Stack を作成するために考えたデザインパターンをまとめたものっぽい．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.fpcomplete.com/blog/2017/07/the-rio-monad"&gt;The RIO Monad&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;rio&lt;/code&gt; ライブラリの README にはライブラリのゴール・目的の他に(彼らにとっての)ベストプラクティスが書いてある(&lt;code&gt;rio&lt;/code&gt; 自体がそれに則って作られてる)． ここには翻訳というより，README の各項目の要約を記述する．&lt;/p&gt;
+&lt;h2 id="goal"&gt;Goal&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;rio&lt;/code&gt; ライブラリのゴール(目的)は以下の3つ．&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;よく設計された信頼できるライブラリのコレクション&lt;/li&gt;
+&lt;li&gt;より優れた Prelude の代替え&lt;/li&gt;
+&lt;li&gt;高品質な Haskell コードを書くためのベストプラクティス&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(1)により &lt;code&gt;text&lt;/code&gt; や &lt;code&gt;bytesyring&lt;/code&gt; のような，ほとんど &lt;code&gt;base&lt;/code&gt; のようなパッケージを &lt;code&gt;dependencies&lt;/code&gt; に列挙する必要が無くなる． (3)は大域変数(&lt;code&gt;Reader&lt;/code&gt; モナド)やロガーのような実用モナド回りのベストプラクティスが目玉かな(他にもあるけど)．&lt;/p&gt;
+&lt;h2 id="標準ライブラリ"&gt;標準ライブラリ&lt;/h2&gt;
+&lt;p&gt;いくつかのパッケージを「標準」ライブラリとして再エクスポートしている． &lt;code&gt;rio&lt;/code&gt; の&lt;a href="https://github.com/commercialhaskell/rio/blob/311549f5a7c29abf6fc25e3ba7ec5ab6647e2d96/rio/package.yaml#L14"&gt;依存関係&lt;/a&gt;を見る限り，次のパッケージを再エクスポートしているようだ．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bytestring&lt;/li&gt;
+&lt;li&gt;containers&lt;/li&gt;
+&lt;li&gt;deepseq&lt;/li&gt;
+&lt;li&gt;directory&lt;/li&gt;
+&lt;li&gt;exceptions&lt;/li&gt;
+&lt;li&gt;filepath&lt;/li&gt;
+&lt;li&gt;hashable&lt;/li&gt;
+&lt;li&gt;lens(microlens)&lt;/li&gt;
+&lt;li&gt;process&lt;/li&gt;
+&lt;li&gt;text&lt;/li&gt;
+&lt;li&gt;time&lt;/li&gt;
+&lt;li&gt;unliftio&lt;/li&gt;
+&lt;li&gt;unordered-containers&lt;/li&gt;
+&lt;li&gt;vector&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;もちろん，元のパッケージの全ての関数や型を再エクスポートしているのではなく，取捨選択して再エクスポートしている． また，後述する &lt;code&gt;Prelude&lt;/code&gt; の代わりである &lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html"&gt;&lt;code&gt;RIO&lt;/code&gt;&lt;/a&gt; モジュールに含まれるものもあれば，&lt;code&gt;RIO.XXX&lt;/code&gt; として別のモジュールとして提供されているものもある．&lt;/p&gt;
+&lt;h3 id="lens"&gt;Lens&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;lens&lt;/code&gt; の場合，申し訳程度の関数しか再エクスポートされていない． 基本的に &lt;code&gt;set&lt;/code&gt;・&lt;code&gt;sets&lt;/code&gt;・&lt;code&gt;over&lt;/code&gt;・&lt;code&gt;to&lt;/code&gt; だけだ． 演算子は参照の &lt;code&gt;(.^)&lt;/code&gt; しかない． 今後どうなるか分からないが，現状 &lt;code&gt;(.~)&lt;/code&gt; や &lt;code&gt;(%~)&lt;/code&gt; は無いので替わりに関数を中置演算子にして使うしか無さそうだ．&lt;/p&gt;
+&lt;h2 id="prelude-の代替え"&gt;&lt;code&gt;Prelude&lt;/code&gt; の代替え&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Prelude&lt;/code&gt; の代替えとして &lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html"&gt;&lt;code&gt;RIO&lt;/code&gt;&lt;/a&gt; モジュールというのがある． README には部分関数や遅延 I/O のような，よく問題になるものを削除していると書いてある． また，&lt;code&gt;Data.Maybe&lt;/code&gt; や &lt;code&gt;Control.Arrow&lt;/code&gt; のような良く使う &lt;code&gt;base&lt;/code&gt; ライブラリのモジュールが再エクスポートされていたり，&lt;code&gt;mapLeft&lt;/code&gt; や &lt;code&gt;whenM&lt;/code&gt; のような良く使いそうなのに &lt;code&gt;base&lt;/code&gt; には無い関数が&lt;a href="https://github.com/commercialhaskell/rio/blob/e8c4cba69599aecd9f91c4398aea47ab4eadbb07/rio/src/RIO/Prelude/Extra.hs"&gt;定義されている&lt;/a&gt;． 正直，この辺りがすごい便利．&lt;/p&gt;
+&lt;h2 id="ベストプラクティス"&gt;ベストプラクティス&lt;/h2&gt;
+&lt;p&gt;ココからが長い + 意見の分かれるところ． 結構 &lt;code&gt;TODO&lt;/code&gt; と書いてあるところも多いので彼らの中でもまとまってないのかな？？&lt;/p&gt;
+&lt;h3 id="インポートプラクティス"&gt;インポートプラクティス&lt;/h3&gt;
+&lt;p&gt;以下をやってほしいらしい&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;NoImplicitPrelude&lt;/code&gt; 言語拡張をオン&lt;/li&gt;
+&lt;li&gt;全てのモジュールに &lt;code&gt;import RIO&lt;/code&gt; を追加 (すごいめんどい)&lt;/li&gt;
+&lt;li&gt;必要に応じて &lt;code&gt;RIO.XXX&lt;/code&gt; モジュールを &lt;code&gt;qualified&lt;/code&gt; を使ってインポート
+&lt;ul&gt;
+&lt;li&gt;適切な &lt;code&gt;qualified&lt;/code&gt; の付け方は各モジュールの Haddock の冒頭に書いてある&lt;/li&gt;
+&lt;li&gt;例えば &lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO-ByteString.html"&gt;&lt;code&gt;import qualified RIO.ByteString as B&lt;/code&gt;&lt;/a&gt; とか&lt;/li&gt;
+&lt;li&gt;ドキュメントに &lt;code&gt;qualified&lt;/code&gt; が書いてない場合は &lt;code&gt;qualified&lt;/code&gt; しなくていいのかな？？(例えば &lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO-Directory.html"&gt;&lt;code&gt;RIO.Directory&lt;/code&gt;&lt;/a&gt; とか)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;中置演算子は &lt;code&gt;qualified&lt;/code&gt; しなくていい(他のモジュールと衝突しない限りは)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="言語拡張"&gt;言語拡張&lt;/h3&gt;
+&lt;p&gt;「言語拡張を使わないプロジェクトなんて，最近じゃほとんどないよね」とか書いてある． 以下の観点を基にデフォルトで利用しても良さそうな言語拡張を選定したそうだ．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;コミュニティで受け入れられている&lt;/li&gt;
+&lt;li&gt;コードを壊すようなことが &lt;strong&gt;ほとんど&lt;/strong&gt; ない&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一般的に&lt;/strong&gt; 安全だと考えられている&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;割と断言していないのが面白い(笑) 推奨する言語拡張はこちら&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AutoDeriveTypeable
+BangPatterns
+BinaryLiterals
+ConstraintKinds
+DataKinds
+DefaultSignatures
+DeriveDataTypeable
+DeriveFoldable
+DeriveFunctor
+DeriveGeneric
+DeriveTraversable
+DoAndIfThenElse
+EmptyDataDecls
+ExistentialQuantification
+FlexibleContexts
+FlexibleInstances
+FunctionalDependencies
+GADTs
+GeneralizedNewtypeDeriving
+InstanceSigs
+KindSignatures
+LambdaCase
+MultiParamTypeClasses
+MultiWayIf
+NamedFieldPuns
+NoImplicitPrelude
+OverloadedStrings
+PartialTypeSignatures
+PatternGuards
+PolyKinds
+RankNTypes
+RecordWildCards
+ScopedTypeVariables
+StandaloneDeriving
+TupleSections
+TypeFamilies
+TypeSynonymInstances
+ViewPatterns&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;RecordWildCards&lt;/code&gt; と &lt;code&gt;OverloadedStrings&lt;/code&gt; は議論の余地あり的なことが書いてある(詳しくはもとの README を見て)．&lt;/p&gt;
+&lt;h3 id="ghcオプション"&gt;GHCオプション&lt;/h3&gt;
+&lt;p&gt;以下を使いなさいとのコト．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-Wall
+-Wcompat
+-Wincomplete-record-updates
+-Wincomplete-uni-patterns
+-Wredundant-constraints&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;どういう形で指定してもいいけど，&lt;code&gt;package.yaml&lt;/code&gt; で書くと楽だし，後述するテンプレートにも書く予定だそうだ． あと，プロダクションコードなら &lt;code&gt;-Werror&lt;/code&gt; をオンにして，最後には確認した方が良いとも書いてある(CIとかでチェックしたいよね)．&lt;/p&gt;
+&lt;h3 id="monads"&gt;Monads&lt;/h3&gt;
+&lt;p&gt;まってました！ モナドです． 実用的なプロジェクトを考えるとき，必要になってくるのが大域変数・ロガー・例外・IO だと思うので，気になるのはこの辺りだよね．&lt;/p&gt;
+&lt;p&gt;全体としての推奨事項は以下の通り．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;IO&lt;/code&gt; を使いたいときは &lt;code&gt;RIO&lt;/code&gt; モナドを使いなさい．
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;RIO&lt;/code&gt; モナドは &lt;code&gt;ReaderT env IO&lt;/code&gt; と同じだけど，&lt;code&gt;rio&lt;/code&gt; には &lt;code&gt;RIO&lt;/code&gt; モナドに対する補助関数が含まれるのでぜひ使って．&lt;br /&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RIO&lt;/code&gt; モナドで &lt;code&gt;env&lt;/code&gt; の参照関数を書くときは，具体的な型に対する参照関数を書かずに，型クラスを用いた多相的な関数を書くべき(詳しくは後述)
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Has&lt;/code&gt; スタイルの型クラスを使えば lens を利用することが出来るよ&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;いくつかの良い &lt;code&gt;mtl&lt;/code&gt; スタイルの型クラスも利用する必要は出てくるはず
+&lt;ul&gt;
+&lt;li&gt;ただし，推奨しているのは &lt;code&gt;MonadReader&lt;/code&gt; &lt;code&gt;MonadIO&lt;/code&gt; &lt;code&gt;MonadUnliftIO&lt;/code&gt; &lt;code&gt;PrimMonad&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MonadReader&lt;/code&gt; + &lt;code&gt;Has&lt;/code&gt; の方が &lt;code&gt;MonadLogger&lt;/code&gt; のように新しい型クラスを作るより優れていると思う&lt;/li&gt;
+&lt;li&gt;特に &lt;code&gt;MonadBase&lt;/code&gt; &lt;code&gt;MonadBaseControl&lt;/code&gt; &lt;code&gt;MonadMask&lt;/code&gt; &lt;code&gt;MonadCatch&lt;/code&gt; は避けるべき&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="大域変数"&gt;大域変数&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;env&lt;/code&gt; 回りについて． &lt;code&gt;Has&lt;/code&gt; スタイル(パターン)というのがあって，それ自体はこの&lt;a href="https://hackernoon.com/the-has-type-class-pattern-ca12adab70ae"&gt;ページ&lt;/a&gt;が参考になるのかな？ &lt;code&gt;env&lt;/code&gt; から何らかの値を参照する場合には&lt;/p&gt;
+&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="ot"&gt;myFunction ::&lt;/span&gt; &lt;span class="dt"&gt;RIO&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="dt"&gt;Foo&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;のような関数は &lt;strong&gt;やめて&lt;/strong&gt; ，次のように書くのを推奨している．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="kw"&gt;class&lt;/span&gt; &lt;span class="dt"&gt;HasConfig&lt;/span&gt; env &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;&lt;span class="ot"&gt;  configL ::&lt;/span&gt; &lt;span class="dt"&gt;Lens&amp;#39;&lt;/span&gt; env &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="co"&gt;-- more on this in a moment&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-4" data-line-number="4"&gt;&lt;span class="ot"&gt;myFunction ::&lt;/span&gt; &lt;span class="dt"&gt;HasConfig&lt;/span&gt; env &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;RIO&lt;/span&gt; env &lt;span class="dt"&gt;Foo&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ここで，&lt;code&gt;env&lt;/code&gt; は次のようなレコードを想定しており&lt;/p&gt;
+&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Env&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Env&lt;/span&gt; {&lt;span class="ot"&gt; envConfig ::&lt;/span&gt; &lt;span class="fu"&gt;!&lt;/span&gt;&lt;span class="dt"&gt;Config&lt;/span&gt; }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;こうすることで，&lt;code&gt;env&lt;/code&gt; に複数の大域変数を持たせても，うまく機能させることが出来る． また，次のように &lt;code&gt;Env&lt;/code&gt; と &lt;code&gt;Config&lt;/code&gt; それぞれでインスタンスを定義することで，それぞれで利用できる．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;HasConfig&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;  configL &lt;span class="fu"&gt;=&lt;/span&gt; id&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;HasConfig&lt;/span&gt; &lt;span class="dt"&gt;Env&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-5" data-line-number="5"&gt;  configL &lt;span class="fu"&gt;=&lt;/span&gt; lens envConfig (\x y &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; x { envConfig &lt;span class="fu"&gt;=&lt;/span&gt; y })&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id="ロガー"&gt;ロガー&lt;/h4&gt;
+&lt;p&gt;ロガーも同様に &lt;code&gt;Has&lt;/code&gt; スタイルを推奨している． &lt;code&gt;env&lt;/code&gt; にログを出力するための関数(&lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#t:LogFunc"&gt;&lt;code&gt;LogFunc&lt;/code&gt;&lt;/a&gt; 型のもの)を持たせる．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Env&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Env&lt;/span&gt; {&lt;span class="ot"&gt; envLogFunc ::&lt;/span&gt; &lt;span class="fu"&gt;!&lt;/span&gt;&lt;span class="dt"&gt;LogFunc&lt;/span&gt;,&lt;span class="ot"&gt; envConfig ::&lt;/span&gt; &lt;span class="fu"&gt;!&lt;/span&gt;&lt;span class="dt"&gt;Config&lt;/span&gt; }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これの &lt;code&gt;Has&lt;/code&gt; スタイル型クラスは &lt;code&gt;RIO&lt;/code&gt; モジュールに&lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#t:HasLogFunc"&gt;定義してある&lt;/a&gt;．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;HasLogFunc&lt;/span&gt; &lt;span class="dt"&gt;Env&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;  logFuncL &lt;span class="fu"&gt;=&lt;/span&gt; lens envLogFunc (\x y &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; x { envLogFunc &lt;span class="fu"&gt;=&lt;/span&gt; y })&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;LogFunc&lt;/code&gt; 型の値を渡すには &lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#v:withLogFunc"&gt;&lt;code&gt;withLogFunc&lt;/code&gt;&lt;/a&gt; 関数を用いるようだ(&lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#v:mkLogFunc"&gt;&lt;code&gt;mkLogFunc&lt;/code&gt;&lt;/a&gt; 関数もあるがアドバンスドと書いてある．)．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;  envConfig &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; getConfig&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;  logOpts &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; logOptionsHandle stdout &lt;span class="dt"&gt;False&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;  withLogFunc logOpts &lt;span class="fu"&gt;$&lt;/span&gt; \envLogFunc &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; runRIO &lt;span class="dt"&gt;Env&lt;/span&gt;{&lt;span class="fu"&gt;..&lt;/span&gt;} action&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-6" data-line-number="6"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-7" data-line-number="7"&gt;&lt;span class="ot"&gt;action ::&lt;/span&gt; &lt;span class="dt"&gt;RIO&lt;/span&gt; &lt;span class="dt"&gt;Env&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-8" data-line-number="8"&gt;action &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;...&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id="例外"&gt;例外&lt;/h4&gt;
+&lt;p&gt;例外をどのように表現すべきかは結構議論されており，今のところの基本的アイデアは以下の通り．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lookup&lt;/code&gt; のような単純に失敗する関数(部分関数になり得る？)の場合は &lt;code&gt;Maybe&lt;/code&gt; や &lt;code&gt;Either&lt;/code&gt; を返そう&lt;/li&gt;
+&lt;li&gt;それらを使いたくない場合(大域脱出とか？)は例外を使って
+&lt;ul&gt;
+&lt;li&gt;純粋なコード(IOではなく)の場合は &lt;code&gt;MonadThrow&lt;/code&gt; 制約を使う&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IO&lt;/code&gt; の場合は &lt;code&gt;thorowIO&lt;/code&gt; を介した実行時例外を使う(&lt;code&gt;RIO&lt;/code&gt; モナドも同じ)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;「IOアクションがどのように失敗するかを正確に把握できないことにより，不安と不満を感じるかもしれない．しかし，その痛みを受け入れて共存し内在化して，&lt;code&gt;tryAny&lt;/code&gt; を用いて移動してください．これは非同期例外に対して支払う代償です．」
+&lt;ul&gt;
+&lt;li&gt;ちょっと何言ってるかよくわからない…&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;全てのリソース割り当ては &lt;code&gt;bracket&lt;/code&gt; や &lt;code&gt;finally&lt;/code&gt; のような関数で行う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下のようにして，アプリ専用の例外を定義し使用することが推奨されている．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;AppExceptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;NetworkChangeError&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;FilePathError&lt;/span&gt; FilePath&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;ImpossibleError&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;  &lt;span class="kw"&gt;deriving&lt;/span&gt; (&lt;span class="dt"&gt;Typeable&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-6" data-line-number="6"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-7" data-line-number="7"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Exception&lt;/span&gt; &lt;span class="dt"&gt;AppExceptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-8" data-line-number="8"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-9" data-line-number="9"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Show&lt;/span&gt; &lt;span class="dt"&gt;AppExceptions&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-10" data-line-number="10"&gt;  show &lt;span class="fu"&gt;=&lt;/span&gt; \&lt;span class="kw"&gt;case&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-11" data-line-number="11"&gt;    &lt;span class="dt"&gt;NetworkChangeError&lt;/span&gt; err &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;network error: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; (unpack err)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-12" data-line-number="12"&gt;    &lt;span class="dt"&gt;FilePathError&lt;/span&gt; fp &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;error accessing filepath at: &amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;&amp;gt;&lt;/span&gt; fp&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-13" data-line-number="13"&gt;    &lt;span class="dt"&gt;ImpossibleError&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;this codepath should never have been executed. Please report a bug.&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ちなみに，&lt;code&gt;Exception&lt;/code&gt; 型クラス(というか &lt;a href="https://hackage.haskell.org/package/base-4.11.0.0/docs/Control-Exception-Base.html#t:SomeException"&gt;&lt;code&gt;SomeException&lt;/code&gt;&lt;/a&gt; 型)は，いわゆる存在型を利用して具体型(&lt;code&gt;AppExceptions&lt;/code&gt; とか)を隠蔽している．&lt;/p&gt;
+&lt;h2 id="section-1"&gt;&lt;/h2&gt;
+&lt;p&gt;疑問なところは，投げた例外を &lt;code&gt;catch&lt;/code&gt; してからディスパッチして良いのだろうか？ 実行時例外じゃなくて大域脱出をしたいだけなんだけどな． ちょっとイマイチ使い方が分からない．&lt;/p&gt;
+&lt;h3 id="strict"&gt;Strict&lt;/h3&gt;
+&lt;p&gt;特別な理由が無い限り，データフィールド(レコードのフィールド？？)は正格にすべき，とのこと． 割と重要そうなのに一文しかない．&lt;/p&gt;
+&lt;h3 id="プロジェクトテンプレート"&gt;プロジェクトテンプレート&lt;/h3&gt;
+&lt;p&gt;そのうち，新しい Stack テンプレートを作るそうだ． もちろん，&lt;code&gt;cabal&lt;/code&gt; ファイルは使わず &lt;code&gt;hpack&lt;/code&gt; を使用する．&lt;/p&gt;
+&lt;h3 id="安全第一"&gt;安全第一&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;rio&lt;/code&gt; は安全性を最優先しており，そのため部分関数と遅延 I/O を全力で避けている． もし，遅延 I/O を使いたい場合は &lt;code&gt;conduit&lt;/code&gt; のようなストリーミングライブラリを使いなさい，とのこと．&lt;/p&gt;
+&lt;h3 id="一般化"&gt;一般化&lt;/h3&gt;
+&lt;p&gt;Haskell のよくある疑問として，いつ一般化すべきか，というのがある(いつ？)． README にはいくつかの簡単なガイドラインが書いてある．&lt;/p&gt;
+&lt;p&gt;パラメトリック多相の場合，わりと議論の余地が無く，多相的な方が有用． つまり，&lt;code&gt;reverse :: [a] -&amp;gt; [a]&lt;/code&gt; は &lt;code&gt;reverse :: [Int] -&amp;gt; [Int]&lt;/code&gt; より優れている．&lt;/p&gt;
+&lt;p&gt;型クラスの場合は話が微妙になる． &lt;code&gt;Foldable&lt;/code&gt; や &lt;code&gt;Traversable&lt;/code&gt; のような &lt;code&gt;RIO&lt;/code&gt; で定義済みの型クラスには可能な限り一般化(インスタンスを定義)するのが良いだろう． しかし，本当の疑問は &lt;strong&gt;自身で型クラスを定義すべきかどうか&lt;/strong&gt; の場合． 原則としては可能な限りそれは避けるべきだ． もし，自身で型クラスを定義している場合は，&lt;strong&gt;自分が期待していなかった型がインスタンス化されてもバグが起きないよう&lt;/strong&gt; に気を付けること，とのこと．&lt;/p&gt;
+&lt;h3 id="コーディングスタイル"&gt;コーディングスタイル&lt;/h3&gt;
+&lt;p&gt;議論中だそうだ．&lt;/p&gt;
+&lt;h3 id="モジュール階層"&gt;モジュール階層&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;RIO.Prelude.XXX&lt;/code&gt; モジュールはドキュメントを Haddock で読みやすくするための階層で，個別にインポートすることを想定しているわけではない． と書いてあるが，結局 &lt;a href="https://github.com/commercialhaskell/rio/pull/72"&gt;ver.0.1 からは Haddock からも消えてしまった&lt;/a&gt;ので気にする必要はない．&lt;/p&gt;
+&lt;h1 id="io-まわり"&gt;I/O まわり&lt;/h1&gt;
+&lt;p&gt;(この話は README に書いてあるわけではないです)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;RIO&lt;/code&gt; モジュールには文字列型(&lt;code&gt;String&lt;/code&gt;)の一般的な &lt;code&gt;putStr&lt;/code&gt; や &lt;code&gt;getLine&lt;/code&gt; のような I/O 関数は無い． 実用コードの場合，これらの関数を直接呼ぶことは稀だろうが，例えば CLI を作ったときに &lt;code&gt;--version&lt;/code&gt; オプションでバージョン情報を出力したい場合などがある．&lt;/p&gt;
+&lt;p&gt;替わりとして次のような I/O 関数が提供されている．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Strict.ByteString&lt;/code&gt; 型の &lt;code&gt;putStr&lt;/code&gt; や &lt;code&gt;getLine&lt;/code&gt; であれば &lt;code&gt;RIO.ByteString&lt;/code&gt; モジュールで再定義されている&lt;/li&gt;
+&lt;li&gt;ファイルの入出力であれば &lt;code&gt;RIO&lt;/code&gt; モジュールに &lt;code&gt;Strict.ByteString&lt;/code&gt; 版と &lt;code&gt;Text&lt;/code&gt; 版が提供されている&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Builder&lt;/code&gt; 型の標準出力 &lt;a href="https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#v:hPutBuilder"&gt;&lt;code&gt;hPutBuilder&lt;/code&gt;&lt;/a&gt; 関数ならある&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;コンソールに対する I/O はどれを使うべきかはまだ&lt;a href="https://github.com/commercialhaskell/rio/issues/5"&gt;議論中&lt;/a&gt;みたいだ．&lt;/p&gt;
+&lt;h1 id="おしまい"&gt;おしまい&lt;/h1&gt;
+&lt;p&gt;何となく&lt;a href="https://github.com/matsubara0507/scrapbook/tree/rio"&gt;置き換えはできた&lt;/a&gt;けど，例外や I/O 回りは良く分かってない… また試していこう．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/Lugendre/items/741ea90f22f688145313</id><title type="text">GHC言語拡張の一覧</title><updated>2018-04-11T02:22:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Lugendre/items/741ea90f22f688145313"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/980775598e65fda36d33</id><title type="text">GHCの最新のソースコードをビルドし、すこしいじる</title><updated>2018-04-10T09:29:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/980775598e65fda36d33"/></entry><entry><id>https://qiita.com/sand/items/e0880651c384cdd92975</id><title type="text">関数定義におけるパターンマッチング - Haskell vs Elm vs Elixir</title><updated>2018-04-09T23:00:28+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/e0880651c384cdd92975"/></entry><entry><id>https://qiita.com/keigoi/items/4aaa6090361b53cce24a</id><title type="text">Haskell Stack のグローバル環境を雑に使う</title><updated>2018-04-09T18:54:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/keigoi/items/4aaa6090361b53cce24a"/></entry><entry><id>https://qiita.com/aiya000/items/e2fd7567cebc461b3de1</id><title type="text">関数、where句に書くか トップレベルに書くか（Haskell）</title><updated>2018-04-09T10:45:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aiya000/items/e2fd7567cebc461b3de1"/></entry><entry><id>https://qiita.com/suzuki-hoge/items/220e36eb34b160ada527</id><title type="text">段階を踏みつつリファクタリングしてみる</title><updated>2018-04-09T00:55:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/suzuki-hoge/items/220e36eb34b160ada527"/></entry><entry><id>https://haskell.jp/blog/posts/2018/main-tester.html</id><title type="text">CLIアプリのE2Eテストを行うためのライブラリー main-testerをリリースしました</title><updated>2018-04-09T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/main-tester.html"/><summary type="html">&lt;article&gt;
     &lt;div class="container"&gt;
         &lt;div class="row"&gt;
             &lt;div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10"&gt;
@@ -1749,9 +1989,11 @@ O
 &lt;li&gt;&lt;a href="http://osiire.hatenablog.com/entry/20090516/1242456737"&gt;多相バリアントを使いこなそう(4) - osiire’s blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;これらの記事は OCaml で多相バリアントの紹介をしています． ということで，同様の議論を Haskell でもしてみた！というのが，この記事の内容です．&lt;/p&gt;
+&lt;h2 id="section"&gt;&lt;/h2&gt;
+&lt;p&gt;(2018.04.13 追記アリ)&lt;/p&gt;
 &lt;h3 id="haskell-と多相バリアント"&gt;Haskell と多相バリアント&lt;/h3&gt;
 &lt;p&gt;悲しいことに，Haskell には組み込みで多相バリアントは無い(バリアントとは Haskell の代数的データ型における直和型と概ね一緒)． なので，多相バリアントを Haskell で模倣するために，毎度おなじみ &lt;a href="https://hackage.haskell.org/package/extensible"&gt;&lt;code&gt;extensible&lt;/code&gt;&lt;/a&gt; パッケージを用いる．&lt;/p&gt;
-&lt;h2 id="section"&gt;&lt;/h2&gt;
+&lt;h2 id="section-1"&gt;&lt;/h2&gt;
 &lt;p&gt;ネタバレをすると Haskell で同じことをするのは難しかった． なので，本質的な議論は osiire’s blog の方を読んだ方がいいと思うよ． 結局，本記事は osiire’s blog のと同様のことを Haskell もとい，&lt;code&gt;extensible&lt;/code&gt; パッケージでどのように行うか，という記事って感じになった．&lt;/p&gt;
 &lt;h2 id="多相バリアントの基本"&gt;多相バリアントの基本&lt;/h2&gt;
 &lt;p&gt;多相バリアントとは，名前の通り，多相的なバリアントである． バリアントは前述したとおり，直和型と基本的に同じ．&lt;/p&gt;
@@ -1824,7 +2066,7 @@ O
 &lt;a class="sourceLine" id="cb9-21" data-line-number="21"&gt;&lt;span class="fu"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="fu"&gt;:&lt;/span&gt;t toInt2 hoge3&lt;/a&gt;
 &lt;a class="sourceLine" id="cb9-22" data-line-number="22"&gt;toInt2&lt;span class="ot"&gt; hoge3 ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;確かに，&lt;code&gt;toInt1&lt;/code&gt; は &lt;code&gt;hoge1&lt;/code&gt; と &lt;code&gt;hoge2&lt;/code&gt; に適用でき，&lt;code&gt;toInt2&lt;/code&gt; は &lt;code&gt;hoge1&lt;/code&gt; と &lt;code&gt;hoge3&lt;/code&gt; に適用できている．&lt;/p&gt;
-&lt;h2 id="section-1"&gt;&lt;/h2&gt;
+&lt;h2 id="section-2"&gt;&lt;/h2&gt;
 &lt;p&gt;さて，&lt;code&gt;toInt1&lt;/code&gt; と &lt;code&gt;toInt2&lt;/code&gt; の実装を与えてみる． 実は簡単なのは後者 &lt;code&gt;toInt2&lt;/code&gt; だ．&lt;/p&gt;
 &lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE OverloadedLabels #-}&lt;/span&gt;&lt;/a&gt;
 &lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;&lt;/a&gt;
@@ -1836,13 +2078,14 @@ O
 &lt;p&gt;(&lt;a href="https://matsubara0507.github.io/posts/2017-11-28-fun-of-extensible-1.html"&gt;昔の記事&lt;/a&gt;でも紹介した) &lt;a href="https://hackage.haskell.org/package/extensible-0.4.8/docs/Data-Extensible-Inclusion.html#v:spread"&gt;&lt;code&gt;spread&lt;/code&gt;&lt;/a&gt; 関数を用いることで &lt;strong&gt;バリアント型を拡張できる&lt;/strong&gt; (&lt;a href="https://hackage.haskell.org/package/extensible-0.4.8/docs/Data-Extensible-Field.html#v:matchField"&gt;&lt;code&gt;matchField&lt;/code&gt;&lt;/a&gt; 関数の使い方についてはこの&lt;a href="https://matsubara0507.github.io/posts/2018-01-31-fun-of-extensible-2.html"&gt;記事&lt;/a&gt;を参照して)．&lt;/p&gt;
 &lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;&lt;span class="ot"&gt;shrink ::&lt;/span&gt; (xs ⊆ ys) &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt; ys &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt; xs&lt;/a&gt;
 &lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;&lt;span class="ot"&gt;spread ::&lt;/span&gt; (xs ⊆ ys) &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Variant&lt;/span&gt; xs &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Variant&lt;/span&gt; ys&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;拡縮する関数 &lt;code&gt;spread&lt;/code&gt; や &lt;code&gt;shrink&lt;/code&gt; は強力なのだが，多相的すぎて前後の型が分からないとエラーになる(気がする(パッケージの作者じゃないので細かいことはよくわからん))ので，型注釈 (&lt;code&gt;spread xs :: Hoge&lt;/code&gt; の部分)を与える必要がある．&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;拡縮する関数 &lt;code&gt;spread&lt;/code&gt; や &lt;code&gt;shrink&lt;/code&gt; は強力なのだが，多相的すぎて前後の型が分からないとエラーになる(気がする(パッケージの作者じゃないので細かいことはよくわからん))ので，型注釈 (&lt;code&gt;spread xs :: Hoge&lt;/code&gt; の部分)を与える必要がある．&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;(2018.04.13 追記) &lt;code&gt;spread&lt;/code&gt; や &lt;code&gt;shrink&lt;/code&gt; の代わりに &lt;code&gt;shrinkAssoc&lt;/code&gt; や &lt;code&gt;spreadAssoc&lt;/code&gt; を使えば値が多相でもうまく扱えるとのコトを&lt;a href="https://www.reddit.com/r/haskell_jp/comments/86rx9b/多相バリアントを使いこなそう_with_haskell/dwaq3cw/"&gt;作者様よりコメント&lt;/a&gt;いただいた． 感謝．&lt;/p&gt;
 &lt;h3 id="必殺-coinclusion"&gt;必殺 Coinclusion&lt;/h3&gt;
 &lt;p&gt;前者が難しいのは，&lt;code&gt;spread&lt;/code&gt; や &lt;code&gt;shrink&lt;/code&gt; とは逆の振る舞いを要求するからだ． そのために(この前作者から教えてもらった隠し技(別に隠してない)) &lt;a href="https://hackage.haskell.org/package/extensible-0.4.8/docs/Data-Extensible-Nullable.html"&gt;&lt;code&gt;Nullable&lt;/code&gt;&lt;/a&gt; を使う！ &lt;code&gt;Nullable&lt;/code&gt; を使うとバリアントやレコードの全ての要素を簡単に &lt;code&gt;Maybe&lt;/code&gt; でラップできる(なんかいいテーマがあったら，そのうち解説する)． さらに &lt;code&gt;Nullable&lt;/code&gt; を用いることで，Coinclusion を定義できる！&lt;/p&gt;
 &lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;&lt;span class="ot"&gt;wrench ::&lt;/span&gt; (&lt;span class="dt"&gt;Generate&lt;/span&gt; ys, xs ⊆ ys) &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; (h &lt;span class="fu"&gt;:*&lt;/span&gt; xs) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Nullable&lt;/span&gt; h &lt;span class="fu"&gt;:*&lt;/span&gt; ys&lt;/a&gt;
 &lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;&lt;span class="ot"&gt;retrench ::&lt;/span&gt; (&lt;span class="dt"&gt;Generate&lt;/span&gt; ys, xs ⊆ ys) &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; (h &lt;span class="fu"&gt;:|&lt;/span&gt; ys) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Nullable&lt;/span&gt; ((&lt;span class="fu"&gt;:|&lt;/span&gt;) h) xs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;wrench&lt;/code&gt; や &lt;code&gt;retrench&lt;/code&gt; は &lt;code&gt;shrink&lt;/code&gt; と &lt;code&gt;spread&lt;/code&gt; の逆向きの変換になっているのが分かるだろうか？ 逆向きにしたせいで足りない部分は &lt;code&gt;Nullable&lt;/code&gt; によって &lt;code&gt;Nothing&lt;/code&gt; となる． 例えば &lt;code&gt;Variant (&amp;quot;piyo&amp;quot; &amp;gt;: () ': HogeFields)&lt;/code&gt; から &lt;code&gt;Hoge&lt;/code&gt; に縮小する場合は，&lt;code&gt;embedAssoc (#piyo @= ())&lt;/code&gt; が &lt;code&gt;Nothing&lt;/code&gt; となり，他が &lt;code&gt;Just&lt;/code&gt; でラップされる．&lt;/p&gt;
-&lt;h2 id="section-2"&gt;&lt;/h2&gt;
+&lt;h2 id="section-3"&gt;&lt;/h2&gt;
 &lt;p&gt;Coinclusion を用いて &lt;code&gt;toInt2&lt;/code&gt; 関数を実装してみると次のようになる．&lt;/p&gt;
 &lt;div class="sourceCode" id="cb13"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb13-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE PolyKinds           #-}&lt;/span&gt;&lt;/a&gt;
 &lt;a class="sourceLine" id="cb13-2" data-line-number="2"&gt;&lt;span class="ot"&gt;{-# LANGUAGE RankNTypes          #-}&lt;/span&gt;&lt;/a&gt;
@@ -4939,488 +5182,6 @@ True&lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2017-12-22-create-elmdeck-part2.html</id><title type="text">Elm でマークダウンプレゼンテーションエディタを作ってみた (その２)</title><updated>2017-12-22T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2017-12-22-create-elmdeck-part2.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
- &lt;div class="card-content"&gt;
-  &lt;header class="post-header"&gt;
-    &lt;h1 class="post-title" itemprop="name headline"&gt;Elm でマークダウンプレゼンテーションエディタを作ってみた (その２)&lt;/h1&gt;
-    &lt;p class="post-meta"&gt;
-      &lt;time datetime="2017-12-22" itemprop="datePublished"&gt;
-        Dec 22, 2017
-      &lt;/time&gt;
-      
-      
-      &lt;div class="tags"&gt;
-          &lt;i class="fa fa-tags"&gt;&lt;/i&gt; &lt;a href="/tags/Elm.html"&gt;Elm&lt;/a&gt; &lt;a href="/tags/application.html"&gt;application&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class="post-content" itemprop="articleBody"&gt;
-    &lt;p&gt;&lt;a href="https://qiita.com/advent-calendar/2017/electron"&gt;Electron Advent Calendar 2017&lt;/a&gt; の22日目の記事です．&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://qiita.com/advent-calendar/2017/elm2"&gt;Elm2 アドカレ&lt;/a&gt;で 「Elm でマークダウンプレゼンテーションエディタを作るハナシ」を書いたのですが，長くなったので分けました． 前半は&lt;a href="/posts/2017-12-18-create-elmdeck-part1.html"&gt;コチラ&lt;/a&gt;(前半は Electron 関係ないけどね)．&lt;/p&gt;
-&lt;h2 id="section"&gt;&lt;/h2&gt;
-&lt;p&gt;今回はローカルファイルの読み書きをするために Electron を導入します(Elm もといブラウザでいい感じにする方法が分からなかった)． 今回のコードは以下のリポジトリにあります．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/matsubara0507/elmdeck/tree/electron"&gt;matsubara0507/elmdeck - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="elm-と-electron"&gt;Elm と Electron&lt;/h2&gt;
-&lt;p&gt;結構いろんな人が挑戦してて，資料は豊富にある． ぼくは以下のリポジトリを参考にした．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/yasuyuky/elmtrn"&gt;yasuyuky/elmtrn - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;アナログ時計を表示する Electron プログラムだったはず．&lt;/p&gt;
-&lt;h2 id="つくる"&gt;つくる&lt;/h2&gt;
-&lt;p&gt;少しずつ拡張していく．&lt;/p&gt;
-&lt;h3 id="electron-化"&gt;Electron 化&lt;/h3&gt;
-&lt;p&gt;まずは Electron 化する． &lt;a href="https://github.com/matsubara0507/elmdeck/tree/6ff0520f65080c9a94ac85c99fc01e0374ca250e"&gt;もともと&lt;/a&gt;は次のような構成だった(&lt;code&gt;main.js&lt;/code&gt; は Elm ファイル群から生成)．&lt;/p&gt;
-&lt;pre class="txt"&gt;&lt;code&gt;/
- |-- elm-package.json
- |-- index.html
- |-- src/
- |    |-- Main.elm
- |    \-- ..
- \-- js/
-      |-- main.js
-      \-- highlight.js&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;これ，elmtrn を参考に次のような構成に変更した．&lt;/p&gt;
-&lt;pre class="txt"&gt;&lt;code&gt;/
- |-- elm-package.json
- |-- gulpfile.js
- |-- package.json
- \-- app
-      |-- index.html
-      |-- src/
-      |    |-- Main.elm
-      |    \-- ..
-      \-- js/
-           |-- app.js
-           |-- main.js
-           \-- ..&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href="https://github.com/matsubara0507/elmdeck/blob/97607bc1c2f069101d7d6012dcd46470d3a2d3fe/package.json"&gt;package.json&lt;/a&gt; は elmtrn をほぼそのまんま(&lt;code&gt;main&lt;/code&gt; の場所だけ違う)． gulp を使って，Elm のコードを監視・コンパイルし，生成した JS コードを Electron から呼び出す． elmtrn の gulpfile.js の設定では，各 Elm ファイルに対しひとつの JS ファイルを生成していたが，自分はひとまとめにした JS を生成したかったので，次のように gulpfile.js を書き換えた．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; g &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;gulp&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; electron &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;electron-connect&amp;#39;&lt;/span&gt;).&lt;span class="va"&gt;server&lt;/span&gt;.&lt;span class="at"&gt;create&lt;/span&gt;()&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; packager &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;electron-packager&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-4" data-line-number="4"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; $ &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;gulp-load-plugins&amp;#39;&lt;/span&gt;)()&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-5" data-line-number="5"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; packageJson &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;./package.json&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-6" data-line-number="6"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; extend &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;util&amp;#39;&lt;/span&gt;).&lt;span class="at"&gt;_extend&lt;/span&gt;&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-7" data-line-number="7"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-8" data-line-number="8"&gt;&lt;span class="va"&gt;g&lt;/span&gt;.&lt;span class="at"&gt;task&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;watch&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; () &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-9" data-line-number="9"&gt;  &lt;span class="va"&gt;g&lt;/span&gt;.&lt;span class="at"&gt;watch&lt;/span&gt;([&lt;span class="st"&gt;&amp;#39;app/src/**/*.elm&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt;[&lt;span class="st"&gt;&amp;#39;elm&amp;#39;&lt;/span&gt;])&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-10" data-line-number="10"&gt;  &lt;span class="va"&gt;electron&lt;/span&gt;.&lt;span class="at"&gt;start&lt;/span&gt;()&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-11" data-line-number="11"&gt;  &lt;span class="va"&gt;g&lt;/span&gt;.&lt;span class="at"&gt;watch&lt;/span&gt;([&lt;span class="st"&gt;&amp;#39;app/js/*.js&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;app/index.html&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="va"&gt;electron&lt;/span&gt;.&lt;span class="at"&gt;restart&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-12" data-line-number="12"&gt;  &lt;span class="va"&gt;g&lt;/span&gt;.&lt;span class="at"&gt;watch&lt;/span&gt;([]&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="va"&gt;electron&lt;/span&gt;.&lt;span class="at"&gt;reload&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-13" data-line-number="13"&gt;&lt;span class="op"&gt;}&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-14" data-line-number="14"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-15" data-line-number="15"&gt;&lt;span class="va"&gt;g&lt;/span&gt;.&lt;span class="at"&gt;task&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;elm&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; () &lt;span class="op"&gt;=&amp;gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-16" data-line-number="16"&gt;  &lt;span class="va"&gt;g&lt;/span&gt;.&lt;span class="at"&gt;src&lt;/span&gt;([&lt;span class="st"&gt;&amp;#39;app/src/**/*.elm&amp;#39;&lt;/span&gt;])&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-17" data-line-number="17"&gt;    .&lt;span class="at"&gt;pipe&lt;/span&gt;(&lt;span class="va"&gt;$&lt;/span&gt;.&lt;span class="at"&gt;logger&lt;/span&gt;())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-18" data-line-number="18"&gt;    .&lt;span class="at"&gt;pipe&lt;/span&gt;(&lt;span class="va"&gt;$&lt;/span&gt;.&lt;span class="at"&gt;plumber&lt;/span&gt;())&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-19" data-line-number="19"&gt;    .&lt;span class="at"&gt;pipe&lt;/span&gt;(&lt;span class="va"&gt;$&lt;/span&gt;.&lt;span class="va"&gt;elm&lt;/span&gt;.&lt;span class="at"&gt;bundle&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;main.js&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; debug&lt;span class="op"&gt;=&lt;/span&gt;&lt;span class="kw"&gt;true&lt;/span&gt;))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-20" data-line-number="20"&gt;    .&lt;span class="at"&gt;pipe&lt;/span&gt;(&lt;span class="va"&gt;g&lt;/span&gt;.&lt;span class="at"&gt;dest&lt;/span&gt;(&lt;span class="st"&gt;&amp;quot;app/js&amp;quot;&lt;/span&gt;))&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-21" data-line-number="21"&gt;&lt;span class="op"&gt;}&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-22" data-line-number="22"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-23" data-line-number="23"&gt;&lt;span class="va"&gt;g&lt;/span&gt;.&lt;span class="at"&gt;task&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; [&lt;span class="st"&gt;&amp;#39;watch&amp;#39;&lt;/span&gt;])&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href="https://github.com/philopon/gulp-elm"&gt;philopon/gulp-elm の README&lt;/a&gt; が参考になった．&lt;/p&gt;
-&lt;h2 id="section-1"&gt;&lt;/h2&gt;
-&lt;p&gt;あとは，次のように elmtrn の app.js を適当に書き直した．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;app&lt;span class="op"&gt;,&lt;/span&gt; BrowserWindow&lt;span class="op"&gt;}&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;electron&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;&lt;span class="kw"&gt;var&lt;/span&gt; mainWindow &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;null&lt;/span&gt;&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-4" data-line-number="4"&gt;&lt;span class="va"&gt;app&lt;/span&gt;.&lt;span class="at"&gt;on&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;window-all-closed&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="kw"&gt;function&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-5" data-line-number="5"&gt;    &lt;span class="va"&gt;app&lt;/span&gt;.&lt;span class="at"&gt;quit&lt;/span&gt;()&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-6" data-line-number="6"&gt;&lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-7" data-line-number="7"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-8" data-line-number="8"&gt;&lt;span class="va"&gt;app&lt;/span&gt;.&lt;span class="at"&gt;on&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;ready&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="kw"&gt;function&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-9" data-line-number="9"&gt;  mainWindow &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="at"&gt;BrowserWindow&lt;/span&gt;(&lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-10" data-line-number="10"&gt;    &lt;span class="st"&gt;&amp;quot;frame&amp;quot;&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="kw"&gt;true&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-11" data-line-number="11"&gt;    &lt;span class="st"&gt;&amp;quot;always-on-top&amp;quot;&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="kw"&gt;true&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-12" data-line-number="12"&gt;    &lt;span class="st"&gt;&amp;quot;resizable&amp;quot;&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="kw"&gt;true&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-13" data-line-number="13"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-14" data-line-number="14"&gt;  &lt;span class="va"&gt;mainWindow&lt;/span&gt;.&lt;span class="at"&gt;maximize&lt;/span&gt;()&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-15" data-line-number="15"&gt;  &lt;span class="va"&gt;mainWindow&lt;/span&gt;.&lt;span class="at"&gt;loadURL&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;file://&amp;#39;&lt;/span&gt; &lt;span class="op"&gt;+&lt;/span&gt; __dirname &lt;span class="op"&gt;+&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;/../index.html&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-16" data-line-number="16"&gt;  &lt;span class="va"&gt;mainWindow&lt;/span&gt;.&lt;span class="at"&gt;on&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;closed&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="kw"&gt;function&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-17" data-line-number="17"&gt;    mainWindow &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;null&lt;/span&gt;&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-18" data-line-number="18"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-19" data-line-number="19"&gt;&lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これで &lt;code&gt;gulp&lt;/code&gt; を実行すればブラウザ版 elmdeck がそのまんま electron で実行できる． やったぁ．&lt;/p&gt;
-&lt;h3 id="ファイルの読み込み"&gt;ファイルの読み込み&lt;/h3&gt;
-&lt;p&gt;ココからが本番．&lt;/p&gt;
-&lt;p&gt;設計として，デスクトップでよくある感じに，左上の &lt;code&gt;File&lt;/code&gt; から &lt;code&gt;Open&lt;/code&gt; とかしたい． こんな感じ(これは Atom だけど)．&lt;/p&gt;
-&lt;p&gt;&lt;img src="/assets/create-elmdeck/atom-file-open.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;Electron でファイルの呼び出しをする方法は以下の記事を参考にした．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://qiita.com/_takwat/items/6544342fd4141345bb19"&gt;Electronでファイルやフォルダの選択 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Node の fs ライブラリを使えばよいようだ(Electron に限らないハナシかな)． &lt;a href="https://nodejs.org/api/fs.html"&gt;fs の公式ドキュメント&lt;/a&gt;とにらめっこして &lt;a href="https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback"&gt;&lt;code&gt;fs.readFile&lt;/code&gt;&lt;/a&gt; を呼び出せば良いみたいなのは分かった． 取りあえず，次のような &lt;code&gt;files.js&lt;/code&gt; ファイルを書いた．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="st"&gt;&amp;#39;use strict&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;remote&lt;span class="op"&gt;}&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;electron&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-4" data-line-number="4"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;dialog&lt;span class="op"&gt;,&lt;/span&gt; BrowserWindow&lt;span class="op"&gt;}&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; remote&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-5" data-line-number="5"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; fs &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-7" data-line-number="7"&gt;&lt;span class="va"&gt;module&lt;/span&gt;.&lt;span class="at"&gt;exports&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-8" data-line-number="8"&gt;  &lt;span class="dt"&gt;readFile&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="kw"&gt;function&lt;/span&gt; (app) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-9" data-line-number="9"&gt;    &lt;span class="va"&gt;dialog&lt;/span&gt;.&lt;span class="at"&gt;showOpenDialog&lt;/span&gt;(&lt;span class="kw"&gt;null&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-10" data-line-number="10"&gt;        &lt;span class="dt"&gt;properties&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;span class="st"&gt;&amp;#39;openFile&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-11" data-line-number="11"&gt;        &lt;span class="dt"&gt;title&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;File&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-12" data-line-number="12"&gt;        &lt;span class="dt"&gt;defaultPath&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-13" data-line-number="13"&gt;        &lt;span class="dt"&gt;filters&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-14" data-line-number="14"&gt;            &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;name&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;マークダウン&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="dt"&gt;extensions&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;span class="st"&gt;&amp;#39;md&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;markdown&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-15" data-line-number="15"&gt;        ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-16" data-line-number="16"&gt;    &lt;span class="op"&gt;},&lt;/span&gt; (fileNames) &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-17" data-line-number="17"&gt;        &lt;span class="va"&gt;fs&lt;/span&gt;.&lt;span class="at"&gt;readFile&lt;/span&gt;(fileNames[&lt;span class="dv"&gt;0&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; (err&lt;span class="op"&gt;,&lt;/span&gt; data) &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-18" data-line-number="18"&gt;          &lt;span class="cf"&gt;if&lt;/span&gt; (err) &lt;span class="va"&gt;console&lt;/span&gt;.&lt;span class="at"&gt;log&lt;/span&gt;(err)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-19" data-line-number="19"&gt;          &lt;span class="va"&gt;console&lt;/span&gt;.&lt;span class="at"&gt;log&lt;/span&gt;(data)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-20" data-line-number="20"&gt;        &lt;span class="op"&gt;}&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-21" data-line-number="21"&gt;    &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-22" data-line-number="22"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-23" data-line-number="23"&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;次にこれをメニューバーから呼べるようにする． Electron のメニューバーを拡張するには &lt;a href="https://electronjs.org/docs/api/menu"&gt;&lt;code&gt;Menu&lt;/code&gt; クラス&lt;/a&gt;を使えば良いらしい． サンプルやらを参考にしながらイロイロ試行錯誤してみた結果，次のような &lt;code&gt;menuItems.js&lt;/code&gt; ファイルを書き，&lt;/p&gt;
-&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;app&lt;span class="op"&gt;,&lt;/span&gt; Menu&lt;span class="op"&gt;,&lt;/span&gt; dialog&lt;span class="op"&gt;}&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;electron&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; template &lt;span class="op"&gt;=&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt;  &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-5" data-line-number="5"&gt;    &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Edit&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-6" data-line-number="6"&gt;    &lt;span class="dt"&gt;submenu&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-7" data-line-number="7"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;undo&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-8" data-line-number="8"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;redo&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-9" data-line-number="9"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;type&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;separator&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-10" data-line-number="10"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;cut&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-11" data-line-number="11"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;copy&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-12" data-line-number="12"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;paste&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-13" data-line-number="13"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;pasteandmatchstyle&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-14" data-line-number="14"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;delete&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-15" data-line-number="15"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;selectall&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-16" data-line-number="16"&gt;    ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-17" data-line-number="17"&gt;  &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-18" data-line-number="18"&gt;  &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-19" data-line-number="19"&gt;    &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;View&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-20" data-line-number="20"&gt;    &lt;span class="dt"&gt;submenu&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-21" data-line-number="21"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;reload&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-22" data-line-number="22"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;forcereload&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-23" data-line-number="23"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;toggledevtools&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-24" data-line-number="24"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;type&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;separator&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-25" data-line-number="25"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;resetzoom&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-26" data-line-number="26"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;zoomin&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-27" data-line-number="27"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;zoomout&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-28" data-line-number="28"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;type&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;separator&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-29" data-line-number="29"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;togglefullscreen&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-30" data-line-number="30"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;toggledevtools&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-31" data-line-number="31"&gt;    ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-32" data-line-number="32"&gt;  &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-33" data-line-number="33"&gt;  &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-34" data-line-number="34"&gt;    &lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;window&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-35" data-line-number="35"&gt;    &lt;span class="dt"&gt;submenu&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-36" data-line-number="36"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;minimize&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-37" data-line-number="37"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;close&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-38" data-line-number="38"&gt;    ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-39" data-line-number="39"&gt;  &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-40" data-line-number="40"&gt;  &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-41" data-line-number="41"&gt;    &lt;span class="dt"&gt;role&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;help&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-42" data-line-number="42"&gt;    &lt;span class="dt"&gt;submenu&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-43" data-line-number="43"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-44" data-line-number="44"&gt;        &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Learn More&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-45" data-line-number="45"&gt;        &lt;span class="at"&gt;click&lt;/span&gt; () &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;electron&amp;#39;&lt;/span&gt;).&lt;span class="va"&gt;shell&lt;/span&gt;.&lt;span class="at"&gt;openExternal&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;https://electron.atom.io&amp;#39;&lt;/span&gt;) &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-46" data-line-number="46"&gt;      &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-47" data-line-number="47"&gt;    ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-48" data-line-number="48"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-49" data-line-number="49"&gt;]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-50" data-line-number="50"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-51" data-line-number="51"&gt;&lt;span class="kw"&gt;const&lt;/span&gt; items &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="va"&gt;template&lt;/span&gt;.&lt;span class="at"&gt;map&lt;/span&gt;( option &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="cf"&gt;return&lt;/span&gt; &lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="at"&gt;MenuItem&lt;/span&gt;(option) &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-52" data-line-number="52"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-53" data-line-number="53"&gt;&lt;span class="va"&gt;module&lt;/span&gt;.&lt;span class="at"&gt;exports&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-54" data-line-number="54"&gt;  &lt;span class="dt"&gt;get&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; () &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="cf"&gt;return&lt;/span&gt; items&lt;span class="op"&gt;;&lt;/span&gt; &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-55" data-line-number="55"&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これ(module exports した &lt;code&gt;get&lt;/code&gt; 関数のコト)を &lt;code&gt;index.html&lt;/code&gt; で次のように呼び出した．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode html"&gt;&lt;code class="sourceCode html"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="kw"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;  &lt;span class="kw"&gt;const&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;remote&lt;span class="op"&gt;}&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;electron&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;const&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;Menu&lt;span class="op"&gt;,&lt;/span&gt; MenuItem&lt;span class="op"&gt;}&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; remote&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-4" data-line-number="4"&gt;  &lt;span class="kw"&gt;const&lt;/span&gt; files &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;./js/files&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-5" data-line-number="5"&gt;  &lt;span class="kw"&gt;const&lt;/span&gt; menuItems &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="at"&gt;require&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;./js/menuItems&amp;#39;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-7" data-line-number="7"&gt;  &lt;span class="kw"&gt;var&lt;/span&gt; node &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="va"&gt;document&lt;/span&gt;.&lt;span class="at"&gt;getElementById&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;main&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-8" data-line-number="8"&gt;  &lt;span class="cf"&gt;while&lt;/span&gt; (&lt;span class="va"&gt;node&lt;/span&gt;.&lt;span class="at"&gt;firstChild&lt;/span&gt;) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-9" data-line-number="9"&gt;    &lt;span class="va"&gt;node&lt;/span&gt;.&lt;span class="at"&gt;removeChild&lt;/span&gt;(&lt;span class="va"&gt;node&lt;/span&gt;.&lt;span class="at"&gt;firstChild&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-10" data-line-number="10"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-11" data-line-number="11"&gt;  &lt;span class="kw"&gt;var&lt;/span&gt; app &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="va"&gt;module&lt;/span&gt;.&lt;span class="va"&gt;exports&lt;/span&gt;.&lt;span class="va"&gt;Main&lt;/span&gt;.&lt;span class="at"&gt;embed&lt;/span&gt;(node)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-12" data-line-number="12"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-13" data-line-number="13"&gt;  &lt;span class="kw"&gt;var&lt;/span&gt; menuvar &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="at"&gt;Menu&lt;/span&gt;()&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-14" data-line-number="14"&gt;  &lt;span class="va"&gt;menuvar&lt;/span&gt;.&lt;span class="at"&gt;append&lt;/span&gt;(&lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="at"&gt;MenuItem&lt;/span&gt;(&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-15" data-line-number="15"&gt;    &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-16" data-line-number="16"&gt;      &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;File&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-17" data-line-number="17"&gt;      &lt;span class="dt"&gt;submenu&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-18" data-line-number="18"&gt;        &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-19" data-line-number="19"&gt;          &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Open&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-20" data-line-number="20"&gt;          &lt;span class="at"&gt;click&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="va"&gt;files&lt;/span&gt;.&lt;span class="at"&gt;readFile&lt;/span&gt;(app) &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-21" data-line-number="21"&gt;        &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-22" data-line-number="22"&gt;      ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-23" data-line-number="23"&gt;    &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-24" data-line-number="24"&gt;  ))&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-25" data-line-number="25"&gt;  &lt;span class="va"&gt;menuItems&lt;/span&gt;.&lt;span class="at"&gt;get&lt;/span&gt;().&lt;span class="at"&gt;forEach&lt;/span&gt;( item &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="va"&gt;menuvar&lt;/span&gt;.&lt;span class="at"&gt;append&lt;/span&gt;(item) &lt;span class="op"&gt;}&lt;/span&gt; )&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-26" data-line-number="26"&gt;  &lt;span class="va"&gt;Menu&lt;/span&gt;.&lt;span class="at"&gt;setApplicationMenu&lt;/span&gt;(menuvar)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-27" data-line-number="27"&gt;&lt;span class="kw"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;var menuvar = new Menu();&lt;/code&gt; 以下からがキモです． どーしても，動的に処理を定義しない部分(&lt;code&gt;Edit&lt;/code&gt; とか &lt;code&gt;View&lt;/code&gt; とか)を別ファイル(&lt;code&gt;menuItems.js&lt;/code&gt;)にまとめたうえで，&lt;code&gt;File&lt;/code&gt; を先頭に突っ込みたかったのでこうなった． JS は全然詳しくないのでアンチパターンかもしれないけどね．&lt;/p&gt;
-&lt;h4 id="elm-に繋げる"&gt;Elm に繋げる&lt;/h4&gt;
-&lt;p&gt;ここまでで&lt;/p&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;上部にあるメニューバーの &lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Open&lt;/code&gt; を押して&lt;/li&gt;
-&lt;li&gt;ファイルをダイアログで選択し&lt;/li&gt;
-&lt;li&gt;コンソールに内容を吐き出す&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;までは書けた． ここからは (3) が「Elm に渡して input エリアに書き出す」になるようにする．&lt;/p&gt;
-&lt;p&gt;Elm と JS を繋ぐには方法がいくつかあるが，今回は &lt;code&gt;Port&lt;/code&gt; を使ってみる(前回はお行儀の悪い &lt;code&gt;Native&lt;/code&gt; モジュールを使ったけど)． 次の記事が本当に参考になった．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://qiita.com/jooex/items/5ff2d3b86563cf5dbd84"&gt;ElmのPortでJSを使う。 - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;マークダウンファイルの中身を JS から Elm に投げるので Elm で次のような &lt;code&gt;ports&lt;/code&gt; 関数を定義した．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="co"&gt;-- src/Port/FS.elm&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;port &lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Port.FS&lt;/span&gt; exposing (&lt;span class="fu"&gt;..&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-4" data-line-number="4"&gt;port readFile &lt;span class="fu"&gt;:&lt;/span&gt; (&lt;span class="dt"&gt;String&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; msg) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Sub&lt;/span&gt; msg&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これを &lt;code&gt;Main.elm&lt;/code&gt; で次のように呼び出す．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; alias &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;  { textarea &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;  , window &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Window.Size&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;  }&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-6" data-line-number="6"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-7" data-line-number="7"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;TextAreaInput&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-8" data-line-number="8"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt; &lt;span class="dt"&gt;Window.Size&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-9" data-line-number="9"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-10" data-line-number="10"&gt;main &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Program&lt;/span&gt; &lt;span class="dt"&gt;Never&lt;/span&gt; &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-11" data-line-number="11"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-12" data-line-number="12"&gt;  Html.program&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-13" data-line-number="13"&gt;    { init &lt;span class="fu"&gt;=&lt;/span&gt; init model&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-14" data-line-number="14"&gt;    , view &lt;span class="fu"&gt;=&lt;/span&gt; view&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-15" data-line-number="15"&gt;    , update &lt;span class="fu"&gt;=&lt;/span&gt; update&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-16" data-line-number="16"&gt;    , subscriptions &lt;span class="fu"&gt;=&lt;/span&gt; subscriptions&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-17" data-line-number="17"&gt;    }&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-18" data-line-number="18"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-19" data-line-number="19"&gt;subscriptions &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Sub&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-20" data-line-number="20"&gt;subscriptions model &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-21" data-line-number="21"&gt;  Sub.batch&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-22" data-line-number="22"&gt;    [ Window.resizes &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-23" data-line-number="23"&gt;    , FS.readFile &lt;span class="dt"&gt;TextAreaInput&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-24" data-line-number="24"&gt;    ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-25" data-line-number="25"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-26" data-line-number="26"&gt;update &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; ( &lt;span class="dt"&gt;Model&lt;/span&gt;, &lt;span class="dt"&gt;Cmd&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt; )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-27" data-line-number="27"&gt;update msg model &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-28" data-line-number="28"&gt;  &lt;span class="kw"&gt;case&lt;/span&gt; msg &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-29" data-line-number="29"&gt;    &lt;span class="dt"&gt;TextAreaInput&lt;/span&gt; str &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-30" data-line-number="30"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; textarea &lt;span class="fu"&gt;=&lt;/span&gt; str }, Cmd.none )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-31" data-line-number="31"&gt;    &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt; size &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-32" data-line-number="32"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; window &lt;span class="fu"&gt;=&lt;/span&gt; size }, Cmd.none )        &lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Window.Size&lt;/code&gt; とか &lt;code&gt;SizeUpdated&lt;/code&gt; はブラウザやアプリのウィンドウサイズに合わせて，スライドのサイズを変更するためのサブスクリプションなので気にしないで． &lt;code&gt;TextAreaInput&lt;/code&gt; は input エリアにテキストを書き込んだ時にも使っている． 同じ型なので使いまわした．&lt;/p&gt;
-&lt;p&gt;あとは &lt;code&gt;files.js&lt;/code&gt; の &lt;code&gt;console.log(data);&lt;/code&gt; としていた部分を &lt;code&gt;app.ports.readFile.send(data);&lt;/code&gt; と&lt;a href="https://github.com/matsubara0507/elmdeck/blob/a102ae0d82b162a3f219b7d33f9875c080ff6be9/app/js/files.js#L19"&gt;書き換える&lt;/a&gt;だけ．&lt;/p&gt;
-&lt;p&gt;&lt;img src="/assets/create-elmdeck/openfile.gif" /&gt;&lt;/p&gt;
-&lt;p&gt;うまくいった．&lt;/p&gt;
-&lt;h3 id="ファイルの書き込み"&gt;ファイルの書き込み&lt;/h3&gt;
-&lt;p&gt;さて次はファイルの保存を実装する．&lt;/p&gt;
-&lt;h4 id="ファイルパスも投げておく"&gt;ファイルパスも投げておく&lt;/h4&gt;
-&lt;p&gt;ファイルを保存するには開いてるファイルのファイルパスがあった方が良いだろう(上書き保存とかするなら)． なのでまずは，読み込み時の処理をファイルパスも投げるように書き換える．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="co"&gt;-- src/Port/FS.elm&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;port &lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Port.FS&lt;/span&gt; exposing (&lt;span class="fu"&gt;..&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; alias &lt;span class="dt"&gt;File&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;  { path &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-6" data-line-number="6"&gt;  , body &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-7" data-line-number="7"&gt;  }&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-8" data-line-number="8"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-9" data-line-number="9"&gt;port readFile &lt;span class="fu"&gt;:&lt;/span&gt; (&lt;span class="dt"&gt;File&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; msg) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Sub&lt;/span&gt; msg&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; alias &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;  { textarea &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-3" data-line-number="3"&gt;  , window &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Window.Size&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-4" data-line-number="4"&gt;  , filepath &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-5" data-line-number="5"&gt;  }&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-7" data-line-number="7"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-8" data-line-number="8"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;TextAreaInput&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-9" data-line-number="9"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt; &lt;span class="dt"&gt;Window.Size&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-10" data-line-number="10"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;ReadFile&lt;/span&gt; &lt;span class="dt"&gt;FS.File&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-11" data-line-number="11"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-12" data-line-number="12"&gt;update &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; ( &lt;span class="dt"&gt;Model&lt;/span&gt;, &lt;span class="dt"&gt;Cmd&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt; )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-13" data-line-number="13"&gt;update msg model &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-14" data-line-number="14"&gt;  &lt;span class="kw"&gt;case&lt;/span&gt; msg &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-15" data-line-number="15"&gt;    &lt;span class="dt"&gt;TextAreaInput&lt;/span&gt; str &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-16" data-line-number="16"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; textarea &lt;span class="fu"&gt;=&lt;/span&gt; str }, Cmd.none )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-17" data-line-number="17"&gt;    &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt; size &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-18" data-line-number="18"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; window &lt;span class="fu"&gt;=&lt;/span&gt; size }, Cmd.none )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-19" data-line-number="19"&gt;    &lt;span class="dt"&gt;ReadFile&lt;/span&gt; file &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-20" data-line-number="20"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; textarea &lt;span class="fu"&gt;=&lt;/span&gt; file&lt;span class="fu"&gt;.&lt;/span&gt;body, filepath &lt;span class="fu"&gt;=&lt;/span&gt; file&lt;span class="fu"&gt;.&lt;/span&gt;path }, Cmd.none )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-21" data-line-number="21"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-22" data-line-number="22"&gt;subscriptions &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Sub&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-23" data-line-number="23"&gt;subscriptions model &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-24" data-line-number="24"&gt;  Sub.batch&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-25" data-line-number="25"&gt;    [ Window.resizes &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-26" data-line-number="26"&gt;    , FS.readFile &lt;span class="dt"&gt;ReadFile&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-27" data-line-number="27"&gt;    ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;レコード型を JS から Elm に投げるには普通のオブジェクトを使えばよいらしい(最初はタプルを使おうとして良くわからなくなり諦めた…)．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;&lt;span class="co"&gt;// js/files.js&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;&lt;span class="va"&gt;module&lt;/span&gt;.&lt;span class="at"&gt;exports&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-3" data-line-number="3"&gt;  &lt;span class="dt"&gt;readFile&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="kw"&gt;function&lt;/span&gt; (app) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-4" data-line-number="4"&gt;    &lt;span class="va"&gt;dialog&lt;/span&gt;.&lt;span class="at"&gt;showOpenDialog&lt;/span&gt;(&lt;span class="kw"&gt;null&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-5" data-line-number="5"&gt;        &lt;span class="dt"&gt;properties&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;span class="st"&gt;&amp;#39;openFile&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-6" data-line-number="6"&gt;        &lt;span class="dt"&gt;title&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;File&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-7" data-line-number="7"&gt;        &lt;span class="dt"&gt;defaultPath&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-8" data-line-number="8"&gt;        &lt;span class="dt"&gt;filters&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-9" data-line-number="9"&gt;            &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;name&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;マークダウン&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="dt"&gt;extensions&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;span class="st"&gt;&amp;#39;md&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;markdown&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-10" data-line-number="10"&gt;        ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-11" data-line-number="11"&gt;    &lt;span class="op"&gt;},&lt;/span&gt; (fileNames) &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-12" data-line-number="12"&gt;        &lt;span class="va"&gt;fs&lt;/span&gt;.&lt;span class="at"&gt;readFile&lt;/span&gt;(fileNames[&lt;span class="dv"&gt;0&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; (err&lt;span class="op"&gt;,&lt;/span&gt; data) &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-13" data-line-number="13"&gt;          &lt;span class="cf"&gt;if&lt;/span&gt; (err) &lt;span class="va"&gt;console&lt;/span&gt;.&lt;span class="at"&gt;log&lt;/span&gt;(err)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-14" data-line-number="14"&gt;          &lt;span class="va"&gt;app&lt;/span&gt;.&lt;span class="va"&gt;ports&lt;/span&gt;.&lt;span class="va"&gt;readFile&lt;/span&gt;.&lt;span class="at"&gt;send&lt;/span&gt;(&lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="dt"&gt;path&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; fileNames[&lt;span class="dv"&gt;0&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="dt"&gt;body&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; data &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-15" data-line-number="15"&gt;        &lt;span class="op"&gt;}&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-16" data-line-number="16"&gt;    &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-17" data-line-number="17"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-18" data-line-number="18"&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id="いよいよ書き出し"&gt;いよいよ書き出し&lt;/h4&gt;
-&lt;p&gt;保存するとき，データは Elm 側から投げられるが保存ボタンは Electron 側(JS側)から始めたい． なので&lt;/p&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;保存ボタンを押したら何らかの値を JS から Elm に送信&lt;/li&gt;
-&lt;li&gt;それを受けたら Elm から JS にマークダウンのデータを送信&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;というお手製同期通信を行うことにした(これもアンチパターンかも…)． 上書き保存のときは &lt;code&gt;null&lt;/code&gt; (Elm 側では &lt;code&gt;Nothing&lt;/code&gt;) を JS から送り，新規保存ならファイル名を送ることにする．&lt;/p&gt;
-&lt;h2 id="section-2"&gt;&lt;/h2&gt;
-&lt;p&gt;まずは Elm 側で，以上の戦略から次のような &lt;code&gt;port&lt;/code&gt; を書いた．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb13"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb13-1" data-line-number="1"&gt;port writeFileHook &lt;span class="fu"&gt;:&lt;/span&gt; (&lt;span class="dt"&gt;Maybe&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; msg) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Sub&lt;/span&gt; msg&lt;/a&gt;
-&lt;a class="sourceLine" id="cb13-2" data-line-number="2"&gt;port writeFile &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;File&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Cmd&lt;/span&gt; msg&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;次は JS 側に移る． ファイルの書き出しには &lt;a href="https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback"&gt;&lt;code&gt;fs.writeFile&lt;/code&gt;&lt;/a&gt; 関数を用いた． 前述した &lt;code&gt;port&lt;/code&gt; も使って，次のような関数を &lt;code&gt;files.js&lt;/code&gt; に追加した．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;&lt;span class="kw"&gt;function&lt;/span&gt; &lt;span class="at"&gt;writeFileTo&lt;/span&gt;(fileName&lt;span class="op"&gt;,&lt;/span&gt; data) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-2" data-line-number="2"&gt;  &lt;span class="cf"&gt;if&lt;/span&gt; (fileName) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-3" data-line-number="3"&gt;    &lt;span class="va"&gt;fs&lt;/span&gt;.&lt;span class="at"&gt;writeFile&lt;/span&gt;(fileName&lt;span class="op"&gt;,&lt;/span&gt; data&lt;span class="op"&gt;,&lt;/span&gt; (err) &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-4" data-line-number="4"&gt;      &lt;span class="cf"&gt;if&lt;/span&gt; (err) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-5" data-line-number="5"&gt;        &lt;span class="va"&gt;console&lt;/span&gt;.&lt;span class="at"&gt;log&lt;/span&gt;(err)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-6" data-line-number="6"&gt;        &lt;span class="va"&gt;dialog&lt;/span&gt;.&lt;span class="at"&gt;showErrorBox&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;Can not save fiel: &amp;#39;&lt;/span&gt; &lt;span class="op"&gt;+&lt;/span&gt; fileName&lt;span class="op"&gt;,&lt;/span&gt; err)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-7" data-line-number="7"&gt;      &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-8" data-line-number="8"&gt;    &lt;span class="op"&gt;}&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-9" data-line-number="9"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-10" data-line-number="10"&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-11" data-line-number="11"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-12" data-line-number="12"&gt;&lt;span class="va"&gt;module&lt;/span&gt;.&lt;span class="at"&gt;exports&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-13" data-line-number="13"&gt;  &lt;span class="dt"&gt;readFile&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="kw"&gt;function&lt;/span&gt; (app) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-14" data-line-number="14"&gt;    ...&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-15" data-line-number="15"&gt;  &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-16" data-line-number="16"&gt;  &lt;span class="dt"&gt;writeFile&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="kw"&gt;function&lt;/span&gt; (app) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-17" data-line-number="17"&gt;    &lt;span class="va"&gt;app&lt;/span&gt;.&lt;span class="va"&gt;ports&lt;/span&gt;.&lt;span class="va"&gt;writeFileHook&lt;/span&gt;.&lt;span class="at"&gt;send&lt;/span&gt;(&lt;span class="kw"&gt;null&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-18" data-line-number="18"&gt;    &lt;span class="va"&gt;app&lt;/span&gt;.&lt;span class="va"&gt;ports&lt;/span&gt;.&lt;span class="va"&gt;writeFile&lt;/span&gt;.&lt;span class="at"&gt;subscribe&lt;/span&gt;(args &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="at"&gt;writeFileTo&lt;/span&gt;(args[&lt;span class="st"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt; args[&lt;span class="st"&gt;&amp;#39;body&amp;#39;&lt;/span&gt;]) &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-19" data-line-number="19"&gt;  &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-20" data-line-number="20"&gt;  &lt;span class="dt"&gt;writeFileAs&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="kw"&gt;function&lt;/span&gt; (app) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-21" data-line-number="21"&gt;    &lt;span class="va"&gt;dialog&lt;/span&gt;.&lt;span class="at"&gt;showSaveDialog&lt;/span&gt;(&lt;span class="kw"&gt;null&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-22" data-line-number="22"&gt;        &lt;span class="dt"&gt;properties&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;span class="st"&gt;&amp;#39;openFile&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-23" data-line-number="23"&gt;        &lt;span class="dt"&gt;title&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;File&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-24" data-line-number="24"&gt;        &lt;span class="dt"&gt;defaultPath&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-25" data-line-number="25"&gt;        &lt;span class="dt"&gt;filters&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-26" data-line-number="26"&gt;            &lt;span class="op"&gt;{&lt;/span&gt;&lt;span class="dt"&gt;name&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Markdown&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="dt"&gt;extensions&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;span class="st"&gt;&amp;#39;md&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;markdown&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-27" data-line-number="27"&gt;        ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-28" data-line-number="28"&gt;    &lt;span class="op"&gt;},&lt;/span&gt; (fileName) &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-29" data-line-number="29"&gt;        &lt;span class="cf"&gt;if&lt;/span&gt; (fileName &lt;span class="op"&gt;==&lt;/span&gt; &lt;span class="kw"&gt;undefined&lt;/span&gt;) &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-30" data-line-number="30"&gt;          &lt;span class="va"&gt;console&lt;/span&gt;.&lt;span class="at"&gt;log&lt;/span&gt;(fileName)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-31" data-line-number="31"&gt;          &lt;span class="va"&gt;dialog&lt;/span&gt;.&lt;span class="at"&gt;showErrorBox&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;Can not save fiel: &amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Please select file.&amp;#39;&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-32" data-line-number="32"&gt;          &lt;span class="cf"&gt;return&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-33" data-line-number="33"&gt;        &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-34" data-line-number="34"&gt;        &lt;span class="va"&gt;app&lt;/span&gt;.&lt;span class="va"&gt;ports&lt;/span&gt;.&lt;span class="va"&gt;writeFileHook&lt;/span&gt;.&lt;span class="at"&gt;send&lt;/span&gt;(fileName)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-35" data-line-number="35"&gt;        &lt;span class="va"&gt;app&lt;/span&gt;.&lt;span class="va"&gt;ports&lt;/span&gt;.&lt;span class="va"&gt;writeFile&lt;/span&gt;.&lt;span class="at"&gt;subscribe&lt;/span&gt;(args &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="at"&gt;writeFileTo&lt;/span&gt;(args[&lt;span class="st"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt; args[&lt;span class="st"&gt;&amp;#39;body&amp;#39;&lt;/span&gt;]) &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-36" data-line-number="36"&gt;    &lt;span class="op"&gt;}&lt;/span&gt;)&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-37" data-line-number="37"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-38" data-line-number="38"&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;上書き保存 &lt;code&gt;writeFile&lt;/code&gt; と新しく保存 &lt;code&gt;writeFileAs&lt;/code&gt; を用意し，共通部分は &lt;code&gt;writeFileTo&lt;/code&gt; 関数として書き出した．&lt;/p&gt;
-&lt;p&gt;これをメニューバーに追加する．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb15"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb15-1" data-line-number="1"&gt;&lt;span class="kw"&gt;var&lt;/span&gt; menuvar &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="at"&gt;Menu&lt;/span&gt;()&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-2" data-line-number="2"&gt;&lt;span class="va"&gt;menuvar&lt;/span&gt;.&lt;span class="at"&gt;append&lt;/span&gt;(&lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="at"&gt;MenuItem&lt;/span&gt;(&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-3" data-line-number="3"&gt;  &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-4" data-line-number="4"&gt;    &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;File&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-5" data-line-number="5"&gt;    &lt;span class="dt"&gt;submenu&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-6" data-line-number="6"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-7" data-line-number="7"&gt;        &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Open&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-8" data-line-number="8"&gt;        &lt;span class="at"&gt;click&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="va"&gt;files&lt;/span&gt;.&lt;span class="at"&gt;readFile&lt;/span&gt;(app) &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-9" data-line-number="9"&gt;      &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-10" data-line-number="10"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-11" data-line-number="11"&gt;        &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Save&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-12" data-line-number="12"&gt;        &lt;span class="at"&gt;click&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="va"&gt;files&lt;/span&gt;.&lt;span class="at"&gt;writeFile&lt;/span&gt;(app) &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-13" data-line-number="13"&gt;      &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-14" data-line-number="14"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-15" data-line-number="15"&gt;        &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Save As&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-16" data-line-number="16"&gt;        &lt;span class="at"&gt;click&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="va"&gt;files&lt;/span&gt;.&lt;span class="at"&gt;writeFileAs&lt;/span&gt;(app) &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-17" data-line-number="17"&gt;      &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-18" data-line-number="18"&gt;    ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-19" data-line-number="19"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb15-20" data-line-number="20"&gt;))&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;最後に Elm 側に処理を追加した．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb16"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb16-1" data-line-number="1"&gt;&lt;span class="co"&gt;-- app/src/Main.elm&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-2" data-line-number="2"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-3" data-line-number="3"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;TextAreaInput&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-4" data-line-number="4"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt; &lt;span class="dt"&gt;Window.Size&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-5" data-line-number="5"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;ReadFile&lt;/span&gt; &lt;span class="dt"&gt;FS.File&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-6" data-line-number="6"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;WriteFileHook&lt;/span&gt; (&lt;span class="dt"&gt;Maybe&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-7" data-line-number="7"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-8" data-line-number="8"&gt;update &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; ( &lt;span class="dt"&gt;Model&lt;/span&gt;, &lt;span class="dt"&gt;Cmd&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt; )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-9" data-line-number="9"&gt;update msg model &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-10" data-line-number="10"&gt;  &lt;span class="kw"&gt;case&lt;/span&gt; msg &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-11" data-line-number="11"&gt;    &lt;span class="dt"&gt;TextAreaInput&lt;/span&gt; str &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-12" data-line-number="12"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; textarea &lt;span class="fu"&gt;=&lt;/span&gt; str }, Cmd.none )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-13" data-line-number="13"&gt;    &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt; size &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-14" data-line-number="14"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; window &lt;span class="fu"&gt;=&lt;/span&gt; size }, Cmd.none )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-15" data-line-number="15"&gt;    &lt;span class="dt"&gt;ReadFile&lt;/span&gt; file &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-16" data-line-number="16"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; textarea &lt;span class="fu"&gt;=&lt;/span&gt; file&lt;span class="fu"&gt;.&lt;/span&gt;body, filepath &lt;span class="fu"&gt;=&lt;/span&gt; file&lt;span class="fu"&gt;.&lt;/span&gt;path }, Cmd.none )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-17" data-line-number="17"&gt;    &lt;span class="dt"&gt;WriteFileHook&lt;/span&gt; (&lt;span class="dt"&gt;Just&lt;/span&gt; filepath) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-18" data-line-number="18"&gt;      ( { model &lt;span class="fu"&gt;|&lt;/span&gt; filepath &lt;span class="fu"&gt;=&lt;/span&gt; filepath }, FS.writeFile { path &lt;span class="fu"&gt;=&lt;/span&gt; filepath, body &lt;span class="fu"&gt;=&lt;/span&gt; model&lt;span class="fu"&gt;.&lt;/span&gt;textarea } )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-19" data-line-number="19"&gt;    &lt;span class="dt"&gt;WriteFileHook&lt;/span&gt; &lt;span class="dt"&gt;Nothing&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-20" data-line-number="20"&gt;      ( model, FS.writeFile { path &lt;span class="fu"&gt;=&lt;/span&gt; model&lt;span class="fu"&gt;.&lt;/span&gt;filepath, body &lt;span class="fu"&gt;=&lt;/span&gt; model&lt;span class="fu"&gt;.&lt;/span&gt;textarea } )&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-21" data-line-number="21"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-22" data-line-number="22"&gt;subscriptions &lt;span class="fu"&gt;:&lt;/span&gt; &lt;span class="dt"&gt;Model&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Sub&lt;/span&gt; &lt;span class="dt"&gt;Msg&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-23" data-line-number="23"&gt;subscriptions model &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-24" data-line-number="24"&gt;  Sub.batch&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-25" data-line-number="25"&gt;    [ Window.resizes &lt;span class="dt"&gt;SizeUpdated&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-26" data-line-number="26"&gt;    , FS.readFile &lt;span class="dt"&gt;ReadFile&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-27" data-line-number="27"&gt;    , FS.writeFileHook &lt;span class="dt"&gt;WriteFileHook&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb16-28" data-line-number="28"&gt;    ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これでうまく動作するはずだ．&lt;/p&gt;
-&lt;p&gt;&lt;img src="/assets/create-elmdeck/savefile.gif" /&gt;&lt;/p&gt;
-&lt;h3 id="ショートカット"&gt;ショートカット&lt;/h3&gt;
-&lt;p&gt;最後にショートカットだ． 次の記事が参考になった．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://qiita.com/okaxaki/items/8b8942b0c4e13ac67739"&gt;Electronに開発用メニューとショートカットを付ける - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://electronjs.org/docs/api/accelerator"&gt;&lt;code&gt;Accelerator&lt;/code&gt;&lt;/a&gt; というのを使えばよいらしい．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb17"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb17-1" data-line-number="1"&gt;&lt;span class="kw"&gt;var&lt;/span&gt; menuvar &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="at"&gt;Menu&lt;/span&gt;()&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-2" data-line-number="2"&gt;&lt;span class="va"&gt;menuvar&lt;/span&gt;.&lt;span class="at"&gt;append&lt;/span&gt;(&lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="at"&gt;MenuItem&lt;/span&gt;(&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-3" data-line-number="3"&gt;  &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-4" data-line-number="4"&gt;    &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;File&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-5" data-line-number="5"&gt;    &lt;span class="dt"&gt;submenu&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-6" data-line-number="6"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-7" data-line-number="7"&gt;        &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Open&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-8" data-line-number="8"&gt;        &lt;span class="dt"&gt;accelerator&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Ctrl+O&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-9" data-line-number="9"&gt;        &lt;span class="at"&gt;click&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="va"&gt;files&lt;/span&gt;.&lt;span class="at"&gt;readFile&lt;/span&gt;(app) &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-10" data-line-number="10"&gt;      &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-11" data-line-number="11"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-12" data-line-number="12"&gt;        &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Save&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-13" data-line-number="13"&gt;        &lt;span class="dt"&gt;accelerator&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Ctrl+S&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-14" data-line-number="14"&gt;        &lt;span class="at"&gt;click&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="va"&gt;files&lt;/span&gt;.&lt;span class="at"&gt;writeFile&lt;/span&gt;(app) &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-15" data-line-number="15"&gt;      &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-16" data-line-number="16"&gt;      &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-17" data-line-number="17"&gt;        &lt;span class="dt"&gt;label&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Save As&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-18" data-line-number="18"&gt;        &lt;span class="dt"&gt;accelerator&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;#39;Ctrl+Shift+S&amp;#39;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-19" data-line-number="19"&gt;        &lt;span class="at"&gt;click&lt;/span&gt;() &lt;span class="op"&gt;{&lt;/span&gt; &lt;span class="va"&gt;files&lt;/span&gt;.&lt;span class="at"&gt;writeFileAs&lt;/span&gt;(app) &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-20" data-line-number="20"&gt;      &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-21" data-line-number="21"&gt;    ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-22" data-line-number="22"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb17-23" data-line-number="23"&gt;))&lt;span class="op"&gt;;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これで目的のモノはできた！&lt;/p&gt;
-&lt;h2 id="懸念"&gt;懸念&lt;/h2&gt;
-&lt;p&gt;なんか Electron のファイル IO にはセキュリティ的に甘いところがあるらしい…&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://utf-8.jp/public/2016/0307/electron.pdf"&gt;Electron の倒し方&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;個人で使う分にはいいんだけど…対策しなきゃかなぁ… Elm を介してレンダラしたマークダウンを貼り付けてるので問題ないのだろうか… 良く分からない．&lt;/p&gt;
-&lt;h2 id="思うところ"&gt;思うところ&lt;/h2&gt;
-&lt;p&gt;結局 JS は結構書いてるなーと思った(笑) JS 絶対書きたくないマンは Elm でできることは，まだ制限される印象だ． JS の知識も多少ないとキツソウだし．&lt;/p&gt;
-&lt;p&gt;まぁ綺麗に分離できるのがうれしいんだけどね．&lt;/p&gt;
-&lt;h2 id="おしまい"&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;頑張って作っていくぞ．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
 </summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2017/12/19/203500</id><title type="text">HaskellのABC(Haskell Advent Calendar 6th)</title><updated>2017-12-19T20:35:00+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2017/12/19/203500"/><summary type="html">Haskellといえば一文字変数名、一文字変数名といえばHaskellという{{要出典}}ほどにHaskellでは一文字の変数名がよく使われている。これは名前を考えるのをサボっているとは限らない。多相性によって変数が具体的な性質を持たないがゆえに、具体的な名前がつけられないというのが主な理由だ。あるいは、適切な名前があっても、既存の名前と被っているという場合もある。かといって完全なランダムというわけでもないので、一文字変数名はどのように選べばいいか考察していこう。 a よくある種: * アルファベットの最初であるaは汎用性が高い。型変数に使うのが王道だ。値レベルの変数として単体で使うことは意外…</summary></entry><entry><id>http://ilyaletre.hatenablog.com/entry/2017/12/17/212053</id><title type="text">Left Recursionの悪夢再び</title><updated>2017-12-17T21:20:53+09:00</updated><author><name>ilyaletre</name></author><link href="http://ilyaletre.hatenablog.com/entry/2017/12/17/212053"/><summary type="html">はじめに Happyで生成したパーサのコンパイル遅すぎてもう限界だったのでparser combinatorに戻ってきた。 そしてまた現れたのだ、やつが。。。。 問題 やろうとしてることは以前と変わらない。 SML Definitionを読んで型の注釈を表す式 ty を解析しようとしているが、 左無限再帰が起きてしまって解析が終了しないというもの。 ty ::= tyvar (1) type variable such as 'a { tyrow i } (2) record type tyseq longtycon (3) type constructor with type argumen…</summary></entry><entry><id>http://ilyaletre.hatenablog.com/entry/2017/12/10/195016</id><title type="text">GHCの中間言語Coreへの脱糖を覗き見る</title><updated>2017-12-11T00:07:41+09:00</updated><author><name>ilyaletre</name></author><link href="http://ilyaletre.hatenablog.com/entry/2017/12/10/195016"/><summary type="html">Haskell (その3) Advent Calendar 2017 11日目の記事。(予約投稿知らなかったのでフライングになった) GHCがコンパイルの途中で中間表現として用いるCoreの生成っぷりを観察する。 観察して、あーはいはいなるほどね(わかってない)、と言うだけになりそう。 はじめに GHCはHaskellのソースコードを低レベルなコードへとコンパイルする過程で様々なpass(コンパイルのステージ)を通じてプログラムデータを変換する。 俯瞰図は下記のリンクに詳しい。 Compiling one module: HscMain 僕がGHCの話をどこかで聞きかじってかっこいいな、と思っ…</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2016/07/02/174426</id><title type="text">Haskellの最近の例外ハンドリング</title><updated>2017-12-06T17:19:02+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2016/07/02/174426"/><summary type="html">どうもHaskellには標準のControl.Exceptionモジュールだけでなくmtlやexceptionsやexceptionalといった例外を扱うためのパッケージがあるらしいのだが、そのあたりのパッケージの選び方や使い方についてまとまった情報を見つけられなかった。 HaskellWiki例外のページも少々古いようで、deprecatedなものや統合される前のパッケージを書いていたりする。 調べた限り、mtlとexceptionsが今の主流っぽい。 その2つの使い方をまとめる。 なおバージョンはlts-6.1を基準としている。 mtl mtlパッケージのControl.Monad.Exc…</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2016/08/28/175500</id><title type="text">続・Haskellの最近の例外ハンドリング</title><updated>2017-12-06T17:18:53+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2016/08/28/175500"/><summary type="html">前回 の記事ではHaskellの例外ハンドリングには exceptions パッケージを使えばいいのではないかと書いた。 ところが今年の6月に safe-exceptions という exceptions を拡張したようなパッケージがさる FPComplete から 発表 された。 そこでこの記事では safe-exceptions について調べてみる。 おそらくほぼ FPComplete の発表の受け売りになってしまうので英語を読める人は原文を読む方がいいかもしれない。 さすが FPComplete だけあってこれは既に LTS Haskell に入っている。 この記事では lts-6.14…</summary></entry><entry><id>http://syocy.hatenablog.com/entry/haskell-library-2016</id><title type="text">Haskellライブラリ所感2016</title><updated>2017-12-06T17:18:40+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/haskell-library-2016"/><summary type="html">(これは Haskell Advent Calendar 2016 の7日目の記事です) 今年使ったり調べたりした Haskell ライブラリを広く紹介していく企画です。 あくまで今年使ったものなので新しいものばかりではないです。 また記事の性質上、紹介するものが偏っていてもご容赦ください。 Hackage にはすごい数のライブラリが登録されていて、 頼もしいことですが目が回りそうにもなってしまいます。 この記事が Haskell のライブラリを調べる上での指針になったら幸いです。 なおこの企画と方向性が似ているものとして State of the Haskell ecosystem ( 20…</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2017/04/26/005415</id><title type="text">超技術書典でGHCJSの本を出します</title><updated>2017-12-06T17:18:31+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2017/04/26/005415"/><summary type="html">【告知】ニコニコ超会議2017と併催される超技術書典Day1(4/29)にて、GHCJSの入門的な本を出します。@y_taka_23 さんのスペースに委託する形になります。Haskell×JavaScriptに興味のある方はぜひA-04まで。 #技術書典 #超技術書典 pic.twitter.com/zUhiVc3CyX — しょしー 超技術書典A-04 (@syocy) 2017年4月25日 出します。 GHCJSの仕組みの話はほとんどなくて、あくまで使い方とか周辺事情の話になります。 GHCJSって昔は導入すること自体が難しくて、他のHaskell系AltJSに水をあけられている感があった…</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2017/05/20/025021</id><title type="text">Haskellは真面目なアプリケーション開発に向いている</title><updated>2017-12-06T17:18:19+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2017/05/20/025021"/><summary type="html">qiita.com ↑の記事で（主題ではないと思うものの）Haskellの批判に結構な分量が割かれていて、その批判のなかに「ちょっと違うんじゃないかな」という点がいくつかあったので反論ぽいことを書きます。 "Haskell は真面目なアプリケーション開発には向いてない"について これには多分いくつか事例を挙げればよくて、 Facebook ではスパム等の攻撃と戦うためのシステムを Haskell で作っています。 Fighting spam with Haskell | Engineering Blog | Facebook Code | Facebook (この記事を書いている Simon …</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2017/08/14/235830</id><title type="text">HaskellとJSON、そしてレコード型</title><updated>2017-12-06T17:18:07+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2017/08/14/235830"/><summary type="html">HaskellのJSON周りについて、こうやるのがいいんじゃないかという私の現在のやり方を書きます。 題材としては、 Swagger Petstore に記されている REST API にリクエストを投げてレスポンスを取り出すというのをやります。 (Swagger ですが scaffold は使わず自分で HTTP クライアントライブラリを使います)。 基本方針は「出力は厳密に入力には寛容に」(出典失念) です。 もくじ JSONの前に: レコードのフィールドへのアクセス JSONの前に: レコードのデフォルト値 Haskellのデータ型→JSON JSONデータを含むHTTPリクエスト レス…</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2017/08/27/003035</id><title type="text">GoのTickerみたいなやつをHaskellで作った</title><updated>2017-12-06T17:17:55+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2017/08/27/003035"/><summary type="html">github.com 作った。 GoのTickerはとてもシンプルな関数で、 指定した周期でチャネルに値を送るスレッドを生成する。 一定間隔で何かの処理を行いたいときに利用する。 今回作ったHaskell版もだいたい同じようなものを提供する。 実際のところパッケージにするには小さすぎる気もするけど、 Haskellパッケージ製作の練習をしたかったのでHackageのアカウントを取ってHackageに上げた。 練習のため、HaddockによるAPIドキュメントおよびhspecとdoctestによるテストも書いてある。 あとは何かCIを導入してGithubのページにCIのステータスを表示するような…</summary></entry><entry><id>http://syocy.hatenablog.com/entry/a-tour-of-go-in-haskell</id><title type="text">A Tour of Go in Haskellを作ったのと、GoとHaskellの比較</title><updated>2017-12-06T17:17:38+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/a-tour-of-go-in-haskell"/><summary type="html">A Tour of Go in Haskell (日本語版/英語版) というサイトを作ったので、それの紹介をします。 https://a-tour-of-go-in-haskell.syocy.net/ja_JP/index.html Haskell は Go と同じく軽量スレッドやチャネルの機能があり、並行並列が得意な言語です。このサイトは A Tour of Go という Go のチュートリアルの並行性の章を題材として２つの言語を比較しています。</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2017/12/04/044908</id><title type="text">NGK2017B で Liquid Haskell について話してきました</title><updated>2017-12-04T04:49:08+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2017/12/04/044908"/><summary type="html">先日、毎年恒例のなごや LT 大会 NGK2017B / 名古屋合同懇親会 2017 忘年会 で発表してきました。 Liquid Haskell で普通の型システムの上を行け #NGK2017B from y_taka_23 www.slideshare.net 当日の動画は NGK2017B 第2部 - YouTube から見ることができます。 ちなみに NGK での発表は 5 年連続 5 回目です。前回まではモデル検査をテーマにしていましたが、今回はちょっと目先を変えて（とはいえ同じ形式手法の枠内ですが）もう少しプログラム寄りの題材として Liquid Haskell を選びました。 N…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2017/11/27/070558</id><title type="text">現在時刻をモックする Haskell ライブラリ time-machine を作ってみました</title><updated>2017-11-27T07:05:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2017/11/27/070558"/><summary type="html">主としてテスト時のために、現在時刻を操作する Haskell ライブラリを作成しました。Hackage にも登録済みです。 github.com 試しに次のコードを実行してみましょう。getCurrentTime しているはずなのに、返ってくる値が 1985 年 10 月 26 日になっているはずです。 module Main where import Control.Monad.TimeMachine import Control.Monad.Trans ( liftIO ) main :: IO () main = backTo (the future) $ do t &lt;- getCurr…</summary></entry><entry><id>https://haskell.jp/blog/posts/2017/no-stack-build.html</id><title type="text">Haskell-jp Blogへの投稿が簡単になりました！</title><updated>2017-11-27T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2017/no-stack-build.html"/><summary type="html">&lt;article&gt;
     &lt;div class="container"&gt;
         &lt;div class="row"&gt;
