@@ -64,3 +64,12 @@ sites:
     feed: http://ilyaletre.hatenablog.com/feed/category/Haskell
     logo:
       hatena: ilyaletre
+  - title: "Kuro’s Blog"
+    author: "Hiroyuki Kurokawa (hrkr)"
+    url: https://kurokawh.blogspot.jp
+    atom:
+      url: https://kurokawh.blogspot.com/feeds/posts/default
+      linkAttrs:
+        rel: alternate
+    logo:
+      github: kurokawh
