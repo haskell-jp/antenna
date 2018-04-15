@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-04-14T15:08:20+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/yunisef99/items/baef836e8e57db8d4e28</id><title type="text">Haskell:Basic Level</title><updated>2018-04-14T15:08:20+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yunisef99/items/baef836e8e57db8d4e28"/></entry><entry><id>https://qiita.com/sand/items/e0880651c384cdd92975</id><title type="text">関数定義におけるパターンマッチング - Haskell vs Elm vs Elixir</title><updated>2018-04-13T16:05:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/e0880651c384cdd92975"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-04-13-try-rio-1.html</id><title type="text">rio ライブラリを試す その１</title><updated>2018-04-13T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-04-13-try-rio-1.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-04-15T13:02:20+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/HirotoShioi/items/8a6107434337b30ce457</id><title type="text">モナド変換子(その１: 基本）</title><updated>2018-04-15T13:02:20+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/HirotoShioi/items/8a6107434337b30ce457"/></entry><entry><id>https://qiita.com/sgsh/items/8e575f560836b6bafcf7</id><title type="text">ABC094 in Haskell</title><updated>2018-04-15T01:16:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sgsh/items/8e575f560836b6bafcf7"/></entry><entry><id>https://qiita.com/chupaaaaaaan/items/7954f30fc4262fe84c2d</id><title type="text">Haskellでニューラルネットを実装して、MNISTを学習してみた</title><updated>2018-04-14T18:11:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/chupaaaaaaan/items/7954f30fc4262fe84c2d"/></entry><entry><id>https://qiita.com/yunisef99/items/baef836e8e57db8d4e28</id><title type="text">Haskell : Basic Level</title><updated>2018-04-14T16:40:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yunisef99/items/baef836e8e57db8d4e28"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/04-14-lh-unsorted-flag.html</id><title type="text">LiquidHaskell の --prune-unsorted フラグ</title><updated>2018-04-14T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/04-14-lh-unsorted-flag.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;LiquidHaskell&lt;/code&gt; では &lt;code&gt;measure&lt;/code&gt; という仕組みを使って &lt;code&gt;Haskell&lt;/code&gt; の関数を &lt;code&gt;LH&lt;/code&gt; の述語に持ち上げることができます。&lt;/p&gt;
+&lt;p&gt;しかし、以下の &lt;code&gt;nLen&lt;/code&gt; 関数は &lt;code&gt;measure&lt;/code&gt; によって持ち上げることができません。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ measure nLen @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;span class="ot"&gt;nLen ::&lt;/span&gt; [&lt;span class="dt"&gt;Int&lt;/span&gt;] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;nLen [] &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dv"&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;nLen (n&lt;span class="fu"&gt;:&lt;/span&gt;ns) &lt;span class="fu"&gt;=&lt;/span&gt; n &lt;span class="fu"&gt;+&lt;/span&gt; nLen ns&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;結論から言えば、これを解決するためには &lt;code&gt;--prune-unsorted&lt;/code&gt; フラグを利用します。&lt;/p&gt;
+&lt;p&gt;以下は &lt;code&gt;measure&lt;/code&gt; の基本的な使い方等についての説明です。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id="measure-の基本的な使い方"&gt;measure の基本的な使い方&lt;/h2&gt;
+&lt;p&gt;例えばリストの長さを求める &lt;code&gt;lLen&lt;/code&gt; という関数を述語に持ち上げるにはこのようにします。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ measure lLen @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;&lt;span class="ot"&gt;lLen ::&lt;/span&gt; [a] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;lLen [] &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dv"&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;lLen (_&lt;span class="fu"&gt;:&lt;/span&gt;xs) &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt; &lt;span class="fu"&gt;+&lt;/span&gt; lLen xs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;$ liquid LH.hs
+LiquidHaskell Version 0.8.2.4, Git revision 5b68dc72f628a4c16a77616fb32d8c685580ed2d (dirty)
+Copyright 2013-18 Regents of the University of California. All Rights Reserved.
+
+**** DONE:  A-Normalization ****************************************************
+**** DONE:  Extracted Core using GHC *******************************************
+**** DONE:  Transformed Core ***************************************************
+Working 150% [=================================================================]
+**** DONE:  annotate ***********************************************************
+**** RESULT: SAFE **************************************************************&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;実際にはこんな感じで長さ付きリストのリファインメント型をつけます。先程から&lt;strong&gt;述語&lt;/strong&gt;と言っているのはリファインメント型 &lt;code&gt;{ | }&lt;/code&gt; の &lt;code&gt;|&lt;/code&gt; の右側のことです。&lt;code&gt;measure&lt;/code&gt; によってこの部分で &lt;code&gt;Haskell&lt;/code&gt; で定義した &lt;code&gt;lLen&lt;/code&gt; 関数が使えるようになります。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ type ListN a N = {v:[a] | lLen v = N} @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-3" data-line-number="3"&gt;&lt;span class="co"&gt;{-@ goodList :: ListN Int 2 @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-4" data-line-number="4"&gt;&lt;span class="ot"&gt;goodList ::&lt;/span&gt; [&lt;span class="dt"&gt;Int&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-5" data-line-number="5"&gt;goodList &lt;span class="fu"&gt;=&lt;/span&gt; [&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;2&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;当然ですが、仕様を満たしていない場合は &lt;code&gt;UNSAFE&lt;/code&gt; になります。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ badList :: ListN Int 1 @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;&lt;span class="ot"&gt;badList ::&lt;/span&gt; [&lt;span class="dt"&gt;Int&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;badList &lt;span class="fu"&gt;=&lt;/span&gt; [&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;2&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;**** RESULT: UNSAFE ************************************************************
+Error: Liquid Type Mismatch
+
+ 14 | badList = [1,2]
+      ^^^^^^^
+   Inferred type
+     VV : {v : [Int] | Main.lLen v == 1 + Main.lLen ?d
+                       &amp;amp;&amp;amp; len v == 1 + len ?d
+                       &amp;amp;&amp;amp; tail v == ?d
+                       &amp;amp;&amp;amp; head v == (1 : int)
+                       &amp;amp;&amp;amp; len v &amp;gt;= 0}
+
+   not a subtype of Required type
+     VV : {VV : [Int] | Main.lLen VV == 1}
+
+   In Context
+     ?b : {?b : [Int] | Main.lLen ?b == 0
+                        &amp;amp;&amp;amp; len ?b == 0
+                        &amp;amp;&amp;amp; len ?b &amp;gt;= 0}
+
+     ?d : {?d : [Int] | Main.lLen ?d == 1 + Main.lLen ?b
+                        &amp;amp;&amp;amp; len ?d == 1 + len ?b
+                        &amp;amp;&amp;amp; tail ?d == ?b
+                        &amp;amp;&amp;amp; head ?d == (2 : int)
+                        &amp;amp;&amp;amp; len ?d &amp;gt;= 0}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;エラーメッセージがつらいですが、とりあえずは以下の部分に着目すれば良いでしょう。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;not a subtype &lt;span class="kw"&gt;of&lt;/span&gt; &lt;span class="dt"&gt;Required&lt;/span&gt; &lt;span class="kw"&gt;type&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;     &lt;span class="dt"&gt;VV&lt;/span&gt; &lt;span class="fu"&gt;:&lt;/span&gt; {&lt;span class="dt"&gt;VV&lt;/span&gt; &lt;span class="fu"&gt;:&lt;/span&gt; [&lt;span class="dt"&gt;Int&lt;/span&gt;] &lt;span class="fu"&gt;|&lt;/span&gt; Main.lLen &lt;span class="dt"&gt;VV&lt;/span&gt; &lt;span class="fu"&gt;==&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;}&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;lLen VV == 1&lt;/code&gt; の制約が満たされていない。つまり、&lt;code&gt;lLen&lt;/code&gt; の結果が &lt;code&gt;1&lt;/code&gt; になってないよ。ということです。&lt;/p&gt;
+&lt;h2 id="measure-でエラーが出る場合"&gt;measure でエラーが出る場合&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;measure&lt;/code&gt; はどんな関数にも使えるわけではありません。&lt;/p&gt;
+&lt;p&gt;例えば、以下のような数値のリストに対して、リストの値の合計を返す関数 &lt;code&gt;nLen&lt;/code&gt; を考えましょう。(&lt;code&gt;sum&lt;/code&gt; と同じですが &lt;code&gt;Preude&lt;/code&gt; とかぶるので名前を変更しています)&lt;/p&gt;
+&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ measure nLen @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="ot"&gt;nLen ::&lt;/span&gt; [&lt;span class="dt"&gt;Int&lt;/span&gt;] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;nLen [] &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dv"&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-4" data-line-number="4"&gt;nLen (n&lt;span class="fu"&gt;:&lt;/span&gt;ns) &lt;span class="fu"&gt;=&lt;/span&gt; n &lt;span class="fu"&gt;+&lt;/span&gt; nLen ns&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;LiquidHaskell&lt;/code&gt; はこの定義に対してエラーを表示します。これは &lt;code&gt;nLen&lt;/code&gt; 関数がリストの型変数 &lt;code&gt;a&lt;/code&gt; を &lt;code&gt;Int&lt;/code&gt; に特殊化しているためです。(&lt;a href="https://github.com/ucsd-progsys/liquidhaskell#prune-unsorted-predicates"&gt;Prune Unsorted Predicates&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;こういう関数に対しては &lt;code&gt;--prune-unsorted&lt;/code&gt; フラグを用いれば良いです。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ LIQUID &amp;quot;--prune-unsorted&amp;quot; @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;&lt;span class="co"&gt;{-@ measure nLen @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;&lt;span class="ot"&gt;nLen ::&lt;/span&gt; [&lt;span class="dt"&gt;Int&lt;/span&gt;] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;nLen [] &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dv"&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;nLen (n&lt;span class="fu"&gt;:&lt;/span&gt;ns) &lt;span class="fu"&gt;=&lt;/span&gt; n &lt;span class="fu"&gt;+&lt;/span&gt; nLen ns&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;nLen&lt;/code&gt; を使った型は、先ほどの &lt;code&gt;lLen&lt;/code&gt; とほとんど同じです。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="co"&gt;{-@ type ListSum a N = {v:[a] | nLen v = N} @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;&lt;span class="co"&gt;{-@ goodListSum :: ListSum Int 111 @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;&lt;span class="ot"&gt;goodListSum ::&lt;/span&gt; [&lt;span class="dt"&gt;Int&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;goodListSum &lt;span class="fu"&gt;=&lt;/span&gt; [&lt;span class="dv"&gt;1&lt;/span&gt;,&lt;span class="dv"&gt;10&lt;/span&gt;,&lt;span class="dv"&gt;100&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-6" data-line-number="6"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-7" data-line-number="7"&gt;&lt;span class="co"&gt;{-@ badListSum :: ListSum Int 111 @-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-8" data-line-number="8"&gt;&lt;span class="ot"&gt;badListSum ::&lt;/span&gt; [&lt;span class="dt"&gt;Int&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-9" data-line-number="9"&gt;badListSum &lt;span class="fu"&gt;=&lt;/span&gt; [&lt;span class="dv"&gt;1&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;型パラメータが特殊化された関数を &lt;code&gt;measure&lt;/code&gt; で述語に持ち上げる際には &lt;code&gt;--prune-unsorted&lt;/code&gt; を使う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/sand/items/e0880651c384cdd92975</id><title type="text">関数定義におけるパターンマッチング - Haskell vs Elm vs Elixir</title><updated>2018-04-13T16:05:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/e0880651c384cdd92975"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-04-13-try-rio-1.html</id><title type="text">rio ライブラリを試す その１</title><updated>2018-04-13T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-04-13-try-rio-1.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;rio ライブラリを試す その１&lt;/h1&gt;
@@ -1945,52 +2038,6 @@ O
 &lt;div class="sourceCode" id="cb24"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb24-1" data-line-number="1"&gt;yInt &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
 &lt;p&gt;解説がとても長くなってしまいました・・・。間違ってたらご報告ください。&lt;/p&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/03-24-quiz-1.html</id><title type="text">Haskell Quiz はじめました。 No.1 type, newtype, data</title><updated>2018-03-24T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/03-24-quiz-1.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;何となくクイズはじめました！(頑張って続けます・・・)&lt;/p&gt;
-&lt;p&gt;間違ってたら &lt;code&gt;twitter&lt;/code&gt; や &lt;a href="https://github.com/e-bigmoon/haskell-blog/issues"&gt;github の issue&lt;/a&gt; で教えてください！&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id="haskell-quiz-no.1-type-newtype-data"&gt;Haskell Quiz No.1 type, newtype, data&lt;/h2&gt;
-&lt;p&gt;難易度: λλλ&lt;/p&gt;
-&lt;p&gt;元ネタは &lt;code&gt;Haskell wiki&lt;/code&gt; だったと思いますが、忘れてしまいました・・・。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Foo&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Foo1&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Foo1&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Foo2&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Foo2&lt;/span&gt; &lt;span class="fu"&gt;!&lt;/span&gt;&lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;&lt;span class="kw"&gt;newtype&lt;/span&gt; &lt;span class="dt"&gt;Foo3&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Foo3&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;x1 &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;case&lt;/span&gt; &lt;span class="dt"&gt;Foo1&lt;/span&gt; undefined &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-8" data-line-number="8"&gt;     &lt;span class="dt"&gt;Foo1&lt;/span&gt; _ &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-9" data-line-number="9"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-10" data-line-number="10"&gt;x2 &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;case&lt;/span&gt; &lt;span class="dt"&gt;Foo2&lt;/span&gt; undefined &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-11" data-line-number="11"&gt;     &lt;span class="dt"&gt;Foo2&lt;/span&gt; _ &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-12" data-line-number="12"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-13" data-line-number="13"&gt;x3 &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;case&lt;/span&gt; &lt;span class="dt"&gt;Foo3&lt;/span&gt; undefined &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-14" data-line-number="14"&gt;     &lt;span class="dt"&gt;Foo3&lt;/span&gt; _ &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-15" data-line-number="15"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-16" data-line-number="16"&gt;y1 &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;case&lt;/span&gt; undefined &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-17" data-line-number="17"&gt;     &lt;span class="dt"&gt;Foo1&lt;/span&gt; _ &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-18" data-line-number="18"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-19" data-line-number="19"&gt;y2 &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;case&lt;/span&gt; undefined &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-20" data-line-number="20"&gt;     &lt;span class="dt"&gt;Foo2&lt;/span&gt; _ &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-21" data-line-number="21"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-22" data-line-number="22"&gt;y3 &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;case&lt;/span&gt; undefined &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-23" data-line-number="23"&gt;     &lt;span class="dt"&gt;Foo3&lt;/span&gt; _ &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-24" data-line-number="24"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-25" data-line-number="25"&gt;&lt;span class="ot"&gt;int ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-26" data-line-number="26"&gt;int &lt;span class="fu"&gt;=&lt;/span&gt; undefined&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-27" data-line-number="27"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-28" data-line-number="28"&gt;yInt &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;case&lt;/span&gt; int &lt;span class="kw"&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-29" data-line-number="29"&gt;       _ &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dv"&gt;1&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;以下の値はそれぞれ何になるでしょう？&lt;/p&gt;
-&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;x1   &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;x2   &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;x3   &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;y1   &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;y2   &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;y3   &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-7" data-line-number="7"&gt;yInt &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;???&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;全部正解できたら普通にすごいです。&lt;/p&gt;
-&lt;p&gt;答えは&lt;a href="./03-25-quiz-2.html"&gt;次回&lt;/a&gt;！&lt;/p&gt;
 &lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-03-24-poly-variant-with-haskell.html</id><title type="text">多相バリアントを使いこなそう with Haskell</title><updated>2018-03-24T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-03-24-poly-variant-with-haskell.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
@@ -2258,7 +2305,7 @@ ssh-agentのために秘密鍵セットアップ
 less, lv, manコマンド終了時に画面をクリアしない
 
 [linux][cygwin] less, manの終了直前の画面をクリアしないで端末上に残す方法 
-</summary></entry><entry><id>https://qiita.com/HirotoShioi/items/3444e215070144b8ca0f</id><title type="text">で、出たー！幽霊型だー！(Phantom Type)</title><updated>2018-03-22T20:47:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/HirotoShioi/items/3444e215070144b8ca0f"/></entry><entry><id>https://qiita.com/nwtgck/items/6b8b372a1b50c517ceee</id><title type="text">Haskell Stack + HSpecで特定のモジュールのテストだけ実行</title><updated>2018-03-22T17:55:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nwtgck/items/6b8b372a1b50c517ceee"/></entry><entry><id>https://qiita.com/mod_poppo/items/8c483951703b5ea0f74e</id><title type="text">Haskell: Monadクラスのこれまでとこれから</title><updated>2018-03-22T15:58:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/8c483951703b5ea0f74e"/></entry><entry><id>https://haskell.jp/blog/posts/2018/renew-haskell-antenna.html</id><title type="text">Haskell Antenna をリニューアルしました</title><updated>2018-03-21T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/renew-haskell-antenna.html"/><summary type="html">&lt;article&gt;
+</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/renew-haskell-antenna.html</id><title type="text">Haskell Antenna をリニューアルしました</title><updated>2018-03-21T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/renew-haskell-antenna.html"/><summary type="html">&lt;article&gt;
     &lt;div class="container"&gt;
         &lt;div class="row"&gt;
             &lt;div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10"&gt;
