@@ -48,11 +48,15 @@ writeHtml config path bodyHtml =
   liftIO . TL.writeFile path . renderHtml $ docTypeHtml ! lang "jp" $ do
     head $ do
       title $ toHtml (config ^. #title)
-      link ! rel "stylesheet" ! type_ "text/css" ! href
-        "https://cdnjs.cloudflare.com/ajax/libs/Primer/10.0.0-rc.21/build.css"
+      link ! rel "stylesheet" ! type_ "text/css"
+           ! href "https://cdnjs.cloudflare.com/ajax/libs/Primer/10.0.0-rc.21/build.css"
+      link ! rel "icon" ! type_ "image/png"
+           ! href (fromText $ config ^. #favicon)
     body $ div ! class_ "container-md" $ do
-      h1 ! id "header" $
-        toHtml (config ^. #title)
+      h1 ! id "header" $ do
+        span $ toHtml (config ^. #title)
+        img ! class_ "float-right mt-2" ! height "32"
+            ! src (fromText $ config ^. #logo)
       bodyHtml
 
 postToHtml :: Config -> ScrapBook.Post -> Html

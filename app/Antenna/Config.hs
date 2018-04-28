@@ -20,6 +20,8 @@ type Config = Record
    , "baseUrl"     >: Text
    , "feedName"    >: Text
    , "blankAvatar" >: Text
+   , "logo"        >: Text
+   , "favicon"     >: Text
    , "sites"       >: [SiteConfig]
    ]
 
