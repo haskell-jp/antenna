@@ -26,9 +26,12 @@ readConfig :: FilePath -> IO Config
 readConfig = either (error . show) pure <=< Y.decodeFileEither
 
 generate :: FilePath -> Config -> IO ()
-generate path config = ScrapBook.collect $ do
-  posts <- concat <$> mapM ScrapBook.fetch sites
-  writeFeed (dropFileName path ++ name) =<< ScrapBook.write sconfig feed' posts
+generate path config = do
+  posts <- fmap concat . forM sites $ \site ->
+    ScrapBook.collect (ScrapBook.fetch site) `catch` handler
+
+  writeFeed (dropFileName path ++ name)
+      =<< ScrapBook.collect (ScrapBook.write sconfig feed' posts)
 
   writeHtml config "./index.html" $ tabNav (config ^. #baseUrl) Posts $ mapM_
     (postToHtml config)
@@ -41,6 +44,9 @@ generate path config = ScrapBook.collect $ do
    sconfig = toScrapBookConfig config
    name    = ScrapBook.fileName sconfig feed'
    sites   = fmap ScrapBook.toSite $ sconfig ^. #sites
+
+handler :: MonadUnliftIO m => ScrapBook.CollectError -> m [ScrapBook.Post]
+handler e = ScrapBook.collect (logError $ displayShow e) >> pure []
 
 feed' :: ScrapBook.Format
 feed' = embedAssoc $ #feed @= ()
