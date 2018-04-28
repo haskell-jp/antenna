@@ -6,13 +6,11 @@
 
 module Antenna.Config where
 
-import           Control.Applicative (Alternative (..))
-import           Control.Lens        (view, (&), (.~), (^.))
-import           Data.Default        (def)
+import           RIO
+import qualified RIO.List        as L
+
+import           Data.Default    (def)
 import           Data.Extensible
-import           Data.List           (find)
-import           Data.Maybe          (fromMaybe)
-import           Data.Text           (Text)
 import qualified ScrapBook
 
 type Config = Record
@@ -27,7 +25,7 @@ type Config = Record
 
 toScrapBookConfig :: Config -> ScrapBook.Config
 toScrapBookConfig config =
-  def & #feed .~ Just feedConfig & #sites .~ (shrink <$> config ^. #sites)
+  def & #feed `set` Just feedConfig & #sites `set` (shrink <$> config ^. #sites)
   where
     feedConfig = shrink $ #name @= Just (config ^. #feedName) <: config
 
@@ -58,6 +56,7 @@ imagePath config
 
 
 imagePath' :: Config -> ScrapBook.Site -> Text
-imagePath' config site =
-  fromMaybe (config ^. #blankAvatar) $ imagePath =<< view #logo
-    =<< find ((==) site . ScrapBook.toSite . shrink) (config ^. #sites)
+imagePath' config site = fromMaybe (config ^. #blankAvatar) $
+  imagePath
+    =<< view #logo
+    =<< L.find ((==) site . ScrapBook.toSite . shrink) (config ^. #sites)

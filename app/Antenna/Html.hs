@@ -3,19 +3,15 @@
 
 module Antenna.Html where
 
-import           Prelude                       hiding (div, head, id, span)
+import           RIO                           hiding (div, id, link, span)
+import           RIO.Directory                 (createDirectoryIfMissing)
+import           RIO.FilePath                  (dropFileName)
+import qualified RIO.Text                      as Text
+import qualified RIO.Text.Lazy                 as TL
+import           RIO.Time
 
 import           Antenna.Config
-import           Control.Lens                  ((^.))
-import           Control.Monad.IO.Class        (MonadIO, liftIO)
-import           Data.String                   (IsString, fromString)
-import           Data.Text                     (Text, unpack)
-import qualified Data.Text.IO                  as T
-import qualified Data.Text.Lazy.IO             as TL
-import           Data.Time
 import qualified ScrapBook
-import           System.Directory              (createDirectoryIfMissing)
-import           System.FilePath               (dropFileName)
 import           Text.Blaze.Html.Renderer.Text (renderHtml)
 import           Text.Blaze.Html5
 import           Text.Blaze.Html5.Attributes   (class_, height, href, id, lang,
@@ -45,19 +41,20 @@ writeFeed path txt = liftIO $ writeFileWithDir path txt
 
 writeHtml :: MonadIO m => Config -> FilePath -> Html -> m ()
 writeHtml config path bodyHtml =
-  liftIO . TL.writeFile path . renderHtml $ docTypeHtml ! lang "jp" $ do
-    head $ do
-      title $ toHtml (config ^. #title)
-      link ! rel "stylesheet" ! type_ "text/css"
-           ! href "https://cdnjs.cloudflare.com/ajax/libs/Primer/10.0.0-rc.21/build.css"
-      link ! rel "icon" ! type_ "image/png"
-           ! href (fromText $ config ^. #favicon)
-    body $ div ! class_ "container-md" $ do
-      h1 ! id "header" $ do
-        span $ toHtml (config ^. #title)
-        img ! class_ "float-right mt-2" ! height "32"
-            ! src (fromText $ config ^. #logo)
-      bodyHtml
+  liftIO . writeFileUtf8 path . TL.toStrict . renderHtml $
+    docTypeHtml ! lang "jp" $ do
+      head $ do
+        title $ toHtml (config ^. #title)
+        link ! rel "stylesheet" ! type_ "text/css"
+             ! href "https://cdnjs.cloudflare.com/ajax/libs/Primer/10.0.0-rc.21/build.css"
+        link ! rel "icon" ! type_ "image/png"
+             ! href (fromText $ config ^. #favicon)
+      body $ div ! class_ "container-md" $ do
+        h1 ! id "header" $ do
+          span $ toHtml (config ^. #title)
+          img ! class_ "float-right mt-2" ! height "32"
+              ! src (fromText $ config ^. #logo)
+        bodyHtml
 
 postToHtml :: Config -> ScrapBook.Post -> Html
 postToHtml config post = li ! class_ "d-flex border-bottom py-2" $ do
@@ -72,7 +69,7 @@ postToHtml config post = li ! class_ "d-flex border-bottom py-2" $ do
         toHtml $ mconcat ["by ", site ^. #author]
         " on "
         span $ a' ! href (fromText $ site ^. #url) $ toHtml (site ^. #title)
-        toHtml $ mconcat [" at ", formatTimeToDate $ unpack (post ^. #date)]
+        toHtml $ mconcat [" at ", formatTimeToDate $ Text.unpack (post ^. #date)]
 
 siteToHtml :: Config -> ScrapBook.Site -> Html
 siteToHtml config site = li ! class_ "d-flex border-bottom py-2" $ do
@@ -90,10 +87,10 @@ a' = a ! class_ "link-gray-dark"
 writeFileWithDir :: FilePath -> Text -> IO ()
 writeFileWithDir path txt = do
   createDirectoryIfMissing True $ dropFileName path
-  T.writeFile path txt
+  writeFileUtf8 path txt
 
 fromText :: IsString a => Text -> a
-fromText = fromString . unpack
+fromText = fromString . Text.unpack
 
 formatTimeToDate :: String -> String
 formatTimeToDate =
