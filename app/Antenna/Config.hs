@@ -54,7 +54,6 @@ imagePath config
     hatenaProfileImageLink user =
       mconcat ["https://cdn.profile-image.st-hatena.com/users/", user, "/profile.png"]
 
-
 imagePath' :: Config -> ScrapBook.Site -> Text
 imagePath' config site = fromMaybe (config ^. #blankAvatar) $
   imagePath

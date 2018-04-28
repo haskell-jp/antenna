@@ -3,7 +3,7 @@
 
 module Antenna.Html where
 
-import           RIO                           hiding (div, id, link, span)
+import           RIO                           hiding (div, link, span)
 import           RIO.Directory                 (createDirectoryIfMissing)
 import           RIO.FilePath                  (dropFileName)
 import qualified RIO.Text                      as Text
@@ -14,8 +14,9 @@ import           Antenna.Config
 import qualified ScrapBook
 import           Text.Blaze.Html.Renderer.Text (renderHtml)
 import           Text.Blaze.Html5
-import           Text.Blaze.Html5.Attributes   (class_, height, href, id, lang,
-                                                rel, src, type_, width)
+import           Text.Blaze.Html5.Attributes   (class_, height, href, lang, rel,
+                                                src, type_, width)
+import qualified Text.Blaze.Html5.Attributes   as Attr
 
 data Tab
   = Posts
@@ -50,7 +51,7 @@ writeHtml config path bodyHtml =
         link ! rel "icon" ! type_ "image/png"
              ! href (fromText $ config ^. #favicon)
       body $ div ! class_ "container-md" $ do
-        h1 ! id "header" $ do
+        h1 ! Attr.id "header" $ do
           span $ toHtml (config ^. #title)
           img ! class_ "float-right mt-2" ! height "32"
               ! src (fromText $ config ^. #logo)
