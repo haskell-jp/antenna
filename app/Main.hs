@@ -13,7 +13,6 @@ import           Antenna.Html
 import           Control.Monad      ((<=<))
 import           Data.Extensible
 import qualified Data.Yaml          as Y
-import           ScrapBook          (collect, fetch, toSite, write)
 import qualified ScrapBook
 import           System.Environment (getArgs)
 
@@ -43,9 +42,9 @@ generate path config = do
  where
    sconfig = toScrapBookConfig config
    name    = ScrapBook.fileName sconfig feed'
-   sites   = fmap ScrapBook.toSite $ sconfig ^. #sites
+   sites   = fmap toSite $ config ^. #sites
 
-handler :: MonadUnliftIO m => ScrapBook.CollectError -> m [ScrapBook.Post]
+handler :: MonadUnliftIO m => ScrapBook.CollectError -> m [ScrapBook.Post Site]
 handler e = ScrapBook.collect (logError $ displayShow e) >> pure []
 
 feed' :: ScrapBook.Format

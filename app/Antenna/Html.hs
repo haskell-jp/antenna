@@ -57,7 +57,7 @@ writeHtml config path bodyHtml =
               ! src (fromText $ config ^. #logo)
         bodyHtml
 
-postToHtml :: Config -> ScrapBook.Post -> Html
+postToHtml :: Config -> ScrapBook.Post Site -> Html
 postToHtml config post = li ! class_ "d-flex border-bottom py-2" $ do
   span ! class_ "m-2 mr-3" $
     img ! class_ "avatar avatar-small" ! width "32" ! height "32"
@@ -72,7 +72,7 @@ postToHtml config post = li ! class_ "d-flex border-bottom py-2" $ do
         span $ a' ! href (fromText $ site ^. #url) $ toHtml (site ^. #title)
         toHtml $ mconcat [" at ", formatTimeToDate $ Text.unpack (post ^. #date)]
 
-siteToHtml :: Config -> ScrapBook.Site -> Html
+siteToHtml :: Config -> Site -> Html
 siteToHtml config site = li ! class_ "d-flex border-bottom py-2" $ do
   span ! class_ "m-2 mr-3" $
     img ! class_ "avatar avatar-small" ! width "32" ! height "32"

@@ -7,7 +7,6 @@
 module Antenna.Config where
 
 import           RIO
-import qualified RIO.List        as L
 
 import           Data.Default    (def)
 import           Data.Extensible
@@ -23,11 +22,17 @@ type Config = Record
    , "sites"       >: [SiteConfig]
    ]
 
+toSite :: SiteConfig -> Site
+toSite conf =
+  shrinkAssoc $ #logo @= (conf ^. #logo) <: ScrapBook.toSite (shrinkAssoc conf)
+
 toScrapBookConfig :: Config -> ScrapBook.Config
-toScrapBookConfig config =
-  def & #feed `set` Just feedConfig & #sites `set` (shrink <$> config ^. #sites)
+toScrapBookConfig config = def & #feed `set` Just feedConfig
   where
     feedConfig = shrink $ #name @= Just (config ^. #feedName) <: config
+
+type Site = Record
+  (ScrapBook.SiteFields ++ '[ "logo" >: Maybe ImageConfig ])
 
 type SiteConfig = Record
   '[ "title"  >: Text
@@ -54,8 +59,6 @@ imagePath config
     hatenaProfileImageLink user =
       mconcat ["https://cdn.profile-image.st-hatena.com/users/", user, "/profile.png"]
 
-imagePath' :: Config -> ScrapBook.Site -> Text
-imagePath' config site = fromMaybe (config ^. #blankAvatar) $
-  imagePath
-    =<< view #logo
-    =<< L.find ((==) site . ScrapBook.toSite . shrink) (config ^. #sites)
+imagePath' :: Config -> Site -> Text
+imagePath' config site =
+  fromMaybe (config ^. #blankAvatar) $ imagePath =<< (site ^. #logo)
