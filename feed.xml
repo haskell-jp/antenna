@@ -1,4 +1,186 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-05-13T16:21:21+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/ki073/items/dd01b5d3849531caa805</id><title type="text">Haskellを使ってRubyのクラスメソッドを書く(その3) FFI+MessagePack</title><updated>2018-05-13T16:21:21+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ki073/items/dd01b5d3849531caa805"/></entry><entry><id>https://qiita.com/ki073/items/2e5ee4b29aece93bf12b</id><title type="text">Haskellを使ってRubyのクラスメソッドを書く(その4)まとめ</title><updated>2018-05-13T16:17:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ki073/items/2e5ee4b29aece93bf12b"/></entry><entry><id>https://qiita.com/suzuki-hoge/items/ae3bfdbc6844b470a887</id><title type="text">手探りで haskell から https 通信をして github api を呼んでみた（多分これが一番簡単だと思います）</title><updated>2018-05-13T13:24:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/suzuki-hoge/items/ae3bfdbc6844b470a887"/></entry><entry><id>https://qiita.com/0313Mick/items/ce532513e7f25dba28d6</id><title type="text">Google Code Jam 2018 Qualification Round - Saving The Universe Again</title><updated>2018-05-12T16:59:58+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/0313Mick/items/ce532513e7f25dba28d6"/></entry><entry><id>https://qiita.com/sgmryk/items/18e0a4c72130b2a54986</id><title type="text">Brainf*ckインタプリタをつくりながら学ぶHaskell（第一回：ごりごり編）</title><updated>2018-05-11T21:54:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sgmryk/items/18e0a4c72130b2a54986"/></entry><entry><id>https://qiita.com/sgmryk/items/cb274102cb1062c9158d</id><title type="text">継続モナドについて</title><updated>2018-05-11T21:06:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sgmryk/items/cb274102cb1062c9158d"/></entry><entry><id>https://qiita.com/Keck/items/57d500e5c9913d149829</id><title type="text">今更Haskellでブラックジャックを実装してみた(3番煎じ)</title><updated>2018-05-11T13:17:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Keck/items/57d500e5c9913d149829"/></entry><entry><id>https://qiita.com/ogata-k/items/a3c30c7edf549ac5299f</id><title type="text">Haskellでリストをシャッフル</title><updated>2018-05-11T08:15:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ogata-k/items/a3c30c7edf549ac5299f"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-05-10-make-cli-with-haskell-in-2018.html</id><title type="text">オレ的 Haskell で CLI を作る方法 2018</title><updated>2018-05-10T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-05-10-make-cli-with-haskell-in-2018.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-05-13T17:00:14+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/0313Mick/items/ce532513e7f25dba28d6</id><title type="text">Google Code Jam 2018 Qualification Round - Saving The Universe Again</title><updated>2018-05-13T17:00:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/0313Mick/items/ce532513e7f25dba28d6"/></entry><entry><id>https://qiita.com/ki073/items/dd01b5d3849531caa805</id><title type="text">Haskellを使ってRubyのクラスメソッドを書く(その3) FFI+MessagePack</title><updated>2018-05-13T16:21:21+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ki073/items/dd01b5d3849531caa805"/></entry><entry><id>https://qiita.com/ki073/items/2e5ee4b29aece93bf12b</id><title type="text">Haskellを使ってRubyのクラスメソッドを書く(その4)まとめ</title><updated>2018-05-13T16:17:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ki073/items/2e5ee4b29aece93bf12b"/></entry><entry><id>https://qiita.com/suzuki-hoge/items/ae3bfdbc6844b470a887</id><title type="text">手探りで haskell から https 通信をして github api を呼んでみた（多分これが一番簡単だと思います）</title><updated>2018-05-13T13:24:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/suzuki-hoge/items/ae3bfdbc6844b470a887"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-05-13-yaml-th.html</id><title type="text">Haskell で型安全に YAML ファイルをビルド時に埋め込む</title><updated>2018-05-13T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-05-13-yaml-th.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+ &lt;div class="card-content"&gt;
+  &lt;header class="post-header"&gt;
+    &lt;h1 class="post-title" itemprop="name headline"&gt;Haskell で型安全に YAML ファイルをビルド時に埋め込む&lt;/h1&gt;
+    &lt;p class="post-meta"&gt;
+      &lt;time datetime="2018-05-13" itemprop="datePublished"&gt;
+        May 13, 2018
+      &lt;/time&gt;
+      
+      
+      &lt;div class="tags"&gt;
+          &lt;i class="fa fa-tags"&gt;&lt;/i&gt; &lt;a href="/tags/haskell.html"&gt;haskell&lt;/a&gt; &lt;a href="/tags/extensible-package.html"&gt;extensible-package&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class="post-content" itemprop="articleBody"&gt;
+    &lt;p&gt;ザックリ言えば「&lt;a href="https://ryota-ka.hatenablog.com/entry/2018/02/14/103000"&gt;Template Haskell でコード中に JSON を埋め込んだりコンパイル時にファイルから型安全に読み込んだりする - ryota-ka’s blog&lt;/a&gt;」という記事の YAML 版です．&lt;/p&gt;
+&lt;p&gt;ただし，ryota さんの記事では Template Haskell を解説しながら JSON を読み込む関数を定義していますが， YAML 版は &lt;a href="https://hackage.haskell.org/package/yaml"&gt;yaml&lt;/a&gt; パッケージに同様の関数が既にあるので特に解説はしません． あくまでも Haskell の型システムとメタプログラミングを感じてもらえたらなぁと．&lt;/p&gt;
+&lt;h2 id="section"&gt;&lt;/h2&gt;
+&lt;p&gt;ソースコードは全てこの&lt;a href="https://github.com/matsubara0507/sample-yaml-th"&gt;リポジトリ&lt;/a&gt;にまとめてある．&lt;/p&gt;
+&lt;h1 id="yaml-を埋め込む"&gt;YAML を埋め込む&lt;/h1&gt;
+&lt;p&gt;次のような設定ファイルに関する型があったとします．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;  {&lt;span class="ot"&gt; columns ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;  ,&lt;span class="ot"&gt; languageExtensions ::&lt;/span&gt; [&lt;span class="dt"&gt;String&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;  } &lt;span class="kw"&gt;deriving&lt;/span&gt; (&lt;span class="dt"&gt;Show&lt;/span&gt;, &lt;span class="dt"&gt;Eq&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;yaml パッケージで YAML にデコードするためには &lt;a href="https://hackage.haskell.org/package/aeson"&gt;aeson&lt;/a&gt; の &lt;a href="https://hackage.haskell.org/package/aeson-1.3.1.1/docs/Data-Aeson.html#t:FromJSON"&gt;&lt;code&gt;FromJSON&lt;/code&gt;&lt;/a&gt; 型クラスのインスタンスである必要がある． &lt;code&gt;FromJSON&lt;/code&gt; のインスタンスに凝ってもしょうがないので，今回は &lt;code&gt;Generics&lt;/code&gt; を使って適当に定義する．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE DeriveGeneric #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;GHC.Generics&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;  {&lt;span class="ot"&gt; columns ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;  ,&lt;span class="ot"&gt; languageExtensions ::&lt;/span&gt; [&lt;span class="dt"&gt;String&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-7" data-line-number="7"&gt;  } &lt;span class="kw"&gt;deriving&lt;/span&gt; (&lt;span class="dt"&gt;Show&lt;/span&gt;, &lt;span class="dt"&gt;Eq&lt;/span&gt;, &lt;span class="dt"&gt;Generic&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-8" data-line-number="8"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb2-9" data-line-number="9"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;FromJSON&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;Config&lt;/code&gt; 型のデフォルト値を YAML ファイルで記述したいとする．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode yaml"&gt;&lt;code class="sourceCode yaml"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="co"&gt;# template/.config.yaml&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;&lt;span class="fu"&gt;columns:&lt;/span&gt;&lt;span class="at"&gt; 80&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;&lt;span class="fu"&gt;languageExtensions:&lt;/span&gt;&lt;span class="at"&gt; &lt;/span&gt;&lt;span class="kw"&gt;[]&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これをコンパイル時に埋め込んでかつ型検査も行いたい． そのためには Template Haskell と yaml パッケージの &lt;a href="https://hackage.haskell.org/package/yaml-0.8.30/docs/Data-Yaml-TH.html#v:decodeFile"&gt;&lt;code&gt;Data.Yaml.TH.decodeFile&lt;/code&gt;&lt;/a&gt; 関数を用いる．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="ot"&gt;decodeFile ::&lt;/span&gt; (&lt;span class="dt"&gt;Lift&lt;/span&gt; a, &lt;span class="dt"&gt;FromJSON&lt;/span&gt; a) &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; FilePath &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Q&lt;/span&gt; (&lt;span class="dt"&gt;TExp&lt;/span&gt; a)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;TExp a&lt;/code&gt; 型というのは型付きの &lt;code&gt;Exp&lt;/code&gt; 型らしいが，ぼくはあまりよく分からないので割愛． 型を見ればわかるように，&lt;code&gt;Lift&lt;/code&gt; 型クラスのインスタンスにもなってなきゃいけない． &lt;code&gt;DerivingLift&lt;/code&gt; 言語拡張を使えば簡単に定義できる．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE DeriveLift #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; import &lt;span class="dt"&gt;Language.Haskell.TH.Syntax&lt;/span&gt; &lt;span class="co"&gt;-- template-haskell package&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-4" data-line-number="4"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-5" data-line-number="5"&gt;  {&lt;span class="ot"&gt; columns ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-6" data-line-number="6"&gt;  ,&lt;span class="ot"&gt; languageExtensions ::&lt;/span&gt; [&lt;span class="dt"&gt;String&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-7" data-line-number="7"&gt;  } &lt;span class="kw"&gt;deriving&lt;/span&gt; (&lt;span class="dt"&gt;Show&lt;/span&gt;, &lt;span class="dt"&gt;Eq&lt;/span&gt;, &lt;span class="dt"&gt;Generic&lt;/span&gt;, &lt;span class="dt"&gt;Lift&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使い方は簡単で，次のようにすればよい．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE TemplateHaskell #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;&lt;span class="ot"&gt;defaultConfig ::&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt;defaultConfig &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="fu"&gt;$$&lt;/span&gt;(decodeFile &lt;span class="st"&gt;&amp;quot;./template/.config.yaml&amp;quot;&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;注意点として，Template Haskell の制約より &lt;code&gt;Config&lt;/code&gt; 型の定義と &lt;code&gt;defaultConfig&lt;/code&gt; 関数の定義は別ファイルに分けなければいけない．&lt;/p&gt;
+&lt;h2 id="試す"&gt;試す&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$ stack ghci
+&amp;gt;&amp;gt; defaultConfig
+Config {columns = 80, languageExtensions = []}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;試しに間違えてみよう&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cat template/.config.yaml
+column: 80
+languageExtensions: []
+$ stack build
+sample-yaml-th-0.1.0.0: build (lib)
+Preprocessing library for sample-yaml-th-0.1.0.0..
+Building library for sample-yaml-th-0.1.0.0..
+[1 of 2] Compiling Sample.Config.Internal ( src\Sample\Config\Internal.hs, .stack work\dist\5c8418a7\build\Sample\Config\Internal.o )
+[2 of 2] Compiling Sample.Config    ( src\Sample\Config.hs, .stack-work\dist\5c8418a7\build\Sample\Config.o )
+
+C:\Users\hoge\haskell\sample-yaml-th\src\Sample\Config.hs:14:20: error:
+    • Aeson exception:
+Error in $: key &amp;quot;columns&amp;quot; not present
+    • In the Template Haskell splice
+        $$(Y.decodeFile &amp;quot;./template/.config.yaml&amp;quot;)
+      In the expression: $$(Y.decodeFile &amp;quot;./template/.config.yaml&amp;quot;)
+      In an equation for ‘defaultConfig’:
+          defaultConfig = $$(Y.decodeFile &amp;quot;./template/.config.yaml&amp;quot;)
+   |
+14 | defaultConfig = $$(Y.decodeFile &amp;quot;./template/.config.yaml&amp;quot;)
+   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id="おまけ-with-extensible"&gt;おまけ : with Extensible&lt;/h1&gt;
+&lt;p&gt;さぁココからが本題！ &lt;a href="https://hackage.haskell.org/package/extensible"&gt;extensible&lt;/a&gt; という神パッケージを使ってリファクタリングをしてみよう！！&lt;/p&gt;
+&lt;h2 id="問題点"&gt;問題点&lt;/h2&gt;
+&lt;p&gt;大した問題ではないんだけど&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;ファイルを分けなければいけないのが悲しい&lt;/li&gt;
+&lt;li&gt;YAML のキーがキャメルケース(&lt;code&gt;languageExtensions&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="extensible-パッケージ"&gt;extensible パッケージ&lt;/h2&gt;
+&lt;p&gt;言わずもがな，拡張可能なレコードやバリアントを提供するパッケージだ． (詳しくは，最近急ピッチで充実されている&lt;a href="https://wiki.hask.moe/"&gt;攻略Wiki&lt;/a&gt;を読むといいんじゃないんかな？)&lt;/p&gt;
+&lt;p&gt;例えば，さっきから使っている &lt;code&gt;Config&lt;/code&gt; 型を &lt;code&gt;extensible&lt;/code&gt; レコード型で書くと次のように書ける&lt;/p&gt;
+&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE DataKinds     #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;&lt;span class="ot"&gt;{-# LANGUAGE TypeOperators #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;root&amp;quot; &amp;gt;: Text&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-6" data-line-number="6"&gt;   , &lt;span class="st"&gt;&amp;quot;path-format&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-7" data-line-number="7"&gt;   ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;地味にうれしいことに，extensible であれば関数名では許されないハイフンが含んだフィールド名も定義できるのだ．&lt;/p&gt;
+&lt;h2 id="リファクタリング"&gt;リファクタリング&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Data.Yaml.TH.decodeFile&lt;/code&gt; を使うには &lt;code&gt;FromJSON&lt;/code&gt; 型クラスと &lt;code&gt;Lift&lt;/code&gt; 型クラスのインスタンスにしなければいけない． でも安心して欲しい． どちらも最新の extensible-0.4.9 では定義済みだ(そして extensible のレコードは &lt;code&gt;type&lt;/code&gt; 宣言なので追加でインスタンスを定義する必要は無い)．&lt;/p&gt;
+&lt;p&gt;ただし，extensible-0.4.9 はまだ Stackage の LTS にも nightly にも追加されていないので &lt;code&gt;stack.yaml&lt;/code&gt; に追加する必要がある．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode yaml"&gt;&lt;code class="sourceCode yaml"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="fu"&gt;resolver:&lt;/span&gt;&lt;span class="at"&gt; lts-11.9&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;&lt;span class="fu"&gt;packages:&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; .&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;&lt;span class="fu"&gt;extra-deps:&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;&lt;span class="kw"&gt;-&lt;/span&gt; extensible-0.4.9&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;Lift&lt;/code&gt; 型クラスのインスタンスは extensible で定義済みなので1つ目のファイルを分けるはクリアーだ． 実は2つもクリアーしている． 拡張可能レコードの &lt;code&gt;FromJson&lt;/code&gt; 型クラスのインスタンスは &lt;code&gt;&amp;quot;path-format&amp;quot;&lt;/code&gt; のようなハイフンを含んだ文字列もそのまま扱ってくれる．&lt;/p&gt;
+&lt;p&gt;以下が extensible 版の &lt;code&gt;Config&lt;/code&gt; 型に対応する YAML ファイルだ．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode yaml"&gt;&lt;code class="sourceCode yaml"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;&lt;span class="co"&gt;# template/.extensible-config.yaml&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;&lt;span class="fu"&gt;columns:&lt;/span&gt;&lt;span class="at"&gt; 80&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb11-3" data-line-number="3"&gt;&lt;span class="fu"&gt;language-extensions:&lt;/span&gt;&lt;span class="at"&gt; &lt;/span&gt;&lt;span class="kw"&gt;[]&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;試しに実行してみよう！&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ stack ghci
+&amp;gt;&amp;gt; Sample.Extensible.Config.defaultConfig
+columns @= 80 &amp;lt;: language-extensions @= [] &amp;lt;: nil&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="デフォルトで置き換える"&gt;デフォルトで置き換える&lt;/h2&gt;
+&lt;p&gt;最後に簡単な実行ファイルを実装してみる． 設定ファイルのパスを与えると読みに行き，足りない部分は先ほどから埋め込んでるデフォルト値に置き換えて出力するモノだ．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cat &amp;quot;./template/.example.yaml&amp;quot;
+columns: 100
+$ stack exec -- pconfig &amp;quot;./template/.example.yaml&amp;quot;
+columns @= 100 &amp;lt;: language-extensions @= [] &amp;lt;: nil
+$ stack exec -- pconfig
+columns @= 80 &amp;lt;: language-extensions @= [] &amp;lt;: nil&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;もちろんパスにファイルが無ければデフォルトのモノを出力するだけだ．&lt;/p&gt;
+&lt;h2 id="section-1"&gt;&lt;/h2&gt;
+&lt;p&gt;さてどうすれば良いだろうか？ 例えば，&lt;code&gt;FromJSON&lt;/code&gt; 型クラスの &lt;code&gt;Meybe a&lt;/code&gt; 型のインスタンスはフィールドが無い場合に &lt;code&gt;Nothing&lt;/code&gt; を与えてくれるので， &lt;code&gt;Config&lt;/code&gt; 型の各フィールドを &lt;code&gt;Maybe&lt;/code&gt; でラップするというのはどうだろう．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-2" data-line-number="2"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;root&amp;quot; &amp;gt;: Maybe Text&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-3" data-line-number="3"&gt;   , &lt;span class="st"&gt;&amp;quot;path-format&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Maybe&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-4" data-line-number="4"&gt;   ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;フィールドが2つなら良いが多くなってきたら辛そうだ…&lt;/p&gt;
+&lt;h3 id="必殺-nullable"&gt;必殺 Nullable&lt;/h3&gt;
+&lt;p&gt;全てを &lt;code&gt;Meybe&lt;/code&gt; でラップする場合は &lt;a href="https://hackage.haskell.org/package/extensible-0.4.9/docs/Data-Extensible-Nullable.html"&gt;&lt;code&gt;Nullable&lt;/code&gt;&lt;/a&gt; を使うと良いだろう(ないしは &lt;code&gt;RecordOf Maybe&lt;/code&gt;)．&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Nullable h :* xs&lt;/code&gt; も既に &lt;code&gt;FromJson&lt;/code&gt; 型クラスのインスタンスになっているのでそのまま YAML を読み込める． あとは次のようなデフォルト値と &lt;code&gt;Nullable&lt;/code&gt; を与えたら &lt;code&gt;Nothing&lt;/code&gt; の部分だけデフォルト値で置き換えた値を返す関数を実装してやればよい．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb15"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb15-1" data-line-number="1"&gt;&lt;span class="ot"&gt;fromNullable ::&lt;/span&gt; &lt;span class="dt"&gt;RecordOf&lt;/span&gt; h xs &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Nullable&lt;/span&gt; (&lt;span class="dt"&gt;Field&lt;/span&gt; h) &lt;span class="fu"&gt;:*&lt;/span&gt; xs &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;RecordOf&lt;/span&gt; h xs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-2" data-line-number="2"&gt;fromNullable def &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-3" data-line-number="3"&gt;  hmapWithIndex &lt;span class="fu"&gt;$&lt;/span&gt; \m x &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; fromMaybe (hlookup m def) (getNullable x)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;extensible ならこうやって全てのフィールドに対し走査する関数が使える．&lt;/p&gt;
+&lt;h2 id="section-2"&gt;&lt;/h2&gt;
+&lt;p&gt;あとはこんな感じ&lt;/p&gt;
+&lt;div class="sourceCode" id="cb16"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb16-1" data-line-number="1"&gt;&lt;span class="ot"&gt;{-# LANGUAGE NoImplicitPrelude #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-2" data-line-number="2"&gt;&lt;span class="ot"&gt;{-# LANGUAGE OverloadedStrings #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-3" data-line-number="3"&gt;&lt;span class="ot"&gt;{-# LANGUAGE PolyKinds         #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-5" data-line-number="5"&gt;&lt;span class="kw"&gt;module&lt;/span&gt; &lt;span class="dt"&gt;Main&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-6" data-line-number="6"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-7" data-line-number="7"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;RIO&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-8" data-line-number="8"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;RIO.Directory&lt;/span&gt;      (doesFileExist)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-9" data-line-number="9"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-10" data-line-number="10"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;Data.Extensible&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-11" data-line-number="11"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="kw"&gt;qualified&lt;/span&gt; &lt;span class="dt"&gt;Data.Yaml&lt;/span&gt;          &lt;span class="kw"&gt;as&lt;/span&gt; &lt;span class="dt"&gt;Y&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-12" data-line-number="12"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;System.Environment&lt;/span&gt; (getArgs)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-13" data-line-number="13"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-14" data-line-number="14"&gt;&lt;span class="ot"&gt;main ::&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-15" data-line-number="15"&gt;main &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-16" data-line-number="16"&gt;  path &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; fromMaybe &lt;span class="st"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;.&lt;/span&gt; listToMaybe &lt;span class="fu"&gt;&amp;lt;$&amp;gt;&lt;/span&gt; getArgs&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-17" data-line-number="17"&gt;  config &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; readConfigWith defaultConfig path&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-18" data-line-number="18"&gt;  hPutBuilder stdout &lt;span class="fu"&gt;$&lt;/span&gt; encodeUtf8Builder (tshow config)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-19" data-line-number="19"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-20" data-line-number="20"&gt;&lt;span class="ot"&gt;readConfigWith ::&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; FilePath &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-21" data-line-number="21"&gt;readConfigWith def path &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-22" data-line-number="22"&gt;  file &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; readFileBinaryWith &lt;span class="st"&gt;&amp;quot;&amp;quot;&lt;/span&gt; path&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-23" data-line-number="23"&gt;  &lt;span class="kw"&gt;if&lt;/span&gt; Y.decodeEither file &lt;span class="fu"&gt;==&lt;/span&gt; &lt;span class="dt"&gt;Right&lt;/span&gt; &lt;span class="dt"&gt;Y.Null&lt;/span&gt; &lt;span class="kw"&gt;then&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-24" data-line-number="24"&gt;    pure def&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-25" data-line-number="25"&gt;  &lt;span class="kw"&gt;else&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-26" data-line-number="26"&gt;    config &lt;span class="ot"&gt;&amp;lt;-&lt;/span&gt; either (error &lt;span class="fu"&gt;.&lt;/span&gt; show) pure &lt;span class="fu"&gt;$&lt;/span&gt; Y.decodeEither&amp;#39; file&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-27" data-line-number="27"&gt;    pure &lt;span class="fu"&gt;$&lt;/span&gt; fromNullable def config&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-28" data-line-number="28"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-29" data-line-number="29"&gt;&lt;span class="ot"&gt;readFileBinaryWith ::&lt;/span&gt; &lt;span class="dt"&gt;ByteString&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; FilePath &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt; &lt;span class="dt"&gt;ByteString&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-30" data-line-number="30"&gt;readFileBinaryWith def path &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-31" data-line-number="31"&gt;  doesFileExist path &lt;span class="fu"&gt;&amp;gt;&amp;gt;=&lt;/span&gt; bool (pure def) (readFileBinary path)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;いろいろとインポートするのがめんどくさくて &lt;code&gt;rio&lt;/code&gt; ライブラリを使っているが，あんまり気にしないで．&lt;/p&gt;
+&lt;h1 id="おしまい"&gt;おしまい&lt;/h1&gt;
+&lt;p&gt;ちなみに，&lt;a href="https://matsubara0507.github.io/posts/2018-05-10-make-cli-with-haskell-in-2018.html"&gt;前回の記事&lt;/a&gt;に書いた &lt;a href="https://github.com/matsubara0507/taskpad"&gt;&lt;code&gt;taskpad&lt;/code&gt;&lt;/a&gt; にこの機能を追加してる．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/sgmryk/items/18e0a4c72130b2a54986</id><title type="text">Brainf*ckインタプリタをつくりながら学ぶHaskell（第一回：ごりごり編）</title><updated>2018-05-11T21:54:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sgmryk/items/18e0a4c72130b2a54986"/></entry><entry><id>https://qiita.com/sgmryk/items/cb274102cb1062c9158d</id><title type="text">継続モナドについて</title><updated>2018-05-11T21:06:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sgmryk/items/cb274102cb1062c9158d"/></entry><entry><id>https://qiita.com/Keck/items/57d500e5c9913d149829</id><title type="text">今更Haskellでブラックジャックを実装してみた(3番煎じ)</title><updated>2018-05-11T13:17:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Keck/items/57d500e5c9913d149829"/></entry><entry><id>https://qiita.com/ogata-k/items/a3c30c7edf549ac5299f</id><title type="text">Haskellでリストをシャッフル</title><updated>2018-05-11T08:15:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ogata-k/items/a3c30c7edf549ac5299f"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-05-10-make-cli-with-haskell-in-2018.html</id><title type="text">オレ的 Haskell で CLI を作る方法 2018</title><updated>2018-05-10T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-05-10-make-cli-with-haskell-in-2018.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;オレ的 Haskell で CLI を作る方法 2018&lt;/h1&gt;
@@ -5000,120 +5182,6 @@ Haskell ではそういうときには [file-embed](https://hackage.haskell.org/
 True&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id="おしまい"&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;こういうのを自分で思いつけるようになりたいね…&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-01-31-fun-of-extensible-2.html</id><title type="text">拡張可能直和型を引数に取る関数の定義 (Haskell)</title><updated>2018-01-31T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-01-31-fun-of-extensible-2.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
- &lt;div class="card-content"&gt;
-  &lt;header class="post-header"&gt;
-    &lt;h1 class="post-title" itemprop="name headline"&gt;拡張可能直和型を引数に取る関数の定義 (Haskell)&lt;/h1&gt;
-    &lt;p class="post-meta"&gt;
-      &lt;time datetime="2018-01-31" itemprop="datePublished"&gt;
-        Jan 31, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class="tags"&gt;
-          &lt;i class="fa fa-tags"&gt;&lt;/i&gt; &lt;a href="/tags/Haskell.html"&gt;Haskell&lt;/a&gt; &lt;a href="/tags/extensible-package.html"&gt;extensible-package&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class="post-content" itemprop="articleBody"&gt;
-    &lt;p&gt;「&lt;a href="https://hackage.haskell.org/package/extensible"&gt;&lt;code&gt;extensible&lt;/code&gt;&lt;/a&gt; パッケージの楽しみ その２」です．&lt;/p&gt;
-&lt;p&gt;拡張可能レコードやら Extensible Effect やら，Haskell の Extensible なものを全て統一された仕組みで提供する化け物パッケージ &lt;a href="https://hackage.haskell.org/package/extensible-0.4.7.1"&gt;&lt;code&gt;extensible&lt;/code&gt;&lt;/a&gt; について，割とドキュメントには無い(？)ネタを書いておくシリーズ第二弾です． ぼく自身は作者ではないし，間違っているかもなのでこの記事を完全には当てにしないでください．&lt;/p&gt;
-&lt;p&gt;また，現在の最新バージョンは 0.4.7.1 です(そのバージョンでハナシをしてる)．&lt;/p&gt;
-&lt;h2 id="section"&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href="/posts/2017-11-28-fun-of-extensible-1.html"&gt;前回&lt;/a&gt;は拡張可能レコードの拡縮の話を書きました． その最後の方に，おまけとして拡張可能直和型の話を書きました． 実際に自分のプログラムで，この拡張可能直和型を使おうとしてみたんですが，パターンマッチが分からず分岐が出来なかったので調べました，ってのが今回のハナシ．&lt;/p&gt;
-&lt;p&gt;今回の Haskell コードは基本的に&lt;a href="https://github.com/matsubara0507/test-extensible/blob/master/src/Sample/Variant.hs"&gt;コレ&lt;/a&gt;．&lt;/p&gt;
-&lt;h2 id="拡張可能直和型"&gt;拡張可能直和型&lt;/h2&gt;
-&lt;p&gt;ここでは，Haskell の代数的データ型において&lt;/p&gt;
-&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Color&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;RGB&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;CMYK&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;のように複数の値コンストラクタをとり得る型を直和型ということにします(あんまり一般的ではない？)． このようなデータ型を extensible を使って書くと次のようになる．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Color&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Variant&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;rgb&amp;quot;  &amp;gt;: (Int,Int,Int)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;   , &lt;span class="st"&gt;&amp;quot;cmyk&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; (&lt;span class="dt"&gt;Int&lt;/span&gt;,&lt;span class="dt"&gt;Int&lt;/span&gt;,&lt;span class="dt"&gt;Int&lt;/span&gt;,&lt;span class="dt"&gt;Int&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;   ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これが拡張可能直和型である(と呼んでいる)． 例えば次のような，&lt;code&gt;Color&lt;/code&gt; 型の構造的に部分型である &lt;code&gt;RGB&lt;/code&gt; 型の値を &lt;a href="https://hackage.haskell.org/package/extensible-0.4.7.1/docs/Data-Extensible-Inclusion.html#v:spread"&gt;&lt;code&gt;spread&lt;/code&gt;&lt;/a&gt; という関数を使って持ち上げることが出来る．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;ghci&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;RGB&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Variant&lt;/span&gt; &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;rgb&amp;quot; &amp;gt;: (Int,Int,Int) ]&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;ghci&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; color1 &lt;span class="fu"&gt;=&lt;/span&gt; embedAssoc &lt;span class="fu"&gt;$&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;rgb &lt;span class="fu"&gt;@=&lt;/span&gt; (&lt;span class="dv"&gt;0&lt;/span&gt;,&lt;span class="dv"&gt;0&lt;/span&gt;,&lt;span class="dv"&gt;0&lt;/span&gt;)&lt;span class="ot"&gt; ::&lt;/span&gt; &lt;span class="dt"&gt;RGB&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;ghci&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; color2 &lt;span class="fu"&gt;=&lt;/span&gt; spread&lt;span class="ot"&gt; color1 ::&lt;/span&gt; &lt;span class="dt"&gt;Color&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ちなみに「拡張可能直和型」って単語は，ほぼほぼ造語です(すいません)． 作者さんは &lt;strong&gt;Extensible Variants&lt;/strong&gt; と書いているので，正確には拡張可能バリアント型ですかね． ML 系では「バリアント型」って単語は良く使われてますが，Haskell では馴染みが無いので「直和型」って単語を用います．&lt;/p&gt;
-&lt;h2 id="パターンマッチ"&gt;パターンマッチ&lt;/h2&gt;
-&lt;p&gt;ここからが本題． 例として次のような図形の型を用いる．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Shape&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Circle&lt;/span&gt; &lt;span class="dt"&gt;Point&lt;/span&gt; &lt;span class="dt"&gt;Double&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-3" data-line-number="3"&gt;  &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;Rect&lt;/span&gt; &lt;span class="dt"&gt;Point&lt;/span&gt; &lt;span class="dt"&gt;Point&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb4-4" data-line-number="4"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Point&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; (&lt;span class="dt"&gt;Double&lt;/span&gt;, &lt;span class="dt"&gt;Double&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Circle&lt;/code&gt; が円で中心点の座標と半径を持ち，&lt;code&gt;Rect&lt;/code&gt; が矩形で左下と右上の座標を持つ． 例えば，図形の面積を求める関数 &lt;code&gt;area&lt;/code&gt; を書くときはパターンマッチを用いて次のように書きますよね．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="ot"&gt;area ::&lt;/span&gt; &lt;span class="dt"&gt;Shape&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Double&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;area (&lt;span class="dt"&gt;Circle&lt;/span&gt; _ r) &lt;span class="fu"&gt;=&lt;/span&gt; pi &lt;span class="fu"&gt;*&lt;/span&gt; (r &lt;span class="fu"&gt;^&lt;/span&gt; &lt;span class="dv"&gt;2&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb5-3" data-line-number="3"&gt;area (&lt;span class="dt"&gt;Rect&lt;/span&gt; (x1,y1) (x2,y2)) &lt;span class="fu"&gt;=&lt;/span&gt; abs (x2 &lt;span class="fu"&gt;-&lt;/span&gt; x1) &lt;span class="fu"&gt;*&lt;/span&gt; abs (y2 &lt;span class="fu"&gt;-&lt;/span&gt; y1)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;では，この &lt;code&gt;Shape&lt;/code&gt; 型を拡張可能直和型で書いてみる．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Shape&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Variant&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;circle&amp;quot; &amp;gt;: Circle&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-3" data-line-number="3"&gt;   , &lt;span class="st"&gt;&amp;quot;rect&amp;quot;&lt;/span&gt;   &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Rect&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-4" data-line-number="4"&gt;   ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-5" data-line-number="5"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-6" data-line-number="6"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Point&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt; &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;x&amp;quot; &amp;gt;: Double, &amp;quot;y&amp;quot; &amp;gt;: Double ]&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-7" data-line-number="7"&gt;&lt;span class="kw"&gt;newtype&lt;/span&gt; &lt;span class="dt"&gt;Circle&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-8" data-line-number="8"&gt;  &lt;span class="dt"&gt;Circle&lt;/span&gt; (&lt;span class="dt"&gt;Record&lt;/span&gt; &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;mid&amp;quot; &amp;gt;: Point, &amp;quot;r&amp;quot; &amp;gt;: Double ]) deriving (Show, Eq)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-9" data-line-number="9"&gt;&lt;span class="kw"&gt;newtype&lt;/span&gt; &lt;span class="dt"&gt;Rect&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb6-10" data-line-number="10"&gt;  &lt;span class="dt"&gt;Rect&lt;/span&gt; (&lt;span class="dt"&gt;Record&lt;/span&gt; &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;ll&amp;quot; &amp;gt;: Point, &amp;quot;ur&amp;quot; &amp;gt;: Point ]) deriving (Show, Eq)&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Record&lt;/code&gt; は拡張可能レコードだ． 後の話の流れのために &lt;code&gt;newtype&lt;/code&gt; で &lt;code&gt;Circle&lt;/code&gt; 型と &lt;code&gt;Rect&lt;/code&gt; 型を定義したが，別に型エイリアスでもいい．&lt;/p&gt;
-&lt;p&gt;問題はココからで，どうやって &lt;code&gt;area&lt;/code&gt; 関数を定義するか． (作者さんに聞いてしまえば早いんだけど)パッケージを漁ってたらそれらしい関数 &lt;a href="https://hackage.haskell.org/package/extensible-0.4.7.1/docs/Data-Extensible-Match.html#v:match"&gt;&lt;code&gt;match&lt;/code&gt;&lt;/a&gt; があった． イロイロ試した結果，&lt;code&gt;match&lt;/code&gt; よりも &lt;a href="https://hackage.haskell.org/package/extensible-0.4.7.1/docs/Data-Extensible-Field.html#v:matchField"&gt;&lt;code&gt;matchField&lt;/code&gt;&lt;/a&gt; の方が使いやすかったので，こっちを使って次のように書ける．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="ot"&gt;area ::&lt;/span&gt; &lt;span class="dt"&gt;Shape&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Double&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;area &lt;span class="fu"&gt;=&lt;/span&gt; matchField&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-3" data-line-number="3"&gt;    &lt;span class="fu"&gt;$&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;circle &lt;span class="fu"&gt;@=&lt;/span&gt; (\(&lt;span class="dt"&gt;Circle&lt;/span&gt; s) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; pi &lt;span class="fu"&gt;*&lt;/span&gt; (s &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;r) &lt;span class="fu"&gt;^&lt;/span&gt; &lt;span class="dv"&gt;2&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-4" data-line-number="4"&gt;   &lt;span class="fu"&gt;&amp;lt;:&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;rect   &lt;span class="fu"&gt;@=&lt;/span&gt; ((&lt;span class="fu"&gt;*&lt;/span&gt;) &lt;span class="fu"&gt;&amp;lt;$&amp;gt;&lt;/span&gt; width &lt;span class="fu"&gt;&amp;lt;*&amp;gt;&lt;/span&gt; height)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-5" data-line-number="5"&gt;   &lt;span class="fu"&gt;&amp;lt;:&lt;/span&gt; nil&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-7" data-line-number="7"&gt;width,&lt;span class="ot"&gt; height ::&lt;/span&gt; &lt;span class="dt"&gt;Rect&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Double&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-8" data-line-number="8"&gt;width  (&lt;span class="dt"&gt;Rect&lt;/span&gt; s) &lt;span class="fu"&gt;=&lt;/span&gt; abs &lt;span class="fu"&gt;$&lt;/span&gt; s &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;ur &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;x &lt;span class="fu"&gt;-&lt;/span&gt; s &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;ll &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;x&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-9" data-line-number="9"&gt;height (&lt;span class="dt"&gt;Rect&lt;/span&gt; s) &lt;span class="fu"&gt;=&lt;/span&gt; abs &lt;span class="fu"&gt;$&lt;/span&gt; s &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;ur &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;y &lt;span class="fu"&gt;-&lt;/span&gt; s &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;ll &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;y&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;意外と簡単にできた！&lt;/p&gt;
-&lt;p&gt;(なんでこれでうまくいくかを説明しようと思ったけど，ぼくには説明するのが難しすぎてやめた．) (ちなみに，すごい簡潔に書けるのは &lt;a href="https://hackage.haskell.org/package/extensible-0.4.7.1/docs/Data-Extensible-Wrapper.html#t:Wrapper"&gt;&lt;code&gt;Wrapper&lt;/code&gt;&lt;/a&gt; 型クラスのおかげだと思う．)&lt;/p&gt;
-&lt;h2 id="型クラスを使う"&gt;型クラスを使う&lt;/h2&gt;
-&lt;p&gt;ここからが拡張可能直和型のすごいところ(パターンマッチしかできないなら普通の直和型でもいいもんね…)． 型クラスを用いて次のようにも &lt;code&gt;area&lt;/code&gt; 関数を定義できる．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="kw"&gt;class&lt;/span&gt; &lt;span class="dt"&gt;Area&lt;/span&gt; a &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="ot"&gt;  area ::&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Double&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-4" data-line-number="4"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Area&lt;/span&gt; &lt;span class="dt"&gt;Circle&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-5" data-line-number="5"&gt;  area (&lt;span class="dt"&gt;Circle&lt;/span&gt; s) &lt;span class="fu"&gt;=&lt;/span&gt; pi &lt;span class="fu"&gt;*&lt;/span&gt; (s &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;r) &lt;span class="fu"&gt;^&lt;/span&gt; &lt;span class="dv"&gt;2&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-6" data-line-number="6"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-7" data-line-number="7"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Area&lt;/span&gt; &lt;span class="dt"&gt;Rect&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-8" data-line-number="8"&gt;  area &lt;span class="fu"&gt;=&lt;/span&gt; (&lt;span class="fu"&gt;*&lt;/span&gt;) &lt;span class="fu"&gt;&amp;lt;$&amp;gt;&lt;/span&gt; width &lt;span class="fu"&gt;&amp;lt;*&amp;gt;&lt;/span&gt; height&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-9" data-line-number="9"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-10" data-line-number="10"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Forall&lt;/span&gt; (&lt;span class="dt"&gt;KeyValue&lt;/span&gt; &lt;span class="dt"&gt;KnownSymbol&lt;/span&gt; &lt;span class="dt"&gt;Area&lt;/span&gt;) xs &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Area&lt;/span&gt; (&lt;span class="dt"&gt;Variant&lt;/span&gt; xs) &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-11" data-line-number="11"&gt;  area &lt;span class="fu"&gt;=&lt;/span&gt; matchField &lt;span class="fu"&gt;$&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-12" data-line-number="12"&gt;    htabulateFor (&lt;span class="dt"&gt;Proxy&lt;/span&gt;&lt;span class="ot"&gt; ::&lt;/span&gt; &lt;span class="dt"&gt;Proxy&lt;/span&gt; (&lt;span class="dt"&gt;KeyValue&lt;/span&gt; &lt;span class="dt"&gt;KnownSymbol&lt;/span&gt; &lt;span class="dt"&gt;Area&lt;/span&gt;)) &lt;span class="fu"&gt;$&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-13" data-line-number="13"&gt;      \_ &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Field&lt;/span&gt; (&lt;span class="dt"&gt;Match&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt; area &lt;span class="fu"&gt;.&lt;/span&gt; runIdentity)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Forall (KeyValue KnownSymbol Area) xs&lt;/code&gt; という型制約の直観的な解釈は，型レベルリスト &lt;code&gt;xs&lt;/code&gt; の全ての要素 &lt;code&gt;k &amp;gt;: v&lt;/code&gt; が &lt;code&gt;KnownSymbol k&lt;/code&gt; と &lt;code&gt;Area v&lt;/code&gt; を満たす，という意味だ． 即ち，拡張可能直和型の全ての要素が &lt;code&gt;Area&lt;/code&gt; 型クラスのインスタンスであれば，その拡張可能直和型は &lt;code&gt;Area&lt;/code&gt; 型クラスのインスタンスになり得るのだ． ちゃんと次のように動作する．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;ghci&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; shape1&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;&lt;span class="dt"&gt;EmbedAt&lt;/span&gt; &lt;span class="fu"&gt;$&lt;/span&gt;(mkMembership &lt;span class="dv"&gt;0&lt;/span&gt;) (circle &lt;span class="fu"&gt;@=&lt;/span&gt; &lt;span class="dt"&gt;Circle&lt;/span&gt; (mid &lt;span class="fu"&gt;@=&lt;/span&gt; (x &lt;span class="fu"&gt;@=&lt;/span&gt; &lt;span class="fl"&gt;1.0&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;:&lt;/span&gt; y &lt;span class="fu"&gt;@=&lt;/span&gt; &lt;span class="fl"&gt;2.0&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;:&lt;/span&gt; nil) &lt;span class="fu"&gt;&amp;lt;:&lt;/span&gt; r &lt;span class="fu"&gt;@=&lt;/span&gt; &lt;span class="fl"&gt;2.0&lt;/span&gt; &lt;span class="fu"&gt;&amp;lt;:&lt;/span&gt; nil))&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;ghci&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; &lt;span class="fu"&gt;:&lt;/span&gt;t shape1&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;&lt;span class="ot"&gt;shape1 ::&lt;/span&gt; &lt;span class="dt"&gt;Shape&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-5" data-line-number="5"&gt;ghci&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; area shape1&lt;/a&gt;
-&lt;a class="sourceLine" id="cb9-6" data-line-number="6"&gt;&lt;span class="fl"&gt;12.566370614359172&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これの何がすごいかと言うと，例えば次のように &lt;code&gt;Shape&lt;/code&gt; 型を拡張しよう．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="kw"&gt;newtype&lt;/span&gt; &lt;span class="dt"&gt;Triangle&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;  &lt;span class="dt"&gt;Triangle&lt;/span&gt; (&lt;span class="dt"&gt;Point&lt;/span&gt;, &lt;span class="dt"&gt;Point&lt;/span&gt;, &lt;span class="dt"&gt;Point&lt;/span&gt;) &lt;span class="kw"&gt;deriving&lt;/span&gt; (&lt;span class="dt"&gt;Show&lt;/span&gt;, &lt;span class="dt"&gt;Eq&lt;/span&gt;)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Shape&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Variant&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;circle&amp;quot; &amp;gt;: Circle&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-6" data-line-number="6"&gt;   , &lt;span class="st"&gt;&amp;quot;rect&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Rect&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-7" data-line-number="7"&gt;   , &lt;span class="st"&gt;&amp;quot;triangle&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Triangle&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-8" data-line-number="8"&gt;   ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;一般的な直和型の場合は，&lt;code&gt;Shape&lt;/code&gt; 型のパターンマッチしている部分を全て増やさないといけない． しかし，型クラスを用いた拡張可能直和型の関数であれば，次のようにインスタンスを増やすだけで良い．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;&lt;span class="kw"&gt;instance&lt;/span&gt; &lt;span class="dt"&gt;Area&lt;/span&gt; &lt;span class="dt"&gt;Triangle&lt;/span&gt; &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;  area (&lt;span class="dt"&gt;Triangle&lt;/span&gt; (p1, p2, p3)) &lt;span class="fu"&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-3" data-line-number="3"&gt;    abs ((p1 &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;x &lt;span class="fu"&gt;-&lt;/span&gt; p3 &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;x) &lt;span class="fu"&gt;*&lt;/span&gt; (p2 &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;y &lt;span class="fu"&gt;-&lt;/span&gt; p3 &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;y) &lt;span class="fu"&gt;-&lt;/span&gt; (p2 &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;x &lt;span class="fu"&gt;-&lt;/span&gt; p3 &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;x) &lt;span class="fu"&gt;*&lt;/span&gt; (p1 &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;y &lt;span class="fu"&gt;-&lt;/span&gt; p3 &lt;span class="fu"&gt;^.&lt;/span&gt; &lt;span class="fu"&gt;#&lt;/span&gt;y)) &lt;span class="fu"&gt;/&lt;/span&gt; &lt;span class="dv"&gt;2&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;書き込んでる行数は大差ないかもしれないが，例えばファイルを分けたりなど，より柔軟に関数を定義できる！&lt;/p&gt;
-&lt;h2 id="おしまい"&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;ちなみに，&lt;code&gt;area&lt;/code&gt; 関数は &lt;code&gt;a -&amp;gt; Double&lt;/code&gt; で返り値の型が &lt;code&gt;Double&lt;/code&gt; だったから楽だった． これが，例えば座標移動をする &lt;code&gt;nudge :: a -&amp;gt; Point -&amp;gt; a&lt;/code&gt; のように，返り値が &lt;code&gt;a&lt;/code&gt; なものは &lt;code&gt;Variant&lt;/code&gt; のインスタンスを定義するのが大変(&lt;a href="https://github.com/matsubara0507/test-extensible/blob/d5e58f59ad4b1a2f4809bbecd79eeffbe04eec51/src/Sample/Variant.hs#L94"&gt;頑張った&lt;/a&gt;)．&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
