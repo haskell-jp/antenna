@@ -1,4 +1,461 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-06-15T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://matsubara0507.github.io/posts/2018-06-15-introduce-elchemy-part1.html</id><title type="text">Elchemy 入門 : その１</title><updated>2018-06-15T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-06-15-introduce-elchemy-part1.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-06-16T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://matsubara0507.github.io/posts/2018-06-16-introduce-elchemy-part2.html</id><title type="text">Elchemy 入門 : その２</title><updated>2018-06-16T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-06-16-introduce-elchemy-part2.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+ &lt;div class="card-content"&gt;
+  &lt;header class="post-header"&gt;
+    &lt;h1 class="post-title" itemprop="name headline"&gt;Elchemy 入門 : その２&lt;/h1&gt;
+    &lt;p class="post-meta"&gt;
+      &lt;time datetime="2018-06-16" itemprop="datePublished"&gt;
+        Jun 16, 2018
+      &lt;/time&gt;
+      
+      
+      &lt;div class="tags"&gt;
+          &lt;i class="fa fa-tags"&gt;&lt;/i&gt; &lt;a href="/tags/Elchemy.html"&gt;Elchemy&lt;/a&gt; &lt;a href="/tags/Elm.html"&gt;Elm&lt;/a&gt; &lt;a href="/tags/Elixir.html"&gt;Elixir&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class="post-content" itemprop="articleBody"&gt;
+    &lt;p&gt;Elm から Elixir のトランスパイラ，&lt;a href="https://github.com/wende/elmchemy"&gt;Elchemy&lt;/a&gt; についてイロイロと調べたのでまとめていきます． &lt;a href="https://matsubara0507.github.io/posts/2018-06-15-introduce-elchemy-part1.html"&gt;前回はコチラ&lt;/a&gt;． 今回は&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://hackernoon.com/elmchemy-write-type-safe-elixir-code-with-elms-syntax-part-2-our-own-rpg-character-module-cedbf7da138d"&gt;Tutorial その２&lt;/a&gt;をやってみた&lt;/li&gt;
+&lt;li&gt;Phoenix で ToDo アプリを作る&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;の2本立てです． ちなみに，現在のバージョンは 0.7.4 です．&lt;/p&gt;
+&lt;h2 id="tutorial-そのをやってみた"&gt;Tutorial その２をやってみた&lt;/h2&gt;
+&lt;p&gt;Tutorial その２では Elchemy を利用した独自ライブラリを作成する． 以下の手順で行うそうだ．&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;エイリアス型を定義&lt;/li&gt;
+&lt;li&gt;ユニオン型を定義&lt;/li&gt;
+&lt;li&gt;関数としてエイリアスやタグを用いる&lt;/li&gt;
+&lt;li&gt;ユニオン型でのパターンマッチ&lt;/li&gt;
+&lt;li&gt;関数として演算子を使う・独自の演算子を定義する&lt;/li&gt;
+&lt;li&gt;別のモジュールから型やエイリアス型をインポートする&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基本的に Elm の書き方講座みたいなものなので，最悪っ困ったら Elm を勉強してください(丸投げ)． ちなみに，元記事の全てを細かく追従せず，ざっくりと掻い摘んで書き出している． なので細かくは元記事を読んでね．&lt;/p&gt;
+&lt;h2 id="section"&gt;&lt;/h2&gt;
+&lt;p&gt;あと，&lt;a href="https://github.com/wende/elmchemy-article-example"&gt;このコードは全て作者さんが GitHub に挙げている&lt;/a&gt;．&lt;/p&gt;
+&lt;h3 id="その前に"&gt;その前に&lt;/h3&gt;
+&lt;p&gt;テストを書こう，ということでテストを Elixir で書いている． 今回の作成するライブラリはどうやら，ゲームか何かのキャラを制御する物らしい&lt;/p&gt;
+&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode elixir"&gt;&lt;code class="sourceCode elixir"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="co"&gt;# character_test.exs&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;span class="kw"&gt;defmodule&lt;/span&gt; &lt;span class="cn"&gt;CharacterTest&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;  &lt;span class="im"&gt;use&lt;/span&gt; &lt;span class="cn"&gt;ExUnit&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;&lt;span class="cn"&gt;Case&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;  &lt;span class="im"&gt;use&lt;/span&gt; &lt;span class="cn"&gt;Elchemy&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;  test &lt;span class="st"&gt;&amp;quot;Character has name, last name and such&amp;quot;&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;      gordon &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;new(&lt;span class="st"&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;, &lt;span class="st"&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;, &lt;span class="va"&gt;:male&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-8" data-line-number="8"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-9" data-line-number="9"&gt;      assert gordon&lt;span class="op"&gt;.&lt;/span&gt;name &lt;span class="op"&gt;==&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-10" data-line-number="10"&gt;      assert gordon&lt;span class="op"&gt;.&lt;/span&gt;surname &lt;span class="op"&gt;==&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-11" data-line-number="11"&gt;      assert gordon&lt;span class="op"&gt;.&lt;/span&gt;gender &lt;span class="op"&gt;==&lt;/span&gt; &lt;span class="va"&gt;:male&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-12" data-line-number="12"&gt;  &lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-13" data-line-number="13"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-14" data-line-number="14"&gt;  test &lt;span class="st"&gt;&amp;quot;Has stats&amp;quot;&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-15" data-line-number="15"&gt;    gordon &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;new(&lt;span class="st"&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;, &lt;span class="st"&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;, &lt;span class="va"&gt;:male&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-16" data-line-number="16"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-17" data-line-number="17"&gt;    stats &lt;span class="op"&gt;=&lt;/span&gt; [&lt;span class="va"&gt;:strength&lt;/span&gt;, &lt;span class="va"&gt;:intelligence&lt;/span&gt;, &lt;span class="va"&gt;:vitality&lt;/span&gt;]&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-18" data-line-number="18"&gt;    &lt;span class="kw"&gt;for&lt;/span&gt; s &lt;span class="op"&gt;&amp;lt;-&lt;/span&gt; stats &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-19" data-line-number="19"&gt;      assert is_integer(gordon&lt;span class="op"&gt;.&lt;/span&gt;stats[s]), &lt;span class="st"&gt;&amp;quot;No &lt;/span&gt;&lt;span class="ot"&gt;#{&lt;/span&gt;s&lt;span class="ot"&gt;}&lt;/span&gt;&lt;span class="st"&gt; stat in &lt;/span&gt;&lt;span class="ot"&gt;#{&lt;/span&gt;inspect gordon&lt;span class="ot"&gt;}&lt;/span&gt;&lt;span class="st"&gt;&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-20" data-line-number="20"&gt;    &lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-21" data-line-number="21"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-22" data-line-number="22"&gt;    assert &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;set_stat(&lt;span class="va"&gt;:vitality&lt;/span&gt;, &lt;span class="dv"&gt;10&lt;/span&gt;, gordon)&lt;span class="op"&gt;.&lt;/span&gt;stats&lt;span class="op"&gt;.&lt;/span&gt;vitality &lt;span class="op"&gt;==&lt;/span&gt; &lt;span class="dv"&gt;10&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-23" data-line-number="23"&gt;  &lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-24" data-line-number="24"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-25" data-line-number="25"&gt;  test &lt;span class="st"&gt;&amp;quot;Boosting visality boosts health&amp;quot;&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-26" data-line-number="26"&gt;    gordon &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;new(&lt;span class="st"&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;, &lt;span class="st"&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;, &lt;span class="va"&gt;:male&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-27" data-line-number="27"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-28" data-line-number="28"&gt;    { hp, packed_gordon_max } &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;set_stat(&lt;span class="va"&gt;:vitality&lt;/span&gt;, &lt;span class="dv"&gt;10&lt;/span&gt;, gordon)&lt;span class="op"&gt;.&lt;/span&gt;health&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-29" data-line-number="29"&gt;    { _, weak_gordon_max }    &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;set_stat(&lt;span class="va"&gt;:vitality&lt;/span&gt;, &lt;span class="dv"&gt;0&lt;/span&gt;, gordon)&lt;span class="op"&gt;.&lt;/span&gt;health&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-30" data-line-number="30"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-31" data-line-number="31"&gt;    assert packed_gordon_max &lt;span class="op"&gt;&amp;gt;&lt;/span&gt; weak_gordon_max&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-32" data-line-number="32"&gt;    assert hp &lt;span class="op"&gt;==&lt;/span&gt; packed_gordon_max&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-33" data-line-number="33"&gt;  &lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-34" data-line-number="34"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-35" data-line-number="35"&gt;  test &lt;span class="st"&gt;&amp;quot;Can equip weapon only if intelligence is enough&amp;quot;&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-36" data-line-number="36"&gt;    gordon &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;new(&lt;span class="st"&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;, &lt;span class="st"&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;, &lt;span class="va"&gt;:male&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-37" data-line-number="37"&gt;    weapon &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Weapon&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;new(&lt;span class="st"&gt;&amp;quot;Sci fi blaster thingy&amp;quot;&lt;/span&gt;, &lt;span class="dv"&gt;9&lt;/span&gt; ,&lt;span class="dv"&gt;100&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-38" data-line-number="38"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-39" data-line-number="39"&gt;    dumb_gordon &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;set_stat(&lt;span class="va"&gt;:intelligence&lt;/span&gt;, &lt;span class="dv"&gt;0&lt;/span&gt;, gordon)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-40" data-line-number="40"&gt;    smart_gordon &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;set_stat(&lt;span class="va"&gt;:intelligence&lt;/span&gt;, &lt;span class="dv"&gt;10&lt;/span&gt;, gordon)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-41" data-line-number="41"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-42" data-line-number="42"&gt;    assert {&lt;span class="va"&gt;:error&lt;/span&gt;, &lt;span class="st"&gt;&amp;quot;Too dumb&amp;quot;&lt;/span&gt;} &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;equip(weapon, dumb_gordon)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-43" data-line-number="43"&gt;    assert {&lt;span class="va"&gt;:ok&lt;/span&gt;, equipped_gordon} &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="cn"&gt;Character&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;equip(weapon, smart_gordon)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-44" data-line-number="44"&gt;    assert equipped_gordon&lt;span class="op"&gt;.&lt;/span&gt;arm &lt;span class="op"&gt;==&lt;/span&gt; {weapon}&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-45" data-line-number="45"&gt;  &lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-46" data-line-number="46"&gt;&lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="キャラクターを定義"&gt;キャラクターを定義&lt;/h3&gt;
+&lt;h4 id="型エイリアス"&gt;1. 型エイリアス&lt;/h4&gt;
+&lt;p&gt;関数型なのでまずはドメインモデルの型を定義する． テストより，&lt;code&gt;name&lt;/code&gt; &lt;code&gt;surname&lt;/code&gt; &lt;code&gt;gender&lt;/code&gt; をフィールドとして持っているのが分かるので次のような型を定義した．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;module Character exposing (..)
+
+type alias Character =
+    { name : String
+    , surname : String
+    , gender : Gender
+    }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;何故エイリアスなのかというと，構造的サブタイピイングが出来るようにだと思う(たぶん)．&lt;/p&gt;
+&lt;h4 id="ユニオン型"&gt;2. ユニオン型&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Gender&lt;/code&gt; 型が無いので定義する． こっちは列挙型みたいなのが欲しいので、ユニオン型を用いる．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;type Gender
+    = Male
+    | Female
+    | Other&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="関数としての型エイリアス"&gt;3. 関数としての型エイリアス&lt;/h4&gt;
+&lt;p&gt;Elixir っぽい &lt;code&gt;new&lt;/code&gt; 関数を定義してやろう． Elm の場合，エイリアス型を定義すれば同名の値コンストラクタができるので，それをラップすればよい&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;new : String -&amp;gt; String -&amp;gt; Gender -&amp;gt; Character
+new name surname gender =
+    Character
+      name
+      surname
+      gender&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="キャラクターにステータスを持たせる"&gt;キャラクターにステータスを持たせる&lt;/h3&gt;
+&lt;p&gt;キャラクターにいくつかのステータスを持たせよう．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;type alias Character =
+    { name : String
+    , surname : String
+    , gender : Gender
+    , health : (Int, Int)
+    , stats : Stats
+    }
+
+type alias Stats =
+    { strength : Int
+    , intelligence : Int
+    , vitality : Int
+    }
+
+new : String -&amp;gt; String -&amp;gt; Gender -&amp;gt; Character
+new name surname gender =
+    Character
+      name
+      surname
+      gender
+      (100,100)
+      (Stats 0 0 0)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;health&lt;/code&gt; はどうやら HP みたいなものらしい(現在のHPと上限)．&lt;/p&gt;
+&lt;h3 id="パターンマッチ"&gt;4. パターンマッチ&lt;/h3&gt;
+&lt;p&gt;ステータスを更新する関数を定義しよう．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;type Stat
+    = Strength
+    | Intelligence
+    | Vitality
+
+setStat : Stat -&amp;gt; Int -&amp;gt; Character -&amp;gt; Character
+setStat stat value character =
+    let
+      stats = character.stats
+    in
+    case stat of
+        Strength -&amp;gt;
+            { character | stats = { stats | strength = value } }
+        Intelligence -&amp;gt;
+            { character | stats = { stats | intelligence = value } }
+        Vitality -&amp;gt;
+            { character | stats = { stats | vitality = value } }        &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;残念ながらこの &lt;code&gt;setStat&lt;/code&gt; は正しくない． テストを見ればわかるが &lt;code&gt;Vitality&lt;/code&gt; を更新した場合は &lt;code&gt;health&lt;/code&gt; も更新する必要がある．&lt;/p&gt;
+&lt;h4 id="演算子"&gt;5. 演算子&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;health&lt;/code&gt; はタプル型だ． タプルの更新をいい感じにするために，カスタム演算子を定義してみよう．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;(&amp;lt;$) : (a, b) -&amp;gt; (a -&amp;gt; c) -&amp;gt; (c, b)
+(&amp;lt;$) tuple f = Tuple.mapFirst f tuple
+
+($&amp;gt;) : (a, b) -&amp;gt; (b -&amp;gt; c) -&amp;gt; (a, c)
+($&amp;gt;) tuple f = Tuple.mapSecond f tuple&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これを使って &lt;code&gt;setStat&lt;/code&gt; の &lt;code&gt;Vitality&lt;/code&gt; の部分を正しく修正する．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;setStat : Stat -&amp;gt; Int -&amp;gt; Character -&amp;gt; Character
+setStat stat value character =
+    let
+      stats = character.stats
+    in
+    case stat of
+        ...
+        Vitality -&amp;gt;
+            { character
+                | stats = { stats | vitality = value }
+                , health =
+                    character.health
+                      &amp;lt;$ (+) ((value - stats.vitality) * 10)
+                      $&amp;gt; always (100 + 10 * value)
+            }                &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="ウェポンを持たせる"&gt;ウェポンを持たせる&lt;/h3&gt;
+&lt;h4 id="インポート"&gt;インポート&lt;/h4&gt;
+&lt;p&gt;新しく &lt;code&gt;Weapon.elm&lt;/code&gt; ファイルを作り，新しいモジュール定義する．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;module Weapon exposing (..)
+
+type alias Weapon =
+    { name : String
+    , level : Int
+    , damage : Int
+    }
+
+new : String -&amp;gt; Int -&amp;gt; Int -&amp;gt; Weapon
+new name level damage = Weapon name level damage&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;このモジュールをインポートして &lt;code&gt;Character&lt;/code&gt; 型を拡張しよう&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;import Weapon exposing (Weapon)
+
+type alias Character =
+    { name : String
+    , surname : String
+    , gender : Gender
+    , health : (Int, Int)
+    , stats : Stats
+    , arm : Maybe Weapon
+    }
+
+new : String -&amp;gt; String -&amp;gt; Gender -&amp;gt; Character
+new name surname gender =
+    Character
+      name
+      surname
+      gender
+      (100,100)
+      (Stats 0 0 0)
+      Nothing&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最後に &lt;code&gt;equip&lt;/code&gt; 関数を作って完成． これで全てのテストが通るはずだ．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;equip : Weapon -&amp;gt; Character -&amp;gt; Result String Character
+equip weapon character =
+    if weapon.level &amp;lt; character.status.intelligence then
+        Ok { character | arm = Just weapon }
+    else
+        Err &amp;quot;Too dumb&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;「頭悪すぎ」ってひどい(笑)&lt;/p&gt;
+&lt;h2 id="phoenix-で-todo-アプリを作る"&gt;Phoenix で ToDo アプリを作る&lt;/h2&gt;
+&lt;p&gt;Elchemy が実際にどの程度有用かを感じるために，Elchemy + Elm + Phoenix で超簡易的な Todo アプリを作ってみた．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gitlab.com/matsubara0507/elchemy_todo_app"&gt;MATSUBARA Nobutada / elchemy_todo_app · GitLab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;過去に &lt;a href="https://github.com/matsubara0507/patissier-test"&gt;Elm + Phoenix で社内ツールを作ったり&lt;/a&gt;，&lt;a href="https://matsubara0507.github.io/posts/2017-12-13-elm-and-haskell-for-elmer.html"&gt;Elm + Haskell で Todo アプリを書いてみたり&lt;/a&gt;したので，その辺りからコードや構成はパクッて来てます． GitLab に置いてるのは，モノは試しってやつ(笑)．&lt;/p&gt;
+&lt;h3 id="phoenix-をインストール"&gt;Phoenix をインストール&lt;/h3&gt;
+&lt;p&gt;Elchemy (および Elixir・Elm・npm) はインストールされているとする． &lt;a href="https://hexdocs.pm/phoenix/installation.html"&gt;Phoenix のサイト&lt;/a&gt;にある通りにやればよい．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="project-を作成"&gt;Project を作成&lt;/h3&gt;
+&lt;p&gt;こんな時のために &lt;code&gt;elchemy init&lt;/code&gt; というコマンドがある(？)．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mix phx.new elchemy_todo_app --no-ecto
+$ cd elchemy_todo_app
+$ elchemy init&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;elchemy new&lt;/code&gt; との違いは，&lt;code&gt;mix.exs&lt;/code&gt; の Elixir のバージョンが古いのと &lt;code&gt;.formatter.exs&lt;/code&gt; ぐらいかな？ 今回は DB をわざわざ使うのがめんどくさいので，ストレージっぽい GenServer を定義する(なので &lt;code&gt;--no-ecto&lt;/code&gt;)．&lt;/p&gt;
+&lt;h3 id="crud-を作る"&gt;CRUD を作る&lt;/h3&gt;
+&lt;p&gt;Phoenix に CRUD を追加するには，まず&lt;code&gt;router.ex&lt;/code&gt; にルーティングを足す.&lt;/p&gt;
+&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode elixir"&gt;&lt;code class="sourceCode elixir"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;&lt;span class="kw"&gt;defmodule&lt;/span&gt; &lt;span class="cn"&gt;ElchemyTodoAppWeb&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;&lt;span class="cn"&gt;Router&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-2" data-line-number="2"&gt;  &lt;span class="im"&gt;use&lt;/span&gt; &lt;span class="cn"&gt;ElchemyTodoAppWeb&lt;/span&gt;, &lt;span class="va"&gt;:router&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-3" data-line-number="3"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-4" data-line-number="4"&gt;  &lt;span class="op"&gt;...&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-5" data-line-number="5"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-6" data-line-number="6"&gt;  pipeline &lt;span class="va"&gt;:api&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-7" data-line-number="7"&gt;    plug(&lt;span class="va"&gt;:accepts&lt;/span&gt;, [&lt;span class="st"&gt;&amp;quot;json&amp;quot;&lt;/span&gt;])&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-8" data-line-number="8"&gt;  &lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-9" data-line-number="9"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-10" data-line-number="10"&gt;  scope &lt;span class="st"&gt;&amp;quot;/api&amp;quot;&lt;/span&gt;, &lt;span class="cn"&gt;ElchemyTodoAppWeb&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-11" data-line-number="11"&gt;    pipe_through(&lt;span class="va"&gt;:api&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-12" data-line-number="12"&gt;    resources(&lt;span class="st"&gt;&amp;quot;/todos&amp;quot;&lt;/span&gt;, &lt;span class="cn"&gt;TodoController&lt;/span&gt;, &lt;span class="va"&gt;only:&lt;/span&gt; [&lt;span class="va"&gt;:index&lt;/span&gt;, &lt;span class="va"&gt;:create&lt;/span&gt;, &lt;span class="va"&gt;:update&lt;/span&gt;, &lt;span class="va"&gt;:delete&lt;/span&gt;])&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-13" data-line-number="13"&gt;  &lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb14-14" data-line-number="14"&gt;&lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;次にコントロラーを定義し，&lt;/p&gt;
+&lt;div class="sourceCode" id="cb15"&gt;&lt;pre class="sourceCode elixir"&gt;&lt;code class="sourceCode elixir"&gt;&lt;a class="sourceLine" id="cb15-1" data-line-number="1"&gt;&lt;span class="kw"&gt;defmodule&lt;/span&gt; &lt;span class="cn"&gt;ElchemyTodoAppWeb&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;&lt;span class="cn"&gt;TodoController&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-2" data-line-number="2"&gt;  &lt;span class="im"&gt;alias&lt;/span&gt; &lt;span class="cn"&gt;Models&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;&lt;span class="cn"&gt;Todo&lt;/span&gt;, &lt;span class="va"&gt;as:&lt;/span&gt; &lt;span class="cn"&gt;Todo&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-3" data-line-number="3"&gt;  &lt;span class="im"&gt;use&lt;/span&gt; &lt;span class="cn"&gt;ElchemyTodoAppWeb&lt;/span&gt;, &lt;span class="va"&gt;:controller&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-5" data-line-number="5"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; index(conn, _params), &lt;span class="kw"&gt;do&lt;/span&gt;: render(conn, &lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; &lt;span class="op"&gt;...&lt;/span&gt; })&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-6" data-line-number="6"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; create(conn, params), &lt;span class="kw"&gt;do&lt;/span&gt;: render(conn, &lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; &lt;span class="op"&gt;...&lt;/span&gt; })&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-7" data-line-number="7"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; update(conn, params), &lt;span class="kw"&gt;do&lt;/span&gt;: render(conn, &lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; &lt;span class="op"&gt;...&lt;/span&gt; })&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-8" data-line-number="8"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; delete(conn, %{&lt;span class="st"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; id}), &lt;span class="kw"&gt;do&lt;/span&gt;: render(conn, &lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; &lt;span class="op"&gt;...&lt;/span&gt; })&lt;/a&gt;
+&lt;a class="sourceLine" id="cb15-9" data-line-number="9"&gt;&lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(&lt;code&gt;...&lt;/code&gt; の部分は後で埋める) そして View を定義する。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb16"&gt;&lt;pre class="sourceCode elixir"&gt;&lt;code class="sourceCode elixir"&gt;&lt;a class="sourceLine" id="cb16-1" data-line-number="1"&gt;&lt;span class="kw"&gt;defmodule&lt;/span&gt; &lt;span class="cn"&gt;ElchemyTodoAppWeb&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;&lt;span class="cn"&gt;TodoView&lt;/span&gt; &lt;span class="kw"&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-2" data-line-number="2"&gt;  &lt;span class="im"&gt;use&lt;/span&gt; &lt;span class="cn"&gt;ElchemyTodoAppWeb&lt;/span&gt;, &lt;span class="va"&gt;:view&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; render(&lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; todos}), &lt;span class="kw"&gt;do&lt;/span&gt;: todos&lt;/a&gt;
+&lt;a class="sourceLine" id="cb16-4" data-line-number="4"&gt;&lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;さてここから　Elchemy だ。 モデルを Elchemy で定義する. というかモデル以外はマクロ色が強過ぎてうまくいかなかった.&lt;/p&gt;
+&lt;h3 id="elchemy-でモデルを"&gt;Elchemy でモデルを&lt;/h3&gt;
+&lt;p&gt;まずは型を定義.&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;module Data.Todo exposing (..)
+import Dict
+
+type alias Todo =
+    { id : String
+    , title : String
+    , done : Bool
+    }
+
+type alias Todos =
+    Dict.Dict String Todo&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ここはフロント共有したいので別途切り出しておく. DBをサボるために GenServer なモデルを定義する.&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;module Models.Todo exposing (..)
+
+import Data.Todo exposing (Todo, Todos)
+import Dict
+import Elchemy exposing (..)
+
+{- ex
+   use GenServer
+
+   def start_link(init \\ %{ todos: %{}, cnt: 0 }), do: GenServer.start_link(__MODULE__, init, name: :todos)
+
+   def init(state), do: {:ok, state}
+
+   def handle_call(:get, _client, state), do: {:reply, state, state}
+
+   def handle_cast({:set, new_state}, _state), do: {:noreply, new_state}
+
+   def gen_(params) do
+     %{
+       id: params[&amp;quot;id&amp;quot;],
+       title: params[&amp;quot;title&amp;quot;],
+       done: params[&amp;quot;done&amp;quot;]
+     }
+   end
+-}
+
+type alias State =
+    { todos : Todos
+    , cnt : Int
+    }
+
+type Name
+    = Todos
+
+type Action
+    = Get
+    | Set State
+
+gen : params -&amp;gt; Todo
+gen = ffi &amp;quot;Models.Todo&amp;quot; &amp;quot;gen_&amp;quot;
+
+getState : State
+getState = call_ Todos Get
+
+setState : State -&amp;gt; State
+setState state = cast_ Todos (Set state) |&amp;gt; always state
+
+call_ : Name -&amp;gt; Action -&amp;gt; a
+call_ = ffi &amp;quot;GenServer&amp;quot; &amp;quot;call&amp;quot;
+
+cast_ : Name -&amp;gt; Action -&amp;gt; a
+cast_ = ffi &amp;quot;GenServer&amp;quot; &amp;quot;cast&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Todos&lt;/code&gt; と削除された &lt;code&gt;Todo&lt;/code&gt; も含めた総数を表した &lt;code&gt;Int&lt;/code&gt; を持った &lt;code&gt;State&lt;/code&gt; 型を状態として GenServer に保持して欲しい． 出力した Elixir コードにだけモジュールをインポートさせたり，うまく型付けできない関数を Elixir コードに張り付けるには，コメントアウト &lt;code&gt;{- ex ... -}&lt;/code&gt; 使う． この中に書いた Elixir コードはそのまま出力先に貼り付けられる(濫用厳禁！)．&lt;/p&gt;
+&lt;p&gt;Elixir モジュールの関数を呼び出すには &lt;code&gt;Elchemy&lt;/code&gt; モジュールにある &lt;code&gt;ffi&lt;/code&gt; 関数を使う． ただし，&lt;code&gt;ffi&lt;/code&gt; 関数をファーストクラスには扱えない． 次のようなエラーが出る．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Ffi inside function body is deprecated since Elchemy 0.3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Name&lt;/code&gt; 型や &lt;code&gt;Action&lt;/code&gt; 型は Elchemy が代数的データ型をアトムとタプルに変換することと，GenServer の使い方を知っていれば意図するところが分かるだろう． 逆にそれらを知っていなければ読みとれないと思う…&lt;/p&gt;
+&lt;h2 id="section-1"&gt;&lt;/h2&gt;
+&lt;p&gt;コントローラーから呼ばれるインターフェースは &lt;code&gt;getState&lt;/code&gt; と &lt;code&gt;setState&lt;/code&gt; を用いることで簡単に書けた．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;gets : List Todo
+gets = Dict.values (.todos getState)
+
+add : Todo -&amp;gt; List Todo
+add todo =
+    let
+        { todos, cnt } = getState
+        newId   = toString cnt
+        newTodo = { todo | id = newId }
+        state   = { todos = Dict.insert newId newTodo todos, cnt = cnt + 1 }
+    in
+    setState state
+        |&amp;gt; .todos
+        |&amp;gt; Dict.values
+
+update : Todo -&amp;gt; List Todo
+update todo =
+    let
+        { todos, cnt } = getState
+        state = { todos = Dict.update todo.id (Maybe.map &amp;lt;| always todo) todos, cnt = cnt }
+    in
+    setState state
+        |&amp;gt; .todos
+        |&amp;gt; Dict.values
+
+remove : String -&amp;gt; List Todo
+remove todoId =
+    let
+        { todos, cnt } =
+            getState
+        state =
+            { todos = Dict.remove todoId todos, cnt = cnt }
+    in
+    setState state
+        |&amp;gt; .todos
+        |&amp;gt; Dict.values&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;コントローラーの &lt;code&gt;...&lt;/code&gt; を書き換えてやれば完成だ．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb21"&gt;&lt;pre class="sourceCode elixir"&gt;&lt;code class="sourceCode elixir"&gt;&lt;a class="sourceLine" id="cb21-1" data-line-number="1"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; index(conn, _params), &lt;span class="kw"&gt;do&lt;/span&gt;: render(conn, &lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; &lt;span class="cn"&gt;Todo&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;gets()})&lt;/a&gt;
+&lt;a class="sourceLine" id="cb21-2" data-line-number="2"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; create(conn, params), &lt;span class="kw"&gt;do&lt;/span&gt;: render(conn, &lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; &lt;span class="cn"&gt;Todo&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;add(&lt;span class="cn"&gt;Todo&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;gen(params))})&lt;/a&gt;
+&lt;a class="sourceLine" id="cb21-3" data-line-number="3"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; update(conn, params), &lt;span class="kw"&gt;do&lt;/span&gt;: render(conn, &lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; &lt;span class="cn"&gt;Todo&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;update(&lt;span class="cn"&gt;Todo&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;gen(params))})&lt;/a&gt;
+&lt;a class="sourceLine" id="cb21-4" data-line-number="4"&gt;  &lt;span class="kw"&gt;def&lt;/span&gt; delete(conn, %{&lt;span class="st"&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class="op"&gt;=&amp;gt;&lt;/span&gt; id}), &lt;span class="kw"&gt;do&lt;/span&gt;: render(conn, &lt;span class="st"&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class="va"&gt;todos:&lt;/span&gt; &lt;span class="cn"&gt;Todo&lt;/span&gt;&lt;span class="op"&gt;.&lt;/span&gt;remove(id)})&lt;/a&gt;
+&lt;a class="sourceLine" id="cb21-5" data-line-number="5"&gt;&lt;span class="kw"&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ちなみに出力された Elixir コードは&lt;a href="https://gitlab.com/matsubara0507/elchemy_todo_app/blob/443777cee3e8435ee15f04ada6437e41e3af064b/lib/data/todo.elchemy.ex"&gt;ココ&lt;/a&gt;と&lt;a href="https://gitlab.com/matsubara0507/elchemy_todo_app/blob/443777cee3e8435ee15f04ada6437e41e3af064b/lib/models/todo.elchemy.ex"&gt;ココ&lt;/a&gt;です． 興味がある人は見てください．&lt;/p&gt;
+&lt;h3 id="elm-brunch"&gt;Elm Brunch&lt;/h3&gt;
+&lt;p&gt;Brunch 設定が難しかったので，本質的には Elchemy と関係ないけど残しておく．&lt;/p&gt;
+&lt;p&gt;Phoenix 1.3 系ではトップレベルに &lt;code&gt;assets&lt;/code&gt; というディレクトリがあり，HTML/JS/CSS/画像 のような静的ファイルはここに置いておく． Brunch を使って複数の JS や CSS を合わせることが出来る． &lt;a href="https://github.com/madsflensted/elm-brunch"&gt;elm-brunch&lt;/a&gt; を使うことで Elm を JS にコンパイルしてくれる．&lt;/p&gt;
+&lt;p&gt;branch-config に次のような設定を書き加えてあげる． Elm のフロントコードは &lt;code&gt;lib/web/elm&lt;/code&gt; に置いてある．&lt;/p&gt;
+&lt;div class="sourceCode" id="cb22"&gt;&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;a class="sourceLine" id="cb22-1" data-line-number="1"&gt;&lt;span class="va"&gt;exports&lt;/span&gt;.&lt;span class="at"&gt;config&lt;/span&gt; &lt;span class="op"&gt;=&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-2" data-line-number="2"&gt;  ...&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-3" data-line-number="3"&gt;  &lt;span class="dt"&gt;paths&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-4" data-line-number="4"&gt;    &lt;span class="dt"&gt;watched&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;span class="st"&gt;&amp;quot;static&amp;quot;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;css&amp;quot;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;js&amp;quot;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;vendor&amp;quot;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;../lib/web/elm&amp;quot;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-5" data-line-number="5"&gt;    &lt;span class="dt"&gt;public&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;../priv/static&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-6" data-line-number="6"&gt;  &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-7" data-line-number="7"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-8" data-line-number="8"&gt;  &lt;span class="dt"&gt;plugins&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-9" data-line-number="9"&gt;    &lt;span class="dt"&gt;elmBrunch&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="op"&gt;{&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-10" data-line-number="10"&gt;      &lt;span class="dt"&gt;elmFolder&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;../lib/web/elm&amp;quot;&lt;/span&gt;&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-11" data-line-number="11"&gt;      &lt;span class="dt"&gt;mainModules&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; [&lt;span class="st"&gt;&amp;quot;Main.elm&amp;quot;&lt;/span&gt;]&lt;span class="op"&gt;,&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-12" data-line-number="12"&gt;      &lt;span class="dt"&gt;outputFolder&lt;/span&gt;&lt;span class="op"&gt;:&lt;/span&gt; &lt;span class="st"&gt;&amp;quot;vendor&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-13" data-line-number="13"&gt;    &lt;span class="op"&gt;},&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-14" data-line-number="14"&gt;  ...&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-15" data-line-number="15"&gt;  &lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-16" data-line-number="16"&gt;  ...&lt;/a&gt;
+&lt;a class="sourceLine" id="cb22-17" data-line-number="17"&gt;&lt;span class="op"&gt;}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="フロント部分"&gt;フロント部分&lt;/h3&gt;
+&lt;p&gt;ほんの少しだがコードを再利用できる． API クライアントは以下のようになる．&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;module TodoAPI exposing (..)
+
+import Data.Todo exposing (Todo)
+import Http
+
+getTodos : Http.Request (List Todo)
+getTodos =
+    Http.request
+        { method =
+            &amp;quot;GET&amp;quot;
+        , headers =
+            []
+        , url =
+            String.join &amp;quot;/&amp;quot;
+                [ baseUrl
+                , &amp;quot;todos&amp;quot;
+                ]
+        , body =
+            Http.emptyBody
+        , expect =
+            Http.expectJson (list decodeTodo)
+        , timeout =
+            Nothing
+        , withCredentials =
+            False
+        }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ホントはこの当たりも Elchemy を使って生成できるとよいのだが… もしかして &lt;a href="https://github.com/saschatimme/elm-phoenix"&gt;elm-phoenix&lt;/a&gt; なるものを使えばよかったのかな？ また，The Elm Architecture 部分は長いので割愛．&lt;/p&gt;
+&lt;h2 id="section-2"&gt;&lt;/h2&gt;
+&lt;p&gt;ホントは assets 回りが他にもたくさんあるが,本質的な部分はこれで完成． あとはモロモロインストールして &lt;code&gt;mix phx.server&lt;/code&gt; とすれば動作するはずだ．&lt;/p&gt;
+&lt;h3 id="感想"&gt;感想&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;うれしみ&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;静的検査は神&lt;/li&gt;
+&lt;li&gt;フロントとコードを共有できる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;つらみ&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Phoenix のいくつかは型付けできない
+&lt;ul&gt;
+&lt;li&gt;ルーティングの引数&lt;/li&gt;
+&lt;li&gt;へテロリストのようなモノ&lt;/li&gt;
+&lt;li&gt;結局ここで良く分からんエラーに…&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;コンパイルが遅い&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="おしまい"&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;今度は処理系の中身でも追ってみようかな．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-06-15-introduce-elchemy-part1.html</id><title type="text">Elchemy 入門 : その１</title><updated>2018-06-15T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-06-15-introduce-elchemy-part1.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;Elchemy 入門 : その１&lt;/h1&gt;
@@ -5537,225 +5994,6 @@ stack install cryptoniteで以下のようなエラーが発生。
 &lt;p&gt;&lt;code&gt;tagsFieldWithSep &amp;quot; &amp;quot;&lt;/code&gt; とすれば空白区切りになる．&lt;/p&gt;
 &lt;h2 id="おしまい"&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;ずーーとやろうやろうと思ってたことをいっきに片したぜ．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-02-19-create-whoami-cli.html</id><title type="text">自己紹介ページを生成する whoami CLI を作った (Haskell)</title><updated>2018-02-19T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-02-19-create-whoami-cli.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
- &lt;div class="card-content"&gt;
-  &lt;header class="post-header"&gt;
-    &lt;h1 class="post-title" itemprop="name headline"&gt;自己紹介ページを生成する whoami CLI を作った (Haskell)&lt;/h1&gt;
-    &lt;p class="post-meta"&gt;
-      &lt;time datetime="2018-02-19" itemprop="datePublished"&gt;
-        Feb 19, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class="tags"&gt;
-          &lt;i class="fa fa-tags"&gt;&lt;/i&gt; &lt;a href="/tags/Haskell.html"&gt;Haskell&lt;/a&gt; &lt;a href="/tags/application.html"&gt;application&lt;/a&gt; &lt;a href="/tags/extensible-package.html"&gt;extensible-package&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class="post-content" itemprop="articleBody"&gt;
-    &lt;p&gt;&lt;a href="https://github.com/matsubara0507/whoami"&gt;whoami&lt;/a&gt; という CLI を作りました． こんな感じの Yaml ファイルから&lt;/p&gt;
-&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode yaml"&gt;&lt;code class="sourceCode yaml"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="fu"&gt;name:&lt;/span&gt;&lt;span class="at"&gt; MATSUBARA Nobutada&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;span class="fu"&gt;account:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;  &lt;span class="fu"&gt;github:&lt;/span&gt;&lt;span class="at"&gt; matsubara0507&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;  &lt;span class="fu"&gt;qiita:&lt;/span&gt;&lt;span class="at"&gt; matsubara0507&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-5" data-line-number="5"&gt;&lt;span class="fu"&gt;site:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-6" data-line-number="6"&gt;  &lt;span class="kw"&gt;-&lt;/span&gt; &lt;span class="fu"&gt;name:&lt;/span&gt;&lt;span class="at"&gt; ひげメモ&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-7" data-line-number="7"&gt;    &lt;span class="fu"&gt;url:&lt;/span&gt;&lt;span class="at"&gt; http://matsubara0507.github.io&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-8" data-line-number="8"&gt;    &lt;span class="fu"&gt;description:&lt;/span&gt;&lt;span class="at"&gt; メモ書きブログ&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-9" data-line-number="9"&gt;&lt;span class="fu"&gt;post:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-10" data-line-number="10"&gt;  &lt;span class="fu"&gt;latest:&lt;/span&gt;&lt;span class="at"&gt; 10&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-11" data-line-number="11"&gt;  &lt;span class="fu"&gt;posts:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-12" data-line-number="12"&gt;    &lt;span class="kw"&gt;-&lt;/span&gt; &lt;span class="fu"&gt;url:&lt;/span&gt;&lt;span class="at"&gt; http://haskell.jp/blog/posts/2017/advent-calendar-2017.html&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-13" data-line-number="13"&gt;      &lt;span class="fu"&gt;date:&lt;/span&gt;&lt;span class="at"&gt; 2017-12-31&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-14" data-line-number="14"&gt;    &lt;span class="kw"&gt;-&lt;/span&gt; &lt;span class="fu"&gt;url:&lt;/span&gt;&lt;span class="at"&gt; http://iggg.github.io/2017/06/01/make-tweet-slack-bot&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-15" data-line-number="15"&gt;&lt;span class="fu"&gt;library:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-16" data-line-number="16"&gt;  &lt;span class="kw"&gt;-&lt;/span&gt; &lt;span class="fu"&gt;name:&lt;/span&gt;&lt;span class="at"&gt; chatwork&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-17" data-line-number="17"&gt;    &lt;span class="fu"&gt;url:&lt;/span&gt;&lt;span class="at"&gt; http://hackage.haskell.org/package/chatwork&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-18" data-line-number="18"&gt;    &lt;span class="fu"&gt;description:&lt;/span&gt;&lt;span class="at"&gt; The ChatWork API in Haskell&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-19" data-line-number="19"&gt;    &lt;span class="fu"&gt;language:&lt;/span&gt;&lt;span class="at"&gt; haskell&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-20" data-line-number="20"&gt;  &lt;span class="kw"&gt;-&lt;/span&gt; &lt;span class="fu"&gt;name:&lt;/span&gt;&lt;span class="at"&gt; thank_you_stars&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-21" data-line-number="21"&gt;    &lt;span class="fu"&gt;url:&lt;/span&gt;&lt;span class="at"&gt; http://hex.pm/packages/thank_you_stars&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-22" data-line-number="22"&gt;    &lt;span class="fu"&gt;language:&lt;/span&gt;&lt;span class="at"&gt; elixir&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-23" data-line-number="23"&gt;&lt;span class="fu"&gt;qiita:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-24" data-line-number="24"&gt;  &lt;span class="fu"&gt;posts:&lt;/span&gt;&lt;span class="at"&gt; true&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-25" data-line-number="25"&gt;&lt;span class="fu"&gt;app:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-26" data-line-number="26"&gt;  &lt;span class="kw"&gt;-&lt;/span&gt; &lt;span class="fu"&gt;name:&lt;/span&gt;&lt;span class="at"&gt; AnaQRam&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-27" data-line-number="27"&gt;    &lt;span class="fu"&gt;url:&lt;/span&gt;&lt;span class="at"&gt; http://github.com/matsubara0507/AnaQRam&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb1-28" data-line-number="28"&gt;    &lt;span class="fu"&gt;description:&lt;/span&gt;&lt;span class="at"&gt; QRコードを利用したアナグラム(並び替えパズル)&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;こんな感じの Markdown を生成する．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb2"&gt;&lt;pre class="sourceCode markdown"&gt;&lt;code class="sourceCode markdown"&gt;&lt;a class="sourceLine" id="cb2-1" data-line-number="1"&gt;&lt;span class="fu"&gt;# MATSUBARA Nobutada&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-2" data-line-number="2"&gt;- &lt;span class="ot"&gt;[GitHub](https://github.com/matsubara0507)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-3" data-line-number="3"&gt;&lt;span class="fl"&gt;- &lt;/span&gt;&lt;span class="ot"&gt;[Qiita](https://qiita.com/matsubara0507)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-4" data-line-number="4"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-5" data-line-number="5"&gt;&lt;span class="fu"&gt;## My Sites&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-6" data-line-number="6"&gt;- &lt;span class="ot"&gt;[ひげメモ](http://matsubara0507.github.io)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-7" data-line-number="7"&gt;&lt;span class="fl"&gt;    - メモ書きブログ&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-8" data-line-number="8"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-9" data-line-number="9"&gt;&lt;span class="fu"&gt;## My Posts&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-10" data-line-number="10"&gt;- &lt;span class="ot"&gt;[Haskell Advent Calendar 2017 まとめ - Haskell-jp](http://haskell.jp/blog/posts/2017/advent-calendar-2017.html)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-11" data-line-number="11"&gt;&lt;span class="fl"&gt;    - posted on 2017-12-31&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-12" data-line-number="12"&gt;&lt;span class="fl"&gt;- &lt;/span&gt;&lt;span class="ot"&gt;[LINE の Echo Bot を Google Cloud Functions に作る](https://qiita.com/matsubara0507/items/04ab3c2197aa5f68e499)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-13" data-line-number="13"&gt;&lt;span class="fl"&gt;    - posted on 2017-11-21&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-14" data-line-number="14"&gt;&lt;span class="fl"&gt;- &lt;/span&gt;&lt;span class="ot"&gt;[GitHub にチャット機能のようなものが追加された (team discussions)](https://qiita.com/matsubara0507/items/47d2e2545553e415f969)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-15" data-line-number="15"&gt;&lt;span class="fl"&gt;    - posted on 2017-11-21&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-16" data-line-number="16"&gt;&lt;span class="fl"&gt;- &lt;/span&gt;&lt;span class="ot"&gt;[GitHub Project に自動でカードのカラム遷移をする機能が追加された](https://qiita.com/matsubara0507/items/f384991b4854aa28745a)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-17" data-line-number="17"&gt;&lt;span class="fl"&gt;    - posted on 2017-10-31&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-18" data-line-number="18"&gt;&lt;span class="fl"&gt;- &lt;/span&gt;&lt;span class="ot"&gt;[Slack から特定のアカウントでツイートする Bot を作った｜群馬大学電子計算機研究会 IGGG](http://iggg.github.io/2017/06/01/make-tweet-slack-bot)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-19" data-line-number="19"&gt;&lt;span class="fl"&gt;    - posted on 2017-06-01&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-20" data-line-number="20"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-21" data-line-number="21"&gt;&lt;span class="fu"&gt;## Applications&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-22" data-line-number="22"&gt;- &lt;span class="ot"&gt;[AnaQRam](http://github.com/matsubara0507/AnaQRam)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-23" data-line-number="23"&gt;&lt;span class="fl"&gt;    - QRコードを利用したアナグラム(並び替えパズル)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-24" data-line-number="24"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-25" data-line-number="25"&gt;&lt;span class="fu"&gt;## Libraries&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-26" data-line-number="26"&gt;- &lt;span class="ot"&gt;[chatwork](http://hackage.haskell.org/package/chatwork)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-27" data-line-number="27"&gt;&lt;span class="fl"&gt;    - The ChatWork API in Haskell&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-28" data-line-number="28"&gt;&lt;span class="fl"&gt;- &lt;/span&gt;&lt;span class="ot"&gt;[thank_you_stars](http://hex.pm/packages/thank_you_stars)&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb2-29" data-line-number="29"&gt;&lt;span class="fl"&gt;    - A tool for starring GitHub repositories.&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Yaml ファイルでは足りない情報をスクレイピングや各種 Web サービスの API で拾ってくる． なんか自分のアクティビティを紹介するページを SNS にリンクしてる人が多いと思うんだけど，そのページをできるだけ楽して生成したいなぁというのがモチベーション．&lt;/p&gt;
-&lt;h2 id="section"&gt;&lt;/h2&gt;
-&lt;p&gt;ホントはバイト先で作ってる Haskell 製の社内用 CLI ツールを公開したくて，内容を公開できるようにしたツールです． こんな感じのデータ処理をするツールを，バイト先では Haskell で作ってた．&lt;/p&gt;
-&lt;h2 id="extensible"&gt;extensible&lt;/h2&gt;
-&lt;p&gt;このツールの(まぁまぁ)面白いところは，&lt;a href="https://hackage.haskell.org/package/extensible"&gt;extensible&lt;/a&gt; というパッケージの機能をふんだんに使っている． 拡張可能レコード，バリアント，作用を使い，ついでに &lt;a href="https://hackage.haskell.org/package/extensible/docs/Data-Extensible-GetOpt.html"&gt;GetOpt&lt;/a&gt; も使ってみた． 軽く補足しておく(&lt;strong&gt;但し，作者ではないので間違っている部分はあるかも&lt;/strong&gt;)．&lt;/p&gt;
-&lt;h3 id="拡張可能レコード"&gt;拡張可能レコード&lt;/h3&gt;
-&lt;p&gt;Haskell のレコード構文&lt;/p&gt;
-&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Hoge&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; {&lt;span class="ot"&gt; hoge1 ::&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt;,&lt;span class="ot"&gt; hoge2 ::&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt; }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;を，型レベル辞書を用いて次のように書ける．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Hoge&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt; &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;hoge1&amp;quot; &amp;gt;: Int, &amp;quot;hoge2&amp;quot; &amp;gt;: Text ]&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;OverloadedLabels&lt;/code&gt; 言語拡張と組み合わせて，名前衝突の無いフィールド名を扱えたり，&lt;code&gt;lens&lt;/code&gt; を用いた OOP のような参照(e.g. &lt;code&gt;hoge ^. #hoge1&lt;/code&gt;)が出来る． また，&lt;a href="/posts/2017-11-28-fun-of-extensible-1.html"&gt;レコードの拡縮もできる&lt;/a&gt;．&lt;/p&gt;
-&lt;h3 id="拡張可能バリアント"&gt;拡張可能バリアント&lt;/h3&gt;
-&lt;p&gt;次のような直和型&lt;/p&gt;
-&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="kw"&gt;data&lt;/span&gt; &lt;span class="dt"&gt;Hoge&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Hoge1&lt;/span&gt; &lt;span class="dt"&gt;Int&lt;/span&gt; &lt;span class="fu"&gt;|&lt;/span&gt; &lt;span class="dt"&gt;Hoge2&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;を，型レベル辞書を用いて，バリアント型のように書ける．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Hoge&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Variant&lt;/span&gt; &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;hoge1&amp;quot; &amp;gt;: Int, &amp;quot;hoge2&amp;quot; &amp;gt;: Text ]&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;(正直あんまり利点が分かってないけど)拡縮はもちろん，&lt;a href="/posts/2018-01-31-fun-of-extensible-2.html"&gt;バリアントの操作関数をファイル分割して実装&lt;/a&gt;もできる．&lt;/p&gt;
-&lt;h3 id="拡張可能作用"&gt;拡張可能作用&lt;/h3&gt;
-&lt;p&gt;型レベル辞書によってモナドスタックを表現する． 今回は次のようなモナドを定義した．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;ServiceM&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Eff&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;  &lt;span class="ch"&gt;&amp;#39;[ ReaderDef Config&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-3" data-line-number="3"&gt;   , &lt;span class="dt"&gt;EitherDef&lt;/span&gt; &lt;span class="dt"&gt;ServiceException&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-4" data-line-number="4"&gt;   , &lt;span class="dt"&gt;LoggerDef&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-5" data-line-number="5"&gt;   , &lt;span class="st"&gt;&amp;quot;IO&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;IO&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb7-6" data-line-number="6"&gt;   ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;基本的に&lt;a href="/posts/2017-12-09-extensible-effects-step-by-step.html"&gt;普通のモナドトランスフォーマーのように扱える&lt;/a&gt;． じゃぁ素直にモナドトランスフォーマー使えよって感じかもしれないけど気にしないで．&lt;/p&gt;
-&lt;h3 id="getopt-ラッパー"&gt;&lt;code&gt;GetOpt&lt;/code&gt; ラッパー&lt;/h3&gt;
-&lt;p&gt;GHCには標準で &lt;code&gt;--output hoge&lt;/code&gt; みたいな CLI のオプション引数をパースしてくれるモジュール &lt;a href="https://hackage.haskell.org/package/base-4.10.1.0/docs/System-Console-GetOpt.html"&gt;&lt;code&gt;GetOpt&lt;/code&gt;&lt;/a&gt; がある(ぼくは初めて使った)． extensible では，パース結果を拡張可能レコードにマッピングするための補助関数が&lt;a href="https://hackage.haskell.org/package/extensible-0.4.7.1/docs/Data-Extensible-GetOpt.html"&gt;提供されている&lt;/a&gt;．&lt;/p&gt;
-&lt;p&gt;キモになるのは &lt;code&gt;withGetOpt&lt;/code&gt; 関数である．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;withGetOpt&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="ot"&gt;  ::&lt;/span&gt; &lt;span class="dt"&gt;MonadIO&lt;/span&gt; m&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-3" data-line-number="3"&gt;  &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-4" data-line-number="4"&gt;  &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;RecordOf&lt;/span&gt; (&lt;span class="dt"&gt;OptionDescr&lt;/span&gt; h) xs&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-5" data-line-number="5"&gt;  &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (&lt;span class="dt"&gt;RecordOf&lt;/span&gt; h xs &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; [&lt;span class="dt"&gt;String&lt;/span&gt;] &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; m a)&lt;/a&gt;
-&lt;a class="sourceLine" id="cb8-6" data-line-number="6"&gt;  &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; m a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;一引数目の文字列はパース失敗したとき(要するにオプションが間違ってるとき)に表示する「使い方」に使われる． 例えば，whoami だと&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;whoami [options] [input-file]
-  -o FILE               --output=FILE                Write output to FILE instead of stdout.
-  -t FORMAT, -w FORMAT  --to=FORMAT, --write=FORMAT  Specify output format. default is `markdown`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;の &lt;code&gt;[options] [input-file]&lt;/code&gt; が一引数目だ． 二引数目はオプションのパーサー(？)の定義を拡張可能レコードで与えており，三引数目がパース結果の拡張可能レコードと残りの(空白区切りの)文字列を受け取ってどうするかの振る舞いを与える．&lt;/p&gt;
-&lt;p&gt;まぁ詳しくは&lt;a href="https://www.schoolofhaskell.com/user/fumieval/extensible/getopt-and-extensible-records"&gt;作者さんの記事&lt;/a&gt;で紹介されている(英語だけど，あと一引数目の文字列はこの記事以降に追加された機能らしく，サンプルコードにはない)．&lt;/p&gt;
-&lt;h3 id="extensible-instances"&gt;extensible-instances&lt;/h3&gt;
-&lt;p&gt;拡張可能レコードは全て &lt;code&gt;Record '[...]&lt;/code&gt; の型エイリアスで定義する． つまり，拡張可能レコードの何らかの型クラスのインスタンスは &lt;code&gt;Record '[...]&lt;/code&gt; に適用しておけば全部で使える(逆に影響力がでかいともいえる)．&lt;/p&gt;
-&lt;p&gt;いくつかの自作アプリーケーションでインスタンスを作っていて，ダブってたのでひとつのリポジトリにまとめた．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/matsubara0507/extensible-instances"&gt;matsubara0507/extensible-instances - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;(なんか作者本人じゃないから気が引けて) Hackage にはあげてないがパッケージの体はしてるので，&lt;a href="https://docs.haskellstack.org/en/stable/yaml_configuration/#git-and-mercurial-repos"&gt;&lt;code&gt;stack.yaml&lt;/code&gt; の &lt;code&gt;extra-deps&lt;/code&gt; に記述&lt;/a&gt;することで使えるはず．&lt;/p&gt;
-&lt;h2 id="section-1"&gt;&lt;/h2&gt;
-&lt;p&gt;注意点として &lt;a href="https://github.com/fumieval/extensible"&gt;fumieval/extensible&lt;/a&gt; の&lt;a href="https://github.com/fumieval/extensible/blob/master/examples/aeson.hs"&gt;例にある &lt;code&gt;FromJSON&lt;/code&gt; のインスタンス&lt;/a&gt;とは微妙に実装が違う． 作者さんのは &lt;code&gt;Maybe a&lt;/code&gt; にしてもキーが存在しないといけないのだが，&lt;code&gt;aeson&lt;/code&gt; の &lt;code&gt;Generics&lt;/code&gt; は &lt;code&gt;Maybe a&lt;/code&gt; ならキーが無くても良いので，そっちに合わせた．&lt;/p&gt;
-&lt;h2 id="仕組み"&gt;仕組み&lt;/h2&gt;
-&lt;p&gt;コード自体は&lt;a href="https://github.com/matsubara0507/whoami"&gt;このリポジトリ&lt;/a&gt;にある．&lt;/p&gt;
-&lt;h3 id="基本的な部分"&gt;基本的な部分&lt;/h3&gt;
-&lt;p&gt;基本的に Yaml ファイルにはサイト・記事・ライブラリ・アプリケーションを列挙してもらう． それらは次のような型になっている(型の値として取り出せる)．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Config&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;name&amp;quot;    &amp;gt;: Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;   , &lt;span class="st"&gt;&amp;quot;account&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Accounts&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;   , &lt;span class="st"&gt;&amp;quot;site&amp;quot;&lt;/span&gt;    &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; [&lt;span class="dt"&gt;SiteConfig&lt;/span&gt;]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;   , &lt;span class="st"&gt;&amp;quot;post&amp;quot;&lt;/span&gt;    &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt; &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;latest&amp;quot; &amp;gt;: Maybe Int, &amp;quot;posts&amp;quot; &amp;gt;: [PostConfig]]&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-6" data-line-number="6"&gt;   , &lt;span class="st"&gt;&amp;quot;library&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; [&lt;span class="dt"&gt;LibConfig&lt;/span&gt;]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-7" data-line-number="7"&gt;   , &lt;span class="st"&gt;&amp;quot;app&amp;quot;&lt;/span&gt;     &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; [&lt;span class="dt"&gt;AppConfig&lt;/span&gt;]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-8" data-line-number="8"&gt;   , &lt;span class="st"&gt;&amp;quot;qiita&amp;quot;&lt;/span&gt;   &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;QiitaConfig&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-9" data-line-number="9"&gt;   ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-10" data-line-number="10"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-11" data-line-number="11"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Accounts&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Map&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-12" data-line-number="12"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Url&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-13" data-line-number="13"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Date&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-14" data-line-number="14"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-15" data-line-number="15"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;SiteConfig&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-16" data-line-number="16"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;name&amp;quot; &amp;gt;: Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-17" data-line-number="17"&gt;   , &lt;span class="st"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;  &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Url&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-18" data-line-number="18"&gt;   , &lt;span class="st"&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-19" data-line-number="19"&gt;   ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-20" data-line-number="20"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-21" data-line-number="21"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;PostConfig&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-22" data-line-number="22"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;title&amp;quot; &amp;gt;: Maybe Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-23" data-line-number="23"&gt;   , &lt;span class="st"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;  &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Url&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-24" data-line-number="24"&gt;   , &lt;span class="st"&gt;&amp;quot;date&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Maybe&lt;/span&gt; &lt;span class="dt"&gt;Date&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-25" data-line-number="25"&gt;   ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-26" data-line-number="26"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-27" data-line-number="27"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;LibConfig&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-28" data-line-number="28"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;name&amp;quot; &amp;gt;: Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-29" data-line-number="29"&gt;   , &lt;span class="st"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;  &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Url&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-30" data-line-number="30"&gt;   , &lt;span class="st"&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Maybe&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-31" data-line-number="31"&gt;   , &lt;span class="st"&gt;&amp;quot;language&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-32" data-line-number="32"&gt;   ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-33" data-line-number="33"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-34" data-line-number="34"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;AppConfig&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-35" data-line-number="35"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;name&amp;quot; &amp;gt;: Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-36" data-line-number="36"&gt;   , &lt;span class="st"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;  &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Url&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-37" data-line-number="37"&gt;   , &lt;span class="st"&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Maybe&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb10-38" data-line-number="38"&gt;   ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href="https://hackage.haskell.org/package/yaml"&gt;yaml&lt;/a&gt;パッケージを使って，Yaml ファイルから &lt;code&gt;Config&lt;/code&gt; 型にデコードしてもらう． &lt;code&gt;Maybe a&lt;/code&gt; になっているところは書いてあっても無くても良い項目だ．&lt;/p&gt;
-&lt;p&gt;そしてサイト・記事・ライブラリ・アプリケーション固有の &lt;code&gt;Config&lt;/code&gt; 型を共通のフォーマットである &lt;code&gt;Info&lt;/code&gt; 型に変換する手続きを型クラスを用いて定義した．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb11"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb11-1" data-line-number="1"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Info&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-2" data-line-number="2"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;name&amp;quot; &amp;gt;: Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-3" data-line-number="3"&gt;   , &lt;span class="st"&gt;&amp;quot;url&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Url&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-4" data-line-number="4"&gt;   , &lt;span class="st"&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-5" data-line-number="5"&gt;   , &lt;span class="st"&gt;&amp;quot;type&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;ServiceType&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-6" data-line-number="6"&gt;   ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-7" data-line-number="7"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-8" data-line-number="8"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;ServiceType&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Variant&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-9" data-line-number="9"&gt;  &lt;span class="ch"&gt;&amp;#39;[ &amp;quot;post&amp;quot; &amp;gt;: Post&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-10" data-line-number="10"&gt;   , &lt;span class="st"&gt;&amp;quot;app&amp;quot;&lt;/span&gt;  &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Application&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-11" data-line-number="11"&gt;   , &lt;span class="st"&gt;&amp;quot;lib&amp;quot;&lt;/span&gt;  &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Library&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-12" data-line-number="12"&gt;   , &lt;span class="st"&gt;&amp;quot;site&amp;quot;&lt;/span&gt; &lt;span class="fu"&gt;&amp;gt;:&lt;/span&gt; &lt;span class="dt"&gt;Site&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-13" data-line-number="13"&gt;   ]&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-14" data-line-number="14"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-15" data-line-number="15"&gt;&lt;span class="kw"&gt;class&lt;/span&gt; &lt;span class="dt"&gt;Uniform&lt;/span&gt; a &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-16" data-line-number="16"&gt;&lt;span class="ot"&gt;  fetch ::&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ServiceM&lt;/span&gt; &lt;span class="dt"&gt;Data&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-17" data-line-number="17"&gt;&lt;span class="ot"&gt;  fill ::&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Data&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ServiceM&lt;/span&gt; a&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-18" data-line-number="18"&gt;&lt;span class="ot"&gt;  uniform ::&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ServiceM&lt;/span&gt; &lt;span class="dt"&gt;Info&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-19" data-line-number="19"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-20" data-line-number="20"&gt;&lt;span class="kw"&gt;type&lt;/span&gt; &lt;span class="dt"&gt;Data&lt;/span&gt; &lt;span class="fu"&gt;=&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-21" data-line-number="21"&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-22" data-line-number="22"&gt;&lt;span class="ot"&gt;toInfo ::&lt;/span&gt; &lt;span class="dt"&gt;Uniform&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ServiceM&lt;/span&gt; &lt;span class="dt"&gt;Info&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb11-23" data-line-number="23"&gt;toInfo conf &lt;span class="fu"&gt;=&lt;/span&gt; uniform &lt;span class="fu"&gt;=&amp;lt;&amp;lt;&lt;/span&gt; fill conf &lt;span class="fu"&gt;=&amp;lt;&amp;lt;&lt;/span&gt; fetch conf&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Uniform&lt;/code&gt; 型クラスに3つの関数は&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fill&lt;/code&gt; 関数は共通のフォーマットにするための足りない情報(&lt;code&gt;Maybe a&lt;/code&gt; で &lt;code&gt;Nothing&lt;/code&gt; だったところ)をスクレイピングなどで補完&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fetch&lt;/code&gt; 関数はスクレイピングするための HTML などを取ってくる&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;uniform&lt;/code&gt; 関数は実際に共通フォーマットに変換する&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;といった具合だ(正直分けなくてもいい)．&lt;/p&gt;
-&lt;h2 id="section-2"&gt;&lt;/h2&gt;
-&lt;p&gt;他にも GitHub・BitBacket・GitLab なんかを全部一緒に取り扱う &lt;code&gt;Repo&lt;/code&gt; とかも作ってもいいかもしれない． 問題は，自分が GitHub 以外に使ってないのでテストできない点だ．&lt;/p&gt;
-&lt;h3 id="qiita-とか"&gt;Qiita とか&lt;/h3&gt;
-&lt;p&gt;Qiita とかは RESTful API を叩いて記事を集めてる． そもそも記事自体を集めるところと，&lt;code&gt;Uniform&lt;/code&gt; 型クラスのインスタンスを共通化するのに &lt;code&gt;Service&lt;/code&gt; 型クラスを作った(名前が微妙)．&lt;/p&gt;
-&lt;div class="sourceCode" id="cb12"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb12-1" data-line-number="1"&gt;&lt;span class="kw"&gt;class&lt;/span&gt; &lt;span class="dt"&gt;Service&lt;/span&gt; a &lt;span class="kw"&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb12-2" data-line-number="2"&gt;&lt;span class="ot"&gt;  genInfo ::&lt;/span&gt; &lt;span class="dt"&gt;Proxy&lt;/span&gt; a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;ServiceM&lt;/span&gt; [&lt;span class="dt"&gt;Info&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Proxy a&lt;/code&gt; なのはしょうがない． お好きなサービス(自分のサイトとかでも)を &lt;code&gt;Service&lt;/code&gt; 型クラスのインスタンスにして，&lt;code&gt;Whoami&lt;/code&gt; 型のインスタンスを書き換えれば，いろんなサイトを共通の形式で扱える．&lt;/p&gt;
-&lt;h2 id="on-github-pages"&gt;on GitHub Pages&lt;/h2&gt;
-&lt;p&gt;GitHub Pages で簡単に使えるようにした． サンプルのリポジトリを作ったので，これをフォークして Travis CI と GitHub Pages を設定するだけで使えるはずだ(もちろん &lt;code&gt;whoami.yaml&lt;/code&gt; を書き換えて)．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/matsubara0507/whoami-example"&gt;matsubara0507/whoami-example - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Stackage (というか Hackage)に置いていないツールを &lt;code&gt;stack install&lt;/code&gt; するために，&lt;code&gt;package.yaml&lt;/code&gt; と &lt;code&gt;stack.yaml&lt;/code&gt; と &lt;code&gt;.gitignore&lt;/code&gt; を置いてるけど気にしないで． Travis CI の定期実行を設定しておけば定期的に Qita の記事とかを更新してくれる．&lt;/p&gt;
-&lt;h2 id="おしまい"&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;そーいえば，UNIX 系には &lt;code&gt;whoami&lt;/code&gt; というコマンドがあるんでしたね(Windowsユーザー)． 紛らわしい名前にしてしまった．&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
