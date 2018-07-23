@@ -35,8 +35,6 @@ jobs:
         - stack build --docker
       after_success:
         - stack image container --docker
-    - stage: build docker image
-      script: docker build -t "${DOCKER_REPOSITORY}" .
-      after_success:
+        - docker build -t "${DOCKER_REPOSITORY}" .
         - docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}"
         - docker push "${DOCKER_REPOSITORY}"
