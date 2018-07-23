@@ -1,5 +1,7 @@
 sudo: false
 language: generic
+services:
+  - docker
 cache:
   timeout: 360
   directories:
@@ -27,3 +29,14 @@ jobs:
         - git add -A
         - git diff --quiet && git diff --staged --quiet || git commit -am "[skip ci] Update planet haskell. See https://haskell.jp/antenna/ for new entries!"
         - git push origin gh-pages
+    - stage: build with docker
+      script:
+        - stack docker pull
+        - stack build --docker
+      after_success:
+        - stack image container --docker
+    - stage: build docker image
+      script: docker build -t "${DOCKER_REPOSITORY}" .
+      after_success:
+        - docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}"
+        - docker push "${DOCKER_REPOSITORY}"
