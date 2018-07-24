@@ -8,3 +8,11 @@ extra-deps:
   commit: b7cfedba0e34dc117389452b9a61f1e2bbe117fa
 - git: https://github.com/matsubara0507/extensible-instances.git
   commit: a5b543cede63890c84d3f62f9c26349ae9f2e4fc
+
+docker:
+  repo: fpco/stack-build
+  enable: false
+image:
+  container:
+    name: antenna-bin
+    base: fpco/ubuntu-with-libgmp

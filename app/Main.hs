@@ -12,15 +12,18 @@ import           Data.Extensible
 import           Data.List          (sortOn)
 import           Data.Maybe         (listToMaybe)
 import qualified Data.Yaml          as Y
+import           GHC.IO.Encoding
 import           ScrapBook          (collect, fetch, toSite, write)
 import qualified ScrapBook
 import           System.Environment (getArgs)
 import           System.FilePath    (dropFileName)
 
 main :: IO ()
-main = (listToMaybe <$> getArgs) >>= \case
-  Nothing   -> error "please input config file path."
-  Just path -> generate path =<< readConfig path
+main = do
+  setLocaleEncoding utf8
+  (listToMaybe <$> getArgs) >>= \case
+    Nothing   -> error "please input config file path."
+    Just path -> generate path =<< readConfig path
 
 readConfig :: FilePath -> IO Config
 readConfig = either (error . show) pure <=< Y.decodeFileEither
