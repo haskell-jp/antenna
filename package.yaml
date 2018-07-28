@@ -36,5 +36,5 @@ executables:
     - blaze-html
     - data-default
     - extensible
-    - scrapbook
+    - scrapbook >= 0.3
     - yaml
