@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-08-01T13:56:39+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/01/055608</id><title type="text">July Tech Festa 2018 で分散システムの検証について話してきました / #JTF2018</title><updated>2018-08-01T13:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/01/055608"/><summary type="html">先日行われた July Tech Festa 2018 で、モデル検査を使った分散アルゴリズムの検証について発表してきました。 前半はオートマトンによるシステムの記述と検査の基礎について、後半は三種類のツール SPIN、TLA+、P による記述方法の紹介、といった内容です。 後半のソースコード紹介が散文的な感じになってしまって、いまいちメリットが伝わらない感じだったので、次回があればもっとエモいスライドにしようと思います。 分散アルゴリズムの形式化 定理証明による検証 今回の話の流れとして「分散システムにはモデル検査が有効」と述べていますが、必ずしも定理証明が分散システムの検証に向かないという…</summary></entry><entry><id>https://qiita.com/ruicc/items/109692ea1df502d20666</id><title type="text">モナド則とプログラミング</title><updated>2018-07-31T01:23:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ruicc/items/109692ea1df502d20666"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/07-31-yesodsecurity.html</id><title type="text">Yesod には脆弱性があるのかな？</title><updated>2018-07-31T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/07-31-yesodsecurity.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-08-07T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.e-bigmoon.com/posts/2018/08-07-arrow-operators.html</id><title type="text">(^&gt;&gt;) と (&gt;&gt;^)</title><updated>2018-08-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/08-07-arrow-operators.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.stackage.org/haddock/lts-12.5/base-4.11.1.0/Control-Arrow.html#"&gt;Control.Arrow&lt;/a&gt; モジュールに &lt;a href="https://www.stackage.org/haddock/lts-12.5/base-4.11.1.0/Control-Arrow.html#v:-94--62--62-"&gt;(^&amp;gt;&amp;gt;)&lt;/a&gt; と &lt;a href="https://www.stackage.org/haddock/lts-12.5/base-4.11.1.0/Control-Arrow.html#v:-62--62--94-"&gt;(&amp;gt;&amp;gt;^)&lt;/a&gt; という演算子が定義されています。&lt;/p&gt;
+&lt;p&gt;ちょっとだけ面白かったので紹介しようと思います。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id="準備"&gt;準備&lt;/h2&gt;
+&lt;p&gt;例として、文字列を全て&lt;strong&gt;大文字&lt;/strong&gt;に変換する関数を考えてみましょう。&lt;/p&gt;
+&lt;p&gt;素朴に書けばこんな感じでしょうか。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb1"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb1-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="dt"&gt;Data.Char&lt;/span&gt; (toUpper)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-2" data-line-number="2"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-3" data-line-number="3"&gt;&lt;span class="ot"&gt;toAllUpper ::&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb1-4" data-line-number="4"&gt;toAllUpper &lt;span class="fu"&gt;=&lt;/span&gt; map toUpper&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この関数は以下のように期待通りに動きます。&lt;/p&gt;
+&lt;pre class="shell"&gt;&lt;code&gt;*Main&amp;gt; toAllUpper &amp;quot;B|g0on&amp;quot;
+&amp;quot;B|G0ON&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ではここで、同じように &lt;code&gt;Text&lt;/code&gt; バージョンを作りたいと思います。何も考えずに pack と unpack を使えばすぐ定義できますね。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb3"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb3-1" data-line-number="1"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;Data.Char&lt;/span&gt; (toUpper)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-2" data-line-number="2"&gt;&lt;span class="kw"&gt;import&lt;/span&gt;           &lt;span class="dt"&gt;Data.Text&lt;/span&gt; (&lt;span class="dt"&gt;Text&lt;/span&gt;)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-3" data-line-number="3"&gt;&lt;span class="kw"&gt;import&lt;/span&gt; &lt;span class="kw"&gt;qualified&lt;/span&gt; &lt;span class="dt"&gt;Data.Text&lt;/span&gt; &lt;span class="kw"&gt;as&lt;/span&gt; &lt;span class="dt"&gt;T&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-4" data-line-number="4"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-5" data-line-number="5"&gt;&lt;span class="ot"&gt;toAllUpper ::&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-6" data-line-number="6"&gt;toAllUpper &lt;span class="fu"&gt;=&lt;/span&gt; map toUpper&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-7" data-line-number="7"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-8" data-line-number="8"&gt;&lt;span class="ot"&gt;toAllUpperText ::&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb3-9" data-line-number="9"&gt;toAllUpperText &lt;span class="fu"&gt;=&lt;/span&gt; T.pack &lt;span class="fu"&gt;.&lt;/span&gt; toAllUpper &lt;span class="fu"&gt;.&lt;/span&gt; T.unpack&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この関数も同様にちゃんと動きます。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb4"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb4-1" data-line-number="1"&gt;&lt;span class="fu"&gt;*&lt;/span&gt;&lt;span class="dt"&gt;Main&lt;/span&gt;&lt;span class="fu"&gt;&amp;gt;&lt;/span&gt; toAllUpperText &lt;span class="fu"&gt;$&lt;/span&gt; T.pack &lt;span class="st"&gt;&amp;quot;B|g0on&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb4-2" data-line-number="2"&gt;&lt;span class="st"&gt;&amp;quot;B|G0ON&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="と-を無理矢理使ってみる"&gt;(^&amp;gt;&amp;gt;) と (&amp;gt;&amp;gt;^) を無理矢理使ってみる&lt;/h2&gt;
+&lt;p&gt;先程定義した &lt;code&gt;toAllUpperText&lt;/code&gt; 関数は &lt;code&gt;(^&amp;gt;&amp;gt;)&lt;/code&gt; と &lt;code&gt;(&amp;gt;&amp;gt;^)&lt;/code&gt; を使って、以下のように書き直すことができます。(&lt;code&gt;Control.Arrow&lt;/code&gt; をインポートする必要があります。)&lt;/p&gt;
+&lt;p&gt;左から右バージョン&lt;/p&gt;
+&lt;div class="sourceCode" id="cb5"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb5-1" data-line-number="1"&gt;&lt;span class="ot"&gt;toAllUpperText&amp;#39; ::&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb5-2" data-line-number="2"&gt;toAllUpperText&amp;#39; &lt;span class="fu"&gt;=&lt;/span&gt; T.unpack &lt;span class="fu"&gt;^&amp;gt;&amp;gt;&lt;/span&gt; toAllUpper &lt;span class="fu"&gt;&amp;gt;&amp;gt;^&lt;/span&gt; T.pack&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;右から左バージョン&lt;/p&gt;
+&lt;div class="sourceCode" id="cb6"&gt;&lt;pre class="sourceCode haskell"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb6-1" data-line-number="1"&gt;&lt;span class="ot"&gt;toAllUpperText&amp;#39;&amp;#39; ::&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt; &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="dt"&gt;Text&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb6-2" data-line-number="2"&gt;toAllUpperText&amp;#39;&amp;#39; &lt;span class="fu"&gt;=&lt;/span&gt; T.pack &lt;span class="fu"&gt;&amp;lt;&amp;lt;^&lt;/span&gt; toAllUpper &lt;span class="fu"&gt;^&amp;lt;&amp;lt;&lt;/span&gt; T.unpack&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;関数合成 (&lt;code&gt;.&lt;/code&gt;) を単純に置き換えただけです・・・。&lt;/p&gt;
+&lt;h3 id="型"&gt;型&lt;/h3&gt;
+&lt;p&gt;この演算子の何が面白いかと言うと、&lt;strong&gt;入力&lt;/strong&gt;と&lt;strong&gt;出力&lt;/strong&gt;をそれぞれ変換できるんですね！&lt;/p&gt;
+&lt;div class="sourceCode" id="cb7"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb7-1" data-line-number="1"&gt;&lt;span class="ot"&gt;(^&amp;gt;&amp;gt;) ::&lt;/span&gt; &lt;span class="dt"&gt;Arrow&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a c d &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a b d&lt;/a&gt;
+&lt;a class="sourceLine" id="cb7-2" data-line-number="2"&gt;&lt;span class="ot"&gt;(&amp;gt;&amp;gt;^) ::&lt;/span&gt; &lt;span class="dt"&gt;Arrow&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a b c &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (c &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; d) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a b d&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="sourceCode" id="cb8"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb8-1" data-line-number="1"&gt;&lt;span class="ot"&gt;(&amp;lt;&amp;lt;^) ::&lt;/span&gt; &lt;span class="dt"&gt;Arrow&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; a c d &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a b d&lt;/a&gt;
+&lt;a class="sourceLine" id="cb8-2" data-line-number="2"&gt;&lt;span class="ot"&gt;(^&amp;lt;&amp;lt;) ::&lt;/span&gt; &lt;span class="dt"&gt;Arrow&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; (c &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; d) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a b c &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a b d&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;先程の例は &lt;code&gt;Arrow a&lt;/code&gt; の &lt;code&gt;a&lt;/code&gt; を関数型 &lt;code&gt;(-&amp;gt;)&lt;/code&gt; として具体化したものになります。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb9"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb9-1" data-line-number="1"&gt;&lt;span class="ot"&gt;(^&amp;gt;&amp;gt;) ::&lt;/span&gt; &lt;span class="dt"&gt;Arrow&lt;/span&gt; a &lt;span class="ot"&gt;=&amp;gt;&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a c d &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; a b d&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-2" data-line-number="2"&gt;  &lt;span class="co"&gt;-- a = (-&amp;gt;) として具体化した&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-3" data-line-number="3"&gt;    (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (&lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;) c d &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (&lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt;) b d&lt;/a&gt;
+&lt;a class="sourceLine" id="cb9-4" data-line-number="4"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (c &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; d) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; d)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;引数の順番を逆にすれば関数合成の型と同じですね。&lt;/p&gt;
+&lt;div class="sourceCode" id="cb10"&gt;&lt;pre class="sourceCode hs"&gt;&lt;code class="sourceCode haskell"&gt;&lt;a class="sourceLine" id="cb10-1" data-line-number="1"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (c &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; d) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; d)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-2" data-line-number="2"&gt;  &lt;span class="co"&gt;-- 引数を逆にした&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-3" data-line-number="3"&gt;  (c &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; d) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; d)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-4" data-line-number="4"&gt;  &lt;span class="co"&gt;-- 変数名の変更&lt;/span&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-5" data-line-number="5"&gt;  &lt;span class="fu"&gt;=&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-6" data-line-number="6"&gt;&lt;/a&gt;
+&lt;a class="sourceLine" id="cb10-7" data-line-number="7"&gt;&lt;span class="ot"&gt;(.) ::&lt;/span&gt; (b &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; (a &lt;span class="ot"&gt;-&amp;gt;&lt;/span&gt; c)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;現実世界で Arrow をバリバリ使っているコードをみかけることは (僕は) 全く無いです。(Hakyll は過去に Arrow ベースで定義されていたようですが、Monad ベースに切り替わりました)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;たぶん使うことは無いですが、パズルみたいで楽しい。&lt;/p&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/watertight/items/a96e2696d5a7a8f53a5b</id><title type="text">curlパッケージにはlibcurl4-gnutls-devが必要</title><updated>2018-08-06T21:25:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/watertight/items/a96e2696d5a7a8f53a5b"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/01/055608</id><title type="text">July Tech Festa 2018 で分散システムの検証について話してきました / #JTF2018</title><updated>2018-08-01T13:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/01/055608"/><summary type="html">先日行われた July Tech Festa 2018 で、モデル検査を使った分散アルゴリズムの検証について発表してきました。 前半はオートマトンによるシステムの記述と検査の基礎について、後半は三種類のツール SPIN、TLA+、P による記述方法の紹介、といった内容です。 後半のソースコード紹介が散文的な感じになってしまって、いまいちメリットが伝わらない感じだったので、次回があればもっとエモいスライドにしようと思います。 分散アルゴリズムの形式化 定理証明による検証 今回の話の流れとして「分散システムにはモデル検査が有効」と述べていますが、必ずしも定理証明が分散システムの検証に向かないという…</summary></entry><entry><id>https://qiita.com/ruicc/items/109692ea1df502d20666</id><title type="text">モナド則とプログラミング</title><updated>2018-07-31T01:23:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ruicc/items/109692ea1df502d20666"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/07-31-yesodsecurity.html</id><title type="text">Yesod には脆弱性があるのかな？</title><updated>2018-07-31T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/07-31-yesodsecurity.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.yesodweb.com/"&gt;Yesod&lt;/a&gt; は Haskell で書かれた Web アプリケーションフレームワークです。&lt;/p&gt;
 &lt;p&gt;WordPress や Drupal と違って、セキュリティはかなり万全です。(ユーザが気にしなければならない部分が非常に少ないです)&lt;/p&gt;
 &lt;p&gt;最近、&lt;a href="https://www.sbcr.jp/products/4797393163.html"&gt;体系的に学ぶ 安全なWebアプリケーションの作り方 第2版 (通称: 徳丸本)&lt;/a&gt; が発売されました。&lt;/p&gt;
@@ -1138,121 +1198,7 @@ False&lt;/code&gt;&lt;/pre&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
-</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/06-27-namespaced-templates.html</id><title type="text">namespaced templates</title><updated>2018-06-27T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/06-27-namespaced-templates.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;つい先日 &lt;a href="https://github.com/commercialhaskell/stack/pull/4103"&gt;namespaced templates&lt;/a&gt; という、PRが &lt;strong&gt;master&lt;/strong&gt; にマージされました。(&lt;a href="https://github.com/commercialhaskell/stack/issues/4039"&gt;Namespaced templates #4039&lt;/a&gt; が該当する isssue です)&lt;/p&gt;
-&lt;p&gt;通常、&lt;strong&gt;stack new&lt;/strong&gt; コマンドを実行すると、ローカルに保存されている &lt;a href="https://github.com/commercialhaskell/stack-templates/blob/master/new-template.hsfiles"&gt;new-template&lt;/a&gt; の内容に基づいてプロジェクトの雛形が作成されます。&lt;/p&gt;
-&lt;p&gt;もし、ローカルに保存されているテンプレートの内容を確認したい場合は以下のようなコマンドを実行すれば良いでしょう。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ cat $(stack path --stack-root)/templates/new-template.hsfiles&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;config.yaml&lt;/strong&gt; を変更すれば、このデフォルトテンプレートを変更することもできます。(詳しくは &lt;a href="https://haskell.e-bigmoon.com/stack/tips/config-yaml.html"&gt;config.yaml のよくある設定&lt;/a&gt; をご確認ください)&lt;/p&gt;
-&lt;p&gt;今回新たに実装された namespaced templates 機能は、これらのテンプレート機能をより強化するものとなっています。&lt;/p&gt;
-&lt;p&gt;具体的には &lt;strong&gt;username/foo&lt;/strong&gt; という形式でリモートリポジトリから自分のプロジェクトテンプレートをダウンロードし、それをもとにプロジェクトを作成できるようになります。&lt;/p&gt;
-&lt;p&gt;それでは使い方を見ていきたいと思います。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack --version
-Version 1.8.0, Git revision 466da22ce21cddc20323fc2611cd2a2d3cc56ec6 (dirty) (5998 commits) x86_64 hpack-0.28.2&lt;/code&gt;&lt;/pre&gt;
-&lt;!--more--&gt;
-&lt;h2 id="リポジトリを用意しよう"&gt;リポジトリを用意しよう！&lt;/h2&gt;
-&lt;p&gt;namespaced templates 機能は以下のサービスで利用可能です。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;github&lt;/li&gt;
-&lt;li&gt;gitlab&lt;/li&gt;
-&lt;li&gt;bitbucket&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;まずは、&lt;strong&gt;stack-templates&lt;/strong&gt; という名前でリポジトリを作っておいてください。(今のところは任意の名前に変更する方法はありません。)&lt;/p&gt;
-&lt;p&gt;この名前のリポジトリに存在するテンプレートファイルを参照することができます。&lt;/p&gt;
-&lt;h2 id="テンプレートファイルを作ってみよう"&gt;テンプレートファイルを作ってみよう！&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;テンプレートの参考になるのは &lt;a href="https://github.com/commercialhaskell/stack-templates/blob/master/simple.hsfiles"&gt;commercialhaskell/simple.hsfiles&lt;/a&gt; です。&lt;/li&gt;
-&lt;li&gt;テンプレートエンジンは &lt;a href="https://mustache.github.io/mustache.1.html"&gt;mustache&lt;/a&gt; を使っているそうです。&lt;/li&gt;
-&lt;li&gt;今から作るテンプレートファイルは &lt;a href="https://github.com/e-bigmoon/stack-templates/blob/master/sample.hsfiles"&gt;e-bigmoon/sample.hsfiles&lt;/a&gt; にあります。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="最小のプロジェクトテンプレート"&gt;最小のプロジェクトテンプレート&lt;/h3&gt;
-&lt;p&gt;とりあえず &lt;strong&gt;Readme.md&lt;/strong&gt; ぐらいは欲しいですよね。&lt;/p&gt;
-&lt;pre class="mastache"&gt;&lt;code&gt;{-# START_FILE README.md #-}
-# {{name}}&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;{-# START_FILE README.md #-}&lt;/code&gt; はそれ以降に続く内容で &lt;strong&gt;README.md&lt;/strong&gt; というファイルを作ります ｰ &lt;code&gt;{{name}}&lt;/code&gt; には、&lt;strong&gt;stack new&lt;/strong&gt; の引数で与えたプロジェクト名が挿入されます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;ここまでで実際に動かして確認してみます。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ cd /tmp
-$ stack new test-proj e-bigmoon/sample
-Downloading template &amp;quot;e-bigmoon/sample&amp;quot; to create project &amp;quot;test-proj&amp;quot; in test-proj/ ...
-The template &amp;quot;e-bigmoon/sample&amp;quot; is invalid and could not be used. The error was: Template does not contain a .cabal or package.yaml file&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;怒られました。どうやら &lt;strong&gt;cabal&lt;/strong&gt; ファイルか &lt;strong&gt;package.yaml&lt;/strong&gt; が含まれている必要があるみたいです。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;package.yaml&lt;/strong&gt; ファイルも追加して作成するために、少し編集しましょう。&lt;/p&gt;
-&lt;pre class="mastache"&gt;&lt;code&gt;{-# START_FILE README.md #-}
-# {{name}}
-
-{-# START_FILE package.yaml #-}
-name: {{name}}
-dependencies:
-  - base
-library: {}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;もう一度実行してみます。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack new test-proj e-bigmoon/sample
-...
-All done.
-
-$ tree test-proj/
-test-proj/
-├── package.yaml
-├── README.md
-├── stack.yaml
-└── test-proj.cabal&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;今度は成功しました。簡単でいいですね。&lt;/p&gt;
-&lt;p&gt;ダウンロードしたテンプレートファイルは &lt;code&gt;~/.stack/templates/&amp;lt;username&amp;gt;/&amp;lt;template&amp;gt;&lt;/code&gt; というパスで保存されています。&lt;/p&gt;
-&lt;h2 id="stack-new-コマンド"&gt;stack new コマンド&lt;/h2&gt;
-&lt;p&gt;先程は github リポジトリ上のテンプレートファイルを取得したので以下のコマンドを実行しました。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack new test-proj e-bigmoon/sample&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;このコマンドは次のコマンドの省略形です。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack new test-proj github:e-bigmoon/sample.hsfiles&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;そのため gitlab や bitbucket にあるテンプレートファイルをダウンロードする場合は以下のようになります。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;# gitlab
-$ stack new test-proj gitlab:e-bigmoon/sample.hsfiles
-
-# bitbucket
-$ stack new test-proj bitbucket:e-bigmoon/sample.hsfiles&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;また、テンプレート名を省略した場合は公式のテンプレートが利用されるため、次のコマンドを実行していることと同じです。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack new test-proj commercialhaskell/new-template&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;完全なURLで別のサーバーにあるテンプレートファイルを指定することも可能です。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack new test-proj https://my-site.com/content/template9.hsfiles&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;github のテンプレートファイルを完全なURLで指定する際、上記のURLは invalid なので注意。ちゃんと raw の URL を指定しましょう。&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;# NG
-$ stack new test-proj https://github.com/commercialhaskell/stack-templates/blob/master/hspec.hsfiles
-
-# OK
-$ stack new test-proj https://raw.githubusercontent.com/commercialhaskell/stack-templates/master/new-template.hsfiles&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="stack.yaml-が含まれる場合"&gt;stack.yaml が含まれる場合&lt;/h2&gt;
-&lt;p&gt;プロジェクトテンプレートに &lt;strong&gt;stack.yaml&lt;/strong&gt; が含まれる場合は初期化処理がスキップされます。(&lt;a href="https://haskell.e-bigmoon.com/posts/2018/05-04-stack171.html"&gt;v1.7.1&lt;/a&gt; で導入された修正ですね)&lt;/p&gt;
-&lt;pre class="shell"&gt;&lt;code&gt;$ stack new test-proj e-bigmoon/sample
-Downloading template &amp;quot;e-bigmoon/sample&amp;quot; to create project &amp;quot;test-proj&amp;quot; in test-proj/ ...
-Initialized empty Git repository in /tmp/test-proj/.git/&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="もっと複雑なテンプレート"&gt;もっと複雑なテンプレート&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;~/.stack/config.yaml&lt;/code&gt; に変数を定義しておき、プロジェクトテンプレートから参照することもできます。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;config.yaml&lt;/strong&gt; ファイルの内容が以下のようになっているとしましょう。&lt;/p&gt;
-&lt;div class="sourceCode" id="cb14"&gt;&lt;pre class="sourceCode yaml"&gt;&lt;code class="sourceCode yaml"&gt;&lt;a class="sourceLine" id="cb14-1" data-line-number="1"&gt;&lt;span class="fu"&gt;templates:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-2" data-line-number="2"&gt;  &lt;span class="fu"&gt;params:&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-3" data-line-number="3"&gt;    &lt;span class="fu"&gt;author-email:&lt;/span&gt;&lt;span class="at"&gt; chrisdone@gmail.com&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-4" data-line-number="4"&gt;    &lt;span class="fu"&gt;author-name:&lt;/span&gt;&lt;span class="at"&gt; Chris Done&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-5" data-line-number="5"&gt;    &lt;span class="fu"&gt;copyright:&lt;/span&gt;&lt;span class="at"&gt; 2018 Chris Done&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-6" data-line-number="6"&gt;    &lt;span class="fu"&gt;github-username:&lt;/span&gt;&lt;span class="at"&gt; chrisdone&lt;/span&gt;&lt;/a&gt;
-&lt;a class="sourceLine" id="cb14-7" data-line-number="7"&gt;    &lt;span class="fu"&gt;category:&lt;/span&gt;&lt;span class="at"&gt; Development&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;テンプレートファイル内から単純に &lt;code&gt;{{author-email}}&lt;/code&gt; の形式で変数を展開できます。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{-# START_FILE {{name}}.cabal #-}
-name:                {{name}}
-version:             0.1.0.0
--- synopsis:
--- description:
-homepage:            https://github.com/{{github-username}}{{^github-username}}githubuser{{/github-username}}/{{name}}#readme
-license:             BSD3
-license-file:        LICENSE
-author:              {{author-name}}{{^author-name}}Author name here{{/author-name}}
-maintainer:          {{author-email}}{{^author-email}}example@example.com{{/author-email}}
-copyright:           {{copyright}}{{^copyright}}{{year}}{{^year}}2018{{/year}} {{author-name}}{{^author-name}}Author name here{{/author-name}}{{/copyright}}
-category:            {{category}}{{^category}}Web{{/category}}&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;今までも自分で作ったプロジェクトテンプレートを使うことはできましたが、&lt;strong&gt;new-template&lt;/strong&gt; を置き換えるか &lt;strong&gt;config.yml&lt;/strong&gt; を設定する必要がありました。&lt;/p&gt;
-&lt;p&gt;今回の機能追加により、&lt;strong&gt;stack new&lt;/strong&gt; コマンドで直接プロジェクトテンプレートを簡単に指定できるため、自作テンプレート作りがはかどりそうです。&lt;/p&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/S_A_Y_A/items/1a2b1b8d944aefb2dd6d</id><title type="text">Haskellで作るコンソールLife Game</title><updated>2018-06-21T23:48:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/S_A_Y_A/items/1a2b1b8d944aefb2dd6d"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-06-21-challenge-rust-reversi.html</id><title type="text">rust-reversi やってみた</title><updated>2018-06-21T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-06-21-challenge-rust-reversi.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
+</summary></entry><entry><id>https://qiita.com/S_A_Y_A/items/1a2b1b8d944aefb2dd6d</id><title type="text">Haskellで作るコンソールLife Game</title><updated>2018-06-21T23:48:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/S_A_Y_A/items/1a2b1b8d944aefb2dd6d"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-06-21-challenge-rust-reversi.html</id><title type="text">rust-reversi やってみた</title><updated>2018-06-21T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-06-21-challenge-rust-reversi.html"/><summary type="html">&lt;article class="post card" itemscope itemtype="http://schema.org/BlogPosting"&gt;
  &lt;div class="card-content"&gt;
   &lt;header class="post-header"&gt;
     &lt;h1 class="post-title" itemprop="name headline"&gt;rust-reversi やってみた&lt;/h1&gt;
@@ -2712,7 +2658,7 @@ sum list = ...&lt;/code&gt;&lt;/pre&gt;
 manページによると、以下のフォーマットがサポートされていて、デフォルトは7zとのこと。
 
 The program supports 7z (that implements  LZMA  compression  algorithm),  
-ZIP</summary></entry><entry><id>https://qiita.com/aiya000/items/7cdc843972c8bd9da04e</id><title type="text">Happyでパースエラーで列行番号とどんなミスマッチが起こったか報告する</title><updated>2018-06-05T10:23:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aiya000/items/7cdc843972c8bd9da04e"/></entry><entry><id>https://qiita.com/penguinshunya/items/396922f4f2a82425efba</id><title type="text">ParsecでJSONパーサの作成〜改善版〜</title><updated>2018-06-04T22:03:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/penguinshunya/items/396922f4f2a82425efba"/></entry><entry><id>https://qiita.com/ta-ka/items/8679737ac70cf1dc1d78</id><title type="text">すごいH本が楽しかったのでまとめた</title><updated>2018-06-04T09:05:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ta-ka/items/8679737ac70cf1dc1d78"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/06/03/195024</id><title type="text">日持ちする直列化のためのライブラリ「winery」</title><updated>2018-06-04T00:57:20+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/06/03/195024"/><summary type="html">人類は、酒と共に発展してきたと言っても過言ではない。穀物や果実などを酒に変換することにより、糖を除く栄養を保ったまま、高い保存性を持たせることができる。酒は人々の喉を潤し、時に薬として使われた。 プログラミングにおいても、終了したら消えてしまうデータを、保存性の高いバイト列に変えたい場面がよくある。そのような操作を直列化(シリアライズ)と呼び、いくつかのアプローチが存在する。 コード生成タイプ Protocol Buffers、cap'n'protoなど データの構造を記述する言語(スキーマ)から、データ構造およびシリアライザ・デシリアライザをコードごと生成する。幅広い言語で使える一方、作れる…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/windows-gotchas-en.html</id><title type="text">Errors and the workarounds frequently encountered when dealing with Haskell on Windows</title><updated>2018-05-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/windows-gotchas-en.html"/><summary type="html">
+ZIP</summary></entry><entry><id>https://qiita.com/aiya000/items/7cdc843972c8bd9da04e</id><title type="text">Happyでパースエラーで列行番号とどんなミスマッチが起こったか報告する</title><updated>2018-06-05T10:23:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aiya000/items/7cdc843972c8bd9da04e"/></entry><entry><id>https://qiita.com/penguinshunya/items/396922f4f2a82425efba</id><title type="text">ParsecでJSONパーサの作成〜改善版〜</title><updated>2018-06-04T22:03:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/penguinshunya/items/396922f4f2a82425efba"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/06/03/195024</id><title type="text">日持ちする直列化のためのライブラリ「winery」</title><updated>2018-06-04T00:57:20+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/06/03/195024"/><summary type="html">人類は、酒と共に発展してきたと言っても過言ではない。穀物や果実などを酒に変換することにより、糖を除く栄養を保ったまま、高い保存性を持たせることができる。酒は人々の喉を潤し、時に薬として使われた。 プログラミングにおいても、終了したら消えてしまうデータを、保存性の高いバイト列に変えたい場面がよくある。そのような操作を直列化(シリアライズ)と呼び、いくつかのアプローチが存在する。 コード生成タイプ Protocol Buffers、cap'n'protoなど データの構造を記述する言語(スキーマ)から、データ構造およびシリアライザ・デシリアライザをコードごと生成する。幅広い言語で使える一方、作れる…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/windows-gotchas-en.html</id><title type="text">Errors and the workarounds frequently encountered when dealing with Haskell on Windows</title><updated>2018-05-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/windows-gotchas-en.html"/><summary type="html">
 &lt;article lang="en"&gt;
 
     &lt;div class="container"&gt;
