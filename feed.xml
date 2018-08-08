@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-08-07T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.e-bigmoon.com/posts/2018/08-07-arrow-operators.html</id><title type="text">(^&gt;&gt;) と (&gt;&gt;^)</title><updated>2018-08-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/08-07-arrow-operators.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-08-07T21:34:11.475+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-08-07T21:34:11.475+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+
+
+スタートメニュー・タスクバーの設定
+
+タスクバーの設定 
+
+小さいタスクバーボタンを使う：オン 
+[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフ
+タスクバーボタンを結合する
+
+「タスクバーに入りきらない場合」を選択
+
+タスクバーをすべての ディスプレイに表示する：オフ
+
+
+
+ Quick Launcherを表示する
+
+クイック起動を復活する 
+Windows 10 タスクバーにクイック起動を表示する
+
+スタートメニューにコントロールパネルを表示する
+
+「Windows 10」のコントロールパネルを表示する方法について
+
+スタートメニューにピン止めするアプリ：
+
+Windowsシステム</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/08-07-arrow-operators.html</id><title type="text">(^&gt;&gt;) と (&gt;&gt;^)</title><updated>2018-08-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/08-07-arrow-operators.html"/><summary type="html">&lt;h2 id="はじめに"&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.stackage.org/haddock/lts-12.5/base-4.11.1.0/Control-Arrow.html#"&gt;Control.Arrow&lt;/a&gt; モジュールに &lt;a href="https://www.stackage.org/haddock/lts-12.5/base-4.11.1.0/Control-Arrow.html#v:-94--62--62-"&gt;(^&amp;gt;&amp;gt;)&lt;/a&gt; と &lt;a href="https://www.stackage.org/haddock/lts-12.5/base-4.11.1.0/Control-Arrow.html#v:-62--62--94-"&gt;(&amp;gt;&amp;gt;^)&lt;/a&gt; という演算子が定義されています。&lt;/p&gt;
 &lt;p&gt;ちょっとだけ面白かったので紹介しようと思います。&lt;/p&gt;
 &lt;!--more--&gt;
@@ -4283,35 +4311,7 @@ ViewPatterns&lt;/code&gt;&lt;/pre&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
-</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-04-12T13:07:28.167+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
-
-
-スタートメニュー・タスクバーの設定
-
-タスクバーの設定 
-
-小さいタスクバーボタンを使う：オン 
-[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフ
-タスクバーボタンを結合する
-
-「タスクバーに入りきらない場合」を選択
-
-タスクバーをすべての ディスプレイに表示する：オフ
-
-
-
- Quick Launcherを表示する
-
-クイック起動を復活する 
-Windows 10 タスクバーにクイック起動を表示する
-
-スタートメニューにコントロールパネルを表示する
-
-「Windows 10」のコントロールパネルを表示する方法について
-
-スタートメニューにピン止めするアプリ：
-
-Windowsシステム</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/main-tester.html</id><title type="text">CLIアプリのE2Eテストを行うためのライブラリー main-testerをリリースしました</title><updated>2018-04-09T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/main-tester.html"/><summary type="html">
+</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/main-tester.html</id><title type="text">CLIアプリのE2Eテストを行うためのライブラリー main-testerをリリースしました</title><updated>2018-04-09T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/main-tester.html"/><summary type="html">
 &lt;article lang="ja"&gt;
 
     &lt;div class="container"&gt;
