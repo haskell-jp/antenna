@@ -6,13 +6,10 @@
 
 module Antenna.Config where
 
-import           Control.Applicative (Alternative (..))
-import           Control.Lens        (view, (&), (.~), (^.))
-import           Data.Default        (def)
+import           RIO
+
+import           Data.Default    (def)
 import           Data.Extensible
-import           Data.List           (find)
-import           Data.Maybe          (fromMaybe)
-import           Data.Text           (Text)
 import qualified ScrapBook
 
 type Config = Record
@@ -25,11 +22,17 @@ type Config = Record
    , "sites"       >: [SiteConfig]
    ]
 
+toSite :: SiteConfig -> Site
+toSite conf =
+  shrinkAssoc $ #logo @= (conf ^. #logo) <: ScrapBook.toSite (shrinkAssoc conf)
+
 toScrapBookConfig :: Config -> ScrapBook.Config
-toScrapBookConfig config =
-  def & #feed .~ Just feedConfig & #sites .~ (shrink <$> config ^. #sites)
+toScrapBookConfig config = def & #feed `set` Just feedConfig
   where
     feedConfig = shrink $ #name @= Just (config ^. #feedName) <: config
+
+type Site = Record
+  (ScrapBook.SiteFields ++ '[ "logo" >: Maybe ImageConfig ])
 
 type SiteConfig = Record
   '[ "title"  >: Text
@@ -56,8 +59,6 @@ imagePath config
     hatenaProfileImageLink user =
       mconcat ["https://cdn.profile-image.st-hatena.com/users/", user, "/profile.png"]
 
-
-imagePath' :: Config -> ScrapBook.Site -> Text
+imagePath' :: Config -> Site -> Text
 imagePath' config site =
-  fromMaybe (config ^. #blankAvatar) $ imagePath =<< view #logo
-    =<< find ((==) site . ScrapBook.toSite . shrink) (config ^. #sites)
+  fromMaybe (config ^. #blankAvatar) $ imagePath =<< (site ^. #logo)

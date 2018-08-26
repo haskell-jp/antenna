@@ -4,18 +4,17 @@
 
 module Main where
 
+import           RIO
+import           RIO.FilePath       (dropFileName)
+import qualified RIO.List           as L
+
 import           Antenna.Config
 import           Antenna.Html
-import           Control.Lens       (view, (^.))
 import           Control.Monad      ((<=<))
 import           Data.Extensible
-import           Data.List          (sortOn)
-import           Data.Maybe         (listToMaybe)
 import qualified Data.Yaml          as Y
-import           ScrapBook          (collect, fetch, toSite, write)
 import qualified ScrapBook
 import           System.Environment (getArgs)
-import           System.FilePath    (dropFileName)
 
 main :: IO ()
 main = (listToMaybe <$> getArgs) >>= \case
@@ -26,21 +25,27 @@ readConfig :: FilePath -> IO Config
 readConfig = either (error . show) pure <=< Y.decodeFileEither
 
 generate :: FilePath -> Config -> IO ()
-generate path config = either (error . show) pure <=< ScrapBook.collect $ do
-  posts <- concat <$> mapM ScrapBook.fetch sites
-  writeFeed (dropFileName path ++ name) =<< ScrapBook.write sconfig feed' posts
+generate path config = do
+  posts <- fmap concat . forM sites $ \site ->
+    ScrapBook.collect (ScrapBook.fetch site) `catch` handler
+
+  writeFeed (dropFileName path ++ name)
+      =<< ScrapBook.collect (ScrapBook.write sconfig feed' posts)
 
   writeHtml config "./index.html" $ tabNav (config ^. #baseUrl) Posts $ mapM_
     (postToHtml config)
-    (take 50 . reverse $ sortOn (view #date) posts)
+    (take 50 . reverse $ L.sortOn (view #date) posts)
 
   writeHtml config "./sites.html" $ tabNav (config ^. #baseUrl) Sites $ mapM_
     (siteToHtml config)
-    (sortOn (view #title) sites)
+    (L.sortOn (view #title) sites)
  where
    sconfig = toScrapBookConfig config
    name    = ScrapBook.fileName sconfig feed'
-   sites   = fmap ScrapBook.toSite $ sconfig ^. #sites
+   sites   = fmap toSite $ config ^. #sites
+
+handler :: MonadUnliftIO m => ScrapBook.CollectError -> m [ScrapBook.Post Site]
+handler e = ScrapBook.collect (logError $ displayShow e) >> pure []
 
 feed' :: ScrapBook.Format
 feed' = embedAssoc $ #feed @= ()
