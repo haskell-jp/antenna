@@ -1,4 +1,178 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-09-01T08:26:27+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>http://kakkun61.hatenablog.com/entry/2018/09/01/%E3%80%8EYesod_%E5%85%A5%E9%96%80%E3%80%8F%E5%95%86%E6%A5%AD%E8%AA%8C%E5%8C%96</id><title type="text">『Yesod 入門』商業誌化</title><updated>2018-09-01T08:26:27+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2018/09/01/%E3%80%8EYesod_%E5%85%A5%E9%96%80%E3%80%8F%E5%95%86%E6%A5%AD%E8%AA%8C%E5%8C%96"/><summary type="html">同人誌で発売していた『遠回りして学ぶ Yesod 入門』がこのたびインプレス R&amp;D より『Haskell で作る Web アプリケーション 遠回りして学ぶ Yesod 入門』として商業誌化されることになりました。 www.impressrd.jp 同人誌版からの変更点は主に、 日本語が読みやすくなった 対応バージョンが上がった 点です。章が増えたり減ったりはしていません。あと、表紙がかわいくなりました。かわいい。 商業誌では Amazon と honto にてオンデマンド印刷の紙の書籍も購入できるようになっています。紙はこれまで即売会でしか販売していなかったので初めて通信販売で買えるようにな…</summary></entry><entry><id>https://qiita.com/kyogoku_meta/items/bf9bea56c34ee1e7a4ed</id><title type="text">Haskell入門　型</title><updated>2018-08-31T13:10:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyogoku_meta/items/bf9bea56c34ee1e7a4ed"/></entry><entry><id>https://qiita.com/kyogoku_meta/items/ca77a4ae782875d5be91</id><title type="text">Haskell入門　再帰！</title><updated>2018-08-31T00:36:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyogoku_meta/items/ca77a4ae782875d5be91"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/08-31-stack-extradep-legacy-syntax.html</id><title type="text">stack-1.11 から location に extra-dep を指定できなくなります。</title><updated>2018-08-31T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/08-31-stack-extradep-legacy-syntax.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-09-02T02:04:55+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/Y0KUDA/items/6e4ad1af39b8fb8c0319</id><title type="text">C++でクイックソートを4行で書きたかった</title><updated>2018-09-02T02:04:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Y0KUDA/items/6e4ad1af39b8fb8c0319"/></entry><entry><id>http://kakkun61.hatenablog.com/entry/2018/09/01/%E3%80%8EYesod_%E5%85%A5%E9%96%80%E3%80%8F%E5%95%86%E6%A5%AD%E8%AA%8C%E5%8C%96</id><title type="text">『Yesod 入門』商業誌化</title><updated>2018-09-01T08:26:27+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2018/09/01/%E3%80%8EYesod_%E5%85%A5%E9%96%80%E3%80%8F%E5%95%86%E6%A5%AD%E8%AA%8C%E5%8C%96"/><summary type="html">同人誌で発売していた『遠回りして学ぶ Yesod 入門』がこのたびインプレス R&amp;D より『Haskell で作る Web アプリケーション 遠回りして学ぶ Yesod 入門』として商業誌化されることになりました。 www.impressrd.jp 同人誌版からの変更点は主に、 日本語が読みやすくなった 対応バージョンが上がった 点です。章が増えたり減ったりはしていません。あと、表紙がかわいくなりました。かわいい。 商業誌では Amazon と honto にてオンデマンド印刷の紙の書籍も購入できるようになっています。紙はこれまで即売会でしか販売していなかったので初めて通信販売で買えるようにな…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/09-01-stack-profile-build.html</id><title type="text">stack でアプリケーションのバックトレースを取得する (デバッグ)</title><updated>2018-09-01T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/09-01-stack-profile-build.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;Haskell のデバッグ手法については、以下の記事がとても詳しく参考になります。素晴らしい記事です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.miz-ar.info/2018/01/debugging-haskell-program&#34;&gt;Haskell でのデバッグ手法あれこれ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今回はHaskellアプリケーションをデバックする際に、バックトレースのとても簡単な取得方法があったのでご紹介したいと思います。&lt;/p&gt;
+&lt;p&gt;まとめると以下の2行です。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build --profile
+$ stack exec -- &amp;lt;exe_name&amp;gt; +RTS -xc&lt;/code&gt;&lt;/pre&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;バックトレースの取得方法&#34;&gt;バックトレースの取得方法&lt;/h2&gt;
+&lt;p&gt;まず、バックトレースを取得するために &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.8/base-4.11.1.0/GHC-Stack.html&#34;&gt;GHC.Stack&lt;/a&gt; で定義されている &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.8/base-4.11.1.0/GHC-Stack.html#t:HasCallStack&#34;&gt;HasCallStack&lt;/a&gt; をクラス制約として追加します。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; data-line-number=&#34;4&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; data-line-number=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; data-line-number=&#34;6&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; data-line-number=&#34;7&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; data-line-number=&#34;8&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; data-line-number=&#34;9&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; data-line-number=&#34;10&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; error &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上記の例を雛形として、&lt;strong&gt;HasCallStack&lt;/strong&gt; を追加するとどうなるのか確認していきましょう。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Main.hs&lt;/code&gt; はこんな感じで &lt;strong&gt;f1&lt;/strong&gt; を呼び出します。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt; (main) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-6&#34; data-line-number=&#34;6&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f1&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;HasCallStack&lt;/strong&gt; を追加しない場合は以下のような出力となります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
+...
+$ stack exec example
+example: f3
+CallStack (from HasCallStack):
+  error, called at src/Lib.hs:10:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;f3&lt;/strong&gt; でエラーが発生したことはわかりますが、それ以外は何もわかりません。&lt;/p&gt;
+&lt;h3 id=&#34;f1-f2-f3-に-hascallstack-を追加した場合&#34;&gt;f1, f2, f3 に HasCallStack を追加した場合&lt;/h3&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; data-line-number=&#34;6&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; data-line-number=&#34;7&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; data-line-number=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; data-line-number=&#34;9&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-10&#34; data-line-number=&#34;10&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-11&#34; data-line-number=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-12&#34; data-line-number=&#34;12&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; error &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ビルドしてみます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
+...
+$ stack exec example
+example: f3
+CallStack (from HasCallStack):
+  error, called at src/Lib.hs:12:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
+  f3, called at src/Lib.hs:9:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
+  f2, called at src/Lib.hs:6:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
+  f1, called at app/Main.hs:6:8 in main:Main&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ちゃんと呼び出しの関係が &lt;code&gt;error&lt;/code&gt; -&amp;gt; &lt;code&gt;f3&lt;/code&gt; -&amp;gt; &lt;code&gt;f2&lt;/code&gt; -&amp;gt; &lt;code&gt;f1&lt;/code&gt; と表示されていますね！&lt;/p&gt;
+&lt;h3 id=&#34;f2-f3-にのみ-hascallstack-を追加する&#34;&gt;f2, f3 にのみ HasCallStack を追加する&lt;/h3&gt;
+&lt;p&gt;では、ここで &lt;code&gt;f1&lt;/code&gt; の &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を取り除くとどうなるか確認してみます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-6&#34; data-line-number=&#34;6&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-7&#34; data-line-number=&#34;7&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-8&#34; data-line-number=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-9&#34; data-line-number=&#34;9&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-10&#34; data-line-number=&#34;10&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-11&#34; data-line-number=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-12&#34; data-line-number=&#34;12&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; error &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行してみます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
+...
+$ stack exec example
+example: f3
+CallStack (from HasCallStack):
+  error, called at src/Lib.hs:12:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
+  f3, called at src/Lib.hs:9:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
+  f2, called at src/Lib.hs:6:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;f1&lt;/strong&gt; の &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を取り除いた影響により、先程出力されていた &lt;code&gt;f1, called at app/Main.hs:6:8 in main:Main&lt;/code&gt; が出なくなりました。&lt;/p&gt;
+&lt;p&gt;しかし、依然として &lt;strong&gt;f2&lt;/strong&gt; と &lt;strong&gt;f3&lt;/strong&gt; のバックトレースは取得できています。そのため、本当に全てのバックトレースを取得したい場合は全ての関数に &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を追加しなけばなりません。&lt;/p&gt;
+&lt;h3 id=&#34;f1-と-f3-にのみ-hascallstack-制約を追加する&#34;&gt;f1 と f3 にのみ HasCallStack 制約を追加する&lt;/h3&gt;
+&lt;p&gt;次に中間の &lt;strong&gt;f2&lt;/strong&gt; の &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を取り除いてみましょう。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; data-line-number=&#34;6&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-7&#34; data-line-number=&#34;7&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-8&#34; data-line-number=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-9&#34; data-line-number=&#34;9&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-10&#34; data-line-number=&#34;10&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-11&#34; data-line-number=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-12&#34; data-line-number=&#34;12&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; error &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行してみます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
+...
+$ stack exec example
+example: f3
+CallStack (from HasCallStack):
+  error, called at src/Lib.hs:12:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
+  f3, called at src/Lib.hs:9:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;今度は &lt;strong&gt;f2&lt;/strong&gt; と &lt;strong&gt;f1&lt;/strong&gt; の両方の情報がが抜け落ちてしまいました。&lt;strong&gt;f2&lt;/strong&gt; で &lt;strong&gt;HasCallStack&lt;/strong&gt; の伝搬がストップしてしまったということです。&lt;/p&gt;
+&lt;h3 id=&#34;f1-と-f2-のみに-hascallstack-を追加する&#34;&gt;f1 と f2 のみに HasCallStack を追加する&lt;/h3&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; data-line-number=&#34;6&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-7&#34; data-line-number=&#34;7&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-8&#34; data-line-number=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-9&#34; data-line-number=&#34;9&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-10&#34; data-line-number=&#34;10&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-11&#34; data-line-number=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-12&#34; data-line-number=&#34;12&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; error &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
+$ stack exec example
+example: f3
+CallStack (from HasCallStack):
+  error, called at src/Lib.hs:12:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
+...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;予想通り &lt;strong&gt;f1&lt;/strong&gt;, &lt;strong&gt;f2&lt;/strong&gt;, &lt;strong&gt;f3&lt;/strong&gt; の全ての情報が途絶えましたね・・・。&lt;/p&gt;
+&lt;h2 id=&#34;hascallstack-を省略したままバックトレースを取りたい&#34;&gt;HasCallStack を省略したままバックトレースを取りたい&lt;/h2&gt;
+&lt;p&gt;先程の結果を見たとおり、正確な情報を取得するためには全ての関数に &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を追加する必要がありそうです。&lt;/p&gt;
+&lt;p&gt;しかしながら、規模が大きくなってくるとそんなの不可能ですよね。&lt;/p&gt;
+&lt;p&gt;そんな時には &lt;code&gt;stack&lt;/code&gt; の &lt;code&gt;--profile&lt;/code&gt; オプションと &lt;code&gt;+RTS -xc&lt;/code&gt; オプションを利用します。(&lt;code&gt;--profile&lt;/code&gt; オプションは &lt;strong&gt;ghc&lt;/strong&gt; のオプションを良い感じに追加してくれます)&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-4&#34; data-line-number=&#34;4&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-5&#34; data-line-number=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-6&#34; data-line-number=&#34;6&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-7&#34; data-line-number=&#34;7&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-8&#34; data-line-number=&#34;8&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-9&#34; data-line-number=&#34;9&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-10&#34; data-line-number=&#34;10&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; error &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上記のような素のコードに対しても、同様にバックトレースが取得できるようになります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build --profile
+...
+$ stack exec -- example +RTS -xc
+*** Exception (reporting due to +RTS -xc): (THUNK_2_0), stack trace:
+  Lib.f3,
+  called from Lib.CAF:f3
+  --&amp;gt; evaluated by: Lib.CAF:f2
+  --&amp;gt; evaluated by: Lib.CAF:f1
+  --&amp;gt; evaluated by: Main.CAF:main
+example: f3
+CallStack (from HasCallStack):
+  error, called at src/Lib.hs:10:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
+CallStack (from -prof):
+  Lib.f3 (src/Lib.hs:10:1-15)
+  Lib.CAF:f3 (src/Lib.hs:10:1-2)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;なんか沢山表示されますが、&lt;code&gt;reporting due to +RTS -xc&lt;/code&gt; の部分を見ると、しっかりとバックトレースが取得できています。&lt;/p&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HasCallStack&lt;/strong&gt; を使うとバックトレースが取得できる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stack build --profile&lt;/code&gt; でビルドする&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stack exec -- &amp;lt;exe&amp;gt; +RTS -xc&lt;/code&gt; を使えば、明示的に &lt;strong&gt;HasCallStack&lt;/strong&gt; を追加しなくても、バックトレースが取得できる&lt;/li&gt;
+&lt;li&gt;アプリケーションのコードに対して有効&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.miz-ar.info/2018/01/debugging-haskell-program/#HasCallStack&#34;&gt;Haskell でのデバッグ手法あれこれ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/commercialhaskell/stack/blob/master/doc/GUIDE.md#debugging&#34;&gt;Debugging – stack document&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/runtime_control.html#rts-flag--xc&#34;&gt;-xc option – GHC Users Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/kyogoku_meta/items/bf9bea56c34ee1e7a4ed</id><title type="text">Haskell入門　型</title><updated>2018-08-31T13:10:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyogoku_meta/items/bf9bea56c34ee1e7a4ed"/></entry><entry><id>https://qiita.com/kyogoku_meta/items/ca77a4ae782875d5be91</id><title type="text">Haskell入門　再帰！</title><updated>2018-08-31T00:36:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyogoku_meta/items/ca77a4ae782875d5be91"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/08-31-stack-extradep-legacy-syntax.html</id><title type="text">stack-1.11 から location に extra-dep を指定できなくなります。</title><updated>2018-08-31T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/08-31-stack-extradep-legacy-syntax.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;まだまだ先の話ですが、&lt;code&gt;extra-dep&lt;/code&gt; の書き方が &lt;strong&gt;Legacy syntax&lt;/strong&gt; になりました。&lt;code&gt;stack-1.11&lt;/code&gt; からはビルドできなくなります。&lt;/p&gt;
 &lt;p&gt;以下の設定例は&lt;a href=&#34;https://github.com/commercialhaskell/stack/blob/master/doc/yaml_configuration.md#packages&#34;&gt;公式ドキュメント&lt;/a&gt;の例を少し変更したものです。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;/a&gt;
@@ -804,7 +978,7 @@ less, lv, manコマンド終了時に画面をクリアしない
 &lt;li&gt;現実世界で Arrow をバリバリ使っているコードをみかけることは (僕は) 全く無いです。(Hakyll は過去に Arrow ベースで定義されていたようですが、Monad ベースに切り替わりました)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;たぶん使うことは無いですが、パズルみたいで楽しい。&lt;/p&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/watertight/items/a96e2696d5a7a8f53a5b</id><title type="text">curlパッケージにはlibcurl4-gnutls-devが必要</title><updated>2018-08-06T21:25:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/watertight/items/a96e2696d5a7a8f53a5b"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/01/055608</id><title type="text">July Tech Festa 2018 で分散システムの検証について話してきました / #JTF2018</title><updated>2018-08-01T13:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/01/055608"/><summary type="html">先日行われた July Tech Festa 2018 で、モデル検査を使った分散アルゴリズムの検証について発表してきました。 前半はオートマトンによるシステムの記述と検査の基礎について、後半は三種類のツール SPIN、TLA+、P による記述方法の紹介、といった内容です。 後半のソースコード紹介が散文的な感じになってしまって、いまいちメリットが伝わらない感じだったので、次回があればもっとエモいスライドにしようと思います。 分散アルゴリズムの形式化 定理証明による検証 今回の話の流れとして「分散システムにはモデル検査が有効」と述べていますが、必ずしも定理証明が分散システムの検証に向かないという…</summary></entry><entry><id>https://qiita.com/ruicc/items/109692ea1df502d20666</id><title type="text">モナド則とプログラミング</title><updated>2018-07-31T01:23:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ruicc/items/109692ea1df502d20666"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/07-31-yesodsecurity.html</id><title type="text">Yesod には脆弱性があるのかな？</title><updated>2018-07-31T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/07-31-yesodsecurity.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/watertight/items/a96e2696d5a7a8f53a5b</id><title type="text">curlパッケージにはlibcurl4-gnutls-devが必要</title><updated>2018-08-06T21:25:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/watertight/items/a96e2696d5a7a8f53a5b"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/01/055608</id><title type="text">July Tech Festa 2018 で分散システムの検証について話してきました / #JTF2018</title><updated>2018-08-01T13:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/01/055608"/><summary type="html">先日行われた July Tech Festa 2018 で、モデル検査を使った分散アルゴリズムの検証について発表してきました。 前半はオートマトンによるシステムの記述と検査の基礎について、後半は三種類のツール SPIN、TLA+、P による記述方法の紹介、といった内容です。 後半のソースコード紹介が散文的な感じになってしまって、いまいちメリットが伝わらない感じだったので、次回があればもっとエモいスライドにしようと思います。 分散アルゴリズムの形式化 定理証明による検証 今回の話の流れとして「分散システムにはモデル検査が有効」と述べていますが、必ずしも定理証明が分散システムの検証に向かないという…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/07-31-yesodsecurity.html</id><title type="text">Yesod には脆弱性があるのかな？</title><updated>2018-07-31T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/07-31-yesodsecurity.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.yesodweb.com/&#34;&gt;Yesod&lt;/a&gt; は Haskell で書かれた Web アプリケーションフレームワークです。&lt;/p&gt;
 &lt;p&gt;WordPress や Drupal と違って、セキュリティはかなり万全です。(ユーザが気にしなければならない部分が非常に少ないです)&lt;/p&gt;
 &lt;p&gt;最近、&lt;a href=&#34;https://www.sbcr.jp/products/4797393163.html&#34;&gt;体系的に学ぶ 安全なWebアプリケーションの作り方 第2版 (通称: 徳丸本)&lt;/a&gt; が発売されました。&lt;/p&gt;
@@ -1500,72 +1674,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;同じ問題を解決するほかのラ�
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;await&lt;/code&gt; はパイプごとに伝搬して上流に伝わるため、途中で途切れている場合は何も起こらない&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2018/07/14/195255</id><title type="text">Dhallによるリッチな設定ファイル体験</title><updated>2018-07-14T19:52:55+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2018/07/14/195255"/><summary type="html">(この記事のレギュレーション: lts-11.9) Dhall という設定記述用言語があり、使ってみたところ良い感じだったので紹介します。 なお、この記事は先日某所で発表したものの拡大版になります。 speakerdeck.com Dhallとは何か Dhallについて短かく表現するなら公式サイトの以下の説明が分かりやすいです。 You can think of Dhall as: JSON + functions + types + imports データ表現にプログラマブルさと静的な検査とファイルのインポートを加えたものというわけです。 まだ開発中のためかあまりアピールされていませんがツー…</summary></entry><entry><id>https://qiita.com/lotz/items/c049f3a94d913ab6ae1b</id><title type="text">Cloud Haskellについて調べてみた</title><updated>2018-07-14T10:33:29+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/c049f3a94d913ab6ae1b"/></entry><entry><id>https://qiita.com/watanany/items/91c5fcb088128e9cabe3</id><title type="text">なぜモナドが必要なのか？</title><updated>2018-07-11T22:23:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/watanany/items/91c5fcb088128e9cabe3"/></entry><entry><id>https://qiita.com/0x52_0x4d/items/a446b369bedda564d9e8</id><title type="text">Haskell （と Python3）で最急降下法</title><updated>2018-07-11T08:57:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/0x52_0x4d/items/a446b369bedda564d9e8"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/07-11-quiz-13.html</id><title type="text">Haskell Quiz No.13 Conduit Part.8</title><updated>2018-07-11T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/07-11-quiz-13.html"/><summary type="html">&lt;h2 id=&#34;haskell-quiz-no.13&#34;&gt;Haskell Quiz No.13&lt;/h2&gt;
-&lt;p&gt;難易度: λλ&lt;/p&gt;
-&lt;p&gt;以下のプログラムの実行結果はどうなるでしょうか？&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- stack script --resolver lts-12.0&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Conduit&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; data-line-number=&#34;6&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; runConduit &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; yieldMany [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;] &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; iterMC print &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; return () &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; sinkNull&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;答えは&lt;a href=&#34;./07-16-quiz-14.html&#34;&gt;次回&lt;/a&gt;。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./07-10-quiz-12.html&#34;&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
-&lt;h3 id=&#34;問題&#34;&gt;問題&lt;/h3&gt;
-&lt;p&gt;難易度: λ&lt;/p&gt;
-&lt;p&gt;以下のプログラムの実行結果はどうなるでしょうか？&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- stack script --resolver lts-11.17&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Conduit&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; data-line-number=&#34;6&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; runConduit &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; yieldMany [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;] &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; iterMC print &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; sinkNull&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;こたえ&#34;&gt;こたえ&lt;/h3&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ ./Quiz12.hs
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;解説&#34;&gt;解説&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;./07-08-quiz-10.html&#34;&gt;Quiz10&lt;/a&gt; でよく似た問題を出題しました。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;# Quiz10&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; data-line-number=&#34;3&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; runConduit &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; yieldMany [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;] &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; iterMC print &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; return ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;# Quiz12&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-6&#34; data-line-number=&#34;6&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-7&#34; data-line-number=&#34;7&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; runConduit &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; yieldMany [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;] &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; iterMC print &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; sinkNull&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;異なるのは最後の &lt;code&gt;return ()&lt;/code&gt; と &lt;code&gt;sinkNull&lt;/code&gt; だけです。&lt;/p&gt;
-&lt;p&gt;Quiz10 の結果は何も表示されませんでしたが、今回は &lt;code&gt;1 ~ 10&lt;/code&gt; の数字が表示されています。&lt;/p&gt;
-&lt;p&gt;この挙動を理解するために &lt;code&gt;sinkNull&lt;/code&gt; の実装を確認してみましょう。&lt;/p&gt;
-&lt;h4 id=&#34;sinknull&#34;&gt;sinkNull&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-11.17/conduit-1.3.0.3/Data-Conduit-Combinators.html#v:sinkNull&#34;&gt;sinkNull&lt;/a&gt; 関数の実装は以下の通りです。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;sinkNull ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monad&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ConduitT&lt;/span&gt; i o m ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; data-line-number=&#34;2&#34;&gt;sinkNull &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; awaitForever &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; \_ &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; return ()&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;非常にシンプルな実装になっています。 &lt;a href=&#34;https://www.stackage.org/haddock/lts-11.17/conduit-1.3.0.3/Data-Conduit.html#v:awaitForever&#34;&gt;awaitForever&lt;/a&gt; の実装は以下の通りです。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;awaitForever ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monad&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; (i &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ConduitT&lt;/span&gt; i o m r) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ConduitT&lt;/span&gt; i o m ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; data-line-number=&#34;2&#34;&gt;awaitForever f &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ConduitT&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; \rest &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; data-line-number=&#34;3&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; go &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;NeedInput&lt;/span&gt; (\i &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; unConduitT (f i) (const go)) rest&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; data-line-number=&#34;4&#34;&gt;     &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; go&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;つまり、上流に対して値を要求し、その値に対して、引数として与えられた関数 &lt;code&gt;f&lt;/code&gt; を適用するという関数です。 &lt;code&gt;Forever&lt;/code&gt; という名前の通り、この関数は上流の値が無くなるまで値を要求し続けます。(そのため、&lt;code&gt;yieldMany [1..]&lt;/code&gt; のような無限リストの場合は停止しません。)&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-11.17/conduit-1.3.0.3/Data-Conduit.html#v:await&#34;&gt;await&lt;/a&gt; 関数はこのような定義だったので、とても似ていますね。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;await ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monad&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ConduitT&lt;/span&gt; i o m (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; i)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; data-line-number=&#34;2&#34;&gt;await &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ConduitT&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; \f &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;NeedInput&lt;/span&gt; (f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt;) (const &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; f &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;sinkNull&lt;/code&gt; は上流で用意した値を全て処理するために使うと便利&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;await&lt;/code&gt; は上流の値を一度だけ要求する&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;awaitForever&lt;/code&gt; は上流の値が無くなるまで要求する&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/longtime1116/items/7bdb1f1d88eda7d70832</id><title type="text">Haskell で直角三角形をなす三辺を任意の数出力する</title><updated>2018-07-10T19:26:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/longtime1116/items/7bdb1f1d88eda7d70832"/></entry><entry><id>https://qiita.com/watertight/items/9e043303d0bb9183249d</id><title type="text">Yesodでコマンドライン引数や設定ファイルを扱う</title><updated>2018-07-07T20:23:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/watertight/items/9e043303d0bb9183249d"/></entry><entry><id>https://qiita.com/eijian/items/fb7f50765012315681fb</id><title type="text">レイトレーシング(12): 集光模様！</title><updated>2018-07-07T10:44:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/eijian/items/fb7f50765012315681fb"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-07-01-join-ruby-hack-challenge4.html</id><title type="text">Ruby Hack Challenge ＃4 に参加してきた</title><updated>2018-07-01T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-07-01-join-ruby-hack-challenge4.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2018/07/14/195255</id><title type="text">Dhallによるリッチな設定ファイル体験</title><updated>2018-07-14T19:52:55+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2018/07/14/195255"/><summary type="html">(この記事のレギュレーション: lts-11.9) Dhall という設定記述用言語があり、使ってみたところ良い感じだったので紹介します。 なお、この記事は先日某所で発表したものの拡大版になります。 speakerdeck.com Dhallとは何か Dhallについて短かく表現するなら公式サイトの以下の説明が分かりやすいです。 You can think of Dhall as: JSON + functions + types + imports データ表現にプログラマブルさと静的な検査とファイルのインポートを加えたものというわけです。 まだ開発中のためかあまりアピールされていませんがツー…</summary></entry><entry><id>https://qiita.com/lotz/items/c049f3a94d913ab6ae1b</id><title type="text">Cloud Haskellについて調べてみた</title><updated>2018-07-14T10:33:29+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/c049f3a94d913ab6ae1b"/></entry><entry><id>https://qiita.com/watanany/items/91c5fcb088128e9cabe3</id><title type="text">なぜモナドが必要なのか？</title><updated>2018-07-11T22:23:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/watanany/items/91c5fcb088128e9cabe3"/></entry><entry><id>https://qiita.com/0x52_0x4d/items/a446b369bedda564d9e8</id><title type="text">Haskell （と Python3）で最急降下法</title><updated>2018-07-11T08:57:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/0x52_0x4d/items/a446b369bedda564d9e8"/></entry><entry><id>https://qiita.com/longtime1116/items/7bdb1f1d88eda7d70832</id><title type="text">Haskell で直角三角形をなす三辺を任意の数出力する</title><updated>2018-07-10T19:26:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/longtime1116/items/7bdb1f1d88eda7d70832"/></entry><entry><id>https://qiita.com/watertight/items/9e043303d0bb9183249d</id><title type="text">Yesodでコマンドライン引数や設定ファイルを扱う</title><updated>2018-07-07T20:23:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/watertight/items/9e043303d0bb9183249d"/></entry><entry><id>https://qiita.com/eijian/items/fb7f50765012315681fb</id><title type="text">レイトレーシング(12): 集光模様！</title><updated>2018-07-07T10:44:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/eijian/items/fb7f50765012315681fb"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-07-01-join-ruby-hack-challenge4.html</id><title type="text">Ruby Hack Challenge ＃4 に参加してきた</title><updated>2018-07-01T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-07-01-join-ruby-hack-challenge4.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Ruby Hack Challenge ＃4 に参加してきた&lt;/h1&gt;
