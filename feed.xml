@@ -1,4 +1,405 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-09-16T11:36:45+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/takenobu-hs/items/14101cabf313e6d594ca</id><title type="text">「混ぜられない数」をHaskell/GHCの型を使って手軽につくる</title><updated>2018-09-16T11:36:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takenobu-hs/items/14101cabf313e6d594ca"/></entry><entry><id>https://qiita.com/mamepon2580/items/5845920001f52a5e3caf</id><title type="text">paizaラーニングをHaskellで解く　じゃんけんの手の出し方 (paizaランク A 相当)</title><updated>2018-09-15T17:08:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/5845920001f52a5e3caf"/></entry><entry><id>https://qiita.com/lotz/items/aca1d179c14d4dca5099</id><title type="text">Haskellの変数には値を代入しません、束縛します。</title><updated>2018-09-15T16:09:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/aca1d179c14d4dca5099"/></entry><entry><id>https://qiita.com/mamepon2580/items/811e32ecdc0f40107847</id><title type="text">paizaラーニングをHaskellで解く ハノイの塔 (paizaランク A 相当)</title><updated>2018-09-15T12:08:38+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/811e32ecdc0f40107847"/></entry><entry><id>https://qiita.com/mamepon2580/items/d1135fb5450c7232a009</id><title type="text">paizaラーニングをHaskellで解く　山折り谷折り(paizaランク A 相当)</title><updated>2018-09-15T12:04:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/d1135fb5450c7232a009"/></entry><entry><id>https://qiita.com/acple@github/items/779792002ba67161d37c</id><title type="text">世界一わかりやすいStateモナドのしくみ、あるいは猫でもわからないモナドのおはなし</title><updated>2018-09-13T00:16:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/acple@github/items/779792002ba67161d37c"/></entry><entry><id>http://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F</id><title type="text">技術書典 4 にサークル参加した</title><updated>2018-09-12T13:03:31+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F"/><summary type="html">4月22日に開催された『技術書典 4』にサークル参加してきました。 techbookfest.org 技術書典は1と2に個人で参加して3は会社として参加して今回の4は会社と個人と2サークルにかかわっていました。 超技術書典を抜くと皆勤です。 個人サークル 既刊として『遠回りして学ぶ Yesod 入門』を増刷し、新刊は『手続き Haskell』を持っていきました。 doujin.kakkun61.com doujin.kakkun61.com 数字 売り上げ部数は、どんぶり勘定ですが（特に Yesod 本のダウンロードカードが完全に記憶による）下記の通りとなりました。 Yesod 本 紙 + P…</summary></entry><entry><id>https://qiita.com/hanyuTransfer/items/082c50049539a68af4bc</id><title type="text">作って理解するモナド</title><updated>2018-09-11T00:34:57+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hanyuTransfer/items/082c50049539a68af4bc"/></entry><entry><id>https://qiita.com/o_posting/items/3fd97e13dc17f9f9a187</id><title type="text">Haskellメモ</title><updated>2018-09-10T19:39:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/o_posting/items/3fd97e13dc17f9f9a187"/></entry><entry><id>https://qiita.com/7ma7X/items/8cee82377587058ff0c3</id><title type="text">GHC.List を読んで Haskell のリスト操作をまとめた</title><updated>2018-09-07T23:28:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/7ma7X/items/8cee82377587058ff0c3"/></entry><entry><id>https://qiita.com/HirotoShioi/items/70cd235e93dee99bf8e8</id><title type="text">すごいH本で見落としがちだが実は重要な機能：newtype</title><updated>2018-09-06T15:24:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/HirotoShioi/items/70cd235e93dee99bf8e8"/></entry><entry><id>https://qiita.com/inamiy/items/c4e85f22273e98b8db26</id><title type="text">iOSDC Japan 2018 で発表した「圏論とSwiftへの応用」の補足</title><updated>2018-09-06T08:48:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/inamiy/items/c4e85f22273e98b8db26"/></entry><entry><id>https://qiita.com/acple@github/items/216542d1c4844c2ec879</id><title type="text">PureScriptで存在型を試す</title><updated>2018-09-04T21:48:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/acple@github/items/216542d1c4844c2ec879"/></entry><entry><id>https://haskell.jp/blog/posts/2018/substring-parser.html</id><title type="text">substring-parserで「タイプセーフプリキュア！」を移行した話</title><updated>2018-09-04T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/substring-parser.html"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-09-17T13:41:50+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/mamepon2580/items/633d6b9ea817325e0954</id><title type="text">二分木探索を扱う対話型アプリ</title><updated>2018-09-17T13:41:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/633d6b9ea817325e0954"/></entry><entry><id>https://qiita.com/mamepon2580/items/5845920001f52a5e3caf</id><title type="text">paizaラーニングをHaskellで解く　じゃんけんの手の出し方 (paizaランク A 相当)</title><updated>2018-09-17T13:09:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/5845920001f52a5e3caf"/></entry><entry><id>https://qiita.com/mamepon2580/items/d1135fb5450c7232a009</id><title type="text">paizaラーニングをHaskellで解く　山折り谷折り(paizaランク A 相当)</title><updated>2018-09-17T13:09:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/d1135fb5450c7232a009"/></entry><entry><id>https://qiita.com/mamepon2580/items/811e32ecdc0f40107847</id><title type="text">paizaラーニングをHaskellで解く ハノイの塔 (paizaランク A 相当)</title><updated>2018-09-17T13:08:46+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/811e32ecdc0f40107847"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/09-17-time-package.html</id><title type="text">time パッケージの使い方</title><updated>2018-09-17T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/09-17-time-package.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;Haskell で時間や日付を扱う際に良く利用されるのは &lt;a href=&#34;https://www.stackage.org/lts-12.9/package/time&#34;&gt;time&lt;/a&gt; パッケージです。&lt;/p&gt;
+&lt;p&gt;このパッケージが使いやすいかどうかは人それぞれですが、使い方を知っておくと便利なのでよく使いそうな関数を簡単に解説しようと思います。&lt;/p&gt;
+&lt;p&gt;これからの例は以下のコマンドを実行していると仮定して話を進めます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack repl --package time --resolver lts-12.9
+$ import Data.Time&lt;/code&gt;&lt;/pre&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;time-パッケージのモジュール構造&#34;&gt;Time パッケージのモジュール構造&lt;/h2&gt;
+&lt;p&gt;基本的には &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time.html&#34;&gt;Data.Time&lt;/a&gt; を import して使います。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Time&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Data.Time は以下のモジュールを再エクスポートしています。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;モジュール名&lt;/th&gt;
+&lt;th&gt;用途&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Calendar.html&#34;&gt;Data.Time.Calendar&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;日付&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Clock.html&#34;&gt;Data.Time.Clock&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;全然使わないので良くわからない&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-LocalTime.html&#34;&gt;Data.Time.LocalTime&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;日本の現在時刻を取得など&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html&#34;&gt;Data.Time.Format&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;出力の整形&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;rio-を利用している場合&#34;&gt;rio を利用している場合&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.stackage.org/lts-12.9/package/rio&#34;&gt;rio&lt;/a&gt; を利用している場合は &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/rio-0.1.5.0/RIO-Time.html&#34;&gt;RIO.Time&lt;/a&gt; を import します。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RIO.Time&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;data.time.localtime&#34;&gt;Data.Time.LocalTime&lt;/h2&gt;
+&lt;p&gt;現在時刻を取得する場合にこのモジュールを使います。現在時刻を取得したいからと言って &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Clock.html#v:getCurrentTime&#34;&gt;getCurrentTime&lt;/a&gt; を利用すると日本時間にならないので注意してください。&lt;/p&gt;
+&lt;h3 id=&#34;getzonedtime&#34;&gt;getZonedTime&lt;/h3&gt;
+&lt;p&gt;システムのタイムゾーンに応じた現在時刻を返します。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t getZonedTime
+getZonedTime :: IO ZonedTime
+
+&amp;gt; getZonedTime
+2018-09-17 13:41:05.512522063 JST&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;getcurrenttimezone&#34;&gt;getCurrentTimeZone&lt;/h3&gt;
+&lt;p&gt;システムのタイムゾーンを取得します。このタイムゾーンに基づいて &lt;code&gt;getZonedTime&lt;/code&gt; が計算されます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t getCurrentTimeZone
+getCurrentTimeZone :: IO TimeZone
+
+&amp;gt; getCurrentTimeZone
+JST&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;zonedtimetoutc&#34;&gt;zonedTimeToUTC&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ZonedTime&lt;/code&gt; を &lt;code&gt;UTCTime&lt;/code&gt; に変換するために使います。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t zonedTimeToUTC
+zonedTimeToUTC :: ZonedTime -&amp;gt; UTCTime
+
+&amp;gt; zonedTimeToUTC &amp;lt;$&amp;gt; getZonedTime
+2018-09-17 04:41:27.907476307 UTC&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;utctozonedtime&#34;&gt;utcToZonedTime&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;zonedTimeToUTC&lt;/code&gt; の逆で &lt;code&gt;UTCTime&lt;/code&gt; を &lt;code&gt;ZonedTime&lt;/code&gt; に変換する関数です。タイムゾーンのための引数を余分に取ります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t utcToZonedTime
+utcToZonedTime :: TimeZone -&amp;gt; UTCTime -&amp;gt; ZonedTime
+
+&amp;gt; utcToZonedTime &amp;lt;$&amp;gt; getCurrentTimeZone &amp;lt;*&amp;gt; getCurrentTime
+2018-09-17 13:41:37.955641567 JST&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;日後の時間を計算するには&#34;&gt;1日後の時間を計算するには？&lt;/h2&gt;
+&lt;p&gt;ここで、取得した時間の1日後を計算してみましょう。&lt;/p&gt;
+&lt;p&gt;そのためには Data.Time.Clock で定義されている &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Clock.html#v:addUTCTime&#34;&gt;addUTCTime&lt;/a&gt; を使います。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;addUTCTime ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;NominalDiffTime&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;UTCTime&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;UTCTime&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;第一引数に &lt;code&gt;NominalDiffTime&lt;/code&gt; という謎の型を取りますが、&lt;code&gt;nominalDay&lt;/code&gt; の実装を見れば &lt;code&gt;60 * 60 * 24&lt;/code&gt; っぽいことがわかるので、そんな感じで値を作ります。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;nominalDay ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;NominalDiffTime&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; data-line-number=&#34;2&#34;&gt;nominalDay &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;86400&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ちなみに、上記の実装でなぜ &lt;code&gt;NominalDiffTime&lt;/code&gt; の値になるかと言うと、&lt;code&gt;NominalDiffTime&lt;/code&gt; は &lt;code&gt;Num&lt;/code&gt; クラスのインスタンスになっているため、自動的に &lt;code&gt;fromInteger&lt;/code&gt; が呼ばれて変換されるという仕組みです。&lt;/p&gt;
+&lt;p&gt;実際に試してみましょう。1日後を計算してみます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; t = addUTCTime nominalDay . zonedTimeToUTC &amp;lt;$&amp;gt; getZonedTime
+2018-09-17 10:32:56.880362453 UTC
+
+&amp;gt; getZonedTime
+2018-09-17 13:49:09.279378323 JST
+
+&amp;gt; utcToZonedTime &amp;lt;$&amp;gt; getCurrentTimeZone &amp;lt;*&amp;gt; t
+2018-09-18 13:49:16.211737218 JST&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同様に1時間後も計算してみましょう。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; t = addUTCTime (60 * 60) . zonedTimeToUTC &amp;lt;$&amp;gt; getZonedTime
+
+&amp;gt; getZonedTime
+2018-09-17 13:49:33.169797528 JST
+
+&amp;gt; t
+2018-09-17 05:49:36.757498845 UTC
+
+&amp;gt; utcToZonedTime &amp;lt;$&amp;gt; getCurrentTimeZone &amp;lt;*&amp;gt; t
+2018-09-17 14:49:40.930944714 JST&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上手くいってますね！&lt;/p&gt;
+&lt;h2 id=&#34;data.time.localtime-1&#34;&gt;Data.Time.LocalTime&lt;/h2&gt;
+&lt;p&gt;時刻の取得・計算ができたら、あとは整形して出力するだけです！&lt;/p&gt;
+&lt;p&gt;Data.Time.LocalTime モジュールの関数を使って出力を整形してみましょう！&lt;/p&gt;
+&lt;h3 id=&#34;formattime&#34;&gt;formatTime&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html#v:formatTime&#34;&gt;formatTime&lt;/a&gt; 関数の使い方がわかれば、任意の形式で出力できるようになります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t formatTime
+formatTime :: FormatTime t =&amp;gt; TimeLocale -&amp;gt; String -&amp;gt; t -&amp;gt; String&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ここで &lt;code&gt;FormatTime t&lt;/code&gt; の &lt;code&gt;t&lt;/code&gt; は &lt;code&gt;UTCTime&lt;/code&gt; や &lt;code&gt;ZonedTime&lt;/code&gt;、&lt;code&gt;Day&lt;/code&gt; などの型が使えます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;formatTime ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ZonedTime&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;formatTime ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;UTCTime&lt;/span&gt;   &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;formatTime ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Day&lt;/span&gt;       &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;型に応じて第三引数が変わるということです。&lt;/p&gt;
+&lt;p&gt;実際に使えばすぐに慣れます。(第一引数の値は &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html#v:defaultTimeLocale&#34;&gt;defaultTimeLocale&lt;/a&gt; を指定しておけば良いのですが、自分でカスタマイズしたものを使うこともあります)&lt;/p&gt;
+&lt;p&gt;第二引数がフォーマット文字列なので、空文字列を与えれば当然結果も空になります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; formatTime defaultTimeLocale &amp;quot;&amp;quot; &amp;lt;$&amp;gt; getZonedTime
+&amp;quot;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;フォーマットの指定方法については &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html#v:formatTime&#34;&gt;haddock&lt;/a&gt; を参照してください。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; formatTime defaultTimeLocale &amp;quot;%D&amp;quot; &amp;lt;$&amp;gt; getZonedTime
+&amp;quot;09/17/18&amp;quot;
+
+&amp;gt; formatTime defaultTimeLocale &amp;quot;%F&amp;quot; &amp;lt;$&amp;gt; getZonedTime
+&amp;quot;2018-09-17&amp;quot;
+
+&amp;gt; formatTime defaultTimeLocale &amp;quot;%x&amp;quot; &amp;lt;$&amp;gt; getZonedTime
+&amp;quot;09/17/18&amp;quot;
+
+&amp;gt; formatTime defaultTimeLocale &amp;quot;%Y/%m/%d-%T&amp;quot; &amp;lt;$&amp;gt; getZonedTime
+&amp;quot;2018/09/17-13:52:21&amp;quot;
+
+&amp;gt; formatTime defaultTimeLocale rfc822DateFormat &amp;lt;$&amp;gt; getZonedTime
+&amp;quot;Sun, 16 Sep 2018 19:53:10 JST&amp;quot;
+
+&amp;gt; formatTime defaultTimeLocale (iso8601DateFormat Nothing) &amp;lt;$&amp;gt; getZonedTime
+&amp;quot;2018-09-16&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;文字列をパーズして-zonedtime-や-day-の値を作る&#34;&gt;文字列をパーズして ZonedTime や Day の値を作る&lt;/h2&gt;
+&lt;p&gt;ここまでは現在時刻を元に時刻の計算や出力結果の整形を行いました。&lt;/p&gt;
+&lt;p&gt;しかし、実際のプログラムでは文字列をパーズして &lt;code&gt;ZonedTime&lt;/code&gt; や &lt;code&gt;Day&lt;/code&gt; の値に変換したいこともあるでしょう。そのような場合は &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html#v:parseTimeM&#34;&gt;parseTimeM&lt;/a&gt; を使うと便利です。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t parseTimeM
+parseTimeM
+  :: (Monad m, ParseTime t) =&amp;gt;
+     Bool -&amp;gt; TimeLocale -&amp;gt; String -&amp;gt; String -&amp;gt; m t&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;型がわかりづらいですが、具体的にはこんな型で利用することができます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb17&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseTimeM ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Day&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseTimeM ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ZonedTime&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseTimeM ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Day&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseTimeM ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ZonedTime&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;第一引数は &lt;strong&gt;空白&lt;/strong&gt; を許容するかどうかのフラグです (True だと空白OK)&lt;/li&gt;
+&lt;li&gt;第二引数は気にせず &lt;strong&gt;defaultTimeLocale&lt;/strong&gt; を指定しておきましょう&lt;/li&gt;
+&lt;li&gt;第三引数は &lt;strong&gt;パーズで利用するフォーマット&lt;/strong&gt; を指定します&lt;/li&gt;
+&lt;li&gt;第四引数は &lt;strong&gt;入力の文字列&lt;/strong&gt; です&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;具体例&#34;&gt;具体例&lt;/h3&gt;
+&lt;p&gt;実際にいくつか使ってみましょう。以下の通り &lt;code&gt;%F&lt;/code&gt; は &lt;code&gt;YYYY-MM-DD&lt;/code&gt; の書式になります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; formatTime defaultTimeLocale &amp;quot;%F&amp;quot; &amp;lt;$&amp;gt; getZonedTime
+&amp;quot;2018-09-17&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;モナドを &lt;code&gt;IO&lt;/code&gt; や &lt;code&gt;Maybe&lt;/code&gt; などに変化させた基本的な例。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot;2018-09-17&amp;quot; :: IO ZonedTime
+2018-09-17 00:00:00 +0000
+
+&amp;gt; parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot;2018-09-17&amp;quot; :: Maybe ZonedTime
+Just 2018-09-17 00:00:00 +0000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一引数を変化させて、入力文字列の空白の有無について確認する例。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot; 2018-09-17 &amp;quot; :: IO ZonedTime
+2018-09-17 00:00:00 +0000
+
+&amp;gt; parseTimeM False defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot; 2018-09-17 &amp;quot; :: IO ZonedTime
+*** Exception: user error (parseTimeM: no parse of &amp;quot;2018-09-17 &amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;入力文字列とパーズの書式がマッチしない例&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parseTimeM False defaultTimeLocale &amp;quot;%x&amp;quot; &amp;quot; 2018-09-17 &amp;quot; :: IO ZonedTime
+*** Exception: user error (parseTimeM: no parse of &amp;quot; 2018-09-17 &amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Day 型の値をとしてパーズする例&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot;2018-09-17&amp;quot; :: IO Day
+2018-09-17&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;このようにして日付を取得できれば、今回は説明していませんが &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Calendar.html&#34;&gt;Data.Time.Calendar&lt;/a&gt; の &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Calendar.html#v:addDays&#34;&gt;addDays&lt;/a&gt; 関数などを使って日付の計算を行うこともできるようになります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; d = parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot;2018-09-17&amp;quot; :: IO Day
+
+&amp;gt; addDays 1 &amp;lt;$&amp;gt; d
+2018-09-18
+
+&amp;gt; addDays 35 &amp;lt;$&amp;gt; d
+2018-10-22&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;time パッケージを使うと時刻や日付の計算ができる&lt;/li&gt;
+&lt;li&gt;現在の&lt;strong&gt;日本&lt;/strong&gt;時間を取得した場合は &lt;strong&gt;getCurrentTime&lt;/strong&gt; ではなく、&lt;strong&gt;getZonedTime&lt;/strong&gt; を使う&lt;/li&gt;
+&lt;li&gt;整形には &lt;strong&gt;formatTime&lt;/strong&gt; を使う&lt;/li&gt;
+&lt;li&gt;文字列から &lt;strong&gt;ZonedTime&lt;/strong&gt; や &lt;strong&gt;Day&lt;/strong&gt; に変換する際は &lt;strong&gt;parseTimeM&lt;/strong&gt; を使う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Haskell入門の &lt;strong&gt;7.7 日付・時刻を扱う&lt;/strong&gt; にも3ページほど &lt;strong&gt;time&lt;/strong&gt; パッケージの解説があるので、気になる人はそちらも確認してみると良いかもしれません。&lt;/p&gt;
+&lt;p&gt;以上です。&lt;/p&gt;
+&lt;h2 id=&#34;おまけ&#34;&gt;おまけ&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;getZonedTime&lt;/code&gt; に対して &lt;code&gt;formatTime defaultTimeLocale &amp;lt;フォーマット文字&amp;gt;&lt;/code&gt; の対応表です。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; getZonedTime
+2018-09-17 14:44:52.052040178 JST&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;narrow-table&#34;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;文字&lt;/th&gt;
+&lt;th&gt;出力結果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%-z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;+900&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%_z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;+ 900&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%0z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;+0900&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%^z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;+0900&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%#z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;+0900&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%8z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;+00000900&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%_12z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;+         900&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%%&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;%&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%t&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\t&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%n&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;\n&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;+0900&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%Z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;JST&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%c&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Mon Sep 17 14:39:34 JST 2018&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%R&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;14:39&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%T&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;14:40:12&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%X&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;14:40:31&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%r&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;02:40:55 PM&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%P&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;pm&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%p&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;PM&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%H&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;14&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%k&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;14&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%I&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;02&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%l&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;2&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%M&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;43&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%S&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;49&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%q&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;903244678000&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%Q&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.28084722&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%s&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1537163079&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%D&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;09/17/18&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%F&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;2018-09-17&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%x&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;09/17/18&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%Y&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;2018&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%y&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;18&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%C&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;20&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%B&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;September&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%b&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Sep&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%h&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Sep&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%m&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;09&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%d&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;17&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;17&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%j&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;260&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%f&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;20&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%V&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;38&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%u&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%a&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Mon&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Monday&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%U&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;37&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;%w&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;%W&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;38&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;</summary></entry><entry><id>https://qiita.com/HirotoShioi/items/70cd235e93dee99bf8e8</id><title type="text">すごいH本で見落としがちだが実は重要な機能：newtype</title><updated>2018-09-16T19:57:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/HirotoShioi/items/70cd235e93dee99bf8e8"/></entry><entry><id>https://qiita.com/takenobu-hs/items/14101cabf313e6d594ca</id><title type="text">「混ぜられない数」をHaskell/GHCの型を使って手軽につくる</title><updated>2018-09-16T11:36:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takenobu-hs/items/14101cabf313e6d594ca"/></entry><entry><id>https://qiita.com/lotz/items/aca1d179c14d4dca5099</id><title type="text">Haskellの変数には値を代入しません、束縛します。</title><updated>2018-09-15T16:09:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/aca1d179c14d4dca5099"/></entry><entry><id>https://qiita.com/acple@github/items/779792002ba67161d37c</id><title type="text">世界一わかりやすいStateモナドのしくみ、あるいは猫でもわからないモナドのおはなし</title><updated>2018-09-13T00:16:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/acple@github/items/779792002ba67161d37c"/></entry><entry><id>http://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F</id><title type="text">技術書典 4 にサークル参加した</title><updated>2018-09-12T13:03:31+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F"/><summary type="html">4月22日に開催された『技術書典 4』にサークル参加してきました。 techbookfest.org 技術書典は1と2に個人で参加して3は会社として参加して今回の4は会社と個人と2サークルにかかわっていました。 超技術書典を抜くと皆勤です。 個人サークル 既刊として『遠回りして学ぶ Yesod 入門』を増刷し、新刊は『手続き Haskell』を持っていきました。 doujin.kakkun61.com doujin.kakkun61.com 数字 売り上げ部数は、どんぶり勘定ですが（特に Yesod 本のダウンロードカードが完全に記憶による）下記の通りとなりました。 Yesod 本 紙 + P…</summary></entry><entry><id>https://qiita.com/hanyuTransfer/items/082c50049539a68af4bc</id><title type="text">作って理解するモナド</title><updated>2018-09-11T00:34:57+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hanyuTransfer/items/082c50049539a68af4bc"/></entry><entry><id>https://qiita.com/o_posting/items/3fd97e13dc17f9f9a187</id><title type="text">Haskellメモ</title><updated>2018-09-10T19:39:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/o_posting/items/3fd97e13dc17f9f9a187"/></entry><entry><id>https://qiita.com/7ma7X/items/8cee82377587058ff0c3</id><title type="text">GHC.List を読んで Haskell のリスト操作をまとめた</title><updated>2018-09-07T23:28:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/7ma7X/items/8cee82377587058ff0c3"/></entry><entry><id>https://qiita.com/inamiy/items/c4e85f22273e98b8db26</id><title type="text">iOSDC Japan 2018 で発表した「圏論とSwiftへの応用」の補足</title><updated>2018-09-06T08:48:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/inamiy/items/c4e85f22273e98b8db26"/></entry><entry><id>https://qiita.com/acple@github/items/216542d1c4844c2ec879</id><title type="text">PureScriptで存在型を試す</title><updated>2018-09-04T21:48:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/acple@github/items/216542d1c4844c2ec879"/></entry><entry><id>https://haskell.jp/blog/posts/2018/substring-parser.html</id><title type="text">substring-parserで「タイプセーフプリキュア！」を移行した話</title><updated>2018-09-04T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/substring-parser.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -1031,7 +1432,7 @@ main = undefined&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;code&gt;path&lt;/code&gt; や &lt;code&gt;path-io&lt;/code&gt; は幽霊型を使って不正な利用をコンパイル時にチェックする&lt;/li&gt;
 &lt;li&gt;実際に &lt;code&gt;stack&lt;/code&gt; でも利用されているパッケージ&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://qiita.com/dyoshikawa/items/533e172bb215c1fb0f77</id><title type="text">MacでHaskellを始める</title><updated>2018-08-18T02:12:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/dyoshikawa/items/533e172bb215c1fb0f77"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-08-18-haskell-github-webhook.html</id><title type="text">Haskell Servant で GitHub Webhook</title><updated>2018-08-18T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-08-18-haskell-github-webhook.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-08-18-haskell-github-webhook.html</id><title type="text">Haskell Servant で GitHub Webhook</title><updated>2018-08-18T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-08-18-haskell-github-webhook.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Haskell Servant で GitHub Webhook&lt;/h1&gt;
@@ -2049,45 +2450,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;同じ問題を解決するほかのラ�
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/07-16-quiz-14.html</id><title type="text">Haskell Quiz No.14 shift-jis ファイルの読み込み</title><updated>2018-07-16T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/07-16-quiz-14.html"/><summary type="html">&lt;h2 id=&#34;haskell-quiz-no.14&#34;&gt;Haskell Quiz No.14&lt;/h2&gt;
-&lt;p&gt;難易度: λ&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;utf8.txt&lt;/code&gt; と &lt;code&gt;shift-jis.txt&lt;/code&gt; はそれぞれ &lt;code&gt;utf8&lt;/code&gt; と &lt;code&gt;shift-jis&lt;/code&gt; で保存されたテキストファイルです。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;bad ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; data-line-number=&#34;2&#34;&gt;bad &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; readFile &lt;span class=&#34;st&#34;&gt;&amp;quot;./shift-jis.txt&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; putStrLn&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;good ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; data-line-number=&#34;5&#34;&gt;good &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; readFile &lt;span class=&#34;st&#34;&gt;&amp;quot;./utf8.txt&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; putStrLn&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;上記のプログラムを実行すると、こんな感じでエラーになってしまいます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; good&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; data-line-number=&#34;2&#34;&gt;はすける&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; bad&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;***&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Exception&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;./&lt;/span&gt;shift&lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;jis&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;txt&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; hGetContents&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; invalid argument (invalid byte sequence)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;shift-jis&lt;/code&gt; で保存されたテキストファイルを読むにはどうしたら良いでしょうか？&lt;/p&gt;
-&lt;p&gt;答えは&lt;a href=&#34;./07-24-quiz-15.html&#34;&gt;次回&lt;/a&gt;。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./07-11-quiz-13.html&#34;&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
-&lt;h3 id=&#34;問題&#34;&gt;問題&lt;/h3&gt;
-&lt;p&gt;難易度: λλ&lt;/p&gt;
-&lt;p&gt;以下のプログラムの実行結果はどうなるでしょうか？&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- stack script --resolver lts-12.0&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Conduit&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-6&#34; data-line-number=&#34;6&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; runConduit &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; yieldMany [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;] &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; iterMC print &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; return () &lt;span class=&#34;fu&#34;&gt;.|&lt;/span&gt; sinkNull&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;こたえ&#34;&gt;こたえ&lt;/h3&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ ./Quiz13.hs&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;何も表示されません。&lt;/p&gt;
-&lt;h3 id=&#34;解説&#34;&gt;解説&lt;/h3&gt;
-&lt;p&gt;今回は &lt;code&gt;sinkNull&lt;/code&gt; があるので全ての値 (&lt;code&gt;1〜10&lt;/code&gt;) が上流から流れてくると思う人もいたかもしれません。&lt;/p&gt;
-&lt;p&gt;しかし、途中で &lt;code&gt;return ()&lt;/code&gt; が挟まっているため、そこで &lt;code&gt;await&lt;/code&gt; の伝達が止まります。そのため、値の要求が &lt;code&gt;yieldMany&lt;/code&gt; まで届かないのです。&lt;/p&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;await&lt;/code&gt; はパイプごとに伝搬して上流に伝わるため、途中で途切れている場合は何も起こらない&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2018/07/14/195255</id><title type="text">Dhallによるリッチな設定ファイル体験</title><updated>2018-07-14T19:52:55+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2018/07/14/195255"/><summary type="html">(この記事のレギュレーション: lts-11.9) Dhall という設定記述用言語があり、使ってみたところ良い感じだったので紹介します。 なお、この記事は先日某所で発表したものの拡大版になります。 speakerdeck.com Dhallとは何か Dhallについて短かく表現するなら公式サイトの以下の説明が分かりやすいです。 You can think of Dhall as: JSON + functions + types + imports データ表現にプログラマブルさと静的な検査とファイルのインポートを加えたものというわけです。 まだ開発中のためかあまりアピールされていませんがツー…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-07-01-join-ruby-hack-challenge4.html</id><title type="text">Ruby Hack Challenge ＃4 に参加してきた</title><updated>2018-07-01T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-07-01-join-ruby-hack-challenge4.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2018/07/14/195255</id><title type="text">Dhallによるリッチな設定ファイル体験</title><updated>2018-07-14T19:52:55+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2018/07/14/195255"/><summary type="html">(この記事のレギュレーション: lts-11.9) Dhall という設定記述用言語があり、使ってみたところ良い感じだったので紹介します。 なお、この記事は先日某所で発表したものの拡大版になります。 speakerdeck.com Dhallとは何か Dhallについて短かく表現するなら公式サイトの以下の説明が分かりやすいです。 You can think of Dhall as: JSON + functions + types + imports データ表現にプログラマブルさと静的な検査とファイルのインポートを加えたものというわけです。 まだ開発中のためかあまりアピールされていませんがツー…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-07-01-join-ruby-hack-challenge4.html</id><title type="text">Ruby Hack Challenge ＃4 に参加してきた</title><updated>2018-07-01T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-07-01-join-ruby-hack-challenge4.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Ruby Hack Challenge ＃4 に参加してきた&lt;/h1&gt;
