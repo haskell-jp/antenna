@@ -1,4 +1,168 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-10-13T14:36:29+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/nobsun/items/88ebbfc0e3663e75f44f</id><title type="text">spanの小ネタ(再帰パターン編)</title><updated>2018-10-13T14:36:29+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/88ebbfc0e3663e75f44f"/></entry><entry><id>https://qiita.com/Oversleep/items/e3c9ba25028628845466</id><title type="text">haskellで一番身近に感じるモナド「getLine」と「putStrLn」</title><updated>2018-10-12T22:47:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Oversleep/items/e3c9ba25028628845466"/></entry><entry><id>https://qiita.com/kyotsuya/items/a7015ae5ad413288d8fe</id><title type="text">Haskell のモジュールとパッケージの基礎知識</title><updated>2018-10-11T12:21:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyotsuya/items/a7015ae5ad413288d8fe"/></entry><entry><id>https://qiita.com/userisgod/items/06b8a72554171539a683</id><title type="text">Haskellで「Hello World」</title><updated>2018-10-09T17:40:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/userisgod/items/06b8a72554171539a683"/></entry><entry><id>https://haskell.jp/blog/posts/2018/tech-book-fest-5.html</id><title type="text">技術書典 5 での Haskell 関連サークルのまとめ</title><updated>2018-10-05T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/tech-book-fest-5.html"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-10-14T12:53:00+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/nobsun/items/9608ae73ee374c12e965</id><title type="text">spanの小ネタ(使い方編)</title><updated>2018-10-14T12:53:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/9608ae73ee374c12e965"/></entry><entry><id>https://qiita.com/nobsun/items/52d75d312187e7adc5a1</id><title type="text">spanの小ネタ(変奏編)</title><updated>2018-10-14T12:51:36+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/52d75d312187e7adc5a1"/></entry><entry><id>https://qiita.com/nobsun/items/88ebbfc0e3663e75f44f</id><title type="text">spanの小ネタ(再帰パターン編)</title><updated>2018-10-14T12:46:26+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/88ebbfc0e3663e75f44f"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html</id><title type="text">stack-templates を集める with GraphQL</title><updated>2018-10-14T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;stack-templates を集める with GraphQL&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2018-10-14&#34; itemprop=&#34;datePublished&#34;&gt;
+        Oct 14, 2018
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/GraphQL.html&#34;&gt;GraphQL&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;Haskell Day の仕込みパート1です(2があるかは知らない)． stack の次期バージョン v1.9 で追加される namespaced template を試してみました．&lt;/p&gt;
+&lt;p&gt;ちなみに，現在 v1.9 はプレリリースになったので，下記コマンドで簡単にアップデートできます．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ stack upgrade --binary-version 1.9.0.1&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;namespaced-template&#34;&gt;namespaced template&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;stack new&lt;/code&gt; で指定できるテンプレートを，GitHub などのオンラインからも取ってこれるようになった機能． 詳しくは開発段階からキャッチアップしてる e-bigmoon さんの記事を読むと良い．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://haskell.e-bigmoon.com/posts/2018/06-27-namespaced-templates.html&#34;&gt;namespaced templates - BIGMOON haskellers blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;作ってみた&#34;&gt;作ってみた&lt;/h3&gt;
+&lt;p&gt;GitHub などで &lt;code&gt;stack-templates&lt;/code&gt; という名前のリポジトリを作り，&lt;code&gt;hsfiles&lt;/code&gt; という拡張子のテンプレートファイルをトップレベルに置く． 今回ぼくは &lt;a href=&#34;https://github.com/matsubara0507/stack-templates&#34;&gt;matsubara0507/stack-templates&lt;/a&gt; というリポジトリを作り，２つ程作ってみた．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;get-opt-cli.hsfiles&lt;/code&gt; : &lt;a href=&#34;http://hackage.haskell.org/package/base/docs/System-Console-GetOpt.html&#34;&gt;&lt;code&gt;System.Console.GetOpt&lt;/code&gt;&lt;/a&gt; を用いたCLIのテンプレート&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;optparse-applicative-cli.hsfiles&lt;/code&gt; : &lt;a href=&#34;http://hackage.haskell.org/package/optparse-applicative&#34;&gt;optparse-applicative&lt;/a&gt; を用いたCLIのテンプレート&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;どちらも，よくCLIを作るときの書き方をテンプレートとして起こしたもの． 普段は &lt;a href=&#34;http://hackage.haskell.org/package/rio&#34;&gt;rio&lt;/a&gt; と &lt;a href=&#34;http://hackage.haskell.org/package/extensible&#34;&gt;extensible&lt;/a&gt; を使っているので，単純に optparse-applicative などを使ったテンプレートという訳でもない．&lt;/p&gt;
+&lt;h3 id=&#34;テストする&#34;&gt;テストする&lt;/h3&gt;
+&lt;p&gt;できれば，テンプレートを &lt;code&gt;stack new&lt;/code&gt; して &lt;code&gt;stack build&lt;/code&gt; した時点ではコンパイルを通ってほしい． ということで &lt;code&gt;stack new&lt;/code&gt; して &lt;code&gt;stack build&lt;/code&gt; を試してくれるテストを &lt;a href=&#34;https://github.com/matsubara0507/stack-templates/blob/7abc95184241c2df9f81ec1a45f9a662a98db05a/.travis.yml&#34;&gt;TravisCI&lt;/a&gt; に書いた．&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;matrix:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; data-line-number=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;include:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; data-line-number=&#34;3&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;env:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; TEMPLATE=&amp;quot;get-opt-cli&amp;quot; ARGS=&amp;quot;--resolver lts-12&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; data-line-number=&#34;4&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;compiler:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;: #stack 8.4.3&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; data-line-number=&#34;5&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;addons:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;apt:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[&lt;/span&gt;libgmp-dev&lt;span class=&#34;kw&#34;&gt;]}}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; data-line-number=&#34;6&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;env:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; TEMPLATE=&amp;quot;optparse-applicative-cli&amp;quot; ARGS=&amp;quot;--resolver lts-12&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; data-line-number=&#34;7&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;compiler:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;: #stack 8.4.3&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; data-line-number=&#34;8&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;addons:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;apt:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[&lt;/span&gt;libgmp-dev&lt;span class=&#34;kw&#34;&gt;]}}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; data-line-number=&#34;9&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; data-line-number=&#34;10&#34;&gt;&lt;span class=&#34;fu&#34;&gt;before_install:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; data-line-number=&#34;11&#34;&gt;&lt;span class=&#34;co&#34;&gt;# install stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; data-line-number=&#34;12&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; data-line-number=&#34;13&#34;&gt;&lt;span class=&#34;fu&#34;&gt;install:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; data-line-number=&#34;14&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; stack new sample &lt;span class=&#34;st&#34;&gt;&amp;quot;./$TEMPLATE&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; data-line-number=&#34;15&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; |&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; data-line-number=&#34;16&#34;&gt;  set -ex&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-17&#34; data-line-number=&#34;17&#34;&gt;  cd sample&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-18&#34; data-line-number=&#34;18&#34;&gt;  stack --no-terminal --install-ghc $ARGS test --bench --only-dependencies&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-19&#34; data-line-number=&#34;19&#34;&gt;  set +ex&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-20&#34; data-line-number=&#34;20&#34;&gt;&lt;span class=&#34;fu&#34;&gt;script:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-21&#34; data-line-number=&#34;21&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; |&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-22&#34; data-line-number=&#34;22&#34;&gt;  set -ex&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-23&#34; data-line-number=&#34;23&#34;&gt;  stack --no-terminal $ARGS test --bench --no-run-benchmarks --no-haddock-deps&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-24&#34; data-line-number=&#34;24&#34;&gt;  set +ex&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/commercialhaskell/stack-templates/blob/879f95dc44b24201bc64fcf8f4b9e2192c23dad4/test-templates.hs&#34;&gt;commercialhaskell/stack-templates でもテストは書いてある&lt;/a&gt;がぼくのはすごいシンプルだ．&lt;/p&gt;
+&lt;h2 id=&#34;stack-templates-を集める&#34;&gt;stack-templates を集める&lt;/h2&gt;
+&lt;p&gt;さて，これだけでは完全に e-bigmoon さんの劣化記事だ． なので，stack-templates を GitHub から集めてくる CLI ツールを作ることにした．&lt;/p&gt;
+&lt;p&gt;試したところ，GitHub の検索で &lt;code&gt;stack-template in:name&lt;/code&gt; と検索すれば，それなりにヒットすることがわかった(間違いも多いが)． なので，ざっくりとした手順は:&lt;/p&gt;
+&lt;ol type=&#34;1&#34;&gt;
+&lt;li&gt;検索系の GitHub API を叩く&lt;/li&gt;
+&lt;li&gt;stack-templates という名前のリポジトリの &lt;code&gt;*.hsfiles&lt;/code&gt; というファイルだけ抽出&lt;/li&gt;
+&lt;li&gt;それらを出力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ここで GitHub API v3 (RESTful API)を利用すると，リポジトリのファイル群を取得するのに検索系の API を叩いてから，各リポジトリの API を叩く必要がある． それは面倒だ． なので，ここ数年注目を集めている(？) GraphQL API (GitHub API v4)を試してみることにした．&lt;/p&gt;
+&lt;h3 id=&#34;graphql&#34;&gt;GraphQL&lt;/h3&gt;
+&lt;p&gt;ちょうどこの前に，友人から「GraphQL はいいぞ，API をなんども叩く必要がない．」と紹介されたので試してみた．&lt;/p&gt;
+&lt;p&gt;GitHub の API では &lt;code&gt;api.github.com/graphql&lt;/code&gt; というエンドポイントに対し，POST メソッドでクエリを送信する．&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode sh&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; data-line-number=&#34;1&#34;&gt;$ &lt;span class=&#34;ex&#34;&gt;curl&lt;/span&gt; \&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; data-line-number=&#34;2&#34;&gt;  -H &lt;span class=&#34;st&#34;&gt;&amp;quot;Authorization: bearer token&amp;quot;&lt;/span&gt; \&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; data-line-number=&#34;3&#34;&gt;  -X POST \&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; data-line-number=&#34;4&#34;&gt;  -d &lt;span class=&#34;st&#34;&gt;&amp;quot;{ &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;: &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; ... &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; }&amp;quot;&lt;/span&gt; \&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; data-line-number=&#34;5&#34;&gt;  https://api.github.com/graphql&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;...&lt;/code&gt; のところにクエリを記述する． クエリは簡単な DSL のようになっており，クエリによってどんな形の JSON が返ってくるか(型のようなもの)やどんな値が返ってくるかが決まる． 例えば &lt;code&gt;stack-template in:name&lt;/code&gt; 検索してヒットしたリポジトリの名前だけを取得してみよう． その場合は次のようなクエリを書く．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;query{
+  search(query: &amp;quot;stack-template in:name&amp;quot;, type: REPOSITORY, first: 2) {
+    repositoryCount,
+    edges{
+      node{ ... on Repository{ nameWithOwner } }
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;first&lt;/code&gt; は検索にヒットした最初の2つを返すという意味． 上限は 100 で，&lt;code&gt;first&lt;/code&gt; ないしは逆の意味の &lt;code&gt;last&lt;/code&gt; のどちらかは指定をする必要がある(そういうエラーが返ってくる)． &lt;code&gt;repositoryCount&lt;/code&gt; は検索でヒットしたリポジトリの総数で，&lt;code&gt;edges&lt;/code&gt; のところはリポジトリの &lt;code&gt;nameWithOwner&lt;/code&gt; を返すように指定している． このように &lt;code&gt;{}&lt;/code&gt; の中ではカンマ区切りで，返す JSON の形を指定できる． 具体的に何が指定できるかは &lt;a href=&#34;https://developer.github.com/v4/query/&#34;&gt;GitHub API v4 のドキュメント&lt;/a&gt;を見ると良い． 試しに curl で叩いてみる(クエリ内の &lt;code&gt;&amp;quot;&lt;/code&gt; をエスケープすることを忘れずに):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ curl -H &amp;quot;Authorization: bearer XXX&amp;quot; -X POST -d &amp;quot;{ \&amp;quot;query\&amp;quot;: \&amp;quot; ... \&amp;quot; }&amp;quot; https://api.github.com/graphql
+{&amp;quot;data&amp;quot;:{&amp;quot;search&amp;quot;:{&amp;quot;repositoryCount&amp;quot;:76,&amp;quot;edges&amp;quot;:[{&amp;quot;node&amp;quot;:{&amp;quot;nameWithOwner&amp;quot;:&amp;quot;Azure/AzureStack-QuickStart-Templates&amp;quot;}},{&amp;quot;node&amp;quot;:{&amp;quot;nameWithOwner&amp;quot;:&amp;quot;commercialhaskell/stack-templates&amp;quot;}}]}}}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Connection とか Fields とかの用語については自分もよくわかってないので自分で調べてください． 今のところ，雰囲気で使ってる(笑)&lt;/p&gt;
+&lt;h3 id=&#34;ファイルを集める&#34;&gt;ファイルを集める&lt;/h3&gt;
+&lt;p&gt;さて，前述した結果(リポジトリ名)だけが欲しいなら GitHub API v3 でも十分だ． さらに，ファイルも取得してみよう． &lt;a href=&#34;https://developer.github.com/v4/object/repository/&#34;&gt;Repository のドキュメント&lt;/a&gt; を眺めると &lt;code&gt;object&lt;/code&gt; という Field がある． 察するに，リポジトリの任意のブランチ(&lt;code&gt;expression&lt;/code&gt; で指定したもの)のコミットオブジェクトを返してくれるのだろう． (たぶん)stack-templates は全部 master が前提なので，master のコミットオブジェクトを取ってくる．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;... on Repository{
+  nameWithOwner,
+  object(expression:&amp;quot;master&amp;quot;){
+    ... on Commit { }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ちなみに &lt;code&gt;... on Commit&lt;/code&gt; というのは Inline Fragments と呼ばれるもので，object の型(サブタイプ？)が &lt;code&gt;Commit&lt;/code&gt; だった場合に &lt;code&gt;Commit{}&lt;/code&gt; 以下の Field を返すそうだ． git オブジェクトなので他にも &lt;code&gt;Tree&lt;/code&gt; や &lt;code&gt;Blob&lt;/code&gt; がある．&lt;/p&gt;
+&lt;p&gt;さて，あとは git オブジェクトの知識があれば簡単にかける． コミットオブジェクトにはツリーオブジェクト，要するにトップレベルのディレクトリのハッシュが記載されているので&lt;a href=&#34;https://developer.github.com/v4/object/commit/&#34;&gt;ドキュメント&lt;/a&gt;からそれっぽいのを見つける． ツリーオブジェクトには，そのディレクトリに含まれるブロブオブジェクト(ファイル)とツリーオブジェクト(ディレクトリ)のハッシュが記載されてる． stack-templates は(今のところ)トップレベルに &lt;code&gt;*.hsfiles&lt;/code&gt; を置かないといけないので，トップレベルのオブジェクトたちの名前を取得しよう:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;... on Repository{
+  nameWithOwner,
+  object(expression:&amp;quot;master&amp;quot;){
+    ... on Commit { tree{ entries{ name, type } } }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;type&lt;/code&gt; には &lt;code&gt;blob&lt;/code&gt; やら &lt;code&gt;tree&lt;/code&gt; やらが入る． これで，検索にヒットした全てのリポジトリから &lt;code&gt;master&lt;/code&gt; のトップレベルにあるファイルを取得するクエリが出来上がった．&lt;/p&gt;
+&lt;h3 id=&#34;ページネーション&#34;&gt;ページネーション&lt;/h3&gt;
+&lt;p&gt;今のところ，検索にヒットするリポジトリ数は76個なので &lt;code&gt;first: 100&lt;/code&gt; とすれば全て取得できるが，今後ヒット数が100を超えたときようにページネーションの仕組みを整えておく． やり方は簡単で，&lt;code&gt;search&lt;/code&gt; Connection のところで &lt;a href=&#34;&#34;&gt;&lt;code&gt;pageInfo&lt;/code&gt;&lt;/a&gt; という Field を追加する．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;search(query: &amp;quot;stack-template in:name&amp;quot;, type: REPOSITORY, first: 1) {
+  repositoryCount,
+  pageInfo{
+    endCursor,
+    hasNextPage
+  },
+  edges{
+    node{ ... on Repository{ .... } }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;hasNextPage&lt;/code&gt; は次のページが存在するかどうかを真偽値で返してくれる． &lt;code&gt;endCursor&lt;/code&gt; はこのページの最後を表すハッシュ値？で，&lt;code&gt;search&lt;/code&gt; Connection の引数(&lt;code&gt;type&lt;/code&gt; とか &lt;code&gt;first&lt;/code&gt; とかのとこ)に &lt;code&gt;after&lt;/code&gt; で指定することで，それ以降の結果を取ってくる． このような &lt;code&gt;pageInfo&lt;/code&gt; の情報さえあれば，プログラム内でループさせることは容易だろう．&lt;/p&gt;
+&lt;h3 id=&#34;まとめると&#34;&gt;まとめると&lt;/h3&gt;
+&lt;p&gt;次のようなクエリになった:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;query{
+  search(query: &amp;quot;stack-template in:name&amp;quot;, type: REPOSITORY, first: 100) {
+    repositoryCount,
+    pageInfo{
+      endCursor,
+      hasNextPage
+    },
+    edges{
+      node{ ... on Repository{
+        nameWithOwner,
+        object(expression:&amp;quot;master&amp;quot;){
+          ... on Commit { tree{ entries{ name, type } } }
+        }
+      } }
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これを curl の引数に与えて叩くだけで 100 個分のリポジトリの全てのトップレベルファイル群を取得できる．&lt;/p&gt;
+&lt;h3 id=&#34;stack-tpls&#34;&gt;stack-tpls&lt;/h3&gt;
+&lt;p&gt;実際に作った CLI ツールは &lt;a href=&#34;https://github.com/matsubara0507/stack-tpls&#34;&gt;&lt;code&gt;matsubara0507/stack-tpls&lt;/code&gt;&lt;/a&gt; というリポジトリに置いてある． 使い方は README に書いてある． 一覧を取得するには &lt;code&gt;stack-tpls --list&lt;/code&gt; と打てば良い．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ stack-tpls --list
+github:commercialhaskell/chrisdone.hsfiles
+github:commercialhaskell/foundation.hsfiles
+ .
+ .
+ .&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;この結果を &lt;code&gt;stack new&lt;/code&gt; の引数に与えることでそのまま利用できる． また，テンプレートの中身を確認したい場合は，&lt;code&gt;stack-tpls github:commercialhaskell/chrisdone.hsfiles&lt;/code&gt; と引数に与えることで Raw を取ってきてくれる． リンクだけが欲しい場合は &lt;code&gt;--link&lt;/code&gt; オプションを指定すると良い．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ stack-tpls --link github:commercialhaskell/rio.hsfiles
+https://github.com/commercialhaskell/stack-templates/blob/master/rio.hsfiles&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;todo&#34;&gt;ToDo&lt;/h3&gt;
+&lt;p&gt;一週間ほど前の思いつきからの突貫で作ったのでイロイロと抜けてる箇所があって:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;エラーハンドリングが雑&lt;/li&gt;
+&lt;li&gt;GitLab と BitBucket には対応していない&lt;/li&gt;
+&lt;li&gt;GraphQL の使い方がエレガントじゃない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;特に最後のがすごい気になっていて，現状は完全に文字列を埋め込んでいるだけなのだ． できれば，強力な型システムを利用した GitHub GraphQL Client ライブラリを作りたい(なんか昔に Haskell-jp で話題に上がったなぁ)．&lt;/p&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;GraphQL，クライアント側に取ってすごい便利．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/Oversleep/items/e3c9ba25028628845466</id><title type="text">haskellで一番身近に感じるモナド「getLine」と「putStrLn」</title><updated>2018-10-12T22:47:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Oversleep/items/e3c9ba25028628845466"/></entry><entry><id>https://qiita.com/kyotsuya/items/a7015ae5ad413288d8fe</id><title type="text">Haskell のモジュールとパッケージの基礎知識</title><updated>2018-10-11T12:21:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyotsuya/items/a7015ae5ad413288d8fe"/></entry><entry><id>https://qiita.com/userisgod/items/06b8a72554171539a683</id><title type="text">Haskellで「Hello World」</title><updated>2018-10-09T17:40:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/userisgod/items/06b8a72554171539a683"/></entry><entry><id>https://haskell.jp/blog/posts/2018/tech-book-fest-5.html</id><title type="text">技術書典 5 での Haskell 関連サークルのまとめ</title><updated>2018-10-05T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/tech-book-fest-5.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -202,7 +366,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;それでは当日に&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/peus/items/8badef3e6e0b03b1e790</id><title type="text">Haskellのフロントエンド開発をEDSLでモダンにする</title><updated>2018-10-04T17:53:26+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/peus/items/8badef3e6e0b03b1e790"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/10/02/203205</id><title type="text">猫でもわかる Vertical Pod Autoscaler</title><updated>2018-10-02T20:32:05+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/10/02/203205"/><summary type="html">先日行われた Kubernetes Meetup Tokyo #13 で、Vertical Pod Autoscaler (VPA) について発表してきました。 VPA は、各コンテナの Resource Request の値を自動的に調整してくれるコンポーネント群です。必要とするリソース（CPU、メモリ）量があらかじめ推測しにくいアプリケーションに対して、実績に基づいてそれらしい値を決めたい場合に効果を発揮します。 本記事ではスライドの補足として、VPA が動作する流れをクラスタ上での実際の挙動を通じて確認し、また内部実装についても踏み込んで解説します。 なお、本記事中で引用している仕様やソ…</summary></entry><entry><id>https://qiita.com/huging/items/5ca61c5fc5f8487d8d0f</id><title type="text">Haskell開発環境をWindows 10に構築したメモ(Windows Subsystem for Linux + stack)</title><updated>2018-09-30T11:50:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/huging/items/5ca61c5fc5f8487d8d0f"/></entry><entry><id>https://qiita.com/longtime1116/items/b376dd34944677d3a9cd</id><title type="text">Haskell でコンパイル時、 clang がエラーを吐いて失敗するときの対処法</title><updated>2018-09-28T23:23:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/longtime1116/items/b376dd34944677d3a9cd"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/09/26/191231</id><title type="text">elm/time の使い方</title><updated>2018-09-26T19:12:31+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/09/26/191231"/><summary type="html">はじめに 先日、Elm v0.19 がリリースされました。公式ライブラリのリポジトリが elm-lang から elm に変更され、その中身も大きく再構成されています。 本記事では、これらの変更のうち特に時刻や日付の扱いに関する部分について、新しい API の使い方を含めて簡単に解説します。 v0.18 における時刻の扱い v0.18 では、時刻を扱う機能は標準パッケージ elm-lang/core の中で提供されていました。時刻を扱う Time モジュールと日付を扱う Date モジュールで、それぞれデータ型や関数が定義されているのが特徴です。 なお、旧バージョンのライブラリは現在 Elm …</summary></entry><entry><id>https://qiita.com/mamepon2580/items/633d6b9ea817325e0954</id><title type="text">二分木探索を扱う対話型アプリケーション</title><updated>2018-09-25T09:39:29+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/633d6b9ea817325e0954"/></entry><entry><id>https://qiita.com/mamepon2580/items/95f24b71df6647cd3b86</id><title type="text">Haskellの関数をモジュールやメソッドに頼らずJavascriptで作る頭の体操</title><updated>2018-09-24T16:03:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/95f24b71df6647cd3b86"/></entry><entry><id>https://qiita.com/mamepon2580/items/811e32ecdc0f40107847</id><title type="text">paizaラーニングをHaskellで解く ハノイの塔 (paizaランク A 相当)</title><updated>2018-09-24T16:02:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/811e32ecdc0f40107847"/></entry><entry><id>https://qiita.com/mamepon2580/items/d1135fb5450c7232a009</id><title type="text">paizaラーニングをHaskellで解く　山折り谷折り(paizaランク A 相当)</title><updated>2018-09-24T16:01:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/d1135fb5450c7232a009"/></entry><entry><id>https://qiita.com/mamepon2580/items/5845920001f52a5e3caf</id><title type="text">paizaラーニングをHaskellで解く　じゃんけんの手の出し方 (paizaランク A 相当)</title><updated>2018-09-24T16:01:13+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/5845920001f52a5e3caf"/></entry><entry><id>https://qiita.com/inamiy/items/c4e85f22273e98b8db26</id><title type="text">iOSDC Japan 2018 で発表した「圏論とSwiftへの応用」の補足</title><updated>2018-09-23T11:55:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/inamiy/items/c4e85f22273e98b8db26"/></entry><entry><id>https://qiita.com/takenobu-hs/items/14101cabf313e6d594ca</id><title type="text">「混ぜられない数」をHaskell/GHCの型を使って手軽につくる</title><updated>2018-09-17T20:17:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takenobu-hs/items/14101cabf313e6d594ca"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/09-17-time-package.html</id><title type="text">time パッケージの使い方</title><updated>2018-09-17T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/09-17-time-package.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+</summary></entry><entry><id>https://qiita.com/peus/items/8badef3e6e0b03b1e790</id><title type="text">Haskellのフロントエンド開発をEDSLでモダンにする</title><updated>2018-10-04T17:53:26+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/peus/items/8badef3e6e0b03b1e790"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/10/02/203205</id><title type="text">猫でもわかる Vertical Pod Autoscaler</title><updated>2018-10-02T20:32:05+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/10/02/203205"/><summary type="html">先日行われた Kubernetes Meetup Tokyo #13 で、Vertical Pod Autoscaler (VPA) について発表してきました。 VPA は、各コンテナの Resource Request の値を自動的に調整してくれるコンポーネント群です。必要とするリソース（CPU、メモリ）量があらかじめ推測しにくいアプリケーションに対して、実績に基づいてそれらしい値を決めたい場合に効果を発揮します。 本記事ではスライドの補足として、VPA が動作する流れをクラスタ上での実際の挙動を通じて確認し、また内部実装についても踏み込んで解説します。 なお、本記事中で引用している仕様やソ…</summary></entry><entry><id>https://qiita.com/huging/items/5ca61c5fc5f8487d8d0f</id><title type="text">Haskell開発環境をWindows 10に構築したメモ(Windows Subsystem for Linux + stack)</title><updated>2018-09-30T11:50:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/huging/items/5ca61c5fc5f8487d8d0f"/></entry><entry><id>https://qiita.com/longtime1116/items/b376dd34944677d3a9cd</id><title type="text">Haskell でコンパイル時、 clang がエラーを吐いて失敗するときの対処法</title><updated>2018-09-28T23:23:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/longtime1116/items/b376dd34944677d3a9cd"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/09/26/191231</id><title type="text">elm/time の使い方</title><updated>2018-09-26T19:12:31+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/09/26/191231"/><summary type="html">はじめに 先日、Elm v0.19 がリリースされました。公式ライブラリのリポジトリが elm-lang から elm に変更され、その中身も大きく再構成されています。 本記事では、これらの変更のうち特に時刻や日付の扱いに関する部分について、新しい API の使い方を含めて簡単に解説します。 v0.18 における時刻の扱い v0.18 では、時刻を扱う機能は標準パッケージ elm-lang/core の中で提供されていました。時刻を扱う Time モジュールと日付を扱う Date モジュールで、それぞれデータ型や関数が定義されているのが特徴です。 なお、旧バージョンのライブラリは現在 Elm …</summary></entry><entry><id>https://qiita.com/mamepon2580/items/633d6b9ea817325e0954</id><title type="text">二分木探索を扱う対話型アプリケーション</title><updated>2018-09-25T09:39:29+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/633d6b9ea817325e0954"/></entry><entry><id>https://qiita.com/mamepon2580/items/95f24b71df6647cd3b86</id><title type="text">Haskellの関数をモジュールやメソッドに頼らずJavascriptで作る頭の体操</title><updated>2018-09-24T16:03:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/95f24b71df6647cd3b86"/></entry><entry><id>https://qiita.com/mamepon2580/items/811e32ecdc0f40107847</id><title type="text">paizaラーニングをHaskellで解く ハノイの塔 (paizaランク A 相当)</title><updated>2018-09-24T16:02:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/811e32ecdc0f40107847"/></entry><entry><id>https://qiita.com/mamepon2580/items/d1135fb5450c7232a009</id><title type="text">paizaラーニングをHaskellで解く　山折り谷折り(paizaランク A 相当)</title><updated>2018-09-24T16:01:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/d1135fb5450c7232a009"/></entry><entry><id>https://qiita.com/mamepon2580/items/5845920001f52a5e3caf</id><title type="text">paizaラーニングをHaskellで解く　じゃんけんの手の出し方 (paizaランク A 相当)</title><updated>2018-09-24T16:01:13+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamepon2580/items/5845920001f52a5e3caf"/></entry><entry><id>https://qiita.com/takenobu-hs/items/14101cabf313e6d594ca</id><title type="text">「混ぜられない数」をHaskell/GHCの型を使って手軽につくる</title><updated>2018-09-17T20:17:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takenobu-hs/items/14101cabf313e6d594ca"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/09-17-time-package.html</id><title type="text">time パッケージの使い方</title><updated>2018-09-17T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/09-17-time-package.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;Haskell で時間や日付を扱う際に良く利用されるのは &lt;a href=&#34;https://www.stackage.org/lts-12.9/package/time&#34;&gt;time&lt;/a&gt; パッケージです。&lt;/p&gt;
 &lt;p&gt;このパッケージが使いやすいかどうかは人それぞれですが、使い方を知っておくと便利なのでよく使いそうな関数を簡単に解説しようと思います。&lt;/p&gt;
 &lt;p&gt;これからの例は以下のコマンドを実行していると仮定して話を進めます。&lt;/p&gt;
@@ -603,7 +767,7 @@ Just 2018-09-17 00:00:00 +0000&lt;/code&gt;&lt;/pre&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;</summary></entry><entry><id>https://qiita.com/HirotoShioi/items/70cd235e93dee99bf8e8</id><title type="text">すごいH本で見落としがちだが実は重要な機能：newtype</title><updated>2018-09-16T19:57:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/HirotoShioi/items/70cd235e93dee99bf8e8"/></entry><entry><id>https://qiita.com/lotz/items/aca1d179c14d4dca5099</id><title type="text">Haskellの変数には値を代入しません、束縛します。</title><updated>2018-09-15T16:09:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/aca1d179c14d4dca5099"/></entry><entry><id>https://qiita.com/acple@github/items/779792002ba67161d37c</id><title type="text">世界一わかりやすいStateモナドのしくみ、あるいは猫でもわからないモナドのおはなし</title><updated>2018-09-13T00:16:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/acple@github/items/779792002ba67161d37c"/></entry><entry><id>http://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F</id><title type="text">技術書典 4 にサークル参加した</title><updated>2018-09-12T13:03:31+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F"/><summary type="html">4月22日に開催された『技術書典 4』にサークル参加してきました。 techbookfest.org 技術書典は1と2に個人で参加して3は会社として参加して今回の4は会社と個人と2サークルにかかわっていました。 超技術書典を抜くと皆勤です。 個人サークル 既刊として『遠回りして学ぶ Yesod 入門』を増刷し、新刊は『手続き Haskell』を持っていきました。 doujin.kakkun61.com doujin.kakkun61.com 数字 売り上げ部数は、どんぶり勘定ですが（特に Yesod 本のダウンロードカードが完全に記憶による）下記の通りとなりました。 Yesod 本 紙 + P…</summary></entry><entry><id>https://qiita.com/o_posting/items/3fd97e13dc17f9f9a187</id><title type="text">Haskellメモ</title><updated>2018-09-10T19:39:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/o_posting/items/3fd97e13dc17f9f9a187"/></entry><entry><id>https://qiita.com/7ma7X/items/8cee82377587058ff0c3</id><title type="text">GHC.List を読んで Haskell のリスト操作をまとめた</title><updated>2018-09-07T23:28:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/7ma7X/items/8cee82377587058ff0c3"/></entry><entry><id>https://qiita.com/acple@github/items/216542d1c4844c2ec879</id><title type="text">PureScriptで存在型を試す</title><updated>2018-09-04T21:48:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/acple@github/items/216542d1c4844c2ec879"/></entry><entry><id>https://haskell.jp/blog/posts/2018/substring-parser.html</id><title type="text">substring-parserで「タイプセーフプリキュア！」を移行した話</title><updated>2018-09-04T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/substring-parser.html"/><summary type="html">
+&lt;/div&gt;</summary></entry><entry><id>https://qiita.com/HirotoShioi/items/70cd235e93dee99bf8e8</id><title type="text">すごいH本で見落としがちだが実は重要な機能：newtype</title><updated>2018-09-16T19:57:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/HirotoShioi/items/70cd235e93dee99bf8e8"/></entry><entry><id>https://qiita.com/lotz/items/aca1d179c14d4dca5099</id><title type="text">Haskellの変数には値を代入しません、束縛します。</title><updated>2018-09-15T16:09:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/aca1d179c14d4dca5099"/></entry><entry><id>https://qiita.com/acple@github/items/779792002ba67161d37c</id><title type="text">世界一わかりやすいStateモナドのしくみ、あるいは猫でもわからないモナドのおはなし</title><updated>2018-09-13T00:16:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/acple@github/items/779792002ba67161d37c"/></entry><entry><id>http://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F</id><title type="text">技術書典 4 にサークル参加した</title><updated>2018-09-12T13:03:31+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F"/><summary type="html">4月22日に開催された『技術書典 4』にサークル参加してきました。 techbookfest.org 技術書典は1と2に個人で参加して3は会社として参加して今回の4は会社と個人と2サークルにかかわっていました。 超技術書典を抜くと皆勤です。 個人サークル 既刊として『遠回りして学ぶ Yesod 入門』を増刷し、新刊は『手続き Haskell』を持っていきました。 doujin.kakkun61.com doujin.kakkun61.com 数字 売り上げ部数は、どんぶり勘定ですが（特に Yesod 本のダウンロードカードが完全に記憶による）下記の通りとなりました。 Yesod 本 紙 + P…</summary></entry><entry><id>https://qiita.com/o_posting/items/3fd97e13dc17f9f9a187</id><title type="text">Haskellメモ</title><updated>2018-09-10T19:39:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/o_posting/items/3fd97e13dc17f9f9a187"/></entry><entry><id>https://qiita.com/7ma7X/items/8cee82377587058ff0c3</id><title type="text">GHC.List を読んで Haskell のリスト操作をまとめた</title><updated>2018-09-07T23:28:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/7ma7X/items/8cee82377587058ff0c3"/></entry><entry><id>https://haskell.jp/blog/posts/2018/substring-parser.html</id><title type="text">substring-parserで「タイプセーフプリキュア！」を移行した話</title><updated>2018-09-04T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/substring-parser.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -5946,193 +6110,6 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;使い方・バグ報告&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-04-02-ml-day-1.html</id><title type="text">ML Day ＃1 に行ってきた</title><updated>2018-04-02T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-04-02-ml-day-1.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;ML Day ＃1 に行ってきた&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-04-02&#34; itemprop=&#34;datePublished&#34;&gt;
-        Apr 2, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/event.html&#34;&gt;event&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;&lt;a href=&#34;https://ml-lang.connpass.com/event/78199/&#34;&gt;ML Day #1&lt;/a&gt; というイベントに参加してきたので，そのメモ？まとめ？みたいな感じの記事です．&lt;/p&gt;
-&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;ML Day は毎年やってるML勉強会というML系の発表会形式の勉強会のこと． (なぜか)名前を変えたらしい． ちなみに，今後は半年に一回ペースでやりたいらしい．&lt;/p&gt;
-&lt;h2 id=&#34;ぼくのはなし&#34;&gt;ぼくのはなし&lt;/h2&gt;
-&lt;p&gt;新設された LT 枠で発表してきた．&lt;/p&gt;
-&lt;p&gt;スライドはこれ&lt;/p&gt;
-&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/o84VhGTUREO4No&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;p&gt;さすがに Haskell の話をするのはアレだったので，Haskell の新しいモジュールシステム Backpack のベースになった MixML の話をした． この日までに(Haskellで)実装完了してドヤ顔する予定だったのだが全然終わらなかった orz (Alt braif*ck じゃなくて)ちゃんとした規模の処理系を実装するのって，大変なんですね…&lt;/p&gt;
-&lt;h2 id=&#34;section-1&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;ちなみに，&lt;a href=&#34;https://github.com/rossberg/mixml&#34;&gt;SML/NJ で実装されたもの&lt;/a&gt;があり，実質これを参考に Haskell で書き直すだけの作業． だけど SML -&amp;gt; Haskell に直すのって大変，非純粋なものを純粋な世界にするって大変(そりゃそう)． 気軽に状態を持ちやがって…&lt;/p&gt;
-&lt;h2 id=&#34;自分的ハイライト&#34;&gt;自分的ハイライト&lt;/h2&gt;
-&lt;p&gt;濃い目の話が多かったのでざっくりと．&lt;/p&gt;
-&lt;p&gt;資料は既に&lt;a href=&#34;https://ml-lang.connpass.com/event/78199/presentation/&#34;&gt;ほとんど上がっている&lt;/a&gt;．&lt;/p&gt;
-&lt;h3 id=&#34;ml型付の基礎の基礎&#34;&gt;ML型付の基礎の基礎&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;発表者は &lt;a href=&#34;https://twitter.com/haochenxie&#34;&gt;Haochen&lt;/a&gt; くん
-&lt;ul&gt;
-&lt;li&gt;名〇屋で &lt;a href=&#34;https://sicss.connpass.com/event/71199/&#34;&gt;TaPL の読書会&lt;/a&gt;を主催してるひと&lt;/li&gt;
-&lt;li&gt;こんど&lt;a href=&#34;https://nupsc.sicss.org/&#34;&gt;名古屋でプロコン&lt;/a&gt;やるんだって&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://haochenxie.name/dl/the_introduction_of_foundation_of_ml_type_checking.pdf&#34;&gt;資料はコレ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;基礎 (foundation) の 基礎 (introduction) の話
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;型は素晴らしい&lt;/li&gt;
-&lt;li&gt;でも型を書きたくない
-&lt;ul&gt;
-&lt;li&gt;プログラマは怠惰を美徳にしている生き物だもんね&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;再構築すればいいじゃない！
-&lt;ul&gt;
-&lt;li&gt;&lt;del&gt;型検査無しにもどるなんてのは論外&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;素晴らしい本(TaPL)と素晴らしい先生(ピアース先生)
-&lt;ul&gt;
-&lt;li&gt;&lt;del&gt;ML Day 出る以上読め&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;おまけとして let 多相の話もしてた&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sicss.connpass.com/event/83801/&#34;&gt;5/6に論理プログラミング言語の第一人者の講演&lt;/a&gt;を企画しているらしい
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://readcoqart.connpass.com/event/83722/&#34;&gt;Coq 勉強会&lt;/a&gt;と被ってるのがなぁぁぁぁ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;tba&#34;&gt;TBA&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;発表者は&lt;a href=&#34;https://twitter.com/pi8027&#34;&gt;坂口和彦&lt;/a&gt;さん
-&lt;ul&gt;
-&lt;li&gt;PPL2018 のポスター賞の人でその話を&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;発表スライドは上がってないけど &lt;a href=&#34;http://logic.cs.tsukuba.ac.jp/~sakaguchi/posters/ppl2018.pdf&#34;&gt;PPL2018 のポスター&lt;/a&gt;はあった&lt;/li&gt;
-&lt;li&gt;Coq でリストの置換(permutation)の自動証明(だったかな)
-&lt;ul&gt;
-&lt;li&gt;証明の過程をいろいろ話してくれた&lt;/li&gt;
-&lt;li&gt;(がぼくはよくわかってない)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.sqlab.jp/FLOPS2018/&#34;&gt;FLOPS’18&lt;/a&gt; に通ったので発表するらしい&lt;/li&gt;
-&lt;li&gt;質問: 項書き換えでできないの？
-&lt;ul&gt;
-&lt;li&gt;中野先生に聞かれた(PPLで？？)&lt;/li&gt;
-&lt;li&gt;出来たら教えてといって何もないのでできないんじゃない？&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;型つき組版処理システムsatysfi&#34;&gt;型つき組版処理システムSATySFi&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;発表者は &lt;a href=&#34;https://twitter.com/bd_gfngfn&#34;&gt;bd_gfngfn&lt;/a&gt; 氏&lt;/li&gt;
-&lt;li&gt;資料は&lt;a href=&#34;https://drive.google.com/file/d/1BB7ZAiwPO3hVtq7PGImPtMs1-kOd7SzW/view&#34;&gt;コレ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;彼の有名な &lt;a href=&#34;https://github.com/gfngfn/SATySFi&#34;&gt;型つき組版処理システムSATySFi&lt;/a&gt; の話
-&lt;ul&gt;
-&lt;li&gt;目標: L〇TeX を倒す&lt;/li&gt;
-&lt;li&gt;目標: エラーの可読性向上(大事)&lt;/li&gt;
-&lt;li&gt;ML系に似た組版用型システムが載っている
-&lt;ul&gt;
-&lt;li&gt;let 多相もレコード多相もある&lt;/li&gt;
-&lt;li&gt;しかし GADT や Functor はまだ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;「いきなり PDF がでまして」をよく言っていた(笑)&lt;br /&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;質問: 構文にポリシーはあるの？
-&lt;ul&gt;
-&lt;li&gt;ML系の文法にしたい(けど LaTeX に寄せたほうが…)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;mlでつくる拡張可能インタプリタ&#34;&gt;MLでつくる拡張可能インタプリタ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;発表者は &lt;a href=&#34;https://twitter.com/linerlock&#34;&gt;linerlock&lt;/a&gt; 氏
-&lt;ul&gt;
-&lt;li&gt;今日までつくば大生
-&lt;ul&gt;
-&lt;li&gt;&lt;del&gt;これのせいで二番煎じに&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;資料は&lt;a href=&#34;https://speakerdeck.com/takahisa/extensible-interpreter-in-ml&#34;&gt;コレ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;言語開発 &lt;strong&gt;も&lt;/strong&gt; モジュラーにしたいので拡張可能なインタプリタを作ればいいじゃない
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/takahisa/kennel&#34;&gt;コレ&lt;/a&gt;のことかな？&lt;/li&gt;
-&lt;li&gt;例えば超簡易的な自作言語に新しくリスト追加してと言われても簡単にできるように&lt;/li&gt;
-&lt;li&gt;評価器は楽しいので(拡張可能な評価器の)研究が多い&lt;/li&gt;
-&lt;li&gt;構文解析は無い…なのでここをサイボウズラボユースでやった(？)
-&lt;ul&gt;
-&lt;li&gt;構文解析の無い言語なんてないのにね&lt;/li&gt;
-&lt;li&gt;作ったの&lt;a href=&#34;https://github.com/takahisa/finale&#34;&gt;コレ&lt;/a&gt;かな？&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;「(BNFに新しい構文を)上に足すか下に足すか、花火じゃないけど」
-&lt;ul&gt;
-&lt;li&gt;上に足すか下に足すかで意味が変わることが…&lt;/li&gt;
-&lt;li&gt;そこで最長一致法 : 全部試して一番長いのをとる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;型とか最適化とかできてない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;lt&#34;&gt;LT&lt;/h3&gt;
-&lt;p&gt;は割愛(つかれた)． ラインナップは&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;自作言語を OCaml で作り直したら ML みたいなコア言語になってしまったという話&lt;/li&gt;
-&lt;li&gt;Elm の紹介&lt;/li&gt;
-&lt;li&gt;OCaml の祖先 CAML の解説&lt;/li&gt;
-&lt;li&gt;自作したパーサージェネレーターの紹介&lt;/li&gt;
-&lt;li&gt;Verifastの辛い話(&lt;del&gt;古いOCamlを使うのつらいという愚痴&lt;/del&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;LT の資料は全部 connpass にあがっている．&lt;/p&gt;
-&lt;h3 id=&#34;コンパイラバックエンド&#34;&gt;コンパイラバックエンド&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;発表者は&lt;a href=&#34;&#34;&gt;インターネットの闇&lt;/a&gt;さん
-&lt;ul&gt;
-&lt;li&gt;この会の主催者(？)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;OCaml のソースコードを皆で読もうの会
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;バックエンドはコンパイラのコト&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;not Webバックエンド&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ガリグ先生しか読めない化け物(type系)&lt;/li&gt;
-&lt;li&gt;OCaml のバックは副作用ガンガン使う、FPとは？GC付きのC&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;bucklescriptでノベルゲームdslを作る&#34;&gt;BuckleScriptでノベルゲームDSLを作る&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;発表者は[pocketberserker]氏
-&lt;ul&gt;
-&lt;li&gt;普段は F# の人&lt;/li&gt;
-&lt;li&gt;F# ネタが切れた&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;資料は&lt;a href=&#34;https://github.com/pocketberserker/ml_day_1&#34;&gt;ココ&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;資料もこの DSL で書かれたもの(？？)&lt;/li&gt;
-&lt;li&gt;ノベルゲーなのでバックができない(笑)&lt;/li&gt;
-&lt;li&gt;発表者はデバッグモードで戻ってた&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ノベルゲーDSLを作りたい遺伝子を持ってしまったので作るという話
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/cowlick/cowlick&#34;&gt;つくったやつ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;自分が今書いてるのはS式なのか？？？？S式が分からなくなる&lt;/li&gt;
-&lt;li&gt;&lt;del&gt;&lt;strong&gt;Reason を ML ユーザーが触るべきではない！&lt;/strong&gt;&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;感想&#34;&gt;感想&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;濃い(誉め言葉)&lt;/li&gt;
-&lt;li&gt;後半は疲れてしまった(ごめん)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;質問時間を含めて発表時間(律儀に終わる必要はない)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;MixML 完成させてリベンジ発表したい&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
 </summary></entry><entry><id>https://haskell.jp/blog/posts/2018/renew-haskell-antenna.html</id><title type="text">Haskell Antenna をリニューアルしました</title><updated>2018-03-21T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/renew-haskell-antenna.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
