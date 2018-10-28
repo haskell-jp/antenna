@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-10-24T17:33:39+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/A_kirisaki/items/a72cb21be08c6dd7cf92</id><title type="text">HaskellでDhallをExtensibleのレコードとして読み込めるようにする</title><updated>2018-10-24T17:33:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/A_kirisaki/items/a72cb21be08c6dd7cf92"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/05/17/180426</id><title type="text">Kubernetes Meetup Tokyo #10 で Pod の Preemption について話してきました</title><updated>2018-10-23T16:31:12+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/05/17/180426"/><summary type="html">だいぶ日が空いてしまって今更ですが、先日行われた Kubernetes Meetup Tokyo #10 で、v1.8*1 から導入された新機能 Preemption について発表してきました。 Preemption は、Kubernetes クラスタのリソースが不足した際に、優先度が低い Pod を追い出して優先度が高い Pod の稼働を保証する仕組みです。 当日は時間が不足気味だったので、説明不十分だったかなと思われる点についていくつか補足しておきます。 Priority の指定について スライド中では詳しく説明しませんでしたが、ユーザは直接 Pod（や Deployment 中の Pod…</summary></entry><entry><id>https://qiita.com/Nymphium/items/5fb518d45248cad47d0f</id><title type="text">Neovimへのhaskell-ide-engineの導入</title><updated>2018-10-23T12:37:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Nymphium/items/5fb518d45248cad47d0f"/></entry><entry><id>https://qiita.com/A_kirisaki/items/ae8ac60ead2e17a87bad</id><title type="text">HaskellでのQuickCheckとData.ByteString.Char8の罠</title><updated>2018-10-22T19:38:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/A_kirisaki/items/ae8ac60ead2e17a87bad"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html</id><title type="text">Stack 1.9.1 がリリースされました。</title><updated>2018-10-22T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-10-28T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://matsubara0507.github.io/posts/2018-10-28-ghc-8-6-error-no-gmp.html</id><title type="text">GHC 8.6 がインストールできなかった</title><updated>2018-10-28T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-28-ghc-8-6-error-no-gmp.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;GHC 8.6 がインストールできなかった&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2018-10-28&#34; itemprop=&#34;datePublished&#34;&gt;
+        Oct 28, 2018
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;対したことではないんだけど，日本語の記事が無っかたのでメモ． ちなみに OS は macOS Sierra (10.12.6) です．&lt;/p&gt;
+&lt;h2 id=&#34;ghc-8.6-でビルドできない&#34;&gt;GHC 8.6 でビルドできない&lt;/h2&gt;
+&lt;p&gt;現在 stackage の Nightly は最新の GHC バージョンである 8.6 がインストールされる． 結構パッケージも揃ってきたので，自分のパッケージもビルドしてみようかなと思って，resolver を Nightly に変えて &lt;code&gt;stack build&lt;/code&gt; したら下記のようなエラーが出た．&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
+Downloaded nightly-2018-10-26 build plan.    
+Preparing to install GHC to an isolated location.
+This will not interfere with any system-level installation.
+Downloaded ghc-8.6.1.                                      
+Installing GHC ...                                                                         
+Received ExitFailure 2 when running
+Raw command: /usr/bin/make install
+Run from: /Users/username/.stack/programs/x86_64-osx/ghc-8.6.1.temp/ghc-8.6.1/&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;--vebose&lt;/code&gt; を付けて詳細を見てみる．&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build --verbose
+Version 1.9.1, Git revision f9d0042c141660e1d38f797e1d426be4a99b2a3c (6168 commits) x86_64 hpack-0.31.0
+2018-10-28 13:31:22.068195: [debug] Checking for project config at: /Users/username/git/haskell/servant-kotlin/stack.yaml
+2018-10-28 13:31:22.069706: [debug] Loading project config file stack.yaml
+ .
+ .
+ .
+2018-10-28 13:32:21.355443: [debug] /Library/Developer/CommandLineTools/usr/bin/ranlib: file: /Users/username/.stack/programs/x86_64-osx/ghc-8.6.1/lib/ghc-8.6.1/rts/libHSrts_thr_p.a(Select.thr_p_o) has no symbols
+2018-10-28 13:32:21.621133: [debug] &amp;quot;utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist&amp;quot; copy libraries/ghc-prim dist-install &amp;quot;strip&amp;quot; &amp;#39;&amp;#39; &amp;#39;/Users/username/.stack/programs/x86_64-osx/ghc-8.6.1&amp;#39; &amp;#39;/Users/username/.stack/programs/x86_64-osx/ghc-8.6.1/lib/ghc-8.6.1&amp;#39; &amp;#39;/Users/username/.stack/programs/x86_64-osx/ghc-8.6.1/share/doc/ghc-8.6.1/html/libraries&amp;#39; &amp;#39;v p dyn&amp;#39;  
+2018-10-28 13:32:21.841900: [debug] dyld: Library not loaded: /usr/local/opt/gmp/lib/libgmp.10.dylib
+2018-10-28 13:32:21.842003: [debug]   Referenced from: /Users/username/.stack/programs/x86_64-osx/ghc-8.6.1.temp/ghc-8.6.1/libraries/base/dist-install/build/libHSbase-4.12.0.0-ghc8.6.1.dylib
+2018-10-28 13:32:21.842062: [debug]   Reason: image not found
+2018-10-28 13:32:21.842273: [debug] make[1]: *** [install_packages] Abort trap: 6
+2018-10-28 13:32:21.844303: [debug] make: *** [install] Error 2
+Installing GHC ...
+Received ExitFailure 2 when running
+Raw command: /usr/bin/make install
+Run from: /Users/username/.stack/programs/x86_64-osx/ghc-8.6.1.temp/ghc-8.6.1/&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;どうやら &lt;code&gt;/usr/local/opt/gmp/lib/libgmp.10.dylib&lt;/code&gt; が無いみたいだ．&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ ls /usr/local/opt/gmp/lib/libgmp.10.dylib
+ls: /usr/local/opt/gmp/lib/libgmp.10.dylib: No such file or directory&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これで検索すると，Ruby に関することだが &lt;a href=&#34;https://stackoverflow.com/questions/34912946&#34;&gt;StackOverflow があった&lt;/a&gt;． 曰く，&lt;code&gt;gmp&lt;/code&gt; パッケージを入れれば良いらしい（多くの人は他のどこかのタイミングで入ってるのかも）．&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ brew reinstall gmp
+==&amp;gt; Reinstalling gmp
+==&amp;gt; Downloading https://homebrew.bintray.com/bottles/gmp-6.1.2_2.sierra.bottle.tar.gz
+######################################################################## 100.0%
+==&amp;gt; Pouring gmp-6.1.2_2.sierra.bottle.tar.gz
+🍺  /usr/local/Cellar/gmp/6.1.2_2: 18 files, 3.1MB
+
+$ ls /usr/local/opt/gmp/lib/libgmp.10.dylib
+/usr/local/opt/gmp/lib/libgmp.10.dylib&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これで GHC 8.6 で &lt;code&gt;stack build&lt;/code&gt; できるようになった．&lt;/p&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;まぁ一応ね，一応メモした．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/A_kirisaki/items/a72cb21be08c6dd7cf92</id><title type="text">HaskellでDhallをExtensibleのレコードとして読み込めるようにする</title><updated>2018-10-24T17:33:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/A_kirisaki/items/a72cb21be08c6dd7cf92"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/05/17/180426</id><title type="text">Kubernetes Meetup Tokyo #10 で Pod の Preemption について話してきました</title><updated>2018-10-23T16:31:12+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/05/17/180426"/><summary type="html">だいぶ日が空いてしまって今更ですが、先日行われた Kubernetes Meetup Tokyo #10 で、v1.8*1 から導入された新機能 Preemption について発表してきました。 Preemption は、Kubernetes クラスタのリソースが不足した際に、優先度が低い Pod を追い出して優先度が高い Pod の稼働を保証する仕組みです。 当日は時間が不足気味だったので、説明不十分だったかなと思われる点についていくつか補足しておきます。 Priority の指定について スライド中では詳しく説明しませんでしたが、ユーザは直接 Pod（や Deployment 中の Pod…</summary></entry><entry><id>https://qiita.com/Nymphium/items/5fb518d45248cad47d0f</id><title type="text">Neovimへのhaskell-ide-engineの導入</title><updated>2018-10-23T12:37:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Nymphium/items/5fb518d45248cad47d0f"/></entry><entry><id>https://qiita.com/A_kirisaki/items/ae8ac60ead2e17a87bad</id><title type="text">HaskellでのQuickCheckとData.ByteString.Char8の罠</title><updated>2018-10-22T19:38:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/A_kirisaki/items/ae8ac60ead2e17a87bad"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html</id><title type="text">Stack 1.9.1 がリリースされました。</title><updated>2018-10-22T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;10月18日に Stack version 1.9.1 が&lt;a href=&#34;https://github.com/commercialhaskell/stack/blob/v1.9.1/ChangeLog.md#v191&#34;&gt;リリース&lt;/a&gt;されました。&lt;/p&gt;
 &lt;p&gt;更新は &lt;code&gt;stack upgrade&lt;/code&gt; コマンドを実行します。&lt;/p&gt;
 &lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack upgrade
@@ -5982,247 +6050,7 @@ Available commands:
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
-</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2015/01/21/175227</id><title type="text">ぼくのかんがえた最強の拡張可能レコード</title><updated>2018-04-27T11:57:55+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2015/01/21/175227"/><summary type="html">注意(2018/04) かなり古い記事なので、extensibleの最新のバージョンとはまったく互換性がない __ 動機 GHCに、OverloadedRecordFields(ORF)という拡張の導入が提案されている。 (Records/OverloadedRecordFields/Design – GHCより) Haskellのレコードの深刻な欠点は、フィールドをオーバーロードできないことだ。例えば、 data Person = Person { personId :: Int, name :: String } data Address = Address { personId :: I…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-04-13-try-rio-1.html</id><title type="text">rio ライブラリを試す その１</title><updated>2018-04-13T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-04-13-try-rio-1.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;rio ライブラリを試す その１&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-04-13&#34; itemprop=&#34;datePublished&#34;&gt;
-        Apr 13, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/rio.html&#34;&gt;rio&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;先日，alt. &lt;code&gt;Prelude&lt;/code&gt; を目指している &lt;a href=&#34;https://hackage.haskell.org/package/rio&#34;&gt;&lt;code&gt;rio&lt;/code&gt;&lt;/a&gt; ライブラリの ver.0.1 がリリースされました． 自作している CLI ツールを試しに &lt;code&gt;rio&lt;/code&gt; で置き換えようかとしてまして，自分の整理のためにまとめてみようと思います．&lt;/p&gt;
-&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;ただし，&lt;code&gt;rio&lt;/code&gt; 作者ではないし，全部をちゃんと追っていないので間違っているかも． 間違っている場合は&lt;a href=&#34;https://github.com/matsubara0507/source-gh-pages&#34;&gt;このリポジトリに Issue&lt;/a&gt; するか &lt;a href=&#34;https://www.reddit.com/r/haskell_jp&#34;&gt;Reddit&lt;/a&gt; でコメントでもしてください m(_ _ )m&lt;/p&gt;
-&lt;h1 id=&#34;readme-でひとめぐり&#34;&gt;README でひとめぐり&lt;/h1&gt;
-&lt;p&gt;もともとはビルドツール Stack を作成するために考えたデザインパターンをまとめたものっぽい．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.fpcomplete.com/blog/2017/07/the-rio-monad&#34;&gt;The RIO Monad&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;rio&lt;/code&gt; ライブラリの README にはライブラリのゴール・目的の他に(彼らにとっての)ベストプラクティスが書いてある(&lt;code&gt;rio&lt;/code&gt; 自体がそれに則って作られてる)． ここには翻訳というより，README の各項目の要約を記述する．&lt;/p&gt;
-&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;rio&lt;/code&gt; ライブラリのゴール(目的)は以下の3つ．&lt;/p&gt;
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;よく設計された信頼できるライブラリのコレクション&lt;/li&gt;
-&lt;li&gt;より優れた Prelude の代替え&lt;/li&gt;
-&lt;li&gt;高品質な Haskell コードを書くためのベストプラクティス&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;(1)により &lt;code&gt;text&lt;/code&gt; や &lt;code&gt;bytesyring&lt;/code&gt; のような，ほとんど &lt;code&gt;base&lt;/code&gt; のようなパッケージを &lt;code&gt;dependencies&lt;/code&gt; に列挙する必要が無くなる． (3)は大域変数(&lt;code&gt;Reader&lt;/code&gt; モナド)やロガーのような実用モナド回りのベストプラクティスが目玉かな(他にもあるけど)．&lt;/p&gt;
-&lt;h2 id=&#34;標準ライブラリ&#34;&gt;標準ライブラリ&lt;/h2&gt;
-&lt;p&gt;いくつかのパッケージを「標準」ライブラリとして再エクスポートしている． &lt;code&gt;rio&lt;/code&gt; の&lt;a href=&#34;https://github.com/commercialhaskell/rio/blob/311549f5a7c29abf6fc25e3ba7ec5ab6647e2d96/rio/package.yaml#L14&#34;&gt;依存関係&lt;/a&gt;を見る限り，次のパッケージを再エクスポートしているようだ．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;bytestring&lt;/li&gt;
-&lt;li&gt;containers&lt;/li&gt;
-&lt;li&gt;deepseq&lt;/li&gt;
-&lt;li&gt;directory&lt;/li&gt;
-&lt;li&gt;exceptions&lt;/li&gt;
-&lt;li&gt;filepath&lt;/li&gt;
-&lt;li&gt;hashable&lt;/li&gt;
-&lt;li&gt;lens(microlens)&lt;/li&gt;
-&lt;li&gt;process&lt;/li&gt;
-&lt;li&gt;text&lt;/li&gt;
-&lt;li&gt;time&lt;/li&gt;
-&lt;li&gt;unliftio&lt;/li&gt;
-&lt;li&gt;unordered-containers&lt;/li&gt;
-&lt;li&gt;vector&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;もちろん，元のパッケージの全ての関数や型を再エクスポートしているのではなく，取捨選択して再エクスポートしている． また，後述する &lt;code&gt;Prelude&lt;/code&gt; の代わりである &lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html&#34;&gt;&lt;code&gt;RIO&lt;/code&gt;&lt;/a&gt; モジュールに含まれるものもあれば，&lt;code&gt;RIO.XXX&lt;/code&gt; として別のモジュールとして提供されているものもある．&lt;/p&gt;
-&lt;h3 id=&#34;lens&#34;&gt;Lens&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;lens&lt;/code&gt; の場合，申し訳程度の関数しか再エクスポートされていない． 基本的に &lt;code&gt;set&lt;/code&gt;・&lt;code&gt;sets&lt;/code&gt;・&lt;code&gt;over&lt;/code&gt;・&lt;code&gt;to&lt;/code&gt; だけだ． 演算子は参照の &lt;code&gt;(.^)&lt;/code&gt; しかない． 今後どうなるか分からないが，現状 &lt;code&gt;(.~)&lt;/code&gt; や &lt;code&gt;(%~)&lt;/code&gt; は無いので替わりに関数を中置演算子にして使うしか無さそうだ．&lt;/p&gt;
-&lt;h2 id=&#34;prelude-の代替え&#34;&gt;&lt;code&gt;Prelude&lt;/code&gt; の代替え&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Prelude&lt;/code&gt; の代替えとして &lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html&#34;&gt;&lt;code&gt;RIO&lt;/code&gt;&lt;/a&gt; モジュールというのがある． README には部分関数や遅延 I/O のような，よく問題になるものを削除していると書いてある． また，&lt;code&gt;Data.Maybe&lt;/code&gt; や &lt;code&gt;Control.Arrow&lt;/code&gt; のような良く使う &lt;code&gt;base&lt;/code&gt; ライブラリのモジュールが再エクスポートされていたり，&lt;code&gt;mapLeft&lt;/code&gt; や &lt;code&gt;whenM&lt;/code&gt; のような良く使いそうなのに &lt;code&gt;base&lt;/code&gt; には無い関数が&lt;a href=&#34;https://github.com/commercialhaskell/rio/blob/e8c4cba69599aecd9f91c4398aea47ab4eadbb07/rio/src/RIO/Prelude/Extra.hs&#34;&gt;定義されている&lt;/a&gt;． 正直，この辺りがすごい便利．&lt;/p&gt;
-&lt;h2 id=&#34;ベストプラクティス&#34;&gt;ベストプラクティス&lt;/h2&gt;
-&lt;p&gt;ココからが長い + 意見の分かれるところ． 結構 &lt;code&gt;TODO&lt;/code&gt; と書いてあるところも多いので彼らの中でもまとまってないのかな？？&lt;/p&gt;
-&lt;h3 id=&#34;インポートプラクティス&#34;&gt;インポートプラクティス&lt;/h3&gt;
-&lt;p&gt;以下をやってほしいらしい&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;NoImplicitPrelude&lt;/code&gt; 言語拡張をオン&lt;/li&gt;
-&lt;li&gt;全てのモジュールに &lt;code&gt;import RIO&lt;/code&gt; を追加 (すごいめんどい)&lt;/li&gt;
-&lt;li&gt;必要に応じて &lt;code&gt;RIO.XXX&lt;/code&gt; モジュールを &lt;code&gt;qualified&lt;/code&gt; を使ってインポート
-&lt;ul&gt;
-&lt;li&gt;適切な &lt;code&gt;qualified&lt;/code&gt; の付け方は各モジュールの Haddock の冒頭に書いてある&lt;/li&gt;
-&lt;li&gt;例えば &lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO-ByteString.html&#34;&gt;&lt;code&gt;import qualified RIO.ByteString as B&lt;/code&gt;&lt;/a&gt; とか&lt;/li&gt;
-&lt;li&gt;ドキュメントに &lt;code&gt;qualified&lt;/code&gt; が書いてない場合は &lt;code&gt;qualified&lt;/code&gt; しなくていいのかな？？(例えば &lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO-Directory.html&#34;&gt;&lt;code&gt;RIO.Directory&lt;/code&gt;&lt;/a&gt; とか)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;中置演算子は &lt;code&gt;qualified&lt;/code&gt; しなくていい(他のモジュールと衝突しない限りは)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;言語拡張&#34;&gt;言語拡張&lt;/h3&gt;
-&lt;p&gt;「言語拡張を使わないプロジェクトなんて，最近じゃほとんどないよね」とか書いてある． 以下の観点を基にデフォルトで利用しても良さそうな言語拡張を選定したそうだ．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;コミュニティで受け入れられている&lt;/li&gt;
-&lt;li&gt;コードを壊すようなことが &lt;strong&gt;ほとんど&lt;/strong&gt; ない&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;一般的に&lt;/strong&gt; 安全だと考えられている&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;割と断言していないのが面白い(笑) 推奨する言語拡張はこちら&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;AutoDeriveTypeable
-BangPatterns
-BinaryLiterals
-ConstraintKinds
-DataKinds
-DefaultSignatures
-DeriveDataTypeable
-DeriveFoldable
-DeriveFunctor
-DeriveGeneric
-DeriveTraversable
-DoAndIfThenElse
-EmptyDataDecls
-ExistentialQuantification
-FlexibleContexts
-FlexibleInstances
-FunctionalDependencies
-GADTs
-GeneralizedNewtypeDeriving
-InstanceSigs
-KindSignatures
-LambdaCase
-MultiParamTypeClasses
-MultiWayIf
-NamedFieldPuns
-NoImplicitPrelude
-OverloadedStrings
-PartialTypeSignatures
-PatternGuards
-PolyKinds
-RankNTypes
-RecordWildCards
-ScopedTypeVariables
-StandaloneDeriving
-TupleSections
-TypeFamilies
-TypeSynonymInstances
-ViewPatterns&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;RecordWildCards&lt;/code&gt; と &lt;code&gt;OverloadedStrings&lt;/code&gt; は議論の余地あり的なことが書いてある(詳しくはもとの README を見て)．&lt;/p&gt;
-&lt;h3 id=&#34;ghcオプション&#34;&gt;GHCオプション&lt;/h3&gt;
-&lt;p&gt;以下を使いなさいとのコト．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;-Wall
--Wcompat
--Wincomplete-record-updates
--Wincomplete-uni-patterns
--Wredundant-constraints&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;どういう形で指定してもいいけど，&lt;code&gt;package.yaml&lt;/code&gt; で書くと楽だし，後述するテンプレートにも書く予定だそうだ． あと，プロダクションコードなら &lt;code&gt;-Werror&lt;/code&gt; をオンにして，最後には確認した方が良いとも書いてある(CIとかでチェックしたいよね)．&lt;/p&gt;
-&lt;h3 id=&#34;monads&#34;&gt;Monads&lt;/h3&gt;
-&lt;p&gt;まってました！ モナドです． 実用的なプロジェクトを考えるとき，必要になってくるのが大域変数・ロガー・例外・IO だと思うので，気になるのはこの辺りだよね．&lt;/p&gt;
-&lt;p&gt;全体としての推奨事項は以下の通り．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;IO&lt;/code&gt; を使いたいときは &lt;code&gt;RIO&lt;/code&gt; モナドを使いなさい．
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;RIO&lt;/code&gt; モナドは &lt;code&gt;ReaderT env IO&lt;/code&gt; と同じだけど，&lt;code&gt;rio&lt;/code&gt; には &lt;code&gt;RIO&lt;/code&gt; モナドに対する補助関数が含まれるのでぜひ使って．&lt;br /&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;RIO&lt;/code&gt; モナドで &lt;code&gt;env&lt;/code&gt; の参照関数を書くときは，具体的な型に対する参照関数を書かずに，型クラスを用いた多相的な関数を書くべき(詳しくは後述)
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Has&lt;/code&gt; スタイルの型クラスを使えば lens を利用することが出来るよ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;いくつかの良い &lt;code&gt;mtl&lt;/code&gt; スタイルの型クラスも利用する必要は出てくるはず
-&lt;ul&gt;
-&lt;li&gt;ただし，推奨しているのは &lt;code&gt;MonadReader&lt;/code&gt; &lt;code&gt;MonadIO&lt;/code&gt; &lt;code&gt;MonadUnliftIO&lt;/code&gt; &lt;code&gt;PrimMonad&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;MonadReader&lt;/code&gt; + &lt;code&gt;Has&lt;/code&gt; の方が &lt;code&gt;MonadLogger&lt;/code&gt; のように新しい型クラスを作るより優れていると思う&lt;/li&gt;
-&lt;li&gt;特に &lt;code&gt;MonadBase&lt;/code&gt; &lt;code&gt;MonadBaseControl&lt;/code&gt; &lt;code&gt;MonadMask&lt;/code&gt; &lt;code&gt;MonadCatch&lt;/code&gt; は避けるべき&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;大域変数&#34;&gt;大域変数&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;env&lt;/code&gt; 回りについて． &lt;code&gt;Has&lt;/code&gt; スタイル(パターン)というのがあって，それ自体はこの&lt;a href=&#34;https://hackernoon.com/the-has-type-class-pattern-ca12adab70ae&#34;&gt;ページ&lt;/a&gt;が参考になるのかな？ &lt;code&gt;env&lt;/code&gt; から何らかの値を参照する場合には&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;myFunction ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RIO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Foo&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;のような関数は &lt;strong&gt;やめて&lt;/strong&gt; ，次のように書くのを推奨している．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasConfig&lt;/span&gt; env &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;  configL ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lens&amp;#39;&lt;/span&gt; env &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;-- more on this in a moment&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;myFunction ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasConfig&lt;/span&gt; env &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RIO&lt;/span&gt; env &lt;span class=&#34;dt&#34;&gt;Foo&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ここで，&lt;code&gt;env&lt;/code&gt; は次のようなレコードを想定しており&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; envConfig ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;こうすることで，&lt;code&gt;env&lt;/code&gt; に複数の大域変数を持たせても，うまく機能させることが出来る． また，次のように &lt;code&gt;Env&lt;/code&gt; と &lt;code&gt;Config&lt;/code&gt; それぞれでインスタンスを定義することで，それぞれで利用できる．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasConfig&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; data-line-number=&#34;2&#34;&gt;  configL &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; id&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasConfig&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-5&#34; data-line-number=&#34;5&#34;&gt;  configL &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; lens envConfig (\x y &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; x { envConfig &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; y })&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;ロガー&#34;&gt;ロガー&lt;/h4&gt;
-&lt;p&gt;ロガーも同様に &lt;code&gt;Has&lt;/code&gt; スタイルを推奨している． &lt;code&gt;env&lt;/code&gt; にログを出力するための関数(&lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#t:LogFunc&#34;&gt;&lt;code&gt;LogFunc&lt;/code&gt;&lt;/a&gt; 型のもの)を持たせる．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; envLogFunc ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;LogFunc&lt;/span&gt;,&lt;span class=&#34;ot&#34;&gt; envConfig ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これの &lt;code&gt;Has&lt;/code&gt; スタイル型クラスは &lt;code&gt;RIO&lt;/code&gt; モジュールに&lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#t:HasLogFunc&#34;&gt;定義してある&lt;/a&gt;．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasLogFunc&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; data-line-number=&#34;2&#34;&gt;  logFuncL &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; lens envLogFunc (\x y &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; x { envLogFunc &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; y })&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;LogFunc&lt;/code&gt; 型の値を渡すには &lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#v:withLogFunc&#34;&gt;&lt;code&gt;withLogFunc&lt;/code&gt;&lt;/a&gt; 関数を用いるようだ(&lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#v:mkLogFunc&#34;&gt;&lt;code&gt;mkLogFunc&lt;/code&gt;&lt;/a&gt; 関数もあるがアドバンスドと書いてある．)．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; data-line-number=&#34;2&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; data-line-number=&#34;3&#34;&gt;  envConfig &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; getConfig&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; data-line-number=&#34;4&#34;&gt;  logOpts &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; logOptionsHandle stdout &lt;span class=&#34;dt&#34;&gt;False&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; data-line-number=&#34;5&#34;&gt;  withLogFunc logOpts &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; \envLogFunc &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; runRIO &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt;{&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;} action&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; data-line-number=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-7&#34; data-line-number=&#34;7&#34;&gt;&lt;span class=&#34;ot&#34;&gt;action ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RIO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-8&#34; data-line-number=&#34;8&#34;&gt;action &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;...&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;例外&#34;&gt;例外&lt;/h4&gt;
-&lt;p&gt;例外をどのように表現すべきかは結構議論されており，今のところの基本的アイデアは以下の通り．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;lookup&lt;/code&gt; のような単純に失敗する関数(部分関数になり得る？)の場合は &lt;code&gt;Maybe&lt;/code&gt; や &lt;code&gt;Either&lt;/code&gt; を返そう&lt;/li&gt;
-&lt;li&gt;それらを使いたくない場合(大域脱出とか？)は例外を使って
-&lt;ul&gt;
-&lt;li&gt;純粋なコード(IOではなく)の場合は &lt;code&gt;MonadThrow&lt;/code&gt; 制約を使う&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;IO&lt;/code&gt; の場合は &lt;code&gt;thorowIO&lt;/code&gt; を介した実行時例外を使う(&lt;code&gt;RIO&lt;/code&gt; モナドも同じ)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;「IOアクションがどのように失敗するかを正確に把握できないことにより，不安と不満を感じるかもしれない．しかし，その痛みを受け入れて共存し内在化して，&lt;code&gt;tryAny&lt;/code&gt; を用いて移動してください．これは非同期例外に対して支払う代償です．」
-&lt;ul&gt;
-&lt;li&gt;ちょっと何言ってるかよくわからない…&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;全てのリソース割り当ては &lt;code&gt;bracket&lt;/code&gt; や &lt;code&gt;finally&lt;/code&gt; のような関数で行う&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以下のようにして，アプリ専用の例外を定義し使用することが推奨されている．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;AppExceptions&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; data-line-number=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;NetworkChangeError&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; data-line-number=&#34;3&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePathError&lt;/span&gt; FilePath&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-4&#34; data-line-number=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ImpossibleError&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-5&#34; data-line-number=&#34;5&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Typeable&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-6&#34; data-line-number=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-7&#34; data-line-number=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Exception&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;AppExceptions&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-8&#34; data-line-number=&#34;8&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-9&#34; data-line-number=&#34;9&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;AppExceptions&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-10&#34; data-line-number=&#34;10&#34;&gt;  show &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \&lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-11&#34; data-line-number=&#34;11&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;NetworkChangeError&lt;/span&gt; err &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;network error: &amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (unpack err)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-12&#34; data-line-number=&#34;12&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;FilePathError&lt;/span&gt; fp &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;error accessing filepath at: &amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; fp&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-13&#34; data-line-number=&#34;13&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;ImpossibleError&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;this codepath should never have been executed. Please report a bug.&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ちなみに，&lt;code&gt;Exception&lt;/code&gt; 型クラス(というか &lt;a href=&#34;https://hackage.haskell.org/package/base-4.11.0.0/docs/Control-Exception-Base.html#t:SomeException&#34;&gt;&lt;code&gt;SomeException&lt;/code&gt;&lt;/a&gt; 型)は，いわゆる存在型を利用して具体型(&lt;code&gt;AppExceptions&lt;/code&gt; とか)を隠蔽している．&lt;/p&gt;
-&lt;h2 id=&#34;section-1&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;疑問なところは，投げた例外を &lt;code&gt;catch&lt;/code&gt; してからディスパッチして良いのだろうか？ 実行時例外じゃなくて大域脱出をしたいだけなんだけどな． ちょっとイマイチ使い方が分からない．&lt;/p&gt;
-&lt;h3 id=&#34;strict&#34;&gt;Strict&lt;/h3&gt;
-&lt;p&gt;特別な理由が無い限り，データフィールド(レコードのフィールド？？)は正格にすべき，とのこと． 割と重要そうなのに一文しかない．&lt;/p&gt;
-&lt;h3 id=&#34;プロジェクトテンプレート&#34;&gt;プロジェクトテンプレート&lt;/h3&gt;
-&lt;p&gt;そのうち，新しい Stack テンプレートを作るそうだ． もちろん，&lt;code&gt;cabal&lt;/code&gt; ファイルは使わず &lt;code&gt;hpack&lt;/code&gt; を使用する．&lt;/p&gt;
-&lt;h3 id=&#34;安全第一&#34;&gt;安全第一&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;rio&lt;/code&gt; は安全性を最優先しており，そのため部分関数と遅延 I/O を全力で避けている． もし，遅延 I/O を使いたい場合は &lt;code&gt;conduit&lt;/code&gt; のようなストリーミングライブラリを使いなさい，とのこと．&lt;/p&gt;
-&lt;h3 id=&#34;一般化&#34;&gt;一般化&lt;/h3&gt;
-&lt;p&gt;Haskell のよくある疑問として，いつ一般化すべきか，というのがある(いつ？)． README にはいくつかの簡単なガイドラインが書いてある．&lt;/p&gt;
-&lt;p&gt;パラメトリック多相の場合，わりと議論の余地が無く，多相的な方が有用． つまり，&lt;code&gt;reverse :: [a] -&amp;gt; [a]&lt;/code&gt; は &lt;code&gt;reverse :: [Int] -&amp;gt; [Int]&lt;/code&gt; より優れている．&lt;/p&gt;
-&lt;p&gt;型クラスの場合は話が微妙になる． &lt;code&gt;Foldable&lt;/code&gt; や &lt;code&gt;Traversable&lt;/code&gt; のような &lt;code&gt;RIO&lt;/code&gt; で定義済みの型クラスには可能な限り一般化(インスタンスを定義)するのが良いだろう． しかし，本当の疑問は &lt;strong&gt;自身で型クラスを定義すべきかどうか&lt;/strong&gt; の場合． 原則としては可能な限りそれは避けるべきだ． もし，自身で型クラスを定義している場合は，&lt;strong&gt;自分が期待していなかった型がインスタンス化されてもバグが起きないよう&lt;/strong&gt; に気を付けること，とのこと．&lt;/p&gt;
-&lt;h3 id=&#34;コーディングスタイル&#34;&gt;コーディングスタイル&lt;/h3&gt;
-&lt;p&gt;議論中だそうだ．&lt;/p&gt;
-&lt;h3 id=&#34;モジュール階層&#34;&gt;モジュール階層&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;RIO.Prelude.XXX&lt;/code&gt; モジュールはドキュメントを Haddock で読みやすくするための階層で，個別にインポートすることを想定しているわけではない． と書いてあるが，結局 &lt;a href=&#34;https://github.com/commercialhaskell/rio/pull/72&#34;&gt;ver.0.1 からは Haddock からも消えてしまった&lt;/a&gt;ので気にする必要はない．&lt;/p&gt;
-&lt;h1 id=&#34;io-まわり&#34;&gt;I/O まわり&lt;/h1&gt;
-&lt;p&gt;(この話は README に書いてあるわけではないです)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;RIO&lt;/code&gt; モジュールには文字列型(&lt;code&gt;String&lt;/code&gt;)の一般的な &lt;code&gt;putStr&lt;/code&gt; や &lt;code&gt;getLine&lt;/code&gt; のような I/O 関数は無い． 実用コードの場合，これらの関数を直接呼ぶことは稀だろうが，例えば CLI を作ったときに &lt;code&gt;--version&lt;/code&gt; オプションでバージョン情報を出力したい場合などがある．&lt;/p&gt;
-&lt;p&gt;替わりとして次のような I/O 関数が提供されている．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Strict.ByteString&lt;/code&gt; 型の &lt;code&gt;putStr&lt;/code&gt; や &lt;code&gt;getLine&lt;/code&gt; であれば &lt;code&gt;RIO.ByteString&lt;/code&gt; モジュールで再定義されている&lt;/li&gt;
-&lt;li&gt;ファイルの入出力であれば &lt;code&gt;RIO&lt;/code&gt; モジュールに &lt;code&gt;Strict.ByteString&lt;/code&gt; 版と &lt;code&gt;Text&lt;/code&gt; 版が提供されている&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Builder&lt;/code&gt; 型の標準出力 &lt;a href=&#34;https://hackage.haskell.org/package/rio-0.1.0.0/docs/RIO.html#v:hPutBuilder&#34;&gt;&lt;code&gt;hPutBuilder&lt;/code&gt;&lt;/a&gt; 関数ならある&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;コンソールに対する I/O はどれを使うべきかはまだ&lt;a href=&#34;https://github.com/commercialhaskell/rio/issues/5&#34;&gt;議論中&lt;/a&gt;みたいだ．&lt;/p&gt;
-&lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
-&lt;p&gt;何となく&lt;a href=&#34;https://github.com/matsubara0507/scrapbook/tree/rio&#34;&gt;置き換えはできた&lt;/a&gt;けど，例外や I/O 回りは良く分かってない… また試していこう．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/main-tester.html</id><title type="text">CLIアプリのE2Eテストを行うためのライブラリー main-testerをリリースしました</title><updated>2018-04-09T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/main-tester.html"/><summary type="html">
+</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2015/01/21/175227</id><title type="text">ぼくのかんがえた最強の拡張可能レコード</title><updated>2018-04-27T11:57:55+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2015/01/21/175227"/><summary type="html">注意(2018/04) かなり古い記事なので、extensibleの最新のバージョンとはまったく互換性がない __ 動機 GHCに、OverloadedRecordFields(ORF)という拡張の導入が提案されている。 (Records/OverloadedRecordFields/Design – GHCより) Haskellのレコードの深刻な欠点は、フィールドをオーバーロードできないことだ。例えば、 data Person = Person { personId :: Int, name :: String } data Address = Address { personId :: I…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/main-tester.html</id><title type="text">CLIアプリのE2Eテストを行うためのライブラリー main-testerをリリースしました</title><updated>2018-04-09T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/main-tester.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
