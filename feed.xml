@@ -1,4 +1,89 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-11-04T12:39:42+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/yumakkt/items/36d95c738a3bc17119bd</id><title type="text">すごいH本読んだからまとめ 2 「リスト,タプル」</title><updated>2018-11-04T12:39:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/36d95c738a3bc17119bd"/></entry><entry><id>https://qiita.com/ayase/items/0bfe206c10b30f4c037e</id><title type="text">Haskellで自然言語処理100本ノックの1章を解いてみる。(後編その2)</title><updated>2018-11-03T21:28:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ayase/items/0bfe206c10b30f4c037e"/></entry><entry><id>https://qiita.com/yumakkt/items/ce82eb3ffae874faf249</id><title type="text">すごいH本読んだからまとめ 1 「関数の呼び方、関数の定義の仕方」</title><updated>2018-11-03T18:50:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/ce82eb3ffae874faf249"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/10/31/150056</id><title type="text">「名前の束縛」という名の束縛</title><updated>2018-10-31T18:20:45+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/10/31/150056"/><summary type="html">実用的なプログラミングにおいて、名前と概念を結びつける「束縛」はほぼ必須の概念である。しかし、その言葉には大きな誤解と混乱が根付いていた。 事の発端となったのは「Haskellにおいては、変数は値を代入するものではなく、値に束縛するものである」という議論である*1 *2。しかし、これは大きな誤解を孕んでいる。言葉の定義に立ち返ってその誤解を解いていこう。 束縛とバインディング 実は「束縛」には二つの意味がある。一つは、数学的な意味での変数の束縛*3、もう一つは、識別子と実体の結合という意味での束縛*4だ。 前者は変数の導入と言い換えることもできる。ラムダ計算におけるラムダ抽象と変数の関係もこれ…</summary></entry><entry><id>https://qiita.com/manzyun/items/833ae7fba582d899c618</id><title type="text">数学オンチのプログラマが数学を学習し直すらしいです【統計その1】</title><updated>2018-10-30T13:24:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/manzyun/items/833ae7fba582d899c618"/></entry><entry><id>https://qiita.com/manzyun/items/af84c34c15c90539569f</id><title type="text">数学オンチのプログラマが数学を学習し直すらしいです【目次】【随時更新】</title><updated>2018-10-30T11:33:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/manzyun/items/af84c34c15c90539569f"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/94647877c6bc02beb961</id><title type="text">Haskell入門ハンズオン! #4 - 当日用資料(1/3)</title><updated>2018-10-29T17:46:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/94647877c6bc02beb961"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/ad584549cf75c5d28745</id><title type="text">Haskell入門ハンズオン! #4 - 当日用資料 (2/3)</title><updated>2018-10-29T17:45:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/ad584549cf75c5d28745"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/a6ccda2b7ce06480ed72</id><title type="text">Haskell入門ハンズオン! #4 - 当日用資料 (3/3)</title><updated>2018-10-29T17:44:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/a6ccda2b7ce06480ed72"/></entry><entry><id>https://qiita.com/nobsun/items/52d75d312187e7adc5a1</id><title type="text">spanの小ネタ(変奏編)</title><updated>2018-10-29T11:54:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/52d75d312187e7adc5a1"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-29-join-hacktoberfest-2018.html</id><title type="text">Hacktoberfest 2018 なので PR を5つ以上出してみた</title><updated>2018-10-29T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-29-join-hacktoberfest-2018.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-11-05T13:22:10+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/SOhtsu/items/83ccb2ff211d79690aa5</id><title type="text">WSLへのHaskellのインストール並びにVisual Studio Codeの環境設定</title><updated>2018-11-05T13:22:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/SOhtsu/items/83ccb2ff211d79690aa5"/></entry><entry><id>https://qiita.com/yumakkt/items/f47e8ee810679978869f</id><title type="text">すごいH本読んだからまとめ 3 「型」</title><updated>2018-11-05T08:32:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/f47e8ee810679978869f"/></entry><entry><id>https://qiita.com/ayase/items/0bfe206c10b30f4c037e</id><title type="text">Haskellで自然言語処理100本ノックの1章を解いてみる。(後編その2)</title><updated>2018-11-04T20:39:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ayase/items/0bfe206c10b30f4c037e"/></entry><entry><id>https://qiita.com/yumakkt/items/36d95c738a3bc17119bd</id><title type="text">すごいH本読んだからまとめ 2 「リスト,タプル」</title><updated>2018-11-04T12:39:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/36d95c738a3bc17119bd"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-11-04-create-mdium.html</id><title type="text">Markdownで書いたテキストをMediumへポストする(mdium)</title><updated>2018-11-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-11-04-create-mdium.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Markdownで書いたテキストをMediumへポストする(mdium)&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2018-11-04&#34; itemprop=&#34;datePublished&#34;&gt;
+        Nov 4, 2018
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/application.html&#34;&gt;application&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;完全な二番煎じです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://namaraii.com/markdownで書いたテキストをmediumへポストする-md2mid-60c6ff9efde&#34;&gt;Markdownで書いたテキストをMediumへポストする(md2mid) – namaraii.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上記記事は，Go 言語で作った「Markdownで書いたテキストをMediumへポストする」CLIツールです． 弊社の技術記事置き場が Medium だったので，なんとか，ここのように Markdown で書けないかと調べていたら上記記事が出て来ました． もっといいのできないかなと車輪の再発明してみたけど，正直大して変わらなかったと思います．&lt;/p&gt;
+&lt;h2 id=&#34;作ったもの&#34;&gt;作ったもの&lt;/h2&gt;
+&lt;p&gt;md2mid と同様に Markdown で書いた記事を Medium に送信する CLI ツールを作った． 言わずもがな Haskell 製．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/mdium&#34;&gt;matsubara0507/mdium - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;違いがあるとすれば:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Haskell 製（しつこい）&lt;/li&gt;
+&lt;li&gt;環境変数を使ったトークンの管理&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/matsubara0507/mdium/&#34;&gt;Docker Image&lt;/a&gt; 化してる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;p&gt;まず CLI ツールをインストールするには，リポジトリをクローンして Haskell Stack で直接ビルド・インストールする:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/matsubara0507/mdium.git
+$ cd mdium
+$ stack install mdium&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;あるいは，Docker Image をプルしてくる:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker pull matsubara0507/mdium&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;コマンドを使うには，まず Medium のトークンを&lt;a href=&#34;https://medium.com/me/settings&#34;&gt;設定&lt;/a&gt;から生成する．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/create-mdium/generate-token.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;これを環境変数 &lt;code&gt;MEDIUM_TOKEN&lt;/code&gt; にセットする． 直接でも良いし，&lt;code&gt;./.env&lt;/code&gt; か &lt;code&gt;~/.env&lt;/code&gt; に描いても良い． 下記のコマンドを実行することでトークンをチェックできる:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mdium --me
+Hi MATSUBARA Nobutada!!&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Docker イメージを使う場合にはこう:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker run --rm --env-file=&amp;quot;$HOME/.env&amp;quot; matsubara0507/mdium /bin/bash -c &amp;quot;mdium --me&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;トークンを渡すのは &lt;code&gt;--env-file&lt;/code&gt; オプションでも &lt;code&gt;-e&lt;/code&gt; オプションでも何でも良い． 実際に送信するには引数に送信したいファイルのパスを渡すだけ:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ medium example.md
+post success, browse to: https://medium.com/@nobutada/e31f70013b36&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;こうすることで指定した Markdown ファイルを draft として記事にしてくれる． ちなみに，&lt;a href=&#34;https://github.com/matsubara0507/mdium/blob/master/example/example.md&#34;&gt;これ&lt;/a&gt;が下記のようになる．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/matsubara0507/mdium/raw/master/example/example.png&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;medium-api&#34;&gt;Medium API&lt;/h2&gt;
+&lt;p&gt;こっからは中身の話を少し． 中では Medium の API を使っている．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Medium/medium-api-docs#readme&#34;&gt;Medium’s API documentation - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;その中に記事を送信する API があるのだが，驚いたことに送信できるファイルフォーマットに HTML と &lt;strong&gt;Markdown&lt;/strong&gt; があったのだ． つまり，特別な処理をせずともこの API を使ってマークダウンを送信すれば良い．&lt;/p&gt;
+&lt;h2 id=&#34;dockerise&#34;&gt;Dockerise&lt;/h2&gt;
+&lt;p&gt;Haskell Stack には Docker integration というのがある（あんまりドキュメントにまとまっていない機能）． これを使うことで，指定した Docker image 内で Haskell プロジェクトをビルドしたり，ビルドした実行ファイルを突っ込んだ Docker image を作成したりできる．&lt;/p&gt;
+&lt;p&gt;今回は次のような設定を書き:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;docker:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;repo:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; fpco/stack-build&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;enable:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;false&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;container:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-6&#34; title=&#34;6&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507/mdium&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-7&#34; title=&#34;7&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;base:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; fpco/ubuntu-with-libgmp&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;次のようなコマンドを実行することで Docker image を作成している:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ stack docker pull
+$ stack --docker image container&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;作成した Image は &lt;code&gt;docker push&lt;/code&gt; コマンドでアップロードしている． また，この一連の流れを TraviCI で自動化している．&lt;/p&gt;
+&lt;h2 id=&#34;todo&#34;&gt;ToDo&lt;/h2&gt;
+&lt;p&gt;突貫で作ったのでいくつかやり残しがある．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;エラーハンドリング : 特に何も例外処理していないので&lt;/li&gt;
+&lt;li&gt;記事の更新 : 今はひたすら新しい記事を生成してしまう&lt;/li&gt;
+&lt;li&gt;タグやファイルフォーマットなどの細かい指定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
+&lt;p&gt;だいたい1日とちょっとでサクッと作った割にはいい感じのものができて満足． どんどん再発明していこ．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/yumakkt/items/ce82eb3ffae874faf249</id><title type="text">すごいH本読んだからまとめ 1 「関数の呼び方、関数の定義の仕方」</title><updated>2018-11-03T18:50:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/ce82eb3ffae874faf249"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/10/31/150056</id><title type="text">「名前の束縛」という名の束縛</title><updated>2018-10-31T18:20:45+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/10/31/150056"/><summary type="html">実用的なプログラミングにおいて、名前と概念を結びつける「束縛」はほぼ必須の概念である。しかし、その言葉には大きな誤解と混乱が根付いていた。 事の発端となったのは「Haskellにおいては、変数は値を代入するものではなく、値に束縛するものである」という議論である*1 *2。しかし、これは大きな誤解を孕んでいる。言葉の定義に立ち返ってその誤解を解いていこう。 束縛とバインディング 実は「束縛」には二つの意味がある。一つは、数学的な意味での変数の束縛*3、もう一つは、識別子と実体の結合という意味での束縛*4だ。 前者は変数の導入と言い換えることもできる。ラムダ計算におけるラムダ抽象と変数の関係もこれ…</summary></entry><entry><id>https://qiita.com/manzyun/items/833ae7fba582d899c618</id><title type="text">数学オンチのプログラマが数学を学習し直すらしいです【統計その1】</title><updated>2018-10-30T13:24:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/manzyun/items/833ae7fba582d899c618"/></entry><entry><id>https://qiita.com/manzyun/items/af84c34c15c90539569f</id><title type="text">数学オンチのプログラマが数学を学習し直すらしいです【目次】【随時更新】</title><updated>2018-10-30T11:33:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/manzyun/items/af84c34c15c90539569f"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/94647877c6bc02beb961</id><title type="text">Haskell入門ハンズオン! #4 - 当日用資料(1/3)</title><updated>2018-10-29T17:46:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/94647877c6bc02beb961"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/ad584549cf75c5d28745</id><title type="text">Haskell入門ハンズオン! #4 - 当日用資料 (2/3)</title><updated>2018-10-29T17:45:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/ad584549cf75c5d28745"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/a6ccda2b7ce06480ed72</id><title type="text">Haskell入門ハンズオン! #4 - 当日用資料 (3/3)</title><updated>2018-10-29T17:44:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/a6ccda2b7ce06480ed72"/></entry><entry><id>https://qiita.com/nobsun/items/52d75d312187e7adc5a1</id><title type="text">spanの小ネタ(変奏編)</title><updated>2018-10-29T11:54:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/52d75d312187e7adc5a1"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-29-join-hacktoberfest-2018.html</id><title type="text">Hacktoberfest 2018 なので PR を5つ以上出してみた</title><updated>2018-10-29T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-29-join-hacktoberfest-2018.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Hacktoberfest 2018 なので PR を5つ以上出してみた&lt;/h1&gt;
@@ -773,7 +858,7 @@ ssh-agentのために秘密鍵セットアップ
 less, lv, manコマンド終了時に画面をクリアしない
 
 [linux][cygwin] less, manの終了直前の画面をクリアしないで端末上に残す方法 
-</summary></entry><entry><id>https://qiita.com/manzyun/items/3f3f627635c57a9b1c50</id><title type="text">数学オンチのプログラマが数学を学習し直すらしいです【集合】</title><updated>2018-10-18T11:09:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/manzyun/items/3f3f627635c57a9b1c50"/></entry><entry><id>https://qiita.com/Guvalif/items/7f893d9a078e03c9e425</id><title type="text">【Haskell】2-Tuple の Functor としての性質，Applicative としての性質</title><updated>2018-10-18T01:27:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Guvalif/items/7f893d9a078e03c9e425"/></entry><entry><id>https://qiita.com/kyuna/items/2629258fdde34f6264af</id><title type="text">stylish-haskell のインストールに手こずった件</title><updated>2018-10-17T05:57:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyuna/items/2629258fdde34f6264af"/></entry><entry><id>https://qiita.com/tezca686/items/73d135e372d547ad7266</id><title type="text">[Haskell] 爆速でモナドを理解する</title><updated>2018-10-16T11:56:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tezca686/items/73d135e372d547ad7266"/></entry><entry><id>https://qiita.com/nobsun/items/9608ae73ee374c12e965</id><title type="text">spanの小ネタ(使い方編)</title><updated>2018-10-14T12:53:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/9608ae73ee374c12e965"/></entry><entry><id>https://qiita.com/nobsun/items/88ebbfc0e3663e75f44f</id><title type="text">spanの小ネタ(再帰パターン編)</title><updated>2018-10-14T12:46:26+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/88ebbfc0e3663e75f44f"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html</id><title type="text">stack-templates を集める with GraphQL</title><updated>2018-10-14T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+</summary></entry><entry><id>https://qiita.com/manzyun/items/3f3f627635c57a9b1c50</id><title type="text">数学オンチのプログラマが数学を学習し直すらしいです【集合】</title><updated>2018-10-18T11:09:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/manzyun/items/3f3f627635c57a9b1c50"/></entry><entry><id>https://qiita.com/Guvalif/items/7f893d9a078e03c9e425</id><title type="text">【Haskell】2-Tuple の Functor としての性質，Applicative としての性質</title><updated>2018-10-18T01:27:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Guvalif/items/7f893d9a078e03c9e425"/></entry><entry><id>https://qiita.com/kyuna/items/2629258fdde34f6264af</id><title type="text">stylish-haskell のインストールに手こずった件</title><updated>2018-10-17T05:57:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyuna/items/2629258fdde34f6264af"/></entry><entry><id>https://qiita.com/tezca686/items/73d135e372d547ad7266</id><title type="text">[Haskell] 爆速でモナドを理解する</title><updated>2018-10-16T11:56:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tezca686/items/73d135e372d547ad7266"/></entry><entry><id>https://qiita.com/nobsun/items/9608ae73ee374c12e965</id><title type="text">spanの小ネタ(使い方編)</title><updated>2018-10-14T12:53:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nobsun/items/9608ae73ee374c12e965"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html</id><title type="text">stack-templates を集める with GraphQL</title><updated>2018-10-14T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;stack-templates を集める with GraphQL&lt;/h1&gt;
@@ -784,7 +869,7 @@ less, lv, manコマンド終了時に画面をクリアしない
       
       
       &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/GraphQL.html&#34;&gt;GraphQL&lt;/a&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/GraphQL.html&#34;&gt;GraphQL&lt;/a&gt; &lt;a href=&#34;/tags/application.html&#34;&gt;application&lt;/a&gt;
       &lt;/div&gt;
       
     &lt;/p&gt;
@@ -808,30 +893,30 @@ less, lv, manコマンド終了時に画面をクリアしない
 &lt;p&gt;どちらも，よくCLIを作るときの書き方をテンプレートとして起こしたもの． 普段は &lt;a href=&#34;http://hackage.haskell.org/package/rio&#34;&gt;rio&lt;/a&gt; と &lt;a href=&#34;http://hackage.haskell.org/package/extensible&#34;&gt;extensible&lt;/a&gt; を使っているので，単純に optparse-applicative などを使ったテンプレートという訳でもない．&lt;/p&gt;
 &lt;h3 id=&#34;テストする&#34;&gt;テストする&lt;/h3&gt;
 &lt;p&gt;できれば，テンプレートを &lt;code&gt;stack new&lt;/code&gt; して &lt;code&gt;stack build&lt;/code&gt; した時点ではコンパイルを通ってほしい． ということで &lt;code&gt;stack new&lt;/code&gt; して &lt;code&gt;stack build&lt;/code&gt; を試してくれるテストを &lt;a href=&#34;https://github.com/matsubara0507/stack-templates/blob/7abc95184241c2df9f81ec1a45f9a662a98db05a/.travis.yml&#34;&gt;TravisCI&lt;/a&gt; に書いた．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;matrix:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; data-line-number=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;include:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; data-line-number=&#34;3&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;env:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; TEMPLATE=&amp;quot;get-opt-cli&amp;quot; ARGS=&amp;quot;--resolver lts-12&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; data-line-number=&#34;4&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;compiler:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;: #stack 8.4.3&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; data-line-number=&#34;5&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;addons:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;apt:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[&lt;/span&gt;libgmp-dev&lt;span class=&#34;kw&#34;&gt;]}}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; data-line-number=&#34;6&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;env:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; TEMPLATE=&amp;quot;optparse-applicative-cli&amp;quot; ARGS=&amp;quot;--resolver lts-12&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; data-line-number=&#34;7&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;compiler:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;: #stack 8.4.3&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; data-line-number=&#34;8&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;addons:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;apt:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[&lt;/span&gt;libgmp-dev&lt;span class=&#34;kw&#34;&gt;]}}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; data-line-number=&#34;9&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; data-line-number=&#34;10&#34;&gt;&lt;span class=&#34;fu&#34;&gt;before_install:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; data-line-number=&#34;11&#34;&gt;&lt;span class=&#34;co&#34;&gt;# install stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; data-line-number=&#34;12&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; data-line-number=&#34;13&#34;&gt;&lt;span class=&#34;fu&#34;&gt;install:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; data-line-number=&#34;14&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; stack new sample &lt;span class=&#34;st&#34;&gt;&amp;quot;./$TEMPLATE&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; data-line-number=&#34;15&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; |&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; data-line-number=&#34;16&#34;&gt;  set -ex&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-17&#34; data-line-number=&#34;17&#34;&gt;  cd sample&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-18&#34; data-line-number=&#34;18&#34;&gt;  stack --no-terminal --install-ghc $ARGS test --bench --only-dependencies&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-19&#34; data-line-number=&#34;19&#34;&gt;  set +ex&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-20&#34; data-line-number=&#34;20&#34;&gt;&lt;span class=&#34;fu&#34;&gt;script:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-21&#34; data-line-number=&#34;21&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; |&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-22&#34; data-line-number=&#34;22&#34;&gt;  set -ex&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-23&#34; data-line-number=&#34;23&#34;&gt;  stack --no-terminal $ARGS test --bench --no-run-benchmarks --no-haddock-deps&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-24&#34; data-line-number=&#34;24&#34;&gt;  set +ex&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;matrix:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;include:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;env:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; TEMPLATE=&amp;quot;get-opt-cli&amp;quot; ARGS=&amp;quot;--resolver lts-12&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;compiler:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;: #stack 8.4.3&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;addons:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;apt:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[&lt;/span&gt;libgmp-dev&lt;span class=&#34;kw&#34;&gt;]}}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;env:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; TEMPLATE=&amp;quot;optparse-applicative-cli&amp;quot; ARGS=&amp;quot;--resolver lts-12&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;compiler:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;: #stack 8.4.3&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;addons:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;apt:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[&lt;/span&gt;libgmp-dev&lt;span class=&#34;kw&#34;&gt;]}}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;fu&#34;&gt;before_install:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;co&#34;&gt;# install stack&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; title=&#34;12&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; title=&#34;13&#34;&gt;&lt;span class=&#34;fu&#34;&gt;install:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; title=&#34;14&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; stack new sample &lt;span class=&#34;st&#34;&gt;&amp;quot;./$TEMPLATE&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; title=&#34;15&#34;&gt;&lt;span class=&#34;kw&#34;&gt;- &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;|&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; title=&#34;16&#34;&gt;  set -ex&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-17&#34; title=&#34;17&#34;&gt;  cd sample&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-18&#34; title=&#34;18&#34;&gt;  stack --no-terminal --install-ghc $ARGS test --bench --only-dependencies&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-19&#34; title=&#34;19&#34;&gt;  set +ex&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-20&#34; title=&#34;20&#34;&gt;&lt;span class=&#34;fu&#34;&gt;script:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-21&#34; title=&#34;21&#34;&gt;&lt;span class=&#34;kw&#34;&gt;- &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;|&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-22&#34; title=&#34;22&#34;&gt;  set -ex&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-23&#34; title=&#34;23&#34;&gt;  stack --no-terminal $ARGS test --bench --no-run-benchmarks --no-haddock-deps&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-24&#34; title=&#34;24&#34;&gt;  set +ex&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/commercialhaskell/stack-templates/blob/879f95dc44b24201bc64fcf8f4b9e2192c23dad4/test-templates.hs&#34;&gt;commercialhaskell/stack-templates でもテストは書いてある&lt;/a&gt;がぼくのはすごいシンプルだ．&lt;/p&gt;
 &lt;h2 id=&#34;stack-templates-を集める&#34;&gt;stack-templates を集める&lt;/h2&gt;
 &lt;p&gt;さて，これだけでは完全に e-bigmoon さんの劣化記事だ． なので，stack-templates を GitHub から集めてくる CLI ツールを作ることにした．&lt;/p&gt;
@@ -845,11 +930,11 @@ less, lv, manコマンド終了時に画面をクリアしない
 &lt;h3 id=&#34;graphql&#34;&gt;GraphQL&lt;/h3&gt;
 &lt;p&gt;ちょうどこの前に，友人から「GraphQL はいいぞ，API をなんども叩く必要がない．」と紹介されたので試してみた．&lt;/p&gt;
 &lt;p&gt;GitHub の API では &lt;code&gt;api.github.com/graphql&lt;/code&gt; というエンドポイントに対し，POST メソッドでクエリを送信する．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode sh&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; data-line-number=&#34;1&#34;&gt;$ &lt;span class=&#34;ex&#34;&gt;curl&lt;/span&gt; \&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; data-line-number=&#34;2&#34;&gt;  -H &lt;span class=&#34;st&#34;&gt;&amp;quot;Authorization: bearer token&amp;quot;&lt;/span&gt; \&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; data-line-number=&#34;3&#34;&gt;  -X POST \&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; data-line-number=&#34;4&#34;&gt;  -d &lt;span class=&#34;st&#34;&gt;&amp;quot;{ &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;: &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; ... &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; }&amp;quot;&lt;/span&gt; \&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; data-line-number=&#34;5&#34;&gt;  https://api.github.com/graphql&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode sh&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;$ &lt;span class=&#34;ex&#34;&gt;curl&lt;/span&gt; \&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;  -H &lt;span class=&#34;st&#34;&gt;&amp;quot;Authorization: bearer token&amp;quot;&lt;/span&gt; \&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;  -X POST \&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;  -d &lt;span class=&#34;st&#34;&gt;&amp;quot;{ &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;: &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; ... &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; }&amp;quot;&lt;/span&gt; \&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; title=&#34;5&#34;&gt;  https://api.github.com/graphql&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;...&lt;/code&gt; のところにクエリを記述する． クエリは簡単な DSL のようになっており，クエリによってどんな形の JSON が返ってくるか(型のようなもの)やどんな値が返ってくるかが決まる． 例えば &lt;code&gt;stack-template in:name&lt;/code&gt; 検索してヒットしたリポジトリの名前だけを取得してみよう． その場合は次のようなクエリを書く．&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;query{
   search(query: &amp;quot;stack-template in:name&amp;quot;, type: REPOSITORY, first: 2) {
@@ -937,7 +1022,7 @@ https://github.com/commercialhaskell/stack-templates/blob/master/rio.hsfiles&lt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
-</summary></entry><entry><id>https://qiita.com/Oversleep/items/e3c9ba25028628845466</id><title type="text">haskellで一番身近に感じるモナド「getLine」と「putStrLn」</title><updated>2018-10-12T22:47:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Oversleep/items/e3c9ba25028628845466"/></entry><entry><id>https://haskell.jp/blog/posts/2018/tech-book-fest-5.html</id><title type="text">技術書典 5 での Haskell 関連サークルのまとめ</title><updated>2018-10-05T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/tech-book-fest-5.html"/><summary type="html">
+</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/tech-book-fest-5.html</id><title type="text">技術書典 5 での Haskell 関連サークルのまとめ</title><updated>2018-10-05T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/tech-book-fest-5.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -5601,188 +5686,6 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;参考文献&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-05-13-yaml-th.html</id><title type="text">Haskell で型安全に YAML ファイルをビルド時に埋め込む</title><updated>2018-05-13T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-05-13-yaml-th.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Haskell で型安全に YAML ファイルをビルド時に埋め込む&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-05-13&#34; itemprop=&#34;datePublished&#34;&gt;
-        May 13, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/extensible-package.html&#34;&gt;extensible-package&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;ザックリ言えば「&lt;a href=&#34;https://ryota-ka.hatenablog.com/entry/2018/02/14/103000&#34;&gt;Template Haskell でコード中に JSON を埋め込んだりコンパイル時にファイルから型安全に読み込んだりする - ryota-ka’s blog&lt;/a&gt;」という記事の YAML 版です．&lt;/p&gt;
-&lt;p&gt;ただし，ryota さんの記事では Template Haskell を解説しながら JSON を読み込む関数を定義していますが， YAML 版は &lt;a href=&#34;https://hackage.haskell.org/package/yaml&#34;&gt;yaml&lt;/a&gt; パッケージに同様の関数が既にあるので特に解説はしません． あくまでも Haskell の型システムとメタプログラミングを感じてもらえたらなぁと．&lt;/p&gt;
-&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;ソースコードは全てこの&lt;a href=&#34;https://github.com/matsubara0507/sample-yaml-th&#34;&gt;リポジトリ&lt;/a&gt;にまとめてある．&lt;/p&gt;
-&lt;h1 id=&#34;yaml-を埋め込む&#34;&gt;YAML を埋め込む&lt;/h1&gt;
-&lt;p&gt;次のような設定ファイルに関する型があったとします．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; data-line-number=&#34;2&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; columns ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; data-line-number=&#34;3&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; languageExtensions ::&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; data-line-number=&#34;4&#34;&gt;  } &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;yaml パッケージで YAML にデコードするためには &lt;a href=&#34;https://hackage.haskell.org/package/aeson&#34;&gt;aeson&lt;/a&gt; の &lt;a href=&#34;https://hackage.haskell.org/package/aeson-1.3.1.1/docs/Data-Aeson.html#t:FromJSON&#34;&gt;&lt;code&gt;FromJSON&lt;/code&gt;&lt;/a&gt; 型クラスのインスタンスである必要がある． &lt;code&gt;FromJSON&lt;/code&gt; のインスタンスに凝ってもしょうがないので，今回は &lt;code&gt;Generics&lt;/code&gt; を使って適当に定義する．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE DeriveGeneric #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Generics&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; data-line-number=&#34;5&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; columns ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; data-line-number=&#34;6&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; languageExtensions ::&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; data-line-number=&#34;7&#34;&gt;  } &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Generic&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; data-line-number=&#34;8&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; data-line-number=&#34;9&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FromJSON&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Config&lt;/code&gt; 型のデフォルト値を YAML ファイルで記述したいとする．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;# template/.config.yaml&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;columns:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; 80&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;languageExtensions:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[]&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これをコンパイル時に埋め込んでかつ型検査も行いたい． そのためには Template Haskell と yaml パッケージの &lt;a href=&#34;https://hackage.haskell.org/package/yaml-0.8.30/docs/Data-Yaml-TH.html#v:decodeFile&#34;&gt;&lt;code&gt;Data.Yaml.TH.decodeFile&lt;/code&gt;&lt;/a&gt; 関数を用いる．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;decodeFile ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Lift&lt;/span&gt; a, &lt;span class=&#34;dt&#34;&gt;FromJSON&lt;/span&gt; a) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; FilePath &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Q&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;TExp&lt;/span&gt; a)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;TExp a&lt;/code&gt; 型というのは型付きの &lt;code&gt;Exp&lt;/code&gt; 型らしいが，ぼくはあまりよく分からないので割愛． 型を見ればわかるように，&lt;code&gt;Lift&lt;/code&gt; 型クラスのインスタンスにもなってなきゃいけない． &lt;code&gt;DerivingLift&lt;/code&gt; 言語拡張を使えば簡単に定義できる．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE DeriveLift #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; import &lt;span class=&#34;dt&#34;&gt;Language.Haskell.TH.Syntax&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;-- template-haskell package&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; data-line-number=&#34;5&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; columns ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; data-line-number=&#34;6&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; languageExtensions ::&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; data-line-number=&#34;7&#34;&gt;  } &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Generic&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Lift&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;使い方は簡単で，次のようにすればよい．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE TemplateHaskell #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;defaultConfig ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; data-line-number=&#34;4&#34;&gt;defaultConfig &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$$&lt;/span&gt;(decodeFile &lt;span class=&#34;st&#34;&gt;&amp;quot;./template/.config.yaml&amp;quot;&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;注意点として，Template Haskell の制約より &lt;code&gt;Config&lt;/code&gt; 型の定義と &lt;code&gt;defaultConfig&lt;/code&gt; 関数の定義は別ファイルに分けなければいけない．&lt;/p&gt;
-&lt;h2 id=&#34;試す&#34;&gt;試す&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;$ stack ghci
-&amp;gt;&amp;gt; defaultConfig
-Config {columns = 80, languageExtensions = []}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;試しに間違えてみよう&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ cat template/.config.yaml
-column: 80
-languageExtensions: []
-$ stack build
-sample-yaml-th-0.1.0.0: build (lib)
-Preprocessing library for sample-yaml-th-0.1.0.0..
-Building library for sample-yaml-th-0.1.0.0..
-[1 of 2] Compiling Sample.Config.Internal ( src\Sample\Config\Internal.hs, .stack work\dist\5c8418a7\build\Sample\Config\Internal.o )
-[2 of 2] Compiling Sample.Config    ( src\Sample\Config.hs, .stack-work\dist\5c8418a7\build\Sample\Config.o )
-
-C:\Users\hoge\haskell\sample-yaml-th\src\Sample\Config.hs:14:20: error:
-    • Aeson exception:
-Error in $: key &amp;quot;columns&amp;quot; not present
-    • In the Template Haskell splice
-        $$(Y.decodeFile &amp;quot;./template/.config.yaml&amp;quot;)
-      In the expression: $$(Y.decodeFile &amp;quot;./template/.config.yaml&amp;quot;)
-      In an equation for ‘defaultConfig’:
-          defaultConfig = $$(Y.decodeFile &amp;quot;./template/.config.yaml&amp;quot;)
-   |
-14 | defaultConfig = $$(Y.decodeFile &amp;quot;./template/.config.yaml&amp;quot;)
-   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;おまけ-with-extensible&#34;&gt;おまけ : with Extensible&lt;/h1&gt;
-&lt;p&gt;さぁココからが本題！ &lt;a href=&#34;https://hackage.haskell.org/package/extensible&#34;&gt;extensible&lt;/a&gt; という神パッケージを使ってリファクタリングをしてみよう！！&lt;/p&gt;
-&lt;h2 id=&#34;問題点&#34;&gt;問題点&lt;/h2&gt;
-&lt;p&gt;大した問題ではないんだけど&lt;/p&gt;
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;ファイルを分けなければいけないのが悲しい&lt;/li&gt;
-&lt;li&gt;YAML のキーがキャメルケース(&lt;code&gt;languageExtensions&lt;/code&gt;)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;extensible-パッケージ&#34;&gt;extensible パッケージ&lt;/h2&gt;
-&lt;p&gt;言わずもがな，拡張可能なレコードやバリアントを提供するパッケージだ． (詳しくは，最近急ピッチで充実されている&lt;a href=&#34;https://wiki.hask.moe/&#34;&gt;攻略Wiki&lt;/a&gt;を読むといいんじゃないんかな？)&lt;/p&gt;
-&lt;p&gt;例えば，さっきから使っている &lt;code&gt;Config&lt;/code&gt; 型を &lt;code&gt;extensible&lt;/code&gt; レコード型で書くと次のように書ける&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE DataKinds     #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE TypeOperators #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; data-line-number=&#34;5&#34;&gt;  &lt;span class=&#34;ch&#34;&gt;&amp;#39;[ &amp;quot;root&amp;quot; &amp;gt;: Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; data-line-number=&#34;6&#34;&gt;   , &lt;span class=&#34;st&#34;&gt;&amp;quot;path-format&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-7&#34; data-line-number=&#34;7&#34;&gt;   ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;地味にうれしいことに，extensible であれば関数名では許されないハイフンが含んだフィールド名も定義できるのだ．&lt;/p&gt;
-&lt;h2 id=&#34;リファクタリング&#34;&gt;リファクタリング&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Data.Yaml.TH.decodeFile&lt;/code&gt; を使うには &lt;code&gt;FromJSON&lt;/code&gt; 型クラスと &lt;code&gt;Lift&lt;/code&gt; 型クラスのインスタンスにしなければいけない． でも安心して欲しい． どちらも最新の extensible-0.4.9 では定義済みだ(そして extensible のレコードは &lt;code&gt;type&lt;/code&gt; 宣言なので追加でインスタンスを定義する必要は無い)．&lt;/p&gt;
-&lt;p&gt;ただし，extensible-0.4.9 はまだ Stackage の LTS にも nightly にも追加されていないので &lt;code&gt;stack.yaml&lt;/code&gt; に追加する必要がある．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;resolver:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; lts-11.9&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; .&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;extra-deps:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; extensible-0.4.9&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Lift&lt;/code&gt; 型クラスのインスタンスは extensible で定義済みなので1つ目のファイルを分けるはクリアーだ． 実は2つもクリアーしている． 拡張可能レコードの &lt;code&gt;FromJson&lt;/code&gt; 型クラスのインスタンスは &lt;code&gt;&amp;quot;path-format&amp;quot;&lt;/code&gt; のようなハイフンを含んだ文字列もそのまま扱ってくれる．&lt;/p&gt;
-&lt;p&gt;以下が extensible 版の &lt;code&gt;Config&lt;/code&gt; 型に対応する YAML ファイルだ．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;# template/.extensible-config.yaml&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;columns:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; 80&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;language-extensions:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[]&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;試しに実行してみよう！&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ stack ghci
-&amp;gt;&amp;gt; Sample.Extensible.Config.defaultConfig
-columns @= 80 &amp;lt;: language-extensions @= [] &amp;lt;: nil&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;デフォルトで置き換える&#34;&gt;デフォルトで置き換える&lt;/h2&gt;
-&lt;p&gt;最後に簡単な実行ファイルを実装してみる． 設定ファイルのパスを与えると読みに行き，足りない部分は先ほどから埋め込んでるデフォルト値に置き換えて出力するモノだ．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ cat &amp;quot;./template/.example.yaml&amp;quot;
-columns: 100
-$ stack exec -- pconfig &amp;quot;./template/.example.yaml&amp;quot;
-columns @= 100 &amp;lt;: language-extensions @= [] &amp;lt;: nil
-$ stack exec -- pconfig
-columns @= 80 &amp;lt;: language-extensions @= [] &amp;lt;: nil&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;もちろんパスにファイルが無ければデフォルトのモノを出力するだけだ．&lt;/p&gt;
-&lt;h2 id=&#34;section-1&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;さてどうすれば良いだろうか？ 例えば，&lt;code&gt;FromJSON&lt;/code&gt; 型クラスの &lt;code&gt;Meybe a&lt;/code&gt; 型のインスタンスはフィールドが無い場合に &lt;code&gt;Nothing&lt;/code&gt; を与えてくれるので， &lt;code&gt;Config&lt;/code&gt; 型の各フィールドを &lt;code&gt;Maybe&lt;/code&gt; でラップするというのはどうだろう．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb14&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-2&#34; data-line-number=&#34;2&#34;&gt;  &lt;span class=&#34;ch&#34;&gt;&amp;#39;[ &amp;quot;root&amp;quot; &amp;gt;: Maybe Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-3&#34; data-line-number=&#34;3&#34;&gt;   , &lt;span class=&#34;st&#34;&gt;&amp;quot;path-format&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Text&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-4&#34; data-line-number=&#34;4&#34;&gt;   ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;フィールドが2つなら良いが多くなってきたら辛そうだ…&lt;/p&gt;
-&lt;h3 id=&#34;必殺-nullable&#34;&gt;必殺 Nullable&lt;/h3&gt;
-&lt;p&gt;全てを &lt;code&gt;Meybe&lt;/code&gt; でラップする場合は &lt;a href=&#34;https://hackage.haskell.org/package/extensible-0.4.9/docs/Data-Extensible-Nullable.html&#34;&gt;&lt;code&gt;Nullable&lt;/code&gt;&lt;/a&gt; を使うと良いだろう(ないしは &lt;code&gt;RecordOf Maybe&lt;/code&gt;)．&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Nullable h :* xs&lt;/code&gt; も既に &lt;code&gt;FromJson&lt;/code&gt; 型クラスのインスタンスになっているのでそのまま YAML を読み込める． あとは次のようなデフォルト値と &lt;code&gt;Nullable&lt;/code&gt; を与えたら &lt;code&gt;Nothing&lt;/code&gt; の部分だけデフォルト値で置き換えた値を返す関数を実装してやればよい．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb15&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;fromNullable ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RecordOf&lt;/span&gt; h xs &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nullable&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Field&lt;/span&gt; h) &lt;span class=&#34;fu&#34;&gt;:*&lt;/span&gt; xs &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RecordOf&lt;/span&gt; h xs&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-2&#34; data-line-number=&#34;2&#34;&gt;fromNullable def &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-3&#34; data-line-number=&#34;3&#34;&gt;  hmapWithIndex &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; \m x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; fromMaybe (hlookup m def) (getNullable x)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;extensible ならこうやって全てのフィールドに対し走査する関数が使える．&lt;/p&gt;
-&lt;h2 id=&#34;section-2&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;あとはこんな感じ&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb16&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE NoImplicitPrelude #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE OverloadedStrings #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE PolyKinds         #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-4&#34; data-line-number=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-6&#34; data-line-number=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-7&#34; data-line-number=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;dt&#34;&gt;RIO&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-8&#34; data-line-number=&#34;8&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;dt&#34;&gt;RIO.Directory&lt;/span&gt;      (doesFileExist)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-9&#34; data-line-number=&#34;9&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-10&#34; data-line-number=&#34;10&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;dt&#34;&gt;Data.Extensible&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-11&#34; data-line-number=&#34;11&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;qualified&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Yaml&lt;/span&gt;          &lt;span class=&#34;kw&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Y&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-12&#34; data-line-number=&#34;12&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt;           &lt;span class=&#34;dt&#34;&gt;System.Environment&lt;/span&gt; (getArgs)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-13&#34; data-line-number=&#34;13&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-14&#34; data-line-number=&#34;14&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-15&#34; data-line-number=&#34;15&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-16&#34; data-line-number=&#34;16&#34;&gt;  path &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; fromMaybe &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; listToMaybe &lt;span class=&#34;fu&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; getArgs&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-17&#34; data-line-number=&#34;17&#34;&gt;  config &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; readConfigWith defaultConfig path&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-18&#34; data-line-number=&#34;18&#34;&gt;  hPutBuilder stdout &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; encodeUtf8Builder (tshow config)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-19&#34; data-line-number=&#34;19&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-20&#34; data-line-number=&#34;20&#34;&gt;&lt;span class=&#34;ot&#34;&gt;readConfigWith ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; FilePath &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Config&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-21&#34; data-line-number=&#34;21&#34;&gt;readConfigWith def path &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-22&#34; data-line-number=&#34;22&#34;&gt;  file &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; readFileBinaryWith &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt; path&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-23&#34; data-line-number=&#34;23&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; Y.decodeEither file &lt;span class=&#34;fu&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Right&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Y.Null&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;then&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-24&#34; data-line-number=&#34;24&#34;&gt;    pure def&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-25&#34; data-line-number=&#34;25&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-26&#34; data-line-number=&#34;26&#34;&gt;    config &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; either (error &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; show) pure &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; Y.decodeEither&amp;#39; file&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-27&#34; data-line-number=&#34;27&#34;&gt;    pure &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; fromNullable def config&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-28&#34; data-line-number=&#34;28&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-29&#34; data-line-number=&#34;29&#34;&gt;&lt;span class=&#34;ot&#34;&gt;readFileBinaryWith ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ByteString&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; FilePath &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ByteString&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-30&#34; data-line-number=&#34;30&#34;&gt;readFileBinaryWith def path &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-31&#34; data-line-number=&#34;31&#34;&gt;  doesFileExist path &lt;span class=&#34;fu&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; bool (pure def) (readFileBinary path)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;いろいろとインポートするのがめんどくさくて &lt;code&gt;rio&lt;/code&gt; ライブラリを使っているが，あんまり気にしないで．&lt;/p&gt;
-&lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
-&lt;p&gt;ちなみに，&lt;a href=&#34;https://matsubara0507.github.io/posts/2018-05-10-make-cli-with-haskell-in-2018.html&#34;&gt;前回の記事&lt;/a&gt;に書いた &lt;a href=&#34;https://github.com/matsubara0507/taskpad&#34;&gt;&lt;code&gt;taskpad&lt;/code&gt;&lt;/a&gt; にこの機能を追加してる．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
 </summary></entry><entry><id>https://haskell.jp/blog/posts/2018/main-tester.html</id><title type="text">CLIアプリのE2Eテストを行うためのライブラリー main-testerをリリースしました</title><updated>2018-04-09T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/main-tester.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
