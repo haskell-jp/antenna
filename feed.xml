@@ -1,4 +1,209 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-11-15T14:33:00+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a</id><title type="text">いまさら Haskell でボウリング</title><updated>2018-11-15T14:33:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a"/></entry><entry><id>https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424</id><title type="text">Haskell に python の find みたいなのがない</title><updated>2018-11-14T13:03:27+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424"/></entry><entry><id>https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab</id><title type="text">すごいH本読んだからまとめ 9 「関数適用($),関数合成(.)」</title><updated>2018-11-14T07:31:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab"/></entry><entry><id>https://qiita.com/KNaito/items/782d64fe6866a3ab6667</id><title type="text">足し算プログラムをいくつかの言語で作ってみる</title><updated>2018-11-12T12:58:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/KNaito/items/782d64fe6866a3ab6667"/></entry><entry><id>https://qiita.com/yumakkt/items/10d583e09b4586e73d89</id><title type="text">すごいH本読んだからまとめ 8 「ラムダ式」</title><updated>2018-11-11T20:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/10d583e09b4586e73d89"/></entry><entry><id>https://qiita.com/yumakkt/items/95554aace5da53cc7e22</id><title type="text">すごいH本読んだからまとめ 7「高階関数」</title><updated>2018-11-11T14:39:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/95554aace5da53cc7e22"/></entry><entry><id>https://qiita.com/yumakkt/items/e2b4379317d9ca5f94e9</id><title type="text">すごいH本読んだからまとめ 6 「カリー化」</title><updated>2018-11-11T00:06:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/e2b4379317d9ca5f94e9"/></entry><entry><id>https://qiita.com/yumakkt/items/ecb3244446de17aaa7fa</id><title type="text">すごいH本読んだからまとめ 5 「再帰」</title><updated>2018-11-10T19:49:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/ecb3244446de17aaa7fa"/></entry><entry><id>https://qiita.com/lotz/items/bdb04c771efc8919b79c</id><title type="text">gloss: 動かして遊んで学ぶHaskell</title><updated>2018-11-10T16:36:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/bdb04c771efc8919b79c"/></entry><entry><id>https://qiita.com/yumakkt/items/c50dcd286cf7521e31a0</id><title type="text">すごいH本読んだからまとめ 4 「関数の構文」</title><updated>2018-11-10T14:18:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/c50dcd286cf7521e31a0"/></entry><entry><id>https://qiita.com/ayase/items/0bfe206c10b30f4c037e</id><title type="text">Haskellで自然言語処理100本ノックの第1章を解いてみる。【後編】</title><updated>2018-11-08T23:30:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ayase/items/0bfe206c10b30f4c037e"/></entry><entry><id>https://qiita.com/TomKid/items/7c69b4c01bcb2858792e</id><title type="text">Haskellの真似した4行で書けるRubyのqsort</title><updated>2018-11-06T14:23:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TomKid/items/7c69b4c01bcb2858792e"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-11-06T11:47:03.776+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-11-16T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.e-bigmoon.com/posts/2018/11-16-split-camel-case.html</id><title type="text">CamelCase の split</title><updated>2018-11-16T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/11-16-split-camel-case.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;Twitter で &lt;code&gt;CamelCase&lt;/code&gt; の文字列を &lt;code&gt;Camel Case&lt;/code&gt; にするという話を見かけたので、やってみました。&lt;/p&gt;
+&lt;p&gt;文字列に含まれる文字は &lt;code&gt;[&#39;a&#39;..&#39;z&#39;] ++ [&#39;A&#39;..&#39;Z&#39;]&lt;/code&gt; を想定しています。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;split&#34;&gt;split&lt;/h2&gt;
+&lt;p&gt;分割するということなので &lt;a href=&#34;https://www.stackage.org/package/split&#34;&gt;split&lt;/a&gt; パッケージを使ってみます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.List.Split&lt;/span&gt; (split, startsWithOneOf)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;splitCC ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;splitCC  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;unwords&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; split (startsWithOneOf [&lt;span class=&#34;ch&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;&amp;#39;Z&amp;#39;&lt;/span&gt;])&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行結果&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;ghci&amp;gt; splitCC &amp;quot;CamelCase&amp;quot;
+&amp;quot;Camel Case&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;fold&#34;&gt;fold&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;split&lt;/code&gt; パッケージを使った実装は直感的でコードもコンパクトです。&lt;/p&gt;
+&lt;p&gt;しかし、見た感じ効率悪そうですよね。(リスト全体を分割した後で &lt;code&gt;unwords&lt;/code&gt; かけるため)&lt;/p&gt;
+&lt;p&gt;そのため、&lt;code&gt;fold&lt;/code&gt; バージョンも実装してみましょう。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Char&lt;/span&gt; (isUpper, isSpace)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;foldSplitCC ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;foldSplitCC &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; fmt &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldr&lt;/span&gt; go []&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-6&#34; title=&#34;6&#34;&gt;    go c acc&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-7&#34; title=&#34;7&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;isUpper&lt;/span&gt; c &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;c&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;acc&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-8&#34; title=&#34;8&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;otherwise&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; c&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;acc&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-9&#34; title=&#34;9&#34;&gt;    fmt cs&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-10&#34; title=&#34;10&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;null&lt;/span&gt; cs &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; cs&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-11&#34; title=&#34;11&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;isSpace&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;head&lt;/span&gt; cs) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;tail&lt;/span&gt; cs&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-12&#34; title=&#34;12&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;otherwise&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; cs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行結果&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;ghci&amp;gt; foldSplitCC &amp;quot;CamelCase&amp;quot;
+&amp;quot;Camel Case&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;quickcheck&#34;&gt;QuickCheck&lt;/h2&gt;
+&lt;p&gt;念の為 &lt;a href=&#34;https://www.stackage.org/package/QuickCheck&#34;&gt;QuickCheck&lt;/a&gt; を使ってランダムテストを行ってみましょう。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt; (main) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Test.QuickCheck&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;SplitCC&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getString ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; title=&#34;9&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Arbitrary&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-11&#34; title=&#34;11&#34;&gt;  arbitrary &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;fmap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; listOf &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; elements ([&lt;span class=&#34;ch&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;&amp;#39;z&amp;#39;&lt;/span&gt;]&lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt;[&lt;span class=&#34;ch&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;&amp;#39;Z&amp;#39;&lt;/span&gt;])&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-12&#34; title=&#34;12&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-13&#34; title=&#34;13&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-14&#34; title=&#34;14&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; quickCheck prop_split&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-15&#34; title=&#34;15&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-16&#34; title=&#34;16&#34;&gt;&lt;span class=&#34;ot&#34;&gt;prop_split ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-17&#34; title=&#34;17&#34;&gt;prop_split xs &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; splitCC xs&amp;#39; &lt;span class=&#34;fu&#34;&gt;==&lt;/span&gt; foldSplitCC xs&amp;#39;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-18&#34; title=&#34;18&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt; xs&amp;#39; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; getString xs&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行結果&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack test
+splitcc-0.1.0.0: test (suite: splitcc-test)
+
++++ OK, passed 100 tests.
+
+splitcc-0.1.0.0: Test suite splitcc-test passed&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;ベンチマーク&#34;&gt;ベンチマーク&lt;/h2&gt;
+&lt;p&gt;次は &lt;a href=&#34;https://github.com/vincenthz/hs-gauge&#34;&gt;gauge&lt;/a&gt; を使ってどっちが速いか確認してみましょう。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Gauge.Main&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Gauge.Main.Options&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Test.QuickCheck&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;SplitCC&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-9&#34; title=&#34;9&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-10&#34; title=&#34;10&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; conf &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; defaultConfig { displayMode &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Condensed&lt;/span&gt; }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-11&#34; title=&#34;11&#34;&gt;  sampleData1 &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; generate &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; vectorOf &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt; charGen&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-12&#34; title=&#34;12&#34;&gt;  sampleData2 &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; generate &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; vectorOf &lt;span class=&#34;dv&#34;&gt;1000&lt;/span&gt; charGen&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-13&#34; title=&#34;13&#34;&gt;  sampleData3 &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; generate &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; vectorOf &lt;span class=&#34;dv&#34;&gt;100000&lt;/span&gt; charGen&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-14&#34; title=&#34;14&#34;&gt;  sampleData4 &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; generate &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; vectorOf &lt;span class=&#34;dv&#34;&gt;1000000&lt;/span&gt; charGen&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-15&#34; title=&#34;15&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-16&#34; title=&#34;16&#34;&gt;  defaultMainWith conf&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-17&#34; title=&#34;17&#34;&gt;    [ bgroup &lt;span class=&#34;st&#34;&gt;&amp;quot;splitCC&amp;quot;&lt;/span&gt; [ bench &lt;span class=&#34;st&#34;&gt;&amp;quot;10&amp;quot;&lt;/span&gt;      &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; nf splitCC sampleData1&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-18&#34; title=&#34;18&#34;&gt;                       , bench &lt;span class=&#34;st&#34;&gt;&amp;quot;1000&amp;quot;&lt;/span&gt;    &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; nf splitCC sampleData2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-19&#34; title=&#34;19&#34;&gt;                       , bench &lt;span class=&#34;st&#34;&gt;&amp;quot;100000&amp;quot;&lt;/span&gt;  &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; nf splitCC sampleData3&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-20&#34; title=&#34;20&#34;&gt;                       , bench &lt;span class=&#34;st&#34;&gt;&amp;quot;1000000&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; nf splitCC sampleData4&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-21&#34; title=&#34;21&#34;&gt;                       ]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-22&#34; title=&#34;22&#34;&gt;    , bgroup &lt;span class=&#34;st&#34;&gt;&amp;quot;foldSplitCC&amp;quot;&lt;/span&gt; [ bench &lt;span class=&#34;st&#34;&gt;&amp;quot;10&amp;quot;&lt;/span&gt;      &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; nf foldSplitCC sampleData1&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-23&#34; title=&#34;23&#34;&gt;                           , bench &lt;span class=&#34;st&#34;&gt;&amp;quot;1000&amp;quot;&lt;/span&gt;    &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; nf foldSplitCC sampleData2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-24&#34; title=&#34;24&#34;&gt;                           , bench &lt;span class=&#34;st&#34;&gt;&amp;quot;100000&amp;quot;&lt;/span&gt;  &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; nf foldSplitCC sampleData3&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-25&#34; title=&#34;25&#34;&gt;                           , bench &lt;span class=&#34;st&#34;&gt;&amp;quot;1000000&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; nf foldSplitCC sampleData4&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-26&#34; title=&#34;26&#34;&gt;                           ]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-27&#34; title=&#34;27&#34;&gt;    ]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-28&#34; title=&#34;28&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-29&#34; title=&#34;29&#34;&gt;&lt;span class=&#34;ot&#34;&gt;charGen ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Gen&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Char&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-30&#34; title=&#34;30&#34;&gt;charGen &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; elements ([&lt;span class=&#34;ch&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;&amp;#39;z&amp;#39;&lt;/span&gt;]&lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt;[&lt;span class=&#34;ch&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;&amp;#39;Z&amp;#39;&lt;/span&gt;])&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行結果&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack bench
+Benchmark splitcc-bench: RUNNING...
+splitCC/10                               mean 2.847 μs  ( +- 261.0 ns  )
+splitCC/1000                             mean 287.2 μs  ( +- 3.935 μs  )
+splitCC/100000                           mean 29.10 ms  ( +- 1.348 ms  )
+splitCC/1000000                          mean 287.3 ms  ( +- 735.0 μs  )
+
+foldSplitCC/10                           mean 219.3 ns  ( +- 2.955 ns  )
+foldSplitCC/1000                         mean 25.65 μs  ( +- 246.5 ns  )
+foldSplitCC/100000                       mean 2.640 ms  ( +- 22.98 μs  )
+foldSplitCC/1000000                      mean 27.43 ms  ( +- 1.795 ms  )
+Benchmark splitcc-bench: FINISH&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;autobench&#34;&gt;AutoBench&lt;/h2&gt;
+&lt;p&gt;最後に &lt;a href=&#34;https://github.com/mathandley/AutoBench&#34;&gt;AutoBench&lt;/a&gt; を使って視覚的に実行時間の変化を確認してみましょう。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE GeneralizedNewtypeDeriving #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE DeriveGeneric #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Input&lt;/span&gt; (ts, splitCC, foldSplitCC) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Char&lt;/span&gt;          (isSpace, isUpper)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.List.Split&lt;/span&gt;    (split, startsWithOneOf)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Generics&lt;/span&gt;    (&lt;span class=&#34;dt&#34;&gt;Generic&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Control.DeepSeq&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Default&lt;/span&gt;         (def)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-12&#34; title=&#34;12&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;AutoBench.Types&lt;/span&gt;      (&lt;span class=&#34;dt&#34;&gt;DataOpts&lt;/span&gt;(..), &lt;span class=&#34;dt&#34;&gt;TestSuite&lt;/span&gt;(..))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-13&#34; title=&#34;13&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;AutoBench.QuickCheck&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-14&#34; title=&#34;14&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Test.QuickCheck&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-15&#34; title=&#34;15&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-16&#34; title=&#34;16&#34;&gt;&lt;span class=&#34;ot&#34;&gt;splitCC ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-17&#34; title=&#34;17&#34;&gt;splitCC &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;unwords&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; split (startsWithOneOf [&lt;span class=&#34;ch&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;&amp;#39;Z&amp;#39;&lt;/span&gt;]) &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; getString&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-18&#34; title=&#34;18&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-19&#34; title=&#34;19&#34;&gt;&lt;span class=&#34;ot&#34;&gt;foldSplitCC ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-20&#34; title=&#34;20&#34;&gt;foldSplitCC &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; fmt &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldr&lt;/span&gt; go [] &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; getString&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-21&#34; title=&#34;21&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-22&#34; title=&#34;22&#34;&gt;    go c acc&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-23&#34; title=&#34;23&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;isUpper&lt;/span&gt; c &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;c&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;acc&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-24&#34; title=&#34;24&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;otherwise&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; c&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;acc&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-25&#34; title=&#34;25&#34;&gt;    fmt cs&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-26&#34; title=&#34;26&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;null&lt;/span&gt; cs &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; cs&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-27&#34; title=&#34;27&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;isSpace&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;head&lt;/span&gt; cs) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;tail&lt;/span&gt; cs&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-28&#34; title=&#34;28&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;otherwise&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; cs&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-29&#34; title=&#34;29&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-30&#34; title=&#34;30&#34;&gt;&lt;span class=&#34;ot&#34;&gt;ts ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TestSuite&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-31&#34; title=&#34;31&#34;&gt;ts  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; def { _dataOpts &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Gen&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10000&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;200000&lt;/span&gt; }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-32&#34; title=&#34;32&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-33&#34; title=&#34;33&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getString ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-34&#34; title=&#34;34&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Generic&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;NFData&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-35&#34; title=&#34;35&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-36&#34; title=&#34;36&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Arbitrary&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-37&#34; title=&#34;37&#34;&gt;  arbitrary &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;fmap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MyString&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; listOf &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; elements ([&lt;span class=&#34;ch&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;&amp;#39;z&amp;#39;&lt;/span&gt;]&lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt;[&lt;span class=&#34;ch&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;&amp;#39;Z&amp;#39;&lt;/span&gt;])&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;AutoBench を利用する際、入力の型は &lt;code&gt;NFData&lt;/code&gt; 型クラスのインスタンスになっている必要があります。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;AutoBench の結果&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&#34;/images/2018/11-16/AutoBenched.png&#34; alt=&#34;AutoBench の結果&#34; /&gt;&lt;figcaption&gt;AutoBench の結果&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;一応ターミナルにもこんな感じで詳細な結果も出力してくれます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;     • Executed benchmarking file ✔
+     • Generating test report ✔
+     • Analysing performance results...
+
+ ―― Test summary ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+
+  Programs       foldSplitCC, splitCC
+  Data           Random, size range [0,10000..200000]
+  Normalisation  nf
+  QuickCheck     ✔
+  GHC flags      n/a
+
+ ―― Analysis ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+
+  foldSplitCC
+    Size          0       10000   20000   30000   40000   50000   60000   70000
+                  80000   90000   100000  110000  120000  130000  140000  150000
+                  160000  170000  180000  190000  200000
+    Time    (ms)  0.000   0.179   1.225   1.978   2.112   6.172   4.232   1.248
+                  0.217   5.961   5.184   2.715   5.186   2.690   6.810   4.810
+                  7.073   7.760   5.122   8.280   18.66
+    Std dev (ms)  1.742
+    Average variance introduced by outliers: 83% (severely inflated)
+
+    Fits          y = 1.18e-23 + 8.49e-17x + 2.98e-13x²
+                  y = 3.45e-13 + 4.71e-8x
+                  y = 3.47e-34 + 5.68e-29x + 9.70e-24x² + 1.70e-18x³
+
+  splitCC
+    Size          0       10000   20000   30000   40000   50000   60000   70000
+                  80000   90000   100000  110000  120000  130000  140000  150000
+                  160000  170000  180000  190000  200000
+    Time    (ms)  0.000   1.080   9.397   13.53   6.133   39.55   29.14   9.504
+                  1.596   44.46   38.58   16.35   35.41   17.94   38.40   52.06
+                  59.35   62.88   40.68   58.27   105.0
+    Std dev (ms)  10.54
+    Average variance introduced by outliers: 62% (severely inflated)
+
+    Fits          y = 2.41e-12 + 3.29e-7x
+                  y = 8.06e-15 + 1.92e-8xlog₂(x)
+                  y = 8.20e-23 + 1.21e-16x + 2.07e-12x²
+
+  Optimisation:
+
+    splitCC ≥ foldSplitCC (1.00)
+
+ ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;splitCC ≥ foldSplitCC (1.00)&lt;/code&gt; ということなので &lt;code&gt;foldSplitCC&lt;/code&gt; の方が良い結果となりました。&lt;/p&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;リストを何度も走査すると遅くなるので、fold で書くと良いよ！&lt;/li&gt;
+&lt;li&gt;関数の振る舞いが変化していないか確認するために QuickCheck を使おう！&lt;/li&gt;
+&lt;li&gt;ベンチマークの実行はとても簡単なので積極的にやってみよう！&lt;/li&gt;
+&lt;li&gt;AutoBench を使って可視化すると楽しいよ！&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a</id><title type="text">いまさら Haskell でボウリング</title><updated>2018-11-15T14:33:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a"/></entry><entry><id>https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424</id><title type="text">Haskell に python の find みたいなのがない</title><updated>2018-11-14T13:03:27+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424"/></entry><entry><id>https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab</id><title type="text">すごいH本読んだからまとめ 9 「関数適用($),関数合成(.)」</title><updated>2018-11-14T07:31:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab"/></entry><entry><id>https://qiita.com/KNaito/items/782d64fe6866a3ab6667</id><title type="text">足し算プログラムをいくつかの言語で作ってみる</title><updated>2018-11-12T12:58:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/KNaito/items/782d64fe6866a3ab6667"/></entry><entry><id>https://qiita.com/yumakkt/items/10d583e09b4586e73d89</id><title type="text">すごいH本読んだからまとめ 8 「ラムダ式」</title><updated>2018-11-11T20:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/10d583e09b4586e73d89"/></entry><entry><id>https://qiita.com/yumakkt/items/95554aace5da53cc7e22</id><title type="text">すごいH本読んだからまとめ 7「高階関数」</title><updated>2018-11-11T14:39:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/95554aace5da53cc7e22"/></entry><entry><id>https://qiita.com/yumakkt/items/e2b4379317d9ca5f94e9</id><title type="text">すごいH本読んだからまとめ 6 「カリー化」</title><updated>2018-11-11T00:06:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/e2b4379317d9ca5f94e9"/></entry><entry><id>https://qiita.com/yumakkt/items/ecb3244446de17aaa7fa</id><title type="text">すごいH本読んだからまとめ 5 「再帰」</title><updated>2018-11-10T19:49:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/ecb3244446de17aaa7fa"/></entry><entry><id>https://qiita.com/lotz/items/bdb04c771efc8919b79c</id><title type="text">gloss: 動かして遊んで学ぶHaskell</title><updated>2018-11-10T16:36:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/bdb04c771efc8919b79c"/></entry><entry><id>https://qiita.com/yumakkt/items/c50dcd286cf7521e31a0</id><title type="text">すごいH本読んだからまとめ 4 「関数の構文」</title><updated>2018-11-10T14:18:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/c50dcd286cf7521e31a0"/></entry><entry><id>https://qiita.com/ayase/items/0bfe206c10b30f4c037e</id><title type="text">Haskellで自然言語処理100本ノックの第1章を解いてみる。【後編】</title><updated>2018-11-08T23:30:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ayase/items/0bfe206c10b30f4c037e"/></entry><entry><id>https://qiita.com/TomKid/items/7c69b4c01bcb2858792e</id><title type="text">Haskellの真似した4行で書けるRubyのqsort</title><updated>2018-11-06T14:23:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TomKid/items/7c69b4c01bcb2858792e"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-11-06T11:47:03.776+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
@@ -3110,92 +3315,6 @@ main = undefined&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;ユーザが気をつけなけば &lt;strong&gt;Yesod&lt;/strong&gt; でも脆弱性が発生する&lt;/li&gt;
 &lt;li&gt;変数展開で全てがエスケープされると思っていたが、場所によってはそれだけでは不十分な場合がある&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/07-24-quiz-15.html</id><title type="text">二分木 (Haskell Quiz No.15)</title><updated>2018-07-24T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/07-24-quiz-15.html"/><summary type="html">&lt;h2 id=&#34;haskell-quiz-no.15&#34;&gt;Haskell Quiz No.15&lt;/h2&gt;
-&lt;p&gt;難易度: λ&lt;/p&gt;
-&lt;p&gt;葉に&lt;strong&gt;だけ&lt;/strong&gt;値を持つような&lt;strong&gt;二分木&lt;/strong&gt;を定義してみてください！&lt;/p&gt;
-&lt;p&gt;図で書くとこんな感じです。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/2018/07-24/tree.svg&#34; alt=&#34;木の図&#34; width=&#34;50%&#34;&gt;&lt;/p&gt;
-&lt;p&gt;答えは&lt;a href=&#34;./08-12-quiz-16.html&#34;&gt;次回&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;この図は &lt;strong&gt;mermaid&lt;/strong&gt; というツールを使って書きました。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://mermaidjs.github.io/&#34;&gt;mermaid&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkEoKE5vZGUpKVxuQSAtLT4gQjEoKE5vZGUpKVxuQjEgLS0-IEMxW0xlYWYgMV1cbkIxIC0tPiBEMSgoTm9kZSkpXG5EMSAtLT4gRTFbTGVhZiAyXVxuRDEgLS0-IEUyW0xlYWYgM11cblxuQSAtLT4gQjIoKE5vZGUpKVxuQjIgLS0-IEMyW0xlYWYgNF1cbkIyIC0tPiBDM1tMZWFmIDVdIiwibWVybWFpZCI6eyJ0aGVtZSI6ImZvcmVzdCJ9fQ&#34;&gt;Mermaid Live Editor&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./07-16-quiz-14.html&#34;&gt;前回&lt;/a&gt;の問題と答えは以下の通りです。&lt;/p&gt;
-&lt;h3 id=&#34;問題&#34;&gt;問題&lt;/h3&gt;
-&lt;p&gt;難易度: λ&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;utf8.txt&lt;/code&gt; と &lt;code&gt;shift-jis.txt&lt;/code&gt; はそれぞれ &lt;code&gt;utf8&lt;/code&gt; と &lt;code&gt;shift-jis&lt;/code&gt; で保存されたテキストファイルです。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;bad ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;bad &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;readFile&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;./shift-jis.txt&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;putStrLn&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;good ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;good &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;readFile&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;./utf8.txt&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;putStrLn&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;上記のプログラムを実行すると、こんな感じでエラーになってしまいます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; good&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;はすける&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; bad&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;***&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Exception&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;./&lt;/span&gt;shift&lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;jis&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;txt&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; hGetContents&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; invalid argument (invalid byte &lt;span class=&#34;fu&#34;&gt;sequence&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;shift-jis&lt;/code&gt; で保存されたテキストファイルを読むにはどうしたら良いでしょうか？&lt;/p&gt;
-&lt;h3 id=&#34;こたえ&#34;&gt;こたえ&lt;/h3&gt;
-&lt;p&gt;色々ありそうですが、ここでは &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.2/base-4.11.1.0/GHC-IO-Handle.html#v:hSetEncoding&#34;&gt;hSetEncoding&lt;/a&gt; を使う方法を解答の一例としておきます。&lt;/p&gt;
-&lt;p&gt;ここでは Windows で保存された &lt;strong&gt;shift-jis&lt;/strong&gt; を扱うために &lt;code&gt;cp932&lt;/code&gt; にしていますが、通常の &lt;strong&gt;shift-jis&lt;/strong&gt; であれば &lt;code&gt;mkTextEncoding &amp;quot;shift-jis&amp;quot;&lt;/code&gt; で大丈夫です。(たぶん)&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- stack script --resolver lts-12.2&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;System.IO&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-7&#34; title=&#34;7&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-8&#34; title=&#34;8&#34;&gt;  h &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; openFile &lt;span class=&#34;st&#34;&gt;&amp;quot;./shift-jis.txt&amp;quot;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ReadMode&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-9&#34; title=&#34;9&#34;&gt;  cp932 &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; mkTextEncoding &lt;span class=&#34;st&#34;&gt;&amp;quot;cp932&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-10&#34; title=&#34;10&#34;&gt;  hSetEncoding h cp932&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-11&#34; title=&#34;11&#34;&gt;  content &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; hGetContents h&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-12&#34; title=&#34;12&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-13&#34; title=&#34;13&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;putStrLn&lt;/span&gt; content&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ ./Ans1.hs
-はすける&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.stackage.org/package/extra&#34;&gt;extra&lt;/a&gt; パッケージの &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.2/extra-1.6.9/System-IO-Extra.html#v:readFileEncoding&#34;&gt;readFileEncoding&lt;/a&gt; を使えばもっとすっきり書くことができます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- stack script --resolver lts-12.2&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;System.IO.Extra&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; title=&#34;8&#34;&gt;  cp932 &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; mkTextEncoding &lt;span class=&#34;st&#34;&gt;&amp;quot;cp932&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; title=&#34;9&#34;&gt;  content &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; readFileEncoding cp932 &lt;span class=&#34;st&#34;&gt;&amp;quot;./shift-jis.txt&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-10&#34; title=&#34;10&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;putStrLn&lt;/span&gt; content&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;解説&#34;&gt;解説&lt;/h3&gt;
-&lt;p&gt;理解を深めるために &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.2/base-4.11.1.0/Prelude.html#v:readFile&#34;&gt;readFile&lt;/a&gt; 関数がどのように定義されているか確認してみましょう！&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;readFile&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;readFile&lt;/span&gt; name &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;  h &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; openFile name &lt;span class=&#34;dt&#34;&gt;ReadMode&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; title=&#34;4&#34;&gt;  hGetContents h&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;なるほど。&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.2/base-4.11.1.0/System-IO.html#v:ReadMode&#34;&gt;ReadMode&lt;/a&gt; でファイルハンドルを取得し、&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.2/base-4.11.1.0/System-IO.html#v:hGetContents&#34;&gt;hGetContents&lt;/a&gt; でファイルの内容を返しているようです。&lt;/p&gt;
-&lt;p&gt;解答例ではこの処理の間に &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.2/base-4.11.1.0/System-IO.html#v:mkTextEncoding&#34;&gt;mkTextEncoding&lt;/a&gt; と &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.2/base-4.11.1.0/System-IO.html#v:hSetEncoding&#34;&gt;hSetEncoding&lt;/a&gt; を使った処理を挟んでいましたね。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;  cp932 &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; mkTextEncoding &lt;span class=&#34;st&#34;&gt;&amp;quot;cp932&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;  hSetEncoding h cp932&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;この処理によって、&lt;strong&gt;shift-jis&lt;/strong&gt; で保存されたファイルの内容を &lt;strong&gt;String&lt;/strong&gt; 型の文字列として扱うことができるようになります。&lt;/p&gt;
-&lt;h4 id=&#34;readfileencoding&#34;&gt;readFileEncoding&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.stackage.org/package/extra&#34;&gt;extra&lt;/a&gt; パッケージの &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.2/extra-1.6.9/System-IO-Extra.html#v:readFileEncoding&#34;&gt;readFileEncoding&lt;/a&gt; の定義は以下のようになっています。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;readFileEncoding ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TextEncoding&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; title=&#34;2&#34;&gt;readFileEncoding enc file &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-3&#34; title=&#34;3&#34;&gt;  h &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; openFile file &lt;span class=&#34;dt&#34;&gt;ReadMode&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-4&#34; title=&#34;4&#34;&gt;  hSetEncoding h enc&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-5&#34; title=&#34;5&#34;&gt;  hGetContents h&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;便利ですね！&lt;/p&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;mkTextEncoding&lt;/strong&gt; で &lt;strong&gt;TextEncoding&lt;/strong&gt; 型の値を作ることができる&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;hSetEncoding&lt;/strong&gt; を利用すればエンコードを指定してファイルの内容を読み込むことができる&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;extra&lt;/strong&gt; パッケージで提供されている &lt;strong&gt;readFileEncoding&lt;/strong&gt; はそれらの処理を良い感じにまとめてくれる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;実際の開発において &lt;strong&gt;readFile&lt;/strong&gt; のような (&lt;strong&gt;getContents&lt;/strong&gt; 系の関数) を使うことは少ないと思います。しかし、何か動くものを &lt;strong&gt;Haskell&lt;/strong&gt; で作ってみたいと思っている人は、とりあえず気にせず使いましょう。(ストリーミングライブラリの知識があればそっちを使った方が良いです)&lt;/p&gt;
-&lt;p&gt;Haskell はリファクタリングの得意な言語ですから、問題として認識したときに修正すれば良いと思います。&lt;/p&gt;
-&lt;p&gt;IO の処理については &lt;a href=&#34;http://gihyo.jp/book/2017/978-4-7741-9237-6&#34;&gt;Haskell入門 関数型プログラミング言語の基礎と実践&lt;/a&gt; の4章, &lt;a href=&#34;https://www.oreilly.co.jp/books/9784873114231/&#34;&gt;Read World Haskell&lt;/a&gt; の7章で詳しく解説されているので、興味を持った方はそちらも参照してみると良いかもしれません。&lt;/p&gt;
 &lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html</id><title type="text">deriveJsonNoPrefixをリリースしました</title><updated>2018-07-18T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
