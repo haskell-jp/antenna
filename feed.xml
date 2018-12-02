@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-12-01T18:09:13+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/waddlaw/items/b7ed253db36c6f8a04fc</id><title type="text">Haskell 情報収集術</title><updated>2018-12-01T18:09:13+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/b7ed253db36c6f8a04fc"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/a8d199a8a73a11120225</id><title type="text">パッケージnowdocの紹介</title><updated>2018-11-30T17:35:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/a8d199a8a73a11120225"/></entry><entry><id>http://kakkun61.hatenablog.com/entry/20120502/1335973255</id><title type="text">AtCoder Regular Contest #2</title><updated>2018-11-29T19:16:22+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20120502/1335973255"/><summary type="html">AtCoder Regular Contest #2 参加したおーい。 成績は気にするなおーい。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20120709/1341769539</id><title type="text">関数合成をいろんな言語で書いてみた。</title><updated>2018-11-29T19:16:05+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20120709/1341769539"/><summary type="html">友人に Java で関数合成するプログラムを作れって課題の相談をされて一緒に考えた。で、せっかくだから勉強も兼ねていろんな言語で書いてみた。Java 以外はほとんど書いたことのない言語。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20120725/1343186129</id><title type="text">すごい H 本7.10章の「読者への練習問題」</title><updated>2018-11-29T19:15:57+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20120725/1343186129"/><summary type="html">大学の教科書とかでよくある「読者への練習問題としましょう」ってやつですよ。考査前、知りたいことが「読者への練習問題」で泣くやつですよ。 今回は API 調べて分かればそんなに難しくなかった。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20120822/1345602358</id><title type="text">Reader モナド（関数モナド）</title><updated>2018-11-29T19:15:37+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20120822/1345602358"/><summary type="html">すごい Haskell たのしく学ぼう！の14.2章331ページの関数モナドを do 記法で書いてあるコード、どういう動作になるかは解説されてあるので分かるのだけどなんでそうなるのかが分からないので書き下してみる。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20121031/1351667055</id><title type="text">Control.Arrow.app</title><updated>2018-11-29T19:15:29+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20121031/1351667055"/><summary type="html">Control.Arrow - mzsmsの雑記を読んで Arrow というものを理解しようとしてたんだけど、app 関数でちょっとつまずいたのでメモしておく。 loop はあんまりにも分からなかったので後回し。なんとなくフリップフロップ回路に似ている気はした。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20121101/1351754462</id><title type="text">「Haskell 入門ハンズオン in 明石」を主催したよ #AkashiHaskell</title><updated>2018-11-29T19:15:26+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20121101/1351754462"/><summary type="html">「すごい Haskell たのしく学ぼう！」を読んで Haskell 楽しいなぁ。人にもすすめたいなぁ。でも、すすめても実際やってくれる人少ないよなぁ。なら、僕が直接教えよう。というわけで、ハンズオンすることになった。 2012/10/28(Sun) 13:15-16:45 Haskell 入門ハンズオン in 明石 #AkashiHaskell - connpass</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20121128/1354076078</id><title type="text">第2回関数型言語勉強会で発表した</title><updated>2018-11-29T19:15:23+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20121128/1354076078"/><summary type="html">11月24日に第2回関数型言語勉強会があってそこで明石 Haskell の宣伝とかしたよ、というお話。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20130327/1364391398</id><title type="text">すごい Haskell 読書会 in 大阪 #7 にチャット参加した</title><updated>2018-11-29T19:14:51+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20130327/1364391398"/><summary type="html">#1-6 までだいたい参加してたので、チャットで問題演習だけ参加した。すごいHaskell読書会 in 大阪 – Lingr でお話してる。 http://atnd.org/events/37645</summary></entry><entry><id>https://qiita.com/goldarn_ring/items/1c895292ae313b74a410</id><title type="text">Freeモナドの合成</title><updated>2018-11-26T23:15:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/goldarn_ring/items/1c895292ae313b74a410"/></entry><entry><id>https://qiita.com/skyfish20ch/items/201c94ca1878b67a4265</id><title type="text">tidalcycles0.9 on ubuntu16.04(xenial)</title><updated>2018-11-26T16:10:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/skyfish20ch/items/201c94ca1878b67a4265"/></entry><entry><id>https://qiita.com/mtsugawa/items/e410812567e8b5b1690c</id><title type="text">だれも Data.Maybe を教えてくれなかった</title><updated>2018-11-26T12:48:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/e410812567e8b5b1690c"/></entry><entry><id>https://qiita.com/ryuichi1208/items/cecd868dfa53c9808777</id><title type="text">[初心者向け]流行りのプログラミング言語の一言概要(2018年版)</title><updated>2018-11-26T09:12:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ryuichi1208/items/cecd868dfa53c9808777"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/11/24/232705</id><title type="text">We Are JavaScripters! @26th で Elm と Firebase の連携について話してきました</title><updated>2018-11-24T23:27:05+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/11/24/232705"/><summary type="html">先日行われた We Are JavaScripters! @19th で Elm と JavaScript ライブラリの連携について発表してきました。 Elm の初心者向けの解説としてよく Msg, Model, update からなるアーキテクチャが挙げられていますが、今回の発表ではもう一歩だけ進んで、Cmd と Sub を使って Elm から JavaScript のライブラリを呼ぶ方法について解説しました。 サーバとしての JS ライブラリ 他の AltJS では JavaScript を呼び出す際、ソースコードの内部に埋め込む形になるのが普通です。 例えば Haskell を Java…</summary></entry><entry><id>https://qiita.com/sasanquaneuf/items/c9d2bb9358f14b0c9c6e</id><title type="text">左と右は対称的ではなかった！？ Haskellのfoldrでアハ体験</title><updated>2018-11-23T19:31:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sasanquaneuf/items/c9d2bb9358f14b0c9c6e"/></entry><entry><id>https://qiita.com/Morico/items/a387a68b5180590d6395</id><title type="text">Haskell Hello,Worldへの道</title><updated>2018-11-23T08:49:46+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Morico/items/a387a68b5180590d6395"/></entry><entry><id>https://haskell.jp/blog/posts/2018/haskell-day-2018.html</id><title type="text">Haskell Day 2018 開催レポート</title><updated>2018-11-20T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/haskell-day-2018.html"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-12-02T10:51:03+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/waddlaw/items/b7ed253db36c6f8a04fc</id><title type="text">Haskell 情報収集術</title><updated>2018-12-02T10:51:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/b7ed253db36c6f8a04fc"/></entry><entry><id>https://qiita.com/waddlaw/items/65b57517f105fcbbe724</id><title type="text">GHC Source Plugin 作ってみた</title><updated>2018-12-02T00:29:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/65b57517f105fcbbe724"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-02-stack-docker-travici.html</id><title type="text">Stack の Docker Integration とイメージの自動更新</title><updated>2018-12-02T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-02-stack-docker-travici.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Stack の Docker Integration とイメージの自動更新&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2018-12-02&#34; itemprop=&#34;datePublished&#34;&gt;
+        Dec 2, 2018
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/Docker.html&#34;&gt;Docker&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;本稿は &lt;a href=&#34;https://qiita.com/advent-calendar/2018/haskell2&#34;&gt;Haskell (その2) Advent Calendar 2018&lt;/a&gt; 2日目の記事です．&lt;/p&gt;
+&lt;p&gt;最近よく CLI ツールを作るんですが，Haskell Stack を持ってなくても CLI ツールが使えるように，ツールを Docker イメージ化するようにしています． その流れを書き留めておこうというの本稿の趣旨です．&lt;/p&gt;
+&lt;p&gt;ちなみに，以下のリポジトリで実際に試しています．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/mdium&#34;&gt;matsubara0507/mdium - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/dhall-ex&#34;&gt;matsubara0507/dhall-ex - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-integration&#34;&gt;Docker Integration&lt;/h2&gt;
+&lt;p&gt;Haskell のビルドツール Stack には Dcoker Integration という機能がある（現在最新の安定版である v1.9.1 を想定しています）．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.haskellstack.org/en/v1.9.1/docker_integration/&#34;&gt;Docker integration - The Haskell Tool Stack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.haskellstack.org/en/v1.9.1/yaml_configuration/#image&#34;&gt;Image - Yaml configuration - The Haskell Tool Stack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Docker Integration として，ざっくりと次のような機能がある．&lt;/p&gt;
+&lt;ol type=&#34;1&#34;&gt;
+&lt;li&gt;指定したイメージのコンテナでビルド・実行をする&lt;/li&gt;
+&lt;li&gt;ビルドした実行ファイルを含めた Docker イメージの作成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(2 は正確には Docker Integration とは呼ばない)&lt;/p&gt;
+&lt;p&gt;ちなみに，Stack はワークスペース内の &lt;code&gt;.stack-work&lt;/code&gt; の中に中間結果などを含むビルド結果をバージョンやビルド環境ごとに保存する． そして，&lt;code&gt;--docker&lt;/code&gt; オプションでビルドすることで，ローカルではなく Docker のコンテナ内でビルドをしたり，生成したプログラムを実行したりできる． しかも，コンテナ内でビルドした場合でもビルド結果をローカルの &lt;code&gt;.stack-work&lt;/code&gt; に保存するのだ．&lt;/p&gt;
+&lt;h2 id=&#34;docker-イメージ内でビルド&#34;&gt;Docker イメージ内でビルド&lt;/h2&gt;
+&lt;p&gt;まず stack.yaml に次のような設定を追加する．&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;docker:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;enable:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;false&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;repo:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;fpco/stack-build&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;enable: true&lt;/code&gt; にすると，以降の &lt;code&gt;--docker&lt;/code&gt; オプションを省けるが，逆に普通にローカルでビルドしたい場合は &lt;code&gt;--no-docker&lt;/code&gt; オプションが必要になる． &lt;code&gt;repo&lt;/code&gt; でビルドするイメージを指定する． [&lt;code&gt;fpco/stack-build&lt;/code&gt; はこれだ]（https://hub.docker.com/r/fpco/stack-build/）． stack.yaml の &lt;code&gt;resolver&lt;/code&gt; からイメージタグを自動的に選んでくれるはずだ．&lt;/p&gt;
+&lt;p&gt;あとは次のコマンドでビルドできる．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# repo で指定した docker image の pull
+$ stack docker pull
+
+# docker コンテナ内でビルド
+$ stack build --docker&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;他にも細かい設定がかけるが割愛（上述したドキュメントを参照してください）．&lt;/p&gt;
+&lt;h2 id=&#34;docker-イメージを作る&#34;&gt;Docker イメージを作る&lt;/h2&gt;
+&lt;p&gt;stack.yaml に次の設定を追加する．&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;container:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; hoge&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;base:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; fpco/ubuntu-with-libgmp&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;image.container.name&lt;/code&gt; は生成する Docker イメージの名前で，&lt;code&gt;image.container.base&lt;/code&gt; は生成する Docker イメージに使うベースイメージだ． ベースイメージは &lt;code&gt;docker.repo&lt;/code&gt; などで指定したイメージのOSとあってさえいれば良い（ちなみに &lt;code&gt;fpco/stack-build&lt;/code&gt; は &lt;code&gt;ubuntu:16.04&lt;/code&gt;）． やってくれることは簡単で， &lt;code&gt;stack build --docker&lt;/code&gt; で作成した実行ファイルをベースイメージの &lt;code&gt;local/bin&lt;/code&gt; などにコピーするだけだ． なので，もし静的リンクしていない場合はリンクが含まれるベースイメージを指定すると良い(&lt;a href=&#34;https://hub.docker.com/r/fpco/ubuntu-with-libgmp/&#34;&gt;&lt;code&gt;fpco/ubuntu-with-libgmp&lt;/code&gt;&lt;/a&gt; はそのために使っている)．&lt;/p&gt;
+&lt;p&gt;あとは次のコマンドでイメージの作成ができる．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# repo で指定した docker image の pull
+$ stack --docker image container&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;--docker&lt;/code&gt; を指定しないとローカルでビルドした実行ファイルをコピーして，生成したイメージのコンテナで実行できなくなるので注意してください（もちろんローカルが ubuntu なら問題ないけど）． あと， stack によるイメージ作成方法では他に Dockerfile の &lt;code&gt;add&lt;/code&gt; っぽいことと &lt;code&gt;entrypoints&lt;/code&gt; っぽいことができるが，それ以上のことはできない． もっと複雑な設定をしたい場合は，生成したイメージをベースイメージにした Dockerfile を書いたり， Docker のマルチステージビルドを使って設定を上書きしたりするとと良いだろう．&lt;/p&gt;
+&lt;h2 id=&#34;travisci-docker-hub&#34;&gt;TravisCI + Docker Hub&lt;/h2&gt;
+&lt;p&gt;Docker Integration の欠点は Docker Hub の Automated build が使えない点だ． そこで，TravisCI を使って自動ビルドし，Docker Hub にプッシュするようにした． 次のような設定を travis.yml に書くと良いだろう．&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;stage:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; push docker image&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;if:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; branch = master&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;script:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;   &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; stack docker pull&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;   &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; stack --docker image container&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;   &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; echo &lt;span class=&#34;st&#34;&gt;&amp;quot;$DOCKER_PASSWORD&amp;quot;&lt;/span&gt; | docker login -u &lt;span class=&#34;st&#34;&gt;&amp;quot;$DOCKER_USERNAME&amp;quot;&lt;/span&gt; --password-stdin&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;   &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; docker push $TRAVIS_REPO_SLUG&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実は &lt;code&gt;stack --docker image container&lt;/code&gt; でビルドまでしてくれる． Docker Hub には Token のようなものはないので &lt;code&gt;--password-stdin&lt;/code&gt; とパイプを使って普通のパスワードでログインする． あとは &lt;code&gt;image.container.name&lt;/code&gt; で指定する名前を &lt;code&gt;hoge&lt;/code&gt; ではなく &lt;code&gt;user_name/repo_name&lt;/code&gt; としておけば良い． もちろんこれは GitHub と Docker Hub のユーザ名が同じ場合にしか使えない． 違う場合は直接書いてね．&lt;/p&gt;
+&lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
+&lt;p&gt;この方法なら実行ファイルしか入ってないイメージが出来上がるので軽いし， stack のビルド遅すぎて利用者側は厳しい問題も緩和するので最近のマイブームです．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/YoshikuniJujo/items/a8d199a8a73a11120225</id><title type="text">パッケージnowdocの紹介</title><updated>2018-11-30T17:35:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/a8d199a8a73a11120225"/></entry><entry><id>http://kakkun61.hatenablog.com/entry/20120502/1335973255</id><title type="text">AtCoder Regular Contest #2</title><updated>2018-11-29T19:16:22+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20120502/1335973255"/><summary type="html">AtCoder Regular Contest #2 参加したおーい。 成績は気にするなおーい。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20120709/1341769539</id><title type="text">関数合成をいろんな言語で書いてみた。</title><updated>2018-11-29T19:16:05+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20120709/1341769539"/><summary type="html">友人に Java で関数合成するプログラムを作れって課題の相談をされて一緒に考えた。で、せっかくだから勉強も兼ねていろんな言語で書いてみた。Java 以外はほとんど書いたことのない言語。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20120725/1343186129</id><title type="text">すごい H 本7.10章の「読者への練習問題」</title><updated>2018-11-29T19:15:57+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20120725/1343186129"/><summary type="html">大学の教科書とかでよくある「読者への練習問題としましょう」ってやつですよ。考査前、知りたいことが「読者への練習問題」で泣くやつですよ。 今回は API 調べて分かればそんなに難しくなかった。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20120822/1345602358</id><title type="text">Reader モナド（関数モナド）</title><updated>2018-11-29T19:15:37+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20120822/1345602358"/><summary type="html">すごい Haskell たのしく学ぼう！の14.2章331ページの関数モナドを do 記法で書いてあるコード、どういう動作になるかは解説されてあるので分かるのだけどなんでそうなるのかが分からないので書き下してみる。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20121031/1351667055</id><title type="text">Control.Arrow.app</title><updated>2018-11-29T19:15:29+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20121031/1351667055"/><summary type="html">Control.Arrow - mzsmsの雑記を読んで Arrow というものを理解しようとしてたんだけど、app 関数でちょっとつまずいたのでメモしておく。 loop はあんまりにも分からなかったので後回し。なんとなくフリップフロップ回路に似ている気はした。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20121101/1351754462</id><title type="text">「Haskell 入門ハンズオン in 明石」を主催したよ #AkashiHaskell</title><updated>2018-11-29T19:15:26+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20121101/1351754462"/><summary type="html">「すごい Haskell たのしく学ぼう！」を読んで Haskell 楽しいなぁ。人にもすすめたいなぁ。でも、すすめても実際やってくれる人少ないよなぁ。なら、僕が直接教えよう。というわけで、ハンズオンすることになった。 2012/10/28(Sun) 13:15-16:45 Haskell 入門ハンズオン in 明石 #AkashiHaskell - connpass</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20121128/1354076078</id><title type="text">第2回関数型言語勉強会で発表した</title><updated>2018-11-29T19:15:23+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20121128/1354076078"/><summary type="html">11月24日に第2回関数型言語勉強会があってそこで明石 Haskell の宣伝とかしたよ、というお話。</summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/20130327/1364391398</id><title type="text">すごい Haskell 読書会 in 大阪 #7 にチャット参加した</title><updated>2018-11-29T19:14:51+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/20130327/1364391398"/><summary type="html">#1-6 までだいたい参加してたので、チャットで問題演習だけ参加した。すごいHaskell読書会 in 大阪 – Lingr でお話してる。 http://atnd.org/events/37645</summary></entry><entry><id>https://qiita.com/goldarn_ring/items/1c895292ae313b74a410</id><title type="text">Freeモナドの合成</title><updated>2018-11-26T23:15:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/goldarn_ring/items/1c895292ae313b74a410"/></entry><entry><id>https://qiita.com/skyfish20ch/items/201c94ca1878b67a4265</id><title type="text">tidalcycles0.9 on ubuntu16.04(xenial)</title><updated>2018-11-26T16:10:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/skyfish20ch/items/201c94ca1878b67a4265"/></entry><entry><id>https://qiita.com/mtsugawa/items/e410812567e8b5b1690c</id><title type="text">だれも Data.Maybe を教えてくれなかった</title><updated>2018-11-26T12:48:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/e410812567e8b5b1690c"/></entry><entry><id>https://qiita.com/ryuichi1208/items/cecd868dfa53c9808777</id><title type="text">[初心者向け]流行りのプログラミング言語の一言概要(2018年版)</title><updated>2018-11-26T09:12:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ryuichi1208/items/cecd868dfa53c9808777"/></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/11/24/232705</id><title type="text">We Are JavaScripters! @26th で Elm と Firebase の連携について話してきました</title><updated>2018-11-24T23:27:05+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/11/24/232705"/><summary type="html">先日行われた We Are JavaScripters! @19th で Elm と JavaScript ライブラリの連携について発表してきました。 Elm の初心者向けの解説としてよく Msg, Model, update からなるアーキテクチャが挙げられていますが、今回の発表ではもう一歩だけ進んで、Cmd と Sub を使って Elm から JavaScript のライブラリを呼ぶ方法について解説しました。 サーバとしての JS ライブラリ 他の AltJS では JavaScript を呼び出す際、ソースコードの内部に埋め込む形になるのが普通です。 例えば Haskell を Java…</summary></entry><entry><id>https://qiita.com/sasanquaneuf/items/c9d2bb9358f14b0c9c6e</id><title type="text">左と右は対称的ではなかった！？ Haskellのfoldrでアハ体験</title><updated>2018-11-23T19:31:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sasanquaneuf/items/c9d2bb9358f14b0c9c6e"/></entry><entry><id>https://qiita.com/Morico/items/a387a68b5180590d6395</id><title type="text">Haskell Hello,Worldへの道</title><updated>2018-11-23T08:49:46+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Morico/items/a387a68b5180590d6395"/></entry><entry><id>https://haskell.jp/blog/posts/2018/haskell-day-2018.html</id><title type="text">Haskell Day 2018 開催レポート</title><updated>2018-11-20T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/haskell-day-2018.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -538,7 +615,7 @@ Benchmark splitcc-bench: FINISH&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;splitCC ≥ foldSplitCC&lt;/code&gt; の部分は &lt;code&gt;splitCC&lt;/code&gt; よりも &lt;code&gt;foldSplitCC&lt;/code&gt; 関数の方がパフォーマンスが向上していることを示しています。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;(1.00)&lt;/code&gt; は QuickCheck によって生成されたテストケースを入力として利用した時に全てのテストケース (&lt;code&gt;100%&lt;/code&gt;) で性能が改善されたという意味です。&lt;code&gt;0.5&lt;/code&gt; などとなっていた場合はテストケースによっては性能が向上していないということです。&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a</id><title type="text">いまさら Haskell でボウリング</title><updated>2018-11-15T14:33:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a"/></entry><entry><id>https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424</id><title type="text">Haskell に python の find みたいなのがない</title><updated>2018-11-14T13:03:27+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424"/></entry><entry><id>https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab</id><title type="text">すごいH本読んだからまとめ 9 「関数適用($),関数合成(.)」</title><updated>2018-11-14T07:31:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab"/></entry><entry><id>https://qiita.com/KNaito/items/782d64fe6866a3ab6667</id><title type="text">足し算プログラムをいくつかの言語で作ってみる</title><updated>2018-11-12T12:58:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/KNaito/items/782d64fe6866a3ab6667"/></entry><entry><id>https://qiita.com/yumakkt/items/10d583e09b4586e73d89</id><title type="text">すごいH本読んだからまとめ 8 「ラムダ式」</title><updated>2018-11-11T20:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/10d583e09b4586e73d89"/></entry><entry><id>https://qiita.com/yumakkt/items/95554aace5da53cc7e22</id><title type="text">すごいH本読んだからまとめ 7「高階関数」</title><updated>2018-11-11T14:39:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/95554aace5da53cc7e22"/></entry><entry><id>https://qiita.com/yumakkt/items/e2b4379317d9ca5f94e9</id><title type="text">すごいH本読んだからまとめ 6 「カリー化」</title><updated>2018-11-11T00:06:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/e2b4379317d9ca5f94e9"/></entry><entry><id>https://qiita.com/yumakkt/items/ecb3244446de17aaa7fa</id><title type="text">すごいH本読んだからまとめ 5 「再帰」</title><updated>2018-11-10T19:49:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/ecb3244446de17aaa7fa"/></entry><entry><id>https://qiita.com/lotz/items/bdb04c771efc8919b79c</id><title type="text">gloss: 動かして遊んで学ぶHaskell</title><updated>2018-11-10T16:36:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/bdb04c771efc8919b79c"/></entry><entry><id>https://qiita.com/yumakkt/items/c50dcd286cf7521e31a0</id><title type="text">すごいH本読んだからまとめ 4 「関数の構文」</title><updated>2018-11-10T14:18:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/c50dcd286cf7521e31a0"/></entry><entry><id>https://qiita.com/TomKid/items/7c69b4c01bcb2858792e</id><title type="text">Haskellの真似した4行で書けるRubyのqsort</title><updated>2018-11-06T14:23:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TomKid/items/7c69b4c01bcb2858792e"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-11-06T11:47:03.776+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+&lt;/ul&gt;</summary></entry><entry><id>https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a</id><title type="text">いまさら Haskell でボウリング</title><updated>2018-11-15T14:33:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a"/></entry><entry><id>https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424</id><title type="text">Haskell に python の find みたいなのがない</title><updated>2018-11-14T13:03:27+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424"/></entry><entry><id>https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab</id><title type="text">すごいH本読んだからまとめ 9 「関数適用($),関数合成(.)」</title><updated>2018-11-14T07:31:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab"/></entry><entry><id>https://qiita.com/KNaito/items/782d64fe6866a3ab6667</id><title type="text">足し算プログラムをいくつかの言語で作ってみる</title><updated>2018-11-12T12:58:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/KNaito/items/782d64fe6866a3ab6667"/></entry><entry><id>https://qiita.com/yumakkt/items/10d583e09b4586e73d89</id><title type="text">すごいH本読んだからまとめ 8 「ラムダ式」</title><updated>2018-11-11T20:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/10d583e09b4586e73d89"/></entry><entry><id>https://qiita.com/yumakkt/items/95554aace5da53cc7e22</id><title type="text">すごいH本読んだからまとめ 7「高階関数」</title><updated>2018-11-11T14:39:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/95554aace5da53cc7e22"/></entry><entry><id>https://qiita.com/yumakkt/items/e2b4379317d9ca5f94e9</id><title type="text">すごいH本読んだからまとめ 6 「カリー化」</title><updated>2018-11-11T00:06:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/e2b4379317d9ca5f94e9"/></entry><entry><id>https://qiita.com/yumakkt/items/ecb3244446de17aaa7fa</id><title type="text">すごいH本読んだからまとめ 5 「再帰」</title><updated>2018-11-10T19:49:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/ecb3244446de17aaa7fa"/></entry><entry><id>https://qiita.com/lotz/items/bdb04c771efc8919b79c</id><title type="text">gloss: 動かして遊んで学ぶHaskell</title><updated>2018-11-10T16:36:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/bdb04c771efc8919b79c"/></entry><entry><id>https://qiita.com/yumakkt/items/c50dcd286cf7521e31a0</id><title type="text">すごいH本読んだからまとめ 4 「関数の構文」</title><updated>2018-11-10T14:18:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/c50dcd286cf7521e31a0"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-11-06T11:47:03.776+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
@@ -4507,463 +4584,6 @@ test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out&lt;/
 &lt;/ul&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;来年はもっと型のハナシができるといいなぁ．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-06-16-introduce-elchemy-part2.html</id><title type="text">Elchemy 入門 : その２</title><updated>2018-06-16T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-06-16-introduce-elchemy-part2.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Elchemy 入門 : その２&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-06-16&#34; itemprop=&#34;datePublished&#34;&gt;
-        Jun 16, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Elchemy.html&#34;&gt;Elchemy&lt;/a&gt; &lt;a href=&#34;/tags/Elm.html&#34;&gt;Elm&lt;/a&gt; &lt;a href=&#34;/tags/Elixir.html&#34;&gt;Elixir&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;Elm から Elixir のトランスパイラ，&lt;a href=&#34;https://github.com/wende/elmchemy&#34;&gt;Elchemy&lt;/a&gt; についてイロイロと調べたのでまとめていきます． &lt;a href=&#34;https://matsubara0507.github.io/posts/2018-06-15-introduce-elchemy-part1.html&#34;&gt;前回はコチラ&lt;/a&gt;． 今回は&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://hackernoon.com/elmchemy-write-type-safe-elixir-code-with-elms-syntax-part-2-our-own-rpg-character-module-cedbf7da138d&#34;&gt;Tutorial その２&lt;/a&gt;をやってみた&lt;/li&gt;
-&lt;li&gt;Phoenix で ToDo アプリを作る&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;の2本立てです． ちなみに，現在のバージョンは 0.7.4 です．&lt;/p&gt;
-&lt;h2 id=&#34;tutorial-そのをやってみた&#34;&gt;Tutorial その２をやってみた&lt;/h2&gt;
-&lt;p&gt;Tutorial その２では Elchemy を利用した独自ライブラリを作成する． 以下の手順で行うそうだ．&lt;/p&gt;
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;エイリアス型を定義&lt;/li&gt;
-&lt;li&gt;ユニオン型を定義&lt;/li&gt;
-&lt;li&gt;関数としてエイリアスやタグを用いる&lt;/li&gt;
-&lt;li&gt;ユニオン型でのパターンマッチ&lt;/li&gt;
-&lt;li&gt;関数として演算子を使う・独自の演算子を定義する&lt;/li&gt;
-&lt;li&gt;別のモジュールから型やエイリアス型をインポートする&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;基本的に Elm の書き方講座みたいなものなので，最悪っ困ったら Elm を勉強してください(丸投げ)． ちなみに，元記事の全てを細かく追従せず，ざっくりと掻い摘んで書き出している． なので細かくは元記事を読んでね．&lt;/p&gt;
-&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;あと，&lt;a href=&#34;https://github.com/wende/elmchemy-article-example&#34;&gt;このコードは全て作者さんが GitHub に挙げている&lt;/a&gt;．&lt;/p&gt;
-&lt;h3 id=&#34;その前に&#34;&gt;その前に&lt;/h3&gt;
-&lt;p&gt;テストを書こう，ということでテストを Elixir で書いている． 今回の作成するライブラリはどうやら，ゲームか何かのキャラを制御する物らしい&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode elixir&#34;&gt;&lt;code class=&#34;sourceCode elixir&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;# character_test.exs&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;defmodule&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;CharacterTest&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;im&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;ExUnit&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;cn&#34;&gt;Case&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;im&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Elchemy&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;  test &lt;span class=&#34;st&#34;&gt;&amp;quot;Character has name, last name and such&amp;quot;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;      gordon &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;new(&lt;span class=&#34;st&#34;&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:male&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; title=&#34;8&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-9&#34; title=&#34;9&#34;&gt;      assert gordon&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;name &lt;span class=&#34;op&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-10&#34; title=&#34;10&#34;&gt;      assert gordon&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;surname &lt;span class=&#34;op&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-11&#34; title=&#34;11&#34;&gt;      assert gordon&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;gender &lt;span class=&#34;op&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;va&#34;&gt;:male&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-12&#34; title=&#34;12&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-13&#34; title=&#34;13&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-14&#34; title=&#34;14&#34;&gt;  test &lt;span class=&#34;st&#34;&gt;&amp;quot;Has stats&amp;quot;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-15&#34; title=&#34;15&#34;&gt;    gordon &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;new(&lt;span class=&#34;st&#34;&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:male&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-16&#34; title=&#34;16&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-17&#34; title=&#34;17&#34;&gt;    stats &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; [&lt;span class=&#34;va&#34;&gt;:strength&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:intelligence&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:vitality&lt;/span&gt;]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-18&#34; title=&#34;18&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;for&lt;/span&gt; s &lt;span class=&#34;op&#34;&gt;&amp;lt;-&lt;/span&gt; stats &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-19&#34; title=&#34;19&#34;&gt;      assert is_integer(gordon&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;stats[s]), &lt;span class=&#34;st&#34;&gt;&amp;quot;No &lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;#{&lt;/span&gt;s&lt;span class=&#34;ot&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; stat in &lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;#{&lt;/span&gt;inspect gordon&lt;span class=&#34;ot&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-20&#34; title=&#34;20&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-21&#34; title=&#34;21&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-22&#34; title=&#34;22&#34;&gt;    assert &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;set_stat(&lt;span class=&#34;va&#34;&gt;:vitality&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;, gordon)&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;stats&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;vitality &lt;span class=&#34;op&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-23&#34; title=&#34;23&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-24&#34; title=&#34;24&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-25&#34; title=&#34;25&#34;&gt;  test &lt;span class=&#34;st&#34;&gt;&amp;quot;Boosting visality boosts health&amp;quot;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-26&#34; title=&#34;26&#34;&gt;    gordon &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;new(&lt;span class=&#34;st&#34;&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:male&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-27&#34; title=&#34;27&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-28&#34; title=&#34;28&#34;&gt;    { hp, packed_gordon_max } &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;set_stat(&lt;span class=&#34;va&#34;&gt;:vitality&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;, gordon)&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;health&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-29&#34; title=&#34;29&#34;&gt;    { _, weak_gordon_max }    &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;set_stat(&lt;span class=&#34;va&#34;&gt;:vitality&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;, gordon)&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;health&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-30&#34; title=&#34;30&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-31&#34; title=&#34;31&#34;&gt;    assert packed_gordon_max &lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; weak_gordon_max&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-32&#34; title=&#34;32&#34;&gt;    assert hp &lt;span class=&#34;op&#34;&gt;==&lt;/span&gt; packed_gordon_max&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-33&#34; title=&#34;33&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-34&#34; title=&#34;34&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-35&#34; title=&#34;35&#34;&gt;  test &lt;span class=&#34;st&#34;&gt;&amp;quot;Can equip weapon only if intelligence is enough&amp;quot;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-36&#34; title=&#34;36&#34;&gt;    gordon &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;new(&lt;span class=&#34;st&#34;&gt;&amp;quot;Gordon&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;Freemonad&amp;quot;&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:male&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-37&#34; title=&#34;37&#34;&gt;    weapon &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Weapon&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;new(&lt;span class=&#34;st&#34;&gt;&amp;quot;Sci fi blaster thingy&amp;quot;&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;9&lt;/span&gt; ,&lt;span class=&#34;dv&#34;&gt;100&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-38&#34; title=&#34;38&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-39&#34; title=&#34;39&#34;&gt;    dumb_gordon &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;set_stat(&lt;span class=&#34;va&#34;&gt;:intelligence&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;, gordon)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-40&#34; title=&#34;40&#34;&gt;    smart_gordon &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;set_stat(&lt;span class=&#34;va&#34;&gt;:intelligence&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;, gordon)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-41&#34; title=&#34;41&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-42&#34; title=&#34;42&#34;&gt;    assert {&lt;span class=&#34;va&#34;&gt;:error&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;Too dumb&amp;quot;&lt;/span&gt;} &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;equip(weapon, dumb_gordon)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-43&#34; title=&#34;43&#34;&gt;    assert {&lt;span class=&#34;va&#34;&gt;:ok&lt;/span&gt;, equipped_gordon} &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Character&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;equip(weapon, smart_gordon)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-44&#34; title=&#34;44&#34;&gt;    assert equipped_gordon&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;arm &lt;span class=&#34;op&#34;&gt;==&lt;/span&gt; {weapon}&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-45&#34; title=&#34;45&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-46&#34; title=&#34;46&#34;&gt;&lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;キャラクターを定義&#34;&gt;キャラクターを定義&lt;/h3&gt;
-&lt;h4 id=&#34;型エイリアス&#34;&gt;1. 型エイリアス&lt;/h4&gt;
-&lt;p&gt;関数型なのでまずはドメインモデルの型を定義する． テストより，&lt;code&gt;name&lt;/code&gt; &lt;code&gt;surname&lt;/code&gt; &lt;code&gt;gender&lt;/code&gt; をフィールドとして持っているのが分かるので次のような型を定義した．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;module Character exposing (..)
-
-type alias Character =
-    { name : String
-    , surname : String
-    , gender : Gender
-    }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;何故エイリアスなのかというと，構造的サブタイピイングが出来るようにだと思う(たぶん)．&lt;/p&gt;
-&lt;h4 id=&#34;ユニオン型&#34;&gt;2. ユニオン型&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;Gender&lt;/code&gt; 型が無いので定義する． こっちは列挙型みたいなのが欲しいので、ユニオン型を用いる．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;type Gender
-    = Male
-    | Female
-    | Other&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;関数としての型エイリアス&#34;&gt;3. 関数としての型エイリアス&lt;/h4&gt;
-&lt;p&gt;Elixir っぽい &lt;code&gt;new&lt;/code&gt; 関数を定義してやろう． Elm の場合，エイリアス型を定義すれば同名の値コンストラクタができるので，それをラップすればよい&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;new : String -&amp;gt; String -&amp;gt; Gender -&amp;gt; Character
-new name surname gender =
-    Character
-      name
-      surname
-      gender&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;キャラクターにステータスを持たせる&#34;&gt;キャラクターにステータスを持たせる&lt;/h3&gt;
-&lt;p&gt;キャラクターにいくつかのステータスを持たせよう．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;type alias Character =
-    { name : String
-    , surname : String
-    , gender : Gender
-    , health : (Int, Int)
-    , stats : Stats
-    }
-
-type alias Stats =
-    { strength : Int
-    , intelligence : Int
-    , vitality : Int
-    }
-
-new : String -&amp;gt; String -&amp;gt; Gender -&amp;gt; Character
-new name surname gender =
-    Character
-      name
-      surname
-      gender
-      (100,100)
-      (Stats 0 0 0)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;health&lt;/code&gt; はどうやら HP みたいなものらしい(現在のHPと上限)．&lt;/p&gt;
-&lt;h3 id=&#34;パターンマッチ&#34;&gt;4. パターンマッチ&lt;/h3&gt;
-&lt;p&gt;ステータスを更新する関数を定義しよう．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;type Stat
-    = Strength
-    | Intelligence
-    | Vitality
-
-setStat : Stat -&amp;gt; Int -&amp;gt; Character -&amp;gt; Character
-setStat stat value character =
-    let
-      stats = character.stats
-    in
-    case stat of
-        Strength -&amp;gt;
-            { character | stats = { stats | strength = value } }
-        Intelligence -&amp;gt;
-            { character | stats = { stats | intelligence = value } }
-        Vitality -&amp;gt;
-            { character | stats = { stats | vitality = value } }        &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;残念ながらこの &lt;code&gt;setStat&lt;/code&gt; は正しくない． テストを見ればわかるが &lt;code&gt;Vitality&lt;/code&gt; を更新した場合は &lt;code&gt;health&lt;/code&gt; も更新する必要がある．&lt;/p&gt;
-&lt;h4 id=&#34;演算子&#34;&gt;5. 演算子&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;health&lt;/code&gt; はタプル型だ． タプルの更新をいい感じにするために，カスタム演算子を定義してみよう．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;(&amp;lt;$) : (a, b) -&amp;gt; (a -&amp;gt; c) -&amp;gt; (c, b)
-(&amp;lt;$) tuple f = Tuple.mapFirst f tuple
-
-($&amp;gt;) : (a, b) -&amp;gt; (b -&amp;gt; c) -&amp;gt; (a, c)
-($&amp;gt;) tuple f = Tuple.mapSecond f tuple&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;これを使って &lt;code&gt;setStat&lt;/code&gt; の &lt;code&gt;Vitality&lt;/code&gt; の部分を正しく修正する．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;setStat : Stat -&amp;gt; Int -&amp;gt; Character -&amp;gt; Character
-setStat stat value character =
-    let
-      stats = character.stats
-    in
-    case stat of
-        ...
-        Vitality -&amp;gt;
-            { character
-                | stats = { stats | vitality = value }
-                , health =
-                    character.health
-                      &amp;lt;$ (+) ((value - stats.vitality) * 10)
-                      $&amp;gt; always (100 + 10 * value)
-            }                &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;ウェポンを持たせる&#34;&gt;ウェポンを持たせる&lt;/h3&gt;
-&lt;h4 id=&#34;インポート&#34;&gt;インポート&lt;/h4&gt;
-&lt;p&gt;新しく &lt;code&gt;Weapon.elm&lt;/code&gt; ファイルを作り，新しいモジュール定義する．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;module Weapon exposing (..)
-
-type alias Weapon =
-    { name : String
-    , level : Int
-    , damage : Int
-    }
-
-new : String -&amp;gt; Int -&amp;gt; Int -&amp;gt; Weapon
-new name level damage = Weapon name level damage&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;このモジュールをインポートして &lt;code&gt;Character&lt;/code&gt; 型を拡張しよう&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;import Weapon exposing (Weapon)
-
-type alias Character =
-    { name : String
-    , surname : String
-    , gender : Gender
-    , health : (Int, Int)
-    , stats : Stats
-    , arm : Maybe Weapon
-    }
-
-new : String -&amp;gt; String -&amp;gt; Gender -&amp;gt; Character
-new name surname gender =
-    Character
-      name
-      surname
-      gender
-      (100,100)
-      (Stats 0 0 0)
-      Nothing&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;最後に &lt;code&gt;equip&lt;/code&gt; 関数を作って完成． これで全てのテストが通るはずだ．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;equip : Weapon -&amp;gt; Character -&amp;gt; Result String Character
-equip weapon character =
-    if weapon.level &amp;lt; character.status.intelligence then
-        Ok { character | arm = Just weapon }
-    else
-        Err &amp;quot;Too dumb&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;「頭悪すぎ」ってひどい(笑)&lt;/p&gt;
-&lt;h2 id=&#34;phoenix-で-todo-アプリを作る&#34;&gt;Phoenix で ToDo アプリを作る&lt;/h2&gt;
-&lt;p&gt;Elchemy が実際にどの程度有用かを感じるために，Elchemy + Elm + Phoenix で超簡易的な Todo アプリを作ってみた．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gitlab.com/matsubara0507/elchemy_todo_app&#34;&gt;MATSUBARA Nobutada / elchemy_todo_app · GitLab&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;過去に &lt;a href=&#34;https://github.com/matsubara0507/patissier-test&#34;&gt;Elm + Phoenix で社内ツールを作ったり&lt;/a&gt;，&lt;a href=&#34;https://matsubara0507.github.io/posts/2017-12-13-elm-and-haskell-for-elmer.html&#34;&gt;Elm + Haskell で Todo アプリを書いてみたり&lt;/a&gt;したので，その辺りからコードや構成はパクッて来てます． GitLab に置いてるのは，モノは試しってやつ(笑)．&lt;/p&gt;
-&lt;h3 id=&#34;phoenix-をインストール&#34;&gt;Phoenix をインストール&lt;/h3&gt;
-&lt;p&gt;Elchemy (および Elixir・Elm・npm) はインストールされているとする． &lt;a href=&#34;https://hexdocs.pm/phoenix/installation.html&#34;&gt;Phoenix のサイト&lt;/a&gt;にある通りにやればよい．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;project-を作成&#34;&gt;Project を作成&lt;/h3&gt;
-&lt;p&gt;こんな時のために &lt;code&gt;elchemy init&lt;/code&gt; というコマンドがある(？)．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ mix phx.new elchemy_todo_app --no-ecto
-$ cd elchemy_todo_app
-$ elchemy init&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;elchemy new&lt;/code&gt; との違いは，&lt;code&gt;mix.exs&lt;/code&gt; の Elixir のバージョンが古いのと &lt;code&gt;.formatter.exs&lt;/code&gt; ぐらいかな？ 今回は DB をわざわざ使うのがめんどくさいので，ストレージっぽい GenServer を定義する(なので &lt;code&gt;--no-ecto&lt;/code&gt;)．&lt;/p&gt;
-&lt;h3 id=&#34;crud-を作る&#34;&gt;CRUD を作る&lt;/h3&gt;
-&lt;p&gt;Phoenix に CRUD を追加するには，まず&lt;code&gt;router.ex&lt;/code&gt; にルーティングを足す.&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb14&#34;&gt;&lt;pre class=&#34;sourceCode elixir&#34;&gt;&lt;code class=&#34;sourceCode elixir&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;defmodule&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;ElchemyTodoAppWeb&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;cn&#34;&gt;Router&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;im&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;ElchemyTodoAppWeb&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:router&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-6&#34; title=&#34;6&#34;&gt;  pipeline &lt;span class=&#34;va&#34;&gt;:api&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-7&#34; title=&#34;7&#34;&gt;    plug(&lt;span class=&#34;va&#34;&gt;:accepts&lt;/span&gt;, [&lt;span class=&#34;st&#34;&gt;&amp;quot;json&amp;quot;&lt;/span&gt;])&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-9&#34; title=&#34;9&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-10&#34; title=&#34;10&#34;&gt;  scope &lt;span class=&#34;st&#34;&gt;&amp;quot;/api&amp;quot;&lt;/span&gt;, &lt;span class=&#34;cn&#34;&gt;ElchemyTodoAppWeb&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-11&#34; title=&#34;11&#34;&gt;    pipe_through(&lt;span class=&#34;va&#34;&gt;:api&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-12&#34; title=&#34;12&#34;&gt;    resources(&lt;span class=&#34;st&#34;&gt;&amp;quot;/todos&amp;quot;&lt;/span&gt;, &lt;span class=&#34;cn&#34;&gt;TodoController&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;only:&lt;/span&gt; [&lt;span class=&#34;va&#34;&gt;:index&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:create&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:update&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:delete&lt;/span&gt;])&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-13&#34; title=&#34;13&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-14&#34; title=&#34;14&#34;&gt;&lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;次にコントロラーを定義し，&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb15&#34;&gt;&lt;pre class=&#34;sourceCode elixir&#34;&gt;&lt;code class=&#34;sourceCode elixir&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;defmodule&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;ElchemyTodoAppWeb&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;cn&#34;&gt;TodoController&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;im&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Models&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;cn&#34;&gt;Todo&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;as:&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Todo&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;im&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;ElchemyTodoAppWeb&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:controller&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; index(conn, _params), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: render(conn, &lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt; })&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; create(conn, params), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: render(conn, &lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt; })&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; update(conn, params), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: render(conn, &lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt; })&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; delete(conn, %{&lt;span class=&#34;st&#34;&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;=&amp;gt;&lt;/span&gt; id}), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: render(conn, &lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt; })&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;(&lt;code&gt;...&lt;/code&gt; の部分は後で埋める) そして View を定義する。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb16&#34;&gt;&lt;pre class=&#34;sourceCode elixir&#34;&gt;&lt;code class=&#34;sourceCode elixir&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;defmodule&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;ElchemyTodoAppWeb&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;cn&#34;&gt;TodoView&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;im&#34;&gt;use&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;ElchemyTodoAppWeb&lt;/span&gt;, &lt;span class=&#34;va&#34;&gt;:view&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; render(&lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; todos}), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: todos&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;さてここから　Elchemy だ。 モデルを Elchemy で定義する. というかモデル以外はマクロ色が強過ぎてうまくいかなかった.&lt;/p&gt;
-&lt;h3 id=&#34;elchemy-でモデルを&#34;&gt;Elchemy でモデルを&lt;/h3&gt;
-&lt;p&gt;まずは型を定義.&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;module Data.Todo exposing (..)
-import Dict
-
-type alias Todo =
-    { id : String
-    , title : String
-    , done : Bool
-    }
-
-type alias Todos =
-    Dict.Dict String Todo&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ここはフロント共有したいので別途切り出しておく. DBをサボるために GenServer なモデルを定義する.&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;module Models.Todo exposing (..)
-
-import Data.Todo exposing (Todo, Todos)
-import Dict
-import Elchemy exposing (..)
-
-{- ex
-   use GenServer
-
-   def start_link(init \\ %{ todos: %{}, cnt: 0 }), do: GenServer.start_link(__MODULE__, init, name: :todos)
-
-   def init(state), do: {:ok, state}
-
-   def handle_call(:get, _client, state), do: {:reply, state, state}
-
-   def handle_cast({:set, new_state}, _state), do: {:noreply, new_state}
-
-   def gen_(params) do
-     %{
-       id: params[&amp;quot;id&amp;quot;],
-       title: params[&amp;quot;title&amp;quot;],
-       done: params[&amp;quot;done&amp;quot;]
-     }
-   end
--}
-
-type alias State =
-    { todos : Todos
-    , cnt : Int
-    }
-
-type Name
-    = Todos
-
-type Action
-    = Get
-    | Set State
-
-gen : params -&amp;gt; Todo
-gen = ffi &amp;quot;Models.Todo&amp;quot; &amp;quot;gen_&amp;quot;
-
-getState : State
-getState = call_ Todos Get
-
-setState : State -&amp;gt; State
-setState state = cast_ Todos (Set state) |&amp;gt; always state
-
-call_ : Name -&amp;gt; Action -&amp;gt; a
-call_ = ffi &amp;quot;GenServer&amp;quot; &amp;quot;call&amp;quot;
-
-cast_ : Name -&amp;gt; Action -&amp;gt; a
-cast_ = ffi &amp;quot;GenServer&amp;quot; &amp;quot;cast&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;Todos&lt;/code&gt; と削除された &lt;code&gt;Todo&lt;/code&gt; も含めた総数を表した &lt;code&gt;Int&lt;/code&gt; を持った &lt;code&gt;State&lt;/code&gt; 型を状態として GenServer に保持して欲しい． 出力した Elixir コードにだけモジュールをインポートさせたり，うまく型付けできない関数を Elixir コードに張り付けるには，コメントアウト &lt;code&gt;{- ex ... -}&lt;/code&gt; 使う． この中に書いた Elixir コードはそのまま出力先に貼り付けられる(濫用厳禁！)．&lt;/p&gt;
-&lt;p&gt;Elixir モジュールの関数を呼び出すには &lt;code&gt;Elchemy&lt;/code&gt; モジュールにある &lt;code&gt;ffi&lt;/code&gt; 関数を使う． ただし，&lt;code&gt;ffi&lt;/code&gt; 関数をファーストクラスには扱えない． 次のようなエラーが出る．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Ffi inside function body is deprecated since Elchemy 0.3&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;Name&lt;/code&gt; 型や &lt;code&gt;Action&lt;/code&gt; 型は Elchemy が代数的データ型をアトムとタプルに変換することと，GenServer の使い方を知っていれば意図するところが分かるだろう． 逆にそれらを知っていなければ読みとれないと思う…&lt;/p&gt;
-&lt;h2 id=&#34;section-1&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;コントローラーから呼ばれるインターフェースは &lt;code&gt;getState&lt;/code&gt; と &lt;code&gt;setState&lt;/code&gt; を用いることで簡単に書けた．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;gets : List Todo
-gets = Dict.values (.todos getState)
-
-add : Todo -&amp;gt; List Todo
-add todo =
-    let
-        { todos, cnt } = getState
-        newId   = toString cnt
-        newTodo = { todo | id = newId }
-        state   = { todos = Dict.insert newId newTodo todos, cnt = cnt + 1 }
-    in
-    setState state
-        |&amp;gt; .todos
-        |&amp;gt; Dict.values
-
-update : Todo -&amp;gt; List Todo
-update todo =
-    let
-        { todos, cnt } = getState
-        state = { todos = Dict.update todo.id (Maybe.map &amp;lt;| always todo) todos, cnt = cnt }
-    in
-    setState state
-        |&amp;gt; .todos
-        |&amp;gt; Dict.values
-
-remove : String -&amp;gt; List Todo
-remove todoId =
-    let
-        { todos, cnt } =
-            getState
-        state =
-            { todos = Dict.remove todoId todos, cnt = cnt }
-    in
-    setState state
-        |&amp;gt; .todos
-        |&amp;gt; Dict.values&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;コントローラーの &lt;code&gt;...&lt;/code&gt; を書き換えてやれば完成だ．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb21&#34;&gt;&lt;pre class=&#34;sourceCode elixir&#34;&gt;&lt;code class=&#34;sourceCode elixir&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; index(conn, _params), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: render(conn, &lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Todo&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;gets()})&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; create(conn, params), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: render(conn, &lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Todo&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;add(&lt;span class=&#34;cn&#34;&gt;Todo&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;gen(params))})&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; update(conn, params), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: render(conn, &lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Todo&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;update(&lt;span class=&#34;cn&#34;&gt;Todo&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;gen(params))})&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; delete(conn, %{&lt;span class=&#34;st&#34;&gt;&amp;quot;id&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;=&amp;gt;&lt;/span&gt; id}), &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;: render(conn, &lt;span class=&#34;st&#34;&gt;&amp;quot;todos.json&amp;quot;&lt;/span&gt;, %{&lt;span class=&#34;va&#34;&gt;todos:&lt;/span&gt; &lt;span class=&#34;cn&#34;&gt;Todo&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;remove(id)})&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ちなみに出力された Elixir コードは&lt;a href=&#34;https://gitlab.com/matsubara0507/elchemy_todo_app/blob/443777cee3e8435ee15f04ada6437e41e3af064b/lib/data/todo.elchemy.ex&#34;&gt;ココ&lt;/a&gt;と&lt;a href=&#34;https://gitlab.com/matsubara0507/elchemy_todo_app/blob/443777cee3e8435ee15f04ada6437e41e3af064b/lib/models/todo.elchemy.ex&#34;&gt;ココ&lt;/a&gt;です． 興味がある人は見てください．&lt;/p&gt;
-&lt;h3 id=&#34;elm-brunch&#34;&gt;Elm Brunch&lt;/h3&gt;
-&lt;p&gt;Brunch 設定が難しかったので，本質的には Elchemy と関係ないけど残しておく．&lt;/p&gt;
-&lt;p&gt;Phoenix 1.3 系ではトップレベルに &lt;code&gt;assets&lt;/code&gt; というディレクトリがあり，HTML/JS/CSS/画像 のような静的ファイルはここに置いておく． Brunch を使って複数の JS や CSS を合わせることが出来る． &lt;a href=&#34;https://github.com/madsflensted/elm-brunch&#34;&gt;elm-brunch&lt;/a&gt; を使うことで Elm を JS にコンパイルしてくれる．&lt;/p&gt;
-&lt;p&gt;branch-config に次のような設定を書き加えてあげる． Elm のフロントコードは &lt;code&gt;lib/web/elm&lt;/code&gt; に置いてある．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb22&#34;&gt;&lt;pre class=&#34;sourceCode javascript&#34;&gt;&lt;code class=&#34;sourceCode javascript&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;va&#34;&gt;exports&lt;/span&gt;.&lt;span class=&#34;at&#34;&gt;config&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-2&#34; title=&#34;2&#34;&gt;  ...&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;paths&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-4&#34; title=&#34;4&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;watched&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;static&amp;quot;&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;css&amp;quot;&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;js&amp;quot;&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;vendor&amp;quot;&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;../lib/web/elm&amp;quot;&lt;/span&gt;]&lt;span class=&#34;op&#34;&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-5&#34; title=&#34;5&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;../priv/static&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;op&#34;&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;plugins&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-9&#34; title=&#34;9&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;elmBrunch&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;{&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-10&#34; title=&#34;10&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;elmFolder&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;../lib/web/elm&amp;quot;&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-11&#34; title=&#34;11&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;mainModules&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;Main.elm&amp;quot;&lt;/span&gt;]&lt;span class=&#34;op&#34;&gt;,&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-12&#34; title=&#34;12&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;outputFolder&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;vendor&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-13&#34; title=&#34;13&#34;&gt;    &lt;span class=&#34;op&#34;&gt;},&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-14&#34; title=&#34;14&#34;&gt;  ...&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-15&#34; title=&#34;15&#34;&gt;  &lt;span class=&#34;op&#34;&gt;}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-16&#34; title=&#34;16&#34;&gt;  ...&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-17&#34; title=&#34;17&#34;&gt;&lt;span class=&#34;op&#34;&gt;}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;フロント部分&#34;&gt;フロント部分&lt;/h3&gt;
-&lt;p&gt;ほんの少しだがコードを再利用できる． API クライアントは以下のようになる．&lt;/p&gt;
-&lt;pre class=&#34;elm&#34;&gt;&lt;code&gt;module TodoAPI exposing (..)
-
-import Data.Todo exposing (Todo)
-import Http
-
-getTodos : Http.Request (List Todo)
-getTodos =
-    Http.request
-        { method =
-            &amp;quot;GET&amp;quot;
-        , headers =
-            []
-        , url =
-            String.join &amp;quot;/&amp;quot;
-                [ baseUrl
-                , &amp;quot;todos&amp;quot;
-                ]
-        , body =
-            Http.emptyBody
-        , expect =
-            Http.expectJson (list decodeTodo)
-        , timeout =
-            Nothing
-        , withCredentials =
-            False
-        }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ホントはこの当たりも Elchemy を使って生成できるとよいのだが… もしかして &lt;a href=&#34;https://github.com/saschatimme/elm-phoenix&#34;&gt;elm-phoenix&lt;/a&gt; なるものを使えばよかったのかな？ また，The Elm Architecture 部分は長いので割愛．&lt;/p&gt;
-&lt;h2 id=&#34;section-2&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;ホントは assets 回りが他にもたくさんあるが,本質的な部分はこれで完成． あとはモロモロインストールして &lt;code&gt;mix phx.server&lt;/code&gt; とすれば動作するはずだ．&lt;/p&gt;
-&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;うれしみ&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;静的検査は神&lt;/li&gt;
-&lt;li&gt;フロントとコードを共有できる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;つらみ&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;Phoenix のいくつかは型付けできない
-&lt;ul&gt;
-&lt;li&gt;ルーティングの引数&lt;/li&gt;
-&lt;li&gt;へテロリストのようなモノ&lt;/li&gt;
-&lt;li&gt;結局ここで良く分からんエラーに…&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;コンパイルが遅い&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;今度は処理系の中身でも追ってみようかな．&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
