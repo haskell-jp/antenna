@@ -1,4 +1,238 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-12-04T07:00:16+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/junjihashimoto@github/items/ef229dab6c28c5f8ad84</id><title type="text">ブロックチェーンとハードウェアマイナー</title><updated>2018-12-04T07:00:16+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/junjihashimoto@github/items/ef229dab6c28c5f8ad84"/></entry><entry><id>https://qiita.com/lotz/items/7a1e04eb846214b775de</id><title type="text">[glossで実験] ファン・デル・ポール振動子</title><updated>2018-12-03T22:51:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/7a1e04eb846214b775de"/></entry><entry><id>https://qiita.com/kgtkr/items/de4c616cdcd89a58df72</id><title type="text">WebAssemblyにコンパイルする言語を実装する</title><updated>2018-12-03T02:58:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kgtkr/items/de4c616cdcd89a58df72"/></entry><entry><id>https://qiita.com/arowM/items/14169b412a7de8a0d514</id><title type="text">Haskellの新世代フレームワーク Tonatona</title><updated>2018-12-02T22:40:07+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/arowM/items/14169b412a7de8a0d514"/></entry><entry><id>https://qiita.com/waddlaw/items/b7ed253db36c6f8a04fc</id><title type="text">Haskell 情報収集術</title><updated>2018-12-02T10:51:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/b7ed253db36c6f8a04fc"/></entry><entry><id>https://qiita.com/waddlaw/items/65b57517f105fcbbe724</id><title type="text">GHC Source Plugin 作ってみた</title><updated>2018-12-02T00:29:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/65b57517f105fcbbe724"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-02-stack-docker-travici.html</id><title type="text">Stack の Docker Integration とイメージの自動更新</title><updated>2018-12-02T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-02-stack-docker-travici.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-12-05T10:51:42+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/kooconnie/items/9d590ee53450515c50a7</id><title type="text">正規表現を使った固有表現抽出の話</title><updated>2018-12-05T10:51:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kooconnie/items/9d590ee53450515c50a7"/></entry><entry><id>https://qiita.com/hiruberuto/items/c65e7629d3b1597840d9</id><title type="text">ElmとPureScript、どっちを選べばいいんだよ</title><updated>2018-12-05T07:02:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hiruberuto/items/c65e7629d3b1597840d9"/></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-05T00:14:48.108+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
+
+主に自分向けの防備録です。windows10上で確認。インストーラーはここからDLする。
+
+
+
+
+
+&lt;&lt;設定&gt;&gt;
+
+ssh-agentの重複起動を防ぐ
+
+
+ユーザーのアカウント名、ホームディレクトリの変更
+
+
+
+/etc/passwdを編集する（最新バージョンでは自動生成されない？）
+Cygwinを移動したら/etc/passwdの再生成を
+巨大ドメインに参加している PC での /etc/passwd, /etc/group ファイルのつくりかた 
+
+ssh-agentのために秘密鍵セットアップ
+
+
+
+~/.ssh/
+
+
+※group/otherの権限を削除する必要がある
+
+% chmod 700 ~/.ssh 
+
+
+less, lv, manコマンド終了時に画面をクリアしない
+
+[linux][cygwin] less, manの終了直前の画面をクリアしないで端末上に残す方法 
+</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-05-create-dhall-ex.html</id><title type="text">Dhall を試して物足りない部分を補うツールを自作した</title><updated>2018-12-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-05-create-dhall-ex.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Dhall を試して物足りない部分を補うツールを自作した&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2018-12-05&#34; itemprop=&#34;datePublished&#34;&gt;
+        Dec 5, 2018
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/Dhall.html&#34;&gt;Dhall&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;本稿は &lt;a href=&#34;https://qiita.com/advent-calendar/2018/haskell&#34;&gt;Haskell Advent Calendar 2018&lt;/a&gt; 5日目の記事です．&lt;/p&gt;
+&lt;p&gt;Haskell Day 2018 の発表をきっかけに，兼ねてから気になっていた Dhall を試した． いくつかツールが欲しくなったので作りましたっていう話です．&lt;/p&gt;
+&lt;p&gt;作ったものはこれ:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/yaml-to-dhall&#34;&gt;matsubara0507/yaml-to-dhall - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/dhall-ex&#34;&gt;matsubara0507/dhall-ex - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ちなみに，今回作ったツールは現状の stack の stable resolver にある v1.5.1 を利用している．&lt;/p&gt;
+&lt;h2 id=&#34;dhall&#34;&gt;Dhall&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dhall-lang/dhall-lang&#34;&gt;Dhall&lt;/a&gt; は静的型付けされた設定記述言語である． 多くの場合，プログラミング言語やアプリケーションに使われる設定ファイルには JSON や YAML が利用されている． プログラミング言語のビルドシステムのような設定ファイル一つ程度なら問題ないが，Kubernetes や Ansible のような膨大な設定ファイルが依存しあう場合，静的型付けプログラミング言語のようにコンパイルによる型検査を導入したくなるだろう． Dhall はそのための言語であり，また便利な関数が用意されているため，非常に再利用性の高い設定ファイルを記述できる．&lt;/p&gt;
+&lt;h3 id=&#34;例&#34;&gt;例:&lt;/h3&gt;
+&lt;p&gt;Dhall は静的片付け言語なので，まずは型を定義しよう:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode ocaml&#34;&gt;&lt;code class=&#34;sourceCode ocaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;$ cat ./User.dhall&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;{ homeDirectory : Text, privateKeyFile : Text, publicKeyFile : Text }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;このユーザ型の値はユーザ名から一意に生成されることは容易に想像できるだろう:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode ocaml&#34;&gt;&lt;code class=&#34;sourceCode ocaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;$ cat ./makeUser.dhall&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;  \(user_name : Text)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;-&amp;gt;    &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; homeDirectory = &lt;span class=&#34;st&#34;&gt;&amp;quot;/home/${user_name}&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt;  &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; privateKeyFile = &lt;span class=&#34;st&#34;&gt;&amp;quot;${homeDirectory}/id_rsa&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt;  &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; publicKeyFile = &lt;span class=&#34;st&#34;&gt;&amp;quot;${privateKeyFile}.pub&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt;    { homeDirectory =&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;            homeDirectory&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; title=&#34;11&#34;&gt;        , privateKeyFile =&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; title=&#34;12&#34;&gt;            privateKeyFile&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; title=&#34;13&#34;&gt;        , publicKeyFile =&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; title=&#34;14&#34;&gt;            publicKeyFile&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; title=&#34;15&#34;&gt;        }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; title=&#34;16&#34;&gt;      : ./User.dhall&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この &lt;code&gt;./makeUser.dhall&lt;/code&gt; は任意の文字列を与えると，それをユーザ名として &lt;code&gt;./User.dhall&lt;/code&gt; 型の値を生成してくれる． さらに，高階関数を使って複数のユーザに対し一気に適用してみよう．&lt;/p&gt;
+&lt;pre class=&#34;dhall&#34;&gt;&lt;code&gt;$ cat ./users.dhall
+let User = ./User.dhall
+
+in  let map =
+      https://raw.githubusercontent.com/dhall-lang/dhall-lang/0a7f596d03b3ea760a96a8e03935f4baa64274e1/Prelude/List/map
+
+in  map Text User ./makeUser.dhall [ &amp;quot;alice&amp;quot;, &amp;quot;bob&amp;quot;, &amp;quot;curry&amp;quot; ] : List User&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;map&lt;/code&gt; には &lt;a href=&#34;https://github.com/dhall-lang/dhall-lang/blob/master/Prelude/List/map&#34;&gt;dhall のリポジトリにある標準パッケージの関数&lt;/a&gt;を直接インポートしている． &lt;code&gt;map&lt;/code&gt; の型は &lt;code&gt;∀(a : Type) → ∀(b : Type) → (a → b) → List a → List b&lt;/code&gt; となっている． 基本的に Dhall で多相な高階関数を利用するときは，引数から直接型を与えてあげる必要がある．&lt;/p&gt;
+&lt;p&gt;さて，これを dhall でビルドすると次のような結果を得る:&lt;/p&gt;
+&lt;pre class=&#34;dhall&#34;&gt;&lt;code&gt;$ dhall &amp;lt;&amp;lt;&amp;lt; ./users.dhall
+[ { homeDirectory =
+      &amp;quot;/home/alice&amp;quot;
+  , privateKeyFile =
+      &amp;quot;/home/alice/id_rsa&amp;quot;
+  , publicKeyFile =
+      &amp;quot;/home/alice/id_rsa.pub&amp;quot;
+  }
+, { homeDirectory =
+      &amp;quot;/home/bob&amp;quot;
+  , privateKeyFile =
+      &amp;quot;/home/bob/id_rsa&amp;quot;
+  , publicKeyFile =
+      &amp;quot;/home/bob/id_rsa.pub&amp;quot;
+  }
+, { homeDirectory =
+      &amp;quot;/home/curry&amp;quot;
+  , privateKeyFile =
+      &amp;quot;/home/curry/id_rsa&amp;quot;
+  , publicKeyFile =
+      &amp;quot;/home/curry/id_rsa.pub&amp;quot;
+  }
+]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これは次のようなYAMLに対応し，&lt;code&gt;dhall-to-yaml&lt;/code&gt; などのツールで変換可能だ:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;privateKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/alice/id_rsa&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;publicKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/alice/id_rsa.pub&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;homeDirectory:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/alice&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;privateKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/bob/id_rsa&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;publicKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/bob/id_rsa.pub&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;homeDirectory:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/bob&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;privateKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/curry/id_rsa&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;publicKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/curry/id_rsa.pub&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;homeDirectory:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/curry&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
+&lt;p&gt;また，ざっくりとしたイメージを得るには、先日あった &lt;a href=&#34;https://wiki.haskell.jp/Workshop/HaskellDay/2018&#34;&gt;Haskell Day 2018&lt;/a&gt; での&lt;a href=&#34;https://speakerdeck.com/syocy/dhall-haskellfalsexin-tanakiraapuri&#34;&gt;発表資料&lt;/a&gt;がわかりやすくてオススメ．&lt;/p&gt;
+&lt;h3 id=&#34;使ってみて思うところ&#34;&gt;使ってみて思うところ&lt;/h3&gt;
+&lt;p&gt;もしかしたら最新のバージョンであれば改善しているものもあるかもしれない．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基本的な高階関数があり便利
+&lt;ul&gt;
+&lt;li&gt;map,fold,filter など&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;普通のプログラミングのように式を再利用できる&lt;/li&gt;
+&lt;li&gt;型推論がザコい
+&lt;ul&gt;
+&lt;li&gt;パラメトリック多相を挟むとダメみたいですね&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;結構ビルドエラーがエスパー
+&lt;ul&gt;
+&lt;li&gt;慣れの問題か？&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;YAML のいわゆる連想配列への変換ができない&lt;/li&gt;
+&lt;li&gt;日本語が化ける ;;
+&lt;ul&gt;
+&lt;li&gt;まぁ原因はわかるので最新でも治ってなかったらPRしてみるか&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;何に導入したか&#34;&gt;何に導入したか&lt;/h2&gt;
+&lt;p&gt;弊社が企画してる学生向けの競技型イベントに関するシステムの設定ファイルを Dhall に置き換えてみた． そのシステムは，インフラ・スコアボード・デプロイツールの3つのリポジトリに別れており，ところどころ重複した設定が3つのリポジトリに存在する． そこで，設定用のリポジトリを作って，そこに Dhall で記述した設定を置き，そこから各リポジトリに設定を撒くような仕組みを考えることにした．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/create-dhall-ex/system-with-dhall.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;別に Dhall にしたからといって劇的に何かがよくなるわけでは無いのだが，ちょうど良いサンドボックスがあったのでイロイロと試してみる，というのが本音です（笑）&lt;/p&gt;
+&lt;h2 id=&#34;yaml-to-dhall&#34;&gt;yaml-to-dhall&lt;/h2&gt;
+&lt;p&gt;最初の方はせっせと手作業で変換していたが，何個かやって変換の仕方の勘所がわかって来た． そうなると後は作業でしか無いので，なんとかして大量にある設定ファイルを一括変換したい．&lt;/p&gt;
+&lt;p&gt;調べた限り，YAML から Dhall に変換するプログラムは無さそう(逆はもちろんあるけど)． なのですっごい雑なものを作った．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/yaml-to-dhall&#34;&gt;matsubara0507/yaml-to-dhall - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これは極めて単純なことしかできない． 数値は全て Float に変換されるし，Optional や空リストの書き方が間違っている． とりあえず変換して，手元のエディタで置換すればいいかなと思ったので雑なままである．&lt;/p&gt;
+&lt;p&gt;時間ができたらそのうち直すかも．&lt;/p&gt;
+&lt;h2 id=&#34;dhall-ex&#34;&gt;dhall-ex&lt;/h2&gt;
+&lt;p&gt;前述した通り，一組の設定ファイル群から複数のリポジトリの設定ファイルを生成したかったのでその仕組みを作った． dhall-ex は次のような設定ファイルを記述する:&lt;/p&gt;
+&lt;pre class=&#34;dhall&#34;&gt;&lt;code&gt;{ GH_TOKEN =
+      [ &amp;quot;matsubara0507:XXXX&amp;quot; ] : Optional Text
+  , root =
+      &amp;quot;configs&amp;quot;
+  , exports =
+      [ { name =
+            &amp;quot;deploy-tool&amp;quot;
+        , repo =
+            [ &amp;quot;git-challenge/deploy-tool&amp;quot; ] : Optional Text
+        , paths =
+            [ &amp;quot;settings/orgs/orgs.yml&amp;quot;
+            , &amp;quot;settings/orgs/review.yml&amp;quot;
+            ...
+            ]
+        }
+      ...
+      ]
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;別にどっちでもよかったのだが，せっかくなので dhall-ex の設定ファイルも Dhall で記述するようにした． なので，具体例より&lt;a href=&#34;https://github.com/matsubara0507/dhall-ex/blob/master/dhall/dhall-ex-type.dhall&#34;&gt;型&lt;/a&gt;を見た方が早いだろう．&lt;/p&gt;
+&lt;pre class=&#34;dhall&#34;&gt;&lt;code&gt;let Export = { name : Text, repo : Optional Text, paths : List Text }
+in  { GH_TOKEN : Optional Text, root : Text, exports : List Export }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;root&lt;/code&gt; は設定ファイル群を置くパスで，&lt;code&gt;exports&lt;/code&gt; が設定ファイル群の更新先のリポジトリなどの情報だ． &lt;code&gt;repo&lt;/code&gt; で GitHub リポジトリを指定し，&lt;code&gt;paths&lt;/code&gt; で関連する設定ファイルを列挙する． 例の場合 &lt;code&gt;./config/settings/orgs/orgs.yml.dhall&lt;/code&gt; を &lt;code&gt;./.dhall-ex/git-challenge/deploy-tool/settings/orgs/orgs.yml&lt;/code&gt; に dhall でビルドする．&lt;/p&gt;
+&lt;p&gt;ちなみに Dhall のバージョンが古いので &lt;code&gt;Optional&lt;/code&gt; がリストのリテラルを利用しているが，最新の Dhall には &lt;code&gt;Some&lt;/code&gt; と &lt;code&gt;None&lt;/code&gt; があるはず．&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;現状はこんな感じ:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ dhall-ex --help
+dhall-ex - cli tool to support dhall
+
+Usage: dhall-ex [-v|--verbose] [-c|--config PATH] [--only NAME] COMMAND
+                [--version]
+
+Available options:
+  -v,--verbose             Enable verbose mode: verbosity level &amp;quot;debug&amp;quot;
+  -c,--config PATH         Configuration file
+  --only NAME              Exec subcommand only NAME in config
+  --version                Show version
+  -h,--help                Show this help text
+
+Available commands:
+  sort                     Sort record keys in dhall file
+  echo                     Echo TEXT
+  init                     Init dhall-ex work directory
+  build                    Build Dhall file to YAML or JSON
+  deploy                   Deploy builded config file to remote repository
+  checkout                 Checkout repository in dhall workspace
+  pull                     Pull repository in dhall workspace&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;echo&lt;/code&gt; は設定が正しく読み取れるかどうかにだけ使う雑機能． &lt;code&gt;sort&lt;/code&gt; レコードのフィールドの順番を型に合わせて並び替えてくれるコマンドだ． 前述した &lt;code&gt;yaml-to-dhall&lt;/code&gt; などを使った後に使った(並び変える必要はないんだけど，なんか読みやすいように)．&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;init&lt;/code&gt; でリポジトリなどの初期化をし，&lt;code&gt;build&lt;/code&gt; で設定ファイルを変換し，&lt;code&gt;deploy&lt;/code&gt; でコミットとプッシュを行ってくれる． &lt;code&gt;checkout&lt;/code&gt; や &lt;code&gt;pull&lt;/code&gt; はただの git コマンドのラッパーだ．&lt;/p&gt;
+&lt;p&gt;また，&lt;code&gt;--only deploy-tool&lt;/code&gt; などとすることでコマンドの実行を特定のリポジトリに限定できる．&lt;/p&gt;
+&lt;h3 id=&#34;実装&#34;&gt;実装&lt;/h3&gt;
+&lt;p&gt;実は内部実装はそこまで難しいことをしていない． Dhall のファイルを読み込み，ビルドし，それを dhall-ex の設定ファイルに則って出力するだけだ． &lt;code&gt;build&lt;/code&gt; 以外のコマンドは &lt;a href=&#34;http://hackage.haskell.org/package/shelly&#34;&gt;&lt;code&gt;shelly&lt;/code&gt;&lt;/a&gt; を使ってシェルスクリプトもどきを実行している．&lt;/p&gt;
+&lt;h3 id=&#34;todo&#34;&gt;ToDo&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;例外処理が雑なのを直す
+&lt;ul&gt;
+&lt;li&gt;だいたいこの部分が残る（笑）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;任意のコマンドを各リポジトリのワークスペースで実行できるようにする
+&lt;ul&gt;
+&lt;li&gt;なんか &lt;code&gt;git status&lt;/code&gt; とか &lt;code&gt;git branch&lt;/code&gt; とかしたい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;並行処理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
+&lt;p&gt;随分雑な記事になってしまった．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/junjihashimoto@github/items/ef229dab6c28c5f8ad84</id><title type="text">ブロックチェーンとハードウェアマイナー</title><updated>2018-12-04T07:00:16+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/junjihashimoto@github/items/ef229dab6c28c5f8ad84"/></entry><entry><id>https://qiita.com/lotz/items/7a1e04eb846214b775de</id><title type="text">[glossで実験] ファン・デル・ポール振動子</title><updated>2018-12-03T22:51:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/7a1e04eb846214b775de"/></entry><entry><id>https://qiita.com/kgtkr/items/de4c616cdcd89a58df72</id><title type="text">WebAssemblyにコンパイルする言語を実装する</title><updated>2018-12-03T02:58:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kgtkr/items/de4c616cdcd89a58df72"/></entry><entry><id>https://qiita.com/arowM/items/14169b412a7de8a0d514</id><title type="text">Haskellの新世代フレームワーク Tonatona</title><updated>2018-12-02T22:40:07+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/arowM/items/14169b412a7de8a0d514"/></entry><entry><id>https://qiita.com/waddlaw/items/b7ed253db36c6f8a04fc</id><title type="text">Haskell 情報収集術</title><updated>2018-12-02T10:51:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/b7ed253db36c6f8a04fc"/></entry><entry><id>https://qiita.com/waddlaw/items/65b57517f105fcbbe724</id><title type="text">GHC Source Plugin 作ってみた</title><updated>2018-12-02T00:29:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/65b57517f105fcbbe724"/></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-02-stack-docker-travici.html</id><title type="text">Stack の Docker Integration とイメージの自動更新</title><updated>2018-12-02T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-02-stack-docker-travici.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Stack の Docker Integration とイメージの自動更新&lt;/h1&gt;
@@ -615,7 +849,7 @@ Benchmark splitcc-bench: FINISH&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;splitCC ≥ foldSplitCC&lt;/code&gt; の部分は &lt;code&gt;splitCC&lt;/code&gt; よりも &lt;code&gt;foldSplitCC&lt;/code&gt; 関数の方がパフォーマンスが向上していることを示しています。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;(1.00)&lt;/code&gt; は QuickCheck によって生成されたテストケースを入力として利用した時に全てのテストケース (&lt;code&gt;100%&lt;/code&gt;) で性能が改善されたという意味です。&lt;code&gt;0.5&lt;/code&gt; などとなっていた場合はテストケースによっては性能が向上していないということです。&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a</id><title type="text">いまさら Haskell でボウリング</title><updated>2018-11-15T14:33:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a"/></entry><entry><id>https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424</id><title type="text">Haskell に python の find みたいなのがない</title><updated>2018-11-14T13:03:27+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424"/></entry><entry><id>https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab</id><title type="text">すごいH本読んだからまとめ 9 「関数適用($),関数合成(.)」</title><updated>2018-11-14T07:31:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab"/></entry><entry><id>https://qiita.com/KNaito/items/782d64fe6866a3ab6667</id><title type="text">足し算プログラムをいくつかの言語で作ってみる</title><updated>2018-11-12T12:58:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/KNaito/items/782d64fe6866a3ab6667"/></entry><entry><id>https://qiita.com/yumakkt/items/10d583e09b4586e73d89</id><title type="text">すごいH本読んだからまとめ 8 「ラムダ式」</title><updated>2018-11-11T20:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/10d583e09b4586e73d89"/></entry><entry><id>https://qiita.com/yumakkt/items/95554aace5da53cc7e22</id><title type="text">すごいH本読んだからまとめ 7「高階関数」</title><updated>2018-11-11T14:39:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/95554aace5da53cc7e22"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-11-06T11:47:03.776+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+&lt;/ul&gt;</summary></entry><entry><id>https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a</id><title type="text">いまさら Haskell でボウリング</title><updated>2018-11-15T14:33:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/1a1fd5fe331d9c97981a"/></entry><entry><id>https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424</id><title type="text">Haskell に python の find みたいなのがない</title><updated>2018-11-14T13:03:27+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mtsugawa/items/dfcc45070c2e0a036424"/></entry><entry><id>https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab</id><title type="text">すごいH本読んだからまとめ 9 「関数適用($),関数合成(.)」</title><updated>2018-11-14T07:31:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/3a580f1fa19e7eba2cab"/></entry><entry><id>https://qiita.com/yumakkt/items/10d583e09b4586e73d89</id><title type="text">すごいH本読んだからまとめ 8 「ラムダ式」</title><updated>2018-11-11T20:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumakkt/items/10d583e09b4586e73d89"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-11-06T11:47:03.776+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
@@ -1467,43 +1701,7 @@ Installing internal library internal-foo in /home/guchi/Desktop/stack-191-workin
 &lt;li&gt;[#4114] Stack pretty prints error messages with proper &lt;code&gt;error&lt;/code&gt; logging level instead of &lt;code&gt;warning&lt;/code&gt; now. This also fixes self-executing scripts not piping plan construction errors from runhaskell to terminal (issue #3942).&lt;/li&gt;
 &lt;li&gt;Fix invalid “While building Setup.hs” when Cabal calls fail. See: &lt;a href=&#34;https://github.com/commercialhaskell/stack/issues/3934&#34;&gt;#3934&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;stack upload&lt;/code&gt; signs the package by default, as documented. &lt;code&gt;--no-signature&lt;/code&gt; turns the signing off. &lt;a href=&#34;https://github.com/commercialhaskell/stack/issues/3739&#34;&gt;#3739&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-10-20T19:31:17.645+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
-
-主に自分向けの防備録です。windows10上で確認。インストーラーはここからDLする。
-
-
-
-
-
-&lt;&lt;設定&gt;&gt;
-
-ssh-agentの重複起動を防ぐ
-
-
-ユーザーのアカウント名、ホームディレクトリの変更
-
-
-
-/etc/passwdを編集する（最新バージョンでは自動生成されない？）
-Cygwinを移動したら/etc/passwdの再生成を
-巨大ドメインに参加している PC での /etc/passwd, /etc/group ファイルのつくりかた 
-
-ssh-agentのために秘密鍵セットアップ
-
-
-
-~/.ssh/
-
-
-※group/otherの権限を削除する必要がある
-
-% chmod 700 ~/.ssh 
-
-
-less, lv, manコマンド終了時に画面をクリアしない
-
-[linux][cygwin] less, manの終了直前の画面をクリアしないで端末上に残す方法 
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html</id><title type="text">stack-templates を集める with GraphQL</title><updated>2018-10-14T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html</id><title type="text">stack-templates を集める with GraphQL</title><updated>2018-10-14T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;stack-templates を集める with GraphQL&lt;/h1&gt;
@@ -4160,430 +4358,6 @@ test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out&lt;/
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb9-14&#34; title=&#34;14&#34;&gt;&lt;span class=&#34;op&#34;&gt;}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;Haskell 版でも作ってみようかしらん．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-06-18-join-elixir-festa-2108.html</id><title type="text">Earlang ＆ Elixir Fest 2018 に参加してきた</title><updated>2018-06-18T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-06-18-join-elixir-festa-2108.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Earlang ＆ Elixir Fest 2018 に参加してきた&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-06-18&#34; itemprop=&#34;datePublished&#34;&gt;
-        Jun 18, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Elixir.html&#34;&gt;Elixir&lt;/a&gt; &lt;a href=&#34;/tags/event.html&#34;&gt;event&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;先日(6/16)，&lt;a href=&#34;https://elixir-fest.jp/&#34;&gt;Earlang &amp;amp; Elixir Fest 2018&lt;/a&gt; に参加してきたので，そのメモ書きです． ちなみに，Elixir は普段たいして使ってないけど LT もしてきました．&lt;/p&gt;
-&lt;h4 id=&#34;追記2018.06.21&#34;&gt;追記(2018.06.21)&lt;/h4&gt;
-&lt;p&gt;本稿公開後に公開してくださった発表スライドのリンクを追記しました．&lt;/p&gt;
-&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;今年で2回目らしく，去年は Elixir の作者の &lt;a href=&#34;https://twitter.com/josevalim&#34;&gt;Jose Valim&lt;/a&gt; 氏を呼んで Keynote してもらい，全体のセッション内容としては Elixir を導入し始めた・挑戦中という話がメインだったようだ． 今年はどっちかっていうとプロダクトに実践導入・運用してみてどうだったかという話がメインだそうだ． また，並行してハンズオンがあったらしいが，行ってないのでそっちは良く分からない． ハンズオンの資料は GitHub に公開してあるので，いずれやってみたい(同期とかとハンズオンしてみてもいいかも)．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ohr486/ErlangElixirFestHandsOn&#34;&gt;ohr486/ErlangElixirFestHandsOn - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;あと &lt;a href=&#34;https://togetter.com/li/1238110&#34;&gt;Togetter にまとめてみました&lt;/a&gt;．&lt;/p&gt;
-&lt;h2 id=&#34;メモ&#34;&gt;メモ&lt;/h2&gt;
-&lt;p&gt;各企業での導入した話が多かったので簡単なメモばっかです．&lt;/p&gt;
-&lt;h4 id=&#34;らくらく連絡網が-elixir-でリアルタイムメッセージング基盤を刷新した話&#34;&gt;「らくらく連絡網」が Elixir でリアルタイムメッセージング基盤を刷新した話&lt;/h4&gt;
-&lt;p&gt;(ネットワーク設定にバタバタしてたのでメモが少ない)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/rinosamakanata&#34;&gt;rinosamakanata&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://eole-repos.github.io/public/elixirfest/2018/elixirfest2018-eole-rinosamakanata.pdf&#34;&gt;発表スライドはコチラ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;もともとは RoR らしい&lt;/li&gt;
-&lt;li&gt;技術的課題
-&lt;ul&gt;
-&lt;li&gt;分散の問題&lt;/li&gt;
-&lt;li&gt;長い目で見たときの保守・運用&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;フロントエンドは Elm
-&lt;ul&gt;
-&lt;li&gt;「関数型良いよね」&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;負荷テストのために不可掛けの Docker コンテナを作った&lt;/li&gt;
-&lt;li&gt;Elixir のバージョンアップが多い(リリースしてから9回もあった)
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/asdf-vm/asdf-elixir&#34;&gt;asdf&lt;/a&gt; で難なく&lt;/li&gt;
-&lt;li&gt;Ruby や RoR よりぜんぜん簡単&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;実質的にメンテナンスフリー&lt;/li&gt;
-&lt;li&gt;Erlang は書けなくても導入できる
-&lt;ul&gt;
-&lt;li&gt;ただし BEAM の知識はいる&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/happi/theBeamBook&#34;&gt;The BEAM Book&lt;/a&gt; おすすめ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;最近 Ruby や Ruby のライブラリのバージョンアップで苦しんでいるのを見てたのでバージョンアップがシームレスなの羨ましい．&lt;/p&gt;
-&lt;h4 id=&#34;初めてのerlangサーバ開発と運用&#34;&gt;初めてのErlangサーバ開発と運用&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/mookjp&#34;&gt;mookjp&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/mookjp/chu-metefalseerlangsahakai-fa-toyun-yong?slide=1&#34;&gt;発表スライドはコチラ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Erlang をどう勉強したかや失敗談などの話&lt;/li&gt;
-&lt;li&gt;Node.js から Erlang へ (たぶん)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://erlang.org/doc/man/observer.html&#34;&gt;observer&lt;/a&gt; という Erlang プロセスの可視化ツールが便利&lt;/li&gt;
-&lt;li&gt;Erlang サーバーをプロダクションに導入するときの設定
-&lt;ul&gt;
-&lt;li&gt;思想の記事ばっか！&lt;/li&gt;
-&lt;li&gt;実際の設定に関する記事が少ない！！&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;不必要なプロセスやその監視プロセスが微妙に残ってじわじわ CPU 使用率が上がってしまった&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.erlang-in-anger.com/&#34;&gt;Erlang in Anger&lt;/a&gt; を絶対に読む
-&lt;ul&gt;
-&lt;li&gt;運用に役立ちそうなことがたくさん書いてある&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://erlang-slack.herokuapp.com/&#34;&gt;Erlang の Slack ワークスペース&lt;/a&gt;がおススメ！
-&lt;ul&gt;
-&lt;li&gt;紹介した監視の VMStats もここで教えてもらった&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;思想の記事が多い話，なんとなく Haskell にも似たようなところがあって笑った&lt;/p&gt;
-&lt;h4 id=&#34;keep-phoenix-app-productivity&#34;&gt;Keep Phoenix App Productivity&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/kanmo_ak&#34;&gt;kanmo_ak&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/kanmo/keep-phoenix-app-productivity?slide=1&#34;&gt;発表スライドはコチラ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Phoenix Application 開発1年・運用1年してみた結果の話&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://elixirschool.com/en/lessons/advanced/umbrella-projects/&#34;&gt;Umbrella&lt;/a&gt; によって Project を分割
-&lt;ul&gt;
-&lt;li&gt;肥大化してきた&lt;/li&gt;
-&lt;li&gt;複数のサービスをひとつのリポジトリで別々に開発&lt;/li&gt;
-&lt;li&gt;サービス間でコードを共有できる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ひとつのファイルを書き換えるだけでコンパイル対象が膨大…
-&lt;ul&gt;
-&lt;li&gt;ファイル間の依存関係がひどいので切っていく&lt;/li&gt;
-&lt;li&gt;マクロを変更するとやり直し&lt;/li&gt;
-&lt;li&gt;構造体を変更するとやばい&lt;/li&gt;
-&lt;li&gt;プロトコルも依存がある&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://hexdocs.pm/mix/Mix.Tasks.Xref.html&#34;&gt;&lt;code&gt;mix xref&lt;/code&gt;&lt;/a&gt; タスクが便利&lt;/li&gt;
-&lt;li&gt;モジュール名を動的に組み立てて依存を無理やり切る黒魔術(使わない方がいい)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Erlang プロセスだと remsh で起動中のプロセスに接続して調査できる&lt;/li&gt;
-&lt;li&gt;Elixir バージョンアップは追いやすい
-&lt;ul&gt;
-&lt;li&gt;RoR に比べて(笑)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Type Spec を書いておくとドキュメントになる
-&lt;ul&gt;
-&lt;li&gt;Dializer は使ってない(時間が無かった)&lt;/li&gt;
-&lt;li&gt;spec ないとつらいと感じたの私自身です&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;昔 Type Spec が書いてあったが間違ってるおかげで痛い目にあったので書いたやつを静的にチェックしたいですよね…&lt;/p&gt;
-&lt;h4 id=&#34;from-python-to-elixir&#34;&gt;from Python to Elixir&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kenichirow&#34;&gt;kenichirow&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;Python から Elixir に移行
-&lt;ul&gt;
-&lt;li&gt;Python 2020 年問題(2系のサポートが終わる)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Phoenix は最初は使わないつもりだった
-&lt;ul&gt;
-&lt;li&gt;Django からだと暗黙的な何某が多い印象(マクロ)&lt;/li&gt;
-&lt;li&gt;PubSub いらない&lt;/li&gt;
-&lt;li&gt;なので自作 FW を作ってた&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;突然 Phoenix 宣言
-&lt;ul&gt;
-&lt;li&gt;「お前 Dis れるほど Phoenix 知ってるのかよ」&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Ecto にはいくつかの問題&lt;/li&gt;
-&lt;li&gt;なのでライブラリを作った &lt;a href=&#34;https://github.com/gumi/yacto&#34;&gt;Yacto&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;DB分割・XAトランザクションなど&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;各ゲームの基盤を Template にしていたがバージョン管理がつらいのでライブラリに&lt;/li&gt;
-&lt;li&gt;Elixir のサポートチーム
-&lt;ul&gt;
-&lt;li&gt;ググる前に聞け&lt;/li&gt;
-&lt;li&gt;最近しんどいので Stack Overflow Team を導入&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;言語変えて解決した問題は少しだけ
-&lt;ul&gt;
-&lt;li&gt;ただ整備するきっかけにはなった&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;基盤チームカッコいい&lt;/p&gt;
-&lt;h4 id=&#34;ステートフルで大規模アクセスのあるsoft-realtimeなゲームサーバーをeasyにつくる&#34;&gt;ステートフルで大規模アクセスのあるsoft-realtimeなゲームサーバーをeasyにつくる&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ne-sachirou&#34;&gt;さっちゃん&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/ne_sachirou/sutetohurudeda-gui-mo-akusesufalsearusoft-realtimenagemusabawoeasynitukuru&#34;&gt;発表スライドはコチラ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Phoenix でゲーム作って運用したはなし&lt;/li&gt;
-&lt;li&gt;AWS + Kube + Phoenix&lt;/li&gt;
-&lt;li&gt;Real time PvP がメインなのに RoR は大変&lt;/li&gt;
-&lt;li&gt;どっちみちイロイロ知見が無いので新しい技術使っても苦労はするでしょ
-&lt;ul&gt;
-&lt;li&gt;Elixir の知見はある&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://hexdocs.pm/inner_cotton/readme.html&#34;&gt;InnerCotton&lt;/a&gt; を作った&lt;/li&gt;
-&lt;li&gt;FP は知ってた&lt;/li&gt;
-&lt;li&gt;Channel と Redis で PvP&lt;/li&gt;
-&lt;li&gt;ホットデプロイはあきらめた&lt;/li&gt;
-&lt;li&gt;優先度付きキューを自作 &lt;a href=&#34;https://hex.pm/packages/pqueue2&#34;&gt;queue2&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;既存のモノは間違ってるものが多かったので&lt;/li&gt;
-&lt;li&gt;スタックになっているものもあった&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/nesachirou/elixir/&#34;&gt;docker image&lt;/a&gt; を作った(Elixir と Erlang の両方が指定できる)&lt;/li&gt;
-&lt;li&gt;Elixir の監視つらい&lt;/li&gt;
-&lt;li&gt;もっと publish していこうぜ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;社内でやったことドンドン Publish できるのいいなぁ．&lt;/p&gt;
-&lt;h4 id=&#34;channel先生-pubsubがしたいです&#34;&gt;Channel先生…!! PubSubがしたいです…&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ohr486&#34;&gt;ohrdev&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/ohr486/erlangelixirfest2018-ohr486-session&#34;&gt;発表スライドはコチラ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;~Erlang in Anger~ PubSub in Channel&lt;/li&gt;
-&lt;li&gt;「PubSub しない Phoenix はただの Rails だ」&lt;/li&gt;
-&lt;li&gt;Phoenix Channel + PubSub&lt;/li&gt;
-&lt;li&gt;PubSub は2種類ある
-&lt;ul&gt;
-&lt;li&gt;ローカル PubSub ・リモート PubSub&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;「これカッコよくないっすか、見るたびにすごいぞくぞくする」&lt;/li&gt;
-&lt;li&gt;PubSub バックエンドは選択できる&lt;/li&gt;
-&lt;li&gt;どれだけ知っといた方がいいか？
-&lt;ul&gt;
-&lt;li&gt;基本は知らなくても&lt;/li&gt;
-&lt;li&gt;新しい Adaptar を作る場合は知ってないといけない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;PubSub 完全に理解した(嘘)&lt;/p&gt;
-&lt;h4 id=&#34;antikythera-framework-an-elixir-framework-for-multiple-web-services&#34;&gt;Antikythera Framework: An Elixir framework for multiple web services&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/skirino&#34;&gt;skirino&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://skirino.github.io/slides/antikythera_framework.html#/&#34;&gt;発表スライドはコチラ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;社内で作ったフレームワークの紹介 : &lt;a href=&#34;https://github.com/access-company/antikythera&#34;&gt;antikythera&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Antikythera メカニズム
-&lt;ul&gt;
-&lt;li&gt;ギリシャ時代のオーパーツ&lt;/li&gt;
-&lt;li&gt;なにかよくわからない&lt;/li&gt;
-&lt;li&gt;星の動き？？&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;複数のサービスをひとつのフレームワークで管理&lt;/li&gt;
-&lt;li&gt;Gear : Webサービスの単位・他の Gear に依存しうる
-&lt;ul&gt;
-&lt;li&gt;instance より細かい単位&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;コア機能
-&lt;ul&gt;
-&lt;li&gt;リソースコントロール&lt;/li&gt;
-&lt;li&gt;自動オペレーション(ホットデプロイなど)&lt;/li&gt;
-&lt;li&gt;ログなどビルドインに&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Gear はマイクロサービスで疎結合だが管理は統一&lt;/li&gt;
-&lt;li&gt;リソース管理は ErlangVM なので一長一短&lt;/li&gt;
-&lt;li&gt;DB はどうするか？
-&lt;ul&gt;
-&lt;li&gt;DB は知らない(Gear にしない)&lt;/li&gt;
-&lt;li&gt;ふつうに Ecto とかで&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;なぜ Erlang じゃないか？
-&lt;ul&gt;
-&lt;li&gt;mix が優秀&lt;/li&gt;
-&lt;li&gt;mix compiler でフックできる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;mix すごいのはよくわかる．&lt;/p&gt;
-&lt;h4 id=&#34;任意のbeam系言語でプラグインを書ける安定したフレームワークの作りかた&#34;&gt;任意のBEAM系言語でプラグインを書ける安定したフレームワークの作りかた&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/niku&#34;&gt;niku&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://niku.name/2018/06/16/slide.html&#34;&gt;発表スライドはコチラ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;BEAM系プラグインを作る上でのノウハウ&lt;/li&gt;
-&lt;li&gt;また PubSub の話ですいません&lt;/li&gt;
-&lt;li&gt;フレームワークとプラグイン&lt;/li&gt;
-&lt;li&gt;プラグイン機構を持つ FW には登場人物が3人
-&lt;ul&gt;
-&lt;li&gt;フレームワークとプラグインを使う人&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;プラグインでエラーが起きたときフレームワークはどうするか&lt;/li&gt;
-&lt;li&gt;「絵にかくとこんな感じ」&lt;/li&gt;
-&lt;li&gt;Supervisor は他の言語ではあまりない
-&lt;ul&gt;
-&lt;li&gt;こいつのおかげで別粒度間のプロセス管理が楽&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ゆかいに学ぼうの Supervisor の章は良くできている&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;絵に書くとこんな感じってのがじわじわ来る．&lt;/p&gt;
-&lt;h4 id=&#34;erlang-事例紹介-メディアストリーム中継システム&#34;&gt;Erlang 事例紹介: メディアストリーム中継システム&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/amutake&#34;&gt;amutake&lt;/a&gt; 氏の発表&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://niconare.nicovideo.jp/watch/kn3115&#34;&gt;発表スライドはコチラ&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;ニコニコのスライド置き場あったんだ(笑)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ニコ生で使われる(予定)のシステムの話(Erlang 製)&lt;/li&gt;
-&lt;li&gt;生放送の中継ツリー&lt;/li&gt;
-&lt;li&gt;生放送に求められる性質&lt;/li&gt;
-&lt;li&gt;ストリーム中継システム : sluicegate の作成
-&lt;ul&gt;
-&lt;li&gt;いつか OSS になる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;学術的に研究されたアルゴリズム(独自ではなく)
-&lt;ul&gt;
-&lt;li&gt;HyParView&lt;/li&gt;
-&lt;li&gt;Plumtree&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;簡単にできるけど無駄にメッセージパッシングすると遅くなる
-&lt;ul&gt;
-&lt;li&gt;軽い処理をメッセージパッシングするとだめ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Erlang クラスタは組まない&lt;/li&gt;
-&lt;li&gt;Plumtree の性質があれだった
-&lt;ul&gt;
-&lt;li&gt;なので自分たちで改造&lt;/li&gt;
-&lt;li&gt;根幹なので定理証明(Coq で実装)
-&lt;ul&gt;
-&lt;li&gt;PPLにて発表した&lt;/li&gt;
-&lt;li&gt;生放送ストリーム中継システムのCoqによる形式化と検証&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ぱぶさぶくん(検証ツール)&lt;/li&gt;
-&lt;li&gt;水道局(可視化ツール)
-&lt;ul&gt;
-&lt;li&gt;水路という自作ライブラリを使っている&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;分散アルゴリズムを書きやすい&lt;/li&gt;
-&lt;li&gt;調査しやすい
-&lt;ul&gt;
-&lt;li&gt;reduction の取得のしやすさは Erlang in Anger&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Coq のコードから Erlang に変換するものがある&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;なんか研究の話聞いてるみたいで聞きやすかった(笑)&lt;/p&gt;
-&lt;h3 id=&#34;lt&#34;&gt;LT&lt;/h3&gt;
-&lt;p&gt;自分も LT したので細かいメモは無い&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;NOC の話
-&lt;ul&gt;
-&lt;li&gt;朝にアクシデントがあったようで…&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;個人で Elixir してきた話(日本一 Elixir 本を書いている)&lt;/li&gt;
-&lt;li&gt;Elixir 完全に理解した(ちょっとできる人がいればいい)&lt;/li&gt;
-&lt;li&gt;Elixir Programming with Type checking (自分)&lt;/li&gt;
-&lt;li&gt;ElixirScript の話&lt;/li&gt;
-&lt;li&gt;PubSub Redis
-&lt;ul&gt;
-&lt;li&gt;phoenix_pubusu_redis_z&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Dialyzer のすすめ&lt;/li&gt;
-&lt;li&gt;Erlang on ARM サーバー
-&lt;ul&gt;
-&lt;li&gt;未発表のもの&lt;/li&gt;
-&lt;li&gt;秒間40まんリクエストをさばいてる&lt;/li&gt;
-&lt;li&gt;ミドルウェアの世界に来い&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;どうやら MVP は「Elixirを2週間で完全に理解した」新卒の子．&lt;/p&gt;
-&lt;h3 id=&#34;keynote&#34;&gt;Keynote&lt;/h3&gt;
-&lt;h4 id=&#34;共有からメッセージパッシングへ-erlangotpやelixirと歩んだこの10年&#34;&gt;共有からメッセージパッシングへ: Erlang/OTPやElixirと歩んだこの10年&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jj1bdx&#34;&gt;力武健次&lt;/a&gt;氏&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/jj1bdx/erlang-and-elixir-fest-2018-keynote?slide=1&#34;&gt;発表資料はコチラ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;BIND ??? 脆弱性の多い DNS サーバーについて昔やってた
-&lt;ul&gt;
-&lt;li&gt;1000行マクロ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Erlang に出会う
-&lt;ul&gt;
-&lt;li&gt;うるう秒の修正パッチを送る&lt;/li&gt;
-&lt;li&gt;SSH のセキュリティの研究&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;ICFP’11 の Erlang Workshop の実行委員長&lt;/li&gt;
-&lt;li&gt;Erlang in Anger のサイン本もらった&lt;/li&gt;
-&lt;li&gt;Elixir のロゴは商標登録されている&lt;/li&gt;
-&lt;li&gt;Catalyze Changes
-&lt;ul&gt;
-&lt;li&gt;Erlang は読みにくい！&lt;/li&gt;
-&lt;li&gt;レコードが難しい！&lt;/li&gt;
-&lt;li&gt;ドキュメントがない！&lt;/li&gt;
-&lt;li&gt;何とかっしようぜ！&lt;/li&gt;
-&lt;li&gt;by Dave Tomas&lt;/li&gt;
-&lt;li&gt;大変だった…(jose)&lt;/li&gt;
-&lt;li&gt;有言実行しててElixir本を7冊も出版している&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Ruby コミュニティをちらほら見かけるようになった&lt;/li&gt;
-&lt;li&gt;2018/2 大事件&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://codesync.global/conferences/code-beam-sf-2018/&#34;&gt;Code BEAM 2018&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;Open Erlang 20周年&lt;/li&gt;
-&lt;li&gt;BEAM コミュニティの融合&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;共通してどこがおいしいのか&lt;/li&gt;
-&lt;li&gt;Immutability ディープコピー 参照を使わない
-&lt;ul&gt;
-&lt;li&gt;自分が思う Erlang のすばらしさ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;従来は実態を共有(はやい？)&lt;/li&gt;
-&lt;li&gt;「安全よりも効率」&lt;/li&gt;
-&lt;li&gt;C++ の愚痴
-&lt;ul&gt;
-&lt;li&gt;参照なの？値なの？&lt;/li&gt;
-&lt;li&gt;const の話が大変&lt;/li&gt;
-&lt;li&gt;コンストラクタいつ動く？？&lt;/li&gt;
-&lt;li&gt;shared_ptr と unique_ptr (参照カウンタと所有権)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;例外: ETSやプロセス辞書&lt;/li&gt;
-&lt;li&gt;「効率より安全」
-&lt;ul&gt;
-&lt;li&gt;とても遅い&lt;/li&gt;
-&lt;li&gt;型検査は無いけど非常に厳格&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Joe (Erlang の作者)「processes messgae and links が重要な部分(gen_server は後から)」
-&lt;ul&gt;
-&lt;li&gt;他はどうでもいい&lt;/li&gt;
-&lt;li&gt;軽量並行プロセスとエラーハンドリング&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;綺麗に落とすのは大変
-&lt;ul&gt;
-&lt;li&gt;プロセスキューが詰まると終了&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;link and monitor
-&lt;ul&gt;
-&lt;li&gt;昔のSDの自分の記事を読み返した&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;今後
-&lt;ul&gt;
-&lt;li&gt;基本理念 「ほどほどなのが一番良い」&lt;/li&gt;
-&lt;li&gt;手を抜かずに高速化&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Code BEAM で話題にあがったもの
-&lt;ul&gt;
-&lt;li&gt;組込み分野えの応用&lt;/li&gt;
-&lt;li&gt;大規模クラスタ&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/josefs/Gradualizer&#34;&gt;Gradual Type System&lt;/a&gt; (ツールの発表があった)&lt;/li&gt;
-&lt;li&gt;Language Server Protcol&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;英語圏で発表しよう
-&lt;ul&gt;
-&lt;li&gt;Code BEAM 2018 は日本人一人&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;クライアントの同期の子が，不変性のすばらしさの話を指して「Rust や Elixir を勉強したとに同じことを感じた！」と喜んでいた．&lt;/p&gt;
-&lt;h2 id=&#34;自分の話&#34;&gt;自分の話&lt;/h2&gt;
-&lt;p&gt;Elchemy の紹介話をしてきました． スライドはこちら&lt;/p&gt;
-&lt;h2 id=&#34;section-1&#34;&gt;&lt;/h2&gt;
-&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/ocbuQdsbw2EmG5&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;h2 id=&#34;section-2&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;実は前日(6/15)に別の LT で Elchemy の Docker image を作る話をしてきた． その時のスライドはこちら．&lt;/p&gt;
-&lt;h2 id=&#34;section-3&#34;&gt;&lt;/h2&gt;
-&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/al30fSfPGB5HGN&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;h2 id=&#34;section-4&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;実は以下の記事でもっと詳しくまとめてあるので，プレゼンを見る必要は無いんです(笑)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://matsubara0507.github.io/posts/2018-06-15-introduce-elchemy-part1.html&#34;&gt;Elchemy 入門 : その１&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://matsubara0507.github.io/posts/2018-06-16-introduce-elchemy-part2.html&#34;&gt;Elchemy 入門 : その２&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;来年はもっと型のハナシができるといいなぁ．&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
