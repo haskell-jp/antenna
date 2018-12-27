@@ -1,4 +1,293 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-12-26T13:04:16+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/Cassin01/items/8be9af3170fef3d8d6cc</id><title type="text">C++ と Haskell と Rustの似てるとこ</title><updated>2018-12-26T13:04:16+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cassin01/items/8be9af3170fef3d8d6cc"/></entry><entry><id>https://qiita.com/gugu/items/03b15ea3fb34331fda72</id><title type="text">関数型言語、聞いたことあるけど結局何なの？</title><updated>2018-12-25T08:55:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gugu/items/03b15ea3fb34331fda72"/></entry><entry><id>https://qiita.com/aiya000/items/82f432a4b19c60561c01</id><title type="text">「正規表現はあんまり使わないかな。パーサー使うから」っていう人の気持ちがわかった！</title><updated>2018-12-25T07:01:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aiya000/items/82f432a4b19c60561c01"/></entry><entry><id>https://qiita.com/cutsea110/items/b99b20cfc10dfbeca24b</id><title type="text">二分木をモナドにする</title><updated>2018-12-25T07:00:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/cutsea110/items/b99b20cfc10dfbeca24b"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/12-25-cabal-preprocessing.html</id><title type="text">cabal build で package.yaml を使う</title><updated>2018-12-25T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/12-25-cabal-preprocessing.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2018-12-27T09:39:12+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/Cassin01/items/8be9af3170fef3d8d6cc</id><title type="text">C++ と Haskell と Rustの似てるとこ、違うとこ</title><updated>2018-12-27T09:39:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cassin01/items/8be9af3170fef3d8d6cc"/></entry><entry><id>https://haskell.jp/blog/posts/2018/super-precure-monad.html</id><title type="text">モナドの新しい力！スーパープリキュアモナド！</title><updated>2018-12-27T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/super-precure-monad.html"/><summary type="html">
+&lt;article lang=&#34;ja&#34;&gt;
+
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;row&#34;&gt;
+            &lt;div class=&#34;col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10&#34;&gt;
+                &lt;ul class=&#34;social-buttons&#34;&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;a href=&#34;https://twitter.com/share&#34; class=&#34;twitter-share-button&#34;&gt;Tweet&lt;/a&gt;
+                        &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;script type=&#34;text/javascript&#34;&gt;
+                            reddit_target = &#34;haskell_jp&#34;;
+                            reddit_title  = document.title;
+                        &lt;/script&gt;
+                        &lt;script type=&#34;text/javascript&#34; src=&#34;//www.redditstatic.com/button/button1.js&#34;&gt;&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;a data-pocket-label=&#34;pocket&#34; data-pocket-count=&#34;horizontal&#34; class=&#34;pocket-btn&#34; data-lang=&#34;en&#34;&gt;&lt;/a&gt;
+                        &lt;script type=&#34;text/javascript&#34;&gt;!function(d,i){if(!d.getElementById(i)){var j=d.createElement(&#34;script&#34;);j.id=i;j.src=&#34;https://widgets.getpocket.com/v1/j/btn.js?v=1&#34;;var w=d.getElementById(i);d.body.appendChild(j);}}(document,&#34;pocket-btn-js&#34;);&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;row&#34;&gt;
+            &lt;div id=&#34;md-post-content&#34; class=&#34;col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1&#34;&gt;
+              &lt;hr /&gt;
+&lt;div id=&#34;table-of-contents-outer&#34;&gt;
+&lt;div id=&#34;table-of-contents&#34;&gt;
+&lt;div class=&#34;table-of-contents-title&#34;&gt;
+Contents
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#この記事は&#34; title=&#34;この記事は&#34;&gt;この記事は&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#課題-プリキュアに変身していない状態で浄化技を使おうとした場合型エラーにしたい&#34; title=&#34;課題-プリキュアに変身していない状態で浄化技を使おうとした場合型エラーにしたい&#34;&gt;課題&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt; プリキュアに変身していない状態で浄化技を使おうとした場合、型エラーにしたい&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#実現方法-indexed-monadと型レベル連想配列を使う&#34; title=&#34;実現方法-indexed-monadと型レベル連想配列を使う&#34;&gt;実現方法&lt;span class=&#34;ascii&#34;&gt;: Indexed Monad&lt;/span&gt;と型レベル連想配列を使う&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#できたもの&#34; title=&#34;できたもの&#34;&gt;できたもの&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#super-precure-monadを試す方法&#34; title=&#34;super-precure-monadを試す方法&#34;&gt;✨&lt;span class=&#34;ascii&#34;&gt;Super PreCure Monad&lt;/span&gt;✨を試す方法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;この記事は&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#この記事は&#34; title=&#34;この記事は&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;この記事は&lt;/h1&gt;
+&lt;p&gt;この記事は&lt;a href=&#34;https://qiita.com/advent-calendar/2018/haskell2&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell Advent Calendar&lt;/span&gt; その&lt;span class=&#34;ascii&#34;&gt;2&lt;/span&gt;&lt;/a&gt;兼&lt;a href=&#34;https://adventar.org/calendars/2984&#34;&gt;プリキュア&lt;span class=&#34;ascii&#34;&gt;Advent Calendar 2018&lt;/span&gt;&lt;/a&gt;&lt;span class=&#34;ascii&#34;&gt;5&lt;/span&gt;日目の記事です。&lt;br /&gt;
+毎度同時投稿で失礼します。&lt;br /&gt;
+今年は私用で忙しかったので、のんびり書いてできあがったら空いてる日に投稿する、という楽なスタイルで書かせていただきました。なのでタイムスリップして&lt;span class=&#34;ascii&#34;&gt;5&lt;/span&gt;日目の記事と言うことにします&lt;small&gt;（それにしてもずいぶん時間かかってしまってすみません、もうクリスマスも過ぎたし…😥）&lt;/small&gt;。&lt;/p&gt;
+&lt;p&gt;今回も例年の私の&lt;span class=&#34;ascii&#34;&gt;Advent Calendar&lt;/span&gt;どおり、&lt;a href=&#34;https://github.com/igrep/typesafe-precure&#34;&gt;タイプセーフプリキュア！&lt;/a&gt;に、最近追加しようとした機能と、その際使用したもろもろの要素技術についての記事です。&lt;br /&gt;
+タイプセーフプリキュア！そのものについては&lt;a href=&#34;https://haskell.jp/blog/posts/2018/substring-parser.html&#34;&gt;今年&lt;span class=&#34;ascii&#34;&gt;9&lt;/span&gt;月の記事&lt;/a&gt;や、そこで言及しているもっと古い記事をご覧ください。&lt;/p&gt;
+&lt;h1 id=&#34;課題-プリキュアに変身していない状態で浄化技を使おうとした場合型エラーにしたい&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#課題-プリキュアに変身していない状態で浄化技を使おうとした場合型エラーにしたい&#34; title=&#34;課題-プリキュアに変身していない状態で浄化技を使おうとした場合型エラーにしたい&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;課題&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt; プリキュアに変身していない状態で浄化技を使おうとした場合、型エラーにしたい&lt;/h1&gt;
+&lt;p&gt;従来より、タイプセーフプリキュア！には、&lt;code&gt;PreCureMonad&lt;/code&gt;と呼ばれる、プリキュアの台詞を&lt;code&gt;do&lt;/code&gt;記法で組み立てる機能があります。&lt;br /&gt;
+例えば&lt;span class=&#34;ascii&#34;&gt;GHCi&lt;/span&gt;上で下記のように書くだけで、&lt;a href=&#34;https://www.youtube.com/watch?v=oQLIyIZ2vk0&#34;&gt;「&lt;span class=&#34;ascii&#34;&gt;Go!&lt;/span&gt; プリンセスプリキュア」のあの名シーン&lt;/a&gt;を再現できます&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;m &lt;span class=&#34;dt&#34;&gt;ACME.PreCure&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;{&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; scene &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt;       say &lt;span class=&#34;st&#34;&gt;&amp;quot;この罪を抱いたまま、もう一度、グランプリンセスを目指す！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt;       scarlet &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; transform &lt;span class=&#34;dt&#34;&gt;Towa&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;PrincessPerfume&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyScarlet&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; data-line-number=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt;       scarletModeElegant &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; transform scarlet (&lt;span class=&#34;dt&#34;&gt;PrincessPerfume&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyPhoenix&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; data-line-number=&#34;7&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt;       purify scarletModeElegant (&lt;span class=&#34;dt&#34;&gt;ScarletViolin&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyPhoenix&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; data-line-number=&#34;8&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;}&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;名シーンを単純な文字列のリストとして使いたい場合はこう👇しましょう&lt;small&gt;（出力は手で見やすく加工しています）&lt;/small&gt;。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; data-line-number=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; composeEpisode scene&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; data-line-number=&#34;2&#34;&gt;[ &lt;span class=&#34;st&#34;&gt;&amp;quot;この罪を抱いたまま、もう一度、グランプリンセスを目指す！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; data-line-number=&#34;3&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;プリキュア！プリンセスエンゲージ！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; data-line-number=&#34;4&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;深紅の炎のプリンセス！キュアスカーレット！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; data-line-number=&#34;5&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;冷たい檻に閉ざされた夢、返していただきますわ。&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; data-line-number=&#34;6&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;お覚悟を決めなさい！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; data-line-number=&#34;7&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;エクスチェンジ！モードエレガント！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; data-line-number=&#34;8&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;スカーレット・バイオリン！フェニックス！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; data-line-number=&#34;9&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;羽ばたけ炎の翼！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; data-line-number=&#34;10&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;プリキュア！ フェニックス・ブレイズ！&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; data-line-number=&#34;11&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;ごきげんよう。&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; data-line-number=&#34;12&#34;&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;さらに&lt;code&gt;printEpisode&lt;/code&gt;という関数で実行すれば、&lt;span class=&#34;ascii&#34;&gt;1&lt;/span&gt;行ごとに間隔を置いてあの台詞を再生できます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; data-line-number=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; printEpisode scene&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; data-line-number=&#34;2&#34;&gt;この罪を抱いたまま、もう一度、グランプリンセスを目指す！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; data-line-number=&#34;3&#34;&gt;プリキュア！プリンセスエンゲージ！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; data-line-number=&#34;4&#34;&gt;深紅の炎のプリンセス！キュアスカーレット！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; data-line-number=&#34;5&#34;&gt;冷たい檻に閉ざされた夢、返していただきますわ。&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-6&#34; data-line-number=&#34;6&#34;&gt;お覚悟を決めなさい！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-7&#34; data-line-number=&#34;7&#34;&gt;エクスチェンジ！モードエレガント！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-8&#34; data-line-number=&#34;8&#34;&gt;スカーレット・バイオリン！フェニックス！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-9&#34; data-line-number=&#34;9&#34;&gt;羽ばたけ炎の翼！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-10&#34; data-line-number=&#34;10&#34;&gt;プリキュア！ フェニックス・ブレイズ！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-11&#34; data-line-number=&#34;11&#34;&gt;ごきげんよう。&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;そんな&lt;code&gt;PreCureMonad&lt;/code&gt;ですが、先ほどのコードをよく読めばわかるとおり、ちょっと不格好ですよね。&lt;br /&gt;
+具体的には下記の&lt;span class=&#34;ascii&#34;&gt;2&lt;/span&gt;行です。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; data-line-number=&#34;1&#34;&gt;scarlet &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; transform &lt;span class=&#34;dt&#34;&gt;Towa&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;PrincessPerfume&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKey_Scarlet&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; data-line-number=&#34;2&#34;&gt;scarletModeElegant &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; transform scarlet (&lt;span class=&#34;dt&#34;&gt;PrincessPerfume&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyPhoenix&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;1&lt;/span&gt;行目の&lt;code&gt;transform&lt;/code&gt;関数が、変身する女の子である&lt;code&gt;Towa&lt;/code&gt;（赤城トワ）と変身アイテムを受け取って&lt;code&gt;CureScarlet&lt;/code&gt;を返し、さらにその&lt;code&gt;CureScarlet&lt;/code&gt;を&lt;span class=&#34;ascii&#34;&gt;2&lt;/span&gt;行目の&lt;code&gt;transform&lt;/code&gt;関数に渡すことでキュアスカーレットのモード・エレガント（&lt;code&gt;CureScarlet_ModeElegant&lt;/code&gt;）を取得しています。&lt;br /&gt;
+「&lt;code&gt;transform&lt;/code&gt;関数が、変身する女の子である&lt;code&gt;Towa&lt;/code&gt;（赤城トワ）と変身アイテムを受け取って&lt;code&gt;CureScarlet&lt;/code&gt;を」返すという箇所について、&lt;code&gt;Towa&lt;/code&gt;に&lt;strong&gt;加えて&lt;/strong&gt;&lt;code&gt;CureScarlet&lt;/code&gt;を&lt;strong&gt;新しく作っている&lt;/strong&gt;ように聞こえます。&lt;br /&gt;
+本来同一人物であるはずの&lt;code&gt;Towa&lt;/code&gt;と&lt;code&gt;CureScarlet&lt;/code&gt;を、あたかも別々のものとして扱っているように捉えられかねません。&lt;br /&gt;
+そう、本来プリキュアの「変身」は女の子自身の状態を書き換えるものとして表現した方が自然なのです。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;でそうした「状態」を表現する場合、名前のとおり&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;を使うのが割と一般的な方法です&lt;small&gt;（プログラム全体で状態を管理する場合、&lt;code&gt;IORef&lt;/code&gt;や&lt;code&gt;TVar&lt;/code&gt;などを使う方が例外に強く安全ではありますが、それはさておき）&lt;/small&gt;。&lt;br /&gt;
+しかし、従来の&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;でプリキュアの変身や浄化技を表現する場合、&lt;strong&gt;女の子が変身していない状態で浄化技&lt;span class=&#34;ascii&#34;&gt;(&lt;/span&gt;&lt;code&gt;purify&lt;/code&gt;&lt;span class=&#34;ascii&#34;&gt;)&lt;/span&gt;を使おうとした場合をどのように扱うか&lt;/strong&gt;、という問題があります。&lt;br /&gt;
+先ほどの例で言うところの&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; data-line-number=&#34;1&#34;&gt;purify scarletModeElegant (&lt;span class=&#34;dt&#34;&gt;ScarletViolin&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyPhoenix&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;という行でまさにその「浄化技」を実行しているのですが、プリキュアの設定上、特定の浄化技を使うには、特定のプリキュアのフォームに、専用のアイテムを渡さなければなりません。&lt;br /&gt;
+タイプセーフプリキュア！ではこの点に強くこだわり、浄化技が使用できる組み合わせごとに型クラスのインスタンスを定義することで、間違った組み合わせを&lt;code&gt;purify&lt;/code&gt;関数に渡すと、型エラーになります&lt;small&gt;（詳しくは&lt;a href=&#34;https://qiita.com/igrep/items/5496fa405fae00b5a737&#34;&gt;タイプセーフプリキュア！を最初に技術的に解説した記事&lt;/a&gt;をご覧ください）&lt;/small&gt;。&lt;br /&gt;
+当然、まだ変身していない状態の女の子を&lt;code&gt;purify&lt;/code&gt;関数に渡しても、エラーになってしまいます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; scene &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; purify &lt;span class=&#34;dt&#34;&gt;Towa&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ScarletViolin&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyPhoenix&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; data-line-number=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; data-line-number=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;lt;&lt;/span&gt;interactive&lt;span class=&#34;fu&#34;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; error&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; data-line-number=&#34;4&#34;&gt;    • &lt;span class=&#34;dt&#34;&gt;No&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; for (&lt;span class=&#34;dt&#34;&gt;Purification&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-5&#34; data-line-number=&#34;5&#34;&gt;                         &lt;span class=&#34;dt&#34;&gt;Towa&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ScarletViolin&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyPhoenix&lt;/span&gt;))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-6&#34; data-line-number=&#34;6&#34;&gt;        arising from a use &lt;span class=&#34;kw&#34;&gt;of&lt;/span&gt; ‘purify’&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-7&#34; data-line-number=&#34;7&#34;&gt;    • &lt;span class=&#34;dt&#34;&gt;In&lt;/span&gt; the expression&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; purify &lt;span class=&#34;dt&#34;&gt;Towa&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ScarletViolin&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyPhoenix&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-8&#34; data-line-number=&#34;8&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;In&lt;/span&gt; an equation for ‘scene’&lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-9&#34; data-line-number=&#34;9&#34;&gt;          scene &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; purify &lt;span class=&#34;dt&#34;&gt;Towa&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ScarletViolin&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;DressUpKeyPhoenix&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;プリキュア実装の大先輩である&lt;a href=&#34;https://github.com/sue445/rubicure&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;rubicure&lt;/span&gt;&lt;/a&gt;では、同じようなケースで実行時エラーを出すようにしていますし、&lt;span class=&#34;ascii&#34;&gt;PreCure Monad&lt;/span&gt;においても、&lt;code&gt;ExceptT&lt;/code&gt;を使ってエラーにする、という方法が採れるでしょう。&lt;br /&gt;
+しかしそこは「タイプセーフプリキュア！」。どうにかして、変身していない状態での&lt;code&gt;purify&lt;/code&gt;関数の実行を型エラーにして、従来のこの振る舞いと一貫させたいところですよね。&lt;br /&gt;
+というのが今回の課題です。&lt;/p&gt;
+&lt;h1 id=&#34;実現方法-indexed-monadと型レベル連想配列を使う&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#実現方法-indexed-monadと型レベル連想配列を使う&#34; title=&#34;実現方法-indexed-monadと型レベル連想配列を使う&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;実現方法&lt;span class=&#34;ascii&#34;&gt;: Indexed Monad&lt;/span&gt;と型レベル連想配列を使う&lt;/h1&gt;
+&lt;p&gt;今回の課題のとおり、「変身していない状態での&lt;code&gt;purify&lt;/code&gt;関数の実行を型エラー」としつつ、「変身した状態での&lt;code&gt;purify&lt;/code&gt;を型エラーとしない」ためには、&lt;code&gt;purify&lt;/code&gt;や&lt;code&gt;transform&lt;/code&gt;を実行する前後で、&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;内で共有している値の型を変更できるようにする必要があります。&lt;br /&gt;
+残念ながら、これは従来の&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;では不可能です。&lt;br /&gt;
+&lt;code&gt;State s&lt;/code&gt;に対する&lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt;の型が&lt;code&gt;(&amp;gt;&amp;gt;=) :: State s a -&amp;gt; (a -&amp;gt; State s b) -&amp;gt; State s b&lt;/code&gt;となっていることから察せられるとおり、&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;の中で共有する型は、アクションの実行前後にかかわらず同じ&lt;code&gt;s&lt;/code&gt;でないといけないためです。&lt;br /&gt;
+これはそもそも従来の&lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;の仕様上やむを得ないことです。&lt;br /&gt;
+従来の&lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;はそもそもアクションの実行前後で、アクションの実行結果以外の型を変えることができないようになっています。&lt;br /&gt;
+&lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt;の型が&lt;code&gt;(&amp;gt;&amp;gt;=) :: Monad m =&amp;gt; m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b&lt;/code&gt;となっていることからしても、アクションの実行前後で&lt;code&gt;m&lt;/code&gt;は&lt;code&gt;m&lt;/code&gt;のままであることがわかります。&lt;/p&gt;
+&lt;p&gt;この、「アクションの実行前後で、&lt;code&gt;m&lt;/code&gt;の型を変えることができる」ようにしたのが&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;です。&lt;br /&gt;
+&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;は次のような型宣言にすることで、アクションの実行前後で異なる型の “&lt;span class=&#34;ascii&#34;&gt;index&lt;/span&gt;” を挟めるようになっています。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IxApplicative&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IxMonad&lt;/span&gt; m &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;  ibind ::&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m j k b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m i j a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m i k b&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;IxApplicative&lt;/code&gt;は名前のとおり&lt;code&gt;IxMonad&lt;/code&gt;と同様に“&lt;span class=&#34;ascii&#34;&gt;index&lt;/span&gt;”が付いた&lt;code&gt;Applicative&lt;/code&gt;となっています。&lt;a href=&#34;http://hackage.haskell.org/package/indexed-0.1/docs/Control-Monad-Indexed.html&#34;&gt;詳しい定義はドキュメント&lt;/a&gt;をご覧ください。&lt;/p&gt;
+&lt;p&gt;唯一のメソッドである&lt;code&gt;ibind&lt;/code&gt;が、普通の&lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;における&lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt;の引数をひっくり返して“&lt;span class=&#34;ascii&#34;&gt;index&lt;/span&gt;”を追加したものです。&lt;br /&gt;
+&lt;code&gt;(&amp;gt;&amp;gt;=) :: Monad m =&amp;gt; m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b&lt;/code&gt;の&lt;code&gt;m&lt;/code&gt;に、型引数が&lt;span class=&#34;ascii&#34;&gt;2&lt;/span&gt;つ追加されていますね？これが“&lt;span class=&#34;ascii&#34;&gt;index&lt;/span&gt;”です。&lt;br /&gt;
+ある&lt;code&gt;IxMonad&lt;/code&gt; &lt;code&gt;m&lt;/code&gt;が&lt;code&gt;m i j a&lt;/code&gt;という形で型引数を渡されている時、&lt;code&gt;i&lt;/code&gt;がアクションを実行する&lt;strong&gt;前&lt;/strong&gt;の型、&lt;code&gt;j&lt;/code&gt;がアクションを実行した&lt;strong&gt;後&lt;/strong&gt;の型を表します。&lt;br /&gt;
+&lt;code&gt;a&lt;/code&gt;は普通の&lt;code&gt;Monad&lt;/code&gt;と同様、アクションの実行結果となっています。&lt;/p&gt;
+&lt;p&gt;さらに&lt;span class=&#34;ascii&#34;&gt;Indexed&lt;/span&gt;な&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad (&lt;/span&gt;&lt;code&gt;IxState&lt;/code&gt;&lt;span class=&#34;ascii&#34;&gt;)&lt;/span&gt;で使えるアクションの型宣言を見れば、&lt;code&gt;IxState&lt;/code&gt;で共有している状態の型が、アクションの実行前後で変更できることがよりはっきりとわかるでしょう。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;iget ::&lt;/span&gt;      &lt;span class=&#34;dt&#34;&gt;IxState&lt;/span&gt; i i i&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- ^ igetしてもIxStateが管理している状態は変わらないため、型もやはり変わらず。&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;iput ::&lt;/span&gt; j &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IxState&lt;/span&gt; i j ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- ^ iputするとIxStateが管理している状態は、引数で渡した値の型に変わる。&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;こちらもおなじみ&lt;a href=&#34;http://hackage.haskell.org/package/mtl&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;mtl&lt;/span&gt;パッケージ&lt;/a&gt;にある&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;に、単純に “&lt;span class=&#34;ascii&#34;&gt;index&lt;/span&gt;” を加えただけのものとなっています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://fumieval.hatenablog.com/entry/2013/05/04/144840&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;の世界 &lt;span class=&#34;ascii&#34;&gt;-&lt;/span&gt; モナドとわたしとコモナド&lt;/a&gt;で紹介された際の&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;は、&lt;code&gt;ido&lt;/code&gt;という&lt;span class=&#34;ascii&#34;&gt;Quasi Quote&lt;/span&gt;を使って&lt;code&gt;do&lt;/code&gt;記法を無理矢理シミュレートしていましたが、現在は&lt;span class=&#34;ascii&#34;&gt;GHC&lt;/span&gt;の&lt;code&gt;RebindableSyntax&lt;/code&gt;という拡張を使うことで、普通の&lt;code&gt;do&lt;/code&gt;記法をそのまま利用することができるようになりました&lt;small&gt;（例は後で紹介します）&lt;/small&gt;。&lt;br /&gt;
+さらに、現在は&lt;code&gt;RebindableSyntax&lt;/code&gt;を使った場合の諸々の問題を回避するべく、&lt;a href=&#34;https://github.com/jbracker/supermonad&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;を一般化した&lt;span class=&#34;ascii&#34;&gt;Super Monad&lt;/span&gt;と、それを簡単に使えるようにした&lt;span class=&#34;ascii&#34;&gt;GHC&lt;/span&gt;の型チェッカープラグイン&lt;/a&gt;が作られたり、&lt;a href=&#34;https://github.com/isovector/do-notation&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;do-notation&lt;/span&gt;という、&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;と普通の&lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;を型クラスで抽象化したパッケージ&lt;/a&gt;が作られたりしています。&lt;br /&gt;
+今回は純粋に&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;を使うだけで十分だったので、&lt;span class=&#34;ascii&#34;&gt;Super Monad&lt;/span&gt;や&lt;span class=&#34;ascii&#34;&gt;do-notation&lt;/span&gt;は使用しませんでしたが、今後&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;をもっと実践的に使用する機会があれば、使用してみたいと思います。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;を使用することで、&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;で共有している状態の型を、アクションの実行前後で変更できるようになりました。&lt;br /&gt;
+続いて、各女の子の状態を、&lt;code&gt;State&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;で共有している状態の型として、どのように管理するかを検討しましょう。&lt;br /&gt;
+というのも、タイプセーフプリキュア！には最新の&lt;span class=&#34;ascii&#34;&gt;master&lt;/span&gt;の時点で&lt;span class=&#34;ascii&#34;&gt;59&lt;/span&gt;人の女の子が収録されている&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;のですが、それらすべてを変身前と変身後に分けて管理するだけでも、&lt;span class=&#34;ascii&#34;&gt;2 ^ 59&lt;/span&gt;通りの状態を型として表現できなければなりません。&lt;br /&gt;
+これを直感的に表現できるようにするために、ちょっと型レベルプログラミングの力を借りましょう。そこで登場するのが「型レベル連想配列」です。&lt;br /&gt;
+「型レベル連想配列」という言い方はあまりしないのでピンとこないかも知れませんが、要するに型&lt;small&gt;（タイプセーフプリキュア！の場合、プリキュアに変身する女の子一人一人に個別の型を割り当てているので、その個別の型）&lt;/small&gt;と、それに対応する値のペアを含んだ型レベルリストです。&lt;br /&gt;
+大雑把に言うと、下記👇のような内容となります&lt;small&gt;（実際にはもう少し違う型で構成されています）&lt;/small&gt;。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; data-line-number=&#34;1&#34;&gt;[ (&lt;span class=&#34;dt&#34;&gt;Hana&lt;/span&gt;,   &lt;span class=&#34;dt&#34;&gt;HasTransformed&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;&amp;#39;True)&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- ^ プリキュアに変身する女の子を表す型（この場合「HUGっと！プリキュア」の野乃はな）&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; data-line-number=&#34;4&#34;&gt;, (&lt;span class=&#34;dt&#34;&gt;Saaya&lt;/span&gt;,  &lt;span class=&#34;dt&#34;&gt;HasTransformed&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;&amp;#39;False)&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;co&#34;&gt;--         ^ 対応する女の子が変身しているかどうかを表すsingleton type。&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; data-line-number=&#34;6&#34;&gt;&lt;span class=&#34;co&#34;&gt;--           DataKindsで型に持ち上げられたBoolを、普通の値として扱えるよう変換するためのラッパー。&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-7&#34; data-line-number=&#34;7&#34;&gt;&lt;span class=&#34;co&#34;&gt;--           申し訳なくもsingleton typeについては割愛します。&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-8&#34; data-line-number=&#34;8&#34;&gt;&lt;span class=&#34;co&#34;&gt;--           Haskell-jpのSlack Workspaceあたりでリクエストがあったら書こうかな。&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-9&#34; data-line-number=&#34;9&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-10&#34; data-line-number=&#34;10&#34;&gt;, (&lt;span class=&#34;dt&#34;&gt;Homare&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;HasTransformed&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;&amp;#39;False)&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-11&#34; data-line-number=&#34;11&#34;&gt;, &lt;span class=&#34;fu&#34;&gt;...&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-12&#34; data-line-number=&#34;12&#34;&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;別の視点で見ると、これはいわゆる&lt;span class=&#34;ascii&#34;&gt;Extensible Record&lt;/span&gt;とも似ています。&lt;br /&gt;
+&lt;a href=&#34;http://hackage.haskell.org/package/extensible&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;extensible&lt;/span&gt;パッケージ&lt;/a&gt;や&lt;a href=&#34;https://github.com/chrisdone/labels&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;labels&lt;/span&gt;パッケージ&lt;/a&gt;、&lt;a href=&#34;https://www.athiemann.net/2017/07/02/superrecord.html&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;superrecord&lt;/span&gt;パッケージ&lt;/a&gt;がそうしているように、&lt;span class=&#34;ascii&#34;&gt;Extensible Record&lt;/span&gt;は、フィールドのラベルを表す&lt;small&gt;（型レベルの、静的な）&lt;/small&gt;文字列をキーとして、それに対応する値を含んだ連想配列として見なすことができるためです。&lt;br /&gt;
+事実私は今回、&lt;span class=&#34;ascii&#34;&gt;extensible&lt;/span&gt;を使ってこの機能を実装しました。他の&lt;span class=&#34;ascii&#34;&gt;Extensible Record&lt;/span&gt;の実装でも良かったのですが、これ以外のものを全く使ったことがないので😅。&lt;/p&gt;
+&lt;h1 id=&#34;できたもの&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#できたもの&#34; title=&#34;できたもの&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;できたもの&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Indexed Monad&lt;/span&gt;と&lt;span class=&#34;ascii&#34;&gt;Extensible Record&lt;/span&gt;を組み合わせることで、&lt;span class=&#34;ascii&#34;&gt;PreCureMonad&lt;/span&gt;の各種アクションを、次のように置き換えられることがわかりました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;transform &amp;lt;girl&amp;gt; &amp;lt;item&amp;gt;&lt;/code&gt;&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;IxState&lt;/code&gt;（実際にはその&lt;span class=&#34;ascii&#34;&gt;Monad Transformer&lt;/span&gt;版である&lt;code&gt;IxStateT&lt;/code&gt;）で共有している型レベル連想配列のキー&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;に対応する値を「変身した状態」に更新する。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;がすでに変身している状態の場合は、型レベル連想配列のキー&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;に対応する値が「変身した状態」になっているので型エラーとする。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IxStateT&lt;/code&gt;をかぶせた&lt;code&gt;Writer&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;で共有しているリストに、&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;と&lt;code&gt;&amp;lt;item&amp;gt;&lt;/code&gt;に対応した、変身時の台詞（文字列）を追記する。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;purify &amp;lt;precure&amp;gt; &amp;lt;item&amp;gt;&lt;/code&gt;&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;IxStateT&lt;/code&gt;で共有している型レベル連想配列のキーを取得するため、&lt;code&gt;&amp;lt;precure&amp;gt;&lt;/code&gt;にあらかじめ定義しておいた&lt;span class=&#34;ascii&#34;&gt;Type Family&lt;/span&gt; &lt;code&gt;AsGirl&lt;/code&gt;を適用する。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AsGirl&lt;/code&gt;で取得した型を、これ以降&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;と呼びます。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;が「変身した状態」になっていない場合は、型レベル連想配列のキー&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;に対応する値が「変身していない状態」になっているので型エラーとする。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IxStateT&lt;/code&gt;をかぶせた&lt;code&gt;Writer&lt;/code&gt; &lt;span class=&#34;ascii&#34;&gt;Monad&lt;/span&gt;で共有しているリストに、&lt;code&gt;&amp;lt;precure&amp;gt;&lt;/code&gt;と&lt;code&gt;&amp;lt;item&amp;gt;&lt;/code&gt;に対応した、浄化技を使用したときの台詞（文字列）を追記する。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;このように生まれ変わった&lt;span class=&#34;ascii&#34;&gt;PreCure Monad&lt;/span&gt;を&lt;strong&gt;✨&lt;span class=&#34;ascii&#34;&gt;Super PreCure Monad&lt;/span&gt;✨&lt;/strong&gt;と呼ぶこととします💪&lt;/p&gt;
+&lt;p&gt;下記が&lt;span class=&#34;ascii&#34;&gt;Super PreCure Monad&lt;/span&gt;のサンプルコードです。&lt;br /&gt;
+野乃はながキュアエールに変身して、「ハート・フォー・ユー」という浄化技を放つまでを表しています。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;cureYell ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PreCureM&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;StatusTable&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;&amp;#39;[]) (StatusTable &amp;#39;&lt;/span&gt;[&lt;span class=&#34;dt&#34;&gt;Hana&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasTransformed&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;&amp;#39;True]) ()&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; data-line-number=&#34;2&#34;&gt;cureYell &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; data-line-number=&#34;3&#34;&gt;  enter &lt;span class=&#34;dt&#34;&gt;Hana&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-4&#34; data-line-number=&#34;4&#34;&gt;  transform &lt;span class=&#34;dt&#34;&gt;Hana&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;PreHeart&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MiraiCrystalPink&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-5&#34; data-line-number=&#34;5&#34;&gt;  purify &lt;span class=&#34;dt&#34;&gt;CureYell&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;PreHeart&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MiraiCrystalPink&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;enter&lt;/code&gt;は、旧&lt;span class=&#34;ascii&#34;&gt;PreCureMonad&lt;/span&gt;にはない、&lt;span class=&#34;ascii&#34;&gt;Super PreCure Monad&lt;/span&gt;に新しく追加されたアクションです。&lt;br /&gt;
+引数で指定された女の子や、女の子が変身したプリキュアを「登場」させます。&lt;br /&gt;
+具体的には、以下のように振る舞います。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;引数で指定された値が女の子&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;であれば、&lt;code&gt;IxStateT&lt;/code&gt;で共有している型レベル連想配列のキー&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;に対応する値を「変身していない状態」で追加する。&lt;/li&gt;
+&lt;li&gt;引数で指定された値がすでに変身したプリキュア&lt;code&gt;&amp;lt;precure&amp;gt;&lt;/code&gt;であれば、&lt;code&gt;&amp;lt;precure&amp;gt;&lt;/code&gt;に&lt;span class=&#34;ascii&#34;&gt;Type Family&lt;/span&gt; &lt;code&gt;AsGirl&lt;/code&gt;を適用し、女の子を表す値&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;を取得する。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;IxStateT&lt;/code&gt;で共有している型レベル連想配列のキー&lt;code&gt;&amp;lt;girl&amp;gt;&lt;/code&gt;に対応する値を「変身した状態」で追加する。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;したがって、&lt;code&gt;transform&lt;/code&gt;するにしても&lt;code&gt;purify&lt;/code&gt;するにしても、事前に変身前の女の子かその変身後のプリキュアが&lt;code&gt;enter&lt;/code&gt;していないといけません。&lt;br /&gt;
+これは単純にその方が実装が簡単だから、という理由もありますし、一旦「登場」させたほうがなんとなくかっこいいかな、と感じたからです。&lt;/p&gt;
+&lt;h2 id=&#34;super-precure-monadを試す方法&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#super-precure-monadを試す方法&#34; title=&#34;super-precure-monadを試す方法&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;✨&lt;span class=&#34;ascii&#34;&gt;Super PreCure Monad&lt;/span&gt;✨を試す方法&lt;/h2&gt;
+&lt;p&gt;ここまで述べたような基本的な仕様は実装できたものの、まだ解決すべき技術的な問題が見つかったので、残念ながらリリースはされていません&lt;small&gt;（その詳細は気が向いたら書きます）&lt;/small&gt;。&lt;br /&gt;
+なので、試す場合は下記のように実行してください。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; data-line-number=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; chcp &lt;span class=&#34;dv&#34;&gt;65001&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; data-line-number=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- ^ Windowsの方は恐らく必要&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; data-line-number=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; data-line-number=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; git clone &lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;b super&lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;precure&lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;monad https&lt;span class=&#34;fu&#34;&gt;://&lt;/span&gt;github&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;com&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;igrep&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;typesafe&lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;precure&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;git&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; data-line-number=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; cd typesafe&lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;precure&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; data-line-number=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; stack build&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-7&#34; data-line-number=&#34;7&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; stack exec ghci&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-8&#34; data-line-number=&#34;8&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;set &lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;XRebindableSyntax&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;XFlexibleContexts&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;XTypeFamilies&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-9&#34; data-line-number=&#34;9&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Prelude&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;hiding&lt;/span&gt; ((&amp;gt;&amp;gt;), (&amp;gt;&amp;gt;=))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-10&#34; data-line-number=&#34;10&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;m &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ACME.PreCure&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ACME.PreCure.Monad.Super&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-11&#34; data-line-number=&#34;11&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;{&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-12&#34; data-line-number=&#34;12&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; scene &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-13&#34; data-line-number=&#34;13&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt;       enter &lt;span class=&#34;dt&#34;&gt;Makoto&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-14&#34; data-line-number=&#34;14&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt;       transform &lt;span class=&#34;dt&#34;&gt;Makoto&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;LovelyCommuneDavi&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;CureLoveads&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-15&#34; data-line-number=&#34;15&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt;       purify &lt;span class=&#34;dt&#34;&gt;CureSword&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;LovelyCommuneDavi&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;CureLoveads&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-16&#34; data-line-number=&#34;16&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt;}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-17&#34; data-line-number=&#34;17&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; printEpisode scene&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-18&#34; data-line-number=&#34;18&#34;&gt;(ダビィー！)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-19&#34; data-line-number=&#34;19&#34;&gt;プリキュア！ラブリンク！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-20&#34; data-line-number=&#34;20&#34;&gt;(&lt;span class=&#34;dt&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;V&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-21&#34; data-line-number=&#34;21&#34;&gt;勇気の刃！ キュアソード！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-22&#34; data-line-number=&#34;22&#34;&gt;このキュアソードが 愛の剣で、あなたの野望を断ち切ってみせる！&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-23&#34; data-line-number=&#34;23&#34;&gt;閃け！ホーリー・ソード！&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;「変身していない状態での&lt;code&gt;purify&lt;/code&gt;関数の実行を型エラーとする」といった仕様を試す場合は、&lt;a href=&#34;https://github.com/igrep/typesafe-precure/blob/super-precure-monad/gen/AllPreCureM.hs&#34;&gt;こちらに置いた、全プリキュアの変身と浄化技を列挙したテスト用ファイル&lt;/a&gt;を&lt;span class=&#34;ascii&#34;&gt;ghci&lt;/span&gt;で読んでみるといいでしょう。&lt;br /&gt;
+先ほど👆の手順で&lt;code&gt;git clone&lt;/code&gt;したディレクトリーにおいて、あらかじめ&lt;code&gt;stack build&lt;/code&gt;を実行しておくのをお忘れなく。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ stack build
+$ stack exec ghci gen/AllPreCureM.hs&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;適当に&lt;code&gt;gen/AllPreCureM.hs&lt;/code&gt;を書き換えて&lt;code&gt;:r&lt;/code&gt;してみれば、概ねいい感じに動いていることがわかるはずです。&lt;/p&gt;
+&lt;p&gt;例えば冒頭付近にある、&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; data-line-number=&#34;1&#34;&gt;act_CureDiamond_LovelyCommuneRaquel_CureLoveads &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; printEpisode &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; data-line-number=&#34;2&#34;&gt;  enter &lt;span class=&#34;dt&#34;&gt;Rikka&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-3&#34; data-line-number=&#34;3&#34;&gt;  transform &lt;span class=&#34;dt&#34;&gt;Rikka&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;LovelyCommuneRaquel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;CureLoveads&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-4&#34; data-line-number=&#34;4&#34;&gt;  purify &lt;span class=&#34;dt&#34;&gt;CureDiamond&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;LovelyCommuneRaquel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;CureLoveads&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;という&lt;span class=&#34;ascii&#34;&gt;Super PreCure Monad&lt;/span&gt;によるアクションから、&lt;code&gt;transform Rikka (LovelyCommuneRaquel CureLoveads)&lt;/code&gt;という行を削除した上で&lt;code&gt;:r&lt;/code&gt;してみると、次のようなエラーになります。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; :r
+[1 of 1] Compiling AllPreCureM      ( gen\AllPreCureM.hs, interpreted )
+
+gen\AllPreCureM.hs:22:3: error:
+    • Couldn&amp;#39;t match type ‘&amp;#39;False’ with ‘&amp;#39;True’
+        arising from a use of ‘purify’
+    • In a stmt of a &amp;#39;do&amp;#39; block:
+        purify CureDiamond (LovelyCommuneRaquel CureLoveads)
+      In the second argument of ‘($)’, namely
+        ‘do enter Rikka
+            purify CureDiamond (LovelyCommuneRaquel CureLoveads)’
+      In the expression:
+        printEpisode
+          $ do enter Rikka
+               purify CureDiamond (LovelyCommuneRaquel CureLoveads)
+   |
+22 |   purify CureDiamond (LovelyCommuneRaquel CureLoveads)
+   |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Failed, no modules loaded.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ちゃんと、変身していない状態で&lt;code&gt;purify&lt;/code&gt;することを型エラーにできていますね！&lt;/p&gt;
+&lt;p&gt;ここまでできていながら残念ですが、リリースは、来年のプリキュアハッカソンか&lt;span class=&#34;ascii&#34;&gt;Advent Calendar&lt;/span&gt;あたりに乞うご期待と言うことで！💦&lt;br /&gt;
+それでは&lt;span class=&#34;ascii&#34;&gt;2019&lt;/span&gt;年も&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;で&lt;span class=&#34;ascii&#34;&gt;Super PreCure Hacking&lt;/span&gt;を❣️❣️❣️&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;リンク先の動画をご覧になればわかるとおり、実際のそのシーンより大幅に省略されているところは突っ込まないでいただきたい…🙏。&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;「この間の映画に出ていた人数より多くない？」と思った方へ&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt; 「プリキュアオールスターズ」に出てくる女の子たちに加え、坂上あゆみ、ペコリン、若宮アンリ、はぐたんの&lt;span class=&#34;ascii&#34;&gt;4&lt;/span&gt;人が、タイプセーフプリキュア！の分類上&lt;code&gt;Girl&lt;/code&gt;として収録されています。ちなみにキュアモフルンも収録されていますが、モフルンはあくまでも変身アイテム&lt;span class=&#34;ascii&#34;&gt;(&lt;/span&gt;&lt;code&gt;SpecialItem&lt;/code&gt;&lt;span class=&#34;ascii&#34;&gt;)&lt;/span&gt;という扱いです。&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
+            &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
+                
+            &lt;/div&gt;
+            &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
+                &lt;a href=&#34;/&#34; lang=&#34;ja&#34;&gt;トップに戻る&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;col-lg-3 col-md-4 col-xs-4&#34;&gt;
+                
+                &lt;a href=&#34;/posts/2018/haskell-day-2018.html&#34; style=&#34;margin-left: auto;&#34; lang=&#34;ja&#34;&gt;Haskell Day 2018 開催レポート&lt;/a&gt;
+                &lt;i class=&#34;glyphicon glyphicon-chevron-right&#34; aria-hidden=&#34;true&#34; style=&#34;margin-left: 5px;&#34;&gt;&lt;/i&gt;
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+
+</summary></entry><entry><id>https://qiita.com/gugu/items/03b15ea3fb34331fda72</id><title type="text">関数型言語、聞いたことあるけど結局何なの？</title><updated>2018-12-26T23:44:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gugu/items/03b15ea3fb34331fda72"/></entry><entry><id>https://qiita.com/aiya000/items/82f432a4b19c60561c01</id><title type="text">「正規表現はあんまり使わないかな。パーサー使うから」っていう人の気持ちがわかった！</title><updated>2018-12-25T07:01:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aiya000/items/82f432a4b19c60561c01"/></entry><entry><id>https://qiita.com/cutsea110/items/b99b20cfc10dfbeca24b</id><title type="text">二分木をモナドにする</title><updated>2018-12-25T07:00:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/cutsea110/items/b99b20cfc10dfbeca24b"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/12-25-cabal-preprocessing.html</id><title type="text">cabal build で package.yaml を使う</title><updated>2018-12-25T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/12-25-cabal-preprocessing.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;最近少しずつ &lt;code&gt;cabal&lt;/code&gt; を使うようになりました。&lt;/p&gt;
 &lt;p&gt;そのため、&lt;code&gt;stack&lt;/code&gt; と &lt;code&gt;cabal&lt;/code&gt; のどちらを使ってもビルドできるようにプロジェクトを修正していたのですが、&lt;code&gt;cabal&lt;/code&gt; ファイルの取り扱いが難しかったのでメモ程度に残しておきます。&lt;/p&gt;
 &lt;p&gt;方針としては &lt;code&gt;cabal&lt;/code&gt; コマンドの実行時にフックを仕掛けて &lt;code&gt;hpack&lt;/code&gt; を使って &lt;code&gt;package.yaml&lt;/code&gt; から &lt;code&gt;cabal&lt;/code&gt; ファイルを生成しようという感じです。&lt;/p&gt;
@@ -1973,6 +2262,9 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;終わりに&lt;/h1&gt;
         &lt;/div&gt;
         &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
             &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
+                
+                &lt;i class=&#34;glyphicon glyphicon-chevron-left&#34; aria-hidden=&#34;true&#34; style=&#34;margin-right: 5px;&#34;&gt;&lt;/i&gt;
+                &lt;a href=&#34;/posts/2018/super-precure-monad.html&#34; lang=&#34;ja&#34;&gt;モナドの新しい力！スーパープリキュアモナド！&lt;/a&gt;
                 
             &lt;/div&gt;
             &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
@@ -6434,84 +6726,7 @@ Responseの操作
 stack install cryptoniteで以下のようなエラーが発生。
 % stack install cryptonite
 --  While building custom Setup.hs for package cryptonite-0.24 using:
-      /Users/xxx/.stack/setup-exe-cache/x86_64-osx/Cabal-simple_mPHDZzAJ_2.0.1.0_ghc-8.2.2 --builddir=.stack-work/dist/x86_64-osx/Cabal-2.0.1.0 build --ghc-options &#34; </summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B</id><title type="text">なぜ Haskell が好きなのか</title><updated>2018-02-25T14:53:18+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B"/><summary type="html">自分は Haskell が好きで休日は Haskell を書いています。そういうことを言うと関数型が好きなんですねと言われるのですが、Haskell のよさはそこじゃないと感じているので書き起こそうかと、筆を執りました。 というわけで、この記事は技術的文書というよりもお話です。Haskell を知らない人向けです。 この記事は Haskell Advent Calendar 2017 その3の6日めの記事です。6日が過ぎても担当のいない日だったため担当します。 関数型プログラミングだから Haskell が好きというわけではない まず、「Haskell というと手続き型とは全然違う関数型なんで…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/topic-request.html</id><title type="text">Haskell-jp Blogで書いてほしいネタを募集します！</title><updated>2018-02-18T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/topic-request.html"/><summary type="html">
-&lt;article lang=&#34;ja&#34;&gt;
-
-    &lt;div class=&#34;container&#34;&gt;
-        &lt;div class=&#34;row&#34;&gt;
-            &lt;div class=&#34;col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10&#34;&gt;
-                &lt;ul class=&#34;social-buttons&#34;&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;a href=&#34;https://twitter.com/share&#34; class=&#34;twitter-share-button&#34;&gt;Tweet&lt;/a&gt;
-                        &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;script type=&#34;text/javascript&#34;&gt;
-                            reddit_target = &#34;haskell_jp&#34;;
-                            reddit_title  = document.title;
-                        &lt;/script&gt;
-                        &lt;script type=&#34;text/javascript&#34; src=&#34;//www.redditstatic.com/button/button1.js&#34;&gt;&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;a data-pocket-label=&#34;pocket&#34; data-pocket-count=&#34;horizontal&#34; class=&#34;pocket-btn&#34; data-lang=&#34;en&#34;&gt;&lt;/a&gt;
-                        &lt;script type=&#34;text/javascript&#34;&gt;!function(d,i){if(!d.getElementById(i)){var j=d.createElement(&#34;script&#34;);j.id=i;j.src=&#34;https://widgets.getpocket.com/v1/j/btn.js?v=1&#34;;var w=d.getElementById(i);d.body.appendChild(j);}}(document,&#34;pocket-btn-js&#34;);&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&#34;row&#34;&gt;
-            &lt;div id=&#34;md-post-content&#34; class=&#34;col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1&#34;&gt;
-              &lt;hr /&gt;
-&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell-jp Blog&lt;/span&gt;では、設立当初より&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;に関する記事を幅広く募集してきました。&lt;br /&gt;
-このたびはそれに加え、この&lt;span class=&#34;ascii&#34;&gt;Haskell-jp Blog&lt;/span&gt;で「書いて欲しい！」「読んでみたい！」&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;に関する話題も募集することにしました！ 例えば、下記のような話題が考えられるでしょう。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;○○パッケージの解説記事が欲しい&lt;/li&gt;
-&lt;li&gt;数学用語と&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;用語の対応関係が知りたい&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;ascii&#34;&gt;Real World Haskell&lt;/span&gt;を今読むならの注意点&lt;/li&gt;
-&lt;li&gt;そのほか、&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;に関する話題であれば何でも！&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;ただし、提案していただいたネタに関する知見の持ち主が居ないかもしれませんし、誰かの負担になるものなので必ず記事になるとは限りません。&lt;/strong&gt; また、場合によっては既に記事があるため、既存の記事を薦められるかもしれません。&lt;/p&gt;
-&lt;div id=&#34;table-of-contents-outer&#34;&gt;
-&lt;div id=&#34;table-of-contents&#34;&gt;
-&lt;div class=&#34;table-of-contents-title&#34;&gt;
-Contents
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#ネタを提案してくれる場合&#34; title=&#34;ネタを提案してくれる場合&#34;&gt;ネタを提案してくれる場合&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#書いてもいいよって場合&#34; title=&#34;書いてもいいよって場合&#34;&gt;書いてもいいよって場合&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;ネタを提案してくれる場合&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#ネタを提案してくれる場合&#34; title=&#34;ネタを提案してくれる場合&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;ネタを提案してくれる場合&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/haskell-jp/blog/issues/new?template=topic-request.md&amp;amp;labels=Topic+Request&#34;&gt;この&lt;span class=&#34;ascii&#34;&gt;Blog&lt;/span&gt;のリポジトリの&lt;span class=&#34;ascii&#34;&gt;Issue&lt;/span&gt;&lt;/a&gt;からお願いします。 既に提案されていたら、その&lt;span class=&#34;ascii&#34;&gt;Issue&lt;/span&gt;に対して 👍 するといいと思います。&lt;/p&gt;
-&lt;h2 id=&#34;書いてもいいよって場合&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#書いてもいいよって場合&#34; title=&#34;書いてもいいよって場合&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;書いてもいいよって場合&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;TopicRequest&lt;/code&gt; というラベルを作ったので、&lt;a href=&#34;https://github.com/haskell-jp/blog/issues?q=is:issue+is:Aopen+label:%22Topic+Request%22&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Issue&lt;/span&gt;をそのラベルで検索&lt;/a&gt;してください。 書いてもいいという提案があった場合は、&lt;span class=&#34;ascii&#34;&gt;Issue&lt;/span&gt;に「書いてもいいよ」という旨をコメントしていただけるとバッティングが無くて助かります。&lt;/p&gt;
-&lt;p&gt;それでは、今後は&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;に関するあなたの記事だけでなく、あなたが&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;について読みたい記事も募集していきますので、どしどし応募してください！ 🙏&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
-            &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
-                
-                &lt;i class=&#34;glyphicon glyphicon-chevron-left&#34; aria-hidden=&#34;true&#34; style=&#34;margin-right: 5px;&#34;&gt;&lt;/i&gt;
-                &lt;a href=&#34;/posts/2018/windows-long-path.html&#34; lang=&#34;ja&#34;&gt;WindowsでHaskellを扱う時によく遭遇するNo such file or directoryについて&lt;/a&gt;
-                
-            &lt;/div&gt;
-            &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
-                &lt;a href=&#34;/&#34; lang=&#34;ja&#34;&gt;トップに戻る&lt;/a&gt;
-            &lt;/div&gt;
-            &lt;div class=&#34;col-lg-3 col-md-4 col-xs-4&#34;&gt;
-                
-                &lt;a href=&#34;/posts/2018/ghc-proposal-and-patch.html&#34; style=&#34;margin-left: auto;&#34; lang=&#34;ja&#34;&gt;GHCへの変更提案とパッチ送付の手順例&lt;/a&gt;
-                &lt;i class=&#34;glyphicon glyphicon-chevron-right&#34; aria-hidden=&#34;true&#34; style=&#34;margin-left: 5px;&#34;&gt;&lt;/i&gt;
-                
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/article&gt;
-
-</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2018/02/14/160833</id><title type="text">Haskellの実行バイナリにファイルを埋め込む</title><updated>2018-02-14T16:12:25+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2018/02/14/160833"/><summary type="html">コンパイルしてできる実行バイナリにファイルを埋め込みたいことがある。
+      /Users/xxx/.stack/setup-exe-cache/x86_64-osx/Cabal-simple_mPHDZzAJ_2.0.1.0_ghc-8.2.2 --builddir=.stack-work/dist/x86_64-osx/Cabal-2.0.1.0 build --ghc-options &#34; </summary></entry><entry><id>http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B</id><title type="text">なぜ Haskell が好きなのか</title><updated>2018-02-25T14:53:18+09:00</updated><author><name>岡本和樹</name></author><link href="http://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B"/><summary type="html">自分は Haskell が好きで休日は Haskell を書いています。そういうことを言うと関数型が好きなんですねと言われるのですが、Haskell のよさはそこじゃないと感じているので書き起こそうかと、筆を執りました。 というわけで、この記事は技術的文書というよりもお話です。Haskell を知らない人向けです。 この記事は Haskell Advent Calendar 2017 その3の6日めの記事です。6日が過ぎても担当のいない日だったため担当します。 関数型プログラミングだから Haskell が好きというわけではない まず、「Haskell というと手続き型とは全然違う関数型なんで…</summary></entry><entry><id>http://syocy.hatenablog.com/entry/2018/02/14/160833</id><title type="text">Haskellの実行バイナリにファイルを埋め込む</title><updated>2018-02-14T16:12:25+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/2018/02/14/160833"/><summary type="html">コンパイルしてできる実行バイナリにファイルを埋め込みたいことがある。
 アプリのGUIで使うアイコンとか機械学習の学習済みモデルとか。
 Go では (現在では非推奨らしいが) go-bindata を使う場面だろうか。
 
