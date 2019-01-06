@@ -1,4 +1,233 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-01-04T02:11:40+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/kmizu/items/0892eca588088836967f</id><title type="text">型なし言語のメリットを一言で書いてみる</title><updated>2019-01-04T02:11:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kmizu/items/0892eca588088836967f"/></entry><entry><id>https://qiita.com/Cassin01/items/8be9af3170fef3d8d6cc</id><title type="text">C++ と Haskell と Rustの似てるとこ、違うとこ</title><updated>2019-01-02T20:26:28+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cassin01/items/8be9af3170fef3d8d6cc"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/27/213853</id><title type="text">戊戌の追憶</title><updated>2018-12-28T09:01:05+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/27/213853"/><summary type="html">この記事は、筆者が過ごした2018年を簡潔に振り返り、その経験を糧とすることを狙う。 1月 第二鰓弓由来側頸嚢胞という先天異常が原因で首が化膿し、激痛に苦しんでいた。対人関係のトラブルなどもあり軽い錯乱状態にあったのか、自分が知らない間に高い買い物をすることがあった。 drinkery: Boozy streaming library というストリーム処理ライブラリを作った。当初はすべて酒関係の用語を用いていたが、批判を受けてそこはやめた。今思えばそれで正解だった気がする。 パフォーマンスはモナディックなAPIを持つライブラリの中ではトップクラスで、双方向性や多入力多出力のような発展的な機能も…</summary></entry><entry><id>https://qiita.com/reotasosan/items/17f6804c959db644c9a0</id><title type="text">What is monad?</title><updated>2018-12-27T19:49:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/reotasosan/items/17f6804c959db644c9a0"/></entry><entry><id>https://haskell.jp/blog/posts/2018/super-precure-monad.html</id><title type="text">モナドの新しい力！スーパープリキュアモナド！</title><updated>2018-12-27T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/super-precure-monad.html"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-01-06T13:08:45+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/Cassin01/items/8be9af3170fef3d8d6cc</id><title type="text">C++ と Haskell と Rustの似てるとこ、違うとこ</title><updated>2019-01-06T13:08:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cassin01/items/8be9af3170fef3d8d6cc"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-06-use-drone-cache-with-gcs.html</id><title type="text">GCS で Drone 1.0 をキャッシュする</title><updated>2019-01-06T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-06-use-drone-cache-with-gcs.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;GCS で Drone 1.0 をキャッシュする&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2019-01-06&#34; itemprop=&#34;datePublished&#34;&gt;
+        Jan 6, 2019
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Drone.html&#34;&gt;Drone&lt;/a&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;Drone ネタ2本目． せっかく drone-haskell を作ったので TravisCI でテストを回すのではなく，Drone で回そうかなと思ったのだが，Stack でフルビルドするとめっちゃ時間かかる． なので，Drone のキャッシュをやってみましたっていう小話です．&lt;/p&gt;
+&lt;h2 id=&#34;cache-in-drone&#34;&gt;Cache in Drone&lt;/h2&gt;
+&lt;p&gt;Drone でキャッシュを利用するには次のような Plugin を使用する:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;drone-s3-cache: &lt;a href=&#34;https://github.com/drone-plugins/drone-s3-cache&#34;&gt;GitHub&lt;/a&gt;・&lt;a href=&#34;http://plugins.drone.io/drone-plugins/drone-s3-cache/&#34;&gt;Marketplace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;drone-volume-cache: &lt;a href=&#34;https://github.com/drone-plugins/drone-volume-cache&#34;&gt;GitHub&lt;/a&gt;・&lt;a href=&#34;http://plugins.drone.io/drillster/drone-volume-cache/&#34;&gt;Marketplace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;drone-gcs-cache: &lt;a href=&#34;https://github.com/hvalle/drone-gcs-cache&#34;&gt;GitHub&lt;/a&gt;・&lt;a href=&#34;http://plugins.drone.io/hvalle/drone-gcs-cache/&#34;&gt;Marketplace&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;s3-cache や gcs-cache は任意のフォルダを tar かなんかに固めて各種クラウドストレージに保存する． volume-cache はローカルに保存してくれるのだが，これを利用するためにはリポジトリの &lt;code&gt;Trusted&lt;/code&gt; フラグを立てる必要がある． ただし，これは Admin しかできないので，Drone Cloud では利用できない． なので s3-cache や gcs-cache を使うしかない．&lt;/p&gt;
+&lt;p&gt;ちなみに公式で提供してくれてるのは s3-cache なので，そっちを使うべきなのだが，見事に AWS のパスワードやらを忘れてしまったので GCP の Cloud Storage の方を利用した(オイ)． ただ，gcs-cache は 0.8.x 時代の設定方法しか書いてない． いろいろ調べてみた結果，YAML の書き方を変えるだけでそのまま利用できそうだったのでそのまま drone-gcs-cache を利用する．&lt;/p&gt;
+&lt;h2 id=&#34;drone-gcs-cache&#34;&gt;Drone GCS Cache&lt;/h2&gt;
+&lt;h3 id=&#34;認証鍵の設定&#34;&gt;認証鍵の設定&lt;/h3&gt;
+&lt;p&gt;GCS の認証にはサービスアカウントの JSON Key を使う． GCP コンソールの &lt;code&gt;APIとサービス&lt;/code&gt; の &lt;code&gt;認証情報&lt;/code&gt; からサービスアカウントを作成し(このときに JSON が DL される)，&lt;code&gt;IAMと管理&lt;/code&gt; の &lt;code&gt;IAM&lt;/code&gt; からさっき作ったアカウントに &lt;code&gt;ストレージ管理者&lt;/code&gt; を追加した IAM を作成する．&lt;/p&gt;
+&lt;p&gt;この JSON を Drone のウェブコンソールから Secret として設定する． 改行込みでファイルの中身そのままコピペで大丈夫． もし PR を作成したときにも動作させたいなら &lt;code&gt;Allow Pull Requests&lt;/code&gt; にチェックする．&lt;/p&gt;
+&lt;h3 id=&#34;yaml-の設定&#34;&gt;YAML の設定&lt;/h3&gt;
+&lt;p&gt;あとは YAML を設定するだけ． 例えば drone-gcs-cache の古い設定を書き直すと次のようになる:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;kind:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; pipeline&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; default&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;steps:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; restore&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; homerovalle/drone-gcs-cache&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;settings:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; title=&#34;8&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;pull:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-9&#34; title=&#34;9&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;bucket:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; gcs_bucket&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-10&#34; title=&#34;10&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;json_key:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-11&#34; title=&#34;11&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;from_secret:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; gcs-access-json-key&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-12&#34; title=&#34;12&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;restore:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-13&#34; title=&#34;13&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-14&#34; title=&#34;14&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; build&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-15&#34; title=&#34;15&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; node&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-16&#34; title=&#34;16&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;commands:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-17&#34; title=&#34;17&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; npm install&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-18&#34; title=&#34;18&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-19&#34; title=&#34;19&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; rebuild&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-20&#34; title=&#34;20&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; homerovalle/drone-gcs-cache&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-21&#34; title=&#34;21&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;settings:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-22&#34; title=&#34;22&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;pull:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-23&#34; title=&#34;23&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;bucket:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; gcs_bucket&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-24&#34; title=&#34;24&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;json_key:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-25&#34; title=&#34;25&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;from_secret:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; gcs-access-json-key&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-26&#34; title=&#34;26&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;rebuild:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-27&#34; title=&#34;27&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;mount:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-28&#34; title=&#34;28&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; node_modules&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-29&#34; title=&#34;29&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;when:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-30&#34; title=&#34;30&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;event:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; push&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-31&#34; title=&#34;31&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-32&#34; title=&#34;32&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; flush&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-33&#34; title=&#34;33&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; homerovalle/drone-gcs-cache&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-34&#34; title=&#34;34&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;settings:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-35&#34; title=&#34;35&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;pull:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-36&#34; title=&#34;36&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;bucket:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; gcs_bucket&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-37&#34; title=&#34;37&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;json_key:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-38&#34; title=&#34;38&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;from_secret:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; gcs-access-json-key&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-39&#34; title=&#34;39&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;flush:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-40&#34; title=&#34;40&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;flush_age:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;14&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これは Drone の Secret に &lt;code&gt;gcs-access-json-key&lt;/code&gt; という名前で登録している場合である． ちなみに &lt;code&gt;flush_age&lt;/code&gt; は，ここで設定した日付よりも前のキャッシュを削除する設定のようだ(デフォルトは30)．&lt;/p&gt;
+&lt;h2 id=&#34;haskell-で試す&#34;&gt;Haskell で試す&lt;/h2&gt;
+&lt;p&gt;ちなみに&lt;a href=&#34;https://github.com/matsubara0507/drone-haskell/pull/3&#34;&gt;導入したPRはこれ&lt;/a&gt;． &lt;code&gt;.stack&lt;/code&gt; と &lt;code&gt;.stack-work&lt;/code&gt; をキャッシュする:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;kind:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; pipeline&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; default&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;steps:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; restore&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; homerovalle/drone-gcs-cache&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;settings:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;    ...&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; test&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; title=&#34;11&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; haskell:8.6&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; title=&#34;12&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;commands:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; title=&#34;13&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; stack --no-terminal --stack-root `pwd`/.stack --install-ghc test --bench --only-dependencies&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; title=&#34;14&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; stack --no-terminal --stack-root `pwd`/.stack test --bench --no-run-benchmarks --no-haddock-deps --pedantic&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; title=&#34;15&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; title=&#34;16&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; rebuild&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-17&#34; title=&#34;17&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; homerovalle/drone-gcs-cache&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-18&#34; title=&#34;18&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;settings:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-19&#34; title=&#34;19&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;pull:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-20&#34; title=&#34;20&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;bucket:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara-drone-cache&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-21&#34; title=&#34;21&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;json_key:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-22&#34; title=&#34;22&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;from_secret:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; gcs-access-json-key&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-23&#34; title=&#34;23&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;rebuild:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-24&#34; title=&#34;24&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;mount:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-25&#34; title=&#34;25&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; .stack&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-26&#34; title=&#34;26&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; .stack-work&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-27&#34; title=&#34;27&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;when:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-28&#34; title=&#34;28&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;event:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; push&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-29&#34; title=&#34;29&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-30&#34; title=&#34;30&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; flush&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-31&#34; title=&#34;31&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; homerovalle/drone-gcs-cache&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-32&#34; title=&#34;32&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;settings:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-33&#34; title=&#34;33&#34;&gt;    ...&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;restore&lt;/code&gt; と &lt;code&gt;flush&lt;/code&gt; は同じなので割愛． &lt;code&gt;$HOME/.stack&lt;/code&gt; だと動作しなかったので，いっそのことカレントディレクトリに &lt;code&gt;.stack&lt;/code&gt; を持ってくることにした． で，実際どれくらい早くなったのか． ビフォー:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/use-drone-cache-with-gcs/before.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;9分は長い． そんでアフター:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/use-drone-cache-with-gcs/after.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;4GB弱キャッシュされてるので，restore に結構かかってしまう． まぁ半分近くになったのでこれで良しとしましょう(GCS分のお金はかかるけど)．&lt;/p&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;Drone は Crone を hourly で使えるから haskell-antenna を Drone に移行してみようかしら．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-05-docker-compose-up-drone-1-0.html</id><title type="text">Drone 1.0 を docker-compose up する</title><updated>2019-01-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-05-docker-compose-up-drone-1-0.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Drone 1.0 を docker-compose up する&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2019-01-05&#34; itemprop=&#34;datePublished&#34;&gt;
+        Jan 5, 2019
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Drone.html&#34;&gt;Drone&lt;/a&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/library.html&#34;&gt;library&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;新年一発目です． &lt;a href=&#34;https://drone.io/&#34;&gt;Drone CI&lt;/a&gt; が，めでたくバージョン1.0(まだ rc だけど)をリリースしてドキュメントも刷新されたんですけど，&lt;a href=&#34;https://0-8-0.docs.drone.io/install-for-github/&#34;&gt;0.8.x 時代にはあった &lt;code&gt;docker-compose&lt;/code&gt; でのやり方&lt;/a&gt;が書いてなかった(見つけられなかった)ので，そのメモ書きです． ちなみに経緯は，結構前に作っていた &lt;a href=&#34;https://github.com/matsubara0507/drone-haskell&#34;&gt;drone-haskell&lt;/a&gt; と言う Drone CI の Haskell クライアントを Drone 1.0 に対応したくて，手元で Drone を起動しようとしたためです． めでたく，Haskell クライアントも 1.0 に対応したので，それの紹介もおまけでします．&lt;/p&gt;
+&lt;h2 id=&#34;drone-ci&#34;&gt;Drone CI&lt;/h2&gt;
+&lt;p&gt;Drone.io, Inc. というアメリカ企業が開発している継続的デリバリーを支援するためのプラットフォームである． 同種のものに Jenkins や TravisCI，CircleCI などが挙げられます(多分)． 単純な利用者側(リポジトリにCIなどを設定する側)としては，TravisCI・CircleCI に似ているが，これらとの大きな違いとして，Drone は GitHub 上に OSS として公開されている点だ:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drone/drone&#34;&gt;drone/drone - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;あと個人的に特徴的なのが Plugin という形で様々な機能を提供している点だ(このあたりは Jenkins に似ているのかな)． 公式のページより，組織アカウントを見た方が早い気がする(これに限らずドキュメントが色々追いついてない印象):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drone-plugins&#34;&gt;drone-plugins - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-compose-する&#34;&gt;docker-compose する&lt;/h2&gt;
+&lt;p&gt;さて本題． ローカルで Drone サーバを &lt;code&gt;docker-compose up&lt;/code&gt; して GitHub で利用する． GitHub で利用するには Drone を &lt;a href=&#34;https://docs.drone.io/installation/github/multi-machine/#create-an-oauth-application&#34;&gt;GitHub の OAuth App として登録する必要がある&lt;/a&gt;． OAuth App にするにはパブリックな URL が必要なので，&lt;a href=&#34;https://ngrok.com/&#34;&gt;ngrok&lt;/a&gt; を利用する:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ngrok http 8000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;これで仮に &lt;code&gt;abcdef.ngrok.io&lt;/code&gt; と言うドメインを得たとする． 次のような OAuth App を登録する:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/docker-compose-up-drone-1-0/oauth-app.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;注意点として，8.0.x のときは callback URL が &lt;code&gt;/authorize&lt;/code&gt; だったのに対し，1.0 では &lt;code&gt;/login&lt;/code&gt; となっている． あとは次のような &lt;code&gt;docker-compose.yml&lt;/code&gt; ファイルを書けば良い:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;version:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;services:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;drone-server:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; drone/drone:1.0.0-rc.3&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;ports:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; 8000:80&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; 443:443&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;9000&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;volumes:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; title=&#34;11&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; /var/run/docker.sock:/var/run/docker.sock&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; title=&#34;12&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; .:/data&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; title=&#34;13&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;restart:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; always&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; title=&#34;14&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;environment:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; title=&#34;15&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_GITHUB_SERVER=https://github.com&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; title=&#34;16&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_GITHUB_CLIENT_ID=XXX&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-17&#34; title=&#34;17&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_GITHUB_CLIENT_SECRET=YYY&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-18&#34; title=&#34;18&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_RPC_SECRET=ZZZ&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-19&#34; title=&#34;19&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_SERVER_HOST=abcdef.ngrok.io&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-20&#34; title=&#34;20&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_SERVER_PROTO=https&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-21&#34; title=&#34;21&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_TLS_AUTOCERT=true&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-22&#34; title=&#34;22&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-23&#34; title=&#34;23&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;drone-agent:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-24&#34; title=&#34;24&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; drone/agent:1.0.0-rc.3&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-25&#34; title=&#34;25&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;command:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; agent&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-26&#34; title=&#34;26&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;restart:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; always&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-27&#34; title=&#34;27&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;depends_on:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-28&#34; title=&#34;28&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; drone-server&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-29&#34; title=&#34;29&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;volumes:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-30&#34; title=&#34;30&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; /var/run/docker.sock:/var/run/docker.sock&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-31&#34; title=&#34;31&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;environment:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-32&#34; title=&#34;32&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_RPC_SERVER=drone-server:9000&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-33&#34; title=&#34;33&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_RPC_SECRET=ZZZ&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-34&#34; title=&#34;34&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; DRONE_RUNNER_CAPACITY=2&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;XXX&lt;/code&gt; は GitHub OAuth App の Client ID を，&lt;code&gt;YYY&lt;/code&gt; には Client Secret を記述する． &lt;code&gt;DRONE_RPC_SECRET&lt;/code&gt; の &lt;code&gt;ZZZ&lt;/code&gt; は server と agent で同じであればなんでも良いのだが，&lt;a href=&#34;https://docs.drone.io/installation/github/multi-machine/#create-a-shared-secret&#34;&gt;ここ&lt;/a&gt;に &lt;code&gt;openssl rand -hex 16&lt;/code&gt; で生成すると書いてあるので，それに従う． これであとは &lt;code&gt;docker-compose up&lt;/code&gt; をすれば無事起動完了だ．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ curl http://localhost:8000/version
+{&amp;quot;source&amp;quot;:&amp;quot;https://github.com/drone/drone.git&amp;quot;,&amp;quot;version&amp;quot;:&amp;quot;latest&amp;quot;,&amp;quot;commit&amp;quot;:&amp;quot;ffe3ad2aa2a30d0ba4d848c1cd0f61238b73a21c&amp;quot;}&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;ちなみに&#34;&gt;ちなみに&lt;/h3&gt;
+&lt;p&gt;Drone ってクラウドのフリープランがあったのに記事を書いてる時に気づいた(遅い):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ curl https://cloud.drone.io/version
+{&amp;quot;source&amp;quot;:&amp;quot;https://github.com/drone/drone.git&amp;quot;,&amp;quot;version&amp;quot;:&amp;quot;latest&amp;quot;,&amp;quot;commit&amp;quot;:&amp;quot;f16b67b54fb462d3a4b2cfa93f527d4f8d1e19af&amp;quot;}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;わざわざ検証用に立てる必要なかったな笑 ちなみにフリープランでは5リポジトリまでと書いてあったが，試しに6個 Activate したらできた． 謎．&lt;/p&gt;
+&lt;h2 id=&#34;おまけ-drone-haskell&#34;&gt;おまけ: drone-haskell&lt;/h2&gt;
+&lt;p&gt;ここからおまけ． drone の Haskell クライアントを作った． ちゃんとバージョン 1.0 に対応させてます:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/drone-haskell&#34;&gt;matsubara0507/drone-haskell - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Drone 1.0 の RESTful API に関するドキュメントは見つからなかったので，唯一公式から出ている Drone クライアントである &lt;a href=&#34;https://github.com/drone/drone-go&#34;&gt;drone-go&lt;/a&gt; のコード読んで実装した． なので，drone-go が間違ってたらこっちも間違ってる．&lt;/p&gt;
+&lt;h3 id=&#34;利用したパッケージ&#34;&gt;利用したパッケージ&lt;/h3&gt;
+&lt;p&gt;HTTP クライアントには &lt;a href=&#34;http://hackage.haskell.org/package/req&#34;&gt;req&lt;/a&gt; を，レスポンス型には &lt;a href=&#34;http://hackage.haskell.org/package/extensible&#34;&gt;extensible&lt;/a&gt; を利用した． このあたりの組み合わせについては昔記事に書いた:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/posts/2017-08-13-create-rest-api-package-with-extensible.html&#34;&gt;extensible の拡張可能レコードを使って REST API Haskell パッケージを作る - ひげメモ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ちなみに，管理がめんどくさい(加えて extensible は今の LTS にはまだないし)ので，Stackage や Hackage には登録していない． なので Stack でビルドするには &lt;code&gt;extra-deps&lt;/code&gt; に書き加える必要がある:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;extra-deps:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; extensible-0.5&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;github:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507/drone-haskell&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;commit:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; XXX&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;ちょっと工夫&#34;&gt;ちょっと工夫&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;テストは Servant でモックサーバーを立てて行ってる
+&lt;ul&gt;
+&lt;li&gt;テストケースも drone-go から取ってきてる&lt;/li&gt;
+&lt;li&gt;https://github.com/drone/drone-go/tree/master/drone/testdata&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;API のパスに &lt;a href=&#34;http://hackage.haskell.org/package/formatting&#34;&gt;formatting&lt;/a&gt; を使ってみた
+&lt;ul&gt;
+&lt;li&gt;あくまで試しに&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/drone-haskell/blob/e735b77171eebedc35160346afec71cd7631b532/src/Drone/Client/Path.hs#L65-L102&#34;&gt;こんな感じ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/kmizu/items/0892eca588088836967f</id><title type="text">型なし言語のメリットを一言で書いてみる</title><updated>2019-01-04T02:11:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kmizu/items/0892eca588088836967f"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/27/213853</id><title type="text">戊戌の追憶</title><updated>2018-12-28T09:01:05+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/27/213853"/><summary type="html">この記事は、筆者が過ごした2018年を簡潔に振り返り、その経験を糧とすることを狙う。 1月 第二鰓弓由来側頸嚢胞という先天異常が原因で首が化膿し、激痛に苦しんでいた。対人関係のトラブルなどもあり軽い錯乱状態にあったのか、自分が知らない間に高い買い物をすることがあった。 drinkery: Boozy streaming library というストリーム処理ライブラリを作った。当初はすべて酒関係の用語を用いていたが、批判を受けてそこはやめた。今思えばそれで正解だった気がする。 パフォーマンスはモナディックなAPIを持つライブラリの中ではトップクラスで、双方向性や多入力多出力のような発展的な機能も…</summary></entry><entry><id>https://qiita.com/reotasosan/items/17f6804c959db644c9a0</id><title type="text">What is monad?</title><updated>2018-12-27T19:49:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/reotasosan/items/17f6804c959db644c9a0"/></entry><entry><id>https://haskell.jp/blog/posts/2018/super-precure-monad.html</id><title type="text">モナドの新しい力！スーパープリキュアモナド！</title><updated>2018-12-27T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/super-precure-monad.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -2799,74 +3028,6 @@ $ stack --docker image container&lt;/code&gt;&lt;/pre&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/article&gt;
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-28-ghc-8-6-error-no-gmp.html</id><title type="text">GHC 8.6 がインストールできなかった</title><updated>2018-10-28T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-28-ghc-8-6-error-no-gmp.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;GHC 8.6 がインストールできなかった&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-10-28&#34; itemprop=&#34;datePublished&#34;&gt;
-        Oct 28, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;対したことではないんだけど，日本語の記事が無っかたのでメモ． ちなみに OS は macOS Sierra (10.12.6) です．&lt;/p&gt;
-&lt;h2 id=&#34;ghc-8.6-でビルドできない&#34;&gt;GHC 8.6 でビルドできない&lt;/h2&gt;
-&lt;p&gt;現在 stackage の Nightly は最新の GHC バージョンである 8.6 がインストールされる． 結構パッケージも揃ってきたので，自分のパッケージもビルドしてみようかなと思って，resolver を Nightly に変えて &lt;code&gt;stack build&lt;/code&gt; したら下記のようなエラーが出た．&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
-Downloaded nightly-2018-10-26 build plan.    
-Preparing to install GHC to an isolated location.
-This will not interfere with any system-level installation.
-Downloaded ghc-8.6.1.                                      
-Installing GHC ...                                                                         
-Received ExitFailure 2 when running
-Raw command: /usr/bin/make install
-Run from: /Users/username/.stack/programs/x86_64-osx/ghc-8.6.1.temp/ghc-8.6.1/&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;--vebose&lt;/code&gt; を付けて詳細を見てみる．&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build --verbose
-Version 1.9.1, Git revision f9d0042c141660e1d38f797e1d426be4a99b2a3c (6168 commits) x86_64 hpack-0.31.0
-2018-10-28 13:31:22.068195: [debug] Checking for project config at: /Users/username/git/haskell/servant-kotlin/stack.yaml
-2018-10-28 13:31:22.069706: [debug] Loading project config file stack.yaml
- .
- .
- .
-2018-10-28 13:32:21.355443: [debug] /Library/Developer/CommandLineTools/usr/bin/ranlib: file: /Users/username/.stack/programs/x86_64-osx/ghc-8.6.1/lib/ghc-8.6.1/rts/libHSrts_thr_p.a(Select.thr_p_o) has no symbols
-2018-10-28 13:32:21.621133: [debug] &amp;quot;utils/ghc-cabal/dist-install/build/tmp/ghc-cabal-bindist&amp;quot; copy libraries/ghc-prim dist-install &amp;quot;strip&amp;quot; &amp;#39;&amp;#39; &amp;#39;/Users/username/.stack/programs/x86_64-osx/ghc-8.6.1&amp;#39; &amp;#39;/Users/username/.stack/programs/x86_64-osx/ghc-8.6.1/lib/ghc-8.6.1&amp;#39; &amp;#39;/Users/username/.stack/programs/x86_64-osx/ghc-8.6.1/share/doc/ghc-8.6.1/html/libraries&amp;#39; &amp;#39;v p dyn&amp;#39;  
-2018-10-28 13:32:21.841900: [debug] dyld: Library not loaded: /usr/local/opt/gmp/lib/libgmp.10.dylib
-2018-10-28 13:32:21.842003: [debug]   Referenced from: /Users/username/.stack/programs/x86_64-osx/ghc-8.6.1.temp/ghc-8.6.1/libraries/base/dist-install/build/libHSbase-4.12.0.0-ghc8.6.1.dylib
-2018-10-28 13:32:21.842062: [debug]   Reason: image not found
-2018-10-28 13:32:21.842273: [debug] make[1]: *** [install_packages] Abort trap: 6
-2018-10-28 13:32:21.844303: [debug] make: *** [install] Error 2
-Installing GHC ...
-Received ExitFailure 2 when running
-Raw command: /usr/bin/make install
-Run from: /Users/username/.stack/programs/x86_64-osx/ghc-8.6.1.temp/ghc-8.6.1/&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;どうやら &lt;code&gt;/usr/local/opt/gmp/lib/libgmp.10.dylib&lt;/code&gt; が無いみたいだ．&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ ls /usr/local/opt/gmp/lib/libgmp.10.dylib
-ls: /usr/local/opt/gmp/lib/libgmp.10.dylib: No such file or directory&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;これで検索すると，Ruby に関することだが &lt;a href=&#34;https://stackoverflow.com/questions/34912946&#34;&gt;StackOverflow があった&lt;/a&gt;． 曰く，&lt;code&gt;gmp&lt;/code&gt; パッケージを入れれば良いらしい（多くの人は他のどこかのタイミングで入ってるのかも）．&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ brew reinstall gmp
-==&amp;gt; Reinstalling gmp
-==&amp;gt; Downloading https://homebrew.bintray.com/bottles/gmp-6.1.2_2.sierra.bottle.tar.gz
-######################################################################## 100.0%
-==&amp;gt; Pouring gmp-6.1.2_2.sierra.bottle.tar.gz
-🍺  /usr/local/Cellar/gmp/6.1.2_2: 18 files, 3.1MB
-
-$ ls /usr/local/opt/gmp/lib/libgmp.10.dylib
-/usr/local/opt/gmp/lib/libgmp.10.dylib&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;これで GHC 8.6 で &lt;code&gt;stack build&lt;/code&gt; できるようになった．&lt;/p&gt;
-&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;まぁ一応ね，一応メモした．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
 </summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/05/17/180426</id><title type="text">Kubernetes Meetup Tokyo #10 で Pod の Preemption について話してきました</title><updated>2018-10-23T16:31:12+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/05/17/180426"/><summary type="html">だいぶ日が空いてしまって今更ですが、先日行われた Kubernetes Meetup Tokyo #10 で、v1.8*1 から導入された新機能 Preemption について発表してきました。 Preemption は、Kubernetes クラスタのリソースが不足した際に、優先度が低い Pod を追い出して優先度が高い Pod の稼働を保証する仕組みです。 当日は時間が不足気味だったので、説明不十分だったかなと思われる点についていくつか補足しておきます。 Priority の指定について スライド中では詳しく説明しませんでしたが、ユーザは直接 Pod（や Deployment 中の Pod…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html</id><title type="text">Stack 1.9.1 がリリースされました。</title><updated>2018-10-22T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;10月18日に Stack version 1.9.1 が&lt;a href=&#34;https://github.com/commercialhaskell/stack/blob/v1.9.1/ChangeLog.md#v191&#34;&gt;リリース&lt;/a&gt;されました。&lt;/p&gt;
 &lt;p&gt;更新は &lt;code&gt;stack upgrade&lt;/code&gt; コマンドを実行します。&lt;/p&gt;
@@ -3470,171 +3631,7 @@ Installing internal library internal-foo in /home/guchi/Desktop/stack-191-workin
 &lt;li&gt;[#4114] Stack pretty prints error messages with proper &lt;code&gt;error&lt;/code&gt; logging level instead of &lt;code&gt;warning&lt;/code&gt; now. This also fixes self-executing scripts not piping plan construction errors from runhaskell to terminal (issue #3942).&lt;/li&gt;
 &lt;li&gt;Fix invalid “While building Setup.hs” when Cabal calls fail. See: &lt;a href=&#34;https://github.com/commercialhaskell/stack/issues/3934&#34;&gt;#3934&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;stack upload&lt;/code&gt; signs the package by default, as documented. &lt;code&gt;--no-signature&lt;/code&gt; turns the signing off. &lt;a href=&#34;https://github.com/commercialhaskell/stack/issues/3739&#34;&gt;#3739&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html</id><title type="text">stack-templates を集める with GraphQL</title><updated>2018-10-14T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-10-14-collect-stack-templates.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;stack-templates を集める with GraphQL&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-10-14&#34; itemprop=&#34;datePublished&#34;&gt;
-        Oct 14, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/GraphQL.html&#34;&gt;GraphQL&lt;/a&gt; &lt;a href=&#34;/tags/application.html&#34;&gt;application&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;Haskell Day の仕込みパート1です(2があるかは知らない)． stack の次期バージョン v1.9 で追加される namespaced template を試してみました．&lt;/p&gt;
-&lt;p&gt;ちなみに，現在 v1.9 はプレリリースになったので，下記コマンドで簡単にアップデートできます．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ stack upgrade --binary-version 1.9.0.1&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;namespaced-template&#34;&gt;namespaced template&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;stack new&lt;/code&gt; で指定できるテンプレートを，GitHub などのオンラインからも取ってこれるようになった機能． 詳しくは開発段階からキャッチアップしてる e-bigmoon さんの記事を読むと良い．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://haskell.e-bigmoon.com/posts/2018/06-27-namespaced-templates.html&#34;&gt;namespaced templates - BIGMOON haskellers blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;作ってみた&#34;&gt;作ってみた&lt;/h3&gt;
-&lt;p&gt;GitHub などで &lt;code&gt;stack-templates&lt;/code&gt; という名前のリポジトリを作り，&lt;code&gt;hsfiles&lt;/code&gt; という拡張子のテンプレートファイルをトップレベルに置く． 今回ぼくは &lt;a href=&#34;https://github.com/matsubara0507/stack-templates&#34;&gt;matsubara0507/stack-templates&lt;/a&gt; というリポジトリを作り，２つ程作ってみた．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;get-opt-cli.hsfiles&lt;/code&gt; : &lt;a href=&#34;http://hackage.haskell.org/package/base/docs/System-Console-GetOpt.html&#34;&gt;&lt;code&gt;System.Console.GetOpt&lt;/code&gt;&lt;/a&gt; を用いたCLIのテンプレート&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;optparse-applicative-cli.hsfiles&lt;/code&gt; : &lt;a href=&#34;http://hackage.haskell.org/package/optparse-applicative&#34;&gt;optparse-applicative&lt;/a&gt; を用いたCLIのテンプレート&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;どちらも，よくCLIを作るときの書き方をテンプレートとして起こしたもの． 普段は &lt;a href=&#34;http://hackage.haskell.org/package/rio&#34;&gt;rio&lt;/a&gt; と &lt;a href=&#34;http://hackage.haskell.org/package/extensible&#34;&gt;extensible&lt;/a&gt; を使っているので，単純に optparse-applicative などを使ったテンプレートという訳でもない．&lt;/p&gt;
-&lt;h3 id=&#34;テストする&#34;&gt;テストする&lt;/h3&gt;
-&lt;p&gt;できれば，テンプレートを &lt;code&gt;stack new&lt;/code&gt; して &lt;code&gt;stack build&lt;/code&gt; した時点ではコンパイルを通ってほしい． ということで &lt;code&gt;stack new&lt;/code&gt; して &lt;code&gt;stack build&lt;/code&gt; を試してくれるテストを &lt;a href=&#34;https://github.com/matsubara0507/stack-templates/blob/7abc95184241c2df9f81ec1a45f9a662a98db05a/.travis.yml&#34;&gt;TravisCI&lt;/a&gt; に書いた．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;matrix:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;include:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;env:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; TEMPLATE=&amp;quot;get-opt-cli&amp;quot; ARGS=&amp;quot;--resolver lts-12&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;compiler:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;: #stack 8.4.3&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;addons:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;apt:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[&lt;/span&gt;libgmp-dev&lt;span class=&#34;kw&#34;&gt;]}}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;env:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; TEMPLATE=&amp;quot;optparse-applicative-cli&amp;quot; ARGS=&amp;quot;--resolver lts-12&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;compiler:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;: #stack 8.4.3&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;addons:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;apt:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;packages:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[&lt;/span&gt;libgmp-dev&lt;span class=&#34;kw&#34;&gt;]}}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;fu&#34;&gt;before_install:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;co&#34;&gt;# install stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; title=&#34;12&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; title=&#34;13&#34;&gt;&lt;span class=&#34;fu&#34;&gt;install:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; title=&#34;14&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; stack new sample &lt;span class=&#34;st&#34;&gt;&amp;quot;./$TEMPLATE&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; title=&#34;15&#34;&gt;&lt;span class=&#34;kw&#34;&gt;- &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;|&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; title=&#34;16&#34;&gt;  set -ex&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-17&#34; title=&#34;17&#34;&gt;  cd sample&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-18&#34; title=&#34;18&#34;&gt;  stack --no-terminal --install-ghc $ARGS test --bench --only-dependencies&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-19&#34; title=&#34;19&#34;&gt;  set +ex&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-20&#34; title=&#34;20&#34;&gt;&lt;span class=&#34;fu&#34;&gt;script:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-21&#34; title=&#34;21&#34;&gt;&lt;span class=&#34;kw&#34;&gt;- &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;|&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-22&#34; title=&#34;22&#34;&gt;  set -ex&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-23&#34; title=&#34;23&#34;&gt;  stack --no-terminal $ARGS test --bench --no-run-benchmarks --no-haddock-deps&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-24&#34; title=&#34;24&#34;&gt;  set +ex&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/commercialhaskell/stack-templates/blob/879f95dc44b24201bc64fcf8f4b9e2192c23dad4/test-templates.hs&#34;&gt;commercialhaskell/stack-templates でもテストは書いてある&lt;/a&gt;がぼくのはすごいシンプルだ．&lt;/p&gt;
-&lt;h2 id=&#34;stack-templates-を集める&#34;&gt;stack-templates を集める&lt;/h2&gt;
-&lt;p&gt;さて，これだけでは完全に e-bigmoon さんの劣化記事だ． なので，stack-templates を GitHub から集めてくる CLI ツールを作ることにした．&lt;/p&gt;
-&lt;p&gt;試したところ，GitHub の検索で &lt;code&gt;stack-template in:name&lt;/code&gt; と検索すれば，それなりにヒットすることがわかった(間違いも多いが)． なので，ざっくりとした手順は:&lt;/p&gt;
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;検索系の GitHub API を叩く&lt;/li&gt;
-&lt;li&gt;stack-templates という名前のリポジトリの &lt;code&gt;*.hsfiles&lt;/code&gt; というファイルだけ抽出&lt;/li&gt;
-&lt;li&gt;それらを出力&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;ここで GitHub API v3 (RESTful API)を利用すると，リポジトリのファイル群を取得するのに検索系の API を叩いてから，各リポジトリの API を叩く必要がある． それは面倒だ． なので，ここ数年注目を集めている(？) GraphQL API (GitHub API v4)を試してみることにした．&lt;/p&gt;
-&lt;h3 id=&#34;graphql&#34;&gt;GraphQL&lt;/h3&gt;
-&lt;p&gt;ちょうどこの前に，友人から「GraphQL はいいぞ，API をなんども叩く必要がない．」と紹介されたので試してみた．&lt;/p&gt;
-&lt;p&gt;GitHub の API では &lt;code&gt;api.github.com/graphql&lt;/code&gt; というエンドポイントに対し，POST メソッドでクエリを送信する．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode sh&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;$ &lt;span class=&#34;ex&#34;&gt;curl&lt;/span&gt; \&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;  -H &lt;span class=&#34;st&#34;&gt;&amp;quot;Authorization: bearer token&amp;quot;&lt;/span&gt; \&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;  -X POST \&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;  -d &lt;span class=&#34;st&#34;&gt;&amp;quot;{ &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;query&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;: &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; ... &lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;\&amp;quot;&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; }&amp;quot;&lt;/span&gt; \&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; title=&#34;5&#34;&gt;  https://api.github.com/graphql&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;...&lt;/code&gt; のところにクエリを記述する． クエリは簡単な DSL のようになっており，クエリによってどんな形の JSON が返ってくるか(型のようなもの)やどんな値が返ってくるかが決まる． 例えば &lt;code&gt;stack-template in:name&lt;/code&gt; 検索してヒットしたリポジトリの名前だけを取得してみよう． その場合は次のようなクエリを書く．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;query{
-  search(query: &amp;quot;stack-template in:name&amp;quot;, type: REPOSITORY, first: 2) {
-    repositoryCount,
-    edges{
-      node{ ... on Repository{ nameWithOwner } }
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;first&lt;/code&gt; は検索にヒットした最初の2つを返すという意味． 上限は 100 で，&lt;code&gt;first&lt;/code&gt; ないしは逆の意味の &lt;code&gt;last&lt;/code&gt; のどちらかは指定をする必要がある(そういうエラーが返ってくる)． &lt;code&gt;repositoryCount&lt;/code&gt; は検索でヒットしたリポジトリの総数で，&lt;code&gt;edges&lt;/code&gt; のところはリポジトリの &lt;code&gt;nameWithOwner&lt;/code&gt; を返すように指定している． このように &lt;code&gt;{}&lt;/code&gt; の中ではカンマ区切りで，返す JSON の形を指定できる． 具体的に何が指定できるかは &lt;a href=&#34;https://developer.github.com/v4/query/&#34;&gt;GitHub API v4 のドキュメント&lt;/a&gt;を見ると良い． 試しに curl で叩いてみる(クエリ内の &lt;code&gt;&amp;quot;&lt;/code&gt; をエスケープすることを忘れずに):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ curl -H &amp;quot;Authorization: bearer XXX&amp;quot; -X POST -d &amp;quot;{ \&amp;quot;query\&amp;quot;: \&amp;quot; ... \&amp;quot; }&amp;quot; https://api.github.com/graphql
-{&amp;quot;data&amp;quot;:{&amp;quot;search&amp;quot;:{&amp;quot;repositoryCount&amp;quot;:76,&amp;quot;edges&amp;quot;:[{&amp;quot;node&amp;quot;:{&amp;quot;nameWithOwner&amp;quot;:&amp;quot;Azure/AzureStack-QuickStart-Templates&amp;quot;}},{&amp;quot;node&amp;quot;:{&amp;quot;nameWithOwner&amp;quot;:&amp;quot;commercialhaskell/stack-templates&amp;quot;}}]}}}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Connection とか Fields とかの用語については自分もよくわかってないので自分で調べてください． 今のところ，雰囲気で使ってる(笑)&lt;/p&gt;
-&lt;h3 id=&#34;ファイルを集める&#34;&gt;ファイルを集める&lt;/h3&gt;
-&lt;p&gt;さて，前述した結果(リポジトリ名)だけが欲しいなら GitHub API v3 でも十分だ． さらに，ファイルも取得してみよう． &lt;a href=&#34;https://developer.github.com/v4/object/repository/&#34;&gt;Repository のドキュメント&lt;/a&gt; を眺めると &lt;code&gt;object&lt;/code&gt; という Field がある． 察するに，リポジトリの任意のブランチ(&lt;code&gt;expression&lt;/code&gt; で指定したもの)のコミットオブジェクトを返してくれるのだろう． (たぶん)stack-templates は全部 master が前提なので，master のコミットオブジェクトを取ってくる．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;... on Repository{
-  nameWithOwner,
-  object(expression:&amp;quot;master&amp;quot;){
-    ... on Commit { }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ちなみに &lt;code&gt;... on Commit&lt;/code&gt; というのは Inline Fragments と呼ばれるもので，object の型(サブタイプ？)が &lt;code&gt;Commit&lt;/code&gt; だった場合に &lt;code&gt;Commit{}&lt;/code&gt; 以下の Field を返すそうだ． git オブジェクトなので他にも &lt;code&gt;Tree&lt;/code&gt; や &lt;code&gt;Blob&lt;/code&gt; がある．&lt;/p&gt;
-&lt;p&gt;さて，あとは git オブジェクトの知識があれば簡単にかける． コミットオブジェクトにはツリーオブジェクト，要するにトップレベルのディレクトリのハッシュが記載されているので&lt;a href=&#34;https://developer.github.com/v4/object/commit/&#34;&gt;ドキュメント&lt;/a&gt;からそれっぽいのを見つける． ツリーオブジェクトには，そのディレクトリに含まれるブロブオブジェクト(ファイル)とツリーオブジェクト(ディレクトリ)のハッシュが記載されてる． stack-templates は(今のところ)トップレベルに &lt;code&gt;*.hsfiles&lt;/code&gt; を置かないといけないので，トップレベルのオブジェクトたちの名前を取得しよう:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;... on Repository{
-  nameWithOwner,
-  object(expression:&amp;quot;master&amp;quot;){
-    ... on Commit { tree{ entries{ name, type } } }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;type&lt;/code&gt; には &lt;code&gt;blob&lt;/code&gt; やら &lt;code&gt;tree&lt;/code&gt; やらが入る． これで，検索にヒットした全てのリポジトリから &lt;code&gt;master&lt;/code&gt; のトップレベルにあるファイルを取得するクエリが出来上がった．&lt;/p&gt;
-&lt;h3 id=&#34;ページネーション&#34;&gt;ページネーション&lt;/h3&gt;
-&lt;p&gt;今のところ，検索にヒットするリポジトリ数は76個なので &lt;code&gt;first: 100&lt;/code&gt; とすれば全て取得できるが，今後ヒット数が100を超えたときようにページネーションの仕組みを整えておく． やり方は簡単で，&lt;code&gt;search&lt;/code&gt; Connection のところで &lt;a href=&#34;&#34;&gt;&lt;code&gt;pageInfo&lt;/code&gt;&lt;/a&gt; という Field を追加する．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;search(query: &amp;quot;stack-template in:name&amp;quot;, type: REPOSITORY, first: 1) {
-  repositoryCount,
-  pageInfo{
-    endCursor,
-    hasNextPage
-  },
-  edges{
-    node{ ... on Repository{ .... } }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;hasNextPage&lt;/code&gt; は次のページが存在するかどうかを真偽値で返してくれる． &lt;code&gt;endCursor&lt;/code&gt; はこのページの最後を表すハッシュ値？で，&lt;code&gt;search&lt;/code&gt; Connection の引数(&lt;code&gt;type&lt;/code&gt; とか &lt;code&gt;first&lt;/code&gt; とかのとこ)に &lt;code&gt;after&lt;/code&gt; で指定することで，それ以降の結果を取ってくる． このような &lt;code&gt;pageInfo&lt;/code&gt; の情報さえあれば，プログラム内でループさせることは容易だろう．&lt;/p&gt;
-&lt;h3 id=&#34;まとめると&#34;&gt;まとめると&lt;/h3&gt;
-&lt;p&gt;次のようなクエリになった:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;query{
-  search(query: &amp;quot;stack-template in:name&amp;quot;, type: REPOSITORY, first: 100) {
-    repositoryCount,
-    pageInfo{
-      endCursor,
-      hasNextPage
-    },
-    edges{
-      node{ ... on Repository{
-        nameWithOwner,
-        object(expression:&amp;quot;master&amp;quot;){
-          ... on Commit { tree{ entries{ name, type } } }
-        }
-      } }
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;これを curl の引数に与えて叩くだけで 100 個分のリポジトリの全てのトップレベルファイル群を取得できる．&lt;/p&gt;
-&lt;h3 id=&#34;stack-tpls&#34;&gt;stack-tpls&lt;/h3&gt;
-&lt;p&gt;実際に作った CLI ツールは &lt;a href=&#34;https://github.com/matsubara0507/stack-tpls&#34;&gt;&lt;code&gt;matsubara0507/stack-tpls&lt;/code&gt;&lt;/a&gt; というリポジトリに置いてある． 使い方は README に書いてある． 一覧を取得するには &lt;code&gt;stack-tpls --list&lt;/code&gt; と打てば良い．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ stack-tpls --list
-github:commercialhaskell/chrisdone.hsfiles
-github:commercialhaskell/foundation.hsfiles
- .
- .
- .&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;この結果を &lt;code&gt;stack new&lt;/code&gt; の引数に与えることでそのまま利用できる． また，テンプレートの中身を確認したい場合は，&lt;code&gt;stack-tpls github:commercialhaskell/chrisdone.hsfiles&lt;/code&gt; と引数に与えることで Raw を取ってきてくれる． リンクだけが欲しい場合は &lt;code&gt;--link&lt;/code&gt; オプションを指定すると良い．&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ stack-tpls --link github:commercialhaskell/rio.hsfiles
-https://github.com/commercialhaskell/stack-templates/blob/master/rio.hsfiles&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;todo&#34;&gt;ToDo&lt;/h3&gt;
-&lt;p&gt;一週間ほど前の思いつきからの突貫で作ったのでイロイロと抜けてる箇所があって:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;エラーハンドリングが雑&lt;/li&gt;
-&lt;li&gt;GitLab と BitBucket には対応していない&lt;/li&gt;
-&lt;li&gt;GraphQL の使い方がエレガントじゃない&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;特に最後のがすごい気になっていて，現状は完全に文字列を埋め込んでいるだけなのだ． できれば，強力な型システムを利用した GitHub GraphQL Client ライブラリを作りたい(なんか昔に Haskell-jp で話題に上がったなぁ)．&lt;/p&gt;
-&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;GraphQL，クライアント側に取ってすごい便利．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/tech-book-fest-5.html</id><title type="text">技術書典 5 での Haskell 関連サークルのまとめ</title><updated>2018-10-05T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/tech-book-fest-5.html"/><summary type="html">
+&lt;/ul&gt;</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/tech-book-fest-5.html</id><title type="text">技術書典 5 での Haskell 関連サークルのまとめ</title><updated>2018-10-05T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/tech-book-fest-5.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
