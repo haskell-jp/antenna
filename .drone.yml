@@ -4,6 +4,7 @@ name: default
 clone:
   depth: 5
 
+steps:
 - name: exec antenna
   image: matsubara0507/antenna
   environment:
