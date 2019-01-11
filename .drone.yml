@@ -13,6 +13,7 @@ steps:
       from_secret: deploy_key
   commands:
   - mkdir /root/.ssh && echo "$SSH_KEY" > /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
   - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
   - cp sites.yaml temp/sites.yaml
   - cp -r image/* temp/image
