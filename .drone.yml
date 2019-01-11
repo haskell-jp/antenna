@@ -5,8 +5,30 @@ clone:
   depth: 5
 
 steps:
+- name: clone gh-pages
+  image: docker:git
+  environment:
+    SSH_KEY:
+      from_secret: deploy_key
+  commands:
+  - mkdir /root/.ssh && echo "$SSH_KEY" > /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
+  - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
+  when:
+    branch: drone
+
 - name: exec antenna
   image: matsubara0507/antenna
+  commands:
+  - cp sites.yaml temp/sites.yaml
+  - cp -r image/* temp/image
+  - cd temp
+  - antenna sites.yaml
+  when:
+    branch: drone
+
+- name: push gh-pages
+  image: docker:git
   environment:
     GIT_NAME: BOT
     SSH_KEY:
@@ -14,11 +36,7 @@ steps:
   commands:
   - mkdir /root/.ssh && echo "$SSH_KEY" > /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
-  - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
-  - cp sites.yaml temp/sites.yaml
-  - cp -r image/* temp/image
   - cd temp
-  - antenna sites.yaml
   - git config --global user.name "$GIT_NAME"
   - git status
   - git add -A
