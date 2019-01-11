@@ -20,7 +20,7 @@ steps:
 - name: exec antenna
   image: matsubara0507/antenna
   commands:
-  - git clone -b gh-pages git@github.com/haskell-jp/antenna.git temp
+  - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
   - cp sites.yaml temp/sites.yaml
   - cp -r image/* temp/image
   - cd temp
