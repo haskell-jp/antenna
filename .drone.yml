@@ -38,7 +38,8 @@ steps:
   - mkdir /root/.ssh && echo "$SSH_KEY" > /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
   - cd temp
-  - git config --global user.name "$GIT_NAME"
+  - git config user.name  BOT
+  - git config user.email bot@example.com
   - git status
   - git add -A
   - git diff --quiet && git diff --staged --quiet || git commit -am "[skip ci] Update planet haskell. See https://haskell.jp/antenna/ for new entries!"
