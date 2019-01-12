@@ -20,7 +20,7 @@ steps:
       exclude: pull_request
 
 - name: exec antenna
-  image: matsubara0507/antenna
+  image: haskelljp/antenna
   commands:
   - cp sites.yaml temp/sites.yaml
   - cp -r image/* temp/image
