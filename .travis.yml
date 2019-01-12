@@ -22,5 +22,6 @@ jobs:
     - stage: push docker image
       if: branch = master
       script:
-       - stack --docker image container
-       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - stack --docker image container
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker push haskelljp/antenna
