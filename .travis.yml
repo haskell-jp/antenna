@@ -1,4 +1,6 @@
-sudo: false
+sudo: required
+services:
+  - docker
 language: generic
 cache:
   timeout: 360
@@ -10,20 +12,17 @@ install:
 - mkdir -p ~/.local/bin
 - export PATH=$HOME/.local/bin:$PATH
 - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+- stack docker pull
 jobs:
   include:
-    - stage: install anttena
-      script: stack --no-terminal install
-    - stage: exec antenna
-      script: git clone -b gh-pages "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" temp
-      if: branch = master AND type IN (push, cron)
-      after_success:
-        - cp sites.yaml temp/sites.yaml
-        - cp -r image/* temp/image
-        - cd temp
-        - stack exec -- antenna sites.yaml
-        - git config user.name "${GIT_NAME}"
-        - git status
-        - git add -A
-        - git diff --quiet && git diff --staged --quiet || git commit -am "[skip ci] Update planet haskell. See https://haskell.jp/antenna/ for new entries!"
-        - git push origin gh-pages
+    - stage: build dependencies
+      script: stack --no-terminal --docker --install-ghc test --bench --only-dependencies
+    - stage: build antenna
+      script: stack --no-terminal --docker build --bench --no-run-benchmarks --no-haddock-deps --pedantic
+    - stage: push docker image
+      if: branch = master AND type = push
+      script:
+      - stack --docker image container
+      - docker tag antenna haskelljp/antenna
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker push haskelljp/antenna
