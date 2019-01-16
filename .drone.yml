@@ -6,14 +6,14 @@ clone:
 
 steps:
 - name: clone gh-pages
-  image: docker:git
-  environment:
-    SSH_KEY:
+  image: matsubara0507/git-with-ssh
+  setteings:
+    ssh-private-key:
       from_secret: deploy_key
-  commands:
-  - mkdir /root/.ssh && echo "$SSH_KEY" > /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
-  - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
+    hosts:
+    - github.com
+    commands:
+    - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
   when:
     branch:
     - master
@@ -32,20 +32,18 @@ steps:
 
 - name: push gh-pages
   image: docker:git
-  environment:
-    GIT_NAME: BOT
-    SSH_KEY:
+  setteings:
+    ssh-private-key:
       from_secret: deploy_key
-  commands:
-  - mkdir /root/.ssh && echo "$SSH_KEY" > /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > /root/.ssh/config
-  - cd temp
-  - git config user.name  BOT
-  - git config user.email bot@example.com
-  - git status
-  - git add -A
-  - git diff --quiet && git diff --staged --quiet || git commit -am "[skip ci] Update planet haskell. See https://haskell.jp/antenna/ for new entries!"
-  - git push origin gh-pages
+    hosts:
+    - github.com
+    commands:
+    - cd temp && git config user.name  BOT
+    - cd temp && git config user.email bot@example.com
+    - cd temp && git status
+    - cd temp && git add -A
+    - cd temp && git diff --quiet && git diff --staged --quiet || git commit -am "[skip ci] Update planet haskell. See https://haskell.jp/antenna/ for new entries!"
+    - cd temp && git push origin gh-pages
   when:
     branch:
     - master
