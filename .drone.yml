@@ -8,9 +8,9 @@ steps:
 - name: clone gh-pages
   image: matsubara0507/git-with-ssh
   settings:
-    ssh-private-key:
+    ssh_private_key:
       from_secret: deploy_key
-    hosts:
+    ssh_hosts:
     - github.com
     script:
     - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
@@ -34,9 +34,9 @@ steps:
 - name: push gh-pages
   image: matsubara0507/git-with-ssh
   settings:
-    ssh-private-key:
+    ssh_private_key:
       from_secret: deploy_key
-    hosts:
+    ssh_hosts:
     - github.com
     script:
     - cd temp && git config user.name  BOT
