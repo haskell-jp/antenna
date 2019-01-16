@@ -32,7 +32,7 @@ steps:
   - antenna sites.yaml
 
 - name: push gh-pages
-  image: docker:git
+  image: matsubara0507/git-with-ssh
   setteings:
     ssh-private-key:
       from_secret: deploy_key
