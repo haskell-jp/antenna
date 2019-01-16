@@ -16,6 +16,7 @@ steps:
     - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
   when:
     branch:
+    - git-with-ssh-plugin
     - master
     event:
       exclude:
@@ -46,6 +47,7 @@ steps:
     - cd temp && git push origin gh-pages
   when:
     branch:
+    - git-with-ssh-plugin
     - master
     event:
       exclude:
