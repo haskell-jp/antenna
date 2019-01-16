@@ -12,7 +12,7 @@ steps:
       from_secret: deploy_key
     hosts:
     - github.com
-    commands:
+    script:
     - git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp
   when:
     branch:
@@ -38,7 +38,7 @@ steps:
       from_secret: deploy_key
     hosts:
     - github.com
-    commands:
+    script:
     - cd temp && git config user.name  BOT
     - cd temp && git config user.email bot@example.com
     - cd temp && git status
