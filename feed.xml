@@ -1,4 +1,142 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-02-04T01:59:07+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/waddlaw/items/746765b2af929722baf5</id><title type="text">Haskellで10桁のISBNを13桁に変換する</title><updated>2019-02-04T01:59:07+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/746765b2af929722baf5"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html</id><title type="text">Re: Marp のすゝめ</title><updated>2019-02-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-02-04T01:59:07+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/waddlaw/items/746765b2af929722baf5</id><title type="text">Haskellで10桁のISBNを13桁に変換する</title><updated>2019-02-04T01:59:07+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/746765b2af929722baf5"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-04-endo-monoid.html</id><title type="text">Endo Monoid</title><updated>2019-02-04T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-04-endo-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:Endo&#34;&gt;Endo&lt;/a&gt; 型が定義されています。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Endo&lt;/code&gt; という名前は &lt;code&gt;自己準同型 (Endomorphism)&lt;/code&gt; に由来します。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; appEndo ::&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; g &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; g)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使い方は簡単。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; f &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [(&lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;), (&lt;span class=&#34;fu&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;), &lt;span class=&#34;fu&#34;&gt;negate&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; appEndo f &lt;span class=&#34;dv&#34;&gt;5&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;9&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; appEndo (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, &amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;!&amp;quot;&lt;/span&gt;)) &lt;span class=&#34;st&#34;&gt;&amp;quot;Haskell&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, Haskell!&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;appEndo&lt;/code&gt; すると関数が出てくるところがポイントですね。2つ目の評価の流れをざっくり追うとこんな感じです。&lt;/p&gt;
+&lt;pre class=&#34;haskll&#34;&gt;&lt;code&gt;  appEndo (Endo (&amp;quot;Hello, &amp;quot; ++) &amp;lt;&amp;gt; Endo (++ &amp;quot;!&amp;quot;)) &amp;quot;Haskell&amp;quot;
+= appEndo (Endo ((&amp;quot;Hello, &amp;quot; ++ ) . (++ &amp;quot;!&amp;quot;))) &amp;quot;Haskell&amp;quot;
+= (&amp;quot;Hello, &amp;quot; ++ ) . (++ &amp;quot;!&amp;quot;) $ &amp;quot;Haskell&amp;quot;
+= &amp;quot;Hello, &amp;quot; ++ (&amp;quot;Haskell&amp;quot; ++ &amp;quot;!&amp;quot;)
+= &amp;quot;Hello, &amp;quot; ++ &amp;quot;Haskell!&amp;quot;
+= &amp;quot;Hello, Haskell!&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;appEndo&lt;/code&gt; は意外と色んなところで使える便利なモノイドです。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;semigroup-monoid-law-の確認&#34;&gt;Semigroup, Monoid law の確認&lt;/h2&gt;
+&lt;p&gt;Semigroup Law&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; g &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; h)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (g &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; h)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; (g &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; h))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- Category の定義より f . (g . h) == (f . g) . h&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; ((f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; g) &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; h)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; g) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; h&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; g) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; h&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Monoid Law&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- Category の定義より f . id == f&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;  (&lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; f)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- Category の定義より id . f == f&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;f-.-g-.-h-f-.-g-.-h&#34;&gt;&lt;code&gt;f . (g . h) == (f . g) . h&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;(.)&lt;/code&gt; の定義&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;(.) ::&lt;/span&gt; (b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; g &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f (g x)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;証明&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;(&lt;span class=&#34;dt&#34;&gt;LHS&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;  f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; (g &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; h)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f ((g &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; h) x)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f ((\y &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; g (h y)) x)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f (g (h x))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-7&#34; title=&#34;7&#34;&gt;(&lt;span class=&#34;dt&#34;&gt;RHS&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-8&#34; title=&#34;8&#34;&gt;  (f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; g) &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; h&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (f &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; g) (h x)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (\y &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f (g y)) (h x)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f (g (h x))&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;id-.-f-f&#34;&gt;&lt;code&gt;id . f == f&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;id&lt;/code&gt; の定義&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; x &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; x&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;証明&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; f&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; (f x)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f x&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;例1-write-endo-パターン&#34;&gt;例1) Write Endo パターン&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/yesod-core&#34;&gt;yesod-core&lt;/a&gt; パッケージの &lt;a href=&#34;https://hackage.haskell.org/package/yesod-core-1.6.11/docs/Yesod-Core-Handler.html#t:ProvidedRep&#34;&gt;ProvideRep&lt;/a&gt; を扱う関数は &lt;code&gt;Endo&lt;/code&gt; を利用しています。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;selectRep ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadHandler&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Writer&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;ProvidedRep&lt;/span&gt; m]) () &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m &lt;span class=&#34;dt&#34;&gt;TypedContent&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;provideRep ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Monad&lt;/span&gt; m, &lt;span class=&#34;dt&#34;&gt;HasContentType&lt;/span&gt; a) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; m a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Writer&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;ProvidedRep&lt;/span&gt; m]) ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;provideRepType ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Monad&lt;/span&gt; m, &lt;span class=&#34;dt&#34;&gt;ToContent&lt;/span&gt; a) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ContentType&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Writer&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;ProvidedRep&lt;/span&gt; m]) ()&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;また &lt;code&gt;Yesod&lt;/code&gt; には &lt;a href=&#34;https://hackage.haskell.org/package/yesod-core-1.6.11/docs/Yesod-Core-Types.html#t:GHState&#34;&gt;GHState&lt;/a&gt; 型がありますが、そこでも &lt;code&gt;Endo&lt;/code&gt; を使っています。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHState&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHState&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; title=&#34;2&#34;&gt;    {&lt;span class=&#34;ot&#34;&gt; ghsSession ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;SessionMap&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; title=&#34;3&#34;&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsRBC     ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;(&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RequestBodyContents&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; title=&#34;4&#34;&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsIdent   ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; title=&#34;5&#34;&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsCache   ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;TypeMap&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; title=&#34;6&#34;&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsCacheBy ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;KeyedTypeMap&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-7&#34; title=&#34;7&#34;&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsHeaders ::&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;!&lt;/span&gt;(&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Header&lt;/span&gt;])&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-8&#34; title=&#34;8&#34;&gt;    }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;このような &lt;code&gt;Writer&lt;/code&gt; と &lt;code&gt;Endo&lt;/code&gt; を使った実装パターンは &lt;a href=&#34;https://ocharles.org.uk/blog/posts/2013-02-12-quick-dsls-with-endo-writers.html&#34;&gt;Quick and Easy DSLs with Writer Endo&lt;/a&gt; で紹介されている &lt;code&gt;Writer Endo&lt;/code&gt; パターンとして知られているようです。&lt;/p&gt;
+&lt;h2 id=&#34;例2-データの更新&#34;&gt;例2) データの更新&lt;/h2&gt;
+&lt;p&gt;こんな感じで設定等を更新する際にも使えるかもしれません。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb12&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE DataKinds        #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE OverloadedLabels #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE TypeOperators    #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Control.Lens&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Extensible&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Monoid&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-8&#34; title=&#34;8&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Record&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-10&#34; title=&#34;10&#34;&gt;  &amp;#39;[ &lt;span class=&#34;st&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-11&#34; title=&#34;11&#34;&gt;   , &lt;span class=&#34;st&#34;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;  &lt;span class=&#34;fu&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-12&#34; title=&#34;12&#34;&gt;   ]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-13&#34; title=&#34;13&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-14&#34; title=&#34;14&#34;&gt;&lt;span class=&#34;ot&#34;&gt;update ::&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt;] &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-15&#34; title=&#34;15&#34;&gt;update fs &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; appEndo (&lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; fs)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-16&#34; title=&#34;16&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-17&#34; title=&#34;17&#34;&gt;&lt;span class=&#34;ot&#34;&gt;me ::&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-18&#34; title=&#34;18&#34;&gt;me &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-19&#34; title=&#34;19&#34;&gt;  [ (&lt;span class=&#34;fu&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;#&lt;/span&gt;name &lt;span class=&#34;fu&#34;&gt;.~&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;guchi&amp;quot;&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-20&#34; title=&#34;20&#34;&gt;  , (&lt;span class=&#34;fu&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;#&lt;/span&gt;age &lt;span class=&#34;fu&#34;&gt;.~&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;20&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-21&#34; title=&#34;21&#34;&gt;  ]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-22&#34; title=&#34;22&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-23&#34; title=&#34;23&#34;&gt;&lt;span class=&#34;ot&#34;&gt;defaultPerson ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-24&#34; title=&#34;24&#34;&gt;defaultPerson &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;#&lt;/span&gt;name &lt;span class=&#34;fu&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;NONAME&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-25&#34; title=&#34;25&#34;&gt;             &lt;span class=&#34;fu&#34;&gt;&amp;lt;:&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;#&lt;/span&gt;age  &lt;span class=&#34;fu&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-26&#34; title=&#34;26&#34;&gt;             &lt;span class=&#34;fu&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行結果&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; title=&#34;1&#34;&gt;λ&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; stack repl &lt;span class=&#34;co&#34;&gt;--package extensible --package lens EndoExample.hs&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-3&#34; title=&#34;3&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; defaultPerson&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-4&#34; title=&#34;4&#34;&gt;name &lt;span class=&#34;fu&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;NONAME&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;:&lt;/span&gt; age &lt;span class=&#34;fu&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-6&#34; title=&#34;6&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; update me defaultPerson&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-7&#34; title=&#34;7&#34;&gt;name &lt;span class=&#34;fu&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;guchi&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;:&lt;/span&gt; age &lt;span class=&#34;fu&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;例3-パターンマッチの実装&#34;&gt;例3) パターンマッチの実装&lt;/h2&gt;
+&lt;p&gt;僕はあまり &lt;code&gt;Endo&lt;/code&gt; モノイドを使いこなせていませんが、良い感じに使えたと思える例としては TAPL 11章でレコードパターンを実装する際です。&lt;/p&gt;
+&lt;p&gt;レコードのパターンマッチは代入の合成で書くことができるので、&lt;code&gt;Endo&lt;/code&gt; がちょうどぴったり適用できました。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb14&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;match ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Pattern&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Value&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Term&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Term&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-2&#34; title=&#34;2&#34;&gt;match (&lt;span class=&#34;dt&#34;&gt;PtVar&lt;/span&gt; _ n) v &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; subst n v&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-3&#34; title=&#34;3&#34;&gt;match p&lt;span class=&#34;fu&#34;&gt;@&lt;/span&gt;(&lt;span class=&#34;dt&#34;&gt;PtRecord&lt;/span&gt; fs) v&lt;span class=&#34;fu&#34;&gt;@&lt;/span&gt;(&lt;span class=&#34;dt&#34;&gt;TmRecord&lt;/span&gt; fs&amp;#39;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; isRecordValue v &lt;span class=&#34;fu&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sameFieldLength p v&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-5&#34; title=&#34;5&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; appEndo &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;uncurry&lt;/span&gt; match) &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;zip&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;snd&lt;/span&gt; fs) (&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;snd&lt;/span&gt; fs&amp;#39;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;otherwise&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;match: pattern match failure&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-7&#34; title=&#34;7&#34;&gt;match &lt;span class=&#34;dt&#34;&gt;PtRecord&lt;/span&gt;{} _ &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;match: v is not Rrcord&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.schoolofhaskell.com/user/mgsloan/monoids-tour&#34;&gt;Monoids Tour&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ocharles.org.uk/blog/posts/2013-02-12-quick-dsls-with-endo-writers.html&#34;&gt;Quick and Easy DSLs with Writer Endo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.ploeh.dk/2018/04/16/endomorphic-composite-as-a-monoid/&#34;&gt;Endomorphic Composite as a monoid&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html</id><title type="text">Re: Marp のすゝめ</title><updated>2019-02-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Re: Marp のすゝめ&lt;/h1&gt;
@@ -5964,288 +6102,7 @@ wado: access (2018-08-26 14:04:07.133389916 JST)&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;Reader とかと組み合わせるとオシャレ&lt;/li&gt;
 &lt;li&gt;GHC の &lt;code&gt;missing-fields&lt;/code&gt; 警告は絶対に無視しない (実行時エラーが発生する可能性がある)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/23/211858</id><title type="text">詳解！ Elm における Fuzzing</title><updated>2018-08-23T21:18:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/23/211858"/><summary type="html">先日行われた We Are JavaScripters! @23rd で、Elm のテストフレームワーク elm-test に搭載されている Fuzzing 機能について発表してきました。 Fuzzing を利用するとテストデータを自動で生成することができるため、例えば「encode と decode を行うと元に戻る」といった、入力に依存しない 関数の性質に関するテスト をより簡単かつ効率的に実装することができます。 さらに、後で詳しく解説する通り、elm-test の Fuzzer にはバグが起こりやすいエッジケースを集中的に生成してくれるというメリットもあります。 elm-test の使…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/08-21-path-and-path-io.html</id><title type="text">path ＆ path-io パッケージ</title><updated>2018-08-21T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/08-21-path-and-path-io.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;Haskell でファイルやディレクトリを扱うプログラムを書く時によく使うパッケージとして &lt;a href=&#34;https://www.stackage.org/lts-12.7/package/filepath-1.4.2&#34;&gt;filepath&lt;/a&gt; パッケージや &lt;a href=&#34;https://www.stackage.org/lts-12.7/package/directory-1.3.1.5&#34;&gt;directory&lt;/a&gt; パッケージがあります。(Haskell入門の「4.4 ファイルシステム」に &lt;strong&gt;directory&lt;/strong&gt; パッケージの話が少し載っています。)&lt;/p&gt;
-&lt;p&gt;これらのパッケージは結局のところただの文字列操作なので、バグを出さないためにはパッケージ利用者がかなり注意深く使わなければなりません。&lt;/p&gt;
-&lt;p&gt;例えば、以下のようなパスは型レベルでは同じ文字列 (&lt;strong&gt;FilePath&lt;/strong&gt;) ですが&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- 相対パス&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;pathRel ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;pathRel &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;./&lt;/span&gt;aaa&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;bbb&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;ccc&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- 絶対パス&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;ot&#34;&gt;pathAbs ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;pathAbs &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;home&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;user&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;aaa&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;bbb&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;ccc&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; title=&#34;8&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- ファイルへのパス&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;ot&#34;&gt;pathFile ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-11&#34; title=&#34;11&#34;&gt;pathFile &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;./&lt;/span&gt;aaa&lt;span class=&#34;fu&#34;&gt;/&lt;/span&gt;a&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;png&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-12&#34; title=&#34;12&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-13&#34; title=&#34;13&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- ディレクトリへのパス&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-14&#34; title=&#34;14&#34;&gt;&lt;span class=&#34;ot&#34;&gt;pathDir ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-15&#34; title=&#34;15&#34;&gt;pathDir &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;./&lt;/span&gt;aaa&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このように、&lt;strong&gt;FilePath&lt;/strong&gt; 型では&lt;strong&gt;相対パス&lt;/strong&gt;なのか&lt;strong&gt;絶対パス&lt;/strong&gt;なのか型レベルで判断する方法が無かったり、そもそもパスが&lt;strong&gt;ファイル&lt;/strong&gt;なのか&lt;strong&gt;ディレクトリ&lt;/strong&gt;なのかすらわからなかったりします。&lt;/p&gt;
-&lt;p&gt;今回紹介するのは、型レベルでこれらをちゃんと分類できるようにしている &lt;a href=&#34;https://github.com/commercialhaskell/path&#34;&gt;path&lt;/a&gt; と &lt;a href=&#34;https://github.com/mrkkrp/path-io&#34;&gt;path-io&lt;/a&gt; パッケージです。&lt;/p&gt;
-&lt;p&gt;型レベルで &lt;strong&gt;相対パス&lt;/strong&gt; or &lt;strong&gt;絶対パス&lt;/strong&gt; と &lt;strong&gt;ファイル&lt;/strong&gt; or &lt;strong&gt;ディレクトリ&lt;/strong&gt; を表現するため、不正な操作はコンパイル時にチェックできるようになります。&lt;/p&gt;
-&lt;p&gt;また、&lt;strong&gt;stack&lt;/strong&gt; の内部でも利用していたので、実用しても大丈夫だと思います。&lt;/p&gt;
-&lt;p&gt;パッケージのバージョンは以下のとおりです&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;path-0.6.1&lt;/li&gt;
-&lt;li&gt;path-io-1.3.3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;まだまだ更新が活発なパッケージなので、path-0.7 では破壊的変更を含む更新があるようです。(&lt;a href=&#34;https://github.com/commercialhaskell/path/blob/master/CHANGELOG&#34;&gt;CHANGELOG&lt;/a&gt;)&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;path-パッケージ&#34;&gt;path パッケージ&lt;/h2&gt;
-&lt;p&gt;ドキュメントが充実しているので &lt;a href=&#34;https://github.com/commercialhaskell/path/blob/master/README.md&#34;&gt;Readme&lt;/a&gt; を読めば使い方はすぐにわかると思います。&lt;/p&gt;
-&lt;h3 id=&#34;データ型&#34;&gt;データ型&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Path&lt;/code&gt; の型は &lt;code&gt;FilePath&lt;/code&gt; を幽霊型 (Phantom type) を使ってラップしているだけです。(幽霊型については &lt;a href=&#34;https://qiita.com/nobkz/items/5926257a375a4a181dde&#34;&gt;ElmでPhantom Type (幽霊型)入門&lt;/a&gt; や &lt;a href=&#34;https://qiita.com/HirotoShioi/items/3444e215070144b8ca0f&#34;&gt;で、出たー！幽霊型だー！(Phantom Type)&lt;/a&gt; などが日本語のわかりやすい解説だと思います)&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b t &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Data&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Typeable&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Generic&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ここで2つの型変数の意味は以下の通りです。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;b&lt;/code&gt; - 相対パス or 絶対パス&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;t&lt;/code&gt; - ファイル or ディレクトリ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;型変数 &lt;code&gt;b&lt;/code&gt; は実際には以下の型のどちらかを取ります。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Typeable&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Typeable&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;同様に型変数 &lt;code&gt;t&lt;/code&gt; は以下の型を取ります。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Typeable&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Typeable&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;具体的なパスの型は以下の4種類のどれかになります。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;-- ファイルへの絶対パス&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;  &lt;span class=&#34;co&#34;&gt;-- ディレクトリへの絶対パス&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;-- ファイルへの相対パス&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;  &lt;span class=&#34;co&#34;&gt;-- ディレクトリへの相対パス&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;型を見るだけでどんなパスなのか一目瞭然なので、めっちゃ良いですね。&lt;/p&gt;
-&lt;h3 id=&#34;値の作り方&#34;&gt;値の作り方&lt;/h3&gt;
-&lt;p&gt;型については説明したので、次は実際に &lt;code&gt;Path&lt;/code&gt; 型の値を作っていきましょう！&lt;/p&gt;
-&lt;h4 id=&#34;パースする方法&#34;&gt;パースする方法&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;Path&lt;/code&gt; 型は4種類あるので、パーズする関数も4種類あります。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseAbsDir  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseRelDir  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseAbsFile ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseRelFile ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;MonadThrow m&lt;/code&gt; がついていますが、この &lt;code&gt;m&lt;/code&gt; は &lt;code&gt;IO&lt;/code&gt; だと思えば以下の型と同じですし&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseAbsDir  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseRelDir  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseAbsFile ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseRelFile ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Maybe&lt;/code&gt; であれば、以下の型と同じです。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseAbsDir  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseRelDir  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseAbsFile ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Abs&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseRelFile ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;難しいことはあまり気にせず、(&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.7/exceptions-0.10.0/Control-Monad-Catch.html#t:MonadThrow&#34;&gt;MonadThrow&lt;/a&gt; 型クラスのインスタンスになっている) 色んなモナドで使えるんだなと思えば良いと思います。&lt;/p&gt;
-&lt;p&gt;実際に &lt;code&gt;ghci&lt;/code&gt; を使って動作を確認してみましょう！&lt;/p&gt;
-&lt;pre class=&#34;shel&#34;&gt;&lt;code&gt;$ stack repl --package path
-&amp;gt; import Path
-
-# 型のチェック
-&amp;gt; :t parseAbsDir &amp;quot;/&amp;quot;
-parseAbsDir &amp;quot;/&amp;quot; :: MonadThrow m =&amp;gt; m (Path Abs Dir)
-&amp;gt; :t parseAbsDir &amp;quot;./&amp;quot;
-parseAbsDir &amp;quot;./&amp;quot; :: MonadThrow m =&amp;gt; m (Path Abs Dir)
-
-# IO モナドの文脈
-&amp;gt; parseAbsDir &amp;quot;/&amp;quot;
-&amp;quot;/&amp;quot;
-&amp;gt; parseAbsDir &amp;quot;./&amp;quot;
-*** Exception: InvalidAbsDir &amp;quot;./&amp;quot;
-
-# Maybe モナドの文脈
-&amp;gt; parseAbsDir &amp;quot;/&amp;quot; :: Maybe (Path Abs Dir)
-Just &amp;quot;/&amp;quot;
-&amp;gt; parseAbsDir &amp;quot;./&amp;quot; :: Maybe (Path Abs Dir)
-Nothing
-
-# 以下のような &amp;quot;../&amp;quot; を含むパスはパーズできない
-&amp;gt; parseAbsDir &amp;quot;./../a/b/&amp;quot;
-*** Exception: InvalidAbsDir &amp;quot;./../a/b/&amp;quot;
-&amp;gt; parseRelDir &amp;quot;./../a/b/&amp;quot;
-*** Exception: InvalidAbsDir &amp;quot;./../a/b/&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;これで文字列から &lt;code&gt;Path&lt;/code&gt; 型に変換する方法がわかりましたね！結構簡単です。&lt;/p&gt;
-&lt;h4 id=&#34;template-haskell-quasiquotes&#34;&gt;Template Haskell &amp;amp; QuasiQuotes&lt;/h4&gt;
-&lt;p&gt;コンパイル時にすでにファイルパスが決まっている時はテンプレートHaskellや準クォートを使うこともできます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt;(mkAbsDir &lt;span class=&#34;st&#34;&gt;&amp;quot;/home/chris&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt;(mkRelDir &lt;span class=&#34;st&#34;&gt;&amp;quot;chris&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt;(mkAbsFile &lt;span class=&#34;st&#34;&gt;&amp;quot;/home/chris/x.txt&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt;(mkRelFile &lt;span class=&#34;st&#34;&gt;&amp;quot;chris/x.txt&amp;quot;&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; title=&#34;1&#34;&gt;[absdir|/home/chris|]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; title=&#34;2&#34;&gt;[reldir|chris|]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; title=&#34;3&#34;&gt;[absfile|/home/chris/x.txt|]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; title=&#34;4&#34;&gt;[relfile|chris/x.txt|]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これで不正なパスはコンパイル時エラーとなるため、かなり安全ですね。&lt;/p&gt;
-&lt;h3 id=&#34;path-から-filepath-への変換&#34;&gt;Path から FilePath への変換&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Path&lt;/code&gt; 型の値を &lt;code&gt;FilePath&lt;/code&gt; に変換するためには &lt;code&gt;toFilePath&lt;/code&gt; 関数を利用します。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; toFilePath &amp;lt;$&amp;gt; parseRelDir &amp;quot;./a/b&amp;quot;
-&amp;quot;a/b/&amp;quot;
-
-&amp;gt; toFilePath &amp;lt;$&amp;gt; parseRelDir &amp;quot;./a/b/&amp;quot;
-&amp;quot;a/b/&amp;quot;
-
-&amp;gt; toFilePath &amp;lt;$&amp;gt; parseRelDir &amp;quot;./a////b//////&amp;quot;
-&amp;quot;a/b/&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;こんな感じで期待している文字列に変換されているか確かめることができます。&lt;/p&gt;
-&lt;h3 id=&#34;パスの等価性&#34;&gt;パスの等価性&lt;/h3&gt;
-&lt;p&gt;2つの &lt;code&gt;Path&lt;/code&gt; の等しさは単純に文字列の等価性として定義されています。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b t) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; title=&#34;2&#34;&gt;  (&lt;span class=&#34;fu&#34;&gt;==&lt;/span&gt;) (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; x) (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; y) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; x &lt;span class=&#34;fu&#34;&gt;==&lt;/span&gt; y&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;実際にいくつか試してみます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; (==) &amp;lt;$&amp;gt; parseRelDir &amp;quot;./a/b&amp;quot; &amp;lt;*&amp;gt; parseRelDir &amp;quot;./a/b&amp;quot;
-True
-
-&amp;gt; (==) &amp;lt;$&amp;gt; parseRelDir &amp;quot;./a/b&amp;quot; &amp;lt;*&amp;gt; parseRelDir &amp;quot;./a/b/c&amp;quot;
-False
-
-&amp;gt; (==) &amp;lt;$&amp;gt; parseRelDir &amp;quot;./a/b&amp;quot; &amp;lt;*&amp;gt; parseRelDir &amp;quot;./a/b/&amp;quot;
-True&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;パスの操作&#34;&gt;パスの操作&lt;/h3&gt;
-&lt;p&gt;関数と実行結果のみを紹介していきます。&lt;/p&gt;
-&lt;h4 id=&#34;つのパスの結合&#34;&gt;2つのパスの結合&lt;/h4&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb15&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;(&amp;lt;/&amp;gt;) ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; t &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b t&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;第一引数は &lt;strong&gt;Dir&lt;/strong&gt; で第二引数は &lt;strong&gt;Rel&lt;/strong&gt; が指定されている点に注意してください。そのため、第一引数にファイルへのパスを与えようとするとコンパイルエラーになります。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; (&amp;lt;/&amp;gt;) &amp;lt;$&amp;gt; parseRelDir &amp;quot;a/b/c&amp;quot; &amp;lt;*&amp;gt; parseRelFile &amp;quot;a.png&amp;quot;
-&amp;quot;a/b/c/a.png&amp;quot;
-
-&amp;gt; (&amp;lt;/&amp;gt;) &amp;lt;$&amp;gt; parseRelDir &amp;quot;a/b/c&amp;quot; &amp;lt;*&amp;gt; parseRelDir &amp;quot;d&amp;quot;
-&amp;quot;a/b/c/d/&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;パスの先頭部分からディレクトリパスを除去&#34;&gt;パスの先頭部分から、ディレクトリパスを除去&lt;/h4&gt;
-&lt;p&gt;Data.List の &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.7/base-4.11.1.0/Data-List.html#v:stripPrefix&#34;&gt;stripPrefix&lt;/a&gt; 関数と同じように利用できます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb17&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;stripProperPrefix ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b t &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; t)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; join $ stripProperPrefix &amp;lt;$&amp;gt; parseAbsDir &amp;quot;/usr/local/bin/&amp;quot; &amp;lt;*&amp;gt; parseAbsFile &amp;quot;/usr/local/bin/stack&amp;quot;
-&amp;quot;stack&amp;quot;
-
-&amp;gt; join $ stripProperPrefix &amp;lt;$&amp;gt; parseAbsDir &amp;quot;/local/bin/&amp;quot; &amp;lt;*&amp;gt; parseAbsFile &amp;quot;/usr/local/bin/stack&amp;quot;
-*** Exception: NotAProperPrefix &amp;quot;/local/bin/&amp;quot; &amp;quot;/usr/local/bin/stack&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;パスから親ディレクトリパスを取得&#34;&gt;パスから親ディレクトリパスを取得&lt;/h4&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb19&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb19-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parent ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b t &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parent &amp;lt;$&amp;gt; parseRelFile &amp;quot;ab&amp;quot;
-&amp;quot;./&amp;quot;
-
-&amp;gt; parent &amp;lt;$&amp;gt; parseRelFile &amp;quot;./a/b/c/d&amp;quot;
-&amp;quot;a/b/c/&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;ディレクトリパスから相対ディレクトリパスを取得&#34;&gt;ディレクトリパスから、相対ディレクトリパスを取得&lt;/h4&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb21&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;dirname ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dir&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; dirname &amp;lt;$&amp;gt; parseAbsDir &amp;quot;/a/b/c/d&amp;quot;
-&amp;quot;d/&amp;quot;
-
-&amp;gt; dirname &amp;lt;$&amp;gt; parseRelDir &amp;quot;./a/b/c/d&amp;quot;
-&amp;quot;d/&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;ファイルパスから相対ファイルパスを取得&#34;&gt;ファイルパスから相対ファイルパスを取得&lt;/h4&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb23&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;filename ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Rel&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; filename &amp;lt;$&amp;gt; parseAbsFile &amp;quot;/a/b/c/d.png&amp;quot;
-&amp;quot;d.png&amp;quot;
-
-&amp;gt; filename &amp;lt;$&amp;gt; parseRelFile &amp;quot;./a/b/c/d.png&amp;quot;
-&amp;quot;d.png&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;ファイルパスから拡張子を取得&#34;&gt;ファイルパスから拡張子を取得&lt;/h4&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb25&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb25-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;fileExtension ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; fileExtension &amp;lt;$&amp;gt; parseAbsFile &amp;quot;/a/b/c.png&amp;quot;
-&amp;quot;.png&amp;quot;
-
-&amp;gt; fileExtension &amp;lt;$&amp;gt; parseRelFile &amp;quot;a/b/c.png&amp;quot;
-&amp;quot;.png&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;ファイルパスに拡張子を追加&#34;&gt;ファイルパスに拡張子を追加&lt;/h4&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb27&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;addFileExtension ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- 演算子バージョンとして (&amp;lt;.&amp;gt;) が定義されている&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;(&amp;lt;.&amp;gt;) ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; join $ addFileExtension &amp;quot;hs&amp;quot; &amp;lt;$&amp;gt; parseAbsFile &amp;quot;/a/b/c&amp;quot;
-&amp;quot;/a/b/c.hs&amp;quot;
-
-&amp;gt; join $ addFileExtension &amp;quot;.hs&amp;quot; &amp;lt;$&amp;gt; parseAbsFile &amp;quot;/a/b/c&amp;quot;
-&amp;quot;/a/b/c.hs&amp;quot;
-
-&amp;gt; join $ addFileExtension &amp;quot;.hs&amp;quot; &amp;lt;$&amp;gt; parseRelFile &amp;quot;a/b/c&amp;quot;
-&amp;quot;a/b/c.hs&amp;quot;
-
-&amp;gt; join $ addFileExtension &amp;quot;.hs&amp;quot; &amp;lt;$&amp;gt; parseRelFile &amp;quot;a/b/c.rs&amp;quot;
-&amp;quot;a/b/c.rs.hs&amp;quot;
-
-&amp;gt; join $ (&amp;lt;.&amp;gt; &amp;quot;.hs&amp;quot;) &amp;lt;$&amp;gt; parseRelFile &amp;quot;a/b/c.rs&amp;quot;
-&amp;quot;a/b/c.rs.hs&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;既に拡張子があっても、追加する点に注意。&lt;/p&gt;
-&lt;h4 id=&#34;ファイルパスに拡張子を追加-既に拡張子がある場合は置き換える&#34;&gt;ファイルパスに拡張子を追加 (既に拡張子がある場合は置き換える)&lt;/h4&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb29&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb29-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;setFileExtension ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb29-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb29-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- 演算子バージョンとして (-&amp;lt;.&amp;gt;) が定義されている&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb29-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;(-&amp;lt;.&amp;gt;) ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadThrow&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m (&lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt; b &lt;span class=&#34;dt&#34;&gt;File&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; join $ setFileExtension &amp;quot;hs&amp;quot; &amp;lt;$&amp;gt; parseAbsFile &amp;quot;/a/b/c&amp;quot;
-&amp;quot;/a/b/c.hs&amp;quot;
-
-&amp;gt; join $ setFileExtension &amp;quot;.hs&amp;quot; &amp;lt;$&amp;gt; parseAbsFile &amp;quot;/a/b/c&amp;quot;
-&amp;quot;/a/b/c.hs&amp;quot;
-
-&amp;gt; join $ setFileExtension &amp;quot;.hs&amp;quot; &amp;lt;$&amp;gt; parseRelFile &amp;quot;a/b/c&amp;quot;
-&amp;quot;a/b/c.hs&amp;quot;
-
-&amp;gt; join $ setFileExtension &amp;quot;.hs&amp;quot; &amp;lt;$&amp;gt; parseRelFile &amp;quot;a/b/c.rs&amp;quot;
-&amp;quot;a/b/c.hs&amp;quot;
-
-&amp;gt; join $ (-&amp;lt;.&amp;gt; &amp;quot;.hs&amp;quot;) &amp;lt;$&amp;gt; parseRelFile &amp;quot;a/b/c.rs&amp;quot;
-&amp;quot;a/b/c.hs&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;path-io&#34;&gt;path-io&lt;/h2&gt;
-&lt;p&gt;ここまでで &lt;code&gt;Path&lt;/code&gt; 型の定義や値の作り方、操作する関数などを見てきました。&lt;/p&gt;
-&lt;p&gt;しかしながら、これだけでは実際にファイルを作ったり削除したりすることはできません。文字列に変換して &lt;code&gt;directory&lt;/code&gt; パッケージを利用することもできますが、やはり &lt;code&gt;Path&lt;/code&gt; 型のまま使いたいですよね。&lt;/p&gt;
-&lt;p&gt;そのためには &lt;a href=&#34;https://github.com/mrkkrp/path-io&#34;&gt;path-io&lt;/a&gt; パッケージを利用すると良いです。内部的には &lt;code&gt;directory&lt;/code&gt; パッケージを再利用していますが、&lt;code&gt;Path&lt;/code&gt; 型で使えるようにラップしてくれています。(また、便利な関数もいくつか追加されています)&lt;/p&gt;
-&lt;h3 id=&#34;サンプルプログラム&#34;&gt;サンプルプログラム&lt;/h3&gt;
-&lt;p&gt;例えばこんな感じで使えます。以下の例はコマンドライン引数から受け取った文字列に拡張子 &lt;code&gt;.hs&lt;/code&gt; を追加して適当な内容で保存し、最後にディレクトリを再帰的にコピーする例です。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb31&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;#!/usr/bin/env stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- stack script --resolver lts-12.7&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE TemplateHaskell #-}&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Path.IO&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Control.Monad&lt;/span&gt; (when)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;System.Environment&lt;/span&gt; (getArgs)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-12&#34; title=&#34;12&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-13&#34; title=&#34;13&#34;&gt;  args &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; getArgs&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-14&#34; title=&#34;14&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-15&#34; title=&#34;15&#34;&gt;  when (&lt;span class=&#34;fu&#34;&gt;length&lt;/span&gt; args &lt;span class=&#34;fu&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-16&#34; title=&#34;16&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; src  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt;(mkRelDir &lt;span class=&#34;st&#34;&gt;&amp;quot;./src&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-17&#34; title=&#34;17&#34;&gt;        dest &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt;(mkRelDir &lt;span class=&#34;st&#34;&gt;&amp;quot;./.backup&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-18&#34; title=&#34;18&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-19&#34; title=&#34;19&#34;&gt;    &lt;span class=&#34;co&#34;&gt;-- 安全にディレクトリを作成&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-20&#34; title=&#34;20&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;mapM_&lt;/span&gt; ensureDir [src, dest]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-21&#34; title=&#34;21&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-22&#34; title=&#34;22&#34;&gt;    rawName &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; parseRelFile &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;head&lt;/span&gt; args&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-23&#34; title=&#34;23&#34;&gt;    fn &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; (src &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; rawName) &lt;span class=&#34;fu&#34;&gt;-&amp;lt;.&amp;gt;&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hs&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-24&#34; title=&#34;24&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-25&#34; title=&#34;25&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;writeFile&lt;/span&gt; (toFilePath fn) &lt;span class=&#34;st&#34;&gt;&amp;quot;main :: IO ()\nmain = undefined\n&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-26&#34; title=&#34;26&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-27&#34; title=&#34;27&#34;&gt;    &lt;span class=&#34;co&#34;&gt;-- ディレクトリを再帰的にコピー&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb31-28&#34; title=&#34;28&#34;&gt;    copyDirRecur&amp;#39; src dest&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;実行結果&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ ./Sample.hs aaa
-
-$ tree -a .
-.
-├── .backup
-│   └── aaa.hs
-├── Sample.hs
-└── src
-    └── aaa.hs
-
-2 directories, 3 files
-
-$ cat src/aaa.hs
-main :: IO ()
-main = undefined
-
-$ cat .backup/aaa.hs
-main :: IO ()
-main = undefined&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;動いているようです。&lt;/p&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;filepath&lt;/code&gt; や &lt;code&gt;directory&lt;/code&gt; パッケージでは文字列の操作となってしまうため、コンパイル時に不正な利用方法をチェックできない&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;path&lt;/code&gt; や &lt;code&gt;path-io&lt;/code&gt; は幽霊型を使って不正な利用をコンパイル時にチェックする&lt;/li&gt;
-&lt;li&gt;実際に &lt;code&gt;stack&lt;/code&gt; でも利用されているパッケージ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2018/08/16/Windows_%E3%81%A7_haskell-ide-engine_%E3%82%92%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B</id><title type="text">Windows で haskell-ide-engine をビルドする</title><updated>2018-08-16T17:34:50+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2018/08/16/Windows_%E3%81%A7_haskell-ide-engine_%E3%82%92%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B"/><summary type="html">手順 1. ソースコード取得。 git clone git@github.com:haskell/haskell-ide-engine.git 2. Unicode を扱う ICU の古いバージョンが要るので取得。 自分の使うバージョンの text-icu の changelog を見て、必要な ICU のバージョンを探す。執筆時点では 53 だった。 http://site.icu-project.org/download/53#TOC-ICU4C-Download 任意の場所に展開する。以降、展開先の箇所を $icu と表記する。 $icu\bin64 にある dll の名前を変える。（要…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/01/055608</id><title type="text">July Tech Festa 2018 で分散システムの検証について話してきました / #JTF2018</title><updated>2018-08-01T13:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/01/055608"/><summary type="html">先日行われた July Tech Festa 2018 で、モデル検査を使った分散アルゴリズムの検証について発表してきました。 前半はオートマトンによるシステムの記述と検査の基礎について、後半は三種類のツール SPIN、TLA+、P による記述方法の紹介、といった内容です。 後半のソースコード紹介が散文的な感じになってしまって、いまいちメリットが伝わらない感じだったので、次回があればもっとエモいスライドにしようと思います。 分散アルゴリズムの形式化 定理証明による検証 今回の話の流れとして「分散システムにはモデル検査が有効」と述べていますが、必ずしも定理証明が分散システムの検証に向かないという…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html</id><title type="text">deriveJsonNoPrefixをリリースしました</title><updated>2018-07-18T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html"/><summary type="html">
+&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/23/211858</id><title type="text">詳解！ Elm における Fuzzing</title><updated>2018-08-23T21:18:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/23/211858"/><summary type="html">先日行われた We Are JavaScripters! @23rd で、Elm のテストフレームワーク elm-test に搭載されている Fuzzing 機能について発表してきました。 Fuzzing を利用するとテストデータを自動で生成することができるため、例えば「encode と decode を行うと元に戻る」といった、入力に依存しない 関数の性質に関するテスト をより簡単かつ効率的に実装することができます。 さらに、後で詳しく解説する通り、elm-test の Fuzzer にはバグが起こりやすいエッジケースを集中的に生成してくれるというメリットもあります。 elm-test の使…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2018/08/16/Windows_%E3%81%A7_haskell-ide-engine_%E3%82%92%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B</id><title type="text">Windows で haskell-ide-engine をビルドする</title><updated>2018-08-16T17:34:50+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2018/08/16/Windows_%E3%81%A7_haskell-ide-engine_%E3%82%92%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B"/><summary type="html">手順 1. ソースコード取得。 git clone git@github.com:haskell/haskell-ide-engine.git 2. Unicode を扱う ICU の古いバージョンが要るので取得。 自分の使うバージョンの text-icu の changelog を見て、必要な ICU のバージョンを探す。執筆時点では 53 だった。 http://site.icu-project.org/download/53#TOC-ICU4C-Download 任意の場所に展開する。以降、展開先の箇所を $icu と表記する。 $icu\bin64 にある dll の名前を変える。（要…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/01/055608</id><title type="text">July Tech Festa 2018 で分散システムの検証について話してきました / #JTF2018</title><updated>2018-08-01T13:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/01/055608"/><summary type="html">先日行われた July Tech Festa 2018 で、モデル検査を使った分散アルゴリズムの検証について発表してきました。 前半はオートマトンによるシステムの記述と検査の基礎について、後半は三種類のツール SPIN、TLA+、P による記述方法の紹介、といった内容です。 後半のソースコード紹介が散文的な感じになってしまって、いまいちメリットが伝わらない感じだったので、次回があればもっとエモいスライドにしようと思います。 分散アルゴリズムの形式化 定理証明による検証 今回の話の流れとして「分散システムにはモデル検査が有効」と述べていますが、必ずしも定理証明が分散システムの検証に向かないという…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html</id><title type="text">deriveJsonNoPrefixをリリースしました</title><updated>2018-07-18T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
