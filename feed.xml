@@ -1,4 +1,216 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-02-04T01:59:07+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/waddlaw/items/746765b2af929722baf5</id><title type="text">Haskellで10桁のISBNを13桁に変換する</title><updated>2019-02-04T01:59:07+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/746765b2af929722baf5"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-02-dual-monoid.html</id><title type="text">Dual Monoid</title><updated>2019-02-02T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-02-dual-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-02-04T01:59:07+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/waddlaw/items/746765b2af929722baf5</id><title type="text">Haskellで10桁のISBNを13桁に変換する</title><updated>2019-02-04T01:59:07+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/waddlaw/items/746765b2af929722baf5"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html</id><title type="text">Re: Marp のすゝめ</title><updated>2019-02-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Re: Marp のすゝめ&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2019-02-04&#34; itemprop=&#34;datePublished&#34;&gt;
+        Feb 4, 2019
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Marp.html&#34;&gt;Marp&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;&lt;a href=&#34;https://yhatt.github.io/marp/&#34;&gt;Marp&lt;/a&gt; というのは Markdown 記法で書けるスライド作成ツールです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Markdown 記法で手軽に書ける&lt;/li&gt;
+&lt;li&gt;見た目が綺麗&lt;/li&gt;
+&lt;li&gt;画像の拡縮が可能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;などの特徴から個人的にかなり重宝しています． その辺りは昔&lt;a href=&#34;/posts/2016-12-14-recommend-marp.html&#34;&gt;記事にしました&lt;/a&gt;．&lt;/p&gt;
+&lt;p&gt;しかし，現在 Marp は今後メンテナンスをしないという明言をし，新しくゼロから &lt;a href=&#34;https://github.com/marp-team/marp&#34;&gt;Marp Next&lt;/a&gt; というのを作っているようです． そのあたりの話は作者の記事にすこーしずつ書いてあります:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://yhatt.hatenablog.jp/entry/2017/02/27/markdown-it-incremental-dom_というプラグインを作ってます&#34;&gt;markdown-it-incremental-dom というプラグインを作ってます - YHATT (わいはっと)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/yhatt/items/874d5bfa919c32728403&#34;&gt;Puppeteer &amp;amp; Carlo を Markdown スライド作成 CLI ツール (Marp CLI) で活用する - Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;時折，リポジトリをチェックして更新がないかを見ていたのですが，いよいよ Web UI まで出来上がっているので，現状のを試しに使ってみることにしました，というメモです．&lt;/p&gt;
+&lt;h1 id=&#34;section&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;ちなみに，本記事での Marp Next のバージョンは &lt;code&gt;marp-cli-0.6&lt;/code&gt; ぐらいを想定しています(現在開発が活発なので既に古くなっているかも)．&lt;/p&gt;
+&lt;h2 id=&#34;marp-next&#34;&gt;Marp Next&lt;/h2&gt;
+&lt;p&gt;新しい Marp の大きな目的は，よりメンテナブルな設計になることのようで，旧 Marp と異なり，機能ごとに個別の JS パッケージとなっている:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th style=&#34;text-align: center;&#34;&gt;リポジトリ&lt;/th&gt;
+&lt;th&gt;備考&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marp&#34;&gt;marp-team/marp&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Marp 全体を取りまとめるリポジトリ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marpit&#34;&gt;Marpit&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Markdown からスライドの HTML へ変換する部分 (画像の拡縮などもココ)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marp-core&#34;&gt;Marp Core&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Markdown 以外の拡張構文 (e.g. LaTeX, Emoji, Embed HTML)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marp-cli&#34;&gt;Marp CLI&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Marp の CLI ツール&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marp-web&#34;&gt;Marp Web&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Marp の Web UI (まだベータっぽい)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;Marp Desktop&lt;/td&gt;
+&lt;td&gt;Marp Web を Electron でラップして Desktop アプリにしたいらしい (まだ無い)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;(どうでも良いですが，モノリポにした方良かったと思う… Marpit で更新があると全てのリポジトリで PR を出して更新する必要があるので…)&lt;/p&gt;
+&lt;p&gt;ちなみに，&lt;a href=&#34;https://github.com/yhatt/marp/issues?q=is%3Aopen+is%3Aissue+label%3A%22Supports+in+Marp+Next%22&#34;&gt;旧 Marp のリポジトリの Issue ラベルに &lt;code&gt;Marp Next&lt;/code&gt; や &lt;code&gt;Supports in Marp Next&lt;/code&gt; というのができている&lt;/a&gt;． 旧 Marp の Issue には，かなり要望っぽい Issue がたくさんあり，その中でも Marp Next では対応する予定のものには &lt;code&gt;Support in Marp Next&lt;/code&gt; を付けたようだ．&lt;/p&gt;
+&lt;h3 id=&#34;旧-marp-との非互換な機能&#34;&gt;旧 Marp との非互換な機能&lt;/h3&gt;
+&lt;p&gt;これらは旧 Marp ユーザーしか意味ないが，適当に書き連ねていおく:&lt;/p&gt;
+&lt;ol type=&#34;1&#34;&gt;
+&lt;li&gt;&lt;code&gt;==AAA==&lt;/code&gt; というハイライト機能がない（辛い）&lt;/li&gt;
+&lt;li&gt;打ち消し線記法 &lt;code&gt;~~AAA~~&lt;/code&gt; もない&lt;/li&gt;
+&lt;li&gt;画像の拡縮ルール (Marpit)
+&lt;ul&gt;
+&lt;li&gt;より&lt;a href=&#34;https://marpit.marp.app/image-syntax&#34;&gt;細かいルールができて&lt;/a&gt;書きやすくなった&lt;/li&gt;
+&lt;li&gt;しかし前のは記法は非互換&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;center&lt;/code&gt; がないので中央寄せができない&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;!-- *template: xxx --&amp;gt;&lt;/code&gt; のようなそのページだけ機能追加 (Marpit)
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;!-- _class: xxx --&amp;gt;&lt;/code&gt; のように先頭にアンダースコア &lt;code&gt;_&lt;/code&gt; を付けるスタイルになった&lt;/li&gt;
+&lt;li&gt;ちなみに &lt;code&gt;&amp;lt;!-- $theme: xxx --&amp;gt;&lt;/code&gt; はあるっぽい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;テーマの取り扱い (Marpit ??)
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#&lt;/code&gt; だけだと中央寄せなどになっていた機能がなくなった&lt;/li&gt;
+&lt;li&gt;それらはテーマのイチ &lt;code&gt;class&lt;/code&gt; となっている&lt;/li&gt;
+&lt;li&gt;前の &lt;code&gt;template&lt;/code&gt; も &lt;code&gt;class&lt;/code&gt; なので組み合わせれない&lt;/li&gt;
+&lt;li&gt;明示的に指定できるようになったのは嬉しい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;KaTeX のバージョンアップ (Marp Core)
+&lt;ul&gt;
+&lt;li&gt;0.6.0 =&amp;gt; 0.10.0&lt;/li&gt;
+&lt;li&gt;0.6.0 だと全然 LaTeX 記法をサポートしていないので&lt;a href=&#34;https://katex.org/docs/supported.html&#34;&gt;助かる&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;まぁ僕はフォークしてバージョンをあげてたけど&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;スライドのサイズ・縦横比 (Marpit)
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/marp-team/marpit/blob/9ab8e153e66db3a55e8edf9fec1356dd60ddf9e6/docs/theme-css.md#slide-size&#34;&gt;テーマごとになったぽい&lt;/a&gt;？&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marpit.marp.app/directives?id=tweak-theme-style&#34;&gt;&lt;code&gt;style&lt;/code&gt;&lt;/a&gt; で上書きすると変な余白ができる&lt;/li&gt;
+&lt;li&gt;どっちにせよ前の &lt;code&gt;&amp;lt;!-- size: 4:3 --&amp;gt;&lt;/code&gt; みたいなのはできないっぽい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ちなみに，コードが全部 CoffeScript から TypeScript になってた．&lt;/p&gt;
+&lt;h2 id=&#34;cli-を試す&#34;&gt;CLI を試す&lt;/h2&gt;
+&lt;p&gt;リッチすぎてビビる&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;README の通りで動いた (Mac, npx)
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;npx @marp-team/marp-cli slide.md&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/marpteam/marp-cli/&#34;&gt;Docker もサポートされてる&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;ただし一部機能に制限があるっぽい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Markdown から HTML を生成する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--pdf&lt;/code&gt; オプションで PDF を生成する
+&lt;ul&gt;
+&lt;li&gt;ただし &lt;strong&gt;&lt;a href=&#34;https://github.com/marp-team/marp-cli/pull/10&#34;&gt;セキュリティの関係&lt;/a&gt;でデフォルトではローカルファイルの画像などを埋め込めない&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;そのためローカル画像を使うには &lt;code&gt;--allow-local-files&lt;/code&gt; をつける&lt;/li&gt;
+&lt;li&gt;日本語フォントも変になっている気がする&lt;/li&gt;
+&lt;li&gt;日本語検索もダメっぽい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--watch&lt;/code&gt; オプションで Markdown の変更を検知し再生成する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--server&lt;/code&gt; オプションで &lt;code&gt;localhost:8080&lt;/code&gt; で閲覧やPDFの生成ができる (watch もされます)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--preview&lt;/code&gt; でプレビューモード
+&lt;ul&gt;
+&lt;li&gt;待望の！！&lt;/li&gt;
+&lt;li&gt;ブラウザの全画面モードを使ってるみたい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--theme&lt;/code&gt; でカスタムテーマを設定可能 (CSS)&lt;/li&gt;
+&lt;li&gt;CLI のオプションを使わずに&lt;a href=&#34;https://github.com/marp-team/marp-cli#configuration-file&#34;&gt;設定ファイルでも設定可能&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;package.json&lt;/code&gt; &lt;code&gt;.marprc.yml&lt;/code&gt; &lt;code&gt;marp.config.js&lt;/code&gt; のどれでも&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cli-netlify-を試す&#34;&gt;CLI + Netlify を試す&lt;/h2&gt;
+&lt;p&gt;試した:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/pub-slides&#34;&gt;matsubara0507/pub-slides - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://matsubara0507-slides.netlify.com/&#34;&gt;&lt;img src=&#34;/assets/re-recommend-marp/pub-slides-with-marp.jpg&#34; alt=&#34;image.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;試し方: Marp の作者の&lt;a href=&#34;https://github.com/yhatt/marp-cli-example&#34;&gt;リポジトリ&lt;/a&gt;の &lt;code&gt;Deploy to netlify&lt;/code&gt; をクリックするだけ．&lt;/p&gt;
+&lt;p&gt;この方法の場合，リポジトリの &lt;code&gt;PITCHME.md&lt;/code&gt; を &lt;code&gt;index.html&lt;/code&gt; に変換する． marp-cli の設定は &lt;code&gt;package.yml&lt;/code&gt; に書いてある． &lt;a href=&#34;https://github.com/marp-team/marp-cli#options&#34;&gt;設定方法&lt;/a&gt;はこれを参照．&lt;/p&gt;
+&lt;p&gt;僕はできれば，複数のスライドを一つのリポジトリに置きたかった． ので，僕のリポジトリでは:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;slides&lt;/code&gt; 以下の &lt;code&gt;*.md&lt;/code&gt; を全部変換
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;index.md&lt;/code&gt; が &lt;code&gt;index.html&lt;/code&gt; のスライドになる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;後述する自作テーマをサブモジュールで設定&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;slides/assets&lt;/code&gt; にある画像を &lt;code&gt;public&lt;/code&gt; にコピーしてる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;のように少しだけ設定を書き換えた．&lt;/p&gt;
+&lt;h2 id=&#34;web-ui-を試す&#34;&gt;Web UI を試す&lt;/h2&gt;
+&lt;p&gt;すでに&lt;a href=&#34;https://web.marp.app/&#34;&gt;ここ&lt;/a&gt;から試せる． 手元で試すなら:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/marp-team/marp-web.git
+cd marp-web
+yarn install
+yarn start&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;でできた．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/re-recommend-marp/editing_marp_next.jpg&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ファイルの読み込みや保存が可能&lt;/li&gt;
+&lt;li&gt;プレゼンテーションモードは(まだ)なかった&lt;/li&gt;
+&lt;li&gt;PDFのエクスポートはブラウザの印刷機能を使うようだった&lt;/li&gt;
+&lt;li&gt;カスタムテーマの設定などはまだできない？？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;テーマを移植する&#34;&gt;テーマを移植する&lt;/h2&gt;
+&lt;p&gt;オリジナルテーマを作ってたので Marp Next にも移植した:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;olive&lt;/li&gt;
+&lt;li&gt;colors&lt;/li&gt;
+&lt;li&gt;haskell&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/matsubara0507/marp-themes&#34;&gt;marp-themes&lt;/a&gt; というリポジトリを作り，そこに置いてある． やったことは:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/marp-team/marp-core/blob/26f2402d443d26af387adb0ee86cafa1149beb34/themes/gaia.scss&#34;&gt;gaia の scss&lt;/a&gt; を持ってきて主に色を変更
+&lt;ul&gt;
+&lt;li&gt;カスタムテーマとして指定できるのは CSS だけなので &lt;code&gt;scss&lt;/code&gt; コマンドで手動変換する&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;画像の中央寄せをできるようにした
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;# ![](path/to/image.jpg)&lt;/code&gt; とすると中央寄せになるようにした&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h1&lt;/code&gt; から &lt;code&gt;h6&lt;/code&gt; のどれでも良いです&lt;/li&gt;
+&lt;li&gt;ただし，雑に &lt;code&gt;img&lt;/code&gt; タグに適用してるので emoji を含ませるとずれる…&lt;/li&gt;
+&lt;li&gt;marpit に修正入れてもらった方が良いかな&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lead&lt;/code&gt; + &lt;code&gt;invert&lt;/code&gt; などの class を作っておいた
+&lt;ul&gt;
+&lt;li&gt;scss で書いてるので &lt;code&gt;lead&lt;/code&gt; を適当に mixi-in にして include するだけ&lt;/li&gt;
+&lt;li&gt;これもできれば &lt;code&gt;class&lt;/code&gt; の組み合わせができるようになって欲しい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;olive&#34;&gt;Olive&lt;/h3&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/797Uraln5Fo9gD&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;h3 id=&#34;colors&#34;&gt;Colors&lt;/h3&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/2kOvCIcUpOzKRg&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;h3 id=&#34;haskell&#34;&gt;Haskell&lt;/h3&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/kJqmkk54SJnaky&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;もう既に十分使える状態になっていました． すごい！&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-02-dual-monoid.html</id><title type="text">Dual Monoid</title><updated>2019-02-02T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-02-dual-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:Dual&#34;&gt;Dual&lt;/a&gt; 型が定義されています。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getDual ::&lt;/span&gt; a }&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
@@ -3814,92 +4026,7 @@ Benchmark splitcc-bench: FINISH&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;splitCC ≥ foldSplitCC&lt;/code&gt; の部分は &lt;code&gt;splitCC&lt;/code&gt; よりも &lt;code&gt;foldSplitCC&lt;/code&gt; 関数の方がパフォーマンスが向上していることを示しています。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;(1.00)&lt;/code&gt; は QuickCheck によって生成されたテストケースを入力として利用した時に全てのテストケース (&lt;code&gt;100%&lt;/code&gt;) で性能が改善されたという意味です。&lt;code&gt;0.5&lt;/code&gt; などとなっていた場合はテストケースによっては性能が向上していないということです。&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-11-04-create-mdium.html</id><title type="text">Markdownで書いたテキストをMediumへポストする(mdium)</title><updated>2018-11-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-11-04-create-mdium.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Markdownで書いたテキストをMediumへポストする(mdium)&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-11-04&#34; itemprop=&#34;datePublished&#34;&gt;
-        Nov 4, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/application.html&#34;&gt;application&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;完全な二番煎じです。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://namaraii.com/markdownで書いたテキストをmediumへポストする-md2mid-60c6ff9efde&#34;&gt;Markdownで書いたテキストをMediumへポストする(md2mid) – namaraii.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;上記記事は，Go 言語で作った「Markdownで書いたテキストをMediumへポストする」CLIツールです． 弊社の技術記事置き場が Medium だったので，なんとか，ここのように Markdown で書けないかと調べていたら上記記事が出て来ました． もっといいのできないかなと車輪の再発明してみたけど，正直大して変わらなかったと思います．&lt;/p&gt;
-&lt;h2 id=&#34;作ったもの&#34;&gt;作ったもの&lt;/h2&gt;
-&lt;p&gt;md2mid と同様に Markdown で書いた記事を Medium に送信する CLI ツールを作った． 言わずもがな Haskell 製．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/mdium&#34;&gt;matsubara0507/mdium - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;違いがあるとすれば:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Haskell 製（しつこい）&lt;/li&gt;
-&lt;li&gt;環境変数を使ったトークンの管理&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/matsubara0507/mdium/&#34;&gt;Docker Image&lt;/a&gt; 化してる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
-&lt;p&gt;まず CLI ツールをインストールするには，リポジトリをクローンして Haskell Stack で直接ビルド・インストールする:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/matsubara0507/mdium.git
-$ cd mdium
-$ stack install mdium&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;あるいは，Docker Image をプルしてくる:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ docker pull matsubara0507/mdium&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;コマンドを使うには，まず Medium のトークンを&lt;a href=&#34;https://medium.com/me/settings&#34;&gt;設定&lt;/a&gt;から生成する．&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/assets/create-mdium/generate-token.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;これを環境変数 &lt;code&gt;MEDIUM_TOKEN&lt;/code&gt; にセットする． 直接でも良いし，&lt;code&gt;./.env&lt;/code&gt; か &lt;code&gt;~/.env&lt;/code&gt; に描いても良い． 下記のコマンドを実行することでトークンをチェックできる:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ mdium --me
-Hi MATSUBARA Nobutada!!&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Docker イメージを使う場合にはこう:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ docker run --rm --env-file=&amp;quot;$HOME/.env&amp;quot; matsubara0507/mdium /bin/bash -c &amp;quot;mdium --me&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;トークンを渡すのは &lt;code&gt;--env-file&lt;/code&gt; オプションでも &lt;code&gt;-e&lt;/code&gt; オプションでも何でも良い． 実際に送信するには引数に送信したいファイルのパスを渡すだけ:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ medium example.md
-post success, browse to: https://medium.com/@nobutada/e31f70013b36&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;こうすることで指定した Markdown ファイルを draft として記事にしてくれる． ちなみに，&lt;a href=&#34;https://github.com/matsubara0507/mdium/blob/master/example/example.md&#34;&gt;これ&lt;/a&gt;が下記のようになる．&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://github.com/matsubara0507/mdium/raw/master/example/example.png&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;medium-api&#34;&gt;Medium API&lt;/h2&gt;
-&lt;p&gt;こっからは中身の話を少し． 中では Medium の API を使っている．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Medium/medium-api-docs#readme&#34;&gt;Medium’s API documentation - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;その中に記事を送信する API があるのだが，驚いたことに送信できるファイルフォーマットに HTML と &lt;strong&gt;Markdown&lt;/strong&gt; があったのだ． つまり，特別な処理をせずともこの API を使ってマークダウンを送信すれば良い．&lt;/p&gt;
-&lt;h2 id=&#34;dockerise&#34;&gt;Dockerise&lt;/h2&gt;
-&lt;p&gt;Haskell Stack には Docker integration というのがある（あんまりドキュメントにまとまっていない機能）． これを使うことで，指定した Docker image 内で Haskell プロジェクトをビルドしたり，ビルドした実行ファイルを突っ込んだ Docker image を作成したりできる．&lt;/p&gt;
-&lt;p&gt;今回は次のような設定を書き:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;docker:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;repo:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; fpco/stack-build&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;enable:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;false&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;container:&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-6&#34; title=&#34;6&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507/mdium&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-7&#34; title=&#34;7&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;base:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; fpco/ubuntu-with-libgmp&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;次のようなコマンドを実行することで Docker image を作成している:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ stack docker pull
-$ stack --docker image container&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;作成した Image は &lt;code&gt;docker push&lt;/code&gt; コマンドでアップロードしている． また，この一連の流れを TravisCI で自動化している．&lt;/p&gt;
-&lt;h2 id=&#34;todo&#34;&gt;ToDo&lt;/h2&gt;
-&lt;p&gt;突貫で作ったのでいくつかやり残しがある．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;エラーハンドリング : 特に何も例外処理していないので&lt;/li&gt;
-&lt;li&gt;記事の更新 : 今はひたすら新しい記事を生成してしまう&lt;/li&gt;
-&lt;li&gt;タグやファイルフォーマットなどの細かい指定&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
-&lt;p&gt;だいたい1日とちょっとでサクッと作った割にはいい感じのものができて満足． どんどん再発明していこ．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/10/31/150056</id><title type="text">「名前の束縛」という名の束縛</title><updated>2018-10-31T18:20:45+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/10/31/150056"/><summary type="html">実用的なプログラミングにおいて、名前と概念を結びつける「束縛」はほぼ必須の概念である。しかし、その言葉には大きな誤解と混乱が根付いていた。 事の発端となったのは「Haskellにおいては、変数は値を代入するものではなく、値に束縛するものである」という議論である*1 *2。しかし、これは大きな誤解を孕んでいる。言葉の定義に立ち返ってその誤解を解いていこう。 束縛とバインディング 実は「束縛」には二つの意味がある。一つは、数学的な意味での変数の束縛*3、もう一つは、識別子と実体の結合という意味での束縛*4だ。 前者は変数の導入と言い換えることもできる。ラムダ計算におけるラムダ抽象と変数の関係もこれ…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/05/17/180426</id><title type="text">Kubernetes Meetup Tokyo #10 で Pod の Preemption について話してきました</title><updated>2018-10-23T16:31:12+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/05/17/180426"/><summary type="html">だいぶ日が空いてしまって今更ですが、先日行われた Kubernetes Meetup Tokyo #10 で、v1.8*1 から導入された新機能 Preemption について発表してきました。 Preemption は、Kubernetes クラスタのリソースが不足した際に、優先度が低い Pod を追い出して優先度が高い Pod の稼働を保証する仕組みです。 当日は時間が不足気味だったので、説明不十分だったかなと思われる点についていくつか補足しておきます。 Priority の指定について スライド中では詳しく説明しませんでしたが、ユーザは直接 Pod（や Deployment 中の Pod…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html</id><title type="text">Stack 1.9.1 がリリースされました。</title><updated>2018-10-22T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;/ul&gt;</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/10/31/150056</id><title type="text">「名前の束縛」という名の束縛</title><updated>2018-10-31T18:20:45+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/10/31/150056"/><summary type="html">実用的なプログラミングにおいて、名前と概念を結びつける「束縛」はほぼ必須の概念である。しかし、その言葉には大きな誤解と混乱が根付いていた。 事の発端となったのは「Haskellにおいては、変数は値を代入するものではなく、値に束縛するものである」という議論である*1 *2。しかし、これは大きな誤解を孕んでいる。言葉の定義に立ち返ってその誤解を解いていこう。 束縛とバインディング 実は「束縛」には二つの意味がある。一つは、数学的な意味での変数の束縛*3、もう一つは、識別子と実体の結合という意味での束縛*4だ。 前者は変数の導入と言い換えることもできる。ラムダ計算におけるラムダ抽象と変数の関係もこれ…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/05/17/180426</id><title type="text">Kubernetes Meetup Tokyo #10 で Pod の Preemption について話してきました</title><updated>2018-10-23T16:31:12+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/05/17/180426"/><summary type="html">だいぶ日が空いてしまって今更ですが、先日行われた Kubernetes Meetup Tokyo #10 で、v1.8*1 から導入された新機能 Preemption について発表してきました。 Preemption は、Kubernetes クラスタのリソースが不足した際に、優先度が低い Pod を追い出して優先度が高い Pod の稼働を保証する仕組みです。 当日は時間が不足気味だったので、説明不十分だったかなと思われる点についていくつか補足しておきます。 Priority の指定について スライド中では詳しく説明しませんでしたが、ユーザは直接 Pod（や Deployment 中の Pod…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html</id><title type="text">Stack 1.9.1 がリリースされました。</title><updated>2018-10-22T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/10-22-stack-191.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;10月18日に Stack version 1.9.1 が&lt;a href=&#34;https://github.com/commercialhaskell/stack/blob/v1.9.1/ChangeLog.md#v191&#34;&gt;リリース&lt;/a&gt;されました。&lt;/p&gt;
 &lt;p&gt;更新は &lt;code&gt;stack upgrade&lt;/code&gt; コマンドを実行します。&lt;/p&gt;
 &lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack upgrade
