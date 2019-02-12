@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-02-12T06:53:40+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/kimagure/items/9b33a5fa48baf105abe4</id><title type="text">Making a simple Haskell CLI without anything fancy</title><updated>2019-02-12T06:53:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kimagure/items/9b33a5fa48baf105abe4"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-11-first-monoid.html</id><title type="text">First Monoid</title><updated>2019-02-11T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-11-first-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-02-12T06:53:40+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/kimagure/items/9b33a5fa48baf105abe4</id><title type="text">Making a simple Haskell CLI without anything fancy</title><updated>2019-02-12T06:53:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kimagure/items/9b33a5fa48baf105abe4"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-12-last-monoid.html</id><title type="text">Last Monoid</title><updated>2019-02-12T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-12-last-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:Last&#34;&gt;Last&lt;/a&gt; 型が定義されています。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getLast ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;  a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;  _ &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; b             &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; b&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;Last&lt;/code&gt; モノイドは &lt;code&gt;First&lt;/code&gt; モノイドとほとんど同じですが、&lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt; で結合した時に最後の値を返すという部分が異なります。&lt;/p&gt;
+&lt;p&gt;使い方は簡単。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getLast (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;semigroup-law-の確認&#34;&gt;Semigroup law の確認&lt;/h2&gt;
+&lt;h3 id=&#34;case-1-b-nothing-c-nothing&#34;&gt;Case (1) (b == Nothing, c == Nothing)&lt;/h3&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; title=&#34;1&#34;&gt;  (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;case-2-b-just-b-c-nothing&#34;&gt;Case (2) (b == Just b’, c == Nothing)&lt;/h3&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;  (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;case-3-c-just-c&#34;&gt;Case (3) (c == Just c’)&lt;/h3&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;  (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; c&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;monoid-law&#34;&gt;Monoid Law&lt;/h2&gt;
+&lt;h3 id=&#34;case-1-a-nothing&#34;&gt;Case (1) (a = Nothing)&lt;/h3&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&#34;case-2-a-just-a&#34;&gt;Case (2) (a = Just a’)&lt;/h3&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;具体例-partial-options-monoid&#34;&gt;具体例: Partial Options Monoid&lt;/h2&gt;
+&lt;p&gt;コマンドライン引数によりオプションを受け取り、指定されなかったオプションの値に対してはデフォルト値を利用するという場面で &lt;code&gt;Last&lt;/code&gt; モノイドが活用できそうです。&lt;/p&gt;
+&lt;h3 id=&#34;コード&#34;&gt;コード&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/optparse-applicative&#34;&gt;optparse-applicative&lt;/a&gt; を使った具体的なサンプルはこんな感じです。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE RecordWildCards #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt; (main) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Monoid&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options.Applicative&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-8&#34; title=&#34;8&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; oInputPath    ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-9&#34; title=&#34;9&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; oOutputPath   ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-10&#34; title=&#34;10&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; oLogLevel     ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-11&#34; title=&#34;11&#34;&gt;  } &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-12&#34; title=&#34;12&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-13&#34; title=&#34;13&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-14&#34; title=&#34;14&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; poInputPath  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-15&#34; title=&#34;15&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; poOutputPath ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-16&#34; title=&#34;16&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; poLogLevel   ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-17&#34; title=&#34;17&#34;&gt;  } &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-18&#34; title=&#34;18&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-19&#34; title=&#34;19&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-20&#34; title=&#34;20&#34;&gt;  x &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; y &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-21&#34; title=&#34;21&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-22&#34; title=&#34;22&#34;&gt;      { poInputPath  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; poInputPath  x &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; poInputPath  y&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-23&#34; title=&#34;23&#34;&gt;      , poOutputPath &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; poOutputPath x &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; poOutputPath y&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-24&#34; title=&#34;24&#34;&gt;      , poLogLevel   &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; poLogLevel   x &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; poLogLevel   y&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-25&#34; title=&#34;25&#34;&gt;      }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-26&#34; title=&#34;26&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-27&#34; title=&#34;27&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-28&#34; title=&#34;28&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-29&#34; title=&#34;29&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-30&#34; title=&#34;30&#34;&gt;&lt;span class=&#34;ot&#34;&gt;defaultPartialOptions ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-31&#34; title=&#34;31&#34;&gt;defaultPartialOptions &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-32&#34; title=&#34;32&#34;&gt;  { poInputPath  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;pure&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;input&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-33&#34; title=&#34;33&#34;&gt;  , poLogLevel   &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;pure&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-34&#34; title=&#34;34&#34;&gt;  }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-35&#34; title=&#34;35&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-36&#34; title=&#34;36&#34;&gt;&lt;span class=&#34;ot&#34;&gt;lastOption ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-37&#34; title=&#34;37&#34;&gt;lastOption &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;fmap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; optional&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-38&#34; title=&#34;38&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-39&#34; title=&#34;39&#34;&gt;&lt;span class=&#34;ot&#34;&gt;partialOptionsParser ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-40&#34; title=&#34;40&#34;&gt;partialOptionsParser &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-41&#34; title=&#34;41&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; lastOption (strOption (short &lt;span class=&#34;ch&#34;&gt;&amp;#39;i&amp;#39;&lt;/span&gt;))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-42&#34; title=&#34;42&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; lastOption (strOption (short &lt;span class=&#34;ch&#34;&gt;&amp;#39;o&amp;#39;&lt;/span&gt;))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-43&#34; title=&#34;43&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; lastOption (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; option auto (short &lt;span class=&#34;ch&#34;&gt;&amp;#39;l&amp;#39;&lt;/span&gt;))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-44&#34; title=&#34;44&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-45&#34; title=&#34;45&#34;&gt;&lt;span class=&#34;ot&#34;&gt;lastToEither ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Either&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-46&#34; title=&#34;46&#34;&gt;lastToEither errMsg &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Left&lt;/span&gt; errMsg) &lt;span class=&#34;dt&#34;&gt;Right&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; getLast&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-47&#34; title=&#34;47&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-48&#34; title=&#34;48&#34;&gt;&lt;span class=&#34;ot&#34;&gt;mkOptions ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Either&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-49&#34; title=&#34;49&#34;&gt;mkOptions &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; {&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;} &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-50&#34; title=&#34;50&#34;&gt;  oInputPath  &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; lastToEither &lt;span class=&#34;st&#34;&gt;&amp;quot;Missing input path&amp;quot;&lt;/span&gt;  poInputPath&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-51&#34; title=&#34;51&#34;&gt;  oOutputPath &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; lastToEither &lt;span class=&#34;st&#34;&gt;&amp;quot;Missing output path&amp;quot;&lt;/span&gt; poOutputPath&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-52&#34; title=&#34;52&#34;&gt;  oLogLevel   &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; lastToEither &lt;span class=&#34;st&#34;&gt;&amp;quot;Missing loglevel&amp;quot;&lt;/span&gt;    poLogLevel&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-53&#34; title=&#34;53&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt; {&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-54&#34; title=&#34;54&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-55&#34; title=&#34;55&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-56&#34; title=&#34;56&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-57&#34; title=&#34;57&#34;&gt;  options &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; execParser &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; info partialOptionsParser &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-58&#34; title=&#34;58&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; mkOptions (defaultPartialOptions &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; options) &lt;span class=&#34;kw&#34;&gt;of&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-59&#34; title=&#34;59&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;Left&lt;/span&gt;  msg &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;putStrLn&lt;/span&gt; msg&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-60&#34; title=&#34;60&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;Right&lt;/span&gt; opt &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt; opt&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;defaultPartialOptions&lt;/code&gt; でオプションの初期値を用意しておきます。ここで指定されなかったフィールドの値はオプションで必ず指定しなければなりません。今回の例では &lt;code&gt;poOutputPath&lt;/code&gt; が必須オプションになっています。&lt;/p&gt;
+&lt;p&gt;また &lt;code&gt;Last&lt;/code&gt; モノイドが効いている部分は &lt;code&gt;defaultPartialOptions &amp;lt;&amp;gt; options&lt;/code&gt; です。&lt;code&gt;mempty = Last Nothing&lt;/code&gt; となるため、期待通りの動作が得られます。&lt;/p&gt;
+&lt;p&gt;デフォルト値の無いオプションが省略された場合にエラーメッセージが表示される理由としては &lt;code&gt;lastToEither&lt;/code&gt; で &lt;code&gt;getLast&lt;/code&gt; した際に &lt;code&gt;Nothing&lt;/code&gt; となるためです。&lt;/p&gt;
+&lt;h3 id=&#34;実行結果&#34;&gt;実行結果&lt;/h3&gt;
+&lt;p&gt;実行結果は見やすく整形しています。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;# オプション無しで実行
+λ&amp;gt; stack run ex3
+Missing output path
+
+# 必須オプションの -o のみ指定 (他はデフォルト値)
+$ stack run ex3 -- -o &amp;quot;oDir&amp;quot;
+Options
+  { oInputPath  = &amp;quot;input&amp;quot;
+  , oOutputPath = &amp;quot;oDir&amp;quot;
+  , oLogLevel   = Nothing
+  }
+
+# 必須オプションの -o と -i を指定
+$ stack run ex3 -- -o &amp;quot;oDir&amp;quot; -i &amp;quot;myDir&amp;quot;
+Options
+  { oInputPath  = &amp;quot;myDir&amp;quot;
+  , oOutputPath = &amp;quot;oDir&amp;quot;
+  , oLogLevel   = Nothing
+  }
+
+# オプションを全部指定
+$ stack run ex3 -- -o &amp;quot;oDir&amp;quot; -i &amp;quot;myDir&amp;quot; -l 10
+Options
+  { oInputPath  = &amp;quot;myDir&amp;quot;
+  , oOutputPath = &amp;quot;oDir&amp;quot;
+  , oLogLevel   = Just 10
+  }&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@jonathangfischoff/the-partial-options-monoid-pattern-31914a71fc67&#34;&gt;The Partial Options Monoid&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kazu-yamamoto.hatenablog.jp/entry/2018/11/29/155311&#34;&gt;SemigroupがMonoidに恋するとき&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://qiita.com/philopon/items/a29717af62831d3c8c07&#34;&gt;optparse-applicativeをふわっと使う&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-11-first-monoid.html</id><title type="text">First Monoid</title><updated>2019-02-11T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-11-first-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:First&#34;&gt;First&lt;/a&gt; 型が定義されています。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getFirst ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a }&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
@@ -33,98 +186,92 @@
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;  (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;case-3-a-just-a-b-nothing&#34;&gt;Case (3) (a == Just a’, b == Nothing)&lt;/h3&gt;
+&lt;h3 id=&#34;case-3-a-just-a&#34;&gt;Case (3) (a == Just a’)&lt;/h3&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c)&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;  (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb8-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;case-4-a-just-a-b-just-b&#34;&gt;Case (4) (a == Just a’, b == Just b’)&lt;/h3&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; title=&#34;1&#34;&gt;  (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;monoid-law&#34;&gt;Monoid Law&lt;/h2&gt;
 &lt;h3 id=&#34;case-1-a-nothing&#34;&gt;Case (1) (a = Nothing)&lt;/h3&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;case-2-a-just-a&#34;&gt;Case (2) (a = Just a’)&lt;/h3&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;なぜ-getfirst-a-にしないのか&#34;&gt;なぜ getFirst :: a にしないのか？&lt;/h2&gt;
+&lt;p&gt;普通は他のモノイド同様に以下のように定義したくなりますよね。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getFirst ::&lt;/span&gt; a }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; _ &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ではなぜこのような定義にしないのでしょうか？&lt;/p&gt;
+&lt;p&gt;答えは、&lt;code&gt;Monoid law&lt;/code&gt; を満たさないからです。実際に確認してみましょう。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb12&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb12-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb12-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;なぜ-getfirst-a-にしないのか&#34;&gt;なぜ getFirst :: a にしないのか？&lt;/h2&gt;
-&lt;p&gt;普通は他のモノイド同様に以下のように定義したくなりますよね。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getFirst ::&lt;/span&gt; a }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; _ &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ではなぜこのような定義にしないのでしょうか？&lt;/p&gt;
-&lt;p&gt;答えは、&lt;code&gt;Monoid law&lt;/code&gt; を満たさないからです。実際に確認してみましょう。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb14&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;このように成り立ちません。ちなみに &lt;code&gt;Semigroup law&lt;/code&gt; は満たします。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb15&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-4&#34; title=&#34;4&#34;&gt;  (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-4&#34; title=&#34;4&#34;&gt;  (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; c&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;つまり、Semigroup からモノイドにするために &lt;code&gt;Maybe&lt;/code&gt; でラップしてあると考えて差し支えないと思います。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb16&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- Semigroup&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getFirst ::&lt;/span&gt; a }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- Semigroup, Monoid&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getFirst ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb14&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- Semigroup&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getFirst ::&lt;/span&gt; a }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- Semigroup, Monoid&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getFirst ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;具体例-コマンドラインパーサー&#34;&gt;具体例: コマンドラインパーサー&lt;/h2&gt;
 &lt;p&gt;僕が &lt;code&gt;First&lt;/code&gt; モノイドの存在を認識したのは &lt;code&gt;stack&lt;/code&gt; のコードで &lt;a href=&#34;https://www.stackage.org/haddock/lts-13.6/stack-1.9.3/Stack-Types-Config.html#t:ConfigMonoid&#34;&gt;ConfigMonoid&lt;/a&gt; というデータ型があり、その設定値に &lt;code&gt;First Bool&lt;/code&gt; などの型が使われているという場面でした。&lt;/p&gt;
 &lt;h3 id=&#34;コード&#34;&gt;コード&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/optparse-applicative&#34;&gt;optparse-applicative&lt;/a&gt; を使った具体的なサンプルはこんな感じです。(Last モノイドは名前の通りです)&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb17&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt; (main) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Monoid&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options.Applicative&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-7&#34; title=&#34;7&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; poInputPath  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-8&#34; title=&#34;8&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; poOutputPath ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt;  &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-9&#34; title=&#34;9&#34;&gt;  } &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;partialOptionsParser ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-12&#34; title=&#34;12&#34;&gt;partialOptionsParser &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; toPartialOptions&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-13&#34; title=&#34;13&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; many (optFilePathP &lt;span class=&#34;ch&#34;&gt;&amp;#39;i&amp;#39;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-14&#34; title=&#34;14&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; many (optFilePathP &lt;span class=&#34;ch&#34;&gt;&amp;#39;o&amp;#39;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-15&#34; title=&#34;15&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-16&#34; title=&#34;16&#34;&gt;    toPartialOptions input output &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-17&#34; title=&#34;17&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-18&#34; title=&#34;18&#34;&gt;        { poInputPath  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; lift input&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-19&#34; title=&#34;19&#34;&gt;        , poOutputPath &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; lift output&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-20&#34; title=&#34;20&#34;&gt;        }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-21&#34; title=&#34;21&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-22&#34; title=&#34;22&#34;&gt;&lt;span class=&#34;ot&#34;&gt;lift ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Foldable&lt;/span&gt; t, &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (f a), &lt;span class=&#34;dt&#34;&gt;Applicative&lt;/span&gt; f) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; t a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-23&#34; title=&#34;23&#34;&gt;lift &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;pure&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-24&#34; title=&#34;24&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-25&#34; title=&#34;25&#34;&gt;&lt;span class=&#34;ot&#34;&gt;optFilePathP ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Char&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-26&#34; title=&#34;26&#34;&gt;optFilePathP &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; strOption &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; short&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-27&#34; title=&#34;27&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-28&#34; title=&#34;28&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-29&#34; title=&#34;29&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-30&#34; title=&#34;30&#34;&gt;  options &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; execParser &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; info partialOptionsParser &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-31&#34; title=&#34;31&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt; options&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb15&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt; (main) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Monoid&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options.Applicative&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-7&#34; title=&#34;7&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; poInputPath  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-8&#34; title=&#34;8&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; poOutputPath ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt;  &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-9&#34; title=&#34;9&#34;&gt;  } &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;partialOptionsParser ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-12&#34; title=&#34;12&#34;&gt;partialOptionsParser &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; toPartialOptions&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-13&#34; title=&#34;13&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; many (optFilePathP &lt;span class=&#34;ch&#34;&gt;&amp;#39;i&amp;#39;&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-14&#34; title=&#34;14&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;&amp;lt;*&amp;gt;&lt;/span&gt; many (optFilePathP &lt;span class=&#34;ch&#34;&gt;&amp;#39;o&amp;#39;&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-15&#34; title=&#34;15&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-16&#34; title=&#34;16&#34;&gt;    toPartialOptions input output &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-17&#34; title=&#34;17&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-18&#34; title=&#34;18&#34;&gt;        { poInputPath  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; lift input&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-19&#34; title=&#34;19&#34;&gt;        , poOutputPath &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; lift output&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-20&#34; title=&#34;20&#34;&gt;        }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-21&#34; title=&#34;21&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-22&#34; title=&#34;22&#34;&gt;&lt;span class=&#34;ot&#34;&gt;lift ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Foldable&lt;/span&gt; t, &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (f a), &lt;span class=&#34;dt&#34;&gt;Applicative&lt;/span&gt; f) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; t a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-23&#34; title=&#34;23&#34;&gt;lift &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;pure&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-24&#34; title=&#34;24&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-25&#34; title=&#34;25&#34;&gt;&lt;span class=&#34;ot&#34;&gt;optFilePathP ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Char&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-26&#34; title=&#34;26&#34;&gt;optFilePathP &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; strOption &lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt; short&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-27&#34; title=&#34;27&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-28&#34; title=&#34;28&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-29&#34; title=&#34;29&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-30&#34; title=&#34;30&#34;&gt;  options &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; execParser &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; info partialOptionsParser &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-31&#34; title=&#34;31&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt; options&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;実行結果&#34;&gt;実行結果&lt;/h3&gt;
 &lt;p&gt;実行すると何が起きているかわかります。(手動で改行等を入れて見やすくしています)&lt;/p&gt;
 &lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;# オプション無しで実行
@@ -6064,181 +6211,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;まとめ&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2018/09/01/%E3%80%8EYesod_%E5%85%A5%E9%96%80%E3%80%8F%E5%95%86%E6%A5%AD%E8%AA%8C%E5%8C%96</id><title type="text">『Yesod 入門』商業誌化</title><updated>2018-09-01T08:26:27+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2018/09/01/%E3%80%8EYesod_%E5%85%A5%E9%96%80%E3%80%8F%E5%95%86%E6%A5%AD%E8%AA%8C%E5%8C%96"/><summary type="html">同人誌で発売していた『遠回りして学ぶ Yesod 入門』がこのたびインプレス R&amp;D より『Haskell で作る Web アプリケーション 遠回りして学ぶ Yesod 入門』として商業誌化されることになりました。 www.impressrd.jp 同人誌版からの変更点は主に、 日本語が読みやすくなった 対応バージョンが上がった 点です。章が増えたり減ったりはしていません。あと、表紙がかわいくなりました。かわいい。 商業誌では Amazon と honto にてオンデマンド印刷の紙の書籍も購入できるようになっています。紙はこれまで即売会でしか販売していなかったので初めて通信販売で買えるようにな…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/09-01-stack-profile-build.html</id><title type="text">stack でアプリケーションのバックトレースを取得する (デバッグ)</title><updated>2018-09-01T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/09-01-stack-profile-build.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;Haskell のデバッグ手法については、以下の記事がとても詳しく参考になります。素晴らしい記事です。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.miz-ar.info/2018/01/debugging-haskell-program&#34;&gt;Haskell でのデバッグ手法あれこれ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;今回はHaskellアプリケーションをデバックする際に、バックトレースのとても簡単な取得方法があったのでご紹介したいと思います。&lt;/p&gt;
-&lt;p&gt;まとめると以下の2行です。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build --profile
-$ stack exec -- &amp;lt;exe_name&amp;gt; +RTS -xc&lt;/code&gt;&lt;/pre&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;バックトレースの取得方法&#34;&gt;バックトレースの取得方法&lt;/h2&gt;
-&lt;p&gt;まず、バックトレースを取得するために &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.8/base-4.11.1.0/GHC-Stack.html&#34;&gt;GHC.Stack&lt;/a&gt; で定義されている &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.8/base-4.11.1.0/GHC-Stack.html#t:HasCallStack&#34;&gt;HasCallStack&lt;/a&gt; をクラス制約として追加します。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;上記の例を雛形として、&lt;strong&gt;HasCallStack&lt;/strong&gt; を追加するとどうなるのか確認していきましょう。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Main.hs&lt;/code&gt; はこんな感じで &lt;strong&gt;f1&lt;/strong&gt; を呼び出します。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Main&lt;/span&gt; (main) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-6&#34; title=&#34;6&#34;&gt;main &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f1&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;HasCallStack&lt;/strong&gt; を追加しない場合は以下のような出力となります。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
-...
-$ stack exec example
-example: f3
-CallStack (from HasCallStack):
-  error, called at src/Lib.hs:10:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;f3&lt;/strong&gt; でエラーが発生したことはわかりますが、それ以外は何もわかりません。&lt;/p&gt;
-&lt;h3 id=&#34;f1-f2-f3-に-hascallstack-を追加した場合&#34;&gt;f1, f2, f3 に HasCallStack を追加した場合&lt;/h3&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; title=&#34;9&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-12&#34; title=&#34;12&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ビルドしてみます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
-...
-$ stack exec example
-example: f3
-CallStack (from HasCallStack):
-  error, called at src/Lib.hs:12:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
-  f3, called at src/Lib.hs:9:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
-  f2, called at src/Lib.hs:6:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
-  f1, called at app/Main.hs:6:8 in main:Main&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ちゃんと呼び出しの関係が &lt;code&gt;error&lt;/code&gt; -&amp;gt; &lt;code&gt;f3&lt;/code&gt; -&amp;gt; &lt;code&gt;f2&lt;/code&gt; -&amp;gt; &lt;code&gt;f1&lt;/code&gt; と表示されていますね！&lt;/p&gt;
-&lt;h3 id=&#34;f2-f3-にのみ-hascallstack-を追加する&#34;&gt;f2, f3 にのみ HasCallStack を追加する&lt;/h3&gt;
-&lt;p&gt;では、ここで &lt;code&gt;f1&lt;/code&gt; の &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を取り除くとどうなるか確認してみます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-6&#34; title=&#34;6&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-9&#34; title=&#34;9&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-12&#34; title=&#34;12&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;実行してみます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
-...
-$ stack exec example
-example: f3
-CallStack (from HasCallStack):
-  error, called at src/Lib.hs:12:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
-  f3, called at src/Lib.hs:9:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
-  f2, called at src/Lib.hs:6:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;f1&lt;/strong&gt; の &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を取り除いた影響により、先程出力されていた &lt;code&gt;f1, called at app/Main.hs:6:8 in main:Main&lt;/code&gt; が出なくなりました。&lt;/p&gt;
-&lt;p&gt;しかし、依然として &lt;strong&gt;f2&lt;/strong&gt; と &lt;strong&gt;f3&lt;/strong&gt; のバックトレースは取得できています。そのため、本当に全てのバックトレースを取得したい場合は全ての関数に &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を追加しなけばなりません。&lt;/p&gt;
-&lt;h3 id=&#34;f1-と-f3-にのみ-hascallstack-制約を追加する&#34;&gt;f1 と f3 にのみ HasCallStack 制約を追加する&lt;/h3&gt;
-&lt;p&gt;次に中間の &lt;strong&gt;f2&lt;/strong&gt; の &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を取り除いてみましょう。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; title=&#34;6&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-9&#34; title=&#34;9&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-12&#34; title=&#34;12&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;実行してみます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
-...
-$ stack exec example
-example: f3
-CallStack (from HasCallStack):
-  error, called at src/Lib.hs:12:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
-  f3, called at src/Lib.hs:9:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;今度は &lt;strong&gt;f2&lt;/strong&gt; と &lt;strong&gt;f1&lt;/strong&gt; の両方の情報がが抜け落ちてしまいました。&lt;strong&gt;f2&lt;/strong&gt; で &lt;strong&gt;HasCallStack&lt;/strong&gt; の伝搬がストップしてしまったということです。&lt;/p&gt;
-&lt;h3 id=&#34;f1-と-f2-のみに-hascallstack-を追加する&#34;&gt;f1 と f2 のみに HasCallStack を追加する&lt;/h3&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.Stack&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; title=&#34;6&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;HasCallStack&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-9&#34; title=&#34;9&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-12&#34; title=&#34;12&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build
-$ stack exec example
-example: f3
-CallStack (from HasCallStack):
-  error, called at src/Lib.hs:12:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
-...&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;予想通り &lt;strong&gt;f1&lt;/strong&gt;, &lt;strong&gt;f2&lt;/strong&gt;, &lt;strong&gt;f3&lt;/strong&gt; の全ての情報が途絶えましたね・・・。&lt;/p&gt;
-&lt;h2 id=&#34;hascallstack-を省略したままバックトレースを取りたい&#34;&gt;HasCallStack を省略したままバックトレースを取りたい&lt;/h2&gt;
-&lt;p&gt;先程の結果を見たとおり、正確な情報を取得するためには全ての関数に &lt;strong&gt;HasCallStack&lt;/strong&gt; 制約を追加する必要がありそうです。&lt;/p&gt;
-&lt;p&gt;しかしながら、規模が大きくなってくるとそんなの不可能ですよね。&lt;/p&gt;
-&lt;p&gt;そんな時には &lt;code&gt;stack&lt;/code&gt; の &lt;code&gt;--profile&lt;/code&gt; オプションと &lt;code&gt;+RTS -xc&lt;/code&gt; オプションを利用します。(&lt;code&gt;--profile&lt;/code&gt; オプションは &lt;strong&gt;ghc&lt;/strong&gt; のオプションを良い感じに追加してくれます)&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Lib&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f1 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-4&#34; title=&#34;4&#34;&gt;f1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f2&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f2 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-7&#34; title=&#34;7&#34;&gt;f2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; f3&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-8&#34; title=&#34;8&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;ot&#34;&gt;f3 ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-10&#34; title=&#34;10&#34;&gt;f3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;f3&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;上記のような素のコードに対しても、同様にバックトレースが取得できるようになります。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build --profile
-...
-$ stack exec -- example +RTS -xc
-*** Exception (reporting due to +RTS -xc): (THUNK_2_0), stack trace:
-  Lib.f3,
-  called from Lib.CAF:f3
-  --&amp;gt; evaluated by: Lib.CAF:f2
-  --&amp;gt; evaluated by: Lib.CAF:f1
-  --&amp;gt; evaluated by: Main.CAF:main
-example: f3
-CallStack (from HasCallStack):
-  error, called at src/Lib.hs:10:6 in backtrace-example-0.1.0.0-hgO68xdg85BUcmGsdFId:Lib
-CallStack (from -prof):
-  Lib.f3 (src/Lib.hs:10:1-15)
-  Lib.CAF:f3 (src/Lib.hs:10:1-2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;なんか沢山表示されますが、&lt;code&gt;reporting due to +RTS -xc&lt;/code&gt; の部分を見ると、しっかりとバックトレースが取得できています。&lt;/p&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HasCallStack&lt;/strong&gt; を使うとバックトレースが取得できる&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;stack build --profile&lt;/code&gt; でビルドする&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;stack exec -- &amp;lt;exe&amp;gt; +RTS -xc&lt;/code&gt; を使えば、明示的に &lt;strong&gt;HasCallStack&lt;/strong&gt; を追加しなくても、バックトレースが取得できる&lt;/li&gt;
-&lt;li&gt;アプリケーションのコードに対して有効&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.miz-ar.info/2018/01/debugging-haskell-program/#HasCallStack&#34;&gt;Haskell でのデバッグ手法あれこれ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/commercialhaskell/stack/blob/master/doc/GUIDE.md#debugging&#34;&gt;Debugging – stack document&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/runtime_control.html#rts-flag--xc&#34;&gt;-xc option – GHC Users Guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以上です。&lt;/p&gt;</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/23/211858</id><title type="text">詳解！ Elm における Fuzzing</title><updated>2018-08-23T21:18:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/23/211858"/><summary type="html">先日行われた We Are JavaScripters! @23rd で、Elm のテストフレームワーク elm-test に搭載されている Fuzzing 機能について発表してきました。 Fuzzing を利用するとテストデータを自動で生成することができるため、例えば「encode と decode を行うと元に戻る」といった、入力に依存しない 関数の性質に関するテスト をより簡単かつ効率的に実装することができます。 さらに、後で詳しく解説する通り、elm-test の Fuzzer にはバグが起こりやすいエッジケースを集中的に生成してくれるというメリットもあります。 elm-test の使…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2018/08/16/Windows_%E3%81%A7_haskell-ide-engine_%E3%82%92%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B</id><title type="text">Windows で haskell-ide-engine をビルドする</title><updated>2018-08-16T17:34:50+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2018/08/16/Windows_%E3%81%A7_haskell-ide-engine_%E3%82%92%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B"/><summary type="html">手順 1. ソースコード取得。 git clone git@github.com:haskell/haskell-ide-engine.git 2. Unicode を扱う ICU の古いバージョンが要るので取得。 自分の使うバージョンの text-icu の changelog を見て、必要な ICU のバージョンを探す。執筆時点では 53 だった。 http://site.icu-project.org/download/53#TOC-ICU4C-Download 任意の場所に展開する。以降、展開先の箇所を $icu と表記する。 $icu\bin64 にある dll の名前を変える。（要…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/01/055608</id><title type="text">July Tech Festa 2018 で分散システムの検証について話してきました / #JTF2018</title><updated>2018-08-01T13:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/01/055608"/><summary type="html">先日行われた July Tech Festa 2018 で、モデル検査を使った分散アルゴリズムの検証について発表してきました。 前半はオートマトンによるシステムの記述と検査の基礎について、後半は三種類のツール SPIN、TLA+、P による記述方法の紹介、といった内容です。 後半のソースコード紹介が散文的な感じになってしまって、いまいちメリットが伝わらない感じだったので、次回があればもっとエモいスライドにしようと思います。 分散アルゴリズムの形式化 定理証明による検証 今回の話の流れとして「分散システムにはモデル検査が有効」と述べていますが、必ずしも定理証明が分散システムの検証に向かないという…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html</id><title type="text">deriveJsonNoPrefixをリリースしました</title><updated>2018-07-18T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html"/><summary type="html">
+</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2018/09/01/%E3%80%8EYesod_%E5%85%A5%E9%96%80%E3%80%8F%E5%95%86%E6%A5%AD%E8%AA%8C%E5%8C%96</id><title type="text">『Yesod 入門』商業誌化</title><updated>2018-09-01T08:26:27+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2018/09/01/%E3%80%8EYesod_%E5%85%A5%E9%96%80%E3%80%8F%E5%95%86%E6%A5%AD%E8%AA%8C%E5%8C%96"/><summary type="html">同人誌で発売していた『遠回りして学ぶ Yesod 入門』がこのたびインプレス R&amp;D より『Haskell で作る Web アプリケーション 遠回りして学ぶ Yesod 入門』として商業誌化されることになりました。 www.impressrd.jp 同人誌版からの変更点は主に、 日本語が読みやすくなった 対応バージョンが上がった 点です。章が増えたり減ったりはしていません。あと、表紙がかわいくなりました。かわいい。 商業誌では Amazon と honto にてオンデマンド印刷の紙の書籍も購入できるようになっています。紙はこれまで即売会でしか販売していなかったので初めて通信販売で買えるようにな…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/23/211858</id><title type="text">詳解！ Elm における Fuzzing</title><updated>2018-08-23T21:18:58+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/23/211858"/><summary type="html">先日行われた We Are JavaScripters! @23rd で、Elm のテストフレームワーク elm-test に搭載されている Fuzzing 機能について発表してきました。 Fuzzing を利用するとテストデータを自動で生成することができるため、例えば「encode と decode を行うと元に戻る」といった、入力に依存しない 関数の性質に関するテスト をより簡単かつ効率的に実装することができます。 さらに、後で詳しく解説する通り、elm-test の Fuzzer にはバグが起こりやすいエッジケースを集中的に生成してくれるというメリットもあります。 elm-test の使…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2018/08/16/Windows_%E3%81%A7_haskell-ide-engine_%E3%82%92%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B</id><title type="text">Windows で haskell-ide-engine をビルドする</title><updated>2018-08-16T17:34:50+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2018/08/16/Windows_%E3%81%A7_haskell-ide-engine_%E3%82%92%E3%83%93%E3%83%AB%E3%83%89%E3%81%99%E3%82%8B"/><summary type="html">手順 1. ソースコード取得。 git clone git@github.com:haskell/haskell-ide-engine.git 2. Unicode を扱う ICU の古いバージョンが要るので取得。 自分の使うバージョンの text-icu の changelog を見て、必要な ICU のバージョンを探す。執筆時点では 53 だった。 http://site.icu-project.org/download/53#TOC-ICU4C-Download 任意の場所に展開する。以降、展開先の箇所を $icu と表記する。 $icu\bin64 にある dll の名前を変える。（要…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/08/01/055608</id><title type="text">July Tech Festa 2018 で分散システムの検証について話してきました / #JTF2018</title><updated>2018-08-01T13:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/08/01/055608"/><summary type="html">先日行われた July Tech Festa 2018 で、モデル検査を使った分散アルゴリズムの検証について発表してきました。 前半はオートマトンによるシステムの記述と検査の基礎について、後半は三種類のツール SPIN、TLA+、P による記述方法の紹介、といった内容です。 後半のソースコード紹介が散文的な感じになってしまって、いまいちメリットが伝わらない感じだったので、次回があればもっとエモいスライドにしようと思います。 分散アルゴリズムの形式化 定理証明による検証 今回の話の流れとして「分散システムにはモデル検査が有効」と述べていますが、必ずしも定理証明が分散システムの検証に向かないという…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html</id><title type="text">deriveJsonNoPrefixをリリースしました</title><updated>2018-07-18T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/derive-json-no-prefix.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
