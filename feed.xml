@@ -1,17 +1,128 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-02-13T14:21:10+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/rtaguchi/items/23c8ff5224fb891723a5</id><title type="text">Haskellをちょっとかじったことがある人向けのTidalCyclesインストール on Windows</title><updated>2019-02-13T14:21:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/rtaguchi/items/23c8ff5224fb891723a5"/></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/02/12/191002</id><title type="text">ある期間内に更新されたデータを素早く検索できるモデル</title><updated>2019-02-12T19:15:33+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/02/12/191002"/><summary type="html">特定の技術とは関係ない、誰でも思いつきそうな、でも便利なお話。 こんなケースを考えてみよう。 人気のトレーディングカードゲームAugur Unlimitedを扱うショップ「しらさぎ商店」では、1000種類にも及ぶカードの買い取り・販売をしている。記録のため、カードごとに日時、価格、在庫数などをまとめたレコードを毎日データベースに書き込んでいる。 新着・売り切れや、価格の変化などを、指定された期間について一覧で表示するようなWebページを作りたいとオーナーは考えた。しかし、ユーザーからの要求ごとに全データの差分を取るのは、あまり効率的な手段とはいえない。レアなカードでもない限り価格は一定であるこ…</summary></entry><entry><id>https://qiita.com/kimagure/items/9b33a5fa48baf105abe4</id><title type="text">Making a simple Haskell CLI without anything fancy</title><updated>2019-02-12T06:53:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kimagure/items/9b33a5fa48baf105abe4"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-12-last-monoid.html</id><title type="text">Last Monoid</title><updated>2019-02-12T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-12-last-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-02-13T15:49:35+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>http://fumieval.hatenablog.com/entry/2019/02/12/191002</id><title type="text">ある期間内に更新されたデータを素早く検索できるモデル</title><updated>2019-02-13T15:49:35+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/02/12/191002"/><summary type="html">特定の技術とは関係ない、誰でも思いつきそうな、でも便利なお話。 こんなケースを考えてみよう。 人気のトレーディングカードゲームAugur Unlimitedを扱うショップ「しらさぎ商店」では、1000種類にも及ぶカードの買い取り・販売をしている。記録のため、カードごとに日時、価格、在庫数などをまとめたレコードを毎日データベースに書き込んでいる。 新着・売り切れや、価格の変化などを、指定された期間について一覧で表示するようなWebページを作りたいとオーナーは考えた。しかし、ユーザーからの要求ごとに全データの差分を取るのは、あまり効率的な手段とはいえない。レアなカードでもない限り価格は一定であるこ…</summary></entry><entry><id>https://qiita.com/rtaguchi/items/23c8ff5224fb891723a5</id><title type="text">Haskellをちょっとかじったことがある人向けのTidalCyclesインストール on Windows</title><updated>2019-02-13T14:21:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/rtaguchi/items/23c8ff5224fb891723a5"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-13-sum-monoid.html</id><title type="text">Sum Monoid</title><updated>2019-02-13T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-13-sum-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:Sum&#34;&gt;Sum&lt;/a&gt; 型が定義されています。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getSum ::&lt;/span&gt; a }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Num&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; (a &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; b)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Num&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;使い方は簡単。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getSum (&lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dv&#34;&gt;3&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getSum &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;dv&#34;&gt;55&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;semigroup-monoid-law-の確認&#34;&gt;Semigroup, Monoid law の確認&lt;/h2&gt;
+&lt;p&gt;Semigroup Law&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; (b &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; (a &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; (b &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; c))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- (+) の結合律より&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; ((a &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; c)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; (a &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; c&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; b) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; c&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Monoid Law&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; title=&#34;1&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; (a &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-6&#34; title=&#34;6&#34;&gt;  (&lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; (&lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; a)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;newtype-を使って定義する理由&#34;&gt;newtype を使って定義する理由&lt;/h2&gt;
+&lt;p&gt;わざわざ &lt;code&gt;Sum&lt;/code&gt; という新しい型を作ってインスタンスを定義しなくても、&lt;code&gt;Int&lt;/code&gt; を使って直接 &lt;code&gt;Semigroup&lt;/code&gt; と &lt;code&gt;Monoid&lt;/code&gt; のインスタンスを定義すれば良いんじゃないか？と普通は思います。&lt;/p&gt;
+&lt;p&gt;実際に以下の定義は問題なく動きます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;  (&lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; mempty ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dv&#34;&gt;3&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; title=&#34;4&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mconcat&lt;/span&gt; [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;]&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;dv&#34;&gt;55&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;しかし、足し算と同様に掛け算もモノイドとして定義したいと思う人もいるでしょう。&lt;/p&gt;
+&lt;p&gt;この時 &lt;code&gt;Int&lt;/code&gt; は既に &lt;code&gt;Semigroup&lt;/code&gt;, &lt;code&gt;Monoid&lt;/code&gt; のインスタンス定義があるため、同じファイルに以下のように定義することはできません。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;  (&lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;*&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この問題を解決する方法はいくつかありますが、このような例では &lt;code&gt;newtype&lt;/code&gt; が適切ということです。&lt;/p&gt;
+&lt;h2 id=&#34;law-の自動チェック-quickcheck-classes&#34;&gt;Law の自動チェック (quickcheck-classes)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/quickcheck-classes&#34;&gt;quickcheck-classes&lt;/a&gt; を使って &lt;code&gt;Semigroup law&lt;/code&gt; と &lt;code&gt;Monoid law&lt;/code&gt; がちゃんと法則を満たすかどうかチェックしてみます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE GeneralizedNewtypeDeriving #-}&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getSum ::&lt;/span&gt; a }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Arbitrary&lt;/span&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Num&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; b &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; (a &lt;span class=&#34;fu&#34;&gt;+&lt;/span&gt; b)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Num&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;Eq&lt;/code&gt;, &lt;code&gt;Show&lt;/code&gt;, &lt;code&gt;Arbitrary&lt;/code&gt; が無いとチェックできないので &lt;code&gt;derive&lt;/code&gt; しています。&lt;/p&gt;
+&lt;p&gt;実行はめっちゃ簡単で、&lt;code&gt;lawsCheck&lt;/code&gt; 関数と &lt;code&gt;semigroupLaws&lt;/code&gt; や &lt;code&gt;monoidLaws&lt;/code&gt; などのチェックしたい則に対応する関数を使うだけです。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; import Test.QuickCheck.Classes
+&amp;gt; import Data.Proxy
+
+&amp;gt; lawsCheck (semigroupLaws (Proxy :: Proxy (Sum Int)))
+Semigroup: Associative +++ OK, passed 100 tests.
+Semigroup: Concatenation +++ OK, passed 100 tests.
+Semigroup: Times +++ OK, passed 100 tests; 99 discarded.
+
+&amp;gt; lawsCheck (monoidLaws (Proxy :: Proxy (Sum Int)))
+Monoid: Associative +++ OK, passed 100 tests.
+Monoid: Left Identity +++ OK, passed 100 tests.
+Monoid: Right Identity +++ OK, passed 100 tests.
+Monoid: Concatenation +++ OK, passed 100 tests.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考までに &lt;code&gt;mempty&lt;/code&gt; の定義が Law を満たさない場合の例も載せておきます。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Num&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; import Test.QuickCheck.Classes
+&amp;gt; import Data.Proxy
+
+&amp;gt; lawsCheck (semigroupLaws (Proxy :: Proxy (Sum Int)))
+Semigroup: Associative +++ OK, passed 100 tests.
+Semigroup: Concatenation +++ OK, passed 100 tests.
+Semigroup: Times +++ OK, passed 100 tests; 113 discarded.
+
+&amp;gt; lawsCheck (monoidLaws (Proxy :: Proxy (Sum Int)))
+Monoid: Associative +++ OK, passed 100 tests.
+Monoid: Left Identity *** Failed! Falsifiable (after 1 test):
+  Description: mappend mempty a = a
+  a = Sum {getSum = 0}
+  mappend mempty a = Sum {getSum = 1}
+Monoid: Right Identity *** Failed! Falsifiable (after 1 test):
+  Description: mappend a mempty = a
+  a = Sum {getSum = 0}
+  mappend a mempty = Sum {getSum = 1}
+Monoid: Concatenation +++ OK, passed 100 tests.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;こんな感じでモノイドの左単位元則 (Left Identity law) と右単位元則 (Right Identity law) が満たされていないことを教えてくれます。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://people.cs.kuleuven.be/~tom.schrijvers/Research/talks/lhug4.pdf&#34;&gt;Lists and Other Monoids&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://qiita.com/kimagure/items/9b33a5fa48baf105abe4</id><title type="text">Making a simple Haskell CLI without anything fancy</title><updated>2019-02-12T06:53:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kimagure/items/9b33a5fa48baf105abe4"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-12-last-monoid.html</id><title type="text">Last Monoid</title><updated>2019-02-12T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-12-last-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:Last&#34;&gt;Last&lt;/a&gt; 型が定義されています。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getLast ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a }&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;  a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;  &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;  _ &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; b             &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; b&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;  a &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;  _ &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; b            &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; b&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;Last&lt;/code&gt; モノイドは &lt;code&gt;First&lt;/code&gt; モノイドとほとんど同じですが、&lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt; で結合した時に最後の値を返すという部分が異なります。&lt;/p&gt;
 &lt;p&gt;使い方は簡単。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getLast (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;))&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getLast (&lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getLast &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Last&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;!--more--&gt;
 &lt;h2 id=&#34;semigroup-law-の確認&#34;&gt;Semigroup law の確認&lt;/h2&gt;
 &lt;h3 id=&#34;case-1-b-nothing-c-nothing&#34;&gt;Case (1) (b == Nothing, c == Nothing)&lt;/h3&gt;
@@ -61,9 +172,9 @@
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options.Applicative&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb11-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-8&#34; title=&#34;8&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; oInputPath    ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-9&#34; title=&#34;9&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; oOutputPath   ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-10&#34; title=&#34;10&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; oLogLevel     ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-8&#34; title=&#34;8&#34;&gt;  {&lt;span class=&#34;ot&#34;&gt; oInputPath  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-9&#34; title=&#34;9&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; oOutputPath ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-10&#34; title=&#34;10&#34;&gt;  ,&lt;span class=&#34;ot&#34;&gt; oLogLevel   ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb11-11&#34; title=&#34;11&#34;&gt;  } &lt;span class=&#34;kw&#34;&gt;deriving&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Show&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Eq&lt;/span&gt;)&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb11-12&#34; title=&#34;12&#34;&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb11-13&#34; title=&#34;13&#34;&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;PartialOptions&lt;/span&gt;&lt;/a&gt;
@@ -167,8 +278,11 @@ Options
 &lt;li&gt;インスタンス宣言にクラス制約が必要無い&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;使い方は簡単。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getFirst (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;))&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getFirst (&lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getFirst &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;First&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;, &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;常に最初の値を返すという、一見意味の無さそうな &lt;code&gt;First&lt;/code&gt; モノイドも実は便利に使えたりします。&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;h2 id=&#34;semigroup-law-の確認&#34;&gt;Semigroup law の確認&lt;/h2&gt;
@@ -436,8 +550,11 @@ PartialOptions
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; appEndo f &lt;span class=&#34;dv&#34;&gt;5&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;9&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; appEndo (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, &amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;!&amp;quot;&lt;/span&gt;)) &lt;span class=&#34;st&#34;&gt;&amp;quot;Haskell&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, Haskell!&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; appEndo (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, &amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;!&amp;quot;&lt;/span&gt;)) &lt;span class=&#34;st&#34;&gt;&amp;quot;Haskell&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, Haskell!&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; (appEndo &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [(&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, &amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt;), &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;, (&lt;span class=&#34;fu&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;!&amp;quot;&lt;/span&gt;)]) &lt;span class=&#34;st&#34;&gt;&amp;quot;Haskell&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, Haskell!&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;appEndo&lt;/code&gt; すると関数が出てくるところがポイントですね。2つ目の評価の流れをざっくり追うとこんな感じです。&lt;/p&gt;
 &lt;pre class=&#34;haskll&#34;&gt;&lt;code&gt;  appEndo (Endo (&amp;quot;Hello, &amp;quot; ++) &amp;lt;&amp;gt; Endo (++ &amp;quot;!&amp;quot;)) &amp;quot;Haskell&amp;quot;
 = appEndo (Endo ((&amp;quot;Hello, &amp;quot; ++ ) . (++ &amp;quot;!&amp;quot;))) &amp;quot;Haskell&amp;quot;
@@ -781,8 +898,11 @@ yarn start&lt;/code&gt;&lt;/pre&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;使い方は簡単。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getDual &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;aaa&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;bbb&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;bbbaaa&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getDual &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;aaa&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;bbb&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;bbbaaa&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;ghci&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; getDual &lt;span class=&#34;fu&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;aaa&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;bbb&amp;quot;&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;bbbaaa&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;いつか使う時もあるかもしれないので、適当な例を作ってみます。&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;h2 id=&#34;semigroup-monoid-law-の確認&#34;&gt;Semigroup, Monoid law の確認&lt;/h2&gt;
@@ -5397,408 +5517,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;それでは当日に&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/10/02/203205</id><title type="text">猫でもわかる Vertical Pod Autoscaler</title><updated>2018-10-02T20:32:05+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/10/02/203205"/><summary type="html">先日行われた Kubernetes Meetup Tokyo #13 で、Vertical Pod Autoscaler (VPA) について発表してきました。 VPA は、各コンテナの Resource Request の値を自動的に調整してくれるコンポーネント群です。必要とするリソース（CPU、メモリ）量があらかじめ推測しにくいアプリケーションに対して、実績に基づいてそれらしい値を決めたい場合に効果を発揮します。 本記事ではスライドの補足として、VPA が動作する流れをクラスタ上での実際の挙動を通じて確認し、また内部実装についても踏み込んで解説します。 なお、本記事中で引用している仕様やソ…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/09/26/191231</id><title type="text">elm/time の使い方</title><updated>2018-09-26T19:12:31+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/09/26/191231"/><summary type="html">はじめに 先日、Elm v0.19 がリリースされました。公式ライブラリのリポジトリが elm-lang から elm に変更され、その中身も大きく再構成されています。 本記事では、これらの変更のうち特に時刻や日付の扱いに関する部分について、新しい API の使い方を含めて簡単に解説します。 v0.18 における時刻の扱い v0.18 では、時刻を扱う機能は標準パッケージ elm-lang/core の中で提供されていました。時刻を扱う Time モジュールと日付を扱う Date モジュールで、それぞれデータ型や関数が定義されているのが特徴です。 なお、旧バージョンのライブラリは現在 Elm …</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/09-17-time-package.html</id><title type="text">time パッケージの使い方</title><updated>2018-09-17T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/09-17-time-package.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;Haskell で時間や日付を扱う際に良く利用されるのは &lt;a href=&#34;https://www.stackage.org/lts-12.9/package/time&#34;&gt;time&lt;/a&gt; パッケージです。&lt;/p&gt;
-&lt;p&gt;このパッケージが使いやすいかどうかは人それぞれですが、使い方を知っておくと便利なのでよく使いそうな関数を簡単に解説しようと思います。&lt;/p&gt;
-&lt;p&gt;これからの例は以下のコマンドを実行していると仮定して話を進めます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack repl --package time --resolver lts-12.9
-$ import Data.Time&lt;/code&gt;&lt;/pre&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;time-パッケージのモジュール構造&#34;&gt;Time パッケージのモジュール構造&lt;/h2&gt;
-&lt;p&gt;基本的には &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time.html&#34;&gt;Data.Time&lt;/a&gt; を import して使います。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Time&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Data.Time は以下のモジュールを再エクスポートしています。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th&gt;モジュール名&lt;/th&gt;
-&lt;th&gt;用途&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Calendar.html&#34;&gt;Data.Time.Calendar&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;日付&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Clock.html&#34;&gt;Data.Time.Clock&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;全然使わないので良くわからない&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-LocalTime.html&#34;&gt;Data.Time.LocalTime&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;日本の現在時刻を取得など&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html&#34;&gt;Data.Time.Format&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;出力の整形&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;rio-を利用している場合&#34;&gt;rio を利用している場合&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.stackage.org/lts-12.9/package/rio&#34;&gt;rio&lt;/a&gt; を利用している場合は &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/rio-0.1.5.0/RIO-Time.html&#34;&gt;RIO.Time&lt;/a&gt; を import します。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RIO.Time&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;data.time.localtime&#34;&gt;Data.Time.LocalTime&lt;/h2&gt;
-&lt;p&gt;現在時刻を取得する場合にこのモジュールを使います。現在時刻を取得したいからと言って &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Clock.html#v:getCurrentTime&#34;&gt;getCurrentTime&lt;/a&gt; を利用すると日本時間にならないので注意してください。&lt;/p&gt;
-&lt;h3 id=&#34;getzonedtime&#34;&gt;getZonedTime&lt;/h3&gt;
-&lt;p&gt;システムのタイムゾーンに応じた現在時刻を返します。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t getZonedTime
-getZonedTime :: IO ZonedTime
-
-&amp;gt; getZonedTime
-2018-09-17 13:41:05.512522063 JST&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;getcurrenttimezone&#34;&gt;getCurrentTimeZone&lt;/h3&gt;
-&lt;p&gt;システムのタイムゾーンを取得します。このタイムゾーンに基づいて &lt;code&gt;getZonedTime&lt;/code&gt; が計算されます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t getCurrentTimeZone
-getCurrentTimeZone :: IO TimeZone
-
-&amp;gt; getCurrentTimeZone
-JST&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;zonedtimetoutc&#34;&gt;zonedTimeToUTC&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;ZonedTime&lt;/code&gt; を &lt;code&gt;UTCTime&lt;/code&gt; に変換するために使います。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t zonedTimeToUTC
-zonedTimeToUTC :: ZonedTime -&amp;gt; UTCTime
-
-&amp;gt; zonedTimeToUTC &amp;lt;$&amp;gt; getZonedTime
-2018-09-17 04:41:27.907476307 UTC&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;utctozonedtime&#34;&gt;utcToZonedTime&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;zonedTimeToUTC&lt;/code&gt; の逆で &lt;code&gt;UTCTime&lt;/code&gt; を &lt;code&gt;ZonedTime&lt;/code&gt; に変換する関数です。タイムゾーンのための引数を余分に取ります。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t utcToZonedTime
-utcToZonedTime :: TimeZone -&amp;gt; UTCTime -&amp;gt; ZonedTime
-
-&amp;gt; utcToZonedTime &amp;lt;$&amp;gt; getCurrentTimeZone &amp;lt;*&amp;gt; getCurrentTime
-2018-09-17 13:41:37.955641567 JST&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;日後の時間を計算するには&#34;&gt;1日後の時間を計算するには？&lt;/h2&gt;
-&lt;p&gt;ここで、取得した時間の1日後を計算してみましょう。&lt;/p&gt;
-&lt;p&gt;そのためには Data.Time.Clock で定義されている &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Clock.html#v:addUTCTime&#34;&gt;addUTCTime&lt;/a&gt; を使います。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;addUTCTime ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;NominalDiffTime&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;UTCTime&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;UTCTime&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;第一引数に &lt;code&gt;NominalDiffTime&lt;/code&gt; という謎の型を取りますが、&lt;code&gt;nominalDay&lt;/code&gt; の実装を見れば &lt;code&gt;60 * 60 * 24&lt;/code&gt; っぽいことがわかるので、そんな感じで値を作ります。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;nominalDay ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;NominalDiffTime&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;nominalDay &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;86400&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ちなみに、上記の実装でなぜ &lt;code&gt;NominalDiffTime&lt;/code&gt; の値になるかと言うと、&lt;code&gt;NominalDiffTime&lt;/code&gt; は &lt;code&gt;Num&lt;/code&gt; クラスのインスタンスになっているため、自動的に &lt;code&gt;fromInteger&lt;/code&gt; が呼ばれて変換されるという仕組みです。&lt;/p&gt;
-&lt;p&gt;実際に試してみましょう。1日後を計算してみます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; t = addUTCTime nominalDay . zonedTimeToUTC &amp;lt;$&amp;gt; getZonedTime
-2018-09-17 10:32:56.880362453 UTC
-
-&amp;gt; getZonedTime
-2018-09-17 13:49:09.279378323 JST
-
-&amp;gt; utcToZonedTime &amp;lt;$&amp;gt; getCurrentTimeZone &amp;lt;*&amp;gt; t
-2018-09-18 13:49:16.211737218 JST&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;同様に1時間後も計算してみましょう。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; t = addUTCTime (60 * 60) . zonedTimeToUTC &amp;lt;$&amp;gt; getZonedTime
-
-&amp;gt; getZonedTime
-2018-09-17 13:49:33.169797528 JST
-
-&amp;gt; t
-2018-09-17 05:49:36.757498845 UTC
-
-&amp;gt; utcToZonedTime &amp;lt;$&amp;gt; getCurrentTimeZone &amp;lt;*&amp;gt; t
-2018-09-17 14:49:40.930944714 JST&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;上手くいってますね！&lt;/p&gt;
-&lt;h2 id=&#34;data.time.localtime-1&#34;&gt;Data.Time.LocalTime&lt;/h2&gt;
-&lt;p&gt;時刻の取得・計算ができたら、あとは整形して出力するだけです！&lt;/p&gt;
-&lt;p&gt;Data.Time.LocalTime モジュールの関数を使って出力を整形してみましょう！&lt;/p&gt;
-&lt;h3 id=&#34;formattime&#34;&gt;formatTime&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html#v:formatTime&#34;&gt;formatTime&lt;/a&gt; 関数の使い方がわかれば、任意の形式で出力できるようになります。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t formatTime
-formatTime :: FormatTime t =&amp;gt; TimeLocale -&amp;gt; String -&amp;gt; t -&amp;gt; String&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ここで &lt;code&gt;FormatTime t&lt;/code&gt; の &lt;code&gt;t&lt;/code&gt; は &lt;code&gt;UTCTime&lt;/code&gt; や &lt;code&gt;ZonedTime&lt;/code&gt;、&lt;code&gt;Day&lt;/code&gt; などの型が使えます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;formatTime ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ZonedTime&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;formatTime ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;UTCTime&lt;/span&gt;   &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;formatTime ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Day&lt;/span&gt;       &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;型に応じて第三引数が変わるということです。&lt;/p&gt;
-&lt;p&gt;実際に使えばすぐに慣れます。(第一引数の値は &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html#v:defaultTimeLocale&#34;&gt;defaultTimeLocale&lt;/a&gt; を指定しておけば良いのですが、自分でカスタマイズしたものを使うこともあります)&lt;/p&gt;
-&lt;p&gt;第二引数がフォーマット文字列なので、空文字列を与えれば当然結果も空になります。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; formatTime defaultTimeLocale &amp;quot;&amp;quot; &amp;lt;$&amp;gt; getZonedTime
-&amp;quot;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;フォーマットの指定方法については &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html#v:formatTime&#34;&gt;haddock&lt;/a&gt; を参照してください。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; formatTime defaultTimeLocale &amp;quot;%D&amp;quot; &amp;lt;$&amp;gt; getZonedTime
-&amp;quot;09/17/18&amp;quot;
-
-&amp;gt; formatTime defaultTimeLocale &amp;quot;%F&amp;quot; &amp;lt;$&amp;gt; getZonedTime
-&amp;quot;2018-09-17&amp;quot;
-
-&amp;gt; formatTime defaultTimeLocale &amp;quot;%x&amp;quot; &amp;lt;$&amp;gt; getZonedTime
-&amp;quot;09/17/18&amp;quot;
-
-&amp;gt; formatTime defaultTimeLocale &amp;quot;%Y/%m/%d-%T&amp;quot; &amp;lt;$&amp;gt; getZonedTime
-&amp;quot;2018/09/17-13:52:21&amp;quot;
-
-&amp;gt; formatTime defaultTimeLocale rfc822DateFormat &amp;lt;$&amp;gt; getZonedTime
-&amp;quot;Sun, 16 Sep 2018 19:53:10 JST&amp;quot;
-
-&amp;gt; formatTime defaultTimeLocale (iso8601DateFormat Nothing) &amp;lt;$&amp;gt; getZonedTime
-&amp;quot;2018-09-16&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;文字列をパーズして-zonedtime-や-day-の値を作る&#34;&gt;文字列をパーズして ZonedTime や Day の値を作る&lt;/h2&gt;
-&lt;p&gt;ここまでは現在時刻を元に時刻の計算や出力結果の整形を行いました。&lt;/p&gt;
-&lt;p&gt;しかし、実際のプログラムでは文字列をパーズして &lt;code&gt;ZonedTime&lt;/code&gt; や &lt;code&gt;Day&lt;/code&gt; の値に変換したいこともあるでしょう。そのような場合は &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Format.html#v:parseTimeM&#34;&gt;parseTimeM&lt;/a&gt; を使うと便利です。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; :t parseTimeM
-parseTimeM
-  :: (Monad m, ParseTime t) =&amp;gt;
-     Bool -&amp;gt; TimeLocale -&amp;gt; String -&amp;gt; String -&amp;gt; m t&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;型がわかりづらいですが、具体的にはこんな型で利用することができます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb17&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseTimeM ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Day&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseTimeM ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ZonedTime&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseTimeM ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Day&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;parseTimeM ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;TimeLocale&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ZonedTime&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;第一引数は &lt;strong&gt;空白&lt;/strong&gt; を許容するかどうかのフラグです (True だと空白OK)&lt;/li&gt;
-&lt;li&gt;第二引数は気にせず &lt;strong&gt;defaultTimeLocale&lt;/strong&gt; を指定しておきましょう&lt;/li&gt;
-&lt;li&gt;第三引数は &lt;strong&gt;パーズで利用するフォーマット&lt;/strong&gt; を指定します&lt;/li&gt;
-&lt;li&gt;第四引数は &lt;strong&gt;入力の文字列&lt;/strong&gt; です&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;具体例&#34;&gt;具体例&lt;/h3&gt;
-&lt;p&gt;実際にいくつか使ってみましょう。以下の通り &lt;code&gt;%F&lt;/code&gt; は &lt;code&gt;YYYY-MM-DD&lt;/code&gt; の書式になります。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; formatTime defaultTimeLocale &amp;quot;%F&amp;quot; &amp;lt;$&amp;gt; getZonedTime
-&amp;quot;2018-09-17&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;モナドを &lt;code&gt;IO&lt;/code&gt; や &lt;code&gt;Maybe&lt;/code&gt; などに変化させた基本的な例。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot;2018-09-17&amp;quot; :: IO ZonedTime
-2018-09-17 00:00:00 +0000
-
-&amp;gt; parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot;2018-09-17&amp;quot; :: Maybe ZonedTime
-Just 2018-09-17 00:00:00 +0000&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;第一引数を変化させて、入力文字列の空白の有無について確認する例。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot; 2018-09-17 &amp;quot; :: IO ZonedTime
-2018-09-17 00:00:00 +0000
-
-&amp;gt; parseTimeM False defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot; 2018-09-17 &amp;quot; :: IO ZonedTime
-*** Exception: user error (parseTimeM: no parse of &amp;quot;2018-09-17 &amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;入力文字列とパーズの書式がマッチしない例&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parseTimeM False defaultTimeLocale &amp;quot;%x&amp;quot; &amp;quot; 2018-09-17 &amp;quot; :: IO ZonedTime
-*** Exception: user error (parseTimeM: no parse of &amp;quot; 2018-09-17 &amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Day 型の値をとしてパーズする例&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot;2018-09-17&amp;quot; :: IO Day
-2018-09-17&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;このようにして日付を取得できれば、今回は説明していませんが &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Calendar.html&#34;&gt;Data.Time.Calendar&lt;/a&gt; の &lt;a href=&#34;https://www.stackage.org/haddock/lts-12.9/time-1.8.0.2/Data-Time-Calendar.html#v:addDays&#34;&gt;addDays&lt;/a&gt; 関数などを使って日付の計算を行うこともできるようになります。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; d = parseTimeM True defaultTimeLocale &amp;quot;%F&amp;quot; &amp;quot;2018-09-17&amp;quot; :: IO Day
-
-&amp;gt; addDays 1 &amp;lt;$&amp;gt; d
-2018-09-18
-
-&amp;gt; addDays 35 &amp;lt;$&amp;gt; d
-2018-10-22&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;time パッケージを使うと時刻や日付の計算ができる&lt;/li&gt;
-&lt;li&gt;現在の&lt;strong&gt;日本&lt;/strong&gt;時間を取得した場合は &lt;strong&gt;getCurrentTime&lt;/strong&gt; ではなく、&lt;strong&gt;getZonedTime&lt;/strong&gt; を使う&lt;/li&gt;
-&lt;li&gt;整形には &lt;strong&gt;formatTime&lt;/strong&gt; を使う&lt;/li&gt;
-&lt;li&gt;文字列から &lt;strong&gt;ZonedTime&lt;/strong&gt; や &lt;strong&gt;Day&lt;/strong&gt; に変換する際は &lt;strong&gt;parseTimeM&lt;/strong&gt; を使う&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Haskell入門の &lt;strong&gt;7.7 日付・時刻を扱う&lt;/strong&gt; にも3ページほど &lt;strong&gt;time&lt;/strong&gt; パッケージの解説があるので、気になる人はそちらも確認してみると良いかもしれません。&lt;/p&gt;
-&lt;p&gt;以上です。&lt;/p&gt;
-&lt;h2 id=&#34;おまけ&#34;&gt;おまけ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;getZonedTime&lt;/code&gt; に対して &lt;code&gt;formatTime defaultTimeLocale &amp;lt;フォーマット文字&amp;gt;&lt;/code&gt; の対応表です。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;&amp;gt; getZonedTime
-2018-09-17 14:44:52.052040178 JST&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;narrow-table&#34;&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th&gt;文字&lt;/th&gt;
-&lt;th&gt;出力結果&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%-z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;+900&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%_z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;+ 900&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%0z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;+0900&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%^z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;+0900&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%#z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;+0900&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%8z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;+00000900&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%_12z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;+         900&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%%&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;%&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%t&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;\t&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%n&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;\n&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;+0900&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%Z&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;JST&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%c&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Mon Sep 17 14:39:34 JST 2018&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%R&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;14:39&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%T&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;14:40:12&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%X&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;14:40:31&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%r&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;02:40:55 PM&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%P&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;pm&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%p&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;PM&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%H&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;14&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%k&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;14&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%I&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;02&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%l&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;2&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%M&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;43&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%S&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;49&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%q&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;903244678000&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%Q&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;.28084722&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%s&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;1537163079&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%D&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;09/17/18&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%F&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;2018-09-17&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%x&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;09/17/18&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%Y&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;2018&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%y&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;18&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%C&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;20&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%B&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;September&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%b&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Sep&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%h&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Sep&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%m&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;09&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%d&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;17&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%e&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;17&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%j&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;260&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%f&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;20&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%V&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;38&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%u&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%a&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Mon&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%A&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Monday&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%U&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;37&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;&lt;code&gt;%w&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;1&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;code&gt;%W&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;38&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F</id><title type="text">技術書典 4 にサークル参加した</title><updated>2018-09-12T13:03:31+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F"/><summary type="html">4月22日に開催された『技術書典 4』にサークル参加してきました。 techbookfest.org 技術書典は1と2に個人で参加して3は会社として参加して今回の4は会社と個人と2サークルにかかわっていました。 超技術書典を抜くと皆勤です。 個人サークル 既刊として『遠回りして学ぶ Yesod 入門』を増刷し、新刊は『手続き Haskell』を持っていきました。 doujin.kakkun61.com doujin.kakkun61.com 数字 売り上げ部数は、どんぶり勘定ですが（特に Yesod 本のダウンロードカードが完全に記憶による）下記の通りとなりました。 Yesod 本 紙 + P…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/substring-parser.html</id><title type="text">substring-parserで「タイプセーフプリキュア！」を移行した話</title><updated>2018-09-04T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/substring-parser.html"/><summary type="html">
+</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/10/02/203205</id><title type="text">猫でもわかる Vertical Pod Autoscaler</title><updated>2018-10-02T20:32:05+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/10/02/203205"/><summary type="html">先日行われた Kubernetes Meetup Tokyo #13 で、Vertical Pod Autoscaler (VPA) について発表してきました。 VPA は、各コンテナの Resource Request の値を自動的に調整してくれるコンポーネント群です。必要とするリソース（CPU、メモリ）量があらかじめ推測しにくいアプリケーションに対して、実績に基づいてそれらしい値を決めたい場合に効果を発揮します。 本記事ではスライドの補足として、VPA が動作する流れをクラスタ上での実際の挙動を通じて確認し、また内部実装についても踏み込んで解説します。 なお、本記事中で引用している仕様やソ…</summary></entry><entry><id>http://ccvanishing.hateblo.jp/entry/2018/09/26/191231</id><title type="text">elm/time の使い方</title><updated>2018-09-26T19:12:31+09:00</updated><author><name>y_taka_23</name></author><link href="http://ccvanishing.hateblo.jp/entry/2018/09/26/191231"/><summary type="html">はじめに 先日、Elm v0.19 がリリースされました。公式ライブラリのリポジトリが elm-lang から elm に変更され、その中身も大きく再構成されています。 本記事では、これらの変更のうち特に時刻や日付の扱いに関する部分について、新しい API の使い方を含めて簡単に解説します。 v0.18 における時刻の扱い v0.18 では、時刻を扱う機能は標準パッケージ elm-lang/core の中で提供されていました。時刻を扱う Time モジュールと日付を扱う Date モジュールで、それぞれデータ型や関数が定義されているのが特徴です。 なお、旧バージョンのライブラリは現在 Elm …</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F</id><title type="text">技術書典 4 にサークル参加した</title><updated>2018-09-12T13:03:31+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2018/04/27/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_4_%E3%81%AB%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F"/><summary type="html">4月22日に開催された『技術書典 4』にサークル参加してきました。 techbookfest.org 技術書典は1と2に個人で参加して3は会社として参加して今回の4は会社と個人と2サークルにかかわっていました。 超技術書典を抜くと皆勤です。 個人サークル 既刊として『遠回りして学ぶ Yesod 入門』を増刷し、新刊は『手続き Haskell』を持っていきました。 doujin.kakkun61.com doujin.kakkun61.com 数字 売り上げ部数は、どんぶり勘定ですが（特に Yesod 本のダウンロードカードが完全に記憶による）下記の通りとなりました。 Yesod 本 紙 + P…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/substring-parser.html</id><title type="text">substring-parserで「タイプセーフプリキュア！」を移行した話</title><updated>2018-09-04T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/substring-parser.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
