@@ -1,4 +1,298 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-05-15T00:56:35+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/spinylobster/items/713c3777374c02af6896</id><title type="text">Haskell のリストを左結合で連結すると効率が悪い理由</title><updated>2019-05-15T00:56:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/spinylobster/items/713c3777374c02af6896"/></entry><entry><id>https://qiita.com/mod_poppo/items/793fdb08e62591d6f3fb</id><title type="text">【低レベルHaskell】Haskell (GHC) でもインラインアセンブリに肉薄したい！</title><updated>2019-05-14T21:24:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/793fdb08e62591d6f3fb"/></entry><entry><id>https://qiita.com/little_Haskeller/items/e73d54835b5772a55e81</id><title type="text">Haskell で「エラトステネスの篩」 その１</title><updated>2019-05-13T11:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/little_Haskeller/items/e73d54835b5772a55e81"/></entry><entry><id>https://qiita.com/little_Haskeller/items/a3ec4c82c7099f1c9cf1</id><title type="text">Haskell で「エラトステネスの篩」 その２</title><updated>2019-05-13T11:27:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/little_Haskeller/items/a3ec4c82c7099f1c9cf1"/></entry><entry><id>https://qiita.com/Cj-bc/items/481bb0449648047653b3</id><title type="text">= ale.vimとQuickRunでstack環境を使う</title><updated>2019-05-13T09:40:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cj-bc/items/481bb0449648047653b3"/></entry><entry><id>https://qiita.com/dsm/items/861d08844b1fba32f07b</id><title type="text">macOSでVS CodeのHaskellの環境構築で嵌った点</title><updated>2019-05-12T22:36:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/dsm/items/861d08844b1fba32f07b"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-05-12-create-my-github-cards.html</id><title type="text">GitHub Card を生成する SPA を Elm で作った</title><updated>2019-05-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-05-12-create-my-github-cards.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-05-16T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://matsubara0507.github.io/posts/2019-05-16-minruby-with-patternmatch.html</id><title type="text">Ruby のパターンマッチング機能を MinRuby で試す</title><updated>2019-05-16T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-05-16-minruby-with-patternmatch.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
+ &lt;div class=&#34;card-content&#34;&gt;
+  &lt;header class=&#34;post-header&#34;&gt;
+    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Ruby のパターンマッチング機能を MinRuby で試す&lt;/h1&gt;
+    &lt;p class=&#34;post-meta&#34;&gt;
+      &lt;time datetime=&#34;2019-05-16&#34; itemprop=&#34;datePublished&#34;&gt;
+        May 16, 2019
+      &lt;/time&gt;
+      
+      
+      &lt;div class=&#34;tags&#34;&gt;
+          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Ruby.html&#34;&gt;Ruby&lt;/a&gt;
+      &lt;/div&gt;
+      
+    &lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;Ruby 2.7 で導入予定で，すでに &lt;a href=&#34;https://github.com/ruby/ruby&#34;&gt;Ruby リポジトリ&lt;/a&gt;の trunk (いわゆる master ブランチのこと) にマージ済みの「パターンマッチング」機能を試してみたので，そのメモ書きです． 特に包括的に検証したわけではないので注意してください．&lt;/p&gt;
+&lt;h2 id=&#34;パターンマッチング&#34;&gt;パターンマッチング&lt;/h2&gt;
+&lt;p&gt;(わざわざ解説することでもないけど)&lt;/p&gt;
+&lt;p&gt;パターンマッチングは &lt;code&gt;if&lt;/code&gt; 文や &lt;code&gt;case&lt;/code&gt; 文のようなプログラムの分岐に使うプログラミング機能． &lt;code&gt;if&lt;/code&gt; 文が真偽値を返す条件式 (e.g. &lt;code&gt;a &amp;gt; 0 &amp;amp;&amp;amp; x == &#39;hoge&#39;&lt;/code&gt;) の結果により分岐し，&lt;code&gt;case&lt;/code&gt; 文が指定した変数の値によって分岐するのに対し，パターンマッチングは指定した変数のデータ構造によって分岐する．&lt;/p&gt;
+&lt;p&gt;例えば Ruby に導入されたパターンマッチングだと次のようになる:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode ruby&#34;&gt;&lt;code class=&#34;sourceCode ruby&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; var &lt;span class=&#34;co&#34;&gt;# var のデータ構造により分岐&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; []&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;  puts &lt;span class=&#34;st&#34;&gt;&amp;quot;var is empty list&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; [a]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;  puts &lt;span class=&#34;st&#34;&gt;&amp;quot;var is singleton: &lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;#{&lt;/span&gt;a&lt;span class=&#34;ot&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;# 変数 a に値を代入する&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; [&lt;span class=&#34;st&#34;&gt;:hoge&lt;/span&gt;, a, b]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;  puts &lt;span class=&#34;st&#34;&gt;&amp;quot;var is hoge list: &lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;#{&lt;/span&gt;[a, b]&lt;span class=&#34;ot&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;# 一要素目が :hoge の3要素リスト&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;kw&#34;&gt;else&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-9&#34; title=&#34;9&#34;&gt;  puts &lt;span class=&#34;st&#34;&gt;&amp;quot;No match: &lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;#{&lt;/span&gt;var&lt;span class=&#34;ot&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;# else はどれにもマッチしないとき&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;このようにデータ構造(例えば配列の要素数など)によって分岐かつ変数への代入が可能になる． パターンマッチングは様々なデータを扱うようなプログラミングを行う時に極めて簡潔にかつ直感的にプログラムを記述することができる．&lt;/p&gt;
+&lt;p&gt;ちなみに，パターンマッチングがあれば基本的に &lt;code&gt;if&lt;/code&gt; 文も &lt;code&gt;case&lt;/code&gt; 文も要らない． どちらもパターンマッチングの糖衣構文として表現でき，現に Haskell ではそうなっている(たぶん)．&lt;/p&gt;
+&lt;h3 id=&#34;ruby-のパターンマッチング&#34;&gt;Ruby のパターンマッチング&lt;/h3&gt;
+&lt;p&gt;ちょこちょこ既に記事があるが，RubyKaigi 2019 でも作者からの発表があり参考になる:&lt;/p&gt;
+&lt;iframe class=&#34;embedly-embed&#34; src=&#34;//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fspeakerdeck.com%2Fplayer%2Fa853a73bba9d48ae88860f7c9b068334&amp;amp;url=https%3A%2F%2Fspeakerdeck.com%2Fk_tsj%2Fpattern-matching-new-feature-in-ruby-2-dot-7&amp;amp;image=https%3A%2F%2Fspeakerd.s3.amazonaws.com%2Fpresentations%2Fa853a73bba9d48ae88860f7c9b068334%2Fslide_0.jpg%3F510667&amp;amp;key=internal&amp;amp;type=text%2Fhtml&amp;amp;schema=speakerdeck&#34; width=&#34;500&#34; height=&#34;299&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; allow=&#34;autoplay; fullscreen&#34; allowfullscreen=&#34;true&#34;&gt;
+&lt;/iframe&gt;
+&lt;p&gt;すでに &lt;a href=&#34;https://www.youtube.com/watch?v=paBlgsqoKk8&#34;&gt;YouTube で動画も公開された&lt;/a&gt;． ちなみに，2012 ぐらいからずっと作っていたらしい．&lt;/p&gt;
+&lt;p&gt;Elixir のピンパターン(&lt;code&gt;^var&lt;/code&gt;)など，数多くのパターンマッチング機能がある(後発の利点ですね)． ただし，変数のスコープが個人的には思ってたのと違った:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode ruby&#34;&gt;&lt;code class=&#34;sourceCode ruby&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;irb(main):&lt;span class=&#34;dv&#34;&gt;001&lt;/span&gt;:&lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&amp;gt; &lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;irb(main):&lt;span class=&#34;dv&#34;&gt;002&lt;/span&gt;:&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&amp;gt; &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; [a, &lt;span class=&#34;dv&#34;&gt;3&lt;/span&gt;] &lt;span class=&#34;kw&#34;&gt;then&lt;/span&gt; p a&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;irb(main):&lt;span class=&#34;dv&#34;&gt;003&lt;/span&gt;:&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&amp;gt; &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; [b, c] &lt;span class=&#34;kw&#34;&gt;then&lt;/span&gt; p c&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;irb(main):&lt;span class=&#34;dv&#34;&gt;004&lt;/span&gt;:&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&amp;gt; &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;=&amp;gt; &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;irb(main):&lt;span class=&#34;dv&#34;&gt;005&lt;/span&gt;:&lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&amp;gt; [a,b,c]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;=&amp;gt; [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;in ..&lt;/code&gt; ごとにスコープは閉じてるのが一般的な気がするけど Ruby でそれは難しいのだろうか(&lt;code&gt;if&lt;/code&gt; 文や &lt;code&gt;case&lt;/code&gt; 文でもこんな感じの挙動)．&lt;/p&gt;
+&lt;h2 id=&#34;試す&#34;&gt;試す&lt;/h2&gt;
+&lt;h3 id=&#34;ruby2.7-dev&#34;&gt;Ruby2.7-dev&lt;/h3&gt;
+&lt;p&gt;前述した通り，パターンマッチングは trunk にマージされているので Ruby2.7-dev で試すことができる． trunk を試す方法はいくつかあると思うが，僕は手っ取り早く &lt;a href=&#34;https://github.com/rbenv/rbenv&#34;&gt;rbenv&lt;/a&gt; を使った．&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ rbenv install 2.7.0-dev&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;minruby&#34;&gt;MinRuby&lt;/h3&gt;
+&lt;p&gt;パターンマッチングを試す対象として，「&lt;a href=&#34;https://ascii.jp/elem/000/001/230/1230449/&#34;&gt;Ruby で学ぶ Ruby&lt;/a&gt;」という連載で作っている，かなり簡易的な Ruby のサブセット処理系 MinRuby を利用する．&lt;/p&gt;
+&lt;p&gt;最終的な処理系は &lt;a href=&#34;https://github.com/matsubara0507/MinRuby.rb/blob/dbe9891f916877fc3c260135696f48344bceb98a/interp.rb&#34;&gt;Ruby コード一枚&lt;/a&gt;でできている(一番めんどくさい構文解析を &lt;a href=&#34;https://github.com/ruby/ruby/tree/970a25b10415bc3735e6e3c165e167e6abc3d7f4/ext/ripper&#34;&gt;ripper&lt;/a&gt; とそのラッパー &lt;a href=&#34;https://github.com/mame/minruby&#34;&gt;minruby&lt;/a&gt; というのに任せているので):&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode ruby&#34;&gt;&lt;code class=&#34;sourceCode ruby&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;# interp.rb&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; title=&#34;2&#34;&gt;require &lt;span class=&#34;st&#34;&gt;&amp;quot;minruby&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; evaluate(tree, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; tree[&lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;lit&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-7&#34; title=&#34;7&#34;&gt;    tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;+&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-9&#34; title=&#34;9&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) + evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-10&#34; title=&#34;10&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;-&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-11&#34; title=&#34;11&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) - evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-12&#34; title=&#34;12&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;*&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-13&#34; title=&#34;13&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) * evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-14&#34; title=&#34;14&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-15&#34; title=&#34;15&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) / evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-16&#34; title=&#34;16&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;%&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-17&#34; title=&#34;17&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) % evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-18&#34; title=&#34;18&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;lt;&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-19&#34; title=&#34;19&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) &amp;lt; evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-20&#34; title=&#34;20&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;lt;=&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-21&#34; title=&#34;21&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) &amp;lt;= evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-22&#34; title=&#34;22&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;==&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-23&#34; title=&#34;23&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) == evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-24&#34; title=&#34;24&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;!=&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-25&#34; title=&#34;25&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) != evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-26&#34; title=&#34;26&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;gt;=&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-27&#34; title=&#34;27&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) &amp;gt;= evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-28&#34; title=&#34;28&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;gt;&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-29&#34; title=&#34;29&#34;&gt;    evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv) &amp;gt; evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-30&#34; title=&#34;30&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;stmts&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-31&#34; title=&#34;31&#34;&gt;    i = &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-32&#34; title=&#34;32&#34;&gt;    last = &lt;span class=&#34;dv&#34;&gt;nil&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-33&#34; title=&#34;33&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; tree[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-34&#34; title=&#34;34&#34;&gt;      last = evaluate(tree[i], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-35&#34; title=&#34;35&#34;&gt;      i = i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-36&#34; title=&#34;36&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-37&#34; title=&#34;37&#34;&gt;    last&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-38&#34; title=&#34;38&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;var_assign&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-39&#34; title=&#34;39&#34;&gt;    lenv[tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]] = evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-40&#34; title=&#34;40&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;var_ref&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-41&#34; title=&#34;41&#34;&gt;    lenv[tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-42&#34; title=&#34;42&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;if&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-43&#34; title=&#34;43&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-44&#34; title=&#34;44&#34;&gt;      evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-45&#34; title=&#34;45&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;else&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-46&#34; title=&#34;46&#34;&gt;      evaluate(tree[&lt;span class=&#34;dv&#34;&gt;3&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-47&#34; title=&#34;47&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-48&#34; title=&#34;48&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;while&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-49&#34; title=&#34;49&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-50&#34; title=&#34;50&#34;&gt;      evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-51&#34; title=&#34;51&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-52&#34; title=&#34;52&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;func_def&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-53&#34; title=&#34;53&#34;&gt;    genv[tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]] = [&lt;span class=&#34;st&#34;&gt;&amp;quot;user_defined&amp;quot;&lt;/span&gt;, tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], tree[&lt;span class=&#34;dv&#34;&gt;3&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-54&#34; title=&#34;54&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;func_call&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-55&#34; title=&#34;55&#34;&gt;    args = []&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-56&#34; title=&#34;56&#34;&gt;    i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-57&#34; title=&#34;57&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; tree[i + &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-58&#34; title=&#34;58&#34;&gt;      args[i] = evaluate(tree[i + &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-59&#34; title=&#34;59&#34;&gt;      i = i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-60&#34; title=&#34;60&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-61&#34; title=&#34;61&#34;&gt;    mhd = genv[tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-62&#34; title=&#34;62&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; mhd[&lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;] == &lt;span class=&#34;st&#34;&gt;&amp;quot;builtin&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-63&#34; title=&#34;63&#34;&gt;      minruby_call(mhd[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], args)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-64&#34; title=&#34;64&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;else&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-65&#34; title=&#34;65&#34;&gt;      new_lenv = {}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-66&#34; title=&#34;66&#34;&gt;      params = mhd[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-67&#34; title=&#34;67&#34;&gt;      i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-68&#34; title=&#34;68&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; params[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-69&#34; title=&#34;69&#34;&gt;        new_lenv[params[i]] = args[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-70&#34; title=&#34;70&#34;&gt;        i = i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-71&#34; title=&#34;71&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-72&#34; title=&#34;72&#34;&gt;      evaluate(mhd[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, new_lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-73&#34; title=&#34;73&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-74&#34; title=&#34;74&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ary_new&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-75&#34; title=&#34;75&#34;&gt;    ary = []&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-76&#34; title=&#34;76&#34;&gt;    i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-77&#34; title=&#34;77&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; tree[i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-78&#34; title=&#34;78&#34;&gt;      ary[i] = evaluate(tree[i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-79&#34; title=&#34;79&#34;&gt;      i = i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-80&#34; title=&#34;80&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-81&#34; title=&#34;81&#34;&gt;    ary&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-82&#34; title=&#34;82&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ary_ref&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-83&#34; title=&#34;83&#34;&gt;    ary = evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-84&#34; title=&#34;84&#34;&gt;    idx = evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-85&#34; title=&#34;85&#34;&gt;    ary[idx]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-86&#34; title=&#34;86&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ary_assign&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-87&#34; title=&#34;87&#34;&gt;    ary = evaluate(tree[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-88&#34; title=&#34;88&#34;&gt;    idx = evaluate(tree[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-89&#34; title=&#34;89&#34;&gt;    val = evaluate(tree[&lt;span class=&#34;dv&#34;&gt;3&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-90&#34; title=&#34;90&#34;&gt;    ary[idx] = val&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-91&#34; title=&#34;91&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;when&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hash_new&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-92&#34; title=&#34;92&#34;&gt;    hsh = {}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-93&#34; title=&#34;93&#34;&gt;    i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-94&#34; title=&#34;94&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; tree[i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-95&#34; title=&#34;95&#34;&gt;      key = evaluate(tree[i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-96&#34; title=&#34;96&#34;&gt;      val = evaluate(tree[i + &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-97&#34; title=&#34;97&#34;&gt;      hsh[key] = val&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-98&#34; title=&#34;98&#34;&gt;      i = i + &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-99&#34; title=&#34;99&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-100&#34; title=&#34;100&#34;&gt;    hsh&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-101&#34; title=&#34;101&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-102&#34; title=&#34;102&#34;&gt;&lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-103&#34; title=&#34;103&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-104&#34; title=&#34;104&#34;&gt;str = minruby_load()&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-105&#34; title=&#34;105&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-106&#34; title=&#34;106&#34;&gt;tree = minruby_parse(str)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-107&#34; title=&#34;107&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-108&#34; title=&#34;108&#34;&gt;genv = {&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-109&#34; title=&#34;109&#34;&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;p&amp;quot;&lt;/span&gt; =&amp;gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;builtin&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;p&amp;quot;&lt;/span&gt;],&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-110&#34; title=&#34;110&#34;&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;require&amp;quot;&lt;/span&gt; =&amp;gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;builtin&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;require&amp;quot;&lt;/span&gt;],&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-111&#34; title=&#34;111&#34;&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;minruby_parse&amp;quot;&lt;/span&gt; =&amp;gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;builtin&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;minruby_parse&amp;quot;&lt;/span&gt;],&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-112&#34; title=&#34;112&#34;&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;minruby_load&amp;quot;&lt;/span&gt; =&amp;gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;builtin&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;minruby_load&amp;quot;&lt;/span&gt;],&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-113&#34; title=&#34;113&#34;&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;minruby_call&amp;quot;&lt;/span&gt; =&amp;gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;builtin&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;minruby_call&amp;quot;&lt;/span&gt;],&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-114&#34; title=&#34;114&#34;&gt;}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-115&#34; title=&#34;115&#34;&gt;lenv = {}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-116&#34; title=&#34;116&#34;&gt;evaluate(tree, genv, lenv)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;コードを見て分かるように(?)，配列の一引数目のリテラルで &lt;code&gt;case&lt;/code&gt; 文による分岐をし，分岐先で配列の要素を引っ張っている． このようにデータ構造 + &lt;code&gt;case&lt;/code&gt; 文による分岐はパターンマッチングにうってつけのユースケースだ．&lt;/p&gt;
+&lt;h3 id=&#34;minruby-パターンマッチング&#34;&gt;MinRuby + パターンマッチング&lt;/h3&gt;
+&lt;p&gt;作業リポジトリはこれ:&lt;/p&gt;
+&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/MinRuby.rb&#34;&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;code&gt;pattern-match&lt;/code&gt; というブランチにパターンマッチングで書き換えたコードがある． パターンマッチングで書き換えたのは &lt;code&gt;evaluate&lt;/code&gt; 関数だけなのでそこだけ載せる:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode ruby&#34;&gt;&lt;code class=&#34;sourceCode ruby&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;def&lt;/span&gt; evaluate(tree, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; tree&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;lit&amp;quot;&lt;/span&gt;, lit&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;    lit&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;+&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;    evaluate(exp1, genv, lenv) + evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;-&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; title=&#34;8&#34;&gt;    evaluate(exp1, genv, lenv) - evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;*&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-10&#34; title=&#34;10&#34;&gt;    evaluate(exp1, genv, lenv) * evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-11&#34; title=&#34;11&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-12&#34; title=&#34;12&#34;&gt;    evaluate(exp1, genv, lenv) / evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-13&#34; title=&#34;13&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;%&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-14&#34; title=&#34;14&#34;&gt;    evaluate(exp1, genv, lenv) % evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-15&#34; title=&#34;15&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;lt;&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-16&#34; title=&#34;16&#34;&gt;    evaluate(exp1, genv, lenv) &amp;lt; evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-17&#34; title=&#34;17&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;lt;=&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-18&#34; title=&#34;18&#34;&gt;    evaluate(exp1, genv, lenv) &amp;lt;= evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-19&#34; title=&#34;19&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;==&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-20&#34; title=&#34;20&#34;&gt;    evaluate(exp1, genv, lenv) == evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-21&#34; title=&#34;21&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;!=&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-22&#34; title=&#34;22&#34;&gt;    evaluate(exp1, genv, lenv) != evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-23&#34; title=&#34;23&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;gt;=&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-24&#34; title=&#34;24&#34;&gt;    evaluate(exp1, genv, lenv) &amp;gt;= evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-25&#34; title=&#34;25&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;gt;&amp;quot;&lt;/span&gt;, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-26&#34; title=&#34;26&#34;&gt;    evaluate(exp1, genv, lenv) &amp;gt; evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-27&#34; title=&#34;27&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;stmts&amp;quot;&lt;/span&gt;, *stmts&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-28&#34; title=&#34;28&#34;&gt;    last = &lt;span class=&#34;dv&#34;&gt;nil&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-29&#34; title=&#34;29&#34;&gt;    i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-30&#34; title=&#34;30&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; stmts[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-31&#34; title=&#34;31&#34;&gt;      last = evaluate(stmts[i], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-32&#34; title=&#34;32&#34;&gt;      i = i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-33&#34; title=&#34;33&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-34&#34; title=&#34;34&#34;&gt;    last&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-35&#34; title=&#34;35&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;var_assign&amp;quot;&lt;/span&gt;, var_name, var_value&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-36&#34; title=&#34;36&#34;&gt;    lenv[var_name] = evaluate(var_value, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-37&#34; title=&#34;37&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;var_ref&amp;quot;&lt;/span&gt;, var_name&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-38&#34; title=&#34;38&#34;&gt;    lenv[var_name]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-39&#34; title=&#34;39&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;if&amp;quot;&lt;/span&gt;, cond, exp1, exp2&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-40&#34; title=&#34;40&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; evaluate(cond, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-41&#34; title=&#34;41&#34;&gt;      evaluate(exp1, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-42&#34; title=&#34;42&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;else&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-43&#34; title=&#34;43&#34;&gt;      evaluate(exp2, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-44&#34; title=&#34;44&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-45&#34; title=&#34;45&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;while&amp;quot;&lt;/span&gt;, cond, exp&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-46&#34; title=&#34;46&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; evaluate(cond, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-47&#34; title=&#34;47&#34;&gt;      evaluate(exp, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-48&#34; title=&#34;48&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-49&#34; title=&#34;49&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;func_def&amp;quot;&lt;/span&gt;, func_name, func_args, func_body&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-50&#34; title=&#34;50&#34;&gt;    genv[func_name] = [&lt;span class=&#34;st&#34;&gt;&amp;quot;user_defined&amp;quot;&lt;/span&gt;, func_args, func_body]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-51&#34; title=&#34;51&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;func_call&amp;quot;&lt;/span&gt;, func_name, *func_args&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-52&#34; title=&#34;52&#34;&gt;    args = []&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-53&#34; title=&#34;53&#34;&gt;    i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-54&#34; title=&#34;54&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; func_args[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-55&#34; title=&#34;55&#34;&gt;      args[i] = evaluate(func_args[i], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-56&#34; title=&#34;56&#34;&gt;      i = i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-57&#34; title=&#34;57&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-58&#34; title=&#34;58&#34;&gt;    mhd = genv[func_name]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-59&#34; title=&#34;59&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; mhd[&lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;] == &lt;span class=&#34;st&#34;&gt;&amp;quot;builtin&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-60&#34; title=&#34;60&#34;&gt;      minruby_call(mhd[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], args)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-61&#34; title=&#34;61&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;else&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-62&#34; title=&#34;62&#34;&gt;      new_lenv = {}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-63&#34; title=&#34;63&#34;&gt;      params = mhd[&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-64&#34; title=&#34;64&#34;&gt;      i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-65&#34; title=&#34;65&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; params[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-66&#34; title=&#34;66&#34;&gt;        new_lenv[params[i]] = args[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-67&#34; title=&#34;67&#34;&gt;        i = i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-68&#34; title=&#34;68&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-69&#34; title=&#34;69&#34;&gt;      evaluate(mhd[&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], genv, new_lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-70&#34; title=&#34;70&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-71&#34; title=&#34;71&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ary_new&amp;quot;&lt;/span&gt;, ary_values&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-72&#34; title=&#34;72&#34;&gt;    ary = []&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-73&#34; title=&#34;73&#34;&gt;    i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-74&#34; title=&#34;74&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; ary_values[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-75&#34; title=&#34;75&#34;&gt;      ary [i] = evaluate(ary_values[i], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-76&#34; title=&#34;76&#34;&gt;      i = i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-77&#34; title=&#34;77&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-78&#34; title=&#34;78&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ary_ref&amp;quot;&lt;/span&gt;, ary_exp, idx_exp&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-79&#34; title=&#34;79&#34;&gt;    ary = evaluate(ary_exp, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-80&#34; title=&#34;80&#34;&gt;    idx = evaluate(idx_exp, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-81&#34; title=&#34;81&#34;&gt;    ary[idx]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-82&#34; title=&#34;82&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ary_assign&amp;quot;&lt;/span&gt;, ary_exp, idx_exp, value_exp&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-83&#34; title=&#34;83&#34;&gt;    ary = evaluate(ary_exp, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-84&#34; title=&#34;84&#34;&gt;    idx = evaluate(idx_exp, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-85&#34; title=&#34;85&#34;&gt;    val = evaluate(value_exp, genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-86&#34; title=&#34;86&#34;&gt;    ary[idx] = val&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-87&#34; title=&#34;87&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;hash_new&amp;quot;&lt;/span&gt;, *key_values&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-88&#34; title=&#34;88&#34;&gt;    hsh = {}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-89&#34; title=&#34;89&#34;&gt;    i = &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-90&#34; title=&#34;90&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;while&lt;/span&gt; key_values[i]&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-91&#34; title=&#34;91&#34;&gt;      key = evaluate(key_values[i], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-92&#34; title=&#34;92&#34;&gt;      val = evaluate(key_values[i + &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;], genv, lenv)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-93&#34; title=&#34;93&#34;&gt;      hsh[key] = val&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-94&#34; title=&#34;94&#34;&gt;      i = i + &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-95&#34; title=&#34;95&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-96&#34; title=&#34;96&#34;&gt;    hsh&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-97&#34; title=&#34;97&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-98&#34; title=&#34;98&#34;&gt;&lt;span class=&#34;kw&#34;&gt;end&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;配列にマッチさせる場合，&lt;code&gt;in [a, b, c]&lt;/code&gt; の &lt;code&gt;[]&lt;/code&gt; を省くことができる． また，&lt;code&gt;in &amp;quot;hoge&amp;quot;, *rest&lt;/code&gt; は配列の残りの要素全てを &lt;code&gt;*rest&lt;/code&gt; にマッチさせる構文だ． 他は特別な機能を使ってないのできっと読めるでしょう．&lt;/p&gt;
+&lt;h2 id=&#34;おまけ-minruby-パターンマッチング&#34;&gt;おまけ: minruby + パターンマッチング&lt;/h2&gt;
+&lt;p&gt;試しに &lt;code&gt;minruby&lt;/code&gt; もパターンマッチで書き換えてみた． 差分は&lt;a href=&#34;https://github.com/matsubara0507/minruby-gem/pull/1&#34;&gt;これ&lt;/a&gt;． めちゃくちゃやっつけで作ったので穴があるかもしれない．&lt;/p&gt;
+&lt;p&gt;ここでは新しく Alternative Pattern を使っている． こういうのだ:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode ruby&#34;&gt;&lt;code class=&#34;sourceCode ruby&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;# Alternative Pattern: hoge | fuga&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; (&lt;span class=&#34;st&#34;&gt;:program&lt;/span&gt; | &lt;span class=&#34;st&#34;&gt;:bodystmt&lt;/span&gt;), exp1, *_&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;    make_stmts(exp1)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Alternative Pattern には注意点があって，このパターンでは変数へのマッチを利用することができない:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode ruby&#34;&gt;&lt;code class=&#34;sourceCode ruby&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;# Error: illegal variable in alternative pattern&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; (&lt;span class=&#34;st&#34;&gt;:program&lt;/span&gt; exp1, *_ | &lt;span class=&#34;st&#34;&gt;:bodystmt&lt;/span&gt; exp1, *_),&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;    make_stmts(exp1)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ここからは余談． MinRuby は &lt;code&gt;ruby interp.rb interp.rb fizzbuzz.rb&lt;/code&gt; のように自身を自身で評価することが可能だ(そのため &lt;code&gt;map&lt;/code&gt; や &lt;code&gt;foreach&lt;/code&gt; などを使わずに少し冗長なコードになっている)． しかし，パターンマッチングを導入しちゃうとこれができない． なんとかできないかなぁと思って &lt;code&gt;minruby&lt;/code&gt; をパターンマッチングで書き換えてみたけど，まぁ無理でした． いいアイデアあったら教えて．&lt;/p&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;次は型検査も試したいですね．&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+</summary></entry><entry><id>https://qiita.com/spinylobster/items/713c3777374c02af6896</id><title type="text">Haskell のリストを左結合で連結すると効率が悪い理由</title><updated>2019-05-15T00:56:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/spinylobster/items/713c3777374c02af6896"/></entry><entry><id>https://qiita.com/mod_poppo/items/793fdb08e62591d6f3fb</id><title type="text">【低レベルHaskell】Haskell (GHC) でもインラインアセンブリに肉薄したい！</title><updated>2019-05-14T21:24:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/793fdb08e62591d6f3fb"/></entry><entry><id>https://qiita.com/little_Haskeller/items/e73d54835b5772a55e81</id><title type="text">Haskell で「エラトステネスの篩」 その１</title><updated>2019-05-13T11:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/little_Haskeller/items/e73d54835b5772a55e81"/></entry><entry><id>https://qiita.com/little_Haskeller/items/a3ec4c82c7099f1c9cf1</id><title type="text">Haskell で「エラトステネスの篩」 その２</title><updated>2019-05-13T11:27:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/little_Haskeller/items/a3ec4c82c7099f1c9cf1"/></entry><entry><id>https://qiita.com/Cj-bc/items/481bb0449648047653b3</id><title type="text">= ale.vimとQuickRunでstack環境を使う</title><updated>2019-05-13T09:40:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cj-bc/items/481bb0449648047653b3"/></entry><entry><id>https://qiita.com/dsm/items/861d08844b1fba32f07b</id><title type="text">macOSでVS CodeのHaskellの環境構築で嵌った点</title><updated>2019-05-12T22:36:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/dsm/items/861d08844b1fba32f07b"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-05-12-create-my-github-cards.html</id><title type="text">GitHub Card を生成する SPA を Elm で作った</title><updated>2019-05-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-05-12-create-my-github-cards.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
  &lt;div class=&#34;card-content&#34;&gt;
   &lt;header class=&#34;post-header&#34;&gt;
     &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;GitHub Card を生成する SPA を Elm で作った&lt;/h1&gt;
@@ -4766,205 +5060,7 @@ version: 0.0&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;Stack can now be compiled again inside a directory that does not contain a &lt;code&gt;.git&lt;/code&gt; directory, see &lt;a href=&#34;https://github.com/commercialhaskell/stack/issues/4364#issuecomment-431600841&#34;&gt;#4364&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Handle a change in GHC’s hi-dump format around &lt;code&gt;addDependentFile&lt;/code&gt;, which now includes a hash. See &lt;a href=&#34;https://github.com/yesodweb/yesod/issues/1551&#34;&gt;yesodweb/yesod#1551&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Allow variables to appear in template file names.&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2018/12/06/195433</id><title type="text">Kubernetes 1.13: SIG Scheduling の変更内容</title><updated>2018-12-06T19:54:33+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2018/12/06/195433"/><summary type="html">はじめに 本記事では、Kubernetes 1.13 の CHANGELOG からスケジューリングに関する内容をまとめました。 主な変更点 https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md#sig-scheduling 1.13 における SIG Scheduling の取り組みは主に安定性に焦点を当てており、いくつかの大きな機能の導入は次のバージョンまで延期することになりました。特記すべき変更として次に挙げる 2 点があります。 #69824: Taint based Eviction の有効化 Ta…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-05-create-dhall-ex.html</id><title type="text">Dhall を試して物足りない部分を補うツールを自作した</title><updated>2018-12-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-05-create-dhall-ex.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Dhall を試して物足りない部分を補うツールを自作した&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-12-05&#34; itemprop=&#34;datePublished&#34;&gt;
-        Dec 5, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/Dhall.html&#34;&gt;Dhall&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;本稿は &lt;a href=&#34;https://qiita.com/advent-calendar/2018/haskell&#34;&gt;Haskell Advent Calendar 2018&lt;/a&gt; 5日目の記事です．&lt;/p&gt;
-&lt;p&gt;Haskell Day 2018 の発表をきっかけに，兼ねてから気になっていた Dhall を試した． いくつかツールが欲しくなったので作りましたっていう話です．&lt;/p&gt;
-&lt;p&gt;作ったものはこれ:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/yaml-to-dhall&#34;&gt;matsubara0507/yaml-to-dhall - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/dhall-ex&#34;&gt;matsubara0507/dhall-ex - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;ちなみに，今回作ったツールは現状の stack の stable resolver にある v1.5.1 を利用している．&lt;/p&gt;
-&lt;h2 id=&#34;dhall&#34;&gt;Dhall&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/dhall-lang/dhall-lang&#34;&gt;Dhall&lt;/a&gt; は静的型付けされた設定記述言語である． 多くの場合，プログラミング言語やアプリケーションに使われる設定ファイルには JSON や YAML が利用されている． プログラミング言語のビルドシステムのような設定ファイル一つ程度なら問題ないが，Kubernetes や Ansible のような膨大な設定ファイルが依存しあう場合，静的型付けプログラミング言語のようにコンパイルによる型検査を導入したくなるだろう． Dhall はそのための言語であり，また便利な関数が用意されているため，非常に再利用性の高い設定ファイルを記述できる．&lt;/p&gt;
-&lt;h3 id=&#34;例&#34;&gt;例:&lt;/h3&gt;
-&lt;p&gt;Dhall は静的片付け言語なので，まずは型を定義しよう:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode ocaml&#34;&gt;&lt;code class=&#34;sourceCode ocaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;$ cat ./User.dhall&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;{ homeDirectory : Text, privateKeyFile : Text, publicKeyFile : Text }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このユーザ型の値はユーザ名から一意に生成されることは容易に想像できるだろう:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode ocaml&#34;&gt;&lt;code class=&#34;sourceCode ocaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;$ cat ./makeUser.dhall&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;  \(user_name : Text)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;-&amp;gt;    &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; homeDirectory = &lt;span class=&#34;st&#34;&gt;&amp;quot;/home/${user_name}&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt;  &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; privateKeyFile = &lt;span class=&#34;st&#34;&gt;&amp;quot;${homeDirectory}/id_rsa&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt;  &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; publicKeyFile = &lt;span class=&#34;st&#34;&gt;&amp;quot;${privateKeyFile}.pub&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt;    { homeDirectory =&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;            homeDirectory&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; title=&#34;11&#34;&gt;        , privateKeyFile =&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; title=&#34;12&#34;&gt;            privateKeyFile&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; title=&#34;13&#34;&gt;        , publicKeyFile =&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; title=&#34;14&#34;&gt;            publicKeyFile&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; title=&#34;15&#34;&gt;        }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; title=&#34;16&#34;&gt;      : ./User.dhall&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;この &lt;code&gt;./makeUser.dhall&lt;/code&gt; は任意の文字列を与えると，それをユーザ名として &lt;code&gt;./User.dhall&lt;/code&gt; 型の値を生成してくれる． さらに，高階関数を使って複数のユーザに対し一気に適用してみよう．&lt;/p&gt;
-&lt;pre class=&#34;dhall&#34;&gt;&lt;code&gt;$ cat ./users.dhall
-let User = ./User.dhall
-
-in  let map =
-      https://raw.githubusercontent.com/dhall-lang/dhall-lang/0a7f596d03b3ea760a96a8e03935f4baa64274e1/Prelude/List/map
-
-in  map Text User ./makeUser.dhall [ &amp;quot;alice&amp;quot;, &amp;quot;bob&amp;quot;, &amp;quot;curry&amp;quot; ] : List User&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;map&lt;/code&gt; には &lt;a href=&#34;https://github.com/dhall-lang/dhall-lang/blob/master/Prelude/List/map&#34;&gt;dhall のリポジトリにある標準パッケージの関数&lt;/a&gt;を直接インポートしている． &lt;code&gt;map&lt;/code&gt; の型は &lt;code&gt;∀(a : Type) → ∀(b : Type) → (a → b) → List a → List b&lt;/code&gt; となっている． 基本的に Dhall で多相な高階関数を利用するときは，引数から直接型を与えてあげる必要がある．&lt;/p&gt;
-&lt;p&gt;さて，これを dhall でビルドすると次のような結果を得る:&lt;/p&gt;
-&lt;pre class=&#34;dhall&#34;&gt;&lt;code&gt;$ dhall &amp;lt;&amp;lt;&amp;lt; ./users.dhall
-[ { homeDirectory =
-      &amp;quot;/home/alice&amp;quot;
-  , privateKeyFile =
-      &amp;quot;/home/alice/id_rsa&amp;quot;
-  , publicKeyFile =
-      &amp;quot;/home/alice/id_rsa.pub&amp;quot;
-  }
-, { homeDirectory =
-      &amp;quot;/home/bob&amp;quot;
-  , privateKeyFile =
-      &amp;quot;/home/bob/id_rsa&amp;quot;
-  , publicKeyFile =
-      &amp;quot;/home/bob/id_rsa.pub&amp;quot;
-  }
-, { homeDirectory =
-      &amp;quot;/home/curry&amp;quot;
-  , privateKeyFile =
-      &amp;quot;/home/curry/id_rsa&amp;quot;
-  , publicKeyFile =
-      &amp;quot;/home/curry/id_rsa.pub&amp;quot;
-  }
-]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;これは次のようなYAMLに対応し，&lt;code&gt;dhall-to-yaml&lt;/code&gt; などのツールで変換可能だ:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;privateKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/alice/id_rsa&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;publicKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/alice/id_rsa.pub&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;homeDirectory:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/alice&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;privateKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/bob/id_rsa&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;publicKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/bob/id_rsa.pub&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;homeDirectory:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/bob&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;privateKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/curry/id_rsa&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;publicKeyFile:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/curry/id_rsa.pub&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;homeDirectory:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; /home/curry&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;また，ざっくりとしたイメージを得るには、先日あった &lt;a href=&#34;https://wiki.haskell.jp/Workshop/HaskellDay/2018&#34;&gt;Haskell Day 2018&lt;/a&gt; での&lt;a href=&#34;https://speakerdeck.com/syocy/dhall-haskellfalsexin-tanakiraapuri&#34;&gt;発表資料&lt;/a&gt;がわかりやすくてオススメ．&lt;/p&gt;
-&lt;h3 id=&#34;使ってみて思うところ&#34;&gt;使ってみて思うところ&lt;/h3&gt;
-&lt;p&gt;もしかしたら最新のバージョンであれば改善しているものもあるかもしれない．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;基本的な高階関数があり便利
-&lt;ul&gt;
-&lt;li&gt;map,fold,filter など&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;普通のプログラミングのように式を再利用できる&lt;/li&gt;
-&lt;li&gt;型推論がザコい
-&lt;ul&gt;
-&lt;li&gt;パラメトリック多相を挟むとダメみたいですね&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;結構ビルドエラーがエスパー
-&lt;ul&gt;
-&lt;li&gt;慣れの問題か？&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;YAML のいわゆる連想配列への変換ができない&lt;/li&gt;
-&lt;li&gt;日本語が化ける ;;
-&lt;ul&gt;
-&lt;li&gt;まぁ原因はわかるので最新でも治ってなかったらPRしてみるか&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;何に導入したか&#34;&gt;何に導入したか&lt;/h2&gt;
-&lt;p&gt;弊社が企画してる学生向けの競技型イベントに関するシステムの設定ファイルを Dhall に置き換えてみた． そのシステムは，インフラ・スコアボード・デプロイツールの3つのリポジトリに別れており，ところどころ重複した設定が3つのリポジトリに存在する． そこで，設定用のリポジトリを作って，そこに Dhall で記述した設定を置き，そこから各リポジトリに設定を撒くような仕組みを考えることにした．&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/assets/create-dhall-ex/system-with-dhall.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;別に Dhall にしたからといって劇的に何かがよくなるわけでは無いのだが，ちょうど良いサンドボックスがあったのでイロイロと試してみる，というのが本音です（笑）&lt;/p&gt;
-&lt;h2 id=&#34;yaml-to-dhall&#34;&gt;yaml-to-dhall&lt;/h2&gt;
-&lt;p&gt;最初の方はせっせと手作業で変換していたが，何個かやって変換の仕方の勘所がわかって来た． そうなると後は作業でしか無いので，なんとかして大量にある設定ファイルを一括変換したい．&lt;/p&gt;
-&lt;p&gt;調べた限り，YAML から Dhall に変換するプログラムは無さそう(逆はもちろんあるけど)． なのですっごい雑なものを作った．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/yaml-to-dhall&#34;&gt;matsubara0507/yaml-to-dhall - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;これは極めて単純なことしかできない． 数値は全て Float に変換されるし，Optional や空リストの書き方が間違っている． とりあえず変換して，手元のエディタで置換すればいいかなと思ったので雑なままである．&lt;/p&gt;
-&lt;p&gt;時間ができたらそのうち直すかも．&lt;/p&gt;
-&lt;h2 id=&#34;dhall-ex&#34;&gt;dhall-ex&lt;/h2&gt;
-&lt;p&gt;前述した通り，一組の設定ファイル群から複数のリポジトリの設定ファイルを生成したかったのでその仕組みを作った． dhall-ex は次のような設定ファイルを記述する:&lt;/p&gt;
-&lt;pre class=&#34;dhall&#34;&gt;&lt;code&gt;{ GH_TOKEN =
-      [ &amp;quot;matsubara0507:XXXX&amp;quot; ] : Optional Text
-  , root =
-      &amp;quot;configs&amp;quot;
-  , exports =
-      [ { name =
-            &amp;quot;deploy-tool&amp;quot;
-        , repo =
-            [ &amp;quot;git-challenge/deploy-tool&amp;quot; ] : Optional Text
-        , paths =
-            [ &amp;quot;settings/orgs/orgs.yml&amp;quot;
-            , &amp;quot;settings/orgs/review.yml&amp;quot;
-            ...
-            ]
-        }
-      ...
-      ]
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;別にどっちでもよかったのだが，せっかくなので dhall-ex の設定ファイルも Dhall で記述するようにした． なので，具体例より&lt;a href=&#34;https://github.com/matsubara0507/dhall-ex/blob/master/dhall/dhall-ex-type.dhall&#34;&gt;型&lt;/a&gt;を見た方が早いだろう．&lt;/p&gt;
-&lt;pre class=&#34;dhall&#34;&gt;&lt;code&gt;let Export = { name : Text, repo : Optional Text, paths : List Text }
-in  { GH_TOKEN : Optional Text, root : Text, exports : List Export }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;root&lt;/code&gt; は設定ファイル群を置くパスで，&lt;code&gt;exports&lt;/code&gt; が設定ファイル群の更新先のリポジトリなどの情報だ． &lt;code&gt;repo&lt;/code&gt; で GitHub リポジトリを指定し，&lt;code&gt;paths&lt;/code&gt; で関連する設定ファイルを列挙する． 例の場合 &lt;code&gt;./config/settings/orgs/orgs.yml.dhall&lt;/code&gt; を &lt;code&gt;./.dhall-ex/git-challenge/deploy-tool/settings/orgs/orgs.yml&lt;/code&gt; に dhall でビルドする．&lt;/p&gt;
-&lt;p&gt;ちなみに Dhall のバージョンが古いので &lt;code&gt;Optional&lt;/code&gt; がリストのリテラルを利用しているが，最新の Dhall には &lt;code&gt;Some&lt;/code&gt; と &lt;code&gt;None&lt;/code&gt; があるはず．&lt;/p&gt;
-&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
-&lt;p&gt;現状はこんな感じ:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ dhall-ex --help
-dhall-ex - cli tool to support dhall
-
-Usage: dhall-ex [-v|--verbose] [-c|--config PATH] [--only NAME] COMMAND
-                [--version]
-
-Available options:
-  -v,--verbose             Enable verbose mode: verbosity level &amp;quot;debug&amp;quot;
-  -c,--config PATH         Configuration file
-  --only NAME              Exec subcommand only NAME in config
-  --version                Show version
-  -h,--help                Show this help text
-
-Available commands:
-  sort                     Sort record keys in dhall file
-  echo                     Echo TEXT
-  init                     Init dhall-ex work directory
-  build                    Build Dhall file to YAML or JSON
-  deploy                   Deploy builded config file to remote repository
-  checkout                 Checkout repository in dhall workspace
-  pull                     Pull repository in dhall workspace&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;echo&lt;/code&gt; は設定が正しく読み取れるかどうかにだけ使う雑機能． &lt;code&gt;sort&lt;/code&gt; レコードのフィールドの順番を型に合わせて並び替えてくれるコマンドだ． 前述した &lt;code&gt;yaml-to-dhall&lt;/code&gt; などを使った後に使った(並び変える必要はないんだけど，なんか読みやすいように)．&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;init&lt;/code&gt; でリポジトリなどの初期化をし，&lt;code&gt;build&lt;/code&gt; で設定ファイルを変換し，&lt;code&gt;deploy&lt;/code&gt; でコミットとプッシュを行ってくれる． &lt;code&gt;checkout&lt;/code&gt; や &lt;code&gt;pull&lt;/code&gt; はただの git コマンドのラッパーだ．&lt;/p&gt;
-&lt;p&gt;また，&lt;code&gt;--only deploy-tool&lt;/code&gt; などとすることでコマンドの実行を特定のリポジトリに限定できる．&lt;/p&gt;
-&lt;h3 id=&#34;実装&#34;&gt;実装&lt;/h3&gt;
-&lt;p&gt;実は内部実装はそこまで難しいことをしていない． Dhall のファイルを読み込み，ビルドし，それを dhall-ex の設定ファイルに則って出力するだけだ． &lt;code&gt;build&lt;/code&gt; 以外のコマンドは &lt;a href=&#34;http://hackage.haskell.org/package/shelly&#34;&gt;&lt;code&gt;shelly&lt;/code&gt;&lt;/a&gt; を使ってシェルスクリプトもどきを実行している．&lt;/p&gt;
-&lt;h3 id=&#34;todo&#34;&gt;ToDo&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;例外処理が雑なのを直す
-&lt;ul&gt;
-&lt;li&gt;だいたいこの部分が残る（笑）&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;任意のコマンドを各リポジトリのワークスペースで実行できるようにする
-&lt;ul&gt;
-&lt;li&gt;なんか &lt;code&gt;git status&lt;/code&gt; とか &lt;code&gt;git branch&lt;/code&gt; とかしたい&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;並行処理&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
-&lt;p&gt;随分雑な記事になってしまった．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20120502/1335973255</id><title type="text">AtCoder Regular Contest #2</title><updated>2018-11-29T19:16:22+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20120502/1335973255"/><summary type="html">AtCoder Regular Contest #2 参加したおーい。 成績は気にするなおーい。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20120709/1341769539</id><title type="text">関数合成をいろんな言語で書いてみた。</title><updated>2018-11-29T19:16:05+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20120709/1341769539"/><summary type="html">友人に Java で関数合成するプログラムを作れって課題の相談をされて一緒に考えた。で、せっかくだから勉強も兼ねていろんな言語で書いてみた。Java 以外はほとんど書いたことのない言語。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20120725/1343186129</id><title type="text">すごい H 本7.10章の「読者への練習問題」</title><updated>2018-11-29T19:15:57+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20120725/1343186129"/><summary type="html">大学の教科書とかでよくある「読者への練習問題としましょう」ってやつですよ。考査前、知りたいことが「読者への練習問題」で泣くやつですよ。 今回は API 調べて分かればそんなに難しくなかった。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20120822/1345602358</id><title type="text">Reader モナド（関数モナド）</title><updated>2018-11-29T19:15:37+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20120822/1345602358"/><summary type="html">すごい Haskell たのしく学ぼう！の14.2章331ページの関数モナドを do 記法で書いてあるコード、どういう動作になるかは解説されてあるので分かるのだけどなんでそうなるのかが分からないので書き下してみる。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20121031/1351667055</id><title type="text">Control.Arrow.app</title><updated>2018-11-29T19:15:29+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20121031/1351667055"/><summary type="html">Control.Arrow - mzsmsの雑記を読んで Arrow というものを理解しようとしてたんだけど、app 関数でちょっとつまずいたのでメモしておく。 loop はあんまりにも分からなかったので後回し。なんとなくフリップフロップ回路に似ている気はした。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20121101/1351754462</id><title type="text">「Haskell 入門ハンズオン in 明石」を主催したよ #AkashiHaskell</title><updated>2018-11-29T19:15:26+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20121101/1351754462"/><summary type="html">「すごい Haskell たのしく学ぼう！」を読んで Haskell 楽しいなぁ。人にもすすめたいなぁ。でも、すすめても実際やってくれる人少ないよなぁ。なら、僕が直接教えよう。というわけで、ハンズオンすることになった。 2012/10/28(Sun) 13:15-16:45 Haskell 入門ハンズオン in 明石 #AkashiHaskell - connpass</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20121128/1354076078</id><title type="text">第2回関数型言語勉強会で発表した</title><updated>2018-11-29T19:15:23+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20121128/1354076078"/><summary type="html">11月24日に第2回関数型言語勉強会があってそこで明石 Haskell の宣伝とかしたよ、というお話。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20130327/1364391398</id><title type="text">すごい Haskell 読書会 in 大阪 #7 にチャット参加した</title><updated>2018-11-29T19:14:51+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20130327/1364391398"/><summary type="html">#1-6 までだいたい参加してたので、チャットで問題演習だけ参加した。すごいHaskell読書会 in 大阪 – Lingr でお話してる。 http://atnd.org/events/37645</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2018/11/24/232705</id><title type="text">We Are JavaScripters! @26th で Elm と Firebase の連携について話してきました</title><updated>2018-11-24T23:27:05+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2018/11/24/232705"/><summary type="html">先日行われた We Are JavaScripters! @19th で Elm と JavaScript ライブラリの連携について発表してきました。 Elm の初心者向けの解説としてよく Msg, Model, update からなるアーキテクチャが挙げられていますが、今回の発表ではもう一歩だけ進んで、Cmd と Sub を使って Elm から JavaScript のライブラリを呼ぶ方法について解説しました。 サーバとしての JS ライブラリ 他の AltJS では JavaScript を呼び出す際、ソースコードの内部に埋め込む形になるのが普通です。 例えば Haskell を Java…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/haskell-day-2018.html</id><title type="text">Haskell Day 2018 開催レポート</title><updated>2018-11-20T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/haskell-day-2018.html"/><summary type="html">
+&lt;/ul&gt;</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2018/12/06/195433</id><title type="text">Kubernetes 1.13: SIG Scheduling の変更内容</title><updated>2018-12-06T19:54:33+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2018/12/06/195433"/><summary type="html">はじめに 本記事では、Kubernetes 1.13 の CHANGELOG からスケジューリングに関する内容をまとめました。 主な変更点 https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md#sig-scheduling 1.13 における SIG Scheduling の取り組みは主に安定性に焦点を当てており、いくつかの大きな機能の導入は次のバージョンまで延期することになりました。特記すべき変更として次に挙げる 2 点があります。 #69824: Taint based Eviction の有効化 Ta…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20120502/1335973255</id><title type="text">AtCoder Regular Contest #2</title><updated>2018-11-29T19:16:22+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20120502/1335973255"/><summary type="html">AtCoder Regular Contest #2 参加したおーい。 成績は気にするなおーい。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20120709/1341769539</id><title type="text">関数合成をいろんな言語で書いてみた。</title><updated>2018-11-29T19:16:05+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20120709/1341769539"/><summary type="html">友人に Java で関数合成するプログラムを作れって課題の相談をされて一緒に考えた。で、せっかくだから勉強も兼ねていろんな言語で書いてみた。Java 以外はほとんど書いたことのない言語。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20120725/1343186129</id><title type="text">すごい H 本7.10章の「読者への練習問題」</title><updated>2018-11-29T19:15:57+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20120725/1343186129"/><summary type="html">大学の教科書とかでよくある「読者への練習問題としましょう」ってやつですよ。考査前、知りたいことが「読者への練習問題」で泣くやつですよ。 今回は API 調べて分かればそんなに難しくなかった。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20120822/1345602358</id><title type="text">Reader モナド（関数モナド）</title><updated>2018-11-29T19:15:37+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20120822/1345602358"/><summary type="html">すごい Haskell たのしく学ぼう！の14.2章331ページの関数モナドを do 記法で書いてあるコード、どういう動作になるかは解説されてあるので分かるのだけどなんでそうなるのかが分からないので書き下してみる。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20121031/1351667055</id><title type="text">Control.Arrow.app</title><updated>2018-11-29T19:15:29+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20121031/1351667055"/><summary type="html">Control.Arrow - mzsmsの雑記を読んで Arrow というものを理解しようとしてたんだけど、app 関数でちょっとつまずいたのでメモしておく。 loop はあんまりにも分からなかったので後回し。なんとなくフリップフロップ回路に似ている気はした。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20121101/1351754462</id><title type="text">「Haskell 入門ハンズオン in 明石」を主催したよ #AkashiHaskell</title><updated>2018-11-29T19:15:26+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20121101/1351754462"/><summary type="html">「すごい Haskell たのしく学ぼう！」を読んで Haskell 楽しいなぁ。人にもすすめたいなぁ。でも、すすめても実際やってくれる人少ないよなぁ。なら、僕が直接教えよう。というわけで、ハンズオンすることになった。 2012/10/28(Sun) 13:15-16:45 Haskell 入門ハンズオン in 明石 #AkashiHaskell - connpass</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20121128/1354076078</id><title type="text">第2回関数型言語勉強会で発表した</title><updated>2018-11-29T19:15:23+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20121128/1354076078"/><summary type="html">11月24日に第2回関数型言語勉強会があってそこで明石 Haskell の宣伝とかしたよ、というお話。</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20130327/1364391398</id><title type="text">すごい Haskell 読書会 in 大阪 #7 にチャット参加した</title><updated>2018-11-29T19:14:51+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20130327/1364391398"/><summary type="html">#1-6 までだいたい参加してたので、チャットで問題演習だけ参加した。すごいHaskell読書会 in 大阪 – Lingr でお話してる。 http://atnd.org/events/37645</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2018/11/24/232705</id><title type="text">We Are JavaScripters! @26th で Elm と Firebase の連携について話してきました</title><updated>2018-11-24T23:27:05+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2018/11/24/232705"/><summary type="html">先日行われた We Are JavaScripters! @19th で Elm と JavaScript ライブラリの連携について発表してきました。 Elm の初心者向けの解説としてよく Msg, Model, update からなるアーキテクチャが挙げられていますが、今回の発表ではもう一歩だけ進んで、Cmd と Sub を使って Elm から JavaScript のライブラリを呼ぶ方法について解説しました。 サーバとしての JS ライブラリ 他の AltJS では JavaScript を呼び出す際、ソースコードの内部に埋め込む形になるのが普通です。 例えば Haskell を Java…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/haskell-day-2018.html</id><title type="text">Haskell Day 2018 開催レポート</title><updated>2018-11-20T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/haskell-day-2018.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
