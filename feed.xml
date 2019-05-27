@@ -1,25 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-05-26T13:38:56+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/hnw/items/3f7d27b742c5a1a99a9a</id><title type="text">HaskellでAtCoderの問題を解く（入力の高速化編）</title><updated>2019-05-26T13:38:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hnw/items/3f7d27b742c5a1a99a9a"/></entry><entry><id>https://qiita.com/spinylobster/items/713c3777374c02af6896</id><title type="text">Haskell のリストを左結合で連結すると効率が悪い理由</title><updated>2019-05-26T11:09:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/spinylobster/items/713c3777374c02af6896"/></entry><entry><id>https://qiita.com/isamuJazz/items/c25c0bb836b3bc073ef0</id><title type="text">[初心者向け]リスト操作関数map,reduce,filterの各言語の簡単なサンプル</title><updated>2019-05-26T01:19:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/isamuJazz/items/c25c0bb836b3bc073ef0"/></entry><entry><id>https://qiita.com/kaizen_nagoya/items/4e27a6905a57a1e8d34c</id><title type="text">Qiita-dockerお宝鑑定団(2)haskell 収集中</title><updated>2019-05-25T09:58:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kaizen_nagoya/items/4e27a6905a57a1e8d34c"/></entry><entry><id>https://qiita.com/kaizen_nagoya/items/a305b12393bf7cdd55d7</id><title type="text">haskell 入門の入門</title><updated>2019-05-25T09:52:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kaizen_nagoya/items/a305b12393bf7cdd55d7"/></entry><entry><id>https://qiita.com/Tatsuki-I/items/62b0d0691557c5305fdb</id><title type="text">Programming in Haskell 第2版 目次の雑和訳</title><updated>2019-05-19T20:17:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Tatsuki-I/items/62b0d0691557c5305fdb"/></entry><entry><id>https://qiita.com/tanakh/items/a1fb13f78e0576415de3</id><title type="text">「サイゼリヤで1000円あれば最大何kcal摂れるのか」をSMTソルバー(Z3)で解いてみた。</title><updated>2019-05-18T12:20:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tanakh/items/a1fb13f78e0576415de3"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-05-16-minruby-with-patternmatch.html</id><title type="text">Ruby のパターンマッチング機能を MinRuby で試す</title><updated>2019-05-16T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-05-16-minruby-with-patternmatch.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Ruby のパターンマッチング機能を MinRuby で試す&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2019-05-16&#34; itemprop=&#34;datePublished&#34;&gt;
-        May 16, 2019
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Ruby.html&#34;&gt;Ruby&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-05-27T03:46:42+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/isamuJazz/items/c25c0bb836b3bc073ef0</id><title type="text">[初心者向け]リスト操作関数map,reduce,filterの各言語の簡単なサンプル</title><updated>2019-05-27T03:46:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/isamuJazz/items/c25c0bb836b3bc073ef0"/></entry><entry><id>https://qiita.com/toru0408/items/db417dc7f761d00839eb</id><title type="text">HaskellとScottyで簡単にAPIを構築する</title><updated>2019-05-27T00:40:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/toru0408/items/db417dc7f761d00839eb"/></entry><entry><id>https://qiita.com/hnw/items/3f7d27b742c5a1a99a9a</id><title type="text">HaskellでAtCoderの問題を解く（入力の高速化編）</title><updated>2019-05-27T00:29:16+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hnw/items/3f7d27b742c5a1a99a9a"/></entry><entry><id>https://qiita.com/spinylobster/items/713c3777374c02af6896</id><title type="text">Haskell のリストを左結合で連結すると効率が悪い理由</title><updated>2019-05-26T11:09:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/spinylobster/items/713c3777374c02af6896"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-05-26-create-drone-slack-notify-log.html</id><title type="text">Drone Plugin を作ってみた: slack-notify-log</title><updated>2019-05-26T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-05-26-create-drone-slack-notify-log.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;とある事情で Drone CI のビルドログを Slack にスニペットとして通知したくなった． 公式の &lt;a href=&#34;https://github.com/drone-plugins/drone-slack&#34;&gt;&lt;code&gt;plugin/slack&lt;/code&gt;&lt;/a&gt; では出来なそうだったので，Plugin を自作した，というお話．&lt;/p&gt;
+&lt;h2 id=&#34;作ったもの&#34;&gt;作ったもの&lt;/h2&gt;
+&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/drone-slack-notify-log&#34;&gt;
+&lt;/iframe&gt;
+&lt;p&gt;色々調べてみたものの，同じビルド中の別のステップでのログを取得する方法がわからなかった… ので，最終手段として Drone API を使って引っ張ってくる方法をとった． ほぼほぼドキュメントは無いが，Drone API は &lt;a href=&#34;https://github.com/drone/drone-go&#34;&gt;drone/drone-go&lt;/a&gt; を使うことで簡単に呼び出すことができる． ざっくりと次のような感じで呼び出している:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode go&#34;&gt;&lt;code class=&#34;sourceCode go&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; (&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;	&lt;span class=&#34;st&#34;&gt;&amp;quot;context&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;	&lt;span class=&#34;st&#34;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;	&lt;span class=&#34;st&#34;&gt;&amp;quot;github.com/drone/drone-go/drone&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;	&lt;span class=&#34;st&#34;&gt;&amp;quot;github.com/pkg/errors&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;	log &lt;span class=&#34;st&#34;&gt;&amp;quot;github.com/sirupsen/logrus&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; title=&#34;8&#34;&gt;	&lt;span class=&#34;st&#34;&gt;&amp;quot;golang.org/x/oauth2&amp;quot;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-9&#34; title=&#34;9&#34;&gt;)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-10&#34; title=&#34;10&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-11&#34; title=&#34;11&#34;&gt;&lt;span class=&#34;kw&#34;&gt;func&lt;/span&gt; (p Plugin) Exec() &lt;span class=&#34;dt&#34;&gt;error&lt;/span&gt; {&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-12&#34; title=&#34;12&#34;&gt;  config := &lt;span class=&#34;bu&#34;&gt;new&lt;/span&gt;(oauth2.Config)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-13&#34; title=&#34;13&#34;&gt;  client := drone.NewClient(&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-14&#34; title=&#34;14&#34;&gt;    p.Config.DroneHost,&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-15&#34; title=&#34;15&#34;&gt;    config.Client(&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-16&#34; title=&#34;16&#34;&gt;      context.Background(),&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-17&#34; title=&#34;17&#34;&gt;      &amp;amp;oauth2.Token{&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-18&#34; title=&#34;18&#34;&gt;        AccessToken: p.Config.DroneToken,&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-19&#34; title=&#34;19&#34;&gt;      },&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-20&#34; title=&#34;20&#34;&gt;    ),&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-21&#34; title=&#34;21&#34;&gt;  )&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-22&#34; title=&#34;22&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-23&#34; title=&#34;23&#34;&gt;  logs, err := client.Logs(p.Repo.Owner, p.Repo.Name, p.Build.Number, p.Build.Stage, p.Config.StepNum)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-24&#34; title=&#34;24&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; err != &lt;span class=&#34;ot&#34;&gt;nil&lt;/span&gt; {&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-25&#34; title=&#34;25&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;return&lt;/span&gt; errors.Wrapf(err, &lt;span class=&#34;st&#34;&gt;&amp;quot;can&amp;#39;t fetch drone logs: builds/%d/logs/%d/%d&amp;quot;&lt;/span&gt;, p.Build.Number, p.Build.Stage, p.Config.StepNum)&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-26&#34; title=&#34;26&#34;&gt;  }&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-27&#34; title=&#34;27&#34;&gt;  log.Infof(&lt;span class=&#34;st&#34;&gt;&amp;quot;Success: fetch drone logs (lines num is %d)&amp;quot;&lt;/span&gt;, &lt;span class=&#34;bu&#34;&gt;len&lt;/span&gt;(logs))&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-28&#34; title=&#34;28&#34;&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-29&#34; title=&#34;29&#34;&gt;  ...&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-30&#34; title=&#34;30&#34;&gt;}&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;で，実際の Plugin の使い方はこんな感じ:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;steps:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;  ...&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;name:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; notify drone log to slack&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;image:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507/slack-notify-log&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;settings:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;    template:&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;gt;&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;      {{#success build.status}}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;        {{repo.name}} is Success!&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;      {{else}}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;        {{repo.name}} is Failure...&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; title=&#34;11&#34;&gt;      {{/success}}&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; title=&#34;12&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;token:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; title=&#34;13&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;from_secret:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; slack_token&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; title=&#34;14&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;channel:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; bot-test&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; title=&#34;15&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;step_number:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; title=&#34;16&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;drone_host:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-17&#34; title=&#34;17&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;from_secret:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; drone_host&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-18&#34; title=&#34;18&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;drone_token:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-19&#34; title=&#34;19&#34;&gt;      &lt;span class=&#34;fu&#34;&gt;from_secret:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; drone_token&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-20&#34; title=&#34;20&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;when:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-21&#34; title=&#34;21&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;status:&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-22&#34; title=&#34;22&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; success&lt;/a&gt;
+&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-23&#34; title=&#34;23&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt; failure&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;各 &lt;code&gt;settings&lt;/code&gt; は:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;template&lt;/code&gt; : スニペットのコメント&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;token&lt;/code&gt; : slack にポストするための API トークン
+&lt;ul&gt;
+&lt;li&gt;個人トークンや &lt;a href=&#34;https://slack.com/apps/A0F7YS25R-bots&#34;&gt;Bots App&lt;/a&gt; などから生成する&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;channel&lt;/code&gt; : 通知先チャンネル
+&lt;ul&gt;
+&lt;li&gt;無駄にテンプレートを利用できるようにした(ブランチやビルド結果によって通知先を変えるため)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;step_number&lt;/code&gt; : 何ステップ目のログを通知したいか
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;step_number: 1&lt;/code&gt; は git clone になる点に注意&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;drone_host&lt;/code&gt; : この CI を実行したい Drone のホスト
+&lt;ul&gt;
+&lt;li&gt;別にシークレットにする必要はないけど&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;https://cloud.drone.io&lt;/code&gt; とか&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;drone_token&lt;/code&gt; : この CI を実行したい Drone の API トークン&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;実行結果はこんな感じ:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/create-drone-slack-notify-log/example.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;これは matsubara0507/drone-slack-notify-log のビルドステップ．&lt;/p&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;なんか他に良い方法が絶対にある気がするんだけどな…&lt;/p&gt;
+  &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/kaizen_nagoya/items/4e27a6905a57a1e8d34c</id><title type="text">Qiita-dockerお宝鑑定団(2)haskell 収集中</title><updated>2019-05-25T09:58:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kaizen_nagoya/items/4e27a6905a57a1e8d34c"/></entry><entry><id>https://qiita.com/kaizen_nagoya/items/a305b12393bf7cdd55d7</id><title type="text">haskell 入門の入門</title><updated>2019-05-25T09:52:17+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kaizen_nagoya/items/a305b12393bf7cdd55d7"/></entry><entry><id>https://qiita.com/Tatsuki-I/items/62b0d0691557c5305fdb</id><title type="text">Programming in Haskell 第2版 目次の雑和訳</title><updated>2019-05-19T20:17:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Tatsuki-I/items/62b0d0691557c5305fdb"/></entry><entry><id>https://qiita.com/tanakh/items/a1fb13f78e0576415de3</id><title type="text">「サイゼリヤで1000円あれば最大何kcal摂れるのか」をSMTソルバー(Z3)で解いてみた。</title><updated>2019-05-18T12:20:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tanakh/items/a1fb13f78e0576415de3"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-05-16-minruby-with-patternmatch.html</id><title type="text">Ruby のパターンマッチング機能を MinRuby で試す</title><updated>2019-05-16T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-05-16-minruby-with-patternmatch.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;Ruby 2.7 で導入予定で，すでに &lt;a href=&#34;https://github.com/ruby/ruby&#34;&gt;Ruby リポジトリ&lt;/a&gt;の trunk (いわゆる master ブランチのこと) にマージ済みの「パターンマッチング」機能を試してみたので，そのメモ書きです． 特に包括的に検証したわけではないので注意してください．&lt;/p&gt;
 &lt;h2 id=&#34;パターンマッチング&#34;&gt;パターンマッチング&lt;/h2&gt;
 &lt;p&gt;(わざわざ解説することでもないけど)&lt;/p&gt;
-&lt;p&gt;パターンマッチングは &lt;code&gt;if&lt;/code&gt; 文や &lt;code&gt;case&lt;/code&gt; 文のようなプログラムの分岐に使うプログラミング機能． &lt;code&gt;if&lt;/code&gt; 文が真偽値を返す条件式 (e.g. &lt;code&gt;a &amp;gt; 0 &amp;amp;&amp;amp; x == &#39;hoge&#39;&lt;/code&gt;) の結果により分岐し，&lt;code&gt;case&lt;/code&gt; 文が指定した変数の値によって分岐するのに対し，パターンマッチングは指定した変数のデータ構造によって分岐する．&lt;/p&gt;
+&lt;p&gt;パターンマッチングは &lt;code&gt;if&lt;/code&gt; 文や &lt;code&gt;case&lt;/code&gt; 文のようなプログラムの分岐に使うプログラミング機能． &lt;code&gt;if&lt;/code&gt; 文が真偽値を返す条件式 (e.g. &lt;code&gt;a &amp;gt; 0 &amp;amp;&amp;amp; x == &amp;#39;hoge&amp;#39;&lt;/code&gt;) の結果により分岐し，&lt;code&gt;case&lt;/code&gt; 文が指定した変数の値によって分岐するのに対し，パターンマッチングは指定した変数のデータ構造によって分岐する．&lt;/p&gt;
 &lt;p&gt;例えば Ruby に導入されたパターンマッチングだと次のようになる:&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode ruby&#34;&gt;&lt;code class=&#34;sourceCode ruby&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; var &lt;span class=&#34;co&#34;&gt;# var のデータ構造により分岐&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;in&lt;/span&gt; []&lt;/a&gt;
@@ -289,27 +359,7 @@
 &lt;p&gt;ここからは余談． MinRuby は &lt;code&gt;ruby interp.rb interp.rb fizzbuzz.rb&lt;/code&gt; のように自身を自身で評価することが可能だ(そのため &lt;code&gt;map&lt;/code&gt; や &lt;code&gt;foreach&lt;/code&gt; などを使わずに少し冗長なコードになっている)． しかし，パターンマッチングを導入しちゃうとこれができない． なんとかできないかなぁと思って &lt;code&gt;minruby&lt;/code&gt; をパターンマッチングで書き換えてみたけど，まぁ無理でした． いいアイデアあったら教えて．&lt;/p&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;次は型検査も試したいですね．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://qiita.com/mod_poppo/items/793fdb08e62591d6f3fb</id><title type="text">【低レベルHaskell】Haskell (GHC) でもインラインアセンブリに肉薄したい！</title><updated>2019-05-14T21:24:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/793fdb08e62591d6f3fb"/></entry><entry><id>https://qiita.com/little_Haskeller/items/e73d54835b5772a55e81</id><title type="text">Haskell で「エラトステネスの篩」 その１</title><updated>2019-05-13T11:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/little_Haskeller/items/e73d54835b5772a55e81"/></entry><entry><id>https://qiita.com/little_Haskeller/items/a3ec4c82c7099f1c9cf1</id><title type="text">Haskell で「エラトステネスの篩」 その２</title><updated>2019-05-13T11:27:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/little_Haskeller/items/a3ec4c82c7099f1c9cf1"/></entry><entry><id>https://qiita.com/Cj-bc/items/481bb0449648047653b3</id><title type="text">= ale.vimとQuickRunでstack環境を使う</title><updated>2019-05-13T09:40:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cj-bc/items/481bb0449648047653b3"/></entry><entry><id>https://qiita.com/dsm/items/861d08844b1fba32f07b</id><title type="text">macOSでVS CodeのHaskellの環境構築で嵌った点</title><updated>2019-05-12T22:36:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/dsm/items/861d08844b1fba32f07b"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-05-12-create-my-github-cards.html</id><title type="text">GitHub Card を生成する SPA を Elm で作った</title><updated>2019-05-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-05-12-create-my-github-cards.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;GitHub Card を生成する SPA を Elm で作った&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2019-05-12&#34; itemprop=&#34;datePublished&#34;&gt;
-        May 12, 2019
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Elm.html&#34;&gt;Elm&lt;/a&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/application.html&#34;&gt;application&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+  &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/mod_poppo/items/793fdb08e62591d6f3fb</id><title type="text">【低レベルHaskell】Haskell (GHC) でもインラインアセンブリに肉薄したい！</title><updated>2019-05-14T21:24:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/793fdb08e62591d6f3fb"/></entry><entry><id>https://qiita.com/little_Haskeller/items/e73d54835b5772a55e81</id><title type="text">Haskell で「エラトステネスの篩」 その１</title><updated>2019-05-13T11:46:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/little_Haskeller/items/e73d54835b5772a55e81"/></entry><entry><id>https://qiita.com/little_Haskeller/items/a3ec4c82c7099f1c9cf1</id><title type="text">Haskell で「エラトステネスの篩」 その２</title><updated>2019-05-13T11:27:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/little_Haskeller/items/a3ec4c82c7099f1c9cf1"/></entry><entry><id>https://qiita.com/Cj-bc/items/481bb0449648047653b3</id><title type="text">= ale.vimとQuickRunでstack環境を使う</title><updated>2019-05-13T09:40:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cj-bc/items/481bb0449648047653b3"/></entry><entry><id>https://qiita.com/dsm/items/861d08844b1fba32f07b</id><title type="text">macOSでVS CodeのHaskellの環境構築で嵌った点</title><updated>2019-05-12T22:36:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/dsm/items/861d08844b1fba32f07b"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-05-12-create-my-github-cards.html</id><title type="text">GitHub Card を生成する SPA を Elm で作った</title><updated>2019-05-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-05-12-create-my-github-cards.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;Qiita や自分のブログに GitHub のリポジトリのリンク貼ってもなんか寂しいからいい感じのカードっぽいやつ生成するやつを作ったって話です． iframe で埋め込むことができます。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;だがしかし！Qiita などに任意の iframe が埋め込めるわけないジャーーーン！&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;ということに，だいたい完成してから気づいた orz&lt;/p&gt;
@@ -317,7 +367,7 @@
 &lt;p&gt;特別定義はないけど，&lt;a href=&#34;https://lab.lepture.com/github-cards/&#34;&gt;こんな感じ&lt;/a&gt;のを iframe で作りたかった．&lt;/p&gt;
 &lt;h2 id=&#34;作る&#34;&gt;作る&lt;/h2&gt;
 &lt;p&gt;マイフェィバリット JS 系プログラミング言語 Elm を使った． だいたい半日ぐらいかかった．GWの最終日．GW最高． リポジトリはこれ:&lt;/p&gt;
-&lt;h4 id=&#34;section&#34;&gt;&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/github-card&#34; &gt;&lt;/iframe&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;section&#34;&gt;&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/github-card&#34;&gt;&lt;/iframe&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://matsubara0507.github.io/github-card&#34;&gt;GitHub Pages に置いた&lt;/a&gt;ので誰でも試せる． ただし，裏では GitHub API v3 をトークンなしで叩いてる…&lt;/p&gt;
 &lt;p&gt;こんな感じになる:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://matsubara0507.github.io/github-card/#matsubara0507&#34;&gt;&lt;img src=&#34;/assets/create-my-github-cards/user-github-card.jpg&#34; style=&#34;max-width: 500px;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -343,8 +393,8 @@
 &lt;p&gt;ということで、思いついてしまったので作ってしまった． 気づいたら朝4時．GW延長戦(????)．&lt;/p&gt;
 &lt;h3 id=&#34;できたもの&#34;&gt;できたもの&lt;/h3&gt;
 &lt;p&gt;集める部分と表示する部分を分けた:&lt;/p&gt;
-&lt;h4 id=&#34;section-1&#34;&gt;&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/selfcat&#34; &gt;&lt;/iframe&gt;&lt;/h4&gt;
-&lt;h4 id=&#34;section-2&#34;&gt;&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/my-github-cards&#34; &gt;&lt;/iframe&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;section-1&#34;&gt;&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/selfcat&#34;&gt;&lt;/iframe&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;section-2&#34;&gt;&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/my-github-cards&#34;&gt;&lt;/iframe&gt;&lt;/h4&gt;
 &lt;p&gt;前回の &lt;a href=&#34;https://github.com/matsubara0507/github-card&#34;&gt;matsubara0507/github-card&lt;/a&gt; と違い自分専用． selfcat という CLI ツールで次のような設定ファイル &lt;code&gt;.selfcat.yaml&lt;/code&gt; にあるユーザーとリポジトリの情報を収集(GitHub API v3)し，JSON として保存する． もちろん Haskell 製．&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;owner:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;repos:&lt;/span&gt;&lt;/a&gt;
@@ -449,10 +499,7 @@
 &lt;p&gt;あと，特に Elm はやっつけで書いたので全体的にコードが汚い気がする．&lt;/p&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;自分(self)の GitHub (Octocat)の情報を集めるから selfcat です(????)。&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://qiita.com/jnuank/items/9b5cf42161be3954afac</id><title type="text">stack new叩いたらすぐhspecが使えるようにする</title><updated>2019-05-06T23:32:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/jnuank/items/9b5cf42161be3954afac"/></entry><entry><id>https://qiita.com/A_kirisaki/items/b45b127adb7d2d91e7f6</id><title type="text">Accelerateとglossで作るライフゲーム</title><updated>2019-05-06T18:04:57+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/A_kirisaki/items/b45b127adb7d2d91e7f6"/></entry><entry><id>https://haskell.jp/blog/posts/2019/asterius.html</id><title type="text">AsteriusでHaskellの関数をJSから呼べるようにしてみた（けど失敗）（拡大版）</title><updated>2019-05-04T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/asterius.html"/><summary type="html">
+  &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/jnuank/items/9b5cf42161be3954afac</id><title type="text">stack new叩いたらすぐhspecが使えるようにする</title><updated>2019-05-06T23:32:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/jnuank/items/9b5cf42161be3954afac"/></entry><entry><id>https://qiita.com/A_kirisaki/items/b45b127adb7d2d91e7f6</id><title type="text">Accelerateとglossで作るライフゲーム</title><updated>2019-05-06T18:04:57+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/A_kirisaki/items/b45b127adb7d2d91e7f6"/></entry><entry><id>https://haskell.jp/blog/posts/2019/asterius.html</id><title type="text">AsteriusでHaskellの関数をJSから呼べるようにしてみた（けど失敗）（拡大版）</title><updated>2019-05-04T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/asterius.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -860,7 +907,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;番外編&lt;span class=&#34;ascii&#34;&
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/spinylobster/items/6323f2ad37cdd96da7be</id><title type="text">「アンダースタンディング コンピュテーション」を Haskell でやってみた</title><updated>2019-04-28T08:37:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/spinylobster/items/6323f2ad37cdd96da7be"/></entry><entry><id>https://qiita.com/keiSunagawa/items/95a6d714e7d73b7f8923</id><title type="text">Haskellによる並列・並行プログラミング(12.3) チャットサーバを写経 &amp; network-3.0対応</title><updated>2019-04-27T14:23:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/keiSunagawa/items/95a6d714e7d73b7f8923"/></entry><entry><id>https://qiita.com/lotz/items/69adabbe6139d323716a</id><title type="text">ランダム行列の円板上に分布する固有値</title><updated>2019-04-26T09:18:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/69adabbe6139d323716a"/></entry><entry><id>https://qiita.com/mkotha/items/8096d6ec527c9b4f21e0</id><title type="text">パラメトリシティを使って自由モノイドが構成できることの証明</title><updated>2019-04-23T01:00:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mkotha/items/8096d6ec527c9b4f21e0"/></entry><entry><id>https://qiita.com/matoruru/items/e6e46cb9363474a9d626</id><title type="text">XMonadでワークスペース毎に異なる壁紙を設定する</title><updated>2019-04-22T22:28:15+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/matoruru/items/e6e46cb9363474a9d626"/></entry><entry><id>https://haskell.jp/blog/posts/2019/string-gap-for-heredoc-like.html</id><title type="text">Haskell でも heredoc がしたい</title><updated>2019-04-17T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/string-gap-for-heredoc-like.html"/><summary type="html">
+</summary></entry><entry><id>https://qiita.com/spinylobster/items/6323f2ad37cdd96da7be</id><title type="text">「アンダースタンディング コンピュテーション」を Haskell でやってみた</title><updated>2019-04-28T08:37:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/spinylobster/items/6323f2ad37cdd96da7be"/></entry><entry><id>https://qiita.com/keiSunagawa/items/95a6d714e7d73b7f8923</id><title type="text">Haskellによる並列・並行プログラミング(12.3) チャットサーバを写経 &amp; network-3.0対応</title><updated>2019-04-27T14:23:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/keiSunagawa/items/95a6d714e7d73b7f8923"/></entry><entry><id>https://qiita.com/lotz/items/69adabbe6139d323716a</id><title type="text">ランダム行列の円板上に分布する固有値</title><updated>2019-04-26T09:18:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/69adabbe6139d323716a"/></entry><entry><id>https://qiita.com/mkotha/items/8096d6ec527c9b4f21e0</id><title type="text">パラメトリシティを使って自由モノイドが構成できることの証明</title><updated>2019-04-23T01:00:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mkotha/items/8096d6ec527c9b4f21e0"/></entry><entry><id>https://haskell.jp/blog/posts/2019/string-gap-for-heredoc-like.html</id><title type="text">Haskell でも heredoc がしたい</title><updated>2019-04-17T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/string-gap-for-heredoc-like.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -986,24 +1033,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;まとめ&lt;/h2&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/04/16/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_5_%E3%81%B5%E3%82%8A%E3%81%8B%E3%81%88%E3%82%8A</id><title type="text">技術書典 5 ふりかえり</title><updated>2019-04-16T00:44:52+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/04/16/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_5_%E3%81%B5%E3%82%8A%E3%81%8B%E3%81%88%E3%82%8A"/><summary type="html">え？6？いやいや 5 ですよ？ techbookfest.org 池袋 慣れ親しんだ秋葉原の地を飛び出して池袋にやってきました。 めちゃくちゃ広くてびっくりです。秋葉原通運会館からアキバスクエアにやってきたときも思いましたが、同じ感想がもう一度。 ガラス張りじゃなくなったので外の行列見てやばいやばい言えなくなったのはほんのちょっとだけ残念です。 か61 kakkun61 という名前でもろもろアカウントを取っているのですが、今回は卓番号が「か61」ということでまさに自分のための場所でした。覚えやすい！ そんな弊卓の様子です。 落 新刊落としました…… フィルムカメラに目覚めた結果土日をそれに使っ…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-04-06-drone-1-0-in-gce.html</id><title type="text">Drone 1.0 を GCE 上に構築する</title><updated>2019-04-06T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-04-06-drone-1-0-in-gce.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Drone 1.0 を GCE 上に構築する&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2019-04-06&#34; itemprop=&#34;datePublished&#34;&gt;
-        Apr 6, 2019
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Drone.html&#34;&gt;Drone&lt;/a&gt; &lt;a href=&#34;/tags/GCP.html&#34;&gt;GCP&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/04/16/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_5_%E3%81%B5%E3%82%8A%E3%81%8B%E3%81%88%E3%82%8A</id><title type="text">技術書典 5 ふりかえり</title><updated>2019-04-16T00:44:52+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/04/16/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8_5_%E3%81%B5%E3%82%8A%E3%81%8B%E3%81%88%E3%82%8A"/><summary type="html">え？6？いやいや 5 ですよ？ techbookfest.org 池袋 慣れ親しんだ秋葉原の地を飛び出して池袋にやってきました。 めちゃくちゃ広くてびっくりです。秋葉原通運会館からアキバスクエアにやってきたときも思いましたが、同じ感想がもう一度。 ガラス張りじゃなくなったので外の行列見てやばいやばい言えなくなったのはほんのちょっとだけ残念です。 か61 kakkun61 という名前でもろもろアカウントを取っているのですが、今回は卓番号が「か61」ということでまさに自分のための場所でした。覚えやすい！ そんな弊卓の様子です。 落 新刊落としました…… フィルムカメラに目覚めた結果土日をそれに使っ…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-04-06-drone-1-0-in-gce.html</id><title type="text">Drone 1.0 を GCE 上に構築する</title><updated>2019-04-06T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-04-06-drone-1-0-in-gce.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;先月ついに &lt;a href=&#34;https://drone.io/&#34;&gt;Drone CI&lt;/a&gt; のバージョン1.0がリリースされました(rc でも無い方)． まだドキュメントの方が追いついてないところもありますが，これで大手を振って本番導入できますね！&lt;/p&gt;
 &lt;p&gt;で，別に本番導入したわけじゃ無いんですけど，とあるイベントで Drone CI を使いたかったので GCE 上に立てました． 本記事はそのメモ書きです．&lt;/p&gt;
 &lt;h2 id=&#34;drone-ci&#34;&gt;Drone CI&lt;/h2&gt;
@@ -1119,7 +1149,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;まとめ&lt;/h2&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb3-25&#34; title=&#34;25&#34;&gt;&lt;span class=&#34;dt&#34;&gt;  }&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb3-26&#34; title=&#34;26&#34;&gt;&lt;span class=&#34;dt&#34;&gt;}&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;これで (4) で設定したドメインの HTTPS 通信のみ許可するようになった． あとは適当なところで &lt;code&gt;docker-compose up -d&lt;/code&gt; とすれば良い．&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/assets/drone-1-0-in-gce/my-drone-example.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/drone-1-0-in-gce/my-drone-example.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;h2 id=&#34;おまけ&#34;&gt;おまけ&lt;/h2&gt;
 &lt;h3 id=&#34;drone-起動時の環境変数&#34;&gt;Drone 起動時の環境変数&lt;/h3&gt;
 &lt;p&gt;このあたりのを適宜使った:&lt;/p&gt;
@@ -1158,10 +1188,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;まとめ&lt;/h2&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/drone/drone-go&#34;&gt;drone/drone-go - GitHub&lt;/a&gt;: Drone API の Go クライアント&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/04/01/185927</id><title type="text">楽園へ行きたい</title><updated>2019-04-01T19:01:12+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/04/01/185927"/><summary type="html">楽園へ行きたい。 森と平原に囲まれた、街のはずれの小屋に住みたい。 朝は、小鳥たちのさえずりと窓から射し込む陽の光で目覚めたい。 昼は、コーヒーと焼き菓子を用意して一服したい。 夜は、天の河の向こうに思いを馳せながら眠りたい。 月曜日は大学に行き、エルフの先生の下で言語学を学びたい。 火曜日は研究室にこもり、ドラゴンの教授と研究に没頭したい。 水、木曜日は道具鍛治と修繕の仕事をしたい。 金曜日は都に向かい、品を売って食材と情報を仕入れたい。 土曜日は酒場に集まり、仲間たちと杯を交わしたい。 日曜日は使い魔を連れ、公園をゆったり散歩したい。 春は、花々を眺めながら、渡り鳥たちにしばしの別れを告げ…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/03/21/172101</id><title type="text">特級シリアライズライブラリ、winery 1.0解禁</title><updated>2019-03-21T18:06:56+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/03/21/172101"/><summary type="html">fumieval.hatenablog.com あれから9ヶ月…wineryのバージョン1.0をついにリリースした。 前回までのあらすじ データの保存や通信に直列化は不可欠の概念である。 binaryなどの直列化ライブラリは、レコードのフィールド名などの情報が欠けており、構造が変わると互換性を持たせることができない。 一方、JSONやCBORなどのフォーマットで愚直にフィールド名などを残すと極めて冗長になり、時間・空間効率が悪い。 コード生成が前提のProtobufなどはHaskellの既存のデータ構造との相性がよくない。 そんな現状に殴り込みをかけたのがwineryだ。値を「スキーマ」と「デ…</summary></entry><entry><id>http://ilyaletre.hatenablog.com/entry/2018/03/20/224320</id><title type="text">Haskellで再帰的な構文木にFix(不動点)を導入してみる</title><updated>2019-03-03T17:54:09+09:00</updated><author><name>ilyaletre</name></author><link href="http://ilyaletre.hatenablog.com/entry/2018/03/20/224320"/><summary type="html">まえおき 例によって僕の記事など読まなくても下記のリンクで解説されているので、 Haskell楽しいなと思う人はこちらをどうぞ。 An Introduction to Recursion Schemes 生きるのに疲れた人は半分白目のゆるい気持ちで以降を読んでね。 Haskellで抽象構文木 (AST) にメタデータを付与する 以前この記事でASTへのメタデータの埋め込み方について少し整理して、 下記のようなアプローチがあることを明らかにした。 メタデータを保存するための値コンストラクタをASTのブランチとして定義する メタデータを保存するラッパーを定義する 加えて Fixを使ってなんかファン…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/02/26/Servant_%E3%81%A8_Relational_Record_%E3%81%A7%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA</id><title type="text">Servant と Relational Record でウェブアプリケーション開発</title><updated>2019-02-27T15:29:35+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/02/26/Servant_%E3%81%A8_Relational_Record_%E3%81%A7%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA"/><summary type="html">Servant とは Servant は型レベルプログラミングによって、ウェブアプリとしてのインターフェースと実装との差異を防ぐことのできるウェブアプリフレームワークです。 haskell-servant.readthedocs.io 日本語記事としては lotz さんのこちらが分かりやすいので、参考にしてください。 qiita.com Haskell Relational Record とは Haskell Relational Record は言語内 DSL によって SQL を生成するもので、正しくない SQL に相当するものは型エラーとなります。 khibino.github.io こ…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2019/02/27/032421</id><title type="text">Docker Meetup Tokyo #28 で Scheduler のカスタマイズについて話してきました</title><updated>2019-02-27T03:24:21+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2019/02/27/032421"/><summary type="html">先日行われた Docker Meetup Tokyo #28で、Kubernetes Scheduler の挙動をカスタマイズする方法について発表してきました。 なお Scheduler のカスタマイズについては、つい最近 Kubernetes Meetup Tokyo #16 でも発表しています。ドキュメント類へのリンクも含めてまとめたものが以下の記事です。 ccvanishing.hateblo.jp 両方のスライドを見比べて頂ければ分かる通り、内容としてはオーバラップしている部分がかなりあります。 ただし、前回はあくまでも Scheduling Framework の解説であったのに対し…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/02/15/181806</id><title type="text">旅のチェックリスト</title><updated>2019-02-25T15:44:26+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/02/15/181806"/><summary type="html">筆者が旅に出る際に確認する項目をまとめた。 事前の準備 渡航ビザ: 必要な場合もあるので事前に確かめよう。 ESTA(アメリカの場合): どんな理由であれUSに入国する場合申請する必要がある。大抵すぐ承認されるが、遅くとも出発の72時間前に済ませるべきである。 宿: 好みに応じてホテルでもAirBnBなどで民泊を予約しても。後者はキッチンが用意されているところもある。 交通手段: 電車は大抵の場合当日で大丈夫だが、もちろん船舶や航空機の場合は予約が必須である。 冷蔵庫の整理: 日持ちしないものは消費してしまおう。 携帯するもの 財布: 財布は現金やカードを収納する。リスク回避の観点から財布は省…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2019/02/22/193916</id><title type="text">Kubernetes Meetup Tokyo #16 で Scheduling Framework について話してきました</title><updated>2019-02-22T19:39:16+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2019/02/22/193916"/><summary type="html">先日行われた Kubernetes Meetup Tokyo #16 で、現在 Scheduling SIG で進められているプロジェクト Scheduling Framework について発表してきました。 Kubernetes では、Pod をどの Node に配置するかを決める手続きをスケジューリングと呼びます。 古典的な Kubernetes の用途、すなわち通常の long-running なサーバ群の管理においては、Pod のスケジューリングは比較的シンプルな問題でした。すなわち、Node の障害時でも可用性が保てるように Pod を複数の Node に散らし、一度立ち上がった P…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/02/12/191002</id><title type="text">ある期間内に更新されたデータを素早く検索できるモデル</title><updated>2019-02-13T15:49:35+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/02/12/191002"/><summary type="html">特定の技術とは関係ない、誰でも思いつきそうな、でも便利なお話。 こんなケースを考えてみよう。 人気のトレーディングカードゲームAugur Unlimitedを扱うショップ「しらさぎ商店」では、1000種類にも及ぶカードの買い取り・販売をしている。記録のため、カードごとに日時、価格、在庫数などをまとめたレコードを毎日データベースに書き込んでいる。 新着・売り切れや、価格の変化などを、指定された期間について一覧で表示するようなWebページを作りたいとオーナーは考えた。しかし、ユーザーからの要求ごとに全データの差分を取るのは、あまり効率的な手段とはいえない。レアなカードでもない限り価格は一定であるこ…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-13-sum-monoid.html</id><title type="text">Sum Monoid</title><updated>2019-02-13T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-13-sum-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+  &lt;/div&gt;</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/04/01/185927</id><title type="text">楽園へ行きたい</title><updated>2019-04-01T19:01:12+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/04/01/185927"/><summary type="html">楽園へ行きたい。 森と平原に囲まれた、街のはずれの小屋に住みたい。 朝は、小鳥たちのさえずりと窓から射し込む陽の光で目覚めたい。 昼は、コーヒーと焼き菓子を用意して一服したい。 夜は、天の河の向こうに思いを馳せながら眠りたい。 月曜日は大学に行き、エルフの先生の下で言語学を学びたい。 火曜日は研究室にこもり、ドラゴンの教授と研究に没頭したい。 水、木曜日は道具鍛治と修繕の仕事をしたい。 金曜日は都に向かい、品を売って食材と情報を仕入れたい。 土曜日は酒場に集まり、仲間たちと杯を交わしたい。 日曜日は使い魔を連れ、公園をゆったり散歩したい。 春は、花々を眺めながら、渡り鳥たちにしばしの別れを告げ…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/03/21/172101</id><title type="text">特級シリアライズライブラリ、winery 1.0解禁</title><updated>2019-03-21T18:06:56+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/03/21/172101"/><summary type="html">fumieval.hatenablog.com あれから9ヶ月…wineryのバージョン1.0をついにリリースした。 前回までのあらすじ データの保存や通信に直列化は不可欠の概念である。 binaryなどの直列化ライブラリは、レコードのフィールド名などの情報が欠けており、構造が変わると互換性を持たせることができない。 一方、JSONやCBORなどのフォーマットで愚直にフィールド名などを残すと極めて冗長になり、時間・空間効率が悪い。 コード生成が前提のProtobufなどはHaskellの既存のデータ構造との相性がよくない。 そんな現状に殴り込みをかけたのがwineryだ。値を「スキーマ」と「デ…</summary></entry><entry><id>http://ilyaletre.hatenablog.com/entry/2018/03/20/224320</id><title type="text">Haskellで再帰的な構文木にFix(不動点)を導入してみる</title><updated>2019-03-03T17:54:09+09:00</updated><author><name>ilyaletre</name></author><link href="http://ilyaletre.hatenablog.com/entry/2018/03/20/224320"/><summary type="html">まえおき 例によって僕の記事など読まなくても下記のリンクで解説されているので、 Haskell楽しいなと思う人はこちらをどうぞ。 An Introduction to Recursion Schemes 生きるのに疲れた人は半分白目のゆるい気持ちで以降を読んでね。 Haskellで抽象構文木 (AST) にメタデータを付与する 以前この記事でASTへのメタデータの埋め込み方について少し整理して、 下記のようなアプローチがあることを明らかにした。 メタデータを保存するための値コンストラクタをASTのブランチとして定義する メタデータを保存するラッパーを定義する 加えて Fixを使ってなんかファン…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/02/26/Servant_%E3%81%A8_Relational_Record_%E3%81%A7%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA</id><title type="text">Servant と Relational Record でウェブアプリケーション開発</title><updated>2019-02-27T15:29:35+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/02/26/Servant_%E3%81%A8_Relational_Record_%E3%81%A7%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA"/><summary type="html">Servant とは Servant は型レベルプログラミングによって、ウェブアプリとしてのインターフェースと実装との差異を防ぐことのできるウェブアプリフレームワークです。 haskell-servant.readthedocs.io 日本語記事としては lotz さんのこちらが分かりやすいので、参考にしてください。 qiita.com Haskell Relational Record とは Haskell Relational Record は言語内 DSL によって SQL を生成するもので、正しくない SQL に相当するものは型エラーとなります。 khibino.github.io こ…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2019/02/27/032421</id><title type="text">Docker Meetup Tokyo #28 で Scheduler のカスタマイズについて話してきました</title><updated>2019-02-27T03:24:21+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2019/02/27/032421"/><summary type="html">先日行われた Docker Meetup Tokyo #28で、Kubernetes Scheduler の挙動をカスタマイズする方法について発表してきました。 なお Scheduler のカスタマイズについては、つい最近 Kubernetes Meetup Tokyo #16 でも発表しています。ドキュメント類へのリンクも含めてまとめたものが以下の記事です。 ccvanishing.hateblo.jp 両方のスライドを見比べて頂ければ分かる通り、内容としてはオーバラップしている部分がかなりあります。 ただし、前回はあくまでも Scheduling Framework の解説であったのに対し…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/02/15/181806</id><title type="text">旅のチェックリスト</title><updated>2019-02-25T15:44:26+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/02/15/181806"/><summary type="html">筆者が旅に出る際に確認する項目をまとめた。 事前の準備 渡航ビザ: 必要な場合もあるので事前に確かめよう。 ESTA(アメリカの場合): どんな理由であれUSに入国する場合申請する必要がある。大抵すぐ承認されるが、遅くとも出発の72時間前に済ませるべきである。 宿: 好みに応じてホテルでもAirBnBなどで民泊を予約しても。後者はキッチンが用意されているところもある。 交通手段: 電車は大抵の場合当日で大丈夫だが、もちろん船舶や航空機の場合は予約が必須である。 冷蔵庫の整理: 日持ちしないものは消費してしまおう。 携帯するもの 財布: 財布は現金やカードを収納する。リスク回避の観点から財布は省…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2019/02/22/193916</id><title type="text">Kubernetes Meetup Tokyo #16 で Scheduling Framework について話してきました</title><updated>2019-02-22T19:39:16+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2019/02/22/193916"/><summary type="html">先日行われた Kubernetes Meetup Tokyo #16 で、現在 Scheduling SIG で進められているプロジェクト Scheduling Framework について発表してきました。 Kubernetes では、Pod をどの Node に配置するかを決める手続きをスケジューリングと呼びます。 古典的な Kubernetes の用途、すなわち通常の long-running なサーバ群の管理においては、Pod のスケジューリングは比較的シンプルな問題でした。すなわち、Node の障害時でも可用性が保てるように Pod を複数の Node に散らし、一度立ち上がった P…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2019/02/12/191002</id><title type="text">ある期間内に更新されたデータを素早く検索できるモデル</title><updated>2019-02-13T15:49:35+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2019/02/12/191002"/><summary type="html">特定の技術とは関係ない、誰でも思いつきそうな、でも便利なお話。 こんなケースを考えてみよう。 人気のトレーディングカードゲームAugur Unlimitedを扱うショップ「しらさぎ商店」では、1000種類にも及ぶカードの買い取り・販売をしている。記録のため、カードごとに日時、価格、在庫数などをまとめたレコードを毎日データベースに書き込んでいる。 新着・売り切れや、価格の変化などを、指定された期間について一覧で表示するようなWebページを作りたいとオーナーは考えた。しかし、ユーザーからの要求ごとに全データの差分を取るのは、あまり効率的な手段とはいえない。レアなカードでもない限り価格は一定であるこ…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-13-sum-monoid.html</id><title type="text">Sum Monoid</title><updated>2019-02-13T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-13-sum-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:Sum&#34;&gt;Sum&lt;/a&gt; 型が定義されています。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Sum&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getSum ::&lt;/span&gt; a }&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
@@ -1839,24 +1866,7 @@ PartialOptions
 &lt;li&gt;&lt;a href=&#34;https://www.schoolofhaskell.com/user/mgsloan/monoids-tour&#34;&gt;Monoids Tour&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ocharles.org.uk/blog/posts/2013-02-12-quick-dsls-with-endo-writers.html&#34;&gt;Quick and Easy DSLs with Writer Endo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://blog.ploeh.dk/2018/04/16/endomorphic-composite-as-a-monoid/&#34;&gt;Endomorphic Composite as a monoid&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html</id><title type="text">Re: Marp のすゝめ</title><updated>2019-02-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Re: Marp のすゝめ&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2019-02-04&#34; itemprop=&#34;datePublished&#34;&gt;
-        Feb 4, 2019
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Marp.html&#34;&gt;Marp&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html</id><title type="text">Re: Marp のすゝめ</title><updated>2019-02-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;&lt;strong&gt;2019.4.6 Marp-core-0.6.0 での更新を反映した&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&#34;section&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://yhatt.github.io/marp/&#34;&gt;Marp&lt;/a&gt; というのは Markdown 記法で書けるスライド作成ツールです．&lt;/p&gt;
@@ -1987,7 +1997,7 @@ PartialOptions
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/pub-slides&#34;&gt;matsubara0507/pub-slides - GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://matsubara0507-slides.netlify.com/&#34;&gt;&lt;img src=&#34;/assets/re-recommend-marp/pub-slides-with-marp.jpg&#34; alt=&#34;image.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://matsubara0507-slides.netlify.com/&#34;&gt;&lt;img src=&#34;/assets/re-recommend-marp/pub-slides-with-marp.jpg&#34; alt=&#34;image.png&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;試し方: Marp の作者の&lt;a href=&#34;https://github.com/yhatt/marp-cli-example&#34;&gt;リポジトリ&lt;/a&gt;の &lt;code&gt;Deploy to netlify&lt;/code&gt; をクリックするだけ．&lt;/p&gt;
 &lt;p&gt;この方法の場合，リポジトリの &lt;code&gt;PITCHME.md&lt;/code&gt; を &lt;code&gt;index.html&lt;/code&gt; に変換する． marp-cli の設定は &lt;code&gt;package.yml&lt;/code&gt; に書いてある． &lt;a href=&#34;https://github.com/marp-team/marp-cli#options&#34;&gt;設定方法&lt;/a&gt;はこれを参照．&lt;/p&gt;
 &lt;p&gt;僕はできれば，複数のスライドを一つのリポジトリに置きたかった． ので，僕のリポジトリでは:&lt;/p&gt;
@@ -2007,7 +2017,7 @@ cd marp-web
 yarn install
 yarn start&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;でできた．&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/assets/re-recommend-marp/editing_marp_next.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/re-recommend-marp/editing_marp_next.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ファイルの読み込みや保存が可能&lt;/li&gt;
 &lt;li&gt;プレゼンテーションモードは(まだ)なかった&lt;/li&gt;
@@ -2052,10 +2062,7 @@ yarn start&lt;/code&gt;&lt;/pre&gt;
 &lt;/iframe&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;もう既に十分使える状態になっていました． すごい！&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-02-dual-monoid.html</id><title type="text">Dual Monoid</title><updated>2019-02-02T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-02-dual-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+  &lt;/div&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-02-dual-monoid.html</id><title type="text">Dual Monoid</title><updated>2019-02-02T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-02-dual-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:Dual&#34;&gt;Dual&lt;/a&gt; 型が定義されています。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dual&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; getDual ::&lt;/span&gt; a }&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
@@ -2440,24 +2447,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;今後やりたいこと&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-20-create-drone-git-with-ssh.html</id><title type="text">Drone Plugin を作ってみた: git-with-ssh</title><updated>2019-01-20T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-20-create-drone-git-with-ssh.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Drone Plugin を作ってみた: git-with-ssh&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2019-01-20&#34; itemprop=&#34;datePublished&#34;&gt;
-        Jan 20, 2019
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Drone.html&#34;&gt;Drone&lt;/a&gt; &lt;a href=&#34;/tags/Go.html&#34;&gt;Go&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-20-create-drone-git-with-ssh.html</id><title type="text">Drone Plugin を作ってみた: git-with-ssh</title><updated>2019-01-20T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-20-create-drone-git-with-ssh.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;最近 &lt;a href=&#34;https://drone.io&#34;&gt;Drone&lt;/a&gt; という CI プラットフォームを試しています． Drone は Plugin という形で拡張機能を提供するので Plugin を自作してみた，という話です．&lt;/p&gt;
 &lt;h2 id=&#34;作ったもの&#34;&gt;作ったもの&lt;/h2&gt;
 &lt;p&gt;表題の通り，git-with-ssh という Plugin を作った:&lt;/p&gt;
@@ -2576,7 +2566,7 @@ PLUGIN_COMMANDS&lt;/code&gt;&lt;/pre&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb5-24&#34; title=&#34;24&#34;&gt;}&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;そして，&lt;code&gt;id_rsa&lt;/code&gt; の中身をオプションないしは環境変数として Go アプリに渡したい． しかし，次のように単純に渡してみてもうまく動作しない:&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode sh&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;$ &lt;span class=&#34;ex&#34;&gt;./drone-git-with-ssh&lt;/span&gt; --ssh_private_key=&lt;span class=&#34;st&#34;&gt;&amp;#39;aaa\nbbb&amp;#39;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これだと &lt;code&gt;id_rsa&lt;/code&gt; の中身は &lt;code&gt;aaa\nbbb&lt;/code&gt; となる． &lt;code&gt;--ssh_private_key=$&#39;aaa\nbbb&#39;&lt;/code&gt; としたら一応動作するが環境変数などが使えなくなるので，&lt;a href=&#34;https://blog.konboi.com/post/2018/05/01/225336/&#34;&gt;内部で明示的に置換すると良い&lt;/a&gt;ようだ:&lt;/p&gt;
+&lt;p&gt;これだと &lt;code&gt;id_rsa&lt;/code&gt; の中身は &lt;code&gt;aaa\nbbb&lt;/code&gt; となる． &lt;code&gt;--ssh_private_key=$&amp;#39;aaa\nbbb&amp;#39;&lt;/code&gt; としたら一応動作するが環境変数などが使えなくなるので，&lt;a href=&#34;https://blog.konboi.com/post/2018/05/01/225336/&#34;&gt;内部で明示的に置換すると良い&lt;/a&gt;ようだ:&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode go&#34;&gt;&lt;code class=&#34;sourceCode go&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;// main.go&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;...&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
@@ -2663,7 +2653,7 @@ PLUGIN_COMMANDS&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;expected な &lt;code&gt;id_rsa&lt;/code&gt; をわざわざ test ステップで生成するのではなく，GitHub に直接おいても良いが，なんか &lt;code&gt;id_rsa&lt;/code&gt; という名前のファイルをパブリックリポジトリに置くのはどうなのかなぁと思ってやめた． このテストのために &lt;code&gt;--home&lt;/code&gt; というオプションで任意のディレクトリに SSH の設定 &lt;code&gt;.ssh&lt;/code&gt; を生成してくれるようにした． デフォルトは &lt;code&gt;/root&lt;/code&gt; だが．&lt;/p&gt;
 &lt;h3 id=&#34;おまけ-バッチ&#34;&gt;おまけ: バッチ&lt;/h3&gt;
 &lt;p&gt;公式の Drone Plugin のリポジトリをみると README にいろんなバッジがあった． ので，真似して git-with-ssh にも設定してみた:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matsubara0507/drone-git-with-ssh/blob/aee8928379453d89aedba010a1664ca6adf1ee72/README.md&#34;&gt;&lt;img src=&#34;/assets/create-drone-git-with-ssh/badges.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/matsubara0507/drone-git-with-ssh/blob/aee8928379453d89aedba010a1664ca6adf1ee72/README.md&#34;&gt;&lt;img src=&#34;/assets/create-drone-git-with-ssh/badges.jpg&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;付けたのは4つ:&lt;/p&gt;
 &lt;ol type=&#34;1&#34;&gt;
 &lt;li&gt;Drone のビルド結果&lt;/li&gt;
@@ -2679,10 +2669,7 @@ PLUGIN_COMMANDS&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;MicroBadger は Docker Hub にあるイメージを静的検査してくれる． イメージサイズや生成時間はもちろん，Docker イメージのレイヤ構造も出してくれる． これで Dockerfile をわざわざ探さなくても良いのですごい助かる．&lt;/p&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;久しぶりにサンプルじゃない Go のアプリケーションを作ってみた． 楽しかった〜．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://haskell.jp/blog/posts/2019/tidalcycles-stack.html</id><title type="text">TidalCyclesをstackで確実にインストールする</title><updated>2019-01-17T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/tidalcycles-stack.html"/><summary type="html">
+  &lt;/div&gt;</summary></entry><entry><id>https://haskell.jp/blog/posts/2019/tidalcycles-stack.html</id><title type="text">TidalCyclesをstackで確実にインストールする</title><updated>2019-01-17T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/tidalcycles-stack.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -2997,24 +2984,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;おわりに&lt;span class=&#34;ascii&#3
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>http://syocy.hatenablog.com/entry/try-linear-types</id><title type="text">GHCの線形型プロトタイプを試すだけ</title><updated>2019-01-08T02:01:09+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/try-linear-types"/><summary type="html">GHCに線形型を導入すると以下のような良い事があるらしい。 リソース安全性: ファイルハンドル、ソケット、DBコネクションのようなリソースについて、これらを提供するAPIの設計者が安全な使用を強制できる。リソース解放後のアクセス、二重解放、解放忘れを防止することができる。 レイテンシ: リソースAPIの実装をうまくやるとoff-heap(GCの対象外)でリソースを確保・解放できる。GC対象が少なくなることによりGCによってプログラムが停止する時間を減らせる。 並列性: 過剰な直列化を強要しない。リソース安全性を保ちつつもできる限り並列化できる。 詳しくはproposal。 この記事では線形型G…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-06-use-drone-cache-with-gcs.html</id><title type="text">GCS で Drone 1.0 をキャッシュする</title><updated>2019-01-06T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-06-use-drone-cache-with-gcs.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;GCS で Drone 1.0 をキャッシュする&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2019-01-06&#34; itemprop=&#34;datePublished&#34;&gt;
-        Jan 6, 2019
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Drone.html&#34;&gt;Drone&lt;/a&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+</summary></entry><entry><id>http://syocy.hatenablog.com/entry/try-linear-types</id><title type="text">GHCの線形型プロトタイプを試すだけ</title><updated>2019-01-08T02:01:09+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/try-linear-types"/><summary type="html">GHCに線形型を導入すると以下のような良い事があるらしい。 リソース安全性: ファイルハンドル、ソケット、DBコネクションのようなリソースについて、これらを提供するAPIの設計者が安全な使用を強制できる。リソース解放後のアクセス、二重解放、解放忘れを防止することができる。 レイテンシ: リソースAPIの実装をうまくやるとoff-heap(GCの対象外)でリソースを確保・解放できる。GC対象が少なくなることによりGCによってプログラムが停止する時間を減らせる。 並列性: 過剰な直列化を強要しない。リソース安全性を保ちつつもできる限り並列化できる。 詳しくはproposal。 この記事では線形型G…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-06-use-drone-cache-with-gcs.html</id><title type="text">GCS で Drone 1.0 をキャッシュする</title><updated>2019-01-06T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-06-use-drone-cache-with-gcs.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;Drone ネタ2本目． せっかく drone-haskell を作ったので TravisCI でテストを回すのではなく，Drone で回そうかなと思ったのだが，Stack でフルビルドするとめっちゃ時間かかる． なので，Drone のキャッシュをやってみましたっていう小話です．&lt;/p&gt;
 &lt;h2 id=&#34;cache-in-drone&#34;&gt;Cache in Drone&lt;/h2&gt;
 &lt;p&gt;Drone でキャッシュを利用するには次のような Plugin を使用する:&lt;/p&gt;
@@ -3108,33 +3078,13 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;おわりに&lt;span class=&#34;ascii&#3
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb2-32&#34; title=&#34;32&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;settings:&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb2-33&#34; title=&#34;33&#34;&gt;    ...&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;restore&lt;/code&gt; と &lt;code&gt;flush&lt;/code&gt; は同じなので割愛． &lt;code&gt;$HOME/.stack&lt;/code&gt; だと動作しなかったので，いっそのことカレントディレクトリに &lt;code&gt;.stack&lt;/code&gt; を持ってくることにした． で，実際どれくらい早くなったのか． ビフォー:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/assets/use-drone-cache-with-gcs/before.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/use-drone-cache-with-gcs/before.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;p&gt;9分は長い． そんでアフター:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/assets/use-drone-cache-with-gcs/after.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/use-drone-cache-with-gcs/after.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;p&gt;4GB弱キャッシュされてるので，restore に結構かかってしまう． まぁ半分近くになったのでこれで良しとしましょう(GCS分のお金はかかるけど)．&lt;/p&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;Drone は Crone を hourly で使えるから haskell-antenna を Drone に移行してみようかしら．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-05-docker-compose-up-drone-1-0.html</id><title type="text">Drone 1.0 を docker-compose up する</title><updated>2019-01-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-05-docker-compose-up-drone-1-0.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Drone 1.0 を docker-compose up する&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2019-01-05&#34; itemprop=&#34;datePublished&#34;&gt;
-        Jan 5, 2019
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Drone.html&#34;&gt;Drone&lt;/a&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/library.html&#34;&gt;library&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+  &lt;/div&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-05-docker-compose-up-drone-1-0.html</id><title type="text">Drone 1.0 を docker-compose up する</title><updated>2019-01-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-05-docker-compose-up-drone-1-0.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;&lt;strong&gt;2019.4.6 YAMLの設定が一部間違っていたので修正しました&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&#34;section&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;新年一発目です． &lt;a href=&#34;https://drone.io/&#34;&gt;Drone CI&lt;/a&gt; が，めでたくバージョン1.0(まだ rc だけど)をリリースしてドキュメントも刷新されたんですけど，&lt;a href=&#34;https://0-8-0.docs.drone.io/install-for-github/&#34;&gt;0.8.x 時代にはあった &lt;code&gt;docker-compose&lt;/code&gt; でのやり方&lt;/a&gt;が書いてなかった(見つけられなかった)ので，そのメモ書きです． ちなみに経緯は，結構前に作っていた &lt;a href=&#34;https://github.com/matsubara0507/drone-haskell&#34;&gt;drone-haskell&lt;/a&gt; と言う Drone CI の Haskell クライアントを Drone 1.0 に対応したくて，手元で Drone を起動しようとしたためです． めでたく，Haskell クライアントも 1.0 に対応したので，それの紹介もおまけでします．&lt;/p&gt;
@@ -3151,7 +3101,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;おわりに&lt;span class=&#34;ascii&#3
 &lt;p&gt;さて本題． ローカルで Drone サーバを &lt;code&gt;docker-compose up&lt;/code&gt; して GitHub で利用する． GitHub で利用するには Drone を &lt;a href=&#34;https://docs.drone.io/installation/github/multi-machine/#create-an-oauth-application&#34;&gt;GitHub の OAuth App として登録する必要がある&lt;/a&gt;． OAuth App にするにはパブリックな URL が必要なので，&lt;a href=&#34;https://ngrok.com/&#34;&gt;ngrok&lt;/a&gt; を利用する:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ ngrok http 8000&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;これで仮に &lt;code&gt;abcdef.ngrok.io&lt;/code&gt; と言うドメインを得たとする． 次のような OAuth App を登録する:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/assets/docker-compose-up-drone-1-0/oauth-app.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/docker-compose-up-drone-1-0/oauth-app.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;p&gt;注意点として，8.0.x のときは callback URL が &lt;code&gt;/authorize&lt;/code&gt; だったのに対し，1.0 では &lt;code&gt;/login&lt;/code&gt; となっている． あとは次のような &lt;code&gt;docker-compose.yml&lt;/code&gt; ファイルを書けば良い:&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;version:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;/a&gt;
 &lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
@@ -3224,10 +3174,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;おわりに&lt;span class=&#34;ascii&#3
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/27/213853</id><title type="text">戊戌の追憶</title><updated>2018-12-28T09:01:05+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/27/213853"/><summary type="html">この記事は、筆者が過ごした2018年を簡潔に振り返り、その経験を糧とすることを狙う。 1月 第二鰓弓由来側頸嚢胞という先天異常が原因で首が化膿し、激痛に苦しんでいた。対人関係のトラブルなどもあり軽い錯乱状態にあったのか、自分が知らない間に高い買い物をすることがあった。 drinkery: Boozy streaming library というストリーム処理ライブラリを作った。当初はすべて酒関係の用語を用いていたが、批判を受けてそこはやめた。今思えばそれで正解だった気がする。 パフォーマンスはモナディックなAPIを持つライブラリの中ではトップクラスで、双方向性や多入力多出力のような発展的な機能も…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/super-precure-monad.html</id><title type="text">モナドの新しい力！スーパープリキュアモナド！</title><updated>2018-12-27T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/super-precure-monad.html"/><summary type="html">
+  &lt;/div&gt;</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/27/213853</id><title type="text">戊戌の追憶</title><updated>2018-12-28T09:01:05+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/27/213853"/><summary type="html">この記事は、筆者が過ごした2018年を簡潔に振り返り、その経験を糧とすることを狙う。 1月 第二鰓弓由来側頸嚢胞という先天異常が原因で首が化膿し、激痛に苦しんでいた。対人関係のトラブルなどもあり軽い錯乱状態にあったのか、自分が知らない間に高い買い物をすることがあった。 drinkery: Boozy streaming library というストリーム処理ライブラリを作った。当初はすべて酒関係の用語を用いていたが、批判を受けてそこはやめた。今思えばそれで正解だった気がする。 パフォーマンスはモナディックなAPIを持つライブラリの中ではトップクラスで、双方向性や多入力多出力のような発展的な機能も…</summary></entry><entry><id>https://haskell.jp/blog/posts/2018/super-precure-monad.html</id><title type="text">モナドの新しい力！スーパープリキュアモナド！</title><updated>2018-12-27T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2018/super-precure-monad.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -3694,24 +3641,7 @@ Windows 10 タスクバーにクイック起動を表示する
 
 スタートメニューにピン止めするアプリ：
 
-Windowsシステム</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-19-create-lifegame.html</id><title type="text">Elm 0.19 で作るライフゲーム</title><updated>2018-12-19T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-19-create-lifegame.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;Elm 0.19 で作るライフゲーム&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-12-19&#34; itemprop=&#34;datePublished&#34;&gt;
-        Dec 19, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Elm.html&#34;&gt;Elm&lt;/a&gt; &lt;a href=&#34;/tags/application.html&#34;&gt;application&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+Windowsシステム</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-19-create-lifegame.html</id><title type="text">Elm 0.19 で作るライフゲーム</title><updated>2018-12-19T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-19-create-lifegame.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;本記事は &lt;a href=&#34;https://qiita.com/advent-calendar/2018/elm2&#34;&gt;Elm2(完全版) Advent Calendar 2018&lt;/a&gt; の19日目の記事です．&lt;/p&gt;
 &lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
 &lt;p&gt;ライフゲームを Elm で作りました。 ウェブアプリケーション(?)としては，鉄板中の鉄板ですね． 完全に一発ネタ+思いつきでやったのですが，Elm の最新バージョンによる違いもあり，いくつか躓いたのでそのメモ書きです(巷の資料の多くは旧バージョン)． まぁそれでも2日ぐらいでできるので Elm は便利ですね．&lt;/p&gt;
@@ -4372,27 +4302,7 @@ Windowsシステム</summary></entry><entry><id>https://matsubara0507.github.io/
 &lt;p&gt;ちなみに，&lt;code&gt;.touchPos&lt;/code&gt; みたいな要素を盤面の &lt;code&gt;Model&lt;/code&gt; に入れるべきか？って気がするが，今回はやっつけなので大目にみてください．&lt;/p&gt;
 &lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
 &lt;p&gt;無駄にコードを貼りまくったせいで長くなってしまった． できたアプリ，意外と気に入ってます．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-18-ghc8x.html</id><title type="text">GHC 8.x 勉強会に行ってきた</title><updated>2018-12-18T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-18-ghc8x.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;GHC 8.x 勉強会に行ってきた&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-12-18&#34; itemprop=&#34;datePublished&#34;&gt;
-        Dec 18, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Haskell.html&#34;&gt;Haskell&lt;/a&gt; &lt;a href=&#34;/tags/event.html&#34;&gt;event&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+  &lt;/div&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-18-ghc8x.html</id><title type="text">GHC 8.x 勉強会に行ってきた</title><updated>2018-12-18T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-18-ghc8x.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;本記事は &lt;a href=&#34;https://qiita.com/advent-calendar/2018/haskell2&#34;&gt;Haskell (その2) Advent Calendar 2018&lt;/a&gt; の18日目の記事です． 空いていたのでついでに埋めました．&lt;/p&gt;
 &lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
 &lt;p&gt;12/7 の10-17時半ぐらいに IIJ-II で GHC8 系のバージョンアップを追う会的なイベントが企画されました． このイベントは IIJ-II の Haskell チームで発案・企画し，Haskell-jp の Slack で募集をかけていました． 定員12人かつ，平日昼間でしたが，面白そうなので有給とって行ってきた(僕は IIJ-II では無いので)． 多少クローズドな会ということもあり，せっかくなので色々と議論したことを記事に起こしておきます． 正確な情報は GHC のドキュメントを呼んでください．&lt;/p&gt;
@@ -4656,10 +4566,7 @@ Windowsシステム</summary></entry><entry><id>https://matsubara0507.github.io/
 &lt;/ul&gt;
 &lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
 &lt;p&gt;時間経ちすぎてめっちゃ適当になってしまった． すいません． ただ，めっちゃ楽しかった．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-16T14:31:09.194+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
+  &lt;/div&gt;</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-16T14:31:09.194+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
 
 主に自分向けの防備録です。windows10上で確認。インストーラーはここからDLする。
 
@@ -4695,308 +4602,6 @@ ssh-agentのために秘密鍵セットアップ
 less, lv, manコマンド終了時に画面をクリアしない
 
 [linux][cygwin] less, manの終了直前の画面をクリアしないで端末上に残す方法 
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2018-12-11-detail-elm-url.html</id><title type="text">詳解 elm/url !!</title><updated>2018-12-11T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2018-12-11-detail-elm-url.html"/><summary type="html">&lt;article class=&#34;post card&#34; itemscope itemtype=&#34;http://schema.org/BlogPosting&#34;&gt;
- &lt;div class=&#34;card-content&#34;&gt;
-  &lt;header class=&#34;post-header&#34;&gt;
-    &lt;h1 class=&#34;post-title&#34; itemprop=&#34;name headline&#34;&gt;詳解 elm/url !!&lt;/h1&gt;
-    &lt;p class=&#34;post-meta&#34;&gt;
-      &lt;time datetime=&#34;2018-12-11&#34; itemprop=&#34;datePublished&#34;&gt;
-        Dec 11, 2018
-      &lt;/time&gt;
-      
-      
-      &lt;div class=&#34;tags&#34;&gt;
-          &lt;i class=&#34;fa fa-tags&#34;&gt;&lt;/i&gt; &lt;a href=&#34;/tags/Elm.html&#34;&gt;Elm&lt;/a&gt;
-      &lt;/div&gt;
-      
-    &lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;本記事は &lt;a href=&#34;https://qiita.com/advent-calendar/2018/elm&#34;&gt;Elm Advent Calendar 2018&lt;/a&gt; の11日目の記事です． elm-jp の Discord で突如無茶振りされたので頑張ります．&lt;/p&gt;
-&lt;h2 id=&#34;elmurl&#34;&gt;elm/url&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://package.elm-lang.org/packages/elm/url/1.0.0/&#34;&gt;elm/url&lt;/a&gt; は Elm 0.19 で刷新されたパッケージ群にしれっと混ざってきた URL に関するパッケージ． &lt;a href=&#34;https://package.elm-lang.org/packages/elm/browser/latest/Browser#application&#34;&gt;Browser.application&lt;/a&gt; でも使われているのでみなさんも頑張って使えるようになりましょう．&lt;/p&gt;
-&lt;p&gt;ちなみに本記事では ver1.0.0 の elm/url を想定している．&lt;/p&gt;
-&lt;h2 id=&#34;url-の型&#34;&gt;Url の型&lt;/h2&gt;
-&lt;p&gt;こんな風に定義されている:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; alias &lt;span class=&#34;dt&#34;&gt;Url&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;    { protocol &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Protocol&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;    , host &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;    , port_ &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;    , path &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;    , query &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;    , fragment &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-8&#34; title=&#34;8&#34;&gt;    }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-9&#34; title=&#34;9&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Protocol&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Http&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Https&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;超絶わかりやすい ASCII アートまでありエヴァン様神って感じ:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  https://example.com:8042/over/there?name=ferret#nose
-  \___/   \______________/\_________/ \_________/ \__/
-    |            |            |            |        |
-  scheme     authority       path        query   fragment&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;host&lt;/code&gt; は &lt;code&gt;example.com&lt;/code&gt; の部分で &lt;code&gt;port_&lt;/code&gt; は &lt;code&gt;8042&lt;/code&gt; の部分． 試しに REPL で &lt;code&gt;Url.fromString&lt;/code&gt; してみよう:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; Url.fromString &lt;span class=&#34;st&#34;&gt;&amp;quot;https://example.com:8042/over/there?name=ferret#nose&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; { fragment &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;nose&amp;quot;&lt;/span&gt;, host &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;example.com&amp;quot;&lt;/span&gt;, path &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;/over/there&amp;quot;&lt;/span&gt;, port_ &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;8042&lt;/span&gt;, protocol &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Https&lt;/span&gt;, query &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;name=ferret&amp;quot;&lt;/span&gt; }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Url&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;url.parser-の使い方&#34;&gt;Url.Parser の使い方&lt;/h2&gt;
-&lt;p&gt;さて，ここからが本番． &lt;code&gt;Url.Parser&lt;/code&gt; モジュールを利用して &lt;code&gt;Browser.application&lt;/code&gt; などから受け取った URL をパースして，任意の型に変換するパーサーを記述する．&lt;/p&gt;
-&lt;h3 id=&#34;パーサーの例&#34;&gt;パーサーの例&lt;/h3&gt;
-&lt;p&gt;次のような型にパースするパーサーを記述する:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; alias &lt;span class=&#34;dt&#34;&gt;Post&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; title=&#34;2&#34;&gt;  { &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; title=&#34;3&#34;&gt;  , name &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-4&#34; title=&#34;4&#34;&gt;  }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;入力には &lt;code&gt;http://localhost/hoge/1234?name=fuga&lt;/code&gt; URL というのを想定している．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url&lt;/span&gt; exposing ((&amp;lt;/&amp;gt;), (&amp;lt;?&amp;gt;))&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser.Query&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;parser1 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Post&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;parser1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;  Url.map &lt;span class=&#34;dt&#34;&gt;Post&lt;/span&gt; (Url.s &lt;span class=&#34;st&#34;&gt;&amp;quot;hoge&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; Url.string &lt;span class=&#34;fu&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; Query.string &lt;span class=&#34;st&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これを使ってみると:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; Url.fromString &lt;span class=&#34;st&#34;&gt;&amp;quot;http://localhost/hoge/1234?name=fuga&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;andThen (Url.parse parser1)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; { &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;1234&lt;/span&gt;, name &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;fuga&amp;quot;&lt;/span&gt; }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Post&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;基本的な関数と型&#34;&gt;基本的な関数と型&lt;/h3&gt;
-&lt;p&gt;まずは肝となる &lt;code&gt;Url.parse&lt;/code&gt; 関数の型を見てみる:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;parse &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Parser a b&lt;/code&gt; というのがパーサーの型だ(&lt;code&gt;a&lt;/code&gt; と &lt;code&gt;b&lt;/code&gt; が何を意味しているかは後述，無論 &lt;code&gt;a&lt;/code&gt; と &lt;code&gt;b&lt;/code&gt; が同じでもいい)． &lt;code&gt;Parser (a -&amp;gt; a) a&lt;/code&gt; という型(この &lt;code&gt;a&lt;/code&gt; は全て同じ型)のパーサーを与えて &lt;code&gt;Url&lt;/code&gt; という入力を食わせることで &lt;code&gt;Maybe a&lt;/code&gt; という結果を受け取れる． 途中でパース失敗した場合は &lt;code&gt;Nothing&lt;/code&gt; が返り，成功すると &lt;code&gt;Just a&lt;/code&gt; の値が返る．&lt;/p&gt;
-&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;次のような関数を組み合わせて，パーサーを構築する:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;string &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; title=&#34;2&#34;&gt;int    &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-3&#34; title=&#34;3&#34;&gt;s      &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-4&#34; title=&#34;4&#34;&gt;top    &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-5&#34; title=&#34;5&#34;&gt;(&lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt;)  &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; b c &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt;    &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) c&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Parser&lt;/code&gt; の型が &lt;code&gt;Parser a b&lt;/code&gt; の場合と &lt;code&gt;Parser (a -&amp;gt; b) b&lt;/code&gt; の場合の2パターンがあることに気づいただろうか？ &lt;code&gt;string&lt;/code&gt; や &lt;code&gt;int&lt;/code&gt; のような &lt;code&gt;(a -&amp;gt; b)&lt;/code&gt; のようなパーサーの場合は， &lt;code&gt;a&lt;/code&gt; の部分がパース結果の型と考えられる． 対して &lt;code&gt;s&lt;/code&gt; や &lt;code&gt;top&lt;/code&gt; のような関数は入力(&lt;code&gt;Url&lt;/code&gt;)を消費するだけでパース結果の型(&lt;code&gt;parse&lt;/code&gt; の &lt;code&gt;Maybe a&lt;/code&gt; の &lt;code&gt;a&lt;/code&gt; の部分)に影響を与えない． そして &lt;code&gt;(&amp;lt;/&amp;gt;)&lt;/code&gt; が URL の区切り文字(&lt;code&gt;/&lt;/code&gt;) である．&lt;/p&gt;
-&lt;h2 id=&#34;section-1&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;試しにいくつか組み合わせてみよう:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; parser2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; Url.s &lt;span class=&#34;st&#34;&gt;&amp;quot;hoge&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; Url.string &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; Url.int&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&lt;/span&gt;function&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; parser3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; parser2 &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; Url.int &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; Url.top&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&lt;/span&gt;function&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; alias &lt;span class=&#34;dt&#34;&gt;Hoge1&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; { hoge1 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;, hoge2 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;, hoge3 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-8&#34; title=&#34;8&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-9&#34; title=&#34;9&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; parser4 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; Url.map &lt;span class=&#34;dt&#34;&gt;Hoge1&lt;/span&gt; parser3&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&lt;/span&gt;function&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Hoge1&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) c&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このように &lt;code&gt;&amp;lt;/&amp;gt;&lt;/code&gt; でパーサーを連結することで &lt;code&gt;Parser a b&lt;/code&gt; の &lt;code&gt;a&lt;/code&gt; の部分がどんどん伸びてくる． ちなみに，&lt;code&gt;top&lt;/code&gt; はURLの末尾かどうかのチェックするパーサーだ:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Hoge2&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Hoge2&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; Url.fromString &lt;span class=&#34;st&#34;&gt;&amp;quot;http://localhost/&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;andThen (Url.parse (Url.map &lt;span class=&#34;dt&#34;&gt;Hoge2&lt;/span&gt; Url.top))&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Hoge2&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Hoge2&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; Url.fromString &lt;span class=&#34;st&#34;&gt;&amp;quot;http://localhost/1&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;andThen (Url.parse (Url.map &lt;span class=&#34;dt&#34;&gt;Hoge2&lt;/span&gt; Url.top))&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Hoge2&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;url.parser.query-の使い方&#34;&gt;Url.Parser.Query の使い方&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Parser a b&lt;/code&gt; の &lt;code&gt;b&lt;/code&gt; 側が仕事をするのはクエリに関するパーサーがある場合だ． なので次にクエリのパーサーを見てみる． 便宜上以降ではクエリの型や関数には &lt;code&gt;Query&lt;/code&gt; を付けるようにする．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; title=&#34;1&#34;&gt;(&lt;span class=&#34;fu&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt;)  &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a (query &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; query &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a b&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; title=&#34;2&#34;&gt;string &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; title=&#34;3&#34;&gt;int    &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt;    &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; b&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; title=&#34;5&#34;&gt;map2   &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; result) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; result&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;(&amp;lt;?&amp;gt;)&lt;/code&gt; という演算子が Url のパーサーとクエリのパーサーを繋ぐ． クエリのパーサーの型は &lt;code&gt;Parser a&lt;/code&gt; と JSON デコーダーのような型と同じ仕組みだ．&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;map&lt;/code&gt; で連結したものを &lt;code&gt;(&amp;lt;?&amp;gt;)&lt;/code&gt; で一気に繋げても良いし，&lt;code&gt;(&amp;lt;?&amp;gt;)&lt;/code&gt; で一つずつ繋げても良い:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb12&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; alias &lt;span class=&#34;dt&#34;&gt;Fuga1&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; { fuga1 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;, fuga2 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; }&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; parser5 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; Url.top &lt;span class=&#34;fu&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; Query.map2 &lt;span class=&#34;dt&#34;&gt;Fuga1&lt;/span&gt; (Query.string &lt;span class=&#34;st&#34;&gt;&amp;quot;fuga1&amp;quot;&lt;/span&gt;) (Query.int &lt;span class=&#34;st&#34;&gt;&amp;quot;fuga2&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&lt;/span&gt;function&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Fuga1&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) b&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; parser5 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; Url.map &lt;span class=&#34;dt&#34;&gt;Fuga1&lt;/span&gt; (Url.top &lt;span class=&#34;fu&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; Query.string &lt;span class=&#34;st&#34;&gt;&amp;quot;fuga1&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; Query.int &lt;span class=&#34;st&#34;&gt;&amp;quot;fuga2&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb12-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&lt;/span&gt;function&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Fuga1&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) c&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;fragment&#34;&gt;Fragment&lt;/h2&gt;
-&lt;p&gt;フラグメントの部分をパースするには &lt;code&gt;fragment&lt;/code&gt; 関数を使う:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb13-1&#34; title=&#34;1&#34;&gt;fragment &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; fragment) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (fragment &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;なんでもよければ &lt;code&gt;identity&lt;/code&gt; を使えば良い:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb14&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; parser6 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; Url.top &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; Url.fragment identity&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;&lt;/span&gt;function&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url.Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; Url.fromString &lt;span class=&#34;st&#34;&gt;&amp;quot;http://localhost#abc&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;andThen (Url.parse parser6)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;abc&amp;quot;&lt;/span&gt;) &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-7&#34; title=&#34;7&#34;&gt;&lt;span class=&#34;fu&#34;&gt;&amp;gt;&lt;/span&gt; Url.fromString &lt;span class=&#34;st&#34;&gt;&amp;quot;http://localhost&amp;quot;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;andThen (Url.parse parser6)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb14-8&#34; title=&#34;8&#34;&gt;&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;中身を読んでいく&#34;&gt;中身を読んでいく&lt;/h2&gt;
-&lt;p&gt;今までの話でなんとなく使い方はわかっただろう． ここからは elm/url の実装について読み解いていく． なので，使い方が分かればもう十分勢の人は以降を読む必要はない．&lt;/p&gt;
-&lt;h3 id=&#34;余談-参考にしたもの&#34;&gt;余談: 参考にしたもの&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/elm/url#related-work&#34;&gt;README曰く&lt;/a&gt;，&lt;code&gt;Url.Parser&lt;/code&gt; の実装の着想は下記の記事によって得たようだ．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://chrisdone.com/posts/formatting&#34;&gt;Formatting in Haskell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://rgrinberg.com/posts/primitive-type-safe-routing/&#34;&gt;Type Safe Routing - Baby Steps&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;前者は Haskell の &lt;code&gt;printf&lt;/code&gt; のようなフォーマット出力ライブラリで，後者は OCaml のルーティングのライブラリに関する記事．&lt;/p&gt;
-&lt;h3 id=&#34;パーサーの型&#34;&gt;パーサーの型&lt;/h3&gt;
-&lt;p&gt;まずは型の中身を見てみる:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb15&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a b &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-2&#34; title=&#34;2&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;List&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; b))&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; alias &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; value &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-5&#34; title=&#34;5&#34;&gt;  { visited &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;List&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-6&#34; title=&#34;6&#34;&gt;  , unvisited &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;List&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-7&#34; title=&#34;7&#34;&gt;  , params &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Dict&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;List&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-8&#34; title=&#34;8&#34;&gt;  , frag &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-9&#34; title=&#34;9&#34;&gt;  , value &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; value&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb15-10&#34; title=&#34;10&#34;&gt;  }&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;State a -&amp;gt; List (State b)&lt;/code&gt; というのは関数型パーサー(パーサーコンビネーター)でよくある型だ(&lt;code&gt;Functional Parser&lt;/code&gt; や &lt;code&gt;Parser Combinator&lt;/code&gt; などで調べると良い)． 入力の状態が &lt;code&gt;State a&lt;/code&gt; で出力の状態が &lt;code&gt;State b&lt;/code&gt;，出力がリストになっているが &lt;code&gt;Maybe&lt;/code&gt; と考えて問題ないはずだ．&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Url.parse&lt;/code&gt; や簡単なパーサーの中身を見てみればそれぞれのフィールドの意味がわかるはずだ:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb16&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-1&#34; title=&#34;1&#34;&gt;parse &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Url&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-2&#34; title=&#34;2&#34;&gt;parse (&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; parser) url &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-3&#34; title=&#34;3&#34;&gt;  getFirstMatch &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; parser &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-4&#34; title=&#34;4&#34;&gt;    &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; [] (preparePath url&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;path) (prepareQuery url&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;query) url&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;fragment identity&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-5&#34; title=&#34;5&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-6&#34; title=&#34;6&#34;&gt;getFirstMatch &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;List&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; a) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-7&#34; title=&#34;7&#34;&gt;getFirstMatch states &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; states &lt;span class=&#34;kw&#34;&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-9&#34; title=&#34;9&#34;&gt;    [] &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-10&#34; title=&#34;10&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-11&#34; title=&#34;11&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-12&#34; title=&#34;12&#34;&gt;&lt;span class=&#34;ot&#34;&gt;    state ::&lt;/span&gt; rest &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-13&#34; title=&#34;13&#34;&gt;      &lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; state&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;unvisited &lt;span class=&#34;kw&#34;&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-14&#34; title=&#34;14&#34;&gt;        [] &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-15&#34; title=&#34;15&#34;&gt;          &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; state&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;value&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-16&#34; title=&#34;16&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-17&#34; title=&#34;17&#34;&gt;        [&lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;] &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-18&#34; title=&#34;18&#34;&gt;          &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; state&lt;span class=&#34;fu&#34;&gt;.&lt;/span&gt;value&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-19&#34; title=&#34;19&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-20&#34; title=&#34;20&#34;&gt;        _ &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb16-21&#34; title=&#34;21&#34;&gt;          getFirstMatch rest&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;parse&lt;/code&gt; の定義より，&lt;code&gt;unvisited&lt;/code&gt; と &lt;code&gt;params&lt;/code&gt; と &lt;code&gt;frag&lt;/code&gt; はそれぞれパスとクエリとフラグメントを与えているのがわかる． &lt;code&gt;getFirstMatch&lt;/code&gt; の定義を見ると，最後に &lt;code&gt;Just state.value&lt;/code&gt; をしているので，&lt;code&gt;value&lt;/code&gt; フィールドが最終的な結果となる． では &lt;code&gt;visited&lt;/code&gt; はなんだろうか？ パーサーの実装を見てみる．&lt;/p&gt;
-&lt;h3 id=&#34;組み込みのパーサー&#34;&gt;組み込みのパーサー&lt;/h3&gt;
-&lt;p&gt;例えば &lt;code&gt;Url.string&lt;/code&gt; を見てみる:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb17&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-1&#34; title=&#34;1&#34;&gt;string &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-2&#34; title=&#34;2&#34;&gt;string &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-3&#34; title=&#34;3&#34;&gt;  custom &lt;span class=&#34;st&#34;&gt;&amp;quot;STRING&amp;quot;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-4&#34; title=&#34;4&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-5&#34; title=&#34;5&#34;&gt;custom &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; a) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) b&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-6&#34; title=&#34;6&#34;&gt;custom tipe stringToSomething &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; \{ visited, unvisited, params, frag, value } &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-8&#34; title=&#34;8&#34;&gt;    &lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; unvisited &lt;span class=&#34;kw&#34;&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-9&#34; title=&#34;9&#34;&gt;      [] &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-10&#34; title=&#34;10&#34;&gt;        []&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-11&#34; title=&#34;11&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-12&#34; title=&#34;12&#34;&gt;&lt;span class=&#34;ot&#34;&gt;      next ::&lt;/span&gt; rest &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-13&#34; title=&#34;13&#34;&gt;        &lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt; stringToSomething next &lt;span class=&#34;kw&#34;&gt;of&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-14&#34; title=&#34;14&#34;&gt;          &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; nextValue &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-15&#34; title=&#34;15&#34;&gt;            [ &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; (&lt;span class=&#34;ot&#34;&gt;next ::&lt;/span&gt; visited) rest params frag (value nextValue) ]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-16&#34; title=&#34;16&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-17&#34; title=&#34;17&#34;&gt;          &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb17-18&#34; title=&#34;18&#34;&gt;            []&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;custom&lt;/code&gt; 関数の定義からわかるように，&lt;code&gt;unvisited&lt;/code&gt; を入力にして &lt;code&gt;stringToSomething&lt;/code&gt; というパーサーを咬ませて，その結果を &lt;code&gt;value&lt;/code&gt; に追加し，元の文字列を &lt;code&gt;visited&lt;/code&gt; に追加している． すなわち，&lt;code&gt;visited&lt;/code&gt; はパースできたパスをためている． しかし，elm/url のコードを探しても &lt;code&gt;visited&lt;/code&gt; が使われているところはないので，今の実装では無くても良いフィールドのはずだ(パースエラーをわかりやすくするときに使えそう)．&lt;/p&gt;
-&lt;h2 id=&#34;section-2&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;ちなみに，クエリやフラグメントのパーサーは入力が違う(&lt;code&gt;unvisited&lt;/code&gt; を使うのではない)だけだ:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb18&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-1&#34; title=&#34;1&#34;&gt;query &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Query.Parser&lt;/span&gt; query &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (query &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-2&#34; title=&#34;2&#34;&gt;query (&lt;span class=&#34;dt&#34;&gt;Q.Parser&lt;/span&gt; queryParser) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; \{ visited, unvisited, params, frag, value } &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-4&#34; title=&#34;4&#34;&gt;    [ &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; visited unvisited params frag (value (queryParser params))&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-5&#34; title=&#34;5&#34;&gt;    ]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-7&#34; title=&#34;7&#34;&gt;fragment &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; fragment) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (fragment &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-8&#34; title=&#34;8&#34;&gt;fragment toFrag &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; \{ visited, unvisited, params, frag, value } &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-10&#34; title=&#34;10&#34;&gt;    [ &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; visited unvisited params frag (value (toFrag frag))&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb18-11&#34; title=&#34;11&#34;&gt;    ]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;コンビネーター&#34;&gt;コンビネーター&lt;/h3&gt;
-&lt;p&gt;ちなみに，コンビネーター(&lt;code&gt;(&amp;lt;/&amp;gt;)&lt;/code&gt;)の定義も見てみる:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb19&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb19-1&#34; title=&#34;1&#34;&gt;slash &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; b c &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb19-2&#34; title=&#34;2&#34;&gt;slash (&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; parseBefore) (&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; parseAfter) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb19-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; \state &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb19-4&#34; title=&#34;4&#34;&gt;    List.concatMap parseAfter (parseBefore state)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;(&amp;lt;/&amp;gt;)&lt;/code&gt; は &lt;code&gt;slash&lt;/code&gt; のエイリアスになっている． &lt;code&gt;Parser&lt;/code&gt; の型は &lt;code&gt;State a -&amp;gt; [State b]&lt;/code&gt; のラップなので，パーサーの連結は &lt;code&gt;concatMap&lt;/code&gt; をするだけになっている．&lt;/p&gt;
-&lt;p&gt;また，&lt;code&gt;Url.map&lt;/code&gt; も見てみる:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb20&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) c&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; subValue (&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; parseArg) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; \{ visited, unvisited, params, frag, value } &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-4&#34; title=&#34;4&#34;&gt;    List.map (mapState value) &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; parseArg &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-5&#34; title=&#34;5&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; visited unvisited params frag subValue&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-7&#34; title=&#34;7&#34;&gt;mapState &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; b&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-8&#34; title=&#34;8&#34;&gt;mapState func { visited, unvisited, params, frag, value } &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb20-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; visited unvisited params frag (func value)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;map&lt;/code&gt; を利用する場合，各型変数は次のようになっていることが多いだろう:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb21&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- parseArg : State (x -&amp;gt; y) -&amp;gt; List (State y)&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- value を identity と考えれば良い&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; (x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; y) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; y) y &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (y &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; z) z&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; subValue (&lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; parseArg) &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; \{ visited, unvisited, params, frag, value } &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-6&#34; title=&#34;6&#34;&gt;    List.map (mapState value) &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt; parseArg &lt;span class=&#34;fu&#34;&gt;&amp;lt;|&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb21-7&#34; title=&#34;7&#34;&gt;      &lt;span class=&#34;dt&#34;&gt;State&lt;/span&gt; visited unvisited params frag subValue&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;こう考えれば &lt;code&gt;map&lt;/code&gt; 関数の定義も読めるはずだ．&lt;/p&gt;
-&lt;h2 id=&#34;結局&#34;&gt;結局&lt;/h2&gt;
-&lt;p&gt;最後に &lt;code&gt;Parser a b&lt;/code&gt; の各型変数は何を意味して，従来の &lt;code&gt;Parser a&lt;/code&gt; 方式のパーサーではなぜダメなのかについて議論する(まぁあくまでも，実際に実装などを読んでの個人的な肌感なんですけど)．&lt;/p&gt;
-&lt;h3 id=&#34;型変数の意味&#34;&gt;型変数の意味&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;Parser a b&lt;/code&gt; の意味は &lt;code&gt;State a -&amp;gt; List (State b)&lt;/code&gt; からわかるように，パーサーの入力の状態に使われる型 &lt;code&gt;a&lt;/code&gt; と出力の状態に使われる型 &lt;code&gt;b&lt;/code&gt; である． ここで，「使われる」というのが肝で，&lt;code&gt;a&lt;/code&gt; それ自体は入力ではない． 入力にせよ，出力にせよ，パーサーが行うのは状態 &lt;code&gt;State r1&lt;/code&gt; から &lt;code&gt;State r2&lt;/code&gt; への変換だ(ただしそれは失敗するかもしれないので &lt;code&gt;List&lt;/code&gt; でラップされている)． &lt;code&gt;State r&lt;/code&gt; にとって &lt;code&gt;r&lt;/code&gt; は &lt;strong&gt;パースの最終結果&lt;/strong&gt; を意味している(変化する状態の最終結果)．&lt;/p&gt;
-&lt;p&gt;なので &lt;code&gt;Parser a b&lt;/code&gt; のパーサーがあった場合，このパーサーの最終結果は &lt;code&gt;b&lt;/code&gt; であり，&lt;code&gt;a&lt;/code&gt; は入力の状態が想定している最終結果である． ただし，&lt;code&gt;Parser (String -&amp;gt; b) b&lt;/code&gt; というパーサーの場合，&lt;code&gt;b&lt;/code&gt; は &lt;code&gt;String&lt;/code&gt; でも良く，このパーサーを &lt;code&gt;Url.parse&lt;/code&gt; で実行する場合は &lt;code&gt;b = String&lt;/code&gt; と推論される．&lt;/p&gt;
-&lt;h3 id=&#34;parser-a-との違い&#34;&gt;&lt;code&gt;Parser a&lt;/code&gt; との違い&lt;/h3&gt;
-&lt;p&gt;大きな違いは &lt;code&gt;map&lt;/code&gt; の振る舞いだ． &lt;code&gt;Parser a&lt;/code&gt; の場合，レコード型 &lt;code&gt;Hoge = { hoge1 : Int, hoge2 : String }&lt;/code&gt; のパーサーを記述するのには次のように書く:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb22&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-1&#34; title=&#34;1&#34;&gt;intParser &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-2&#34; title=&#34;2&#34;&gt;stringParser &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-4&#34; title=&#34;4&#34;&gt;parser1 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Hoge&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb22-5&#34; title=&#34;5&#34;&gt;parser1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; map2 &lt;span class=&#34;dt&#34;&gt;Hoge&lt;/span&gt; intParser stringParser&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;フィールドの個数が3つ4つと増えるたびに，&lt;code&gt;map3&lt;/code&gt; &lt;code&gt;map4&lt;/code&gt; と作る必要がある． また，parser1 を再利用して &lt;code&gt;Fuga = { hoge1 : Int, hoge2 : String, hoge3 : Int }&lt;/code&gt; 型のパーサーを記述することはできない．&lt;/p&gt;
-&lt;h2 id=&#34;section-3&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;対して &lt;code&gt;Parser a b&lt;/code&gt; の場合は &lt;code&gt;(&amp;lt;/&amp;gt;)&lt;/code&gt; を用いて &lt;code&gt;intParser&lt;/code&gt; や &lt;code&gt;stringParser&lt;/code&gt; をどんどん連結していき，最終的に &lt;code&gt;map&lt;/code&gt; をする．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb23&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-1&#34; title=&#34;1&#34;&gt;parser0 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-2&#34; title=&#34;2&#34;&gt;parser0 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; intParser &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; stringParser&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-4&#34; title=&#34;4&#34;&gt;parser1 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Hoge&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-5&#34; title=&#34;5&#34;&gt;parser1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Hoge&lt;/span&gt; parser0&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-7&#34; title=&#34;7&#34;&gt;parser2 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb23-8&#34; title=&#34;8&#34;&gt;parser2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt; (parser0 &lt;span class=&#34;fu&#34;&gt;&amp;lt;/&amp;gt;&lt;/span&gt; intParser)&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;すなわち利点は:&lt;/p&gt;
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;引数ごとの &lt;code&gt;map&lt;/code&gt; がいらない&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;(&amp;lt;/&amp;gt;)&lt;/code&gt; で繋いだパーサーの再利用性が高い&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;applicative-スタイル&#34;&gt;Applicative スタイル&lt;/h3&gt;
-&lt;p&gt;Elm で一般的かどうかはわからないが，Haskell では一般的な Applicative スタイルというのがある． ちなみに elm/url を Applicative スタイルにしたパッケージは GitHub に揚げてある．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/elm-url-applicative&#34;&gt;matsubara0507/elm-url-applicative - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Applicative スタイルとは，次のようなコンビネーターを使って関数を構築する:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb24&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb24-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt;   &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; b&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb24-2&#34; title=&#34;2&#34;&gt;apply &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; b&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ちなみに，今回の話の流れ上 &lt;code&gt;Parser&lt;/code&gt; を用いたが，ここが &lt;code&gt;Maybe&lt;/code&gt; だろうと &lt;code&gt;List&lt;/code&gt; だろうと同じに扱える． この場合，パーサーの構築は次のようになる:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb25&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb25-1&#34; title=&#34;1&#34;&gt;parser2 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb25-2&#34; title=&#34;2&#34;&gt;parser2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb25-3&#34; title=&#34;3&#34;&gt;  apply (apply (&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt; intParser) stringParser) intParser&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Elm 的にはパイプで連結できるので &lt;code&gt;app&lt;/code&gt; の引数の順番を変えた方がいいかもしれない．&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb26&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb26-1&#34; title=&#34;1&#34;&gt;andApply &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; b&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb26-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb26-3&#34; title=&#34;3&#34;&gt;parser2 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb26-4&#34; title=&#34;4&#34;&gt;parser2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb26-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt; intParser&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb26-6&#34; title=&#34;6&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; andApply stringParser&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb26-7&#34; title=&#34;7&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; andApply intParser&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;一見問題なさそうだ． しかし，今回でいう &lt;code&gt;Url.s : String -&amp;gt; Parser a a&lt;/code&gt; のような入力を消費するだけで結果に反映しないパーサーがあるとうまく行かない． &lt;code&gt;ignore&lt;/code&gt; のようなコンビネーターが必要になる(ちなみに Haskell の Applicative にはもちろんある):&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb27&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-1&#34; title=&#34;1&#34;&gt;s &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-2&#34; title=&#34;2&#34;&gt;ignore &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-4&#34; title=&#34;4&#34;&gt;parser3 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-5&#34; title=&#34;5&#34;&gt;parser3 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt; intParser&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-7&#34; title=&#34;7&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; andApply stringParser&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-8&#34; title=&#34;8&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; ignore (s &lt;span class=&#34;st&#34;&gt;&amp;quot;fuga&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb27-9&#34; title=&#34;9&#34;&gt;    &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; andApply intParser&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ちなみに，再利用の方もうまくいく:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb28&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb28-1&#34; title=&#34;1&#34;&gt;parser0 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; a&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb28-2&#34; title=&#34;2&#34;&gt;parser0 f &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; f intParser &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; andApply stringParser&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb28-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb28-4&#34; title=&#34;4&#34;&gt;parser1 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Hoge&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb28-5&#34; title=&#34;5&#34;&gt;parser1 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; parser0 &lt;span class=&#34;dt&#34;&gt;Hoge&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb28-6&#34; title=&#34;6&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb28-7&#34; title=&#34;7&#34;&gt;parser2 &lt;span class=&#34;fu&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Parser&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb28-8&#34; title=&#34;8&#34;&gt;parser2 &lt;span class=&#34;fu&#34;&gt;=&lt;/span&gt; parser0 &lt;span class=&#34;dt&#34;&gt;Fuga&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;|&amp;gt;&lt;/span&gt; andApply intParser&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これで &lt;code&gt;Parser a b&lt;/code&gt; の場合と同等の能力を持つはずだ． すなわち，&lt;code&gt;Parser a b&lt;/code&gt; と Applicative スタイルは見た目以上の差異はない（はず）．&lt;/p&gt;
-&lt;h1 id=&#34;おしまい&#34;&gt;おしまい&lt;/h1&gt;
-&lt;p&gt;Elm には珍しく型がテクニカルなパッケージということで，細かく中を読んでみました． 色々試した結果，Haskell の Applicative スタイルの見た目を変えてるだけのようでした． まだ，エヴァンさんが参考にしたという記事をちゃんと読んでないので，もしかしたら間違っているかも． 時間ができたら読んでみます．&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
 </summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2018/12-10-stack-193.html</id><title type="text">Stack 1.9.3 がリリースされました。</title><updated>2018-12-10T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2018/12-10-stack-193.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;12月3日に Stack version 1.9.3 が&lt;a href=&#34;https://github.com/commercialhaskell/stack/blob/v1.9.3/ChangeLog.md#v193&#34;&gt;リリース&lt;/a&gt;されました。&lt;/p&gt;
 &lt;p&gt;更新は &lt;code&gt;stack upgrade&lt;/code&gt; コマンドを実行します。&lt;/p&gt;
