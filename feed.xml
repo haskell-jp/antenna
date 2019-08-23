@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-08-20T14:41:18+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/norkron/items/f0de364cc980171b1db7</id><title type="text">圏論以前の準備運動―圏と関手―</title><updated>2019-08-20T14:41:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/f0de364cc980171b1db7"/></entry><entry><id>https://qiita.com/matoruru/items/0e9334388eca3ef9e999</id><title type="text">Haskellのヒアドキュメントもどき</title><updated>2019-08-19T09:33:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/matoruru/items/0e9334388eca3ef9e999"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/08-19-extensible-migration.html</id><title type="text">extensible-0.6.1 マイグレーションガイド</title><updated>2019-08-19T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/08-19-extensible-migration.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-08-22T21:23:43+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/norkron/items/f0de364cc980171b1db7</id><title type="text">圏論以前の準備運動―圏と関手―</title><updated>2019-08-22T21:23:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/f0de364cc980171b1db7"/></entry><entry><id>https://qiita.com/norkron/items/1cc1b593e04184f0fe98</id><title type="text">圏論以前の準備運動―関手と自然変換―</title><updated>2019-08-22T21:21:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/1cc1b593e04184f0fe98"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2019-08-22T13:32:52.909+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+
+
+スタートメニュー・タスクバーの設定
+
+タスクバーの設定 
+
+小さいタスクバーボタンを使う：オン 
+[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフ
+タスクバーボタンを結合する
+
+「タスクバーに入りきらない場合」を選択
+
+タスクバーをすべての ディスプレイに表示する：オフ
+
+
+
+ Quick Launcherを表示する
+
+クイック起動を復活する 
+Windows 10 タスクバーにクイック起動を表示する
+
+スタートメニューにコントロールパネルを表示する
+
+「Windows 10」のコントロールパネルを表示する方法について
+
+スタートメニューにピン止めするアプリ：
+
+Windowsシステム</summary></entry><entry><id>https://qiita.com/matoruru/items/0e9334388eca3ef9e999</id><title type="text">Haskellのヒアドキュメントもどき</title><updated>2019-08-19T09:33:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/matoruru/items/0e9334388eca3ef9e999"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/08-19-extensible-migration.html</id><title type="text">extensible-0.6.1 マイグレーションガイド</title><updated>2019-08-19T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/08-19-extensible-migration.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/extensible&#34;&gt;extensible&lt;/a&gt; のバージョンを最新の &lt;strong&gt;0.6.1&lt;/strong&gt; に更新した際にいくつかコードの修正が必要になったので、メモ程度に残しておきます。&lt;/p&gt;
 &lt;p&gt;今回の記事では一部の変更点にしか触れないため、完全な変更点については &lt;a href=&#34;https://github.com/fumieval/extensible/blob/master/CHANGELOG.md&#34;&gt;CHANGELOG&lt;/a&gt; を参照してください。&lt;/p&gt;
 &lt;!--more--&gt;
@@ -469,7 +497,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;おしまい&lt;/h2&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/tezca686/items/596ed7673a078170551f</id><title type="text">カタンの最長交易路(Longest Road)を探すために半環を考える</title><updated>2019-07-14T12:28:20+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tezca686/items/596ed7673a078170551f"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/07-14-megaparsec-tutorial.html</id><title type="text">Megaparsec tutorial from IH book</title><updated>2019-07-14T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/07-14-megaparsec-tutorial.html"/><summary type="html">&lt;p&gt;Great original post: &lt;a href=&#34;https://markkarpov.com/megaparsec/megaparsec.html&#34;&gt;Megaparsec tutorial from IH book&lt;/a&gt;&lt;/p&gt;
+</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/07-14-megaparsec-tutorial.html</id><title type="text">Megaparsec tutorial from IH book</title><updated>2019-07-14T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/07-14-megaparsec-tutorial.html"/><summary type="html">&lt;p&gt;Great original post: &lt;a href=&#34;https://markkarpov.com/megaparsec/megaparsec.html&#34;&gt;Megaparsec tutorial from IH book&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;この Megaparsec のチュートリアルは、元々は &lt;a href=&#34;https://intermediatehaskell.com/&#34;&gt;Intermediate Haskell&lt;/a&gt; という本の１つの章のために書かれました。 ここ一年で本が進展していないため、 他の著者は私がスタンドアロンのチュートリアルとしてテキストを公表し、 人々が少なくとも私たちの仕事のこの部分から恩恵を受けることができるようにする ことに同意しました。&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;ul&gt;
@@ -6378,35 +6406,7 @@ $ cabal new-build&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
 &lt;p&gt;とりあえず実装してみたという感じなので、実際どのぐらい使えるのか試してみようと思います。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;stack&lt;/code&gt; も &lt;code&gt;cabal&lt;/code&gt; も両方とも良いビルドツールだと思います。&lt;/p&gt;
-&lt;p&gt;もうちょっとしたら、&lt;code&gt;cabal&lt;/code&gt; も同様にオススメしていこうと思います。&lt;/p&gt;</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/21/201108</id><title type="text">Elias-Fano encoding: 単調増加する数列をほぼ簡潔に表現する</title><updated>2018-12-22T01:15:08+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/21/201108"/><summary type="html">Haskell Advent Calendar 2018 20日目 単調増加する自然数の列を、最低限のビット数で表現するための興味深いテクニックと、Haskellによる実装を紹介する。 Elias-Fano encoding この手法は、簡潔データ構造に分類されるもの一つであるが、厳密には条件を満たさないため疑似簡潔データ構造と呼ばれる。1970年代、Peter EliasとRobert Mario Fanoによって独立して発見された。 例題として1, 1, 4, 10, 17, 22, 23, 30という列をエンコードしてみよう。まず、それぞれの数を上位3ビットと下位2ビットに分割する。列の…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2018-12-19T09:22:10.151+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
-
-
-スタートメニュー・タスクバーの設定
-
-タスクバーの設定 
-
-小さいタスクバーボタンを使う：オン 
-[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフ
-タスクバーボタンを結合する
-
-「タスクバーに入りきらない場合」を選択
-
-タスクバーをすべての ディスプレイに表示する：オフ
-
-
-
- Quick Launcherを表示する
-
-クイック起動を復活する 
-Windows 10 タスクバーにクイック起動を表示する
-
-スタートメニューにコントロールパネルを表示する
-
-「Windows 10」のコントロールパネルを表示する方法について
-
-スタートメニューにピン止めするアプリ：
-
-Windowsシステム</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-16T14:31:09.194+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
+&lt;p&gt;もうちょっとしたら、&lt;code&gt;cabal&lt;/code&gt; も同様にオススメしていこうと思います。&lt;/p&gt;</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/21/201108</id><title type="text">Elias-Fano encoding: 単調増加する数列をほぼ簡潔に表現する</title><updated>2018-12-22T01:15:08+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/21/201108"/><summary type="html">Haskell Advent Calendar 2018 20日目 単調増加する自然数の列を、最低限のビット数で表現するための興味深いテクニックと、Haskellによる実装を紹介する。 Elias-Fano encoding この手法は、簡潔データ構造に分類されるもの一つであるが、厳密には条件を満たさないため疑似簡潔データ構造と呼ばれる。1970年代、Peter EliasとRobert Mario Fanoによって独立して発見された。 例題として1, 1, 4, 10, 17, 22, 23, 30という列をエンコードしてみよう。まず、それぞれの数を上位3ビットと下位2ビットに分割する。列の…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-16T14:31:09.194+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
 
 主に自分向けの防備録です。windows10上で確認。インストーラーはここからDLする。
 
