@@ -1,5 +1,5 @@
 name:                antenna
-version:             0.2.0.0
+version:             0.2.1.0
 github:              "haskell-jp/antenna"
 license:             MIT
 author:              "MATSUBARA Nobutada"
@@ -26,10 +26,10 @@ default-extensions:
 
 executables:
   antenna:
-    main:                Main.hs
-    source-dirs:         app
+    main: Main.hs
+    source-dirs: app
     dependencies:
     - blaze-html
-    - extensible
+    - extensible >= 0.6
     - scrapbook-core >= 0.4
     - yaml
