@@ -8,7 +8,7 @@ copyright:           "2018 MATSUBARA Nobutada"
 extra-source-files:
 - README.md
 
-description:         Please see the README on Github at <https://github.com/haskell-jp/antenna#readme>
+description:         Please see the README on GitHub at <https://github.com/haskell-jp/antenna#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -21,10 +21,6 @@ ghc-options:
 - -Wincomplete-uni-patterns
 - -Wredundant-constraints
 
-- -threaded
-- -rtsopts
-- -with-rtsopts=-N
-
 default-extensions:
 - NoImplicitPrelude
 
@@ -34,7 +30,6 @@ executables:
     source-dirs:         app
     dependencies:
     - blaze-html
-    - data-default
     - extensible
-    - scrapbook >= 0.3
+    - scrapbook-core >= 0.4
     - yaml

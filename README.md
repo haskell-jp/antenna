@@ -31,6 +31,22 @@ $ stack exec -- antenna sites.yaml
 
 実行すると、引数で渡した設定ファイル `sites.yaml` と同じディレクトリに `index.html` と `sites.html` と `feed.xml` が生成されます。
 
+### Docker Image
+
+ビルド方法
+
+```
+$ stack --docker build -j 1 Cabal # if out of memory in docker
+$ stack --docker --local-bin-path=./bin install
+$ docker build -t haskelljp/antenna . --build-arg local_bin_path=./bin
+```
+
+利用方法
+
+```
+$ docker run --rm -v `pwd`:/work haskelljp/antenna antenna sites.yaml
+```
+
 ## サイトの追加方法
 
 `sites.yaml` に以下のようにしてフィードの情報を追加して、https://github.com/haskell-jp/antenna/compare より Pull Request を送って下さい。

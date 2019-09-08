@@ -1,18 +1,15 @@
-resolver: lts-12.2
+resolver: lts-14.4
 packages:
 - .
 extra-deps:
-- data-default-instances-text-0.0.1
 - drinkery-0.4
+- extensible-0.6.1
+- membership-0
 - git: https://github.com/matsubara0507/scrapbook.git
-  commit: b81ed47a0a7dd13b01f8754fed3687e95aceb6d5
-- git: https://github.com/matsubara0507/extensible-instances.git
-  commit: a5b543cede63890c84d3f62f9c26349ae9f2e4fc
+  commit: 9ed6874c12ce53b99569a9952253e89859148cf5
+  subdirs:
+  - lib/scrapbook-core
 
 docker:
   repo: fpco/stack-build
   enable: false
-image:
-  container:
-    name: antenna
-    base: fpco/ubuntu-with-libgmp

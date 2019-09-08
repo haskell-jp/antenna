@@ -8,7 +8,6 @@ module Antenna.Config where
 
 import           RIO
 
-import           Data.Default    (def)
 import           Data.Extensible
 import qualified ScrapBook
 
@@ -27,7 +26,11 @@ toSite conf =
   shrinkAssoc $ #logo @= (conf ^. #logo) <: ScrapBook.toSite (shrinkAssoc conf)
 
 toScrapBookConfig :: Config -> ScrapBook.Config
-toScrapBookConfig config = def & #feed `set` Just feedConfig
+toScrapBookConfig config
+    = #feed  @= Just feedConfig
+   <: #json  @= Nothing
+   <: #sites @= []
+   <: nil
   where
     feedConfig = shrink $ #name @= Just (config ^. #feedName) <: config
 
