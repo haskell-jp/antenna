@@ -15,13 +15,16 @@ install:
 jobs:
   include:
     - stage: build dependencies
-      script: stack --no-terminal --docker --install-ghc test --bench --only-dependencies
+      script:
+      - stack --no-terminal --docker --install-ghc build -j 1 Cabal
+      - stack --no-terminal --docker --install-ghc build --only-dependencies
     - stage: build antenna
-      script: stack --no-terminal --docker build --bench --no-run-benchmarks --no-haddock-deps --pedantic
+      script:
+      - stack --no-terminal --docker build --bench --no-run-benchmarks --no-haddock-deps --pedantic
     - stage: push docker image
       if: branch = master AND type = push
       script:
-      - stack --docker image container
-      - docker tag antenna haskelljp/antenna
+      - stack --docker --local-bin-path=./bin install
+      - docker build -t haskelljp/antenna . --build-arg local_bin_path=./bin
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - docker push haskelljp/antenna
