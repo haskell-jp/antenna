@@ -11,5 +11,5 @@ extra-deps:
   - lib/scrapbook-core
 
 docker:
-  repo: fpco/stack-build
+  repo: matsubara0507/stack-build
   enable: false
