@@ -20,3 +20,5 @@ cabal.project.local
 .HTF/
 *.cabal
 example/
+bin/
+!bin/.gitkeep
