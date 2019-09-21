@@ -1,4 +1,168 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-09-19T20:26:04+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/sirasolra/items/7a216fd9d719a13de7b1</id><title type="text">StackでAgdaをインストールする</title><updated>2019-09-19T20:26:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sirasolra/items/7a216fd9d719a13de7b1"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/7ee3f393871c9d6935af</id><title type="text">Freer Effectsが、だいたいわかった: 11-9 LambdaCase拡張</title><updated>2019-09-19T15:52:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/7ee3f393871c9d6935af"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/3e7adbbbf0e7f73f669f</id><title type="text">Freer Effectsが、だいたいわかった: 12 OpenUnionを型によって安全にする</title><updated>2019-09-19T15:51:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/3e7adbbbf0e7f73f669f"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/a7146d041f88ba00d574</id><title type="text">Freer Effectsが、だいたいわかった: 11-8 言語拡張FlexibleContexts - 3要素タプルを型で整列する</title><updated>2019-09-19T10:58:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/a7146d041f88ba00d574"/></entry><entry><id>https://qiita.com/Yametaro/items/d12ec13de82d221702de</id><title type="text">すごいHaskell、ハスケル子と学ぼう！</title><updated>2019-09-18T20:30:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Yametaro/items/d12ec13de82d221702de"/></entry><entry><id>https://haskell.jp/blog/posts/2019/hiw-ghc-future.html</id><title type="text">HIW 2019で発表された、GHC 8.10に導入されるであろう機能</title><updated>2019-09-17T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/hiw-ghc-future.html"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-09-21T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://matsubara0507.github.io/posts/2019-09-21-stack-build-image.html</id><title type="text">CI で Haskell Stack の Docker Integration するために</title><updated>2019-09-21T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-09-21-stack-build-image.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;Haskell のビルドツール Stack の Docker Integration を使うことで，指定したイメージ内でホストマシンと全く同じように別の OS のバイナリをビルドできます． さらに一工夫をすることで，そのバイナリを埋め込んだ Docker Image を作ることができます(一工夫については「&lt;a href=&#34;/posts/2019-06-10-build-haskell-app-docker-image-without-stack-image-cmd.html&#34;&gt;stack image コマンドなしに Haskell アプリの Docker イメージを作る&lt;/a&gt;」に書いた)&lt;/p&gt;
+&lt;p&gt;僕はこのプロセスを TravisCI で行い，&lt;code&gt;master&lt;/code&gt; プッシュした時に &lt;code&gt;latest&lt;/code&gt; イメージを更新してました． が，どうしても CI のビルド時間が長すぎた(1ステップ30分かかることもしばしば)ので改善しました． っていう話です．&lt;/p&gt;
+&lt;h2 id=&#34;何が遅いのか&#34;&gt;何が遅いのか&lt;/h2&gt;
+&lt;p&gt;TravisCI のログを見てみる:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/stack-build-image/ci-log-1.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1571.75s&lt;/code&gt; もかかってるのは依存パッケージのみをビルドしているステップだ． 現状の主原因は単純に Haskell Stack のビルドがゲキオモなせい(巷でもよく言われてる)． でもこれは初回だけで，Stack v2 からは &lt;a href=&#34;https://www.fpcomplete.com/blog/2018/08/pantry-part-3/specifying-dependencies&#34;&gt;Pantry&lt;/a&gt; というシステムを導入して効率よく依存パッケージを SQLite にキャッシュしている(2回目以降でキャッシュを使うのは v1 もだったが v2 からは別のプロジェクトでも共有できるようになった)． なので，TravisCI にうまくキャッシュをする設定をすることで CI 中のビルド時間は劇的に改善する:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# .travis.yml の一部&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;cache&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;timeout&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;360&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb1-4&#34;&gt;&lt;a href=&#34;#cb1-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;directories&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb1-5&#34;&gt;&lt;a href=&#34;#cb1-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;$HOME/.stack/&amp;quot;&lt;/span&gt;&lt;span class=&#34;co&#34;&gt;     # Pantry のキャッシュはココ&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb1-6&#34;&gt;&lt;a href=&#34;#cb1-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;$HOME/.local/bin/&amp;quot;&lt;/span&gt;&lt;span class=&#34;co&#34;&gt; # ココには stack が入る&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb1-7&#34;&gt;&lt;a href=&#34;#cb1-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;.stack-work/&amp;quot;&lt;/span&gt;&lt;span class=&#34;co&#34;&gt;      # プロジェクト固有のキャッシュはココ&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/stack-build-image/ci-log-2.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;さて残りの &lt;code&gt;371.27s&lt;/code&gt; はなんと &lt;code&gt;docker pull&lt;/code&gt; にかかってる時間だ．&lt;/p&gt;
+&lt;h3 id=&#34;fpcostack-build&#34;&gt;fpco/stack-build&lt;/h3&gt;
+&lt;p&gt;Stack の Docker Integration を利用することで指定した Docker Image 内でビルドを実行する． つまり，指定した Docker Image をプルしてくる必要がある． ログからわかるようにこの時点では &lt;a href=&#34;https://hub.docker.com/r/fpco/stack-build/&#34;&gt;&lt;code&gt;fpco/stack-build&lt;/code&gt;&lt;/a&gt; という Stack の開発チームが提供している公式イメージを使っている:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb2-1&#34;&gt;&lt;a href=&#34;#cb2-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# stack.yaml の一部&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-2&#34;&gt;&lt;a href=&#34;#cb2-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;docker&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-3&#34;&gt;&lt;a href=&#34;#cb2-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;repo&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; fpco/stack-build&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-4&#34;&gt;&lt;a href=&#34;#cb2-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;enable&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Docker Hub を見てみるとわかるのだが，なんと3GBもある(&lt;a href=&#34;https://github.com/docker/hub-feedback/issues/331#issuecomment-141544523&#34;&gt;Docker Hub に書いてあるのは圧縮されたサイズ&lt;/a&gt;なので，手元での実際のサイズはなんと8.5GBもある)． もちろんローカルなら同じイメージを何度もプルすることはないので問題ないのだが，残念ながら TravisCI には Docker Image をキャッシュしない． 無理やり固めてキャッシュすることは可能だが，試してみたらそっちの方が時間がかかった(8.5GBもあるからね)．&lt;/p&gt;
+&lt;h2 id=&#34;軽いイメージを作る&#34;&gt;軽いイメージを作る&lt;/h2&gt;
+&lt;p&gt;なんでこんなにもあるのかは知らないけど，大きいなら小さくすれば良い． ということで自作することにした:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/matsubara0507/stack-build&#34;&gt;matsubara0507/stack-build - Docker Hub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;イメージサイズは125MB(非圧縮サイズは380MB)． とりあえず，必要そうなものだけを &lt;code&gt;apt-get&lt;/code&gt; して，自分のプログラムがビルドできるのだけ試した:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode dockerfile&#34;&gt;&lt;code class=&#34;sourceCode dockerfile&#34;&gt;&lt;span id=&#34;cb3-1&#34;&gt;&lt;a href=&#34;#cb3-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;FROM&lt;/span&gt; ubuntu:18.04&lt;/span&gt;
+&lt;span id=&#34;cb3-2&#34;&gt;&lt;a href=&#34;#cb3-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;RUN&lt;/span&gt; apt-get update &amp;amp;&amp;amp; apt-get install -y \&lt;/span&gt;
+&lt;span id=&#34;cb3-3&#34;&gt;&lt;a href=&#34;#cb3-3&#34;&gt;&lt;/a&gt;    curl \&lt;/span&gt;
+&lt;span id=&#34;cb3-4&#34;&gt;&lt;a href=&#34;#cb3-4&#34;&gt;&lt;/a&gt;    gcc \&lt;/span&gt;
+&lt;span id=&#34;cb3-5&#34;&gt;&lt;a href=&#34;#cb3-5&#34;&gt;&lt;/a&gt;    g++ \&lt;/span&gt;
+&lt;span id=&#34;cb3-6&#34;&gt;&lt;a href=&#34;#cb3-6&#34;&gt;&lt;/a&gt;    git \&lt;/span&gt;
+&lt;span id=&#34;cb3-7&#34;&gt;&lt;a href=&#34;#cb3-7&#34;&gt;&lt;/a&gt;    gnupg \&lt;/span&gt;
+&lt;span id=&#34;cb3-8&#34;&gt;&lt;a href=&#34;#cb3-8&#34;&gt;&lt;/a&gt;    libc6-dev \&lt;/span&gt;
+&lt;span id=&#34;cb3-9&#34;&gt;&lt;a href=&#34;#cb3-9&#34;&gt;&lt;/a&gt;    libffi-dev \&lt;/span&gt;
+&lt;span id=&#34;cb3-10&#34;&gt;&lt;a href=&#34;#cb3-10&#34;&gt;&lt;/a&gt;    libgmp-dev \&lt;/span&gt;
+&lt;span id=&#34;cb3-11&#34;&gt;&lt;a href=&#34;#cb3-11&#34;&gt;&lt;/a&gt;    make \&lt;/span&gt;
+&lt;span id=&#34;cb3-12&#34;&gt;&lt;a href=&#34;#cb3-12&#34;&gt;&lt;/a&gt;    netbase \&lt;/span&gt;
+&lt;span id=&#34;cb3-13&#34;&gt;&lt;a href=&#34;#cb3-13&#34;&gt;&lt;/a&gt;    xz-utils \&lt;/span&gt;
+&lt;span id=&#34;cb3-14&#34;&gt;&lt;a href=&#34;#cb3-14&#34;&gt;&lt;/a&gt;    zlib1g-dev \&lt;/span&gt;
+&lt;span id=&#34;cb3-15&#34;&gt;&lt;a href=&#34;#cb3-15&#34;&gt;&lt;/a&gt; &amp;amp;&amp;amp; apt-get clean \&lt;/span&gt;
+&lt;span id=&#34;cb3-16&#34;&gt;&lt;a href=&#34;#cb3-16&#34;&gt;&lt;/a&gt; &amp;amp;&amp;amp; rm -rf /var/lib/apt/lists/*&lt;/span&gt;
+&lt;span id=&#34;cb3-17&#34;&gt;&lt;a href=&#34;#cb3-17&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;ENV&lt;/span&gt; STACK_VERSION=&lt;span class=&#34;st&#34;&gt;&amp;quot;2.1.3&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb3-18&#34;&gt;&lt;a href=&#34;#cb3-18&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;RUN&lt;/span&gt; curl -sSL https://get.haskellstack.org/ | sh \&lt;/span&gt;
+&lt;span id=&#34;cb3-19&#34;&gt;&lt;a href=&#34;#cb3-19&#34;&gt;&lt;/a&gt; &amp;amp;&amp;amp; stack upgrade --binary-version=${STACK_VERSION}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;なので，他の人が使ってもちゃんとビルドできる保証はない． もちろん，これで CI の時間も &lt;code&gt;30s&lt;/code&gt; ぐらいに短縮した(キャッシュの解凍・圧縮に3分ぐらいかかっちゃうんだけど)．&lt;/p&gt;
+&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
+&lt;p&gt;ちなみに，一通りできてから気づいたのだが，ちゃんと公式にも小さいイメージができてた(半年ぐらい前からっぽい)．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/fpco/stack-build-small&#34;&gt;fpco/stack-build-small - Docker Hub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;圧縮サイズが390MBなので，自作の方が小さいから自分のをとりあえず困るまでは使うことにします．&lt;/p&gt;
+&lt;h3 id=&#34;docker-integration-と-resolver&#34;&gt;Docker Integration と Resolver&lt;/h3&gt;
+&lt;p&gt;Stack はビルド可能なパッケージのバージョンをまとめた Resolver を提供している． Resolver は設定ファイルで指定し，Docker Integration でイメージタグを指定しないと Resolver と同じ名前のタグを自動で利用してくれる．&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb4-1&#34;&gt;&lt;a href=&#34;#cb4-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# stack.yaml&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb4-2&#34;&gt;&lt;a href=&#34;#cb4-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;resolver&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; lts-14.6&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb4-3&#34;&gt;&lt;a href=&#34;#cb4-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;packages&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb4-4&#34;&gt;&lt;a href=&#34;#cb4-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; .&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb4-5&#34;&gt;&lt;a href=&#34;#cb4-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;extra-deps&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;[]&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb4-6&#34;&gt;&lt;a href=&#34;#cb4-6&#34;&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;span id=&#34;cb4-7&#34;&gt;&lt;a href=&#34;#cb4-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;docker&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb4-8&#34;&gt;&lt;a href=&#34;#cb4-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;repo&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507/stack-build&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb4-9&#34;&gt;&lt;a href=&#34;#cb4-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;enable&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この場合は &lt;code&gt;matsubara0507/stack-build:lts-14.6&lt;/code&gt; イメージを利用する． この Resolver の更新頻度は結構高く，Resolver が出るたびに &lt;code&gt;matsubara0507/stack-build&lt;/code&gt; のタグを増やさないといけない． 困った．&lt;/p&gt;
+&lt;p&gt;(先にネタバレをすると，&lt;code&gt;docker.repo&lt;/code&gt; でタグまで指定すれば更新する必要は微塵もなかった)&lt;/p&gt;
+&lt;h2 id=&#34;どうやって更新するか&#34;&gt;どうやって更新するか&lt;/h2&gt;
+&lt;p&gt;外のソフトウェアのバージョンアップを検知して自分の Docker Image を更新するのって結構大変なんだが，昔同じようなシチュエーションで支援プログラムを作ったのを思い出した:&lt;/p&gt;
+&lt;h1 id=&#34;section-1&#34;&gt;&lt;iframe width=&#34;426&#34; height=&#34;162&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/dockwright&#34;&gt;&lt;/iframe&gt;&lt;/h1&gt;
+&lt;p&gt;こいつを改良してバージョンを追うことにした．&lt;/p&gt;
+&lt;h3 id=&#34;dockwright&#34;&gt;Dockwright&lt;/h3&gt;
+&lt;p&gt;もともと利用したのはこれ:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/posts/2018-06-15-introduce-elchemy-part1.html&#34;&gt;Elchemy 入門 : その１&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Elchemy というプログラミング言語のバージョンを追って Dockerfile を作り直す． そのために GitHub のリリースなどをチェックして，Dockerfile の &lt;code&gt;ENV&lt;/code&gt; を書き換えるような動作をしている． ちなみに，Docker Image の作成自体は DockerHub の自動ビルドを使っていた．&lt;/p&gt;
+&lt;p&gt;今回の要件は2つ:&lt;/p&gt;
+&lt;ol type=&#34;1&#34;&gt;
+&lt;li&gt;&lt;code&gt;ENV&lt;/code&gt; ではなく Docker Image タグとして利用したい&lt;/li&gt;
+&lt;li&gt;GitHub ではなく &lt;a href=&#34;https://www.stackage.org/download/snapshots.json&#34;&gt;Stackage の API&lt;/a&gt; の特定のキーの値を見たい&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;そのためにタグをいじるための機能を追加した(実装それ自体に面白さは特にないので割愛):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 設定したイメージの DockarHub 上の全てのタグを取得
+$ dockwright --tags
+
+# 設定した `tags` からタグを取得し DockerHub のタグにないものを出力
+# dockwright --new-tags&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;tags&lt;/code&gt; の設定は次のような感じ:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb6-1&#34;&gt;&lt;a href=&#34;#cb6-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# .dockwright.yaml の一部&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-2&#34;&gt;&lt;a href=&#34;#cb6-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-3&#34;&gt;&lt;a href=&#34;#cb6-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# latest は常に&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-4&#34;&gt;&lt;a href=&#34;#cb6-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; value&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-5&#34;&gt;&lt;a href=&#34;#cb6-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;keys&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-6&#34;&gt;&lt;a href=&#34;#cb6-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; latest&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-7&#34;&gt;&lt;a href=&#34;#cb6-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;always&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-8&#34;&gt;&lt;a href=&#34;#cb6-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# 前述した API の返り値 JSON の特定のキーの値&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-9&#34;&gt;&lt;a href=&#34;#cb6-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; refer&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-10&#34;&gt;&lt;a href=&#34;#cb6-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;ref&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; https://www.stackage.org/download/snapshots.json&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-11&#34;&gt;&lt;a href=&#34;#cb6-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;keys&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-12&#34;&gt;&lt;a href=&#34;#cb6-12&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; nightly&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb6-13&#34;&gt;&lt;a href=&#34;#cb6-13&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; lts&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;そして次のような Makefile とシェルスクリプトを書いて更新している:&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode makefile&#34;&gt;&lt;code class=&#34;sourceCode makefile&#34;&gt;&lt;span id=&#34;cb7-1&#34;&gt;&lt;a href=&#34;#cb7-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# Makefile&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-2&#34;&gt;&lt;a href=&#34;#cb7-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;DOCKER_CMD   &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; docker run --rm&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-3&#34;&gt;&lt;a href=&#34;#cb7-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;IMAGE        &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; matsubara0507/dockwright:1.1.0&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-4&#34;&gt;&lt;a href=&#34;#cb7-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;BUILD_CMD    &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; dockwright .dockwright.yaml&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-5&#34;&gt;&lt;a href=&#34;#cb7-5&#34;&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-6&#34;&gt;&lt;a href=&#34;#cb7-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;tags:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-7&#34;&gt;&lt;a href=&#34;#cb7-7&#34;&gt;&lt;/a&gt;	&lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;DOCKER_CMD&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; -v `pwd`/&lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;dir&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt;:/work &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;IMAGE&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;BUILD_CMD&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; --tags --with-name&lt;/span&gt;
+&lt;span id=&#34;cb7-8&#34;&gt;&lt;a href=&#34;#cb7-8&#34;&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-9&#34;&gt;&lt;a href=&#34;#cb7-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;new-tags:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-10&#34;&gt;&lt;a href=&#34;#cb7-10&#34;&gt;&lt;/a&gt;	&lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;DOCKER_CMD&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; -v `pwd`/&lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;dir&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt;:/work &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;IMAGE&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;BUILD_CMD&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; --new-tags --with-name&lt;/span&gt;
+&lt;span id=&#34;cb7-11&#34;&gt;&lt;a href=&#34;#cb7-11&#34;&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-12&#34;&gt;&lt;a href=&#34;#cb7-12&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;dockerfile:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-13&#34;&gt;&lt;a href=&#34;#cb7-13&#34;&gt;&lt;/a&gt;	&lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;DOCKER_CMD&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; -v `pwd`/&lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;dir&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt;:/work &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;IMAGE&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;BUILD_CMD&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-14&#34;&gt;&lt;a href=&#34;#cb7-14&#34;&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-15&#34;&gt;&lt;a href=&#34;#cb7-15&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;image:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-16&#34;&gt;&lt;a href=&#34;#cb7-16&#34;&gt;&lt;/a&gt;	docker build -t &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;tag&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;dir&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-17&#34;&gt;&lt;a href=&#34;#cb7-17&#34;&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-18&#34;&gt;&lt;a href=&#34;#cb7-18&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;push:&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt; image&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb7-19&#34;&gt;&lt;a href=&#34;#cb7-19&#34;&gt;&lt;/a&gt;	docker push &lt;span class=&#34;ch&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;tag&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode sh&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;span id=&#34;cb8-1&#34;&gt;&lt;a href=&#34;#cb8-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# update-image.sh&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb8-2&#34;&gt;&lt;a href=&#34;#cb8-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;va&#34;&gt;target=$1&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb8-3&#34;&gt;&lt;a href=&#34;#cb8-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;make&lt;/span&gt; dockerfile dir=&lt;span class=&#34;va&#34;&gt;${target}&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb8-4&#34;&gt;&lt;a href=&#34;#cb8-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;git&lt;/span&gt; status&lt;/span&gt;
+&lt;span id=&#34;cb8-5&#34;&gt;&lt;a href=&#34;#cb8-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;git&lt;/span&gt; add -A &lt;span class=&#34;va&#34;&gt;${target}&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb8-6&#34;&gt;&lt;a href=&#34;#cb8-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;git&lt;/span&gt; diff --quiet &lt;span class=&#34;kw&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;git&lt;/span&gt; diff --staged --quiet &lt;span class=&#34;kw&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;git&lt;/span&gt; commit -m &lt;span class=&#34;st&#34;&gt;&amp;quot;[skip ci] Update &lt;/span&gt;&lt;span class=&#34;va&#34;&gt;${target}&lt;/span&gt;&lt;span class=&#34;st&#34;&gt; image&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb8-7&#34;&gt;&lt;a href=&#34;#cb8-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;make&lt;/span&gt; -s new-tags dir=&lt;span class=&#34;va&#34;&gt;${target}&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;xargs&lt;/span&gt; -ITAG make push dir=&lt;span class=&#34;va&#34;&gt;${target}&lt;/span&gt; tag=TAG&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実際に使っているリポジトリは&lt;a href=&#34;https://github.com/matsubara0507/haskell-dockerfiles&#34;&gt;コレ&lt;/a&gt;．&lt;/p&gt;
+&lt;h2 id=&#34;おまけ-結局どこが重い&#34;&gt;おまけ: 結局どこが重い？&lt;/h2&gt;
+&lt;p&gt;なんで &lt;code&gt;fpco/stack-build&lt;/code&gt; がこんなに重いのか，調べてみた:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker history fpco/stack-build:lts-14.4
+IMAGE               CREATED             CREATED BY                                      SIZE
+9adc774bb5e5        5 weeks ago         /bin/sh -c #(nop)  CMD [&amp;quot;bash&amp;quot;]                 0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ENTRYPOINT [&amp;quot;/usr/local/s…   0B
+&amp;lt;missing&amp;gt;           5 weeks ago         |11 BOOTSTRAP_COMMIT=d4143f1845f26e8e99d0a1a…   391kB
+&amp;lt;missing&amp;gt;           5 weeks ago         |11 BOOTSTRAP_COMMIT=d4143f1845f26e8e99d0a1a…   93.5MB
+&amp;lt;missing&amp;gt;           5 weeks ago         |11 BOOTSTRAP_COMMIT=d4143f1845f26e8e99d0a1a…   17B
+&amp;lt;missing&amp;gt;           5 weeks ago         |11 BOOTSTRAP_COMMIT=d4143f1845f26e8e99d0a1a…   8.12GB
+&amp;lt;missing&amp;gt;           5 weeks ago         |11 BOOTSTRAP_COMMIT=d4143f1845f26e8e99d0a1a…   239MB
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ENV LANG=C.UTF-8 LC_ALL=C…   0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG STACK_ROOT=/home/stac…   0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG VARIANT=build            0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG DEBIAN_FRONTEND=nonin…   0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG BOOTSTRAP_COMMIT=d414…   0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG LLVM_VERSION=3.9         0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG JVM_PATH=/usr/lib/jvm…   0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG CUDA_VERSION=10.0        0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG STACK_VERSION=2.1.3      0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG PID1_VERSION=0.1.2.0     0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG LTS_SLUG=lts-14.0        0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  ARG GHC_VERSION=8.6.5        0B
+&amp;lt;missing&amp;gt;           5 weeks ago         /bin/sh -c #(nop)  LABEL maintainer=manny@fp…   0B
+&amp;lt;missing&amp;gt;           8 weeks ago         /bin/sh -c #(nop)  CMD [&amp;quot;/bin/bash&amp;quot;]            0B
+&amp;lt;missing&amp;gt;           8 weeks ago         /bin/sh -c mkdir -p /run/systemd &amp;amp;&amp;amp; echo &amp;#39;do…   7B
+&amp;lt;missing&amp;gt;           8 weeks ago         /bin/sh -c set -xe   &amp;amp;&amp;amp; echo &amp;#39;#!/bin/sh&amp;#39; &amp;gt; /…   745B
+&amp;lt;missing&amp;gt;           8 weeks ago         /bin/sh -c [ -z &amp;quot;$(apt-get indextargets)&amp;quot; ]     987kB
+&amp;lt;missing&amp;gt;           8 weeks ago         /bin/sh -c #(nop) ADD file:3ddd02d976792b6c6…   63.2MB&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上から6番目，&lt;code&gt;--no-trunc&lt;/code&gt; 付けて確認してみたら&lt;a href=&#34;https://github.com/commercialhaskell/stack/blob/b8f8ec203209fccb1a86b9e8705f16125845254b/etc/dockerfiles/stack-build/lts-13.20/Dockerfile#L29-L46&#34;&gt;ココ&lt;/a&gt;だった． そう，犯人は &lt;a href=&#34;https://github.com/commercialhaskell/stackage/blob/f5d1776c9c5d311469f889d251faa97bdd62e625/debian-bootstrap.sh&#34;&gt;&lt;code&gt;debian-bootstrap.sh&lt;/code&gt;&lt;/a&gt; です．&lt;/p&gt;
+&lt;p&gt;要するに，Stackage にある全てのパッケージを利用するための全ての &lt;code&gt;apt-get install&lt;/code&gt; やらなんやらをしている． そりゃ重いわけだ．&lt;/p&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;CI が爆速になったし，自動で Resolver の追従もしてくれるし，私は満足です． ちょこっとずつ古いプロジェクトの置き換えしている．&lt;/p&gt;
+  &lt;/div&gt;</summary></entry><entry><id>http://syocy.hatenablog.com/entry/init-ghc-8-8-1</id><title type="text">HaskellやっていくGHC8.8.1令和元年白露の候</title><updated>2019-09-20T21:45:08+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/init-ghc-8-8-1"/><summary type="html">GHC 8.8.1 が出たので雑に環境を整えていきます。 OS: Ubuntu 18.04 LTS on VirtualBox on Windows screenshot GHC, Cabal 最近は ghcup で入れている。 $ ghcup upgrade $ ghcup list --tool all $ ghcup install 8.8 $ ghcup install-cabal latest ~/.ghcup/bin と ~/.cabal/bin にPATHが通っていない場合は通しておく。 stack は手になじまない感じがして最近使っていない。 stack のいいところとしてスク…</summary></entry><entry><id>https://qiita.com/sirasolra/items/7a216fd9d719a13de7b1</id><title type="text">StackでAgdaをインストールする</title><updated>2019-09-19T20:26:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sirasolra/items/7a216fd9d719a13de7b1"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/7ee3f393871c9d6935af</id><title type="text">Freer Effectsが、だいたいわかった: 11-9 LambdaCase拡張</title><updated>2019-09-19T15:52:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/7ee3f393871c9d6935af"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/3e7adbbbf0e7f73f669f</id><title type="text">Freer Effectsが、だいたいわかった: 12 OpenUnionを型によって安全にする</title><updated>2019-09-19T15:51:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/3e7adbbbf0e7f73f669f"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/a7146d041f88ba00d574</id><title type="text">Freer Effectsが、だいたいわかった: 11-8 言語拡張FlexibleContexts - 3要素タプルを型で整列する</title><updated>2019-09-19T10:58:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/a7146d041f88ba00d574"/></entry><entry><id>https://qiita.com/Yametaro/items/d12ec13de82d221702de</id><title type="text">すごいHaskell、ハスケル子と学ぼう！</title><updated>2019-09-18T20:30:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Yametaro/items/d12ec13de82d221702de"/></entry><entry><id>https://haskell.jp/blog/posts/2019/hiw-ghc-future.html</id><title type="text">HIW 2019で発表された、GHC 8.10に導入されるであろう機能</title><updated>2019-09-17T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/hiw-ghc-future.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -136,7 +300,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#34;ascii&#34;&gt;Visibl
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/norkron/items/aff3ce925edc6be74923</id><title type="text">もう諦めない圏論基礎―モノイドからモナドへ―</title><updated>2019-09-16T21:12:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/aff3ce925edc6be74923"/></entry><entry><id>https://qiita.com/norkron/items/237735106ee6e5333678</id><title type="text">圏論入門前の準備運動―集合と写像―</title><updated>2019-09-16T21:07:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/237735106ee6e5333678"/></entry><entry><id>http://syocy.hatenablog.com/entry/init-ghc-8-8-1</id><title type="text">HaskellやっていくGHC8.8.1令和元年白露の候</title><updated>2019-09-14T23:40:48+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/init-ghc-8-8-1"/><summary type="html">GHC 8.8.1 が出たので雑に環境を整えていきます。 OS: Ubuntu 18.04 LTS on VirtualBox on Windows screenshot GHC, Cabal 最近は ghcup で入れている。 $ ghcup upgrade $ ghcup list --tool all $ ghcup install 8.8 $ ghcup install-cabal latest ~/.ghcup/bin と ~/.cabal/bin にPATHが通っていない場合は通しておく。 stack は手になじまない感じがして最近使っていない。 stack のいいところとしてスク…</summary></entry><entry><id>https://qiita.com/YoshikuniJujo/items/a9cc0bfdfd5554565ab3</id><title type="text">(GHC 8.0.1以降では単にerrorを使えばすむ話でした)Haskellで「ソースコード上での位置」を取得する</title><updated>2019-09-12T16:07:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/a9cc0bfdfd5554565ab3"/></entry><entry><id>https://haskell.jp/blog/posts/2019/hiw-ghc8.8.html</id><title type="text">HIW 2019で発表された、GHC 8.8で導入された機能</title><updated>2019-09-11T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/hiw-ghc8.8.html"/><summary type="html">
+</summary></entry><entry><id>https://qiita.com/norkron/items/aff3ce925edc6be74923</id><title type="text">もう諦めない圏論基礎―モノイドからモナドへ―</title><updated>2019-09-16T21:12:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/aff3ce925edc6be74923"/></entry><entry><id>https://qiita.com/norkron/items/237735106ee6e5333678</id><title type="text">圏論入門前の準備運動―集合と写像―</title><updated>2019-09-16T21:07:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/237735106ee6e5333678"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/a9cc0bfdfd5554565ab3</id><title type="text">(GHC 8.0.1以降では単にerrorを使えばすむ話でした)Haskellで「ソースコード上での位置」を取得する</title><updated>2019-09-12T16:07:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/a9cc0bfdfd5554565ab3"/></entry><entry><id>https://haskell.jp/blog/posts/2019/hiw-ghc8.8.html</id><title type="text">HIW 2019で発表された、GHC 8.8で導入された機能</title><updated>2019-09-11T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/hiw-ghc8.8.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -6339,229 +6503,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;今後やりたいこと&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-01-20-create-drone-git-with-ssh.html</id><title type="text">Drone Plugin を作ってみた: git-with-ssh</title><updated>2019-01-20T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-01-20-create-drone-git-with-ssh.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;最近 &lt;a href=&#34;https://drone.io&#34;&gt;Drone&lt;/a&gt; という CI プラットフォームを試しています． Drone は Plugin という形で拡張機能を提供するので Plugin を自作してみた，という話です．&lt;/p&gt;
-&lt;h2 id=&#34;作ったもの&#34;&gt;作ったもの&lt;/h2&gt;
-&lt;p&gt;表題の通り，git-with-ssh という Plugin を作った:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/drone-git-with-ssh&#34;&gt;matsubara0507/drone-git-with-ssh - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;この Plugin は SSH による git コマンドの利用を可能にする． 例えば，Drone で GitHub へのプッシュをしたいとき，パーソナル API トークンを使うのではなく Deploy Key を使いたい場合は次のように書くと良い:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;steps&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; clone gh-pages&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; docker:git&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-4&#34;&gt;&lt;a href=&#34;#cb1-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-5&#34;&gt;&lt;a href=&#34;#cb1-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;SSH_KEY&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-6&#34;&gt;&lt;a href=&#34;#cb1-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;from_secret&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; deploy_key&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-7&#34;&gt;&lt;a href=&#34;#cb1-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;commands&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-8&#34;&gt;&lt;a href=&#34;#cb1-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; mkdir /root/.ssh &amp;amp;&amp;amp; echo &amp;quot;$SSH_KEY&amp;quot; &amp;gt; /root/.ssh/id_rsa &amp;amp;&amp;amp; chmod 0600 /root/.ssh/id_rsa&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-9&#34;&gt;&lt;a href=&#34;#cb1-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; echo -e &amp;quot;Host github.com\n\tStrictHostKeyChecking no\n&amp;quot; &amp;gt; /root/.ssh/config&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-10&#34;&gt;&lt;a href=&#34;#cb1-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;この方法は &lt;a href=&#34;https://github.com/drone/drone/issues/1891#issuecomment-269629929&#34;&gt;Issue で作者本人が提案している&lt;/a&gt;ため，おそらく推奨されている方法なのだろう． 二行追加するだけだから特別な機能は提供しない，と述べてるので CircleCI のような Deploy key を追加する機能は実装されないだろう(少なくとも当分は)．&lt;/p&gt;
-&lt;p&gt;しかし，実際に使い始めてボイラーテンプレート化してしまったので，せっかくだからこれを Plugin にしてみようと考えた． 結果として，自作した Plugin を使うと次のようにかける:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb2-1&#34;&gt;&lt;a href=&#34;#cb2-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;steps&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-2&#34;&gt;&lt;a href=&#34;#cb2-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; clone gh-pages&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-3&#34;&gt;&lt;a href=&#34;#cb2-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507/git-with-ssh&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-4&#34;&gt;&lt;a href=&#34;#cb2-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;settings&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-5&#34;&gt;&lt;a href=&#34;#cb2-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;ssh_private_key&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-6&#34;&gt;&lt;a href=&#34;#cb2-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;from_secret&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; deploy_key&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-7&#34;&gt;&lt;a href=&#34;#cb2-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;ssh_hosts&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-8&#34;&gt;&lt;a href=&#34;#cb2-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; github.com&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-9&#34;&gt;&lt;a href=&#34;#cb2-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;commands&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-10&#34;&gt;&lt;a href=&#34;#cb2-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; git clone -b gh-pages git@github.com:haskell-jp/antenna.git temp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;行数は大してかわらないけど，なんか綺麗になったでしょ？(笑)&lt;/p&gt;
-&lt;h2 id=&#34;作る&#34;&gt;作る&lt;/h2&gt;
-&lt;p&gt;だいたい&lt;a href=&#34;https://docs.drone.io/plugins&#34;&gt;公式ドキュメント&lt;/a&gt;と，&lt;a href=&#34;https://github.com/drone-plugins&#34;&gt;drone-plugin 組織アカウント&lt;/a&gt;にある公式のリポジトリのコードとにらめっこすればなんとかなった．&lt;/p&gt;
-&lt;h3 id=&#34;drone-plugin&#34;&gt;Drone Plugin&lt;/h3&gt;
-&lt;p&gt;Drone Plugin の中身はただの Docker イメージだ． 仕組みは簡単で，単純に ENTRYPOINT を設定し，&lt;code&gt;.drone.yml&lt;/code&gt; の &lt;code&gt;settings&lt;/code&gt; 以下の値を &lt;code&gt;PLUGIN_&lt;/code&gt; というプレフィックスをつけて環境変数としておくだけだ． 例えば上記の &lt;code&gt;git-with-ssh&lt;/code&gt; の例だと:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;PLUGIN_SSH_PRIVATE_KEY
-PLUGIN_SSH_HOSTS
-PLUGIN_COMMANDS&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;という環境変数にそれぞれの値が代入される． なのであとは ENTRYPOINT を設定する Dockerfile を定義すれば良い． 公式ドキュメントにはシェルスクリプトと Go 言語で作る場合の方法が載っている． が，別に Docker の ENTRYPOINT として実行できればなんでも良いので Haskell でも Ruby でも作れるだろう．&lt;/p&gt;
-&lt;p&gt;今回は本家のを参考にするために Go 言語で作った．&lt;/p&gt;
-&lt;h3 id=&#34;main.go-と-plugin.go&#34;&gt;main.go と plugin.go&lt;/h3&gt;
-&lt;p&gt;Go で作る場合，main.go と plugin.go に分けるのがデファクトスタンダートみたいだ． main.go には ENTRYPOINT に設定する CLI アプリのインターフェースを記述し，plugin.go には処理のロジックを記述するようだ． ざっくりと雰囲気だけ書くと:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode go&#34;&gt;&lt;code class=&#34;sourceCode go&#34;&gt;&lt;span id=&#34;cb4-1&#34;&gt;&lt;a href=&#34;#cb4-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;// main.go&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-2&#34;&gt;&lt;a href=&#34;#cb4-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;package&lt;/span&gt; main&lt;/span&gt;
-&lt;span id=&#34;cb4-3&#34;&gt;&lt;a href=&#34;#cb4-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-4&#34;&gt;&lt;a href=&#34;#cb4-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; (&lt;/span&gt;
-&lt;span id=&#34;cb4-5&#34;&gt;&lt;a href=&#34;#cb4-5&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-6&#34;&gt;&lt;a href=&#34;#cb4-6&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;os&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-7&#34;&gt;&lt;a href=&#34;#cb4-7&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;strings&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-8&#34;&gt;&lt;a href=&#34;#cb4-8&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-9&#34;&gt;&lt;a href=&#34;#cb4-9&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;github.com/joho/godotenv&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-10&#34;&gt;&lt;a href=&#34;#cb4-10&#34;&gt;&lt;/a&gt;  log &lt;span class=&#34;st&#34;&gt;&amp;quot;github.com/sirupsen/logrus&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-11&#34;&gt;&lt;a href=&#34;#cb4-11&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;st&#34;&gt;&amp;quot;github.com/urfave/cli&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-12&#34;&gt;&lt;a href=&#34;#cb4-12&#34;&gt;&lt;/a&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb4-13&#34;&gt;&lt;a href=&#34;#cb4-13&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-14&#34;&gt;&lt;a href=&#34;#cb4-14&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;var&lt;/span&gt; build = &lt;span class=&#34;st&#34;&gt;&amp;quot;0&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-15&#34;&gt;&lt;a href=&#34;#cb4-15&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-16&#34;&gt;&lt;a href=&#34;#cb4-16&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;func&lt;/span&gt; main() {&lt;/span&gt;
-&lt;span id=&#34;cb4-17&#34;&gt;&lt;a href=&#34;#cb4-17&#34;&gt;&lt;/a&gt;  app := cli.NewApp()&lt;/span&gt;
-&lt;span id=&#34;cb4-18&#34;&gt;&lt;a href=&#34;#cb4-18&#34;&gt;&lt;/a&gt;  app.Name = &lt;span class=&#34;st&#34;&gt;&amp;quot;git-with-ssh plugin&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-19&#34;&gt;&lt;a href=&#34;#cb4-19&#34;&gt;&lt;/a&gt;  app.Usage = &lt;span class=&#34;st&#34;&gt;&amp;quot;git-with-ssh plugin&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-20&#34;&gt;&lt;a href=&#34;#cb4-20&#34;&gt;&lt;/a&gt;  app.Action = run&lt;/span&gt;
-&lt;span id=&#34;cb4-21&#34;&gt;&lt;a href=&#34;#cb4-21&#34;&gt;&lt;/a&gt;  app.Version = fmt.Sprintf(&lt;span class=&#34;st&#34;&gt;&amp;quot;1.0.0+%s&amp;quot;&lt;/span&gt;, build)&lt;/span&gt;
-&lt;span id=&#34;cb4-22&#34;&gt;&lt;a href=&#34;#cb4-22&#34;&gt;&lt;/a&gt;  app.Flags = []cli.Flag{&lt;/span&gt;
-&lt;span id=&#34;cb4-23&#34;&gt;&lt;a href=&#34;#cb4-23&#34;&gt;&lt;/a&gt;    cli.StringFlag{&lt;/span&gt;
-&lt;span id=&#34;cb4-24&#34;&gt;&lt;a href=&#34;#cb4-24&#34;&gt;&lt;/a&gt;      Name:   &lt;span class=&#34;st&#34;&gt;&amp;quot;ssh_private_key&amp;quot;&lt;/span&gt;,&lt;/span&gt;
-&lt;span id=&#34;cb4-25&#34;&gt;&lt;a href=&#34;#cb4-25&#34;&gt;&lt;/a&gt;      Usage:  &lt;span class=&#34;st&#34;&gt;&amp;quot;SSH private key for git&amp;quot;&lt;/span&gt;,&lt;/span&gt;
-&lt;span id=&#34;cb4-26&#34;&gt;&lt;a href=&#34;#cb4-26&#34;&gt;&lt;/a&gt;      EnvVar: &lt;span class=&#34;st&#34;&gt;&amp;quot;PLUGIN_SSH_PRIVATE_KEY&amp;quot;&lt;/span&gt;,&lt;/span&gt;
-&lt;span id=&#34;cb4-27&#34;&gt;&lt;a href=&#34;#cb4-27&#34;&gt;&lt;/a&gt;    },&lt;/span&gt;
-&lt;span id=&#34;cb4-28&#34;&gt;&lt;a href=&#34;#cb4-28&#34;&gt;&lt;/a&gt;    ...&lt;/span&gt;
-&lt;span id=&#34;cb4-29&#34;&gt;&lt;a href=&#34;#cb4-29&#34;&gt;&lt;/a&gt;    &lt;span class=&#34;co&#34;&gt;// ここに CLI の引数を定義&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-30&#34;&gt;&lt;a href=&#34;#cb4-30&#34;&gt;&lt;/a&gt;  }&lt;/span&gt;
-&lt;span id=&#34;cb4-31&#34;&gt;&lt;a href=&#34;#cb4-31&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-32&#34;&gt;&lt;a href=&#34;#cb4-32&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; err := app.Run(os.Args); err != &lt;span class=&#34;ot&#34;&gt;nil&lt;/span&gt; {&lt;/span&gt;
-&lt;span id=&#34;cb4-33&#34;&gt;&lt;a href=&#34;#cb4-33&#34;&gt;&lt;/a&gt;    log.Fatal(err)&lt;/span&gt;
-&lt;span id=&#34;cb4-34&#34;&gt;&lt;a href=&#34;#cb4-34&#34;&gt;&lt;/a&gt;  }&lt;/span&gt;
-&lt;span id=&#34;cb4-35&#34;&gt;&lt;a href=&#34;#cb4-35&#34;&gt;&lt;/a&gt;}&lt;/span&gt;
-&lt;span id=&#34;cb4-36&#34;&gt;&lt;a href=&#34;#cb4-36&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-37&#34;&gt;&lt;a href=&#34;#cb4-37&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;func&lt;/span&gt; run(c *cli.Context) &lt;span class=&#34;dt&#34;&gt;error&lt;/span&gt; {&lt;/span&gt;
-&lt;span id=&#34;cb4-38&#34;&gt;&lt;a href=&#34;#cb4-38&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; c.String(&lt;span class=&#34;st&#34;&gt;&amp;quot;env-file&amp;quot;&lt;/span&gt;) != &lt;span class=&#34;st&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt; {&lt;/span&gt;
-&lt;span id=&#34;cb4-39&#34;&gt;&lt;a href=&#34;#cb4-39&#34;&gt;&lt;/a&gt;    _ = godotenv.Load(c.String(&lt;span class=&#34;st&#34;&gt;&amp;quot;env-file&amp;quot;&lt;/span&gt;))&lt;/span&gt;
-&lt;span id=&#34;cb4-40&#34;&gt;&lt;a href=&#34;#cb4-40&#34;&gt;&lt;/a&gt;  }&lt;/span&gt;
-&lt;span id=&#34;cb4-41&#34;&gt;&lt;a href=&#34;#cb4-41&#34;&gt;&lt;/a&gt;  plugin := Plugin{&lt;/span&gt;
-&lt;span id=&#34;cb4-42&#34;&gt;&lt;a href=&#34;#cb4-42&#34;&gt;&lt;/a&gt;    SSHKey: c.String(&lt;span class=&#34;st&#34;&gt;&amp;quot;ssh_private_key&amp;quot;&lt;/span&gt;),&lt;/span&gt;
-&lt;span id=&#34;cb4-43&#34;&gt;&lt;a href=&#34;#cb4-43&#34;&gt;&lt;/a&gt;    ...&lt;/span&gt;
-&lt;span id=&#34;cb4-44&#34;&gt;&lt;a href=&#34;#cb4-44&#34;&gt;&lt;/a&gt;    &lt;span class=&#34;co&#34;&gt;// ここで CLI の引数からロジックへ橋渡し&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-45&#34;&gt;&lt;a href=&#34;#cb4-45&#34;&gt;&lt;/a&gt;    &lt;span class=&#34;co&#34;&gt;// Plugin 型とかは plugin.go に書いてある&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-46&#34;&gt;&lt;a href=&#34;#cb4-46&#34;&gt;&lt;/a&gt;  }&lt;/span&gt;
-&lt;span id=&#34;cb4-47&#34;&gt;&lt;a href=&#34;#cb4-47&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;kw&#34;&gt;return&lt;/span&gt; plugin.Exec()&lt;/span&gt;
-&lt;span id=&#34;cb4-48&#34;&gt;&lt;a href=&#34;#cb4-48&#34;&gt;&lt;/a&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;CLI には &lt;a href=&#34;https://github.com/urfave/cli&#34;&gt;&lt;code&gt;urfave/cli&lt;/code&gt;&lt;/a&gt; を使っている． 理由は特に知らない． &lt;code&gt;go build&lt;/code&gt; することで実行ファイルが生成される．&lt;/p&gt;
-&lt;h3 id=&#34;脱線-vs.-改行&#34;&gt;脱線: vs. 改行&lt;/h3&gt;
-&lt;p&gt;少し Drone Plugin とは本質的に関係ない話． &lt;code&gt;plugin.go&lt;/code&gt; では &lt;code&gt;id_rsa&lt;/code&gt; を次のように生成している:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode go&#34;&gt;&lt;code class=&#34;sourceCode go&#34;&gt;&lt;span id=&#34;cb5-1&#34;&gt;&lt;a href=&#34;#cb5-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;// plugin.go&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-2&#34;&gt;&lt;a href=&#34;#cb5-2&#34;&gt;&lt;/a&gt;...&lt;/span&gt;
-&lt;span id=&#34;cb5-3&#34;&gt;&lt;a href=&#34;#cb5-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-4&#34;&gt;&lt;a href=&#34;#cb5-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; Plugin &lt;span class=&#34;kw&#34;&gt;struct&lt;/span&gt; {&lt;/span&gt;
-&lt;span id=&#34;cb5-5&#34;&gt;&lt;a href=&#34;#cb5-5&#34;&gt;&lt;/a&gt;  Home     &lt;span class=&#34;dt&#34;&gt;string&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-6&#34;&gt;&lt;a href=&#34;#cb5-6&#34;&gt;&lt;/a&gt;  SSHKey   &lt;span class=&#34;dt&#34;&gt;string&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-7&#34;&gt;&lt;a href=&#34;#cb5-7&#34;&gt;&lt;/a&gt;  Hosts    []&lt;span class=&#34;dt&#34;&gt;string&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-8&#34;&gt;&lt;a href=&#34;#cb5-8&#34;&gt;&lt;/a&gt;  Commands []&lt;span class=&#34;dt&#34;&gt;string&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-9&#34;&gt;&lt;a href=&#34;#cb5-9&#34;&gt;&lt;/a&gt;}&lt;/span&gt;
-&lt;span id=&#34;cb5-10&#34;&gt;&lt;a href=&#34;#cb5-10&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-11&#34;&gt;&lt;a href=&#34;#cb5-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;func&lt;/span&gt; (p Plugin) Exec() &lt;span class=&#34;dt&#34;&gt;error&lt;/span&gt; {&lt;/span&gt;
-&lt;span id=&#34;cb5-12&#34;&gt;&lt;a href=&#34;#cb5-12&#34;&gt;&lt;/a&gt;  sshDir := fmt.Sprintf(&lt;span class=&#34;st&#34;&gt;&amp;quot;%s/.ssh&amp;quot;&lt;/span&gt;, p.Home)&lt;/span&gt;
-&lt;span id=&#34;cb5-13&#34;&gt;&lt;a href=&#34;#cb5-13&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; err := os.MkdirAll(sshDir, &lt;span class=&#34;dv&#34;&gt;0700&lt;/span&gt;); err != &lt;span class=&#34;ot&#34;&gt;nil&lt;/span&gt; {&lt;/span&gt;
-&lt;span id=&#34;cb5-14&#34;&gt;&lt;a href=&#34;#cb5-14&#34;&gt;&lt;/a&gt;    &lt;span class=&#34;kw&#34;&gt;return&lt;/span&gt; errors.Wrapf(err, &lt;span class=&#34;st&#34;&gt;&amp;quot;Exec cmd: mkdir -p %s&amp;quot;&lt;/span&gt;, sshDir)&lt;/span&gt;
-&lt;span id=&#34;cb5-15&#34;&gt;&lt;a href=&#34;#cb5-15&#34;&gt;&lt;/a&gt;  }&lt;/span&gt;
-&lt;span id=&#34;cb5-16&#34;&gt;&lt;a href=&#34;#cb5-16&#34;&gt;&lt;/a&gt;  log.Infof(&lt;span class=&#34;st&#34;&gt;&amp;quot;Exec cmd: mkdir -p %s&amp;quot;&lt;/span&gt;, sshDir)&lt;/span&gt;
-&lt;span id=&#34;cb5-17&#34;&gt;&lt;a href=&#34;#cb5-17&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-18&#34;&gt;&lt;a href=&#34;#cb5-18&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; err := ioutil.WriteFile(fmt.Sprintf(&lt;span class=&#34;st&#34;&gt;&amp;quot;%s/id_rsa&amp;quot;&lt;/span&gt;, sshDir), []&lt;span class=&#34;dt&#34;&gt;byte&lt;/span&gt;(p.SSHKey), &lt;span class=&#34;dv&#34;&gt;0600&lt;/span&gt;); err != &lt;span class=&#34;ot&#34;&gt;nil&lt;/span&gt; {&lt;/span&gt;
-&lt;span id=&#34;cb5-19&#34;&gt;&lt;a href=&#34;#cb5-19&#34;&gt;&lt;/a&gt;    &lt;span class=&#34;kw&#34;&gt;return&lt;/span&gt; errors.Wrapf(err, &lt;span class=&#34;st&#34;&gt;&amp;quot;Write file: %s/id_rsa&amp;quot;&lt;/span&gt;, sshDir)&lt;/span&gt;
-&lt;span id=&#34;cb5-20&#34;&gt;&lt;a href=&#34;#cb5-20&#34;&gt;&lt;/a&gt;  }&lt;/span&gt;
-&lt;span id=&#34;cb5-21&#34;&gt;&lt;a href=&#34;#cb5-21&#34;&gt;&lt;/a&gt;  log.Infof(&lt;span class=&#34;st&#34;&gt;&amp;quot;Write file: %s/id_rsa&amp;quot;&lt;/span&gt;, sshDir)&lt;/span&gt;
-&lt;span id=&#34;cb5-22&#34;&gt;&lt;a href=&#34;#cb5-22&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-23&#34;&gt;&lt;a href=&#34;#cb5-23&#34;&gt;&lt;/a&gt;  ...&lt;/span&gt;
-&lt;span id=&#34;cb5-24&#34;&gt;&lt;a href=&#34;#cb5-24&#34;&gt;&lt;/a&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;そして，&lt;code&gt;id_rsa&lt;/code&gt; の中身をオプションないしは環境変数として Go アプリに渡したい． しかし，次のように単純に渡してみてもうまく動作しない:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode sh&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;span id=&#34;cb6-1&#34;&gt;&lt;a href=&#34;#cb6-1&#34;&gt;&lt;/a&gt;$ &lt;span class=&#34;ex&#34;&gt;./drone-git-with-ssh&lt;/span&gt; --ssh_private_key=&lt;span class=&#34;st&#34;&gt;&amp;#39;aaa\nbbb&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これだと &lt;code&gt;id_rsa&lt;/code&gt; の中身は &lt;code&gt;aaa\nbbb&lt;/code&gt; となる． &lt;code&gt;--ssh_private_key=$&amp;#39;aaa\nbbb&amp;#39;&lt;/code&gt; としたら一応動作するが環境変数などが使えなくなるので，&lt;a href=&#34;https://blog.konboi.com/post/2018/05/01/225336/&#34;&gt;内部で明示的に置換すると良い&lt;/a&gt;ようだ:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode go&#34;&gt;&lt;code class=&#34;sourceCode go&#34;&gt;&lt;span id=&#34;cb7-1&#34;&gt;&lt;a href=&#34;#cb7-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;// main.go&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb7-2&#34;&gt;&lt;a href=&#34;#cb7-2&#34;&gt;&lt;/a&gt;...&lt;/span&gt;
-&lt;span id=&#34;cb7-3&#34;&gt;&lt;a href=&#34;#cb7-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb7-4&#34;&gt;&lt;a href=&#34;#cb7-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;func&lt;/span&gt; run(c *cli.Context) &lt;span class=&#34;dt&#34;&gt;error&lt;/span&gt; {&lt;/span&gt;
-&lt;span id=&#34;cb7-5&#34;&gt;&lt;a href=&#34;#cb7-5&#34;&gt;&lt;/a&gt;  ...&lt;/span&gt;
-&lt;span id=&#34;cb7-6&#34;&gt;&lt;a href=&#34;#cb7-6&#34;&gt;&lt;/a&gt;  plugin := Plugin{&lt;/span&gt;
-&lt;span id=&#34;cb7-7&#34;&gt;&lt;a href=&#34;#cb7-7&#34;&gt;&lt;/a&gt;    SSHKey: strings.Replace(c.String(&lt;span class=&#34;st&#34;&gt;&amp;quot;ssh_private_key&amp;quot;&lt;/span&gt;), &lt;span class=&#34;st&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;`&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;&lt;/span&gt;, &lt;span class=&#34;dv&#34;&gt;-1&lt;/span&gt;),&lt;/span&gt;
-&lt;span id=&#34;cb7-8&#34;&gt;&lt;a href=&#34;#cb7-8&#34;&gt;&lt;/a&gt;    ...&lt;/span&gt;
-&lt;span id=&#34;cb7-9&#34;&gt;&lt;a href=&#34;#cb7-9&#34;&gt;&lt;/a&gt;  }&lt;/span&gt;
-&lt;span id=&#34;cb7-10&#34;&gt;&lt;a href=&#34;#cb7-10&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;kw&#34;&gt;return&lt;/span&gt; plugin.Exec()&lt;/span&gt;
-&lt;span id=&#34;cb7-11&#34;&gt;&lt;a href=&#34;#cb7-11&#34;&gt;&lt;/a&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;docker-イメージ&#34;&gt;Docker イメージ&lt;/h3&gt;
-&lt;p&gt;他の Drone Plugin のリポジトリを参考にすると，次のような Dockerfile を書くと良い:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode dockerfile&#34;&gt;&lt;code class=&#34;sourceCode dockerfile&#34;&gt;&lt;span id=&#34;cb8-1&#34;&gt;&lt;a href=&#34;#cb8-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;FROM&lt;/span&gt; docker:git&lt;/span&gt;
-&lt;span id=&#34;cb8-2&#34;&gt;&lt;a href=&#34;#cb8-2&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb8-3&#34;&gt;&lt;a href=&#34;#cb8-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;ADD&lt;/span&gt; release/linux/amd64/drone-git-with-ssh /bin/&lt;/span&gt;
-&lt;span id=&#34;cb8-4&#34;&gt;&lt;a href=&#34;#cb8-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;ENTRYPOINT&lt;/span&gt; [&lt;span class=&#34;st&#34;&gt;&amp;quot;/bin/drone-git-with-ssh&amp;quot;&lt;/span&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;FROM&lt;/code&gt; で指定するベースイメージには普通，&lt;a href=&#34;https://hub.docker.com/r/plugins/base/&#34;&gt;&lt;code&gt;plugins/base&lt;/code&gt;&lt;/a&gt; を使うようだが，これは &lt;code&gt;scratch&lt;/code&gt; にちょっとだけ毛が生えた程度のイメージで &lt;code&gt;git&lt;/code&gt; がない． なので &lt;a href=&#34;https://hub.docker.com/_/docker&#34;&gt;&lt;code&gt;docker:git&lt;/code&gt;&lt;/a&gt; をベースイメージにした． 次のコマンドを実行することで Docker イメージを作成できる:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode sh&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;span id=&#34;cb9-1&#34;&gt;&lt;a href=&#34;#cb9-1&#34;&gt;&lt;/a&gt;$ &lt;span class=&#34;va&#34;&gt;GOOS=&lt;/span&gt;linux &lt;span class=&#34;va&#34;&gt;GOARCH=&lt;/span&gt;amd64 &lt;span class=&#34;va&#34;&gt;CGO_ENABLED=&lt;/span&gt;0 &lt;span class=&#34;ex&#34;&gt;go&lt;/span&gt; build -a -tags netgo -o release/linux/amd64/drone-git-with-ssh&lt;/span&gt;
-&lt;span id=&#34;cb9-2&#34;&gt;&lt;a href=&#34;#cb9-2&#34;&gt;&lt;/a&gt;$ &lt;span class=&#34;ex&#34;&gt;docker&lt;/span&gt; build --rm -t matsubara0507/git-with-ssh .&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;drone-を設定する&#34;&gt;Drone を設定する&lt;/h3&gt;
-&lt;p&gt;せっかくなので Drone で Docker イメージのビルドなどを CI してみる． &lt;a href=&#34;https://cloud.drone.io/&#34;&gt;Drone Cloud&lt;/a&gt; という OSS は無料で使える Drone のクラウドサービスがあるのでこれに設定する．&lt;/p&gt;
-&lt;p&gt;テストはあとで考えるとして，Go のビルドと Docker イメージのビルドを CI で回す． また，master のプッシュだけは Docker イメージの自動プッシュも実現したい． Drone は他の CI サービスみたいに YAML ファイルで設定ファイルを記述する:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb10-1&#34;&gt;&lt;a href=&#34;#cb10-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# .drone.yml&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-2&#34;&gt;&lt;a href=&#34;#cb10-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; pipeline&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-3&#34;&gt;&lt;a href=&#34;#cb10-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; default&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-4&#34;&gt;&lt;a href=&#34;#cb10-4&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-5&#34;&gt;&lt;a href=&#34;#cb10-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;steps&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-6&#34;&gt;&lt;a href=&#34;#cb10-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; build go&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-7&#34;&gt;&lt;a href=&#34;#cb10-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; golang:1.11&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-8&#34;&gt;&lt;a href=&#34;#cb10-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;commands&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-9&#34;&gt;&lt;a href=&#34;#cb10-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -a -tags netgo -o release/linux/amd64/drone-git-with-ssh&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-10&#34;&gt;&lt;a href=&#34;#cb10-10&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-11&#34;&gt;&lt;a href=&#34;#cb10-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; build docker image (dry_run)&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-12&#34;&gt;&lt;a href=&#34;#cb10-12&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; plugins/docker&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-13&#34;&gt;&lt;a href=&#34;#cb10-13&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;settings&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-14&#34;&gt;&lt;a href=&#34;#cb10-14&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-15&#34;&gt;&lt;a href=&#34;#cb10-15&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-16&#34;&gt;&lt;a href=&#34;#cb10-16&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;from_secret&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; docker_hub_password&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-17&#34;&gt;&lt;a href=&#34;#cb10-17&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;repo&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507/git-with-ssh&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-18&#34;&gt;&lt;a href=&#34;#cb10-18&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;dry-run&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;ch&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;co&#34;&gt; # Push をしないフラグ&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-19&#34;&gt;&lt;a href=&#34;#cb10-19&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;when&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-20&#34;&gt;&lt;a href=&#34;#cb10-20&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-21&#34;&gt;&lt;a href=&#34;#cb10-21&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;exclude&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-22&#34;&gt;&lt;a href=&#34;#cb10-22&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; pull_request&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-23&#34;&gt;&lt;a href=&#34;#cb10-23&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-24&#34;&gt;&lt;a href=&#34;#cb10-24&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; push docker image&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-25&#34;&gt;&lt;a href=&#34;#cb10-25&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; plugins/docker&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-26&#34;&gt;&lt;a href=&#34;#cb10-26&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;settings&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-27&#34;&gt;&lt;a href=&#34;#cb10-27&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-28&#34;&gt;&lt;a href=&#34;#cb10-28&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-29&#34;&gt;&lt;a href=&#34;#cb10-29&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;from_secret&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; docker_hub_password&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-30&#34;&gt;&lt;a href=&#34;#cb10-30&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;repo&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; matsubara0507/git-with-ssh&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-31&#34;&gt;&lt;a href=&#34;#cb10-31&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;when&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-32&#34;&gt;&lt;a href=&#34;#cb10-32&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;branch&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-33&#34;&gt;&lt;a href=&#34;#cb10-33&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; master&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-34&#34;&gt;&lt;a href=&#34;#cb10-34&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-35&#34;&gt;&lt;a href=&#34;#cb10-35&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;exclude&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-36&#34;&gt;&lt;a href=&#34;#cb10-36&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; pull_request&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Docker Hub への操作には &lt;a href=&#34;https://github.com/drone-plugins/drone-docker&#34;&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/a&gt; という Plugin を用いた． パスワードのような，ハードコーディングすべきではない文字列は Drone の Secret という仕組みをを用いる． &lt;code&gt;from_secret: key&lt;/code&gt; とすることで，Drone の Web UI で設定した &lt;code&gt;key&lt;/code&gt; という名の Secret を参照してくれる． 僕はパスワード系の Secret を PR では参照できないようにしているので，&lt;code&gt;when.event.exclude.pull_request&lt;/code&gt; とすることで PR の CI では Secret を参照しているステップが動作しないようにしている．&lt;/p&gt;
-&lt;h3 id=&#34;テストをどうするか&#34;&gt;テストをどうするか&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;plugin.go&lt;/code&gt; はただ単にファイルを作ってるだけなのでユニットテストなどはしてもしょうがない． 悩んだ末，最初のシェルコマンドで実行して生成されるファイルと自作 Plugin で生成されるを比較することにした:&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb11-1&#34;&gt;&lt;a href=&#34;#cb11-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;# .drone.yml&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-2&#34;&gt;&lt;a href=&#34;#cb11-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; pipeline&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-3&#34;&gt;&lt;a href=&#34;#cb11-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; default&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-4&#34;&gt;&lt;a href=&#34;#cb11-4&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-5&#34;&gt;&lt;a href=&#34;#cb11-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;steps&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-6&#34;&gt;&lt;a href=&#34;#cb11-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; build go&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-7&#34;&gt;&lt;a href=&#34;#cb11-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; golang:1.11&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-8&#34;&gt;&lt;a href=&#34;#cb11-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;commands&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-9&#34;&gt;&lt;a href=&#34;#cb11-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; go build&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-10&#34;&gt;&lt;a href=&#34;#cb11-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -a -tags netgo -o release/linux/amd64/drone-git-with-ssh&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-11&#34;&gt;&lt;a href=&#34;#cb11-11&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-12&#34;&gt;&lt;a href=&#34;#cb11-12&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; test&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-13&#34;&gt;&lt;a href=&#34;#cb11-13&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; golang:1.11&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-14&#34;&gt;&lt;a href=&#34;#cb11-14&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-15&#34;&gt;&lt;a href=&#34;#cb11-15&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;SSH_KEY&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;#39;aaa\nbbb&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-16&#34;&gt;&lt;a href=&#34;#cb11-16&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;commands&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-17&#34;&gt;&lt;a href=&#34;#cb11-17&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; printf $SSH_KEY &amp;gt; ./test/expected/.ssh/id_rsa &amp;amp;&amp;amp; chmod 600 ./test/expected/.ssh/id_rsa&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-18&#34;&gt;&lt;a href=&#34;#cb11-18&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; ./drone-git-with-ssh --home ./test/result --ssh_private_key $SSH_KEY --ssh_hosts github.com --ssh_hosts bitbucket.org  --commands &amp;#39;pwd&amp;#39; --commands &amp;#39;ls&amp;#39;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-19&#34;&gt;&lt;a href=&#34;#cb11-19&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; diff ./test/result/.ssh ./test/expected/.ssh&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-20&#34;&gt;&lt;a href=&#34;#cb11-20&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-21&#34;&gt;&lt;a href=&#34;#cb11-21&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  ...&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;expected な &lt;code&gt;id_rsa&lt;/code&gt; をわざわざ test ステップで生成するのではなく，GitHub に直接おいても良いが，なんか &lt;code&gt;id_rsa&lt;/code&gt; という名前のファイルをパブリックリポジトリに置くのはどうなのかなぁと思ってやめた． このテストのために &lt;code&gt;--home&lt;/code&gt; というオプションで任意のディレクトリに SSH の設定 &lt;code&gt;.ssh&lt;/code&gt; を生成してくれるようにした． デフォルトは &lt;code&gt;/root&lt;/code&gt; だが．&lt;/p&gt;
-&lt;h3 id=&#34;おまけ-バッチ&#34;&gt;おまけ: バッチ&lt;/h3&gt;
-&lt;p&gt;公式の Drone Plugin のリポジトリをみると README にいろんなバッジがあった． ので，真似して git-with-ssh にも設定してみた:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matsubara0507/drone-git-with-ssh/blob/aee8928379453d89aedba010a1664ca6adf1ee72/README.md&#34;&gt;&lt;img src=&#34;/assets/create-drone-git-with-ssh/badges.jpg&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;付けたのは4つ:&lt;/p&gt;
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;Drone のビルド結果&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://godoc.org/&#34;&gt;Go Doc&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://goreportcard.com/&#34;&gt;Go Report Card&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://microbadger.com/&#34;&gt;MicroBadger&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;1つ目は Drone のビルド結果のバッジ． Drone のバッジは settings の一番下から取得できる．&lt;/p&gt;
-&lt;h2 id=&#34;section&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;Go Doc は指定した Go のリポジトリからドキュメントを生成してくれるサービスである． 依存パッケージとかも解析していい感じに表示してくれる． すごい．&lt;/p&gt;
-&lt;p&gt;Go Report Card も同様に Go のリポジトリを指定することで動作する． こっちは go fmt がちゃんとかかってるかや linter の結果などをチェックしてくれる． すごい．&lt;/p&gt;
-&lt;h2 id=&#34;section-1&#34;&gt;&lt;/h2&gt;
-&lt;p&gt;MicroBadger は Docker Hub にあるイメージを静的検査してくれる． イメージサイズや生成時間はもちろん，Docker イメージのレイヤ構造も出してくれる． これで Dockerfile をわざわざ探さなくても良いのですごい助かる．&lt;/p&gt;
-&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;久しぶりにサンプルじゃない Go のアプリケーションを作ってみた． 楽しかった〜．&lt;/p&gt;
-  &lt;/div&gt;</summary></entry><entry><id>https://haskell.jp/blog/posts/2019/tidalcycles-stack.html</id><title type="text">TidalCyclesをstackで確実にインストールする</title><updated>2019-01-17T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/tidalcycles-stack.html"/><summary type="html">
+</summary></entry><entry><id>https://haskell.jp/blog/posts/2019/tidalcycles-stack.html</id><title type="text">TidalCyclesをstackで確実にインストールする</title><updated>2019-01-17T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/tidalcycles-stack.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
