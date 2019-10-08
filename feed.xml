@@ -1,4 +1,195 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-10-07T11:22:24+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/norkron/items/e55a39c22288955689f9</id><title type="text">もう諦めない圏論付録―ストリング・ダイアグラム―</title><updated>2019-10-07T11:22:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/e55a39c22288955689f9"/></entry><entry><id>https://qiita.com/jdoiWork/items/ad6a94fafc33b3dd1b16</id><title type="text">しょぼいメモリ環境で Haskell stack build用にswap領域を増やす</title><updated>2019-10-06T10:08:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/jdoiWork/items/ad6a94fafc33b3dd1b16"/></entry><entry><id>https://qiita.com/jdoiWork/items/1cc09a1d375a038ac400</id><title type="text">HaskellとHspecでBuddy CI</title><updated>2019-10-06T04:29:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/jdoiWork/items/1cc09a1d375a038ac400"/></entry><entry><id>https://qiita.com/yutasth/items/9df6e2c3937edad24aee</id><title type="text">Haskell IDE Engineのインストールに苦労した (Windows 10)</title><updated>2019-10-05T07:21:27+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yutasth/items/9df6e2c3937edad24aee"/></entry><entry><id>https://qiita.com/lotz/items/9c62a5a0eb0e34a86ac7</id><title type="text">100行のHaskellでスネークゲームを作った</title><updated>2019-10-04T23:27:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/9c62a5a0eb0e34a86ac7"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/033c8a485c991bd28241</id><title type="text">Freer Effectsが、だいたいわかった: 14 Freer Effectsで、IOモナドなどの既存のモナドを使用する</title><updated>2019-10-04T17:17:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/033c8a485c991bd28241"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/10-04-NoStarIsType.html</id><title type="text">NoStarIsType 言語拡張が必要になるとき</title><updated>2019-10-04T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/10-04-NoStarIsType.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-10-08T03:31:32+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/jdoiWork/items/1cc09a1d375a038ac400</id><title type="text">HaskellとHspecでBuddy CI</title><updated>2019-10-08T03:31:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/jdoiWork/items/1cc09a1d375a038ac400"/></entry><entry><id>https://qiita.com/toru0408/items/ef9ea79df0c40e8dd23a</id><title type="text">Haskellの型クラスでJavaScriptっぽいことをやって遊んでみる</title><updated>2019-10-07T23:43:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/toru0408/items/ef9ea79df0c40e8dd23a"/></entry><entry><id>https://qiita.com/norkron/items/e55a39c22288955689f9</id><title type="text">もう諦めない圏論付録―ストリング・ダイアグラム―</title><updated>2019-10-07T17:30:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/e55a39c22288955689f9"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/10-07-cabal-fmt.html</id><title type="text">cabal-fmt の紹介</title><updated>2019-10-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/10-07-cabal-fmt.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/cabal-fmt&#34;&gt;cabal-fmt&lt;/a&gt; でできること。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;cabal&lt;/strong&gt; ファイルの整形&lt;/li&gt;
+&lt;li&gt;フォルダを指定して自動でモジュールを expand できる&lt;/li&gt;
+&lt;li&gt;以下のフィールドをアルファベット順で自動的に並べ替え&amp;amp;重複を削除
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;exposed-modules&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;other-modules&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;default-extensions&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;other-extensions&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;build-depends&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ cabal-fmt --version
+0.1.1.1
+
+λ cabal -V
+cabal-install version 3.0.0.0
+compiled using version 3.0.0.0 of the Cabal library
+
+# 使い方
+λ cabal-fmt &amp;lt;proj&amp;gt;.cabal -i&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;作者の記事: &lt;a href=&#34;http://oleg.fi/gists/posts/2019-08-11-cabal-fmt.html&#34;&gt;ANN: cabal-fmt&lt;/a&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;具体例&#34;&gt;具体例&lt;/h2&gt;
+&lt;h3 id=&#34;適用前&#34;&gt;適用前&lt;/h3&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;cabal-version: 2.4
+name:test
+version:0.1.0.0
+tested-with:
+  GHC ==8.8.1 || ==8.6.5 || ==8.4.4 || ==8.2.2 || ==8.0.2 || ==7.10.3
+  GHCJS ==8.4
+
+executable site
+  main-is:          site.hs
+  other-modules:
+    Config
+    Hakyll.Ext
+  hs-source-dirs:   app
+  ghc-options:
+    -Wcompat -Wall
+    -Wnoncanonical-monad-instances
+    -Wincomplete-uni-patterns -Wincomplete-record-updates -Wredundant-constraints -Wtabs -threaded
+  build-depends:
+      base, lens
+    , blaze-html, conduit-combinators
+    , containers      , filepath
+          , bytestring
+    , extensible
+    
+    
+    , yaml, time
+
+  if !os(windows)
+    build-depends: hakyll-sass
+
+  default-language: Haskell2010&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;適用後&#34;&gt;適用後&lt;/h3&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;cabal-version: 2.4
+name:          test
+version:       0.1.0.0
+tested-with:
+    GHC ==7.10.3
+     || ==8.0.2
+     || ==8.2.2
+     || ==8.4.4
+     || ==8.6.5
+     || ==8.8.1
+  , GHCJS ==8.4
+
+executable site
+  main-is:          site.hs
+  other-modules:
+    Config
+    Hakyll.Ext
+
+  hs-source-dirs:   app
+  ghc-options:
+    -Wcompat -Wall -Wnoncanonical-monad-instances
+    -Wincomplete-uni-patterns -Wincomplete-record-updates
+    -Wredundant-constraints -Wtabs -threaded
+
+  build-depends:
+    , base
+    , blaze-html
+    , bytestring
+    , conduit-combinators
+    , containers
+    , extensible
+    , filepath
+    , lens
+    , time
+    , yaml
+
+  if !os(windows)
+    build-depends: hakyll-sass
+
+  default-language: Haskell2010
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ cabal v2-update
+λ cabal v2-install cabal-fmt
+
+λ cabal-fmt --help
+λ cabal-fmt - .cabal file reformatter
+
+Usage: cabal-fmt [-i|--inplace] [--Werror | --Wno-error | --indent N | --tabular
+                 | --no-tabular] [FILE...] [--version]
+  Reformat .cabal files
+
+Available options:
+  -i,--inplace             process files in-place
+  --Werror                 Treat warnings as errors
+  --indent N               Indentation
+  --tabular                Tabular formatting
+  FILE...                  input files
+  -h,--help                Show this help text
+  --version                Show version&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;p&gt;基本的には以下のコマンドで終わりです。(&lt;code&gt;&amp;lt;proj&amp;gt;&lt;/code&gt; は各自のファイル名に置き換えてください)&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ cabal-fmt &amp;lt;proj&amp;gt;.cabal -i&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;-i&lt;/code&gt; オプション (&lt;code&gt;--inplace&lt;/code&gt;) で既存ファイルを上書きするので、結果だけ見たい場合は外しましょう。&lt;/p&gt;
+&lt;h3 id=&#34;モジュールの自動展開&#34;&gt;モジュールの自動展開&lt;/h3&gt;
+&lt;p&gt;僕が &lt;code&gt;cabal-fmt&lt;/code&gt; を使う理由の最大のポイントはモジュールの自動展開機能です。&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;library
+  -- cabal-fmt: expand src
+  exposed-modules:&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;記法としては、上記のようにしてモジュールを探索するディレクトリ (今回の場合は &lt;strong&gt;src&lt;/strong&gt;) を指定します。&lt;/p&gt;
+&lt;p&gt;実際に使ってみましょう。ここでは例として &lt;strong&gt;test-dir&lt;/strong&gt; を作りますが、実際には &lt;strong&gt;src&lt;/strong&gt;, &lt;strong&gt;app&lt;/strong&gt;, &lt;strong&gt;test&lt;/strong&gt; などが展開の対象となることが多いと思います。&lt;/p&gt;
+&lt;p&gt;また、意図的に &lt;strong&gt;C.md&lt;/strong&gt; としている点にも注意してください。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ mkdir test-dir
+λ touch test-dir/A.hs test-dir/B.hs test-dir/C.md
+λ tree test-dir
+test-dir
+├── A.hs
+├── B.hs
+└── C.md&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;適用する &lt;strong&gt;cabal&lt;/strong&gt; ファイル (&lt;strong&gt;test.cabal&lt;/strong&gt;) の中身は以下の通りです。&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;name:    test
+version: 0.1.0.0
+
+library
+  -- cabal-fmt: expand test-dir
+  exposed-modules:&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;この状態で &lt;code&gt;cabal-fmt test.cabal -i&lt;/code&gt; を実行すると結果は以下のようになります。&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;name:    test
+version: 0.1.0.0
+
+library
+  -- cabal-fmt: expand test-dir
+  exposed-modules:
+    A
+    B
+    C
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;.hs&lt;/code&gt; ファイルだけ列挙して欲しいところですが、指定したディレクトリ以下の全てを列挙します。そのため、公開したいモジュールと非公開のモジュールはディレクトリを分けて運用するなど、少しだけ工夫する必要があります。&lt;/p&gt;
+&lt;p&gt;一応、除外したいモジュールを &lt;code&gt;-Module&lt;/code&gt; の形式で指定することもできます。&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;name:    test
+version: 0.1.0.0
+
+library
+  -- cabal-fmt: expand test-dir -C
+  exposed-modules:&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;適用後&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;name:    test
+version: 0.1.0.0
+
+library
+  -- cabal-fmt: expand test-dir -C
+  exposed-modules:
+    A
+    B
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;この方法を使えば &lt;strong&gt;hspec-discover&lt;/strong&gt; や &lt;strong&gt;tasty-discover&lt;/strong&gt; のためのファイルなどを除外することができます。&lt;/p&gt;
+&lt;h2 id=&#34;cabal-format-コマンド&#34;&gt;cabal format コマンド&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cabal&lt;/code&gt; についてあまり詳しく無いので良くわかりませんが、一応 &lt;strong&gt;cabal format&lt;/strong&gt; というコマンドが存在します。(&lt;a href=&#34;https://github.com/haskell/cabal/issues/2460&#34;&gt;&lt;code&gt;cabal format&lt;/code&gt; is not listed in –help message #2460&lt;/a&gt;)&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ cabal format --help
+Reformat the .cabal file using the standard style.
+
+Usage: cabal format [FILE]
+
+Flags for format:
+ -h --help Show this help text&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;実際にこのコマンドでも整形だけなら可能みたいです。ただし、&lt;a href=&#34;https://github.com/haskell/cabal/issues/5734&#34;&gt;&lt;code&gt;cabal format&lt;/code&gt; inlines and removes &lt;code&gt;common&lt;/code&gt; stanzas #5734&lt;/a&gt; にもある通り &lt;code&gt;common&lt;/code&gt; stanza が削除されたりします。&lt;/p&gt;
+&lt;p&gt;そのため、&lt;strong&gt;cabal format&lt;/strong&gt; コマンドよりも &lt;strong&gt;cabal-fmt&lt;/strong&gt; を利用した方が良いと思います。&lt;/p&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;便利なので最近良く使ってます。&lt;/p&gt;
+&lt;h2 id=&#34;参考リソース&#34;&gt;参考リソース&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://oleg.fi/gists/posts/2019-08-11-cabal-fmt.html&#34;&gt;ANN: cabal-fmt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://qiita.com/jdoiWork/items/ad6a94fafc33b3dd1b16</id><title type="text">しょぼいメモリ環境で Haskell stack build用にswap領域を増やす</title><updated>2019-10-06T10:08:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/jdoiWork/items/ad6a94fafc33b3dd1b16"/></entry><entry><id>https://qiita.com/yutasth/items/9df6e2c3937edad24aee</id><title type="text">Haskell IDE Engineのインストールに苦労した (Windows 10)</title><updated>2019-10-05T07:21:27+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yutasth/items/9df6e2c3937edad24aee"/></entry><entry><id>https://qiita.com/lotz/items/9c62a5a0eb0e34a86ac7</id><title type="text">100行のHaskellでスネークゲームを作った</title><updated>2019-10-04T23:27:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/9c62a5a0eb0e34a86ac7"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/033c8a485c991bd28241</id><title type="text">Freer Effectsが、だいたいわかった: 14 Freer Effectsで、IOモナドなどの既存のモナドを使用する</title><updated>2019-10-04T17:17:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/033c8a485c991bd28241"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/10-04-NoStarIsType.html</id><title type="text">NoStarIsType 言語拡張が必要になるとき</title><updated>2019-10-04T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/10-04-NoStarIsType.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;λ ghc &lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;V&lt;/span&gt;&lt;/span&gt;
 &lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;The&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Glorious&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Glasgow&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Haskell&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Compilation&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;System&lt;/span&gt;, version &lt;span class=&#34;fl&#34;&gt;8.8&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/span&gt;
 &lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
@@ -620,7 +811,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#34;ascii&#34;&gt;The Gi
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/tomabou/items/fda62ddf51d92c4a0c1b</id><title type="text">浮動小数点演算の罠</title><updated>2019-09-27T22:17:11+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tomabou/items/fda62ddf51d92c4a0c1b"/></entry><entry><id>https://qiita.com/thesugar/items/3d7c9cd8d62774d3bb3d</id><title type="text">初めて使う Mac にとりあえず Haskell を動かせる環境を構築してみた</title><updated>2019-09-25T23:50:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/thesugar/items/3d7c9cd8d62774d3bb3d"/></entry><entry><id>https://qiita.com/YoshikuniJujo/items/3e7adbbbf0e7f73f669f</id><title type="text">Freer Effectsが、だいたいわかった: 12 OpenUnionを型によって安全にする</title><updated>2019-09-25T11:18:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/YoshikuniJujo/items/3e7adbbbf0e7f73f669f"/></entry><entry><id>https://qiita.com/lotz/items/5a1a05c0dae1133a5f44</id><title type="text">テンソルを実装するのに表現可能関手がとても便利な件</title><updated>2019-09-25T09:10:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/5a1a05c0dae1133a5f44"/></entry><entry><id>https://qiita.com/agajo/items/5adf2a4ad28ee73659c5</id><title type="text">async/awaitがモナドのDo記法と同じっぽいので検証。throwとcatchもモナドに対応させる</title><updated>2019-09-24T12:26:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/agajo/items/5adf2a4ad28ee73659c5"/></entry><entry><id>https://qiita.com/aki-takano/items/6c98daec2791a4b36c0f</id><title type="text">メモ：Mac(Mojave)にHaskellをインストール</title><updated>2019-09-23T11:41:46+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aki-takano/items/6c98daec2791a4b36c0f"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-09-21-stack-build-image.html</id><title type="text">CI で Haskell Stack の Docker Integration するために</title><updated>2019-09-21T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-09-21-stack-build-image.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+</summary></entry><entry><id>https://qiita.com/tomabou/items/fda62ddf51d92c4a0c1b</id><title type="text">浮動小数点演算の罠</title><updated>2019-09-27T22:17:11+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tomabou/items/fda62ddf51d92c4a0c1b"/></entry><entry><id>https://qiita.com/thesugar/items/3d7c9cd8d62774d3bb3d</id><title type="text">初めて使う Mac にとりあえず Haskell を動かせる環境を構築してみた</title><updated>2019-09-25T23:50:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/thesugar/items/3d7c9cd8d62774d3bb3d"/></entry><entry><id>https://qiita.com/lotz/items/5a1a05c0dae1133a5f44</id><title type="text">テンソルを実装するのに表現可能関手がとても便利な件</title><updated>2019-09-25T09:10:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/5a1a05c0dae1133a5f44"/></entry><entry><id>https://qiita.com/agajo/items/5adf2a4ad28ee73659c5</id><title type="text">async/awaitがモナドのDo記法と同じっぽいので検証。throwとcatchもモナドに対応させる</title><updated>2019-09-24T12:26:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/agajo/items/5adf2a4ad28ee73659c5"/></entry><entry><id>https://qiita.com/aki-takano/items/6c98daec2791a4b36c0f</id><title type="text">メモ：Mac(Mojave)にHaskellをインストール</title><updated>2019-09-23T11:41:46+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/aki-takano/items/6c98daec2791a4b36c0f"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-09-21-stack-build-image.html</id><title type="text">CI で Haskell Stack の Docker Integration するために</title><updated>2019-09-21T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-09-21-stack-build-image.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;Haskell のビルドツール Stack の Docker Integration を使うことで，指定したイメージ内でホストマシンと全く同じように別の OS のバイナリをビルドできます． さらに一工夫をすることで，そのバイナリを埋め込んだ Docker Image を作ることができます(一工夫については「&lt;a href=&#34;/posts/2019-06-10-build-haskell-app-docker-image-without-stack-image-cmd.html&#34;&gt;stack image コマンドなしに Haskell アプリの Docker イメージを作る&lt;/a&gt;」に書いた)&lt;/p&gt;
 &lt;p&gt;僕はこのプロセスを TravisCI で行い，&lt;code&gt;master&lt;/code&gt; プッシュした時に &lt;code&gt;latest&lt;/code&gt; イメージを更新してました． が，どうしても CI のビルド時間が長すぎた(1ステップ30分かかることもしばしば)ので改善しました． っていう話です．&lt;/p&gt;
 &lt;h2 id=&#34;何が遅いのか&#34;&gt;何が遅いのか&lt;/h2&gt;
@@ -6603,148 +6794,7 @@ yarn start&lt;/code&gt;&lt;/pre&gt;
 &lt;/iframe&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;もう既に十分使える状態になっていました． すごい！&lt;/p&gt;
-  &lt;/div&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/02-04-endo-monoid.html</id><title type="text">Endo Monoid</title><updated>2019-02-04T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/02-04-endo-monoid.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html&#34;&gt;Data.Monoid&lt;/a&gt; に &lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Monoid.html#t:Endo&#34;&gt;Endo&lt;/a&gt; 型が定義されています。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Endo&lt;/code&gt; という名前は &lt;code&gt;自己準同型 (Endomorphism)&lt;/code&gt; に由来します。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;newtype&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; {&lt;span class=&#34;ot&#34;&gt; appEndo ::&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a }&lt;/span&gt;
-&lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Semigroup&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-4&#34;&gt;&lt;a href=&#34;#cb1-4&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; g &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; g)&lt;/span&gt;
-&lt;span id=&#34;cb1-5&#34;&gt;&lt;a href=&#34;#cb1-5&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-6&#34;&gt;&lt;a href=&#34;#cb1-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;instance&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a) &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-7&#34;&gt;&lt;a href=&#34;#cb1-7&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;使い方は簡単。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb2-1&#34;&gt;&lt;a href=&#34;#cb2-1&#34;&gt;&lt;/a&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; f &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [(&lt;span class=&#34;op&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;), (&lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;), &lt;span class=&#34;fu&#34;&gt;negate&lt;/span&gt;]&lt;/span&gt;
-&lt;span id=&#34;cb2-2&#34;&gt;&lt;a href=&#34;#cb2-2&#34;&gt;&lt;/a&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; appEndo f &lt;span class=&#34;dv&#34;&gt;5&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-3&#34;&gt;&lt;a href=&#34;#cb2-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;9&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-4&#34;&gt;&lt;a href=&#34;#cb2-4&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-5&#34;&gt;&lt;a href=&#34;#cb2-5&#34;&gt;&lt;/a&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; appEndo (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, &amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;++&lt;/span&gt;) &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;op&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;!&amp;quot;&lt;/span&gt;)) &lt;span class=&#34;st&#34;&gt;&amp;quot;Haskell&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-6&#34;&gt;&lt;a href=&#34;#cb2-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, Haskell!&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-7&#34;&gt;&lt;a href=&#34;#cb2-7&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-8&#34;&gt;&lt;a href=&#34;#cb2-8&#34;&gt;&lt;/a&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; (appEndo &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [(&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, &amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;++&lt;/span&gt;), &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;, (&lt;span class=&#34;op&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;!&amp;quot;&lt;/span&gt;)]) &lt;span class=&#34;st&#34;&gt;&amp;quot;Haskell&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-9&#34;&gt;&lt;a href=&#34;#cb2-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;Hello, Haskell!&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;appEndo&lt;/code&gt; すると関数が出てくるところがポイントですね。2つ目の評価の流れをざっくり追うとこんな感じです。&lt;/p&gt;
-&lt;pre class=&#34;haskll&#34;&gt;&lt;code&gt;  appEndo (Endo (&amp;quot;Hello, &amp;quot; ++) &amp;lt;&amp;gt; Endo (++ &amp;quot;!&amp;quot;)) &amp;quot;Haskell&amp;quot;
-= appEndo (Endo ((&amp;quot;Hello, &amp;quot; ++ ) . (++ &amp;quot;!&amp;quot;))) &amp;quot;Haskell&amp;quot;
-= (&amp;quot;Hello, &amp;quot; ++ ) . (++ &amp;quot;!&amp;quot;) $ &amp;quot;Haskell&amp;quot;
-= &amp;quot;Hello, &amp;quot; ++ (&amp;quot;Haskell&amp;quot; ++ &amp;quot;!&amp;quot;)
-= &amp;quot;Hello, &amp;quot; ++ &amp;quot;Haskell!&amp;quot;
-= &amp;quot;Hello, Haskell!&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;Endo&lt;/code&gt; は意外と色んなところで使える便利なモノイドです。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;semigroup-monoid-law-の確認&#34;&gt;Semigroup, Monoid law の確認&lt;/h2&gt;
-&lt;p&gt;Semigroup Law&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb4-1&#34;&gt;&lt;a href=&#34;#cb4-1&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; g &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; h)&lt;/span&gt;
-&lt;span id=&#34;cb4-2&#34;&gt;&lt;a href=&#34;#cb4-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (g &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; h)&lt;/span&gt;
-&lt;span id=&#34;cb4-3&#34;&gt;&lt;a href=&#34;#cb4-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; (g &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; h))&lt;/span&gt;
-&lt;span id=&#34;cb4-4&#34;&gt;&lt;a href=&#34;#cb4-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- Category の定義より f . (g . h) == (f . g) . h&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-5&#34;&gt;&lt;a href=&#34;#cb4-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; ((f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; g) &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; h)&lt;/span&gt;
-&lt;span id=&#34;cb4-6&#34;&gt;&lt;a href=&#34;#cb4-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; g) &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; h&lt;/span&gt;
-&lt;span id=&#34;cb4-7&#34;&gt;&lt;a href=&#34;#cb4-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; g) &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; h&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Monoid Law&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb5-1&#34;&gt;&lt;a href=&#34;#cb5-1&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a)&lt;/span&gt;
-&lt;span id=&#34;cb5-2&#34;&gt;&lt;a href=&#34;#cb5-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-3&#34;&gt;&lt;a href=&#34;#cb5-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb5-4&#34;&gt;&lt;a href=&#34;#cb5-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- Category の定義より f . id == f&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-5&#34;&gt;&lt;a href=&#34;#cb5-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f&lt;/span&gt;
-&lt;span id=&#34;cb5-6&#34;&gt;&lt;a href=&#34;#cb5-6&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-7&#34;&gt;&lt;a href=&#34;#cb5-7&#34;&gt;&lt;/a&gt;  (&lt;span class=&#34;fu&#34;&gt;mempty&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; a) &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f&lt;/span&gt;
-&lt;span id=&#34;cb5-8&#34;&gt;&lt;a href=&#34;#cb5-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-9&#34;&gt;&lt;a href=&#34;#cb5-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; f)&lt;/span&gt;
-&lt;span id=&#34;cb5-10&#34;&gt;&lt;a href=&#34;#cb5-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- Category の定義より id . f == f&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-11&#34;&gt;&lt;a href=&#34;#cb5-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; f&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;f-.-g-.-h-f-.-g-.-h&#34;&gt;&lt;code&gt;f . (g . h) == (f . g) . h&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;(.)&lt;/code&gt; の定義&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb6-1&#34;&gt;&lt;a href=&#34;#cb6-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;(.) ::&lt;/span&gt; (b &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; c)&lt;/span&gt;
-&lt;span id=&#34;cb6-2&#34;&gt;&lt;a href=&#34;#cb6-2&#34;&gt;&lt;/a&gt;f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; g &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f (g x)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;証明&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb7-1&#34;&gt;&lt;a href=&#34;#cb7-1&#34;&gt;&lt;/a&gt;(&lt;span class=&#34;dt&#34;&gt;LHS&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb7-2&#34;&gt;&lt;a href=&#34;#cb7-2&#34;&gt;&lt;/a&gt;  f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; (g &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; h)&lt;/span&gt;
-&lt;span id=&#34;cb7-3&#34;&gt;&lt;a href=&#34;#cb7-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f ((g &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; h) x)&lt;/span&gt;
-&lt;span id=&#34;cb7-4&#34;&gt;&lt;a href=&#34;#cb7-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f ((\y &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; g (h y)) x)&lt;/span&gt;
-&lt;span id=&#34;cb7-5&#34;&gt;&lt;a href=&#34;#cb7-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f (g (h x))&lt;/span&gt;
-&lt;span id=&#34;cb7-6&#34;&gt;&lt;a href=&#34;#cb7-6&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb7-7&#34;&gt;&lt;a href=&#34;#cb7-7&#34;&gt;&lt;/a&gt;(&lt;span class=&#34;dt&#34;&gt;RHS&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb7-8&#34;&gt;&lt;a href=&#34;#cb7-8&#34;&gt;&lt;/a&gt;  (f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; g) &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; h&lt;/span&gt;
-&lt;span id=&#34;cb7-9&#34;&gt;&lt;a href=&#34;#cb7-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (f &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; g) (h x)&lt;/span&gt;
-&lt;span id=&#34;cb7-10&#34;&gt;&lt;a href=&#34;#cb7-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (\y &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f (g y)) (h x)&lt;/span&gt;
-&lt;span id=&#34;cb7-11&#34;&gt;&lt;a href=&#34;#cb7-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f (g (h x))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;id-.-f-f&#34;&gt;&lt;code&gt;id . f == f&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;id&lt;/code&gt; の定義&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb8-1&#34;&gt;&lt;a href=&#34;#cb8-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; a&lt;/span&gt;
-&lt;span id=&#34;cb8-2&#34;&gt;&lt;a href=&#34;#cb8-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; x &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; x&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;証明&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb9-1&#34;&gt;&lt;a href=&#34;#cb9-1&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; f&lt;/span&gt;
-&lt;span id=&#34;cb9-2&#34;&gt;&lt;a href=&#34;#cb9-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;id&lt;/span&gt; (f x)&lt;/span&gt;
-&lt;span id=&#34;cb9-3&#34;&gt;&lt;a href=&#34;#cb9-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; \x &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f x&lt;/span&gt;
-&lt;span id=&#34;cb9-4&#34;&gt;&lt;a href=&#34;#cb9-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; f&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;例1-write-endo-パターン&#34;&gt;例1) Write Endo パターン&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/yesod-core&#34;&gt;yesod-core&lt;/a&gt; パッケージの &lt;a href=&#34;https://hackage.haskell.org/package/yesod-core-1.6.11/docs/Yesod-Core-Handler.html#t:ProvidedRep&#34;&gt;ProvideRep&lt;/a&gt; を扱う関数は &lt;code&gt;Endo&lt;/code&gt; を利用しています。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb10-1&#34;&gt;&lt;a href=&#34;#cb10-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;selectRep ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadHandler&lt;/span&gt; m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Writer&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;ProvidedRep&lt;/span&gt; m]) () &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m &lt;span class=&#34;dt&#34;&gt;TypedContent&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb10-2&#34;&gt;&lt;a href=&#34;#cb10-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;provideRep ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Monad&lt;/span&gt; m, &lt;span class=&#34;dt&#34;&gt;HasContentType&lt;/span&gt; a) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; m a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Writer&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;ProvidedRep&lt;/span&gt; m]) ()&lt;/span&gt;
-&lt;span id=&#34;cb10-3&#34;&gt;&lt;a href=&#34;#cb10-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;provideRepType ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Monad&lt;/span&gt; m, &lt;span class=&#34;dt&#34;&gt;ToContent&lt;/span&gt; a) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ContentType&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Writer&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;ProvidedRep&lt;/span&gt; m]) ()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;また &lt;code&gt;Yesod&lt;/code&gt; には &lt;a href=&#34;https://hackage.haskell.org/package/yesod-core-1.6.11/docs/Yesod-Core-Types.html#t:GHState&#34;&gt;GHState&lt;/a&gt; 型がありますが、そこでも &lt;code&gt;Endo&lt;/code&gt; を使っています。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb11-1&#34;&gt;&lt;a href=&#34;#cb11-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHState&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHState&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-2&#34;&gt;&lt;a href=&#34;#cb11-2&#34;&gt;&lt;/a&gt;    {&lt;span class=&#34;ot&#34;&gt; ghsSession ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;SessionMap&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-3&#34;&gt;&lt;a href=&#34;#cb11-3&#34;&gt;&lt;/a&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsRBC     ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;!&lt;/span&gt;(&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RequestBodyContents&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb11-4&#34;&gt;&lt;a href=&#34;#cb11-4&#34;&gt;&lt;/a&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsIdent   ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-5&#34;&gt;&lt;a href=&#34;#cb11-5&#34;&gt;&lt;/a&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsCache   ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;TypeMap&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-6&#34;&gt;&lt;a href=&#34;#cb11-6&#34;&gt;&lt;/a&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsCacheBy ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;KeyedTypeMap&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb11-7&#34;&gt;&lt;a href=&#34;#cb11-7&#34;&gt;&lt;/a&gt;    ,&lt;span class=&#34;ot&#34;&gt; ghsHeaders ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;!&lt;/span&gt;(&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Header&lt;/span&gt;])&lt;/span&gt;
-&lt;span id=&#34;cb11-8&#34;&gt;&lt;a href=&#34;#cb11-8&#34;&gt;&lt;/a&gt;    }&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このような &lt;code&gt;Writer&lt;/code&gt; と &lt;code&gt;Endo&lt;/code&gt; を使った実装パターンは &lt;a href=&#34;https://ocharles.org.uk/blog/posts/2013-02-12-quick-dsls-with-endo-writers.html&#34;&gt;Quick and Easy DSLs with Writer Endo&lt;/a&gt; で紹介されている &lt;code&gt;Writer Endo&lt;/code&gt; パターンとして知られているようです。&lt;/p&gt;
-&lt;h2 id=&#34;例2-データの更新&#34;&gt;例2) データの更新&lt;/h2&gt;
-&lt;p&gt;こんな感じで設定等を更新する際にも使えるかもしれません。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb12&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb12-1&#34;&gt;&lt;a href=&#34;#cb12-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE DataKinds        #-}&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-2&#34;&gt;&lt;a href=&#34;#cb12-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE OverloadedLabels #-}&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-3&#34;&gt;&lt;a href=&#34;#cb12-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;{-# LANGUAGE TypeOperators    #-}&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-4&#34;&gt;&lt;a href=&#34;#cb12-4&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-5&#34;&gt;&lt;a href=&#34;#cb12-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Control.Lens&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-6&#34;&gt;&lt;a href=&#34;#cb12-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Extensible&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-7&#34;&gt;&lt;a href=&#34;#cb12-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Data.Monoid&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-8&#34;&gt;&lt;a href=&#34;#cb12-8&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-9&#34;&gt;&lt;a href=&#34;#cb12-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Record&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-10&#34;&gt;&lt;a href=&#34;#cb12-10&#34;&gt;&lt;/a&gt;  &amp;#39;[ &lt;span class=&#34;st&#34;&gt;&amp;quot;name&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;String&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-11&#34;&gt;&lt;a href=&#34;#cb12-11&#34;&gt;&lt;/a&gt;   , &lt;span class=&#34;st&#34;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;  &lt;span class=&#34;op&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Int&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-12&#34;&gt;&lt;a href=&#34;#cb12-12&#34;&gt;&lt;/a&gt;   ]&lt;/span&gt;
-&lt;span id=&#34;cb12-13&#34;&gt;&lt;a href=&#34;#cb12-13&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-14&#34;&gt;&lt;a href=&#34;#cb12-14&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;update ::&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt;] &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-15&#34;&gt;&lt;a href=&#34;#cb12-15&#34;&gt;&lt;/a&gt;update fs &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; appEndo (&lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; fs)&lt;/span&gt;
-&lt;span id=&#34;cb12-16&#34;&gt;&lt;a href=&#34;#cb12-16&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-17&#34;&gt;&lt;a href=&#34;#cb12-17&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;me ::&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt;]&lt;/span&gt;
-&lt;span id=&#34;cb12-18&#34;&gt;&lt;a href=&#34;#cb12-18&#34;&gt;&lt;/a&gt;me &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-19&#34;&gt;&lt;a href=&#34;#cb12-19&#34;&gt;&lt;/a&gt;  [ (&lt;span class=&#34;op&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;name &lt;span class=&#34;op&#34;&gt;.~&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;guchi&amp;quot;&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb12-20&#34;&gt;&lt;a href=&#34;#cb12-20&#34;&gt;&lt;/a&gt;  , (&lt;span class=&#34;op&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;age &lt;span class=&#34;op&#34;&gt;.~&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;20&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb12-21&#34;&gt;&lt;a href=&#34;#cb12-21&#34;&gt;&lt;/a&gt;  ]&lt;/span&gt;
-&lt;span id=&#34;cb12-22&#34;&gt;&lt;a href=&#34;#cb12-22&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-23&#34;&gt;&lt;a href=&#34;#cb12-23&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;defaultPerson ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Person&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-24&#34;&gt;&lt;a href=&#34;#cb12-24&#34;&gt;&lt;/a&gt;defaultPerson &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;name &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;NONAME&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-25&#34;&gt;&lt;a href=&#34;#cb12-25&#34;&gt;&lt;/a&gt;             &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;age  &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb12-26&#34;&gt;&lt;a href=&#34;#cb12-26&#34;&gt;&lt;/a&gt;             &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;実行結果&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb13-1&#34;&gt;&lt;a href=&#34;#cb13-1&#34;&gt;&lt;/a&gt;λ&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; stack repl &lt;span class=&#34;co&#34;&gt;--package extensible --package lens EndoExample.hs&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-2&#34;&gt;&lt;a href=&#34;#cb13-2&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-3&#34;&gt;&lt;a href=&#34;#cb13-3&#34;&gt;&lt;/a&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; defaultPerson&lt;/span&gt;
-&lt;span id=&#34;cb13-4&#34;&gt;&lt;a href=&#34;#cb13-4&#34;&gt;&lt;/a&gt;name &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;NONAME&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; age &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/span&gt;
-&lt;span id=&#34;cb13-5&#34;&gt;&lt;a href=&#34;#cb13-5&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-6&#34;&gt;&lt;a href=&#34;#cb13-6&#34;&gt;&lt;/a&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; update me defaultPerson&lt;/span&gt;
-&lt;span id=&#34;cb13-7&#34;&gt;&lt;a href=&#34;#cb13-7&#34;&gt;&lt;/a&gt;name &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;guchi&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; age &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;例3-パターンマッチの実装&#34;&gt;例3) パターンマッチの実装&lt;/h2&gt;
-&lt;p&gt;僕はあまり &lt;code&gt;Endo&lt;/code&gt; モノイドを使いこなせていませんが、良い感じに使えたと思える例としては TAPL 11章でレコードパターンを実装する際です。&lt;/p&gt;
-&lt;p&gt;レコードのパターンマッチは代入の合成で書くことができるので、&lt;code&gt;Endo&lt;/code&gt; がちょうどぴったり適用できました。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb14&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb14-1&#34;&gt;&lt;a href=&#34;#cb14-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;match ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Pattern&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Value&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Term&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Term&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb14-2&#34;&gt;&lt;a href=&#34;#cb14-2&#34;&gt;&lt;/a&gt;match (&lt;span class=&#34;dt&#34;&gt;PtVar&lt;/span&gt; _ n) v &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; subst n v&lt;/span&gt;
-&lt;span id=&#34;cb14-3&#34;&gt;&lt;a href=&#34;#cb14-3&#34;&gt;&lt;/a&gt;match p&lt;span class=&#34;op&#34;&gt;@&lt;/span&gt;(&lt;span class=&#34;dt&#34;&gt;PtRecord&lt;/span&gt; fs) v&lt;span class=&#34;op&#34;&gt;@&lt;/span&gt;(&lt;span class=&#34;dt&#34;&gt;TmRecord&lt;/span&gt; fs&amp;#39;)&lt;/span&gt;
-&lt;span id=&#34;cb14-4&#34;&gt;&lt;a href=&#34;#cb14-4&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; isRecordValue v &lt;span class=&#34;op&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sameFieldLength p v&lt;/span&gt;
-&lt;span id=&#34;cb14-5&#34;&gt;&lt;a href=&#34;#cb14-5&#34;&gt;&lt;/a&gt;      &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; appEndo &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Endo&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;uncurry&lt;/span&gt; match) &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;zip&lt;/span&gt; (&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;snd&lt;/span&gt; fs) (&lt;span class=&#34;fu&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;snd&lt;/span&gt; fs&amp;#39;)&lt;/span&gt;
-&lt;span id=&#34;cb14-6&#34;&gt;&lt;a href=&#34;#cb14-6&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;otherwise&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;match: pattern match failure&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb14-7&#34;&gt;&lt;a href=&#34;#cb14-7&#34;&gt;&lt;/a&gt;match &lt;span class=&#34;dt&#34;&gt;PtRecord&lt;/span&gt;{} _ &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;match: v is not Rrcord&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.schoolofhaskell.com/user/mgsloan/monoids-tour&#34;&gt;Monoids Tour&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://ocharles.org.uk/blog/posts/2013-02-12-quick-dsls-with-endo-writers.html&#34;&gt;Quick and Easy DSLs with Writer Endo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://blog.ploeh.dk/2018/04/16/endomorphic-composite-as-a-monoid/&#34;&gt;Endomorphic Composite as a monoid&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/01/30/Haskell_Ctrl-C_%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D</id><title type="text">Haskell Windows Ctrl-C 動作確認</title><updated>2019-01-30T23:53:07+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/01/30/Haskell_Ctrl-C_%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D"/><summary type="html">コード コードは前回記事と同じです（再掲）。 Git リポジトリーはこちら。 import Control.Concurrent import Control.Monad import System.Exit import System.IO import System.Win32.Console.CtrlHandler main :: IO () main = do tid &lt;- myThreadId let handler event = do if event == cTRL_C_EVENT then do putStrLn &#34;goodbye!&#34; killThread tid pure …</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/01/25/Haskell_%E3%81%A7_Ctrl-C_%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%EF%BC%88Windows%EF%BC%89</id><title type="text">Haskell で Ctrl-C を制御する（Windows）</title><updated>2019-01-25T11:26:15+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/01/25/Haskell_%E3%81%A7_Ctrl-C_%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%EF%BC%88Windows%EF%BC%89"/><summary type="html">Ctrl-C 等の割り込みの扱い方です。 tl;dr System.Win32.Console.CtrlHandler を使います。 Ctrl-C が押されたらクロージングの処理を伴って終了するプログラムを書いてみます。 import Control.Concurrent import Control.Monad import System.Exit import System.IO import System.Win32.Console.CtrlHandler main :: IO () main = do tid &lt;- myThreadId let handler event = do i…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20130305/1362457646</id><title type="text">Haskell での可変長引数</title><updated>2019-01-25T01:40:21+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20130305/1362457646"/><summary type="html">『簡約! λカ娘(4)』読んだ！おもしろかった！で、その中に「Haskell でも printf じゃないか！？」っていう @nushio さんの記事で、可変長引数関数（可変個引数関数）の話があって自分なりに悩んで納得したので忘れないようにメモしておこうと思う。</summary></entry><entry><id>http://syocy.hatenablog.com/entry/try-linear-types</id><title type="text">GHCの線形型プロトタイプを試すだけ</title><updated>2019-01-08T02:01:09+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/try-linear-types"/><summary type="html">GHCに線形型を導入すると以下のような良い事があるらしい。 リソース安全性: ファイルハンドル、ソケット、DBコネクションのようなリソースについて、これらを提供するAPIの設計者が安全な使用を強制できる。リソース解放後のアクセス、二重解放、解放忘れを防止することができる。 レイテンシ: リソースAPIの実装をうまくやるとoff-heap(GCの対象外)でリソースを確保・解放できる。GC対象が少なくなることによりGCによってプログラムが停止する時間を減らせる。 並列性: 過剰な直列化を強要しない。リソース安全性を保ちつつもできる限り並列化できる。 詳しくはproposal。 この記事では線形型G…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/27/213853</id><title type="text">戊戌の追憶</title><updated>2018-12-28T09:01:05+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/27/213853"/><summary type="html">この記事は、筆者が過ごした2018年を簡潔に振り返り、その経験を糧とすることを狙う。 1月 第二鰓弓由来側頸嚢胞という先天異常が原因で首が化膿し、激痛に苦しんでいた。対人関係のトラブルなどもあり軽い錯乱状態にあったのか、自分が知らない間に高い買い物をすることがあった。 drinkery: Boozy streaming library というストリーム処理ライブラリを作った。当初はすべて酒関係の用語を用いていたが、批判を受けてそこはやめた。今思えばそれで正解だった気がする。 パフォーマンスはモナディックなAPIを持つライブラリの中ではトップクラスで、双方向性や多入力多出力のような発展的な機能も…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/21/201108</id><title type="text">Elias-Fano encoding: 単調増加する数列をほぼ簡潔に表現する</title><updated>2018-12-22T01:15:08+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/21/201108"/><summary type="html">Haskell Advent Calendar 2018 20日目 単調増加する自然数の列を、最低限のビット数で表現するための興味深いテクニックと、Haskellによる実装を紹介する。 Elias-Fano encoding この手法は、簡潔データ構造に分類されるもの一つであるが、厳密には条件を満たさないため疑似簡潔データ構造と呼ばれる。1970年代、Peter EliasとRobert Mario Fanoによって独立して発見された。 例題として1, 1, 4, 10, 17, 22, 23, 30という列をエンコードしてみよう。まず、それぞれの数を上位3ビットと下位2ビットに分割する。列の…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-16T14:31:09.194+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
+  &lt;/div&gt;</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/01/30/Haskell_Ctrl-C_%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D</id><title type="text">Haskell Windows Ctrl-C 動作確認</title><updated>2019-01-30T23:53:07+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/01/30/Haskell_Ctrl-C_%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D"/><summary type="html">コード コードは前回記事と同じです（再掲）。 Git リポジトリーはこちら。 import Control.Concurrent import Control.Monad import System.Exit import System.IO import System.Win32.Console.CtrlHandler main :: IO () main = do tid &lt;- myThreadId let handler event = do if event == cTRL_C_EVENT then do putStrLn &#34;goodbye!&#34; killThread tid pure …</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/01/25/Haskell_%E3%81%A7_Ctrl-C_%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%EF%BC%88Windows%EF%BC%89</id><title type="text">Haskell で Ctrl-C を制御する（Windows）</title><updated>2019-01-25T11:26:15+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/01/25/Haskell_%E3%81%A7_Ctrl-C_%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%EF%BC%88Windows%EF%BC%89"/><summary type="html">Ctrl-C 等の割り込みの扱い方です。 tl;dr System.Win32.Console.CtrlHandler を使います。 Ctrl-C が押されたらクロージングの処理を伴って終了するプログラムを書いてみます。 import Control.Concurrent import Control.Monad import System.Exit import System.IO import System.Win32.Console.CtrlHandler main :: IO () main = do tid &lt;- myThreadId let handler event = do i…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20130305/1362457646</id><title type="text">Haskell での可変長引数</title><updated>2019-01-25T01:40:21+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20130305/1362457646"/><summary type="html">『簡約! λカ娘(4)』読んだ！おもしろかった！で、その中に「Haskell でも printf じゃないか！？」っていう @nushio さんの記事で、可変長引数関数（可変個引数関数）の話があって自分なりに悩んで納得したので忘れないようにメモしておこうと思う。</summary></entry><entry><id>http://syocy.hatenablog.com/entry/try-linear-types</id><title type="text">GHCの線形型プロトタイプを試すだけ</title><updated>2019-01-08T02:01:09+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/try-linear-types"/><summary type="html">GHCに線形型を導入すると以下のような良い事があるらしい。 リソース安全性: ファイルハンドル、ソケット、DBコネクションのようなリソースについて、これらを提供するAPIの設計者が安全な使用を強制できる。リソース解放後のアクセス、二重解放、解放忘れを防止することができる。 レイテンシ: リソースAPIの実装をうまくやるとoff-heap(GCの対象外)でリソースを確保・解放できる。GC対象が少なくなることによりGCによってプログラムが停止する時間を減らせる。 並列性: 過剰な直列化を強要しない。リソース安全性を保ちつつもできる限り並列化できる。 詳しくはproposal。 この記事では線形型G…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/27/213853</id><title type="text">戊戌の追憶</title><updated>2018-12-28T09:01:05+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/27/213853"/><summary type="html">この記事は、筆者が過ごした2018年を簡潔に振り返り、その経験を糧とすることを狙う。 1月 第二鰓弓由来側頸嚢胞という先天異常が原因で首が化膿し、激痛に苦しんでいた。対人関係のトラブルなどもあり軽い錯乱状態にあったのか、自分が知らない間に高い買い物をすることがあった。 drinkery: Boozy streaming library というストリーム処理ライブラリを作った。当初はすべて酒関係の用語を用いていたが、批判を受けてそこはやめた。今思えばそれで正解だった気がする。 パフォーマンスはモナディックなAPIを持つライブラリの中ではトップクラスで、双方向性や多入力多出力のような発展的な機能も…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/21/201108</id><title type="text">Elias-Fano encoding: 単調増加する数列をほぼ簡潔に表現する</title><updated>2018-12-22T01:15:08+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/21/201108"/><summary type="html">Haskell Advent Calendar 2018 20日目 単調増加する自然数の列を、最低限のビット数で表現するための興味深いテクニックと、Haskellによる実装を紹介する。 Elias-Fano encoding この手法は、簡潔データ構造に分類されるもの一つであるが、厳密には条件を満たさないため疑似簡潔データ構造と呼ばれる。1970年代、Peter EliasとRobert Mario Fanoによって独立して発見された。 例題として1, 1, 4, 10, 17, 22, 23, 30という列をエンコードしてみよう。まず、それぞれの数を上位3ビットと下位2ビットに分割する。列の…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-16T14:31:09.194+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
 
 主に自分向けの防備録です。windows10上で確認。インストーラーはここからDLする。
 
