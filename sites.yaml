@@ -75,3 +75,9 @@ sites:
         rel: alternate
     logo:
       github: kurokawh
+  - title: "mod_poppoの雑記帳"
+    author: "mod_poppo"
+    url: https://blog.miz-ar.info/category/programming/haskell/
+    feed: https://blog.miz-ar.info/category/programming/haskell/feed/
+    logo:
+      url: https://blog.miz-ar.info/wp-content/uploads/2016/07/cropped-partial-poppo2.png
