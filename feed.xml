@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-10-31T10:45:08+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/P0ngCh4ng/items/fb3f24b7c3138bd1b159</id><title type="text">haskellで2重リストにmapを適用させる例</title><updated>2019-10-31T10:45:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/P0ngCh4ng/items/fb3f24b7c3138bd1b159"/></entry><entry><id>https://qiita.com/norkron/items/e55a39c22288955689f9</id><title type="text">もう諦めない圏論付録―ストリング・ダイアグラム―</title><updated>2019-10-30T20:54:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/e55a39c22288955689f9"/></entry><entry><id>https://qiita.com/norkron/items/271b702a907f865aafc5</id><title type="text">もう諦めない圏論基礎―高次元圏と変換手―</title><updated>2019-10-30T20:44:22+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/271b702a907f865aafc5"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/10/23/%E6%9C%80%E8%BF%91%E3%81%AE%E8%87%AA%E5%88%86%E3%81%AE_Haskell_%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%EF%BC%88Windows%EF%BC%89</id><title type="text">最近の自分の Haskell 開発環境（Windows）</title><updated>2019-10-23T20:32:39+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/10/23/%E6%9C%80%E8%BF%91%E3%81%AE%E8%87%AA%E5%88%86%E3%81%AE_Haskell_%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%EF%BC%88Windows%EF%BC%89"/><summary type="html">id:syocy のブログを見たので Windows で自分がどうしているかをメモしておく。 syocy.hatenablog.com Stack 最近は ghcup があるがシェルスクリプト製で自分は PowerShell ユーザーなので stack を使っている。（ghcup はなんで Haskell 製じゃないんだ？） GHC 8.8 を使うには resolver は ghc-8.8 や nightly を指定する。まだ LTS にはなっていない。 エディター エディターは Spacemacs を使っている。前は IntelliJ IDEA に HaskForce プラグインを入れて使っ…</summary></entry><entry><id>https://qiita.com/kaizen_nagoya/items/8dde93e91710e4c22c72</id><title type="text">「今後が絶望的な5つのプログラミング言語とは？」記録</title><updated>2019-10-23T09:30:48+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kaizen_nagoya/items/8dde93e91710e4c22c72"/></entry><entry><id>https://qiita.com/piacerex/items/e9215d12018288c7595b</id><title type="text">Elixir版?②「プログラミングHaskell第2版」</title><updated>2019-10-23T08:03:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/piacerex/items/e9215d12018288c7595b"/></entry><entry><id>https://qiita.com/masahiro_sakai/items/c48c688d1b8d47d2a5f1</id><title type="text">テンソル形状のコンパイル時検査＋実行時アサーション化を今のHaskellで書いてみる</title><updated>2019-10-20T00:30:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masahiro_sakai/items/c48c688d1b8d47d2a5f1"/></entry><entry><id>https://qiita.com/opiliones/items/8b4c634ab0b0222618c1</id><title type="text">haskellでshっぽい言語を作成した</title><updated>2019-10-19T18:14:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/opiliones/items/8b4c634ab0b0222618c1"/></entry><entry><id>https://qiita.com/lotz/items/8e66442a329183d5a3ce</id><title type="text">モナドに至る道 at Nakameguro.hs #2</title><updated>2019-10-18T17:45:36+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/8e66442a329183d5a3ce"/></entry><entry><id>https://qiita.com/ryota-ka/items/544dbd82891510accbc0</id><title type="text">いろいろなモナド at Nakameguro.hs #2</title><updated>2019-10-17T23:33:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ryota-ka/items/544dbd82891510accbc0"/></entry><entry><id>https://qiita.com/takat0-h0rikosh1/items/9c70ac5046135a5f860d</id><title type="text">Haskell の case 式を使ってみる</title><updated>2019-10-17T16:59:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takat0-h0rikosh1/items/9c70ac5046135a5f860d"/></entry><entry><id>https://qiita.com/mamoru09230937/items/792f8e591186453d6b63</id><title type="text">JavaプログラマがHaskellに入門してみた(Haskellにおける型）</title><updated>2019-10-16T21:40:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamoru09230937/items/792f8e591186453d6b63"/></entry><entry><id>https://qiita.com/chupaaaaaaan/items/0a72dd207e379f468303</id><title type="text">200行のHaskellでテトリス</title><updated>2019-10-16T00:30:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/chupaaaaaaan/items/0a72dd207e379f468303"/></entry><entry><id>https://qiita.com/mod_poppo/items/5e0472e7171a7574abc3</id><title type="text">HaskellからWordPressのREST APIを叩くメモ</title><updated>2019-10-15T19:01:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/5e0472e7171a7574abc3"/></entry><entry><id>https://qiita.com/nashi2603/items/b1bc90945be49f044111</id><title type="text">Haskellで減少配列の動きが理解できなかったけど頑張って理解できた話</title><updated>2019-10-13T05:21:11+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nashi2603/items/b1bc90945be49f044111"/></entry><entry><id>https://qiita.com/mamoru09230937/items/4b687238b1e23e8fe9cd</id><title type="text">JavaプログラマがHaskellに入門してみた(ちょっとしたコーディング）</title><updated>2019-10-10T23:10:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamoru09230937/items/4b687238b1e23e8fe9cd"/></entry><entry><id>https://qiita.com/toru0408/items/ef9ea79df0c40e8dd23a</id><title type="text">Haskellの型クラスでJavaScriptっぽいことをやって遊んでみる</title><updated>2019-10-09T20:53:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/toru0408/items/ef9ea79df0c40e8dd23a"/></entry><entry><id>https://qiita.com/jdoiWork/items/1cc09a1d375a038ac400</id><title type="text">HaskellとHspecでBuddy CI</title><updated>2019-10-08T03:31:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/jdoiWork/items/1cc09a1d375a038ac400"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/10-07-cabal-fmt.html</id><title type="text">cabal-fmt の紹介</title><updated>2019-10-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/10-07-cabal-fmt.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2019-10-31T23:21:08+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/ibuibu69/items/80f5732b1803d6c7dc1c</id><title type="text">TydalCycles TIPS パート1「乱数を用いる」</title><updated>2019-10-31T23:21:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ibuibu69/items/80f5732b1803d6c7dc1c"/></entry><entry><id>https://qiita.com/ibuibu69/items/add531f26880b874ee00</id><title type="text">TydalCycles TIPS パート2「乱数で自動作曲する」</title><updated>2019-10-31T23:20:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ibuibu69/items/add531f26880b874ee00"/></entry><entry><id>https://qiita.com/P0ngCh4ng/items/fb3f24b7c3138bd1b159</id><title type="text">haskellで2重リストにmapを適用させる例</title><updated>2019-10-31T10:45:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/P0ngCh4ng/items/fb3f24b7c3138bd1b159"/></entry><entry><id>https://matsubara0507.github.io/posts/2019-10-31-join-hacktoberfest-2019.html</id><title type="text">Hacktoberfest 2019 なので PR を4つ以上出してみた</title><updated>2019-10-31T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-10-31-join-hacktoberfest-2019.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+    &lt;p&gt;毎年恒例，去年に引き続き Hacktoberfest に参加しました．&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/join-hacktoberfest-2019/status.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;すごい量になっているけど個人のリポジトリや参加してる Org アカウントにも PR を作ってやっていたのでこんな量になった. 実際に、自分の所属となんも関係のない PR は以下の4つ:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/phadej/github/pull/407&#34;&gt;Update EditRepo type by matsubara0507 · Pull Request #407 · phadej/github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/drone/drone-go/pull/47&#34;&gt;Change &lt;code&gt;RepoPatch.Counter&lt;/code&gt; type to &lt;code&gt;int64&lt;/code&gt; from &lt;code&gt;int&lt;/code&gt; by matsubara0507 · Pull Request #47 · drone/drone-go&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/elm-jp/guide/pull/170&#34;&gt;「型: 型を読む」の原文を追従して翻訳 by matsubara0507 · Pull Request #170 · elm-jp/guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/orangain/textlint-plugin-review/pull/16&#34;&gt;Update textlint version to 11.4 by matsubara0507 · Pull Request #16 · orangain/textlint-plugin-review&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;phadejgithub&#34;&gt;phadej/github&lt;/h2&gt;
+&lt;p&gt;このリポジトリは Haskell の GitHub API クライアントライブラリだ． 愛用している． ただ，GitHub API の開発速度はそこそこ速く，機能が追いついてないことが多々あり，自分はよく&lt;a href=&#34;https://github.com/matsubara0507/github/tree/myext&#34;&gt;フォークして必要なものを雑に足したブランチ&lt;/a&gt;を利用している． もっとマメに本家へ PR を出せば良いのだが，ついついサボってしまい… ということで，一つだけだが出してみた．&lt;/p&gt;
+&lt;p&gt;この PR はリポジトリを編集する API に使うための PATCH 用のデータ型が古くなっており，僕が必要なフィールドが足りなかったので作った差分だ． ついでに，リポジトリ自体の型やリポジトリを作る型のフィールドも古くなっていることに気づいた． 僕は必要ではないし，めんどくさかったから最初はそのまま出したが，「直した方がいいですか？」と尋ねたら「ぜひ」と返ってきたので直した． ちょっと差分が大きくなってしまったのでコメントを書いているうちにマージされた笑&lt;/p&gt;
+&lt;h2 id=&#34;dronedrone-go&#34;&gt;drone/drone-go&lt;/h2&gt;
+&lt;p&gt;これは &lt;a href=&#34;https://drone.io&#34;&gt;Drone CI&lt;/a&gt; という OSS の CI/CD プラットフォームの，本家が提供している Go 言語の API クライアントだ． 同様の &lt;a href=&#34;https://github.com/matsubara0507/drone-haskell&#34;&gt;Haskell 用 API クライアント&lt;/a&gt;を整備していた(ドキュメントが少ないので Go の実装を参照している)ら型が間違っているような気がしたので PR にした．&lt;/p&gt;
+&lt;p&gt;PR に拙い英語でコメントしている通り，&lt;code&gt;Counter&lt;/code&gt; というフィールドは &lt;code&gt;Repo&lt;/code&gt; 型では &lt;code&gt;int64&lt;/code&gt; だが，&lt;code&gt;RepoPatch&lt;/code&gt; では &lt;code&gt;int&lt;/code&gt; だった． &lt;a href=&#34;https://github.com/drone/drone/blob/0b4e5156ae1111463145e522e206eacb6d036960/handler/api/repos/update.go#L30-L40&#34;&gt;API サーバー側の実装&lt;/a&gt;を見てみると &lt;code&gt;int64&lt;/code&gt; として扱っていたので &lt;code&gt;RepoPatch&lt;/code&gt; 側を修正する PR を出した． 無事マージされるといいなぁ．&lt;/p&gt;
+&lt;h2 id=&#34;elm-jpguide&#34;&gt;elm-jp/guide&lt;/h2&gt;
+&lt;p&gt;これは &lt;a href=&#34;https://guide.elm-lang.org/&#34;&gt;Elm Guide&lt;/a&gt; というサイトの翻訳リポジトリだ． 翻訳元は Elm の作者がメンテナンスしている，Elm のチュートリアルである． Elm-jp という日本ユーザーグループで翻訳をしている(僕も所属してるので無関係ではなかった)．&lt;/p&gt;
+&lt;p&gt;最近，大量の本家との差分を &lt;a href=&#34;https://github.com/negiboudu&#34;&gt;negiboudu&lt;/a&gt; 氏が取り込んでくれた． その結果，差分ができたので1ページだけ翻訳したという PR だ． ちなみに，まだまだあるので誰でも翻訳 PR お待ちしております．&lt;/p&gt;
+&lt;h2 id=&#34;orangaintextlint-plugin-review&#34;&gt;orangain/textlint-plugin-review&lt;/h2&gt;
+&lt;p&gt;これは文章用の linter ツール，textlint の &lt;a href=&#34;https://github.com/kmuto/review&#34;&gt;Re:VIEW&lt;/a&gt; プラグインのリポジトリだ． Re:VIEW は技術書典用の頒布物作成の折に使っており，textlint で軽い静的検査をしている． 技術書典7のときに，このプラグインで「plugin-review が依存している textlint が古い」という警告が出ているので直した． そのときのものを PR にしただけだ．&lt;/p&gt;
+&lt;p&gt;ちょっと差分がでかいし，長く更新がないのでマージされないような気がする しかし，まぁ同じような警告が気になった人が辿り着いて助けになればいいなぁぐらいの温度感．&lt;/p&gt;
+&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
+&lt;p&gt;いろんなジャンルのリポジトリに PR が出せて満足． あとでTシャツの出さなきゃ．&lt;/p&gt;
+  &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/norkron/items/e55a39c22288955689f9</id><title type="text">もう諦めない圏論付録―ストリング・ダイアグラム―</title><updated>2019-10-30T20:54:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/e55a39c22288955689f9"/></entry><entry><id>https://qiita.com/norkron/items/271b702a907f865aafc5</id><title type="text">もう諦めない圏論基礎―高次元圏と変換手―</title><updated>2019-10-30T20:44:22+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/271b702a907f865aafc5"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/10/23/%E6%9C%80%E8%BF%91%E3%81%AE%E8%87%AA%E5%88%86%E3%81%AE_Haskell_%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%EF%BC%88Windows%EF%BC%89</id><title type="text">最近の自分の Haskell 開発環境（Windows）</title><updated>2019-10-23T20:32:39+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/10/23/%E6%9C%80%E8%BF%91%E3%81%AE%E8%87%AA%E5%88%86%E3%81%AE_Haskell_%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%EF%BC%88Windows%EF%BC%89"/><summary type="html">id:syocy のブログを見たので Windows で自分がどうしているかをメモしておく。 syocy.hatenablog.com Stack 最近は ghcup があるがシェルスクリプト製で自分は PowerShell ユーザーなので stack を使っている。（ghcup はなんで Haskell 製じゃないんだ？） GHC 8.8 を使うには resolver は ghc-8.8 や nightly を指定する。まだ LTS にはなっていない。 エディター エディターは Spacemacs を使っている。前は IntelliJ IDEA に HaskForce プラグインを入れて使っ…</summary></entry><entry><id>https://qiita.com/kaizen_nagoya/items/8dde93e91710e4c22c72</id><title type="text">「今後が絶望的な5つのプログラミング言語とは？」記録</title><updated>2019-10-23T09:30:48+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kaizen_nagoya/items/8dde93e91710e4c22c72"/></entry><entry><id>https://qiita.com/piacerex/items/e9215d12018288c7595b</id><title type="text">Elixir版?②「プログラミングHaskell第2版」</title><updated>2019-10-23T08:03:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/piacerex/items/e9215d12018288c7595b"/></entry><entry><id>https://qiita.com/masahiro_sakai/items/c48c688d1b8d47d2a5f1</id><title type="text">テンソル形状のコンパイル時検査＋実行時アサーション化を今のHaskellで書いてみる</title><updated>2019-10-20T00:30:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masahiro_sakai/items/c48c688d1b8d47d2a5f1"/></entry><entry><id>https://qiita.com/opiliones/items/8b4c634ab0b0222618c1</id><title type="text">haskellでshっぽい言語を作成した</title><updated>2019-10-19T18:14:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/opiliones/items/8b4c634ab0b0222618c1"/></entry><entry><id>https://qiita.com/lotz/items/8e66442a329183d5a3ce</id><title type="text">モナドに至る道 at Nakameguro.hs #2</title><updated>2019-10-18T17:45:36+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/8e66442a329183d5a3ce"/></entry><entry><id>https://qiita.com/ryota-ka/items/544dbd82891510accbc0</id><title type="text">いろいろなモナド at Nakameguro.hs #2</title><updated>2019-10-17T23:33:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ryota-ka/items/544dbd82891510accbc0"/></entry><entry><id>https://qiita.com/takat0-h0rikosh1/items/9c70ac5046135a5f860d</id><title type="text">Haskell の case 式を使ってみる</title><updated>2019-10-17T16:59:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takat0-h0rikosh1/items/9c70ac5046135a5f860d"/></entry><entry><id>https://qiita.com/mamoru09230937/items/792f8e591186453d6b63</id><title type="text">JavaプログラマがHaskellに入門してみた(Haskellにおける型）</title><updated>2019-10-16T21:40:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamoru09230937/items/792f8e591186453d6b63"/></entry><entry><id>https://qiita.com/chupaaaaaaan/items/0a72dd207e379f468303</id><title type="text">200行のHaskellでテトリス</title><updated>2019-10-16T00:30:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/chupaaaaaaan/items/0a72dd207e379f468303"/></entry><entry><id>https://qiita.com/mod_poppo/items/5e0472e7171a7574abc3</id><title type="text">HaskellからWordPressのREST APIを叩くメモ</title><updated>2019-10-15T19:01:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/5e0472e7171a7574abc3"/></entry><entry><id>https://qiita.com/nashi2603/items/b1bc90945be49f044111</id><title type="text">Haskellで減少配列の動きが理解できなかったけど頑張って理解できた話</title><updated>2019-10-13T05:21:11+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nashi2603/items/b1bc90945be49f044111"/></entry><entry><id>https://qiita.com/mamoru09230937/items/4b687238b1e23e8fe9cd</id><title type="text">JavaプログラマがHaskellに入門してみた(ちょっとしたコーディング）</title><updated>2019-10-10T23:10:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamoru09230937/items/4b687238b1e23e8fe9cd"/></entry><entry><id>https://qiita.com/toru0408/items/ef9ea79df0c40e8dd23a</id><title type="text">Haskellの型クラスでJavaScriptっぽいことをやって遊んでみる</title><updated>2019-10-09T20:53:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/toru0408/items/ef9ea79df0c40e8dd23a"/></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/10-07-cabal-fmt.html</id><title type="text">cabal-fmt の紹介</title><updated>2019-10-07T00:00:00Z</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/10-07-cabal-fmt.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/cabal-fmt&#34;&gt;cabal-fmt&lt;/a&gt; でできること。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;cabal&lt;/strong&gt; ファイルの整形&lt;/li&gt;
@@ -269,7 +293,7 @@ Flags for format:
 &lt;li&gt;&lt;a href=&#34;https://downloads.haskell.org/~ghc/8.8.1/docs/html/users_guide/glasgow_exts.html?highlight=nostaristype#extension-StarIsType&#34;&gt;StarIsType - Glasgow Haskell Compiler User’s Guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://gitlab.haskell.org/ghc/ghc/wikis/migration/8.6&#34;&gt;GHC 8.6.x Migration Guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/haskell_jp/comments/8t8p4j/typeoperators_nostaristype%E3%81%AE%E5%BB%B6%E6%9C%9F%E3%81%AE%E6%8F%90%E6%A1%88/&#34;&gt;“TypeOperators =&amp;gt; NoStarIsType”の延期の提案&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://qiita.com/mamoru09230937/items/1d4f18acbe8dcb8e94a4</id><title type="text">JavaプログラマがHaskellに入門してみた(環境構築まで）</title><updated>2019-10-02T00:43:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mamoru09230937/items/1d4f18acbe8dcb8e94a4"/></entry><entry><id>https://haskell.jp/blog/posts/2019/hiw-copilot.html</id><title type="text">HIW 2019で発表された、Copilotという内部DSLについて</title><updated>2019-10-01T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/hiw-copilot.html"/><summary type="html">
+&lt;/ul&gt;</summary></entry><entry><id>https://haskell.jp/blog/posts/2019/hiw-copilot.html</id><title type="text">HIW 2019で発表された、Copilotという内部DSLについて</title><updated>2019-10-01T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/hiw-copilot.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -6607,203 +6631,7 @@ PartialOptions
 &lt;li&gt;&lt;a href=&#34;https://medium.com/@jonathangfischoff/the-partial-options-monoid-pattern-31914a71fc67&#34;&gt;The Partial Options Monoid&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://kazu-yamamoto.hatenablog.jp/entry/2018/11/29/155311&#34;&gt;SemigroupがMonoidに恋するとき&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://qiita.com/philopon/items/a29717af62831d3c8c07&#34;&gt;optparse-applicativeをふわっと使う&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html</id><title type="text">Re: Marp のすゝめ</title><updated>2019-02-04T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2019-02-04-re-recommend-marp.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
-    &lt;p&gt;&lt;strong&gt;2019.4.6 Marp-core-0.6.0 での更新を反映した&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&#34;section&#34;&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://yhatt.github.io/marp/&#34;&gt;Marp&lt;/a&gt; というのは Markdown 記法で書けるスライド作成ツールです．&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Markdown 記法で手軽に書ける&lt;/li&gt;
-&lt;li&gt;見た目が綺麗&lt;/li&gt;
-&lt;li&gt;画像の拡縮が可能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;などの特徴から個人的にかなり重宝しています． その辺りは昔&lt;a href=&#34;/posts/2016-12-14-recommend-marp.html&#34;&gt;記事にしました&lt;/a&gt;．&lt;/p&gt;
-&lt;p&gt;しかし，現在 Marp は今後メンテナンスをしないという明言をし，新しくゼロから &lt;a href=&#34;https://github.com/marp-team/marp&#34;&gt;Marp Next&lt;/a&gt; というのを作っているようです． そのあたりの話は作者の記事にすこーしずつ書いてあります:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://yhatt.hatenablog.jp/entry/2017/02/27/markdown-it-incremental-dom_というプラグインを作ってます&#34;&gt;markdown-it-incremental-dom というプラグインを作ってます - YHATT (わいはっと)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://qiita.com/yhatt/items/874d5bfa919c32728403&#34;&gt;Puppeteer &amp;amp; Carlo を Markdown スライド作成 CLI ツール (Marp CLI) で活用する - Qiita&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;時折，リポジトリをチェックして更新がないかを見ていたのですが，いよいよ Web UI まで出来上がっているので，現状のを試しに使ってみることにしました，というメモです．&lt;/p&gt;
-&lt;h1 id=&#34;section-1&#34;&gt;&lt;/h1&gt;
-&lt;p&gt;ちなみに，本記事での Marp Next のバージョンは &lt;code&gt;marp-cli-0.6&lt;/code&gt; ぐらいを想定しています(現在開発が活発なので既に古くなっているかも)．&lt;/p&gt;
-&lt;h2 id=&#34;marp-next&#34;&gt;Marp Next&lt;/h2&gt;
-&lt;p&gt;新しい Marp の大きな目的は，よりメンテナブルな設計になることのようで，旧 Marp と異なり，機能ごとに個別の JS パッケージとなっている:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th style=&#34;text-align: center;&#34;&gt;リポジトリ&lt;/th&gt;
-&lt;th&gt;備考&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marp&#34;&gt;marp-team/marp&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Marp 全体を取りまとめるリポジトリ&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marpit&#34;&gt;Marpit&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markdown からスライドの HTML へ変換する部分 (画像の拡縮などもココ)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marp-core&#34;&gt;Marp Core&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Markdown 以外の拡張構文 (e.g. LaTeX, Emoji, Embed HTML)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marp-cli&#34;&gt;Marp CLI&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Marp の CLI ツール&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;https://github.com/marp-team/marp-web&#34;&gt;Marp Web&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;Marp の Web UI (まだベータっぽい)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td style=&#34;text-align: center;&#34;&gt;Marp Desktop&lt;/td&gt;
-&lt;td&gt;Marp Web を Electron でラップして Desktop アプリにしたいらしい (まだ無い)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;(どうでも良いですが，モノリポにした方良かったと思う… Marpit で更新があると全てのリポジトリで PR を出して更新する必要があるので…)&lt;/p&gt;
-&lt;p&gt;ちなみに，&lt;a href=&#34;https://github.com/yhatt/marp/issues?q=is%3Aopen+is%3Aissue+label%3A%22Supports+in+Marp+Next%22&#34;&gt;旧 Marp のリポジトリの Issue ラベルに &lt;code&gt;Marp Next&lt;/code&gt; や &lt;code&gt;Supports in Marp Next&lt;/code&gt; というのができている&lt;/a&gt;． 旧 Marp の Issue には，かなり要望っぽい Issue がたくさんあり，その中でも Marp Next では対応する予定のものには &lt;code&gt;Support in Marp Next&lt;/code&gt; を付けたようだ．&lt;/p&gt;
-&lt;h3 id=&#34;旧-marp-との非互換な機能&#34;&gt;旧 Marp との非互換な機能&lt;/h3&gt;
-&lt;p&gt;これらは旧 Marp ユーザーしか意味ないが，適当に書き連ねていおく:&lt;/p&gt;
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;&lt;code&gt;==AAA==&lt;/code&gt; というハイライト機能がない（辛い）&lt;/li&gt;
-&lt;li&gt;打ち消し線記法 &lt;code&gt;~~AAA~~&lt;/code&gt; もない&lt;/li&gt;
-&lt;li&gt;画像の拡縮ルール (Marpit)
-&lt;ul&gt;
-&lt;li&gt;より&lt;a href=&#34;https://marpit.marp.app/image-syntax&#34;&gt;細かいルールができて&lt;/a&gt;書きやすくなった&lt;/li&gt;
-&lt;li&gt;しかし前のは記法は非互換&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;center&lt;/code&gt; がないので中央寄せができない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;!-- *template: xxx --&amp;gt;&lt;/code&gt; のようなそのページだけ機能追加 (Marpit)
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;!-- _class: xxx --&amp;gt;&lt;/code&gt; のように先頭にアンダースコア &lt;code&gt;_&lt;/code&gt; を付けるスタイルになった&lt;/li&gt;
-&lt;li&gt;ちなみに &lt;code&gt;&amp;lt;!-- $theme: xxx --&amp;gt;&lt;/code&gt; はあるっぽい&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;テーマの取り扱い (Marpit ??)
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;#&lt;/code&gt; だけだと中央寄せなどになっていた機能がなくなった&lt;/li&gt;
-&lt;li&gt;それらはテーマのイチ &lt;code&gt;class&lt;/code&gt; となっている&lt;/li&gt;
-&lt;li&gt;前の &lt;code&gt;template&lt;/code&gt; も &lt;code&gt;class&lt;/code&gt; なので組み合わせれない&lt;/li&gt;
-&lt;li&gt;明示的に指定できるようになったのは嬉しい&lt;/li&gt;
-&lt;li&gt;class を複数設定できるようになった！ (&lt;a href=&#34;https://github.com/marp-team/marp-core/pull/69&#34;&gt;marp-core-0.6.0~&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;KaTeX のバージョンアップ (Marp Core)
-&lt;ul&gt;
-&lt;li&gt;0.6.0 =&amp;gt; 0.10.0&lt;/li&gt;
-&lt;li&gt;0.6.0 だと全然 LaTeX 記法をサポートしていないので&lt;a href=&#34;https://katex.org/docs/supported.html&#34;&gt;助かる&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;まぁ僕はフォークしてバージョンをあげてたけど&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;スライドのサイズ・縦横比 (Marpit)
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/marp-team/marpit/blob/9ab8e153e66db3a55e8edf9fec1356dd60ddf9e6/docs/theme-css.md#slide-size&#34;&gt;テーマごとになったぽい&lt;/a&gt;？&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://marpit.marp.app/directives?id=tweak-theme-style&#34;&gt;&lt;code&gt;style&lt;/code&gt;&lt;/a&gt; で上書きすると変な余白ができる&lt;/li&gt;
-&lt;li&gt;どっちにせよ前の &lt;code&gt;&amp;lt;!-- size: 4:3 --&amp;gt;&lt;/code&gt; みたいなのはできないっぽい&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;ちなみに，コードが全部 CoffeScript から TypeScript になってた．&lt;/p&gt;
-&lt;h2 id=&#34;cli-を試す&#34;&gt;CLI を試す&lt;/h2&gt;
-&lt;p&gt;リッチすぎてビビる&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;README の通りで動いた (Mac, npx)
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;npx @marp-team/marp-cli slide.md&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/marpteam/marp-cli/&#34;&gt;Docker もサポートされてる&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;ただし一部機能に制限があるっぽい&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Markdown から HTML を生成する&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--pdf&lt;/code&gt; オプションで PDF を生成する
-&lt;ul&gt;
-&lt;li&gt;ただし &lt;strong&gt;&lt;a href=&#34;https://github.com/marp-team/marp-cli/pull/10&#34;&gt;セキュリティの関係&lt;/a&gt;でデフォルトではローカルファイルの画像などを埋め込めない&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;そのためローカル画像を使うには &lt;code&gt;--allow-local-files&lt;/code&gt; をつける&lt;/li&gt;
-&lt;li&gt;日本語フォントも変になっている気がする&lt;/li&gt;
-&lt;li&gt;日本語検索もダメっぽい&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--watch&lt;/code&gt; オプションで Markdown の変更を検知し再生成する&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--server&lt;/code&gt; オプションで &lt;code&gt;localhost:8080&lt;/code&gt; で閲覧やPDFの生成ができる (watch もされます)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--preview&lt;/code&gt; でプレビューモード
-&lt;ul&gt;
-&lt;li&gt;待望の！！&lt;/li&gt;
-&lt;li&gt;ブラウザの全画面モードを使ってるみたい&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--theme&lt;/code&gt; でカスタムテーマを設定可能 (CSS)&lt;/li&gt;
-&lt;li&gt;CLI のオプションを使わずに&lt;a href=&#34;https://github.com/marp-team/marp-cli#configuration-file&#34;&gt;設定ファイルでも設定可能&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;package.json&lt;/code&gt; &lt;code&gt;.marprc.yml&lt;/code&gt; &lt;code&gt;marp.config.js&lt;/code&gt; のどれでも&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;cli-netlify-を試す&#34;&gt;CLI + Netlify を試す&lt;/h2&gt;
-&lt;p&gt;試した:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/matsubara0507/pub-slides&#34;&gt;matsubara0507/pub-slides - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://matsubara0507-slides.netlify.com/&#34;&gt;&lt;img src=&#34;/assets/re-recommend-marp/pub-slides-with-marp.jpg&#34; alt=&#34;image.png&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;試し方: Marp の作者の&lt;a href=&#34;https://github.com/yhatt/marp-cli-example&#34;&gt;リポジトリ&lt;/a&gt;の &lt;code&gt;Deploy to netlify&lt;/code&gt; をクリックするだけ．&lt;/p&gt;
-&lt;p&gt;この方法の場合，リポジトリの &lt;code&gt;PITCHME.md&lt;/code&gt; を &lt;code&gt;index.html&lt;/code&gt; に変換する． marp-cli の設定は &lt;code&gt;package.yml&lt;/code&gt; に書いてある． &lt;a href=&#34;https://github.com/marp-team/marp-cli#options&#34;&gt;設定方法&lt;/a&gt;はこれを参照．&lt;/p&gt;
-&lt;p&gt;僕はできれば，複数のスライドを一つのリポジトリに置きたかった． ので，僕のリポジトリでは:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;slides&lt;/code&gt; 以下の &lt;code&gt;*.md&lt;/code&gt; を全部変換
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;index.md&lt;/code&gt; が &lt;code&gt;index.html&lt;/code&gt; のスライドになる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;後述する自作テーマをサブモジュールで設定&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;slides/assets&lt;/code&gt; にある画像を &lt;code&gt;public&lt;/code&gt; にコピーしてる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;のように少しだけ設定を書き換えた．&lt;/p&gt;
-&lt;h2 id=&#34;web-ui-を試す&#34;&gt;Web UI を試す&lt;/h2&gt;
-&lt;p&gt;すでに&lt;a href=&#34;https://web.marp.app/&#34;&gt;ここ&lt;/a&gt;から試せる． 手元で試すなら:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/marp-team/marp-web.git
-cd marp-web
-yarn install
-yarn start&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;でできた．&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/assets/re-recommend-marp/editing_marp_next.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ファイルの読み込みや保存が可能&lt;/li&gt;
-&lt;li&gt;プレゼンテーションモードは(まだ)なかった&lt;/li&gt;
-&lt;li&gt;PDFのエクスポートはブラウザの印刷機能を使うようだった&lt;/li&gt;
-&lt;li&gt;カスタムテーマの設定などはまだできない？？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;テーマを移植する&#34;&gt;テーマを移植する&lt;/h2&gt;
-&lt;p&gt;オリジナルテーマを作ってたので Marp Next にも移植した:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;olive&lt;/li&gt;
-&lt;li&gt;colors&lt;/li&gt;
-&lt;li&gt;haskell&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matsubara0507/marp-themes&#34;&gt;marp-themes&lt;/a&gt; というリポジトリを作り，そこに置いてある． やったことは:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/marp-team/marp-core/blob/26f2402d443d26af387adb0ee86cafa1149beb34/themes/gaia.scss&#34;&gt;gaia の scss&lt;/a&gt; を持ってきて主に色を変更
-&lt;ul&gt;
-&lt;li&gt;カスタムテーマとして指定できるのは CSS だけなので &lt;code&gt;scss&lt;/code&gt; コマンドで手動変換する&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;画像の中央寄せをできるようにした
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;# ![](path/to/image.jpg)&lt;/code&gt; とすると中央寄せになるようにした&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;h1&lt;/code&gt; から &lt;code&gt;h6&lt;/code&gt; のどれでも良いです&lt;/li&gt;
-&lt;li&gt;ただし，雑に &lt;code&gt;img&lt;/code&gt; タグに適用してるので emoji を含ませるとずれる…&lt;/li&gt;
-&lt;li&gt;marpit に修正入れてもらった方が良いかな&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;lead&lt;/code&gt; + &lt;code&gt;invert&lt;/code&gt; などの class を作っておいた
-&lt;ul&gt;
-&lt;li&gt;scss で書いてるので &lt;code&gt;lead&lt;/code&gt; を適当に mixi-in にして include するだけ&lt;/li&gt;
-&lt;li&gt;これもできれば &lt;code&gt;class&lt;/code&gt; の組み合わせができるようになって欲しい&lt;/li&gt;
-&lt;li&gt;marp-core-0.6.0 から class を複数設定できるようになったので、これはいらない ;)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;olive&#34;&gt;Olive&lt;/h3&gt;
-&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/797Uraln5Fo9gD&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;h3 id=&#34;colors&#34;&gt;Colors&lt;/h3&gt;
-&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/2kOvCIcUpOzKRg&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;h3 id=&#34;haskell&#34;&gt;Haskell&lt;/h3&gt;
-&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/kJqmkk54SJnaky&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
-&lt;/iframe&gt;
-&lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-&lt;p&gt;もう既に十分使える状態になっていました． すごい！&lt;/p&gt;
-  &lt;/div&gt;</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/01/30/Haskell_Ctrl-C_%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D</id><title type="text">Haskell Windows Ctrl-C 動作確認</title><updated>2019-01-30T23:53:07+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/01/30/Haskell_Ctrl-C_%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D"/><summary type="html">コード コードは前回記事と同じです（再掲）。 Git リポジトリーはこちら。 import Control.Concurrent import Control.Monad import System.Exit import System.IO import System.Win32.Console.CtrlHandler main :: IO () main = do tid &lt;- myThreadId let handler event = do if event == cTRL_C_EVENT then do putStrLn &#34;goodbye!&#34; killThread tid pure …</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/01/25/Haskell_%E3%81%A7_Ctrl-C_%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%EF%BC%88Windows%EF%BC%89</id><title type="text">Haskell で Ctrl-C を制御する（Windows）</title><updated>2019-01-25T11:26:15+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/01/25/Haskell_%E3%81%A7_Ctrl-C_%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%EF%BC%88Windows%EF%BC%89"/><summary type="html">Ctrl-C 等の割り込みの扱い方です。 tl;dr System.Win32.Console.CtrlHandler を使います。 Ctrl-C が押されたらクロージングの処理を伴って終了するプログラムを書いてみます。 import Control.Concurrent import Control.Monad import System.Exit import System.IO import System.Win32.Console.CtrlHandler main :: IO () main = do tid &lt;- myThreadId let handler event = do i…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20130305/1362457646</id><title type="text">Haskell での可変長引数</title><updated>2019-01-25T01:40:21+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20130305/1362457646"/><summary type="html">『簡約! λカ娘(4)』読んだ！おもしろかった！で、その中に「Haskell でも printf じゃないか！？」っていう @nushio さんの記事で、可変長引数関数（可変個引数関数）の話があって自分なりに悩んで納得したので忘れないようにメモしておこうと思う。</summary></entry><entry><id>http://syocy.hatenablog.com/entry/try-linear-types</id><title type="text">GHCの線形型プロトタイプを試すだけ</title><updated>2019-01-08T02:01:09+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/try-linear-types"/><summary type="html">GHCに線形型を導入すると以下のような良い事があるらしい。 リソース安全性: ファイルハンドル、ソケット、DBコネクションのようなリソースについて、これらを提供するAPIの設計者が安全な使用を強制できる。リソース解放後のアクセス、二重解放、解放忘れを防止することができる。 レイテンシ: リソースAPIの実装をうまくやるとoff-heap(GCの対象外)でリソースを確保・解放できる。GC対象が少なくなることによりGCによってプログラムが停止する時間を減らせる。 並列性: 過剰な直列化を強要しない。リソース安全性を保ちつつもできる限り並列化できる。 詳しくはproposal。 この記事では線形型G…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/27/213853</id><title type="text">戊戌の追憶</title><updated>2018-12-28T09:01:05+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/27/213853"/><summary type="html">この記事は、筆者が過ごした2018年を簡潔に振り返り、その経験を糧とすることを狙う。 1月 第二鰓弓由来側頸嚢胞という先天異常が原因で首が化膿し、激痛に苦しんでいた。対人関係のトラブルなどもあり軽い錯乱状態にあったのか、自分が知らない間に高い買い物をすることがあった。 drinkery: Boozy streaming library というストリーム処理ライブラリを作った。当初はすべて酒関係の用語を用いていたが、批判を受けてそこはやめた。今思えばそれで正解だった気がする。 パフォーマンスはモナディックなAPIを持つライブラリの中ではトップクラスで、双方向性や多入力多出力のような発展的な機能も…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/21/201108</id><title type="text">Elias-Fano encoding: 単調増加する数列をほぼ簡潔に表現する</title><updated>2018-12-22T01:15:08+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/21/201108"/><summary type="html">Haskell Advent Calendar 2018 20日目 単調増加する自然数の列を、最低限のビット数で表現するための興味深いテクニックと、Haskellによる実装を紹介する。 Elias-Fano encoding この手法は、簡潔データ構造に分類されるもの一つであるが、厳密には条件を満たさないため疑似簡潔データ構造と呼ばれる。1970年代、Peter EliasとRobert Mario Fanoによって独立して発見された。 例題として1, 1, 4, 10, 17, 22, 23, 30という列をエンコードしてみよう。まず、それぞれの数を上位3ビットと下位2ビットに分割する。列の…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-16T14:31:09.194+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
+&lt;/ul&gt;</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/01/30/Haskell_Ctrl-C_%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D</id><title type="text">Haskell Windows Ctrl-C 動作確認</title><updated>2019-01-30T23:53:07+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/01/30/Haskell_Ctrl-C_%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D"/><summary type="html">コード コードは前回記事と同じです（再掲）。 Git リポジトリーはこちら。 import Control.Concurrent import Control.Monad import System.Exit import System.IO import System.Win32.Console.CtrlHandler main :: IO () main = do tid &lt;- myThreadId let handler event = do if event == cTRL_C_EVENT then do putStrLn &#34;goodbye!&#34; killThread tid pure …</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/01/25/Haskell_%E3%81%A7_Ctrl-C_%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%EF%BC%88Windows%EF%BC%89</id><title type="text">Haskell で Ctrl-C を制御する（Windows）</title><updated>2019-01-25T11:26:15+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/01/25/Haskell_%E3%81%A7_Ctrl-C_%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%EF%BC%88Windows%EF%BC%89"/><summary type="html">Ctrl-C 等の割り込みの扱い方です。 tl;dr System.Win32.Console.CtrlHandler を使います。 Ctrl-C が押されたらクロージングの処理を伴って終了するプログラムを書いてみます。 import Control.Concurrent import Control.Monad import System.Exit import System.IO import System.Win32.Console.CtrlHandler main :: IO () main = do tid &lt;- myThreadId let handler event = do i…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/20130305/1362457646</id><title type="text">Haskell での可変長引数</title><updated>2019-01-25T01:40:21+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/20130305/1362457646"/><summary type="html">『簡約! λカ娘(4)』読んだ！おもしろかった！で、その中に「Haskell でも printf じゃないか！？」っていう @nushio さんの記事で、可変長引数関数（可変個引数関数）の話があって自分なりに悩んで納得したので忘れないようにメモしておこうと思う。</summary></entry><entry><id>http://syocy.hatenablog.com/entry/try-linear-types</id><title type="text">GHCの線形型プロトタイプを試すだけ</title><updated>2019-01-08T02:01:09+09:00</updated><author><name>syocy</name></author><link href="http://syocy.hatenablog.com/entry/try-linear-types"/><summary type="html">GHCに線形型を導入すると以下のような良い事があるらしい。 リソース安全性: ファイルハンドル、ソケット、DBコネクションのようなリソースについて、これらを提供するAPIの設計者が安全な使用を強制できる。リソース解放後のアクセス、二重解放、解放忘れを防止することができる。 レイテンシ: リソースAPIの実装をうまくやるとoff-heap(GCの対象外)でリソースを確保・解放できる。GC対象が少なくなることによりGCによってプログラムが停止する時間を減らせる。 並列性: 過剰な直列化を強要しない。リソース安全性を保ちつつもできる限り並列化できる。 詳しくはproposal。 この記事では線形型G…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/27/213853</id><title type="text">戊戌の追憶</title><updated>2018-12-28T09:01:05+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/27/213853"/><summary type="html">この記事は、筆者が過ごした2018年を簡潔に振り返り、その経験を糧とすることを狙う。 1月 第二鰓弓由来側頸嚢胞という先天異常が原因で首が化膿し、激痛に苦しんでいた。対人関係のトラブルなどもあり軽い錯乱状態にあったのか、自分が知らない間に高い買い物をすることがあった。 drinkery: Boozy streaming library というストリーム処理ライブラリを作った。当初はすべて酒関係の用語を用いていたが、批判を受けてそこはやめた。今思えばそれで正解だった気がする。 パフォーマンスはモナディックなAPIを持つライブラリの中ではトップクラスで、双方向性や多入力多出力のような発展的な機能も…</summary></entry><entry><id>http://fumieval.hatenablog.com/entry/2018/12/21/201108</id><title type="text">Elias-Fano encoding: 単調増加する数列をほぼ簡潔に表現する</title><updated>2018-12-22T01:15:08+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="http://fumieval.hatenablog.com/entry/2018/12/21/201108"/><summary type="html">Haskell Advent Calendar 2018 20日目 単調増加する自然数の列を、最低限のビット数で表現するための興味深いテクニックと、Haskellによる実装を紹介する。 Elias-Fano encoding この手法は、簡潔データ構造に分類されるもの一つであるが、厳密には条件を満たさないため疑似簡潔データ構造と呼ばれる。1970年代、Peter EliasとRobert Mario Fanoによって独立して発見された。 例題として1, 1, 4, 10, 17, 22, 23, 30という列をエンコードしてみよう。まず、それぞれの数を上位3ビットと下位2ビットに分割する。列の…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2018-12-16T14:31:09.194+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
 
 主に自分向けの防備録です。windows10上で確認。インストーラーはここからDLする。
 
