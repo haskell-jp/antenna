@@ -19,8 +19,10 @@ import           Data.Extensible
 import           Data.Extensible.GetOpt
 import qualified Data.Yaml              as Y
 import           GetOpt                 (withGetOpt')
+import qualified Git
 import           Mix
 import           Mix.Plugin.Logger      as MixLogger
+import qualified Mix.Plugin.Shell       as MixShell
 import qualified ScrapBook
 import qualified Version
 
@@ -30,15 +32,17 @@ main = withGetOpt' "[options] [input-file]" opts $ \r args usage ->
      | r ^. #version -> hPutBuilder stdout (Version.build version)
      | otherwise     -> runCmd r $ listToMaybe args
   where
-    opts = #help    @= helpOpt
-        <: #version @= versionOpt
-        <: #verbose @= verboseOpt
+    opts = #help       @= helpOpt
+        <: #version    @= versionOpt
+        <: #verbose    @= verboseOpt
+        <: #withCommit @= withCommitOpt
         <: nil
 
 type Options = Record
-  '[ "help"    >: Bool
-   , "version" >: Bool
-   , "verbose" >: Bool
+  '[ "help"       >: Bool
+   , "version"    >: Bool
+   , "verbose"    >: Bool
+   , "withCommit" >: Bool
    ]
 
 helpOpt :: OptDescr' Bool
@@ -50,9 +54,13 @@ versionOpt = optFlag [] ["version"] "Show version"
 verboseOpt :: OptDescr' Bool
 verboseOpt = optFlag ['v'] ["verbose"] "Enable verbose mode: verbosity level \"debug\""
 
+withCommitOpt :: OptDescr' Bool
+withCommitOpt = optFlag [] ["with-commit"] "Create commit after generate files"
+
 type Env = Record
   '[ "logger" >: LogFunc
    , "config" >: Config
+   , "work"   >: FilePath
    ]
 
 runCmd :: Options -> Maybe FilePath -> IO ()
@@ -62,8 +70,11 @@ runCmd opts (Just path) = do
   let plugin = hsequence
              $ #logger <@=> MixLogger.buildPlugin logOpts
             <: #config <@=> pure config
+            <: #work   <@=> pure "."
             <: nil
-  Mix.run plugin $ generate path
+  Mix.run plugin $ do
+    paths <- generate path
+    when (opts ^. #withCommit) $ commitGeneratedFiles paths
   where
     logOpts = #handle @= stdout
            <: #verbose @= (opts ^. #verbose)
@@ -72,7 +83,7 @@ runCmd opts (Just path) = do
 readConfig :: FilePath -> IO Config
 readConfig = either (error . show) pure <=< Y.decodeFileEither
 
-generate :: FilePath -> RIO Env ()
+generate :: FilePath -> RIO Env [FilePath]
 generate path = do
   config <- asks (view #config)
   let sites = fmap toSite $ config ^. #sites
@@ -95,6 +106,8 @@ generate path = do
     (siteToHtml config)
     (L.sortOn (view #title) sites)
 
+  pure [feedName, "index.html", "sites.html"]
+
 runCollector :: ScrapBook.Collecter a -> RIO Env a
 runCollector act = do
   logger <- asks (view #logger)
@@ -107,3 +120,11 @@ handler e = MixLogger.logError (displayShow e) >> pure []
 
 feed' :: ScrapBook.Format
 feed' = embedAssoc $ #feed @= ()
+
+commitGeneratedFiles :: [FilePath] -> RIO Env ()
+commitGeneratedFiles paths = MixShell.exec $ do
+  Git.add $ fromString <$> paths
+  changes <- Git.diffFileNames ["--staged"]
+  when (not $ null changes) $ Git.commit ["-m", message]
+  where
+    message = "[skip ci] Update planet haskell. See https://haskell.jp/antenna/ for new entries!"
