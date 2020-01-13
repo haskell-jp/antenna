@@ -73,6 +73,7 @@ runCmd opts (Just path) = do
             <: #work   <@=> pure "."
             <: nil
   Mix.run plugin $ do
+    when (opts ^. #withCommit) $ MixShell.exec (Git.pull [])
     paths <- generate path
     when (opts ^. #withCommit) $ commitGeneratedFiles paths
   where
