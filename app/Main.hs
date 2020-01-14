@@ -35,6 +35,7 @@ main = withGetOpt' "[options] [input-file]" opts $ \r args usage ->
     opts = #help       @= helpOpt
         <: #version    @= versionOpt
         <: #verbose    @= verboseOpt
+        <: #withCopy   @= withCopyOpt
         <: #withCommit @= withCommitOpt
         <: #withPush   @= withPushOpt
         <: nil
@@ -43,6 +44,7 @@ type Options = Record
   '[ "help"       >: Bool
    , "version"    >: Bool
    , "verbose"    >: Bool
+   , "withCopy"   >: Bool
    , "withCommit" >: Bool
    , "withPush"   >: Bool
    ]
@@ -56,8 +58,11 @@ versionOpt = optFlag [] ["version"] "Show version"
 verboseOpt :: OptDescr' Bool
 verboseOpt = optFlag ['v'] ["verbose"] "Enable verbose mode: verbosity level \"debug\""
 
+withCopyOpt :: OptDescr' Bool
+withCopyOpt = optFlag [] ["with-copy"] "Copy files by another branch before generate HTML"
+
 withCommitOpt :: OptDescr' Bool
-withCommitOpt = optFlag [] ["with-commit"] "Create commit after generate files"
+withCommitOpt = optFlag [] ["with-commit"] "Create commit after generate HTML"
 
 withPushOpt :: OptDescr' Bool
 withPushOpt = optFlag [] ["with-push"] "Push commit after create commit"
@@ -79,9 +84,10 @@ runCmd opts (Just path) = do
             <: nil
   Mix.run plugin $ do
     when (opts ^. #withCommit) $ MixShell.exec (Git.pull [])
+    when (opts ^. #withCopy)   $ copyFilesByAnotherBranch
     generate path
     when (opts ^. #withCommit) $ commitGeneratedFiles
-    when (opts ^. #withPush) $ pushCommit
+    when (opts ^. #withPush)   $ pushCommit
   where
     logOpts = #handle @= stdout
            <: #verbose @= (opts ^. #verbose)
@@ -125,6 +131,13 @@ handler e = MixLogger.logError (displayShow e) >> pure []
 
 feed' :: ScrapBook.Format
 feed' = embedAssoc $ #feed @= ()
+
+copyFilesByAnotherBranch :: RIO Env ()
+copyFilesByAnotherBranch = do
+  targets <- view #copy <$> asks (gitConfig . view #config)
+  MixLogger.logDebug $ "copy files by " <> displayShow targets
+  MixShell.exec $ forM_ (splitCopyTarget <$> targets) $ \(branch, path) ->
+    Git.checkout [branch, "--", path]
 
 commitGeneratedFiles :: RIO Env ()
 commitGeneratedFiles = do

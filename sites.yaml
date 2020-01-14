@@ -6,7 +6,15 @@ logo: https://haskell.jp/img/logo.svg
 favicon: https://haskell.jp/img/favicon.png
 git:
   branch: gh-pages
-  files: ["index.html", "sites.html", "fees.xml"]
+  files:
+    - sites.yaml
+    - image
+    - index.html
+    - sites.html
+    - feed.xml
+  copy:
+    - master:sites.yaml
+    - master:image
 
 sites:
   - title: "Haskellタグが付けられた新着投稿 - Qiita"

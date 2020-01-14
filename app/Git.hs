@@ -7,6 +7,9 @@ import qualified RIO.Text as Text
 
 import           Shelly   hiding (FilePath, unlessM)
 
+checkout :: [Text] -> Sh ()
+checkout = command1_ "git" [] "checkout"
+
 pull :: [Text] -> Sh ()
 pull = command1_ "git" [] "pull"
 
