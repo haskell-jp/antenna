@@ -129,6 +129,7 @@ feed' = embedAssoc $ #feed @= ()
 commitGeneratedFiles :: RIO Env ()
 commitGeneratedFiles = do
   files <- view #files <$> asks (gitConfig . view #config)
+  MixLogger.logDebug $ "create commit with " <> displayShow files
   MixShell.exec $ do
     Git.add files
     changes <- Git.diffFileNames ["--staged"]
@@ -139,4 +140,5 @@ commitGeneratedFiles = do
 pushCommit :: RIO Env ()
 pushCommit = do
   branch <- view #branch <$> asks (gitConfig . view #config)
+  MixLogger.logDebug $ "push commit to origin/" <> display branch
   MixShell.exec (Git.push ["origin", branch])
