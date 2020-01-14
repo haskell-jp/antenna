@@ -36,6 +36,7 @@ main = withGetOpt' "[options] [input-file]" opts $ \r args usage ->
         <: #version    @= versionOpt
         <: #verbose    @= verboseOpt
         <: #withCopy   @= withCopyOpt
+        <: #skip       @= skipOpt
         <: #withCommit @= withCommitOpt
         <: #withPush   @= withPushOpt
         <: nil
@@ -45,6 +46,7 @@ type Options = Record
    , "version"    >: Bool
    , "verbose"    >: Bool
    , "withCopy"   >: Bool
+   , "skip"       >: Bool
    , "withCommit" >: Bool
    , "withPush"   >: Bool
    ]
@@ -60,6 +62,9 @@ verboseOpt = optFlag ['v'] ["verbose"] "Enable verbose mode: verbosity level \"d
 
 withCopyOpt :: OptDescr' Bool
 withCopyOpt = optFlag [] ["with-copy"] "Copy files by another branch before generate HTML"
+
+skipOpt :: OptDescr' Bool
+skipOpt = optFlag [] ["skip"] "Skip generate HTML"
 
 withCommitOpt :: OptDescr' Bool
 withCommitOpt = optFlag [] ["with-commit"] "Create commit after generate HTML"
@@ -85,7 +90,7 @@ runCmd opts (Just path) = do
   Mix.run plugin $ do
     when (opts ^. #withCommit) $ MixShell.exec (Git.pull [])
     when (opts ^. #withCopy)   $ copyFilesByAnotherBranch
-    generate path
+    when (not $ opts ^. #skip) $ generate path
     when (opts ^. #withCommit) $ commitGeneratedFiles
     when (opts ^. #withPush)   $ pushCommit
   where
