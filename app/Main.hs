@@ -36,6 +36,7 @@ main = withGetOpt' "[options] [input-file]" opts $ \r args usage ->
         <: #version    @= versionOpt
         <: #verbose    @= verboseOpt
         <: #withCommit @= withCommitOpt
+        <: #withPush   @= withPushOpt
         <: nil
 
 type Options = Record
@@ -43,6 +44,7 @@ type Options = Record
    , "version"    >: Bool
    , "verbose"    >: Bool
    , "withCommit" >: Bool
+   , "withPush"   >: Bool
    ]
 
 helpOpt :: OptDescr' Bool
@@ -56,6 +58,9 @@ verboseOpt = optFlag ['v'] ["verbose"] "Enable verbose mode: verbosity level \"d
 
 withCommitOpt :: OptDescr' Bool
 withCommitOpt = optFlag [] ["with-commit"] "Create commit after generate files"
+
+withPushOpt :: OptDescr' Bool
+withPushOpt = optFlag [] ["with-push"] "Push commit after create commit"
 
 type Env = Record
   '[ "logger" >: LogFunc
@@ -76,6 +81,7 @@ runCmd opts (Just path) = do
     when (opts ^. #withCommit) $ MixShell.exec (Git.pull [])
     paths <- generate path
     when (opts ^. #withCommit) $ commitGeneratedFiles paths
+    when (opts ^. #withPush) $ MixShell.exec (Git.push [])
   where
     logOpts = #handle @= stdout
            <: #verbose @= (opts ^. #verbose)
