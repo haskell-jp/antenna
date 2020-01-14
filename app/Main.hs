@@ -30,13 +30,13 @@ main :: IO ()
 main = withGetOpt' "[options] [input-file]" opts $ \r args usage ->
   if | r ^. #help    -> hPutBuilder stdout (fromString usage)
      | r ^. #version -> hPutBuilder stdout (Version.build version)
-     | otherwise     -> runCmd r $ listToMaybe args
+     | otherwise     -> runCmd r (listToMaybe args)
   where
     opts = #help       @= helpOpt
         <: #version    @= versionOpt
         <: #verbose    @= verboseOpt
-        <: #withCopy   @= withCopyOpt
         <: #skip       @= skipOpt
+        <: #withCopy   @= withCopyOpt
         <: #withCommit @= withCommitOpt
         <: #withPush   @= withPushOpt
         <: nil
@@ -45,8 +45,8 @@ type Options = Record
   '[ "help"       >: Bool
    , "version"    >: Bool
    , "verbose"    >: Bool
-   , "withCopy"   >: Bool
    , "skip"       >: Bool
+   , "withCopy"   >: Bool
    , "withCommit" >: Bool
    , "withPush"   >: Bool
    ]
@@ -60,11 +60,11 @@ versionOpt = optFlag [] ["version"] "Show version"
 verboseOpt :: OptDescr' Bool
 verboseOpt = optFlag ['v'] ["verbose"] "Enable verbose mode: verbosity level \"debug\""
 
-withCopyOpt :: OptDescr' Bool
-withCopyOpt = optFlag [] ["with-copy"] "Copy files by another branch before generate HTML"
-
 skipOpt :: OptDescr' Bool
 skipOpt = optFlag [] ["skip"] "Skip generate HTML"
+
+withCopyOpt :: OptDescr' Bool
+withCopyOpt = optFlag [] ["with-copy"] "Copy files by another branch before generate HTML"
 
 withCommitOpt :: OptDescr' Bool
 withCommitOpt = optFlag [] ["with-commit"] "Create commit after generate HTML"
