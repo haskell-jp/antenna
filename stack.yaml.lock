@@ -12,12 +12,12 @@ packages:
   original:
     hackage: drinkery-0.4
 - completed:
-    hackage: extensible-0.6.1@sha256:d73a5dc13bd00f44ace729f83ce868e81a45ea31c7453a6f8a4a9b5b0591d600,2860
+    hackage: extensible-0.7@sha256:12dfa21548aba9f3b02a2f708a935240bae43383945f41e4e9054f37e421035b,2859
     pantry-tree:
-      size: 2354
-      sha256: 9fadd24af89df601f19d57893b513d1742a1942670d6d2e73e79fb4b7aabce65
+      size: 2149
+      sha256: 732d4bf93a15cbbbaa344ae3ee1e2bdbfa12b0c90df9595c18d543da9d29a33c
   original:
-    hackage: extensible-0.6.1
+    hackage: extensible-0.7
 - completed:
     hackage: membership-0@sha256:3a11d8fd53cb1a76bb9273e6c929bbf9d649f109714bf487abb3143be04ddc81,995
     pantry-tree:
@@ -41,9 +41,25 @@ packages:
     subdir: lib/scrapbook-core
     git: https://github.com/matsubara0507/scrapbook.git
     commit: 9ed6874c12ce53b99569a9952253e89859148cf5
+- completed:
+    size: 8280
+    subdir: mix
+    url: https://github.com/matsubara0507/mix.hs/archive/4978a33dec736799b30c14e215f7fa0f29fa2884.tar.gz
+    cabal-file:
+      size: 1110
+      sha256: 946df4a87070784d7ea659f6a3ad2f346f8cf31fea1135fc342feb5a303fa147
+    name: mix
+    version: 0.1.1
+    sha256: 200ad779113f600d351be1e696d419f4332073dfbe76e5a666b82e17cb7e16d5
+    pantry-tree:
+      size: 598
+      sha256: 689bed307dc233a6c50e01f00295a079dc40a4291700646f3ca423d714ba35fc
+  original:
+    subdir: mix
+    url: https://github.com/matsubara0507/mix.hs/archive/4978a33dec736799b30c14e215f7fa0f29fa2884.tar.gz
 snapshots:
 - completed:
-    size: 523884
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/4.yaml
-    sha256: 16f24be248b42c9e16d59db84378836b1e7c239448a041cae46d32daffa45a8b
-  original: lts-14.4
+    size: 524154
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/20.yaml
+    sha256: 2f5099f69ddb6abfe64400fe1e6a604e8e628f55e6837211cd70a81eb0a8fa4d
+  original: lts-14.20
