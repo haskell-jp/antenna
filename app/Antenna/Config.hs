@@ -19,6 +19,7 @@ type Config = Record
    , "logo"        >: Text
    , "favicon"     >: Text
    , "sites"       >: [SiteConfig]
+   , "git"         >: Maybe GitConfig
    ]
 
 toSite :: SiteConfig -> Site
@@ -65,3 +66,17 @@ imagePath config
 imagePath' :: Config -> Site -> Text
 imagePath' config site =
   fromMaybe (config ^. #blankAvatar) $ imagePath =<< (site ^. #logo)
+
+type GitConfig = Record
+  '[ "branch" >: Text
+   , "files"  >: [Text]
+   ]
+
+defaultGitConfig :: GitConfig
+defaultGitConfig
+    = #branch @= "gh-pages"
+   <: #files  @= []
+   <: nil
+
+gitConfig :: Config -> GitConfig
+gitConfig = fromMaybe defaultGitConfig . view #git

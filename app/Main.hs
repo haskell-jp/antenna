@@ -79,9 +79,9 @@ runCmd opts (Just path) = do
             <: nil
   Mix.run plugin $ do
     when (opts ^. #withCommit) $ MixShell.exec (Git.pull [])
-    paths <- generate path
-    when (opts ^. #withCommit) $ commitGeneratedFiles paths
-    when (opts ^. #withPush) $ MixShell.exec (Git.push [])
+    generate path
+    when (opts ^. #withCommit) $ commitGeneratedFiles
+    when (opts ^. #withPush) $ pushCommit
   where
     logOpts = #handle @= stdout
            <: #verbose @= (opts ^. #verbose)
@@ -90,7 +90,7 @@ runCmd opts (Just path) = do
 readConfig :: FilePath -> IO Config
 readConfig = either (error . show) pure <=< Y.decodeFileEither
 
-generate :: FilePath -> RIO Env [FilePath]
+generate :: FilePath -> RIO Env ()
 generate path = do
   config <- asks (view #config)
   let sites = fmap toSite $ config ^. #sites
@@ -113,8 +113,6 @@ generate path = do
     (siteToHtml config)
     (L.sortOn (view #title) sites)
 
-  pure [feedName, "index.html", "sites.html"]
-
 runCollector :: ScrapBook.Collecter a -> RIO Env a
 runCollector act = do
   logger <- asks (view #logger)
@@ -128,10 +126,17 @@ handler e = MixLogger.logError (displayShow e) >> pure []
 feed' :: ScrapBook.Format
 feed' = embedAssoc $ #feed @= ()
 
-commitGeneratedFiles :: [FilePath] -> RIO Env ()
-commitGeneratedFiles paths = MixShell.exec $ do
-  Git.add $ fromString <$> paths
-  changes <- Git.diffFileNames ["--staged"]
-  when (not $ null changes) $ Git.commit ["-m", message]
+commitGeneratedFiles :: RIO Env ()
+commitGeneratedFiles = do
+  files <- view #files <$> asks (gitConfig . view #config)
+  MixShell.exec $ do
+    Git.add files
+    changes <- Git.diffFileNames ["--staged"]
+    when (not $ null changes) $ Git.commit ["-m", message]
   where
     message = "[skip ci] Update planet haskell. See https://haskell.jp/antenna/ for new entries!"
+
+pushCommit :: RIO Env ()
+pushCommit = do
+  branch <- view #branch <$> asks (gitConfig . view #config)
+  MixShell.exec (Git.push ["origin", branch])

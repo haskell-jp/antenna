@@ -4,6 +4,9 @@ feedName: feed.xml
 blankAvatar: ./image/logo/blank-avatar.png
 logo: https://haskell.jp/img/logo.svg
 favicon: https://haskell.jp/img/favicon.png
+git:
+  branch: gh-pages
+  files: ["index.html", "sites.html", "fees.xml"]
 
 sites:
   - title: "Haskellタグが付けられた新着投稿 - Qiita"
