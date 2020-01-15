@@ -33,5 +33,7 @@ executables:
     - extensible >= 0.6
     - githash
     - mix
+    - mix-plugin-shell
     - scrapbook-core >= 0.4
+    - shelly
     - yaml

@@ -6,6 +6,12 @@
     - update extensible package to 0.7
 - Feat: add cli options: `--versions` `--verbose` `--help`
 - Refactor: use mix.hs
+- Feat: advanced cli options
+    - `--with-copy` : copy files by another branch
+    - `--skip` : skip generate HTML
+    - `--with-commit` : create commit with changed files
+    - `--with-push` : push commit
+    - add these settings to config file
 
 #### 0.2.1
 

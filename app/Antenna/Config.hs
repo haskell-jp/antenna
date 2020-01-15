@@ -7,6 +7,7 @@
 module Antenna.Config where
 
 import           RIO
+import qualified RIO.Text        as T
 
 import           Data.Extensible
 import qualified ScrapBook
@@ -19,6 +20,7 @@ type Config = Record
    , "logo"        >: Text
    , "favicon"     >: Text
    , "sites"       >: [SiteConfig]
+   , "git"         >: Maybe GitConfig
    ]
 
 toSite :: SiteConfig -> Site
@@ -65,3 +67,24 @@ imagePath config
 imagePath' :: Config -> Site -> Text
 imagePath' config site =
   fromMaybe (config ^. #blankAvatar) $ imagePath =<< (site ^. #logo)
+
+type GitConfig = Record
+  '[ "branch" >: Text
+   , "files"  >: [Text]
+   , "copy"   >: [Text] -- `branch:path` list
+   ]
+
+defaultGitConfig :: GitConfig
+defaultGitConfig
+    = #branch @= "gh-pages"
+   <: #files  @= []
+   <: #copy   @= []
+   <: nil
+
+gitConfig :: Config -> GitConfig
+gitConfig = fromMaybe defaultGitConfig . view #git
+
+splitCopyTarget :: Text -> (Text, Text)
+splitCopyTarget target = case T.split (== ':') target of
+  [branch, path] -> (branch, path)
+  _              -> (target, "")

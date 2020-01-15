@@ -4,6 +4,17 @@ feedName: feed.xml
 blankAvatar: ./image/logo/blank-avatar.png
 logo: https://haskell.jp/img/logo.svg
 favicon: https://haskell.jp/img/favicon.png
+git:
+  branch: gh-pages
+  files:
+    - sites.yaml
+    - image
+    - index.html
+    - sites.html
+    - feed.xml
+  copy:
+    - master:sites.yaml
+    - master:image
 
 sites:
   - title: "Haskellタグが付けられた新着投稿 - Qiita"
