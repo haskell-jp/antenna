@@ -12,6 +12,7 @@
     - `--with-commit` : create commit with changed files
     - `--with-push` : push commit
     - add these settings to config file
+- Feat: daily, hourly and minutely cron options
 
 #### 0.2.1
 
