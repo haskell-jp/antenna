@@ -1,9 +1,12 @@
-{-# LANGUAGE DataKinds         #-}
-{-# LANGUAGE MultiWayIf        #-}
-{-# LANGUAGE OverloadedLabels  #-}
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE PolyKinds         #-}
-{-# LANGUAGE TypeOperators     #-}
+{-# LANGUAGE DataKinds             #-}
+{-# LANGUAGE FlexibleInstances     #-}
+{-# LANGUAGE LambdaCase            #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedLabels      #-}
+{-# LANGUAGE OverloadedStrings     #-}
+{-# LANGUAGE PolyKinds             #-}
+{-# LANGUAGE TypeOperators         #-}
+{-# OPTIONS_GHC -fno-warn-orphans #-}
 
 module Main where
 
@@ -23,43 +26,28 @@ import qualified Git
 import           Mix
 import           Mix.Plugin.Logger      as MixLogger
 import qualified Mix.Plugin.Shell       as MixShell
+import           Options.Magic
 import qualified ScrapBook
 import           System.Cron            (addJob, execSchedule)
 import qualified Version
 
 main :: IO ()
-main = withGetOpt' "[options] [input-file]" opts $ \r args usage ->
-  if | r ^. #help     -> hPutBuilder stdout (fromString usage)
-     | r ^. #version  -> hPutBuilder stdout (Version.build version)
-     | r ^. #daily    -> runCmd r (listToMaybe args) `withCron` "0 8 * * *"
-     | r ^. #hourly   -> runCmd r (listToMaybe args) `withCron` "0 * * * *"
-     | r ^. #minutely -> runCmd r (listToMaybe args) `withCron` "* * * * *"
-     | otherwise      -> runCmd r (listToMaybe args)
+main = withGetOpt' "[options] [input-file]" opts $ \r args ->
+  let cmdEnchantments = shrink r :: Record CmdEnchantments
+      defaultCmd      = Cmd $ \_ -> runCmd r (listToMaybe args)
+  in exec (peel $ Continue defaultCmd `withEnchantment` cmdEnchantments)
   where
     opts = #help       @= helpOpt
         <: #version    @= versionOpt
-        <: #verbose    @= verboseOpt
         <: #daily      @= dailyOpt
         <: #hourly     @= hourlyOpt
         <: #minutely   @= minutelyOpt
+        <: #verbose    @= verboseOpt
         <: #skip       @= skipOpt
         <: #withCopy   @= withCopyOpt
         <: #withCommit @= withCommitOpt
         <: #withPush   @= withPushOpt
         <: nil
-
-type Options = Record
-  '[ "help"       >: Bool
-   , "version"    >: Bool
-   , "verbose"    >: Bool
-   , "daily"      >: Bool
-   , "hourly"     >: Bool
-   , "minutely"   >: Bool
-   , "skip"       >: Bool
-   , "withCopy"   >: Bool
-   , "withCommit" >: Bool
-   , "withPush"   >: Bool
-   ]
 
 helpOpt :: OptDescr' Bool
 helpOpt = optFlag ['h'] ["help"] "Show this help text"
@@ -91,6 +79,72 @@ withCommitOpt = optFlag [] ["with-commit"] "Create commit after generate HTML"
 withPushOpt :: OptDescr' Bool
 withPushOpt = optFlag [] ["with-push"] "Push commit after create commit"
 
+type Options =
+    Record (CmdEnchantments ++ LogOptEnchantemnts ++ ActionEnchantments)
+
+type CmdEnchantments =
+  '[ "help"       >: Bool
+   , "version"    >: Bool
+   , "daily"      >: Bool
+   , "hourly"     >: Bool
+   , "minutely"   >: Bool
+   ]
+
+newtype Cmd = Cmd { exec :: String -> IO () }
+
+instance Magic (Enchantment (Breakable Cmd)) ("help" >: Bool) where
+  magic _ = enchantmentIfTrue $ onlyOnce $ \_ ->
+    Cmd $ \usage -> hPutBuilder stdout (fromString usage)
+
+instance Magic (Enchantment (Breakable Cmd)) ("version" >: Bool) where
+  magic _ = enchantmentIfTrue $ onlyOnce $ \_ ->
+    Cmd $ \_ -> hPutBuilder stdout (Version.build version)
+
+instance Magic (Enchantment (Breakable Cmd)) ("daily" >: Bool) where
+  magic _ = enchantmentIfTrue $ onlyOnce $ \(Cmd cmd) ->
+    Cmd $ \x -> cmd x `withCron` "0 8 * * *"
+
+instance Magic (Enchantment (Breakable Cmd)) ("hourly" >: Bool) where
+  magic _ = enchantmentIfTrue $ onlyOnce $ \(Cmd cmd) ->
+    Cmd $ \x -> cmd x `withCron` "0 * * * *"
+
+instance Magic (Enchantment (Breakable Cmd)) ("minutely" >: Bool) where
+  magic _ = enchantmentIfTrue $ onlyOnce $ \(Cmd cmd) ->
+    Cmd $ \x -> cmd x `withCron` "* * * * *"
+
+type LogOptEnchantemnts =
+  '[ "verbose" >: Bool
+   ]
+
+instance Magic (Enchantment MixLogger.MixLoggerConfig) ("verbose" >: Bool) where
+  magic _ = Enchantment . set #verbose
+
+type ActionEnchantments =
+  '[ "skip"       >: Bool
+   , "withCopy"   >: Bool
+   , "withCommit" >: Bool
+   , "withPush"   >: Bool
+   ]
+
+instance Magic (Enchantment (RIO Env ())) ("skip" >: Bool) where
+  magic _ = enchantmentIfTrue $ \_ -> pure ()
+
+instance Magic (Enchantment (RIO Env ())) ("withCopy" >: Bool) where
+  magic _ = enchantmentIfTrue $ \act -> do
+    copyFilesByAnotherBranch
+    act
+
+instance Magic (Enchantment (RIO Env ())) ("withCommit" >: Bool) where
+  magic _ = enchantmentIfTrue $ \act -> do
+    MixShell.exec (Git.pull [])
+    act
+    commitGeneratedFiles
+
+instance Magic (Enchantment (RIO Env ())) ("withPush" >: Bool) where
+  magic _ = enchantmentIfTrue $ \act -> do
+    act
+    pushCommit
+
 type Env = Record
   '[ "logger" >: LogFunc
    , "config" >: Config
@@ -102,20 +156,18 @@ runCmd _ Nothing        = error "please input config file path."
 runCmd opts (Just path) = do
   config <- readConfig path
   let plugin = hsequence
-             $ #logger <@=> MixLogger.buildPlugin logOpts
+             $ #logger <@=> MixLogger.buildPlugin logOpts'
             <: #config <@=> pure config
             <: #work   <@=> pure "."
             <: nil
-  Mix.run plugin $ do
-    when (opts ^. #withCommit) $ MixShell.exec (Git.pull [])
-    when (opts ^. #withCopy)   $ copyFilesByAnotherBranch
-    when (not $ opts ^. #skip) $ generate path
-    when (opts ^. #withCommit) $ commitGeneratedFiles
-    when (opts ^. #withPush)   $ pushCommit
+  Mix.run plugin $
+    generate path `withEnchantment` (shrink opts :: Record ActionEnchantments)
   where
-    logOpts = #handle @= stdout
-           <: #verbose @= (opts ^. #verbose)
+    logOpts = #handle  @= stdout
+           <: #verbose @= False
            <: nil
+    logOpts' = logOpts `withEnchantment` (shrink opts :: Record LogOptEnchantemnts)
+
 
 readConfig :: FilePath -> IO Config
 readConfig = either (error . show) pure <=< Y.decodeFileEither
