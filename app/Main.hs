@@ -24,17 +24,24 @@ import           Mix
 import           Mix.Plugin.Logger      as MixLogger
 import qualified Mix.Plugin.Shell       as MixShell
 import qualified ScrapBook
+import           System.Cron            (addJob, execSchedule)
 import qualified Version
 
 main :: IO ()
 main = withGetOpt' "[options] [input-file]" opts $ \r args usage ->
-  if | r ^. #help    -> hPutBuilder stdout (fromString usage)
-     | r ^. #version -> hPutBuilder stdout (Version.build version)
-     | otherwise     -> runCmd r (listToMaybe args)
+  if | r ^. #help     -> hPutBuilder stdout (fromString usage)
+     | r ^. #version  -> hPutBuilder stdout (Version.build version)
+     | r ^. #daily    -> runCmd r (listToMaybe args) `withCron` "0 8 * * *"
+     | r ^. #hourly   -> runCmd r (listToMaybe args) `withCron` "0 * * * *"
+     | r ^. #minutely -> runCmd r (listToMaybe args) `withCron` "* * * * *"
+     | otherwise      -> runCmd r (listToMaybe args)
   where
     opts = #help       @= helpOpt
         <: #version    @= versionOpt
         <: #verbose    @= verboseOpt
+        <: #daily      @= dailyOpt
+        <: #hourly     @= hourlyOpt
+        <: #minutely   @= minutelyOpt
         <: #skip       @= skipOpt
         <: #withCopy   @= withCopyOpt
         <: #withCommit @= withCommitOpt
@@ -45,6 +52,9 @@ type Options = Record
   '[ "help"       >: Bool
    , "version"    >: Bool
    , "verbose"    >: Bool
+   , "daily"      >: Bool
+   , "hourly"     >: Bool
+   , "minutely"   >: Bool
    , "skip"       >: Bool
    , "withCopy"   >: Bool
    , "withCommit" >: Bool
@@ -59,6 +69,15 @@ versionOpt = optFlag [] ["version"] "Show version"
 
 verboseOpt :: OptDescr' Bool
 verboseOpt = optFlag ['v'] ["verbose"] "Enable verbose mode: verbosity level \"debug\""
+
+dailyOpt :: OptDescr' Bool
+dailyOpt = optFlag [] ["daily"] "Enable daily execute command"
+
+hourlyOpt :: OptDescr' Bool
+hourlyOpt = optFlag [] ["hourly"] "Enable houly execute command"
+
+minutelyOpt :: OptDescr' Bool
+minutelyOpt = optFlag [] ["minutely"] "Enable minutely execute command"
 
 skipOpt :: OptDescr' Bool
 skipOpt = optFlag [] ["skip"] "Skip generate HTML"
@@ -160,3 +179,8 @@ pushCommit = do
   branch <- view #branch <$> asks (gitConfig . view #config)
   MixLogger.logDebug $ "push commit to origin/" <> display branch
   MixShell.exec (Git.push ["origin", branch])
+
+withCron :: IO () -> Text -> IO ()
+withCron act t = do
+  _ <- execSchedule $ addJob act t
+  forever $ threadDelay maxBound

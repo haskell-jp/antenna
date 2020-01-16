@@ -30,6 +30,7 @@ executables:
     source-dirs: app
     dependencies:
     - blaze-html
+    - cron
     - extensible >= 0.6
     - githash
     - mix
