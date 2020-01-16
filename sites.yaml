@@ -4,6 +4,17 @@ feedName: feed.xml
 blankAvatar: ./image/logo/blank-avatar.png
 logo: https://haskell.jp/img/logo.svg
 favicon: https://haskell.jp/img/favicon.png
+git:
+  branch: gh-pages
+  files:
+    - sites.yaml
+    - image
+    - index.html
+    - sites.html
+    - feed.xml
+  copy:
+    - master:sites.yaml
+    - master:image
 
 sites:
   - title: "Haskellタグが付けられた新着投稿 - Qiita"
@@ -75,3 +86,9 @@ sites:
         rel: alternate
     logo:
       github: kurokawh
+  - title: "mod_poppoの雑記帳"
+    author: "mod_poppo"
+    url: https://blog.miz-ar.info/category/programming/haskell/
+    feed: https://blog.miz-ar.info/category/programming/haskell/feed/
+    logo:
+      url: https://blog.miz-ar.info/wp-content/uploads/2016/07/cropped-partial-poppo2.png
