@@ -1,4 +1,4 @@
-FROM matsubara0507/ubuntu-for-haskell:18.04
+FROM matsubara0507/ubuntu-for-haskell:git
 ARG local_bin_path
 RUN mkdir -p /root/.local/bin && mkdir -p /work
 ENV PATH /root/.local/bin:$PATH
