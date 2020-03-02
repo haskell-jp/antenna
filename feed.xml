@@ -2150,7 +2150,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;まとめ&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Ap&lt;/code&gt; モノイドの使い道がわかった&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.miz-ar.info/2019/02/monoid-for-haskellers/&#34;&gt;Haskellerのためのモノイド完全ガイド&lt;/a&gt; でも解説されているので、気になった方はこちらもどうぞ&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fmap fold . sequenceA&lt;/code&gt; と &lt;code&gt;getAp . foldMap Ap&lt;/code&gt; を比較すると型制約が若干違う&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fmap fold . sequenceA&lt;/code&gt; と &lt;code&gt;getAp . foldMap Ap&lt;/code&gt; を比較すると型クラス制約が若干違う&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb13-1&#34;&gt;&lt;a href=&#34;#cb13-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;t &lt;span class=&#34;fu&#34;&gt;fmap&lt;/span&gt; fold &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;sequenceA&lt;/span&gt;&lt;/span&gt;
 &lt;span id=&#34;cb13-2&#34;&gt;&lt;a href=&#34;#cb13-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;fmap&lt;/span&gt; fold &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; sequenceA ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; a, &lt;span class=&#34;dt&#34;&gt;Traversable&lt;/span&gt; t, &lt;span class=&#34;dt&#34;&gt;Applicative&lt;/span&gt; f) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; t (f a) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f a&lt;/span&gt;
