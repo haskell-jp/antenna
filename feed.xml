@@ -1,84 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>October 13, 2019</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.e-bigmoon.com/posts/2019/10-04-NoStarIsType.html</id><title type="text">NoStarIsType 言語拡張が必要になるとき</title><updated>October 13, 2019</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/10-04-NoStarIsType.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;λ ghc &lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;V&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;The&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Glorious&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Glasgow&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Haskell&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Compilation&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;System&lt;/span&gt;, version &lt;span class=&#34;fl&#34;&gt;8.8&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-4&#34;&gt;&lt;a href=&#34;#cb1-4&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;kind&lt;span class=&#34;op&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-5&#34;&gt;&lt;a href=&#34;#cb1-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;op&#34;&gt;&amp;lt;&lt;/span&gt;interactive&lt;span class=&#34;op&#34;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-6&#34;&gt;&lt;a href=&#34;#cb1-6&#34;&gt;&lt;/a&gt;    • &lt;span class=&#34;dt&#34;&gt;Expected&lt;/span&gt; kind ‘&lt;span class=&#34;op&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; k0’, but ‘10’ has kind ‘&lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;’&lt;/span&gt;
-&lt;span id=&#34;cb1-7&#34;&gt;&lt;a href=&#34;#cb1-7&#34;&gt;&lt;/a&gt;    • &lt;span class=&#34;dt&#34;&gt;In&lt;/span&gt; the &lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; ‘&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt; 10’&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb2-1&#34;&gt;&lt;a href=&#34;#cb2-1&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;set &lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;XNoStarIsType&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-2&#34;&gt;&lt;a href=&#34;#cb2-2&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;kind&lt;span class=&#34;op&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-3&#34;&gt;&lt;a href=&#34;#cb2-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-4&#34;&gt;&lt;a href=&#34;#cb2-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;100&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;型レベル四則演算&#34;&gt;型レベル四則演算&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/base-4.12.0.0/docs/GHC-TypeLits.html&#34;&gt;GHC.TypeLits&lt;/a&gt; に用意されている関数を使って型レベル自然数の四則演算を行ってみましょう。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb3-1&#34;&gt;&lt;a href=&#34;#cb3-1&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;set &lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;XDataKinds&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;XTypeOperators&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-2&#34;&gt;&lt;a href=&#34;#cb3-2&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;GHC.TypeLits&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-3&#34;&gt;&lt;a href=&#34;#cb3-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-4&#34;&gt;&lt;a href=&#34;#cb3-4&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;kind&lt;span class=&#34;op&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-5&#34;&gt;&lt;a href=&#34;#cb3-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-6&#34;&gt;&lt;a href=&#34;#cb3-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-7&#34;&gt;&lt;a href=&#34;#cb3-7&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-8&#34;&gt;&lt;a href=&#34;#cb3-8&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;kind&lt;span class=&#34;op&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-9&#34;&gt;&lt;a href=&#34;#cb3-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-10&#34;&gt;&lt;a href=&#34;#cb3-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;9&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-11&#34;&gt;&lt;a href=&#34;#cb3-11&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-12&#34;&gt;&lt;a href=&#34;#cb3-12&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;kind&lt;span class=&#34;op&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Div&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-13&#34;&gt;&lt;a href=&#34;#cb3-13&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;Div&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-14&#34;&gt;&lt;a href=&#34;#cb3-14&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;5&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-15&#34;&gt;&lt;a href=&#34;#cb3-15&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-16&#34;&gt;&lt;a href=&#34;#cb3-16&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;kind&lt;span class=&#34;op&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-17&#34;&gt;&lt;a href=&#34;#cb3-17&#34;&gt;&lt;/a&gt;&lt;span class=&#34;op&#34;&gt;&amp;lt;&lt;/span&gt;interactive&lt;span class=&#34;op&#34;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-18&#34;&gt;&lt;a href=&#34;#cb3-18&#34;&gt;&lt;/a&gt;    • &lt;span class=&#34;dt&#34;&gt;Expected&lt;/span&gt; kind ‘&lt;span class=&#34;op&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; k0’, but ‘10’ has kind ‘&lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;’&lt;/span&gt;
-&lt;span id=&#34;cb3-19&#34;&gt;&lt;a href=&#34;#cb3-19&#34;&gt;&lt;/a&gt;    • &lt;span class=&#34;dt&#34;&gt;In&lt;/span&gt; the &lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; ‘&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt; 10’&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;掛け算だけエラーになりましたね・・・。それぞれの演算子のカインドを確認してみましょう。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb4-1&#34;&gt;&lt;a href=&#34;#cb4-1&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k (&lt;span class=&#34;op&#34;&gt;+&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb4-2&#34;&gt;&lt;a href=&#34;#cb4-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;(+) ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-3&#34;&gt;&lt;a href=&#34;#cb4-3&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k (&lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb4-4&#34;&gt;&lt;a href=&#34;#cb4-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;(-) ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-5&#34;&gt;&lt;a href=&#34;#cb4-5&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k &lt;span class=&#34;dt&#34;&gt;Mod&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-6&#34;&gt;&lt;a href=&#34;#cb4-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;Mod&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb4-7&#34;&gt;&lt;a href=&#34;#cb4-7&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k (&lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb4-8&#34;&gt;&lt;a href=&#34;#cb4-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;(*) ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;1つだけ変ですね。これは &lt;code&gt;*&lt;/code&gt; が &lt;strong&gt;Bool&lt;/strong&gt; や &lt;strong&gt;Maybe&lt;/strong&gt; などのよくある基本的な型 (lifted boxed types) のカインドの記号として割り当てられているためです。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb5-1&#34;&gt;&lt;a href=&#34;#cb5-1&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-2&#34;&gt;&lt;a href=&#34;#cb5-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-3&#34;&gt;&lt;a href=&#34;#cb5-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-4&#34;&gt;&lt;a href=&#34;#cb5-4&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-5&#34;&gt;&lt;a href=&#34;#cb5-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;1つ前の &lt;a href=&#34;https://gitlab.haskell.org/ghc/ghc/wikis/migration/8.6&#34;&gt;GHC 8.6&lt;/a&gt; から &lt;strong&gt;StarIsType&lt;/strong&gt; 言語拡張がデフォルトで有効になり、&lt;code&gt;*&lt;/code&gt; カインドは &lt;code&gt;Type&lt;/code&gt; カインドのシノニムとして定義されるようになりました。なので明示的に &lt;strong&gt;StarIsType&lt;/strong&gt; を無効にすると直ります。(この辺りの話題については既に &lt;a href=&#34;https://www.reddit.com/r/haskell_jp/comments/8t8p4j/typeoperators_nostaristype%E3%81%AE%E5%BB%B6%E6%9C%9F%E3%81%AE%E6%8F%90%E6%A1%88/&#34;&gt;“TypeOperators =&amp;gt; NoStarIsType”の延期の提案&lt;/a&gt; などにまとまっているため、気になる方はご参照ください)&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb6-1&#34;&gt;&lt;a href=&#34;#cb6-1&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;set &lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;dt&#34;&gt;XNoStarIsType&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-2&#34;&gt;&lt;a href=&#34;#cb6-2&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-3&#34;&gt;&lt;a href=&#34;#cb6-3&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-4&#34;&gt;&lt;a href=&#34;#cb6-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Type&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-5&#34;&gt;&lt;a href=&#34;#cb6-5&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-6&#34;&gt;&lt;a href=&#34;#cb6-6&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-7&#34;&gt;&lt;a href=&#34;#cb6-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Type&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Type&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-8&#34;&gt;&lt;a href=&#34;#cb6-8&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-9&#34;&gt;&lt;a href=&#34;#cb6-9&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;k (&lt;span class=&#34;op&#34;&gt;*&lt;/span&gt;)&lt;/span&gt;
-&lt;span id=&#34;cb6-10&#34;&gt;&lt;a href=&#34;#cb6-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;(*) ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ということでこれで無事に型レベルの掛け算ができるようになりました。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb7-1&#34;&gt;&lt;a href=&#34;#cb7-1&#34;&gt;&lt;/a&gt;λ &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;kind&lt;span class=&#34;op&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb7-2&#34;&gt;&lt;a href=&#34;#cb7-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Nat&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb7-3&#34;&gt;&lt;a href=&#34;#cb7-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;100&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;kind!&lt;/code&gt; のエイリアスとして &lt;code&gt;k!&lt;/code&gt; コマンド欲しい。&lt;/p&gt;
-&lt;h2 id=&#34;追記&#34;&gt;追記&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;k!&lt;/code&gt; コマンドのマージリクエストが作られました &lt;a href=&#34;https://gitlab.haskell.org/ghc/ghc/merge_requests/1934&#34;&gt;Allow completion for GHCi commands with option &lt;code&gt;!&lt;/code&gt; (#17345)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;ありがとうございます :)&lt;/p&gt;
-&lt;p&gt;GHC に組み込まれるまでは、&lt;code&gt;~/.ghci&lt;/code&gt; や &lt;code&gt;&amp;lt;proj&amp;gt;/.ghci&lt;/code&gt; に以下の内容を記述しておけば &lt;code&gt;:kind!&lt;/code&gt; のエイリアスとして &lt;code&gt;:k!&lt;/code&gt; が使えるようになります。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;:def! k! (\e -&amp;gt; return (&amp;quot;:kind! &amp;quot; ++ e))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;実行結果&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; :k! 1+1
-1+1 :: Nat
-= 2&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;参考リソース&#34;&gt;参考リソース&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://downloads.haskell.org/~ghc/8.8.1/docs/html/users_guide/glasgow_exts.html?highlight=nostaristype#extension-StarIsType&#34;&gt;StarIsType - Glasgow Haskell Compiler User’s Guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gitlab.haskell.org/ghc/ghc/wikis/migration/8.6&#34;&gt;GHC 8.6.x Migration Guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/haskell_jp/comments/8t8p4j/typeoperators_nostaristype%E3%81%AE%E5%BB%B6%E6%9C%9F%E3%81%AE%E6%8F%90%E6%A1%88/&#34;&gt;“TypeOperators =&amp;gt; NoStarIsType”の延期の提案&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/03-25-cabal-install.html</id><title type="text">cabal install コマンドについて</title><updated>March 27, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/03-25-cabal-install.html"/><summary type="html">&lt;ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>March 27, 2020</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.e-bigmoon.com/posts/2020/03-25-cabal-install.html</id><title type="text">cabal install コマンドについて</title><updated>March 27, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/03-25-cabal-install.html"/><summary type="html">&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;stack install&lt;/code&gt; と全く同じ動作をする &lt;strong&gt;cabal&lt;/strong&gt; コマンドは &lt;code&gt;cabal install all:exes&lt;/code&gt; です。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
@@ -7021,7 +6941,174 @@ gtagsの特徴：
 
 単純に特定ディレクトリ以下の作業ファイルを削除してしまうと、コミット時に差分として検知されてしまう、また、次回以降のupdateコマンドで再ダウンロードされてしまう、という非常に残念な挙動になります。
 
-このようなケースでは以下の方法を使えば、差分が検知されない状態で所定ディレクトリ以下のファイルを削除</summary></entry><entry><id>http://lotz84.github.io/posts/published_haskell_by_example.html</id><title type="text">Haskell by Exampleを公開しました</title><updated>2015-05-06T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/published_haskell_by_example.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/build-chat-server-on-haskell.html</id><title type="text">Haskellでチャットサーバーを建ててみた</title><updated>2015-04-27T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/build-chat-server-on-haskell.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html</id><title type="text">Unityハンズオン勉強会に参加しました@CAMPHOR-</title><updated>2015-04-25T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html</id><title type="text">Swift で分割コンパイルする方法</title><updated>2015-02-07T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/use-selenium-by-haskell.html</id><title type="text">HaskellでSeleniumを使ってみる＠勉強会</title><updated>2014-12-14T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/use-selenium-by-haskell.html"/><summary type="html"></summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/03-28-haskell-books.html</id><title type="text">Haskell 関連書籍の紹介ページを作りました</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/03-28-haskell-books.html"/><summary type="html">&lt;p&gt;&lt;strong&gt;Qiita&lt;/strong&gt; で管理していた記事を移動しました。&lt;/p&gt;
+このようなケースでは以下の方法を使えば、差分が検知されない状態で所定ディレクトリ以下のファイルを削除</summary></entry><entry><id>http://lotz84.github.io/posts/published_haskell_by_example.html</id><title type="text">Haskell by Exampleを公開しました</title><updated>2015-05-06T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/published_haskell_by_example.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/build-chat-server-on-haskell.html</id><title type="text">Haskellでチャットサーバーを建ててみた</title><updated>2015-04-27T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/build-chat-server-on-haskell.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html</id><title type="text">Unityハンズオン勉強会に参加しました@CAMPHOR-</title><updated>2015-04-25T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html</id><title type="text">Swift で分割コンパイルする方法</title><updated>2015-02-07T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/use-selenium-by-haskell.html</id><title type="text">HaskellでSeleniumを使ってみる＠勉強会</title><updated>2014-12-14T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/use-selenium-by-haskell.html"/><summary type="html"></summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/03-30-cabal-plan-license-report.html</id><title type="text">cabal-plan license-report 機能の紹介</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/03-30-cabal-plan-license-report.html"/><summary type="html">&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/cabal-plan&#34;&gt;cabal-plan&lt;/a&gt; を使って、プロジェクトが依存するパッケージのライセンスを列挙する方法について紹介します。&lt;/p&gt;
+&lt;p&gt;本記事は &lt;a href=&#34;https://www.reddit.com/r/haskell/comments/8vhkwv/is_there_a_tool_to_collect_all_license_files_of/&#34;&gt;Is there a tool to collect all LICENSE files of used dependencies?&lt;/a&gt; を参考にしています。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal -V
+cabal-install version 3.0.0.0
+compiled using version 3.0.0.0 of the Cabal library&lt;/code&gt;&lt;/pre&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;インストール方法&#34;&gt;インストール方法&lt;/h2&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal update
+$ cabal install cabal-plan -f license-report
+$ cabal-plan --version
+cabal-plan 0.6.2.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;今回の機能を使うためには &lt;strong&gt;license-report&lt;/strong&gt; フラグを有効にする必要があります。デフォルトでは無効になっています。&lt;/p&gt;
+&lt;h2 id=&#34;ライセンスの列挙&#34;&gt;ライセンスの列挙&lt;/h2&gt;
+&lt;p&gt;具体例として、このブログで試してみましょう。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/e-bigmoon/haskell-blog&#34;&gt;e-bigmoon/haskell-blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ライセンスファイルを抽出する場合は &lt;code&gt;--licensedir&lt;/code&gt; オプションで出力先ディレクトリを指定します。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal-plan license-report --licensedir=licenses exe:site &amp;gt; blog.md
+WARNING: couldn&amp;#39;t find metadata for base-4.13.0.0
+WARNING: couldn&amp;#39;t find metadata for hakyll-sass-0.3
+WARNING: license files for array-0.5.4.0 (global/GHC bundled) not copied
+WARNING: license files for binary-0.8.7.0 (global/GHC bundled) not copied
+WARNING: license files for bytestring-0.10.10.0 (global/GHC bundled) not copied
+WARNING: license files for containers-0.6.2.1 (global/GHC bundled) not copied
+WARNING: license files for deepseq-1.4.4.0 (global/GHC bundled) not copied
+WARNING: license files for directory-1.3.6.0 (global/GHC bundled) not copied
+WARNING: license files for filepath-1.4.2.1 (global/GHC bundled) not copied
+WARNING: couldn&amp;#39;t find metadata for ghc-boot-th-8.8.3
+WARNING: license files for ghc-prim-0.5.3 (global/GHC bundled) not copied
+WARNING: license files for integer-gmp-1.0.2.0 (global/GHC bundled) not copied
+WARNING: license files for mtl-2.2.2 (global/GHC bundled) not copied
+WARNING: license files for parsec-3.1.14.0 (global/GHC bundled) not copied
+WARNING: license files for pretty-1.1.3.6 (global/GHC bundled) not copied
+WARNING: license files for process-1.6.8.0 (global/GHC bundled) not copied
+WARNING: license files for stm-2.5.0.0 (global/GHC bundled) not copied
+WARNING: license files for template-haskell-2.15.0.0 (global/GHC bundled) not copied
+WARNING: license files for text-1.2.4.0 (global/GHC bundled) not copied
+WARNING: license files for time-1.9.3 (global/GHC bundled) not copied
+WARNING: license files for transformers-0.5.6.2 (global/GHC bundled) not copied
+WARNING: license files for unix-2.7.2.2 (global/GHC bundled) not copied&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;出力結果&#34;&gt;出力結果&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;licenses&lt;/code&gt; ディレクトリはだいたいこんな感じでライセンスファイルが格納されています。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ tree licenses | head -n 20
+licenses
+├── Glob-0.10.0
+│   └── LICENSE.txt
+├── HTTP-4000.3.14
+│   └── LICENSE
+├── HsYAML-0.2.1.0
+│   ├── LICENSE.GPLv2
+│   └── LICENSE.GPLv3
+├── HsYAML-aeson-0.2.0.0
+│   └── LICENSE.GPLv2
+├── JuicyPixels-3.3.5
+│   └── LICENSE
+├── Only-0.1
+│   └── LICENSE
+├── QuickCheck-2.13.2
+│   └── LICENSE
+├── SHA-1.6.4.4
+│   └── LICENSE
+├── StateVar-1.2
+│   └── LICENSE&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;code&gt;blog.md&lt;/code&gt; の内容を一部を以下に貼り付けます。完全なコードは&lt;a href=&#34;https://github.com/e-bigmoon/haskell-blog/sample-code/2020/03-30/blog.md&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;dependency-license-report&#34;&gt;Dependency License Report&lt;/h1&gt;
+&lt;p&gt;Bold-faced &lt;strong&gt;&lt;code&gt;package-name&lt;/code&gt;&lt;/strong&gt;s denote standard libraries bundled with &lt;code&gt;ghc-8.8.3&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;direct-dependencies-of-bigmoon-haskellers-blogexesite&#34;&gt;Direct dependencies of &lt;code&gt;bigmoon-haskellers-blog:exe:site&lt;/code&gt;&lt;/h2&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 20%&#34; /&gt;
+&lt;col style=&#34;width: 20%&#34; /&gt;
+&lt;col style=&#34;width: 20%&#34; /&gt;
+&lt;col style=&#34;width: 20%&#34; /&gt;
+&lt;col style=&#34;width: 20%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;https://spdx.org/licenses/&#34;&gt;SPDX&lt;/a&gt; License Id&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Also depended upon by&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;base&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/base-4.13.0.0&#34;&gt;&lt;code&gt;4.13.0.0&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;MISSING&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;MISSING&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;(core library)&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;extensible&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/extensible-0.8&#34;&gt;&lt;code&gt;0.8&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;licenses/extensible-0.8/LICENSE&#34;&gt;&lt;code&gt;BSD-3-Clause&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Extensible, efficient, optics-friendly data types and effects&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;hakyll&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/hakyll-4.13.2.0&#34;&gt;&lt;code&gt;4.13.2.0&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;licenses/hakyll-4.13.2.0/LICENSE&#34;&gt;&lt;code&gt;BSD-3-Clause&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A static website compiler library&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;hakyll-sass&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;hakyll-sass&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/hakyll-sass-0.3&#34;&gt;&lt;code&gt;0.3&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;MISSING&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;MISSING&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;html-entities&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/html-entities-1.1.4.3&#34;&gt;&lt;code&gt;1.1.4.3&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;licenses/html-entities-1.1.4.3/LICENSE&#34;&gt;&lt;code&gt;MIT&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A codec library for HTML-escaped text and HTML-entities&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;rio&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/rio-0.1.14.1&#34;&gt;&lt;code&gt;0.1.14.1&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;licenses/rio-0.1.14.1/LICENSE&#34;&gt;&lt;code&gt;MIT&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A standard library for Haskell&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;yaml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/yaml-0.11.3.0&#34;&gt;&lt;code&gt;0.11.3.0&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;licenses/yaml-0.11.3.0/LICENSE&#34;&gt;&lt;code&gt;BSD-3-Clause&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Support for parsing and rendering YAML documents.&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;hakyll&lt;/code&gt;, &lt;code&gt;pandoc-citeproc&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;indirect-transitive-dependencies&#34;&gt;Indirect transitive dependencies&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;https://spdx.org/licenses/&#34;&gt;SPDX&lt;/a&gt; License Id&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Depended upon by&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;Glob&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/Glob-0.10.0&#34;&gt;&lt;code&gt;0.10.0&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;licenses/Glob-0.10.0/LICENSE.txt&#34;&gt;&lt;code&gt;BSD-3-Clause&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Globbing library&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;pandoc&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;HTTP&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://hackage.haskell.org/package/HTTP-4000.3.14&#34;&gt;&lt;code&gt;4000.3.14&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;licenses/HTTP-4000.3.14/LICENSE&#34;&gt;&lt;code&gt;BSD-3-Clause&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A library for client-side HTTP&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;pandoc&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;今回は &lt;strong&gt;cabal-plan&lt;/strong&gt; を使ってみましたが、同様のツールとして &lt;a href=&#34;https://github.com/fossas/fossa-cli/blob/master/docs/integrations/haskell.md#haskell&#34;&gt;fossas/fossa-cli&lt;/a&gt; や &lt;a href=&#34;https://github.com/github/licensed/blob/master/docs/sources/cabal.md&#34;&gt;github/licensed&lt;/a&gt; なども利用できるようです。&lt;/p&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/03-28-haskell-books.html</id><title type="text">Haskell 関連書籍の紹介ページを作りました</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/03-28-haskell-books.html"/><summary type="html">&lt;p&gt;&lt;strong&gt;Qiita&lt;/strong&gt; で管理していた記事を移動しました。&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;h2 id=&#34;haskell-関連の書籍紹介ページ&#34;&gt;Haskell 関連の書籍紹介ページ&lt;/h2&gt;
 &lt;p&gt;「&lt;a href=&#34;/books/&#34;&gt;これから Haskell を学ぶ人のための書籍・論文紹介&lt;/a&gt;」というページを作りました。&lt;/p&gt;
