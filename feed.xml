@@ -648,197 +648,6 @@ version:        1.999999999     -- 変更後&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;もうすぐ GHC-8.10.1 がリリースされそうですね。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gitlab.haskell.org/ghc/ghc/wikis/status/ghc-8.10.1&#34;&gt;GHC plans for 8.10.1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/10-07-cabal-fmt.html</id><title type="text">cabal-fmt の紹介</title><updated>January 22, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/10-07-cabal-fmt.html"/><summary type="html">&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/cabal-fmt&#34;&gt;cabal-fmt&lt;/a&gt; でできること。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;cabal&lt;/strong&gt; ファイルの整形&lt;/li&gt;
-&lt;li&gt;フォルダを指定して自動でモジュールを expand できる&lt;/li&gt;
-&lt;li&gt;以下のフィールドをアルファベット順で自動的に並べ替え&amp;amp;重複を削除
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;exposed-modules&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;other-modules&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;default-extensions&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;other-extensions&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;build-depends&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ cabal-fmt --version
-0.1.1.1
-
-λ cabal -V
-cabal-install version 3.0.0.0
-compiled using version 3.0.0.0 of the Cabal library
-
-# 使い方
-λ cabal-fmt &amp;lt;proj&amp;gt;.cabal -i&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;作者の記事: &lt;a href=&#34;http://oleg.fi/gists/posts/2019-08-11-cabal-fmt.html&#34;&gt;ANN: cabal-fmt&lt;/a&gt;&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;具体例&#34;&gt;具体例&lt;/h2&gt;
-&lt;h3 id=&#34;適用前&#34;&gt;適用前&lt;/h3&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;cabal-version: 2.4
-name:test
-version:0.1.0.0
-tested-with:
-  GHC ==8.8.1 || ==8.6.5 || ==8.4.4 || ==8.2.2 || ==8.0.2 || ==7.10.3
-  GHCJS ==8.4
-
-executable site
-  main-is:          site.hs
-  other-modules:
-    Config
-    Hakyll.Ext
-  hs-source-dirs:   app
-  ghc-options:
-    -Wcompat -Wall
-    -Wnoncanonical-monad-instances
-    -Wincomplete-uni-patterns -Wincomplete-record-updates -Wredundant-constraints -Wtabs -threaded
-  build-depends:
-      base, lens
-    , blaze-html, conduit-combinators
-    , containers      , filepath
-          , bytestring
-    , extensible
-    
-    
-    , yaml, time
-
-  if !os(windows)
-    build-depends: hakyll-sass
-
-  default-language: Haskell2010&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;適用後&#34;&gt;適用後&lt;/h3&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;cabal-version: 2.4
-name:          test
-version:       0.1.0.0
-tested-with:
-    GHC ==7.10.3
-     || ==8.0.2
-     || ==8.2.2
-     || ==8.4.4
-     || ==8.6.5
-     || ==8.8.1
-  , GHCJS ==8.4
-
-executable site
-  main-is:          site.hs
-  other-modules:
-    Config
-    Hakyll.Ext
-
-  hs-source-dirs:   app
-  ghc-options:
-    -Wcompat -Wall -Wnoncanonical-monad-instances
-    -Wincomplete-uni-patterns -Wincomplete-record-updates
-    -Wredundant-constraints -Wtabs -threaded
-
-  build-depends:
-    , base
-    , blaze-html
-    , bytestring
-    , conduit-combinators
-    , containers
-    , extensible
-    , filepath
-    , lens
-    , time
-    , yaml
-
-  if !os(windows)
-    build-depends: hakyll-sass
-
-  default-language: Haskell2010
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ cabal v2-update
-λ cabal v2-install cabal-fmt
-
-λ cabal-fmt --help
-λ cabal-fmt - .cabal file reformatter
-
-Usage: cabal-fmt [-i|--inplace] [--Werror | --Wno-error | --indent N | --tabular
-                 | --no-tabular] [FILE...] [--version]
-  Reformat .cabal files
-
-Available options:
-  -i,--inplace             process files in-place
-  --Werror                 Treat warnings as errors
-  --indent N               Indentation
-  --tabular                Tabular formatting
-  FILE...                  input files
-  -h,--help                Show this help text
-  --version                Show version&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
-&lt;p&gt;基本的には以下のコマンドで終わりです。(&lt;code&gt;&amp;lt;proj&amp;gt;&lt;/code&gt; は各自のファイル名に置き換えてください)&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ cabal-fmt &amp;lt;proj&amp;gt;.cabal -i&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;-i&lt;/code&gt; オプション (&lt;code&gt;--inplace&lt;/code&gt;) で既存ファイルを上書きするので、結果だけ見たい場合は外しましょう。&lt;/p&gt;
-&lt;h3 id=&#34;モジュールの自動展開&#34;&gt;モジュールの自動展開&lt;/h3&gt;
-&lt;p&gt;僕が &lt;code&gt;cabal-fmt&lt;/code&gt; を使う理由の最大のポイントはモジュールの自動展開機能です。&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;library
-  -- cabal-fmt: expand src
-  exposed-modules:&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;記法としては、上記のようにしてモジュールを探索するディレクトリ (今回の場合は &lt;strong&gt;src&lt;/strong&gt;) を指定します。&lt;/p&gt;
-&lt;p&gt;実際に使ってみましょう。ここでは例として &lt;strong&gt;test-dir&lt;/strong&gt; を作りますが、実際には &lt;strong&gt;src&lt;/strong&gt;, &lt;strong&gt;app&lt;/strong&gt;, &lt;strong&gt;test&lt;/strong&gt; などが展開の対象となることが多いと思います。&lt;/p&gt;
-&lt;p&gt;また、意図的に &lt;strong&gt;C.md&lt;/strong&gt; としている点にも注意してください。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ mkdir test-dir
-λ touch test-dir/A.hs test-dir/B.hs test-dir/C.md
-λ tree test-dir
-test-dir
-├── A.hs
-├── B.hs
-└── C.md&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;適用する &lt;strong&gt;cabal&lt;/strong&gt; ファイル (&lt;strong&gt;test.cabal&lt;/strong&gt;) の中身は以下の通りです。&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;name:    test
-version: 0.1.0.0
-
-library
-  -- cabal-fmt: expand test-dir
-  exposed-modules:&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;この状態で &lt;code&gt;cabal-fmt test.cabal -i&lt;/code&gt; を実行すると結果は以下のようになります。&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;name:    test
-version: 0.1.0.0
-
-library
-  -- cabal-fmt: expand test-dir
-  exposed-modules:
-    A
-    B
-    C
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;.hs&lt;/code&gt; ファイルだけ列挙して欲しいところですが、指定したディレクトリ以下の全てを列挙します。そのため、公開したいモジュールと非公開のモジュールはディレクトリを分けて運用するなど、少しだけ工夫する必要があります。&lt;/p&gt;
-&lt;p&gt;一応、除外したいモジュールを &lt;code&gt;-Module&lt;/code&gt; の形式で指定することもできます。&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;name:    test
-version: 0.1.0.0
-
-library
-  -- cabal-fmt: expand test-dir -C
-  exposed-modules:&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;適用後&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;name:    test
-version: 0.1.0.0
-
-library
-  -- cabal-fmt: expand test-dir -C
-  exposed-modules:
-    A
-    B
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;この方法を使えば &lt;strong&gt;hspec-discover&lt;/strong&gt; や &lt;strong&gt;tasty-discover&lt;/strong&gt; のためのファイルなどを除外することができます。&lt;/p&gt;
-&lt;h2 id=&#34;cabal-format-コマンド&#34;&gt;cabal format コマンド&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;cabal&lt;/code&gt; についてあまり詳しく無いので良くわかりませんが、一応 &lt;strong&gt;cabal format&lt;/strong&gt; というコマンドが存在します。(&lt;a href=&#34;https://github.com/haskell/cabal/issues/2460&#34;&gt;&lt;code&gt;cabal format&lt;/code&gt; is not listed in –help message #2460&lt;/a&gt;)&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;λ cabal format --help
-Reformat the .cabal file using the standard style.
-
-Usage: cabal format [FILE]
-
-Flags for format:
- -h --help Show this help text&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;実際にこのコマンドでも整形だけなら可能みたいです。ただし、&lt;a href=&#34;https://github.com/haskell/cabal/issues/5734&#34;&gt;&lt;code&gt;cabal format&lt;/code&gt; inlines and removes &lt;code&gt;common&lt;/code&gt; stanzas #5734&lt;/a&gt; にもある通り &lt;code&gt;common&lt;/code&gt; stanza が削除されたりします。&lt;/p&gt;
-&lt;p&gt;そのため、&lt;strong&gt;cabal format&lt;/strong&gt; コマンドよりも &lt;strong&gt;cabal-fmt&lt;/strong&gt; を利用した方が良いと思います。&lt;/p&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;便利なので最近良く使ってます。&lt;/p&gt;
-&lt;h2 id=&#34;参考リソース&#34;&gt;参考リソース&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://oleg.fi/gists/posts/2019-08-11-cabal-fmt.html&#34;&gt;ANN: cabal-fmt&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/02-19-hunit-show-unicode.html</id><title type="text">HUnit で日本語が文字化けする問題</title><updated>February 19, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/02-19-hunit-show-unicode.html"/><summary type="html">&lt;p&gt;&lt;code&gt;HUnit&lt;/code&gt; で日本語を扱おうとすると、以下のように文字化けしますよね。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode hs&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;expected&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;\12495\12473\12465\12523&amp;quot;&lt;/span&gt;&lt;/span&gt;
 &lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt; but got&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;Haskell&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1506,7 +1315,7 @@ Plan construction failed.&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/haskell/cabal/pull/6576&#34;&gt;Resolve #6369 and #6393: Allow cabal v2-install pkgname:exename or http://example.com/package.tar.gz(#sha256=abcde…) #6576&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal install &amp;#39;https://hackage.haskell.org/package/cabal-fmt-0.1.2/cabal-fmt-0.1.2.tar.gz#sha256=aae556efbcaddfd65c6a1c1811b122b0d8c8d00624c8c2e36aabb5e9f9ea9840&amp;#39;&lt;/code&gt;&lt;/pre&gt;</summary></entry><entry><id>https://qiita.com/mod_poppo/items/740659702f31216fdade</id><title type="text">Haskellの文字列型：分類と特徴</title><updated>2020-04-09T20:40:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/740659702f31216fdade"/></entry><entry><id>https://qiita.com/mod_poppo/items/88a6e876efbf7183209a</id><title type="text">Haskellの文字列型：変換時の心構えと変換方法まとめ</title><updated>2020-04-09T20:39:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/88a6e876efbf7183209a"/></entry><entry><id>https://qiita.com/norkron/items/da2d1de205a4137931b7</id><title type="text">モノイドとモナドの対応関係</title><updated>2020-04-07T14:23:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/da2d1de205a4137931b7"/></entry><entry><id>https://matsubara0507.github.io/posts/2020-04-06-servant-auth-with-github-apps.html</id><title type="text">Haskell Servant に GitHub Apps による認証を追加する</title><updated>2020-04-06T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2020-04-06-servant-auth-with-github-apps.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal install &amp;#39;https://hackage.haskell.org/package/cabal-fmt-0.1.2/cabal-fmt-0.1.2.tar.gz#sha256=aae556efbcaddfd65c6a1c1811b122b0d8c8d00624c8c2e36aabb5e9f9ea9840&amp;#39;&lt;/code&gt;&lt;/pre&gt;</summary></entry><entry><id>https://qiita.com/Izawa_/items/ed0579a0e7d93e5c09cc</id><title type="text">HaskellのEitherについて</title><updated>2020-04-14T22:28:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/ed0579a0e7d93e5c09cc"/></entry><entry><id>https://qiita.com/sand/items/74b93a6e1cf740c77f54</id><title type="text">Conduit (1) - Haskell Streaming library</title><updated>2020-04-12T16:00:20+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/74b93a6e1cf740c77f54"/></entry><entry><id>https://qiita.com/mod_poppo/items/740659702f31216fdade</id><title type="text">Haskellの文字列型：分類と特徴</title><updated>2020-04-09T20:40:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/740659702f31216fdade"/></entry><entry><id>https://qiita.com/mod_poppo/items/88a6e876efbf7183209a</id><title type="text">Haskellの文字列型：変換時の心構えと変換方法まとめ</title><updated>2020-04-09T20:39:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/88a6e876efbf7183209a"/></entry><entry><id>https://qiita.com/norkron/items/da2d1de205a4137931b7</id><title type="text">モノイドとモナドの対応関係</title><updated>2020-04-07T14:23:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/norkron/items/da2d1de205a4137931b7"/></entry><entry><id>https://matsubara0507.github.io/posts/2020-04-06-servant-auth-with-github-apps.html</id><title type="text">Haskell Servant に GitHub Apps による認証を追加する</title><updated>2020-04-06T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2020-04-06-servant-auth-with-github-apps.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;時々みる「GitHubでログイン」っぽいのを Servant 製サンプルアプリケーションに実装します．&lt;/p&gt;
 &lt;p&gt;サンプルアプリケーションは2年前に書いた「&lt;a href=&#34;/posts/2017-09-17-create-haskell-and-elm.html&#34;&gt;Haskell × Elm のサンプルアプリケーションを書いてみた&lt;/a&gt;」という記事のものを，最近の GHC や Elm でリファクタリングして使います． これは簡単な ToDo アプリケーションです：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/assets/create-haskell-and-elm/sample.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
@@ -2212,7 +2021,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;おまけ&lt;span class=&#34;ascii&#34;&
 &lt;p&gt;servant-elm は elmap.hs というのでラップしてるのでそっちのアップデートも行った． こっちには生成コードのテストも追加してあるので&lt;a href=&#34;https://github.com/matsubara0507/elmap.hs/pull/1/files#diff-3e612857d13f467c108121bba96a6232&#34;&gt;差分がわかりやすい&lt;/a&gt;．&lt;/p&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;他にも CI/CD を GitHub Actions にしたりした．&lt;/p&gt;
-  &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/golden_lucky/items/c7821b5d45aa46193dba</id><title type="text">カプレカ数で遊ぶ</title><updated>2020-03-29T20:00:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/golden_lucky/items/c7821b5d45aa46193dba"/></entry><entry><id>https://qiita.com/sand/items/801a3da46fe8edeac8fc</id><title type="text">Haskell Aeson - Fast JSON parsing and encoding</title><updated>2020-03-28T13:17:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/801a3da46fe8edeac8fc"/></entry><entry><id>https://qiita.com/Tatsuki-I/items/6d4a2d9f767aef5dd554</id><title type="text">HaskellでMD5 #Haskell</title><updated>2020-03-27T14:55:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Tatsuki-I/items/6d4a2d9f767aef5dd554"/></entry><entry><id>https://qiita.com/rinse_/items/e15b91c76ec9cf5c88eb</id><title type="text">foldrでナップザックDP</title><updated>2020-03-27T01:29:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/rinse_/items/e15b91c76ec9cf5c88eb"/></entry><entry><id>https://qiita.com/yagshi/items/a1eb3a4283685ecb68d4</id><title type="text">1行で素数列挙</title><updated>2020-03-26T12:38:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yagshi/items/a1eb3a4283685ecb68d4"/></entry><entry><id>https://qiita.com/mod_poppo/items/80c442a1d95471e6ac55</id><title type="text">Haskellの文字列リテラルはGHCでどのようにコンパイルされるか</title><updated>2020-03-26T08:30:15+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/80c442a1d95471e6ac55"/></entry><entry><id>https://qiita.com/rinse_/items/4f1f4f9938196ea5c1dd</id><title type="text">深さ優先探索で数独を解く</title><updated>2020-03-24T14:05:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/rinse_/items/4f1f4f9938196ea5c1dd"/></entry><entry><id>https://qiita.com/suzuki-hoge/items/17cf0cd3680ef10b2cc1</id><title type="text">haskell の Int と Integer の違いや Float や Double や Rational を理解する</title><updated>2020-03-23T13:47:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/suzuki-hoge/items/17cf0cd3680ef10b2cc1"/></entry><entry><id>https://qiita.com/ysn551/items/03dd605c656768f33d7a</id><title type="text">リストモナドについて</title><updated>2020-03-23T07:16:11+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ysn551/items/03dd605c656768f33d7a"/></entry><entry><id>https://qiita.com/Izawa_/items/f447406c8a1c8043fec4</id><title type="text">[Haskell]Data.Listの関数まとめ</title><updated>2020-03-22T15:32:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/f447406c8a1c8043fec4"/></entry><entry><id>https://qiita.com/masaki_shoji/items/af5ab8b9496f0a6dfbbc</id><title type="text">関数型プログラミング -Applicativeについて知る前に、Functorでできないことを知っておこう-</title><updated>2020-03-21T14:33:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masaki_shoji/items/af5ab8b9496f0a6dfbbc"/></entry><entry><id>https://qiita.com/RunEagler/items/33f8b4abfd535c66a0d5</id><title type="text">HaskellのMap型、Set型</title><updated>2020-03-21T12:06:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/RunEagler/items/33f8b4abfd535c66a0d5"/></entry><entry><id>https://qiita.com/minarai/items/9848973045a86261808b</id><title type="text">MySQL for mac エラー編</title><updated>2020-03-21T12:01:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/minarai/items/9848973045a86261808b"/></entry><entry><id>https://haskell.jp/blog/posts/2020/property-io.html</id><title type="text">HspecでQuickCheckするときもshouldBeなどが使えます</title><updated>2020-02-27T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2020/property-io.html"/><summary type="html">
+  &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/golden_lucky/items/c7821b5d45aa46193dba</id><title type="text">カプレカ数で遊ぶ</title><updated>2020-03-29T20:00:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/golden_lucky/items/c7821b5d45aa46193dba"/></entry><entry><id>https://qiita.com/sand/items/801a3da46fe8edeac8fc</id><title type="text">Haskell Aeson - Fast JSON parsing and encoding</title><updated>2020-03-28T13:17:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/801a3da46fe8edeac8fc"/></entry><entry><id>https://qiita.com/Tatsuki-I/items/6d4a2d9f767aef5dd554</id><title type="text">HaskellでMD5 #Haskell</title><updated>2020-03-27T14:55:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Tatsuki-I/items/6d4a2d9f767aef5dd554"/></entry><entry><id>https://qiita.com/rinse_/items/e15b91c76ec9cf5c88eb</id><title type="text">foldrでナップザックDP</title><updated>2020-03-27T01:29:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/rinse_/items/e15b91c76ec9cf5c88eb"/></entry><entry><id>https://qiita.com/yagshi/items/a1eb3a4283685ecb68d4</id><title type="text">1行で素数列挙</title><updated>2020-03-26T12:38:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yagshi/items/a1eb3a4283685ecb68d4"/></entry><entry><id>https://qiita.com/mod_poppo/items/80c442a1d95471e6ac55</id><title type="text">Haskellの文字列リテラルはGHCでどのようにコンパイルされるか</title><updated>2020-03-26T08:30:15+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/80c442a1d95471e6ac55"/></entry><entry><id>https://qiita.com/rinse_/items/4f1f4f9938196ea5c1dd</id><title type="text">深さ優先探索で数独を解く</title><updated>2020-03-24T14:05:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/rinse_/items/4f1f4f9938196ea5c1dd"/></entry><entry><id>https://qiita.com/suzuki-hoge/items/17cf0cd3680ef10b2cc1</id><title type="text">haskell の Int と Integer の違いや Float や Double や Rational を理解する</title><updated>2020-03-23T13:47:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/suzuki-hoge/items/17cf0cd3680ef10b2cc1"/></entry><entry><id>https://qiita.com/ysn551/items/03dd605c656768f33d7a</id><title type="text">リストモナドについて</title><updated>2020-03-23T07:16:11+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ysn551/items/03dd605c656768f33d7a"/></entry><entry><id>https://qiita.com/masaki_shoji/items/af5ab8b9496f0a6dfbbc</id><title type="text">関数型プログラミング -Applicativeについて知る前に、Functorでできないことを知っておこう-</title><updated>2020-03-21T14:33:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masaki_shoji/items/af5ab8b9496f0a6dfbbc"/></entry><entry><id>https://qiita.com/RunEagler/items/33f8b4abfd535c66a0d5</id><title type="text">HaskellのMap型、Set型</title><updated>2020-03-21T12:06:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/RunEagler/items/33f8b4abfd535c66a0d5"/></entry><entry><id>https://haskell.jp/blog/posts/2020/property-io.html</id><title type="text">HspecでQuickCheckするときもshouldBeなどが使えます</title><updated>2020-02-27T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2020/property-io.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -7214,7 +7023,208 @@ gtagsの特徴：
 
 単純に特定ディレクトリ以下の作業ファイルを削除してしまうと、コミット時に差分として検知されてしまう、また、次回以降のupdateコマンドで再ダウンロードされてしまう、という非常に残念な挙動になります。
 
-このようなケースでは以下の方法を使えば、差分が検知されない状態で所定ディレクトリ以下のファイルを削除</summary></entry><entry><id>http://lotz84.github.io/posts/published_haskell_by_example.html</id><title type="text">Haskell by Exampleを公開しました</title><updated>2015-05-06T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/published_haskell_by_example.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/build-chat-server-on-haskell.html</id><title type="text">Haskellでチャットサーバーを建ててみた</title><updated>2015-04-27T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/build-chat-server-on-haskell.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html</id><title type="text">Unityハンズオン勉強会に参加しました@CAMPHOR-</title><updated>2015-04-25T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html</id><title type="text">Swift で分割コンパイルする方法</title><updated>2015-02-07T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/use-selenium-by-haskell.html</id><title type="text">HaskellでSeleniumを使ってみる＠勉強会</title><updated>2014-12-14T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/use-selenium-by-haskell.html"/><summary type="html"></summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/03-30-cabal-plan-license-report.html</id><title type="text">cabal-plan license-report 機能の紹介</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/03-30-cabal-plan-license-report.html"/><summary type="html">&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/cabal-plan&#34;&gt;cabal-plan&lt;/a&gt; を使って、プロジェクトが依存するパッケージのライセンスを列挙する方法について紹介します。&lt;/p&gt;
+このようなケースでは以下の方法を使えば、差分が検知されない状態で所定ディレクトリ以下のファイルを削除</summary></entry><entry><id>http://lotz84.github.io/posts/published_haskell_by_example.html</id><title type="text">Haskell by Exampleを公開しました</title><updated>2015-05-06T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/published_haskell_by_example.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/build-chat-server-on-haskell.html</id><title type="text">Haskellでチャットサーバーを建ててみた</title><updated>2015-04-27T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/build-chat-server-on-haskell.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html</id><title type="text">Unityハンズオン勉強会に参加しました@CAMPHOR-</title><updated>2015-04-25T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html</id><title type="text">Swift で分割コンパイルする方法</title><updated>2015-02-07T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/use-selenium-by-haskell.html</id><title type="text">HaskellでSeleniumを使ってみる＠勉強会</title><updated>2014-12-14T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/use-selenium-by-haskell.html"/><summary type="html"></summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/04-12-cabal-repl.html</id><title type="text">cabal repl コマンドについて</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/04-12-cabal-repl.html"/><summary type="html">&lt;p&gt;&lt;code&gt;cabal repl&lt;/code&gt; コマンドは&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ghci&lt;/code&gt;, &lt;code&gt;ghc --interactive&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stack repl&lt;/code&gt;, &lt;code&gt;stack ghci&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;などと同じように &lt;strong&gt;cabal&lt;/strong&gt; で &lt;strong&gt;REPL&lt;/strong&gt; 環境を実行するためのコマンドです。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;cabal&lt;/strong&gt; プロジェクト内で実行する場合と、&lt;strong&gt;cabal&lt;/strong&gt; プロジェクト外で実行する場合で挙動が少し異なります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal -V
+cabal-install version 3.2.0.0
+compiled using version 3.2.0.0 of the Cabal library&lt;/code&gt;&lt;/pre&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;cabal-プロジェクト外で実行した場合&#34;&gt;&lt;strong&gt;cabal&lt;/strong&gt; プロジェクト外で実行した場合&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;cabal&lt;/strong&gt; は自動的に &lt;strong&gt;fake-package&lt;/strong&gt; という環境を用意します。これは使い捨てのダミー &lt;strong&gt;cabal&lt;/strong&gt; プロジェクトです。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl
+Resolving dependencies...
+Build profile: -w ghc-8.10.1 -O1
+In order, the following will be built (use -v for more details):
+ - fake-package-0 (lib) (first run)
+Configuring library for fake-package-0..
+Preprocessing library for fake-package-0..
+Warning: No exposed modules
+GHCi, version 8.10.1: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /tmp/cabal-repl.-3302/setcwd.ghci
+Prelude&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;生成される内容は &lt;a href=&#34;https://github.com/haskell/cabal/blob/cabal-install-v3.2.0.0/cabal-install/Distribution/Client/CmdRepl.hs#L392&#34;&gt;withoutProject&lt;/a&gt; の中で定義されています。また、ログメッセージの最後に表示されている &lt;code&gt;/tmp/cabal-repl.-3302/&lt;/code&gt; ディレクトリに、実際に生成された &lt;strong&gt;cabal&lt;/strong&gt; ファイルなどが保存されます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ ls /tmp/cabal-repl.-3302/
+dist-newstyle  fake-package.cabal  setcwd.ghci&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;cabal-install-3.2&lt;/code&gt; で生成される &lt;code&gt;fake-package.cabal&lt;/code&gt; の内容は以下のようになっています。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cabal-version: 2.2
+name:          fake-package
+version:       0
+
+library
+    default-language: Haskell2010
+    build-depends:    base -any&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;build-depends&lt;/strong&gt; に &lt;code&gt;base -any&lt;/code&gt; が指定されているため、&lt;strong&gt;GHC&lt;/strong&gt; のバージョンに対応した &lt;strong&gt;base&lt;/strong&gt; パッケージがデフォルトで利用可能です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;REPL&lt;/strong&gt; の使い方は &lt;strong&gt;ghci&lt;/strong&gt; などと同じなので大丈夫でしょう。&lt;/p&gt;
+&lt;h3 id=&#34;repl-起動時のメッセージを省略する&#34;&gt;&lt;strong&gt;REPL&lt;/strong&gt; 起動時のメッセージを省略する&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;REPL&lt;/strong&gt; 起動時のメッセージを省略するためには &lt;code&gt;-v0&lt;/code&gt; オプションを指定します。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0
+Prelude&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;repl-で利用する-ghc-を切り替える&#34;&gt;&lt;strong&gt;REPL&lt;/strong&gt; で利用する GHC を切り替える&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;cabal build&lt;/code&gt; などでもおなじみの &lt;code&gt;-w&lt;/code&gt; (&lt;code&gt;--with-compiler&lt;/code&gt;) オプションを指定するだけです。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -w ghc-8.8.3
+...
+GHCi, version 8.8.3: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /tmp/cabal-repl.-20727/setcwd.ghci
+Prelude&amp;gt;
+
+$ cabal repl -w ghc-8.10.1
+...
+GHCi, version 8.10.1: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /tmp/cabal-repl.-20914/setcwd.ghci&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;ファイルを指定して-repl-を起動&#34;&gt;ファイルを指定して &lt;strong&gt;REPL&lt;/strong&gt; を起動&lt;/h3&gt;
+&lt;p&gt;例えば &lt;code&gt;ghci A.hs&lt;/code&gt; のように &lt;strong&gt;REPL&lt;/strong&gt; 起動時にファイル (モジュール) を読み込みたい時があります。&lt;/p&gt;
+&lt;p&gt;しかし、これを &lt;strong&gt;cabal&lt;/strong&gt; で同じように実行するとエラーになります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0 A.hs
+cabal: &amp;#39;repl&amp;#39; doesn&amp;#39;t take any extra arguments when outside a project: A.hs&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;そのため、一度 &lt;code&gt;cabal repl&lt;/code&gt; を実行してから &lt;code&gt;:l&lt;/code&gt; コマンドでファイルを読み込む必要があります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0
+Prelude&amp;gt; :l A.hs
+*A&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;repl-にオプションを渡す&#34;&gt;&lt;strong&gt;REPL&lt;/strong&gt; にオプションを渡す&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;stack repl&lt;/code&gt; の &lt;code&gt;--ghci-options&lt;/code&gt; に相当するオプションは &lt;code&gt;--repl-options&lt;/code&gt; です。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0 --repl-options=&amp;quot;-XNoImplicitPrelude&amp;quot;
+&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;複数指定する場合は &lt;code&gt;--repl-options&lt;/code&gt; を何度も指定する必要があります。たぶんこれは&lt;a href=&#34;https://github.com/haskell/cabal/pull/6190&#34;&gt;仕様&lt;/a&gt;っぽいです&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0 --repl-options=&amp;quot;-XNoImplicitPrelude&amp;quot; --repl-options=&amp;quot;-XNoStarIsType&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;repl-に依存関係を追加&#34;&gt;&lt;strong&gt;REPL&lt;/strong&gt; に依存関係を追加&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;REPL&lt;/strong&gt; を動かす際、少し複雑なファイルの場合は &lt;strong&gt;base&lt;/strong&gt; 以外のパッケージを利用していることがほとんどです。&lt;/p&gt;
+&lt;p&gt;そういう時には &lt;code&gt;-b&lt;/code&gt; (&lt;code&gt;--build-depends&lt;/code&gt;) オプションを利用します。このオプションは &lt;code&gt;stack repl --package&lt;/code&gt; と同じような感じでパッケージを追加できます。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;vector&lt;/strong&gt; パッケージを追加で読み込む例です。(パッケージのビルドが走る場合があります。)&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -b vector
+...
+Prelude&amp;gt; import Data.Vector
+Prelude Data.Vector&amp;gt; &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;複数のパッケージ &lt;strong&gt;vector&lt;/strong&gt;, &lt;strong&gt;aeson&lt;/strong&gt; を読み込む例は以下のようになります。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -b vector -b aeson
+...
+Prelude&amp;gt; import Data.Vector
+Prelude Data.Vector&amp;gt; import Data.Aeson
+Prelude Data.Vector Data.Aeson&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;このように、カンマ区切りで続けてパッケージを指定することも可能です。(&lt;code&gt;-b&lt;/code&gt; ではエラーになります)&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0 --build-depends=&amp;quot;vector, aeson&amp;quot;
+Prelude&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;パッケージのバージョンを指定することも可能です。バージョンの指定には &lt;strong&gt;build-depends&lt;/strong&gt; と同じ記法が使えます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -b aeson==1.4.7.1
+...
+Prelude&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;ここで、パッケージを追加した際は追加したパッケージが依存しているパッケージも含めて読み込まれる点に注意してください。(つまり、推移的に依存関係が追加されます)&lt;/p&gt;
+&lt;p&gt;例えば &lt;a href=&#34;https://hackage.haskell.org/package/deepseq&#34;&gt;deepseq&lt;/a&gt; パッケージで定義されている &lt;code&gt;Control.DeepSeq&lt;/code&gt; は本当なら &lt;strong&gt;import&lt;/strong&gt; できないはずです。しかし、&lt;a href=&#34;https://hackage.haskell.org/package/vector&#34;&gt;vector&lt;/a&gt; パッケージは &lt;strong&gt;deepseq&lt;/strong&gt; パッケージに依存しているため &lt;strong&gt;import&lt;/strong&gt; できてしまいます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0 -b vector
+Prelude&amp;gt; import Control.DeepSeq 
+Prelude Control.DeepSeq&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;この挙動を変更したい場合は &lt;code&gt;--no-transitive-deps&lt;/code&gt; オプションを指定します。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0 -b vector --no-transitive-deps
+Prelude&amp;gt; import Control.DeepSeq 
+
+&amp;lt;no location info&amp;gt;: error:
+    Could not load module ‘Control.DeepSeq’
+    It is a member of the hidden package ‘deepseq-1.4.4.0’.
+    Perhaps you need to add ‘deepseq’ to the build-depends in your .cabal file.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;読み込まれるパッケージがどのように変化しているか確認しておきましょう。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0
+Prelude&amp;gt; :show packages 
+active package flags:
+  -package-id base-4.14.0.0
+
+$ cabal repl -v0 -b vector
+Prelude&amp;gt; :show packages 
+active package flags:
+  -package-id transformers-0.5.6.2
+  -package-id primitive-0.7.0.1-26f169240ac34903846f3a33e2517e97382af71bd7fe7cb7262fd6ca4381f53e
+  -package-id array-0.5.4.0
+  -package-id deepseq-1.4.4.0
+  -package-id integer-gmp-1.0.3.0
+  -package-id rts
+  -package-id ghc-prim-0.6.1
+  -package-id vector-0.12.1.2-8dc77cdd80241a59f0811ecc4c067ae98900f833977f73cce9795875f4909da9
+  -package-id base-4.14.0.0
+
+$ cabal repl -v0 -b vector --no-transitive-deps
+Prelude&amp;gt; :show packages 
+active package flags:
+  -package-id vector-0.12.1.2-8dc77cdd80241a59f0811ecc4c067ae98900f833977f73cce9795875f4909da9
+  -package-id base-4.14.0.0&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;cabal-プロジェクト内で実行した場合&#34;&gt;&lt;strong&gt;cabal&lt;/strong&gt; プロジェクト内で実行した場合&lt;/h2&gt;
+&lt;p&gt;基本的にはプロジェクト内で &lt;code&gt;cabal repl&lt;/code&gt; と実行するとプロジェクトの &lt;strong&gt;cabal&lt;/strong&gt; ファイルに従い&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;依存関係の追加&lt;/li&gt;
+&lt;li&gt;モジュールの追加&lt;/li&gt;
+&lt;li&gt;オプションの追加&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;などを自動的に行い、&lt;strong&gt;REPL&lt;/strong&gt; を起動します。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0
+*MyLib&amp;gt; &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;この時、&lt;strong&gt;import&lt;/strong&gt; されるモジュールは1つのみです。(これは仕様みたいです)&lt;/p&gt;
+&lt;p&gt;そのため、必要なモジュールは自分で &lt;strong&gt;import&lt;/strong&gt; する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;プロジェクトを無視して-repl-を起動&#34;&gt;プロジェクトを無視して &lt;strong&gt;REPL&lt;/strong&gt; を起動&lt;/h3&gt;
+&lt;p&gt;プロジェクトを無視して &lt;strong&gt;REPL&lt;/strong&gt; を起動するためには &lt;code&gt;-z&lt;/code&gt; (&lt;code&gt;--ignore-project&lt;/code&gt;) オプションを指定します。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal repl -v0 -z
+Prelude&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;今回紹介したオプション一覧&#34;&gt;今回紹介したオプション一覧&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;short&lt;/th&gt;
+&lt;th&gt;long&lt;/th&gt;
+&lt;th&gt;オプションの意味&lt;/th&gt;
+&lt;th&gt;stack&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;無し&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--repl-options&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;ghci&lt;/strong&gt; に渡すオプション指定&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--ghci-options&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;-b&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--build-depends&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;依存関係の追加&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--package&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;-z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--ignore-project&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;プロジェクトの &lt;strong&gt;cabal&lt;/strong&gt; を無視する&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--no-load&lt;/code&gt; が近いけど&lt;br&gt;プロジェクトの依存関係は読み込む&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;無し&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--no-transitive-deps&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;推移的な依存関係を追加しない&lt;/td&gt;
+&lt;td&gt;デフォルトの動作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;code&gt;-w&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--with-compiler&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;利用するコンパイラの指定&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-with-ghc&lt;/code&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;code&gt;-v0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;--verbose=0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;起動時のメッセージを省略&lt;/td&gt;
+&lt;td&gt;無し&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;参考リソース&#34;&gt;参考リソース&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.haskell.org/cabal/users-guide/nix-local-build.html#cabal-v2-repl&#34;&gt;5.4.4. cabal v2-repl - Cabal User Manual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell/cabal/pull/5454&#34;&gt;Add –build-depends flag, associated support to new-repl #5454&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell/cabal/pull/3565&#34;&gt;Cabal repl and cabal build/run conflict over .o object files if ghci has -fobject-code set #3565&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell/cabal/pull/2592&#34;&gt;cabal repl load single module #2592&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell/cabal/pull/6190&#34;&gt;–repl-options doesn’t split on whitespace #6190&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell/cabal/pull/5845&#34;&gt;Allow list for &lt;code&gt;repl --build-depends&lt;/code&gt; #5845&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell/cabal/issues/5374&#34;&gt;&lt;code&gt;cabal new-repl&lt;/code&gt; only brings one module into scope #5374&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/03-30-cabal-plan-license-report.html</id><title type="text">cabal-plan license-report 機能の紹介</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/03-30-cabal-plan-license-report.html"/><summary type="html">&lt;p&gt;&lt;a href=&#34;https://hackage.haskell.org/package/cabal-plan&#34;&gt;cabal-plan&lt;/a&gt; を使って、プロジェクトが依存するパッケージのライセンスを列挙する方法について紹介します。&lt;/p&gt;
 &lt;p&gt;本記事は &lt;a href=&#34;https://www.reddit.com/r/haskell/comments/8vhkwv/is_there_a_tool_to_collect_all_license_files_of/&#34;&gt;Is there a tool to collect all LICENSE files of used dependencies?&lt;/a&gt; を参考にしています。&lt;/p&gt;
 &lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal -V
 cabal-install version 3.0.0.0
