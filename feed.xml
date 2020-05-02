@@ -1,4 +1,290 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>March  3, 2020</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.e-bigmoon.com/posts/2019/12-24-ap-monoid.html</id><title type="text">Ap Monoid</title><updated>March  3, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/12-24-ap-monoid.html"/><summary type="html">&lt;p&gt;まずは以下の関数 &lt;code&gt;f&lt;/code&gt; を考えます。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>May  2, 2020</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.e-bigmoon.com/posts/2020/01-22-get-freeze-from-stackage.html</id><title type="text">stack で管理されたプロジェクトを cabal でビルドするために</title><updated>May  2, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/01-22-get-freeze-from-stackage.html"/><summary type="html">&lt;p&gt;Haskell のビルドツールといえば &lt;strong&gt;cabal&lt;/strong&gt; と &lt;strong&gt;stack&lt;/strong&gt; です。ちょっと前までは &lt;strong&gt;cabal&lt;/strong&gt; より &lt;strong&gt;stack&lt;/strong&gt; の方が流行っていたのですが、最近は開発も落ち着いているようであまり動きがありません。それよりも &lt;strong&gt;cabal&lt;/strong&gt; の &lt;strong&gt;nix-style local build&lt;/strong&gt; が非常に使いやすく、近頃では &lt;strong&gt;stack&lt;/strong&gt; から &lt;strong&gt;cabal&lt;/strong&gt; に移行しているプロジェクトも多くあります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;stack&lt;/strong&gt; を使っていて改善したら良いなぁと思う部分としては、新しい &lt;strong&gt;GHC&lt;/strong&gt; やライブラリをすぐに使おうと思っても &lt;strong&gt;LTS&lt;/strong&gt; や &lt;strong&gt;nightly&lt;/strong&gt; に入っていないため使えなかったり、&lt;strong&gt;Backpack&lt;/strong&gt; が未だに使えなかったりするところでしょうか。&lt;/p&gt;
+&lt;p&gt;ただ、ビルドの再現性という点においては &lt;strong&gt;stack&lt;/strong&gt; の方が優秀だと思っているので今は両方使っています。(&lt;strong&gt;index-state&lt;/strong&gt; と &lt;strong&gt;freeze&lt;/strong&gt; ファイルを組み合わせれば &lt;strong&gt;cabal&lt;/strong&gt; でも再現性が保証されそうな気がしますが、どうなんだろう)&lt;/p&gt;
+&lt;p&gt;今回は &lt;strong&gt;stack&lt;/strong&gt; で管理されたプロジェクトを確実に &lt;strong&gt;cabal&lt;/strong&gt; でビルドするための方法についてまとめました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@fommil/why-not-both-8adadb71a5ed&#34;&gt;Why Not Both?&lt;/a&gt; に載ってた &lt;strong&gt;Stackage&lt;/strong&gt; の使い方の紹介でもあります。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;モチベーション&#34;&gt;モチベーション&lt;/h2&gt;
+&lt;p&gt;ここでは &lt;strong&gt;stack&lt;/strong&gt; で管理されていて、&lt;strong&gt;cabal&lt;/strong&gt; ファイルにバージョン制約が明記されていないという、良くあるシチュエーションを考えます。&lt;/p&gt;
+&lt;p&gt;どんなプロジェクトでも良いのですが、具体的には &lt;a href=&#34;https://github.com/arcticmatt/dino-brick&#34;&gt;arcticmatt/dino-brick&lt;/a&gt; のようなプロジェクトです。&lt;code&gt;stack.yaml&lt;/code&gt; は以下のようになっています。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;resolver&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; lts-8.23&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;packages&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/arcticmatt/dino-brick/blob/dino/dino.cabal#L16&#34;&gt;dino.cabal の build-depends&lt;/a&gt; には、ほとんどバージョンが明記されていません。(&lt;strong&gt;stack&lt;/strong&gt; の場合はスナップショットが決まると自動的にパッケージのバージョンが決まるため、明示する必要はあまり無いのです)&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb2-1&#34;&gt;&lt;a href=&#34;#cb2-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-2&#34;&gt;&lt;a href=&#34;#cb2-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;build-depends&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-3&#34;&gt;&lt;a href=&#34;#cb2-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-4&#34;&gt;&lt;a href=&#34;#cb2-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , brick&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-5&#34;&gt;&lt;a href=&#34;#cb2-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , containers&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-6&#34;&gt;&lt;a href=&#34;#cb2-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , linear&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-7&#34;&gt;&lt;a href=&#34;#cb2-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , microlens&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-8&#34;&gt;&lt;a href=&#34;#cb2-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , microlens-th&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-9&#34;&gt;&lt;a href=&#34;#cb2-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , random&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-10&#34;&gt;&lt;a href=&#34;#cb2-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , vty&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb2-11&#34;&gt;&lt;a href=&#34;#cb2-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , MonadRandom&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;このプロジェクトを &lt;strong&gt;cabal&lt;/strong&gt; でビルドするためにはどうしたら良いんだろうか？というお話です。何もしなくてもビルドできるプロジェクトも結構あるんですが、ハマる時もあります・・・。&lt;/p&gt;
+&lt;h2 id=&#34;package.yaml-から-cabal-ファイルを生成する&#34;&gt;package.yaml から cabal ファイルを生成する&lt;/h2&gt;
+&lt;p&gt;リポジトリに &lt;code&gt;package.yaml&lt;/code&gt; しか含まれていない場合は、&lt;code&gt;package.yaml&lt;/code&gt; から &lt;strong&gt;cabal&lt;/strong&gt; ファイルを生成しましょう。&lt;/p&gt;
+&lt;p&gt;以下のコマンドでビルドすることなくすぐに生成できます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build --dry-run&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;今回は &lt;code&gt;dino.cabal&lt;/code&gt; が最初からリポジトリに含まれているため何もしなくても良さそうですね。&lt;/p&gt;
+&lt;h2 id=&#34;cabal-でビルドしてみよう&#34;&gt;cabal でビルドしてみよう&lt;/h2&gt;
+&lt;p&gt;とりあえずビルドしてみましょう。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ git clone https://github.com/arcticmatt/dino-brick.git
+$ cd dino-brick
+
+$ cabal update
+Downloading the latest package list from hackage.haskell.org
+To revert to previous state run:
+    cabal v2-update &amp;#39;hackage.haskell.org,2020-01-19T06:12:36Z&amp;#39;
+
+$ cabal build
+...
+
+src/UI.hs:142:56: error:
+    • Couldn&amp;#39;t match expected type ‘App s0 e0 n0’
+                  with actual type ‘Game’
+    • In the fourth argument of ‘customMain’, namely ‘g’
+      In a stmt of a &amp;#39;do&amp;#39; block:
+        customMain (V.mkVty V.defaultConfig) (Just chan) app g
+      In the expression:
+        do chan &amp;lt;- newBChan 10
+           forkIO
+             $ forever
+                 $ do modifyIORef counter (+ 1)
+                      c&amp;#39; &amp;lt;- readIORef counter
+                      ....
+           g &amp;lt;- initGame 0
+           customMain (V.mkVty V.defaultConfig) (Just chan) app g
+    |
+142 |   customMain (V.mkVty V.defaultConfig) (Just chan) app g
+    |                                                        ^
+cabal: Failed to build dino-0.1.0.0 (which is required by exe:dino from
+dino-0.1.0.0).&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;エラーがいくつも出てしまいました。上記の結果はそのうちの最後の1つだけを表示しています。&lt;/p&gt;
+&lt;p&gt;ちなみに &lt;code&gt;stack build&lt;/code&gt; だとビルドできます。&lt;/p&gt;
+&lt;h3 id=&#34;問題点&#34;&gt;問題点&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;stack&lt;/strong&gt; だとビルドできて、&lt;strong&gt;cabal&lt;/strong&gt; だと失敗してしまう原因はビルド時にパッケージのバージョンにあります。どのパッケージが原因かと言うと、今回は &lt;a href=&#34;https://hackage.haskell.org/package/brick&#34;&gt;brick&lt;/a&gt; です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;stack&lt;/strong&gt; の場合は &lt;a href=&#34;https://www.stackage.org/lts-8.23&#34;&gt;LTS-8.23&lt;/a&gt; に含まれるバージョンを利用することになるので &lt;a href=&#34;https://www.stackage.org/lts-8.23/package/brick-0.17.2&#34;&gt;brick-0.17.2&lt;/a&gt; を利用します。&lt;/p&gt;
+&lt;p&gt;一方で &lt;strong&gt;cabal&lt;/strong&gt; の場合は &lt;code&gt;cabal update&lt;/code&gt; を最後に実行した時の &lt;strong&gt;Hackage&lt;/strong&gt; の最新バージョンが利用されます。これは明示的なバージョン制約が &lt;strong&gt;cabal&lt;/strong&gt; ファイルに記述されていないためです。そのため &lt;a href=&#34;https://hackage.haskell.org/package/brick-0.50.1&#34;&gt;brick-0.50.1&lt;/a&gt; などが利用されます。&lt;/p&gt;
+&lt;p&gt;バージョンアップによって後方互換性が保たれている場合は何も考えずにビルドが通るのですが、&lt;strong&gt;GHC&lt;/strong&gt; のバージョンが変わるタイミングなどでは破壊的変更が含まれている場合も多いため、どこかでビルドが壊れます。&lt;/p&gt;
+&lt;p&gt;今回のプロジェクトでは &lt;a href=&#34;https://github.com/jtdaugherty/brick/blob/master/CHANGELOG.md#047&#34;&gt;brick-0.47&lt;/a&gt; の変更によって &lt;code&gt;Brick.Main.customMain&lt;/code&gt; の型が変わり、その結果ビルドエラーになりました。&lt;/p&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb5-1&#34;&gt;&lt;a href=&#34;#cb5-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 0.46&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb5-2&#34;&gt;&lt;a href=&#34;#cb5-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;customMain ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Ord&lt;/span&gt; n &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt;        &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Vty&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;BChan&lt;/span&gt; e) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;App&lt;/span&gt; s e n &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; s &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; s&lt;/span&gt;
+&lt;span id=&#34;cb5-3&#34;&gt;&lt;a href=&#34;#cb5-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;span id=&#34;cb5-4&#34;&gt;&lt;a href=&#34;#cb5-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 0.47&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb5-5&#34;&gt;&lt;a href=&#34;#cb5-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;customMain ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Ord&lt;/span&gt; n &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Vty&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Vty&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;BChan&lt;/span&gt; e) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;App&lt;/span&gt; s e n &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; s &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; s&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;このように、原因が特定できれば、修正は簡単です。&lt;code&gt;brick&lt;/code&gt; にバージョン制約を付けるだけです。(0.47 でビルドできるようにコードを修正する方法ももちろん考えられます)&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;library:
+  build-depends:
+      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5
+    , brick == 0.46       -- 破壊的変更が起きる前のバージョンを指定
+    , containers
+    , linear
+    , microlens
+    , microlens-th
+    , random
+    , vty
+    , MonadRandom&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;このプロジェクトはこれで上手く動きました。&lt;/p&gt;
+&lt;p&gt;しかし、どのバージョンで壊れたかどうかを毎回調べるのはかなりつらいです。そのため、もっと良い方法として &lt;code&gt;LTS-8.23&lt;/code&gt; のバージョン制約を使ってみましょう。&lt;/p&gt;
+&lt;h2 id=&#34;cabal-freeze-コマンド&#34;&gt;cabal freeze コマンド&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;cabal&lt;/strong&gt; には &lt;code&gt;cabal freeze&lt;/code&gt; というコマンドがあります。アプリケーション開発で便利な機能です。&lt;/p&gt;
+&lt;p&gt;コマンドを実行すると &lt;code&gt;cabal.project.freeze&lt;/code&gt; というファイルが作られます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal freeze
+Wrote freeze file: dino-brick/cabal.project.freeze&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;このファイルは一言でいえば &lt;code&gt;npm&lt;/code&gt; の &lt;code&gt;package-lock.json&lt;/code&gt; ファイルと同じです。ビルドの再現性を保証するためのものです。&lt;/p&gt;
+&lt;p&gt;例えば、先ほどの &lt;code&gt;dino.cabal&lt;/code&gt; ファイルで &lt;code&gt;brick&lt;/code&gt; のバージョンを &lt;code&gt;^&amp;gt;= 0.46&lt;/code&gt; のように指定した場合を考えてみましょう。この指定方法は &lt;code&gt;brick &amp;gt;= 0.46 &amp;amp;&amp;amp; &amp;lt; 0.47&lt;/code&gt; と同じ意味になります。(&lt;strong&gt;cabal 2.0&lt;/strong&gt; から利用可能な記法です)&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;library:
+  build-depends:
+      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5
+    , brick ^&amp;gt;= 0.46      -- brick &amp;gt;= 0.46 &amp;amp;&amp;amp; &amp;lt; 0.47 と同じ意味
+    , containers
+    , linear
+    , microlens
+    , microlens-th
+    , random
+    , vty
+    , MonadRandom&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例えば、会社のデスクトップPCでビルドしたときに &lt;code&gt;brick-0.46&lt;/code&gt; がインストールされたとしましょう。&lt;/p&gt;
+&lt;p&gt;次の日の朝、バグフィックスされた &lt;code&gt;brick-0.46.1&lt;/code&gt; が &lt;strong&gt;Hackage&lt;/strong&gt; にアップロードされました。&lt;/p&gt;
+&lt;p&gt;その日の午後、自宅のノートPCで &lt;code&gt;cabal update &amp;amp;&amp;amp; cabal build&lt;/code&gt; を行った場合、インストールされるのは &lt;code&gt;brick-0.46.1&lt;/code&gt; になります。&lt;/p&gt;
+&lt;p&gt;つまり、&lt;code&gt;brick ^&amp;gt;= 0.46&lt;/code&gt; という指定方法では環境ごとに同じバージョンが使われていることを保証できません。そのため、&lt;code&gt;cabal freeze&lt;/code&gt; コマンドで &lt;code&gt;cabal.project.freeze&lt;/code&gt; を生成し、コマンドを実行した環境で実際に利用されている具体的なバージョンを記録しておきます。これは &lt;strong&gt;stack&lt;/strong&gt; のスナップショットと同じようなものです。&lt;/p&gt;
+&lt;p&gt;実際に生成されたファイルの中身はこんな感じです。&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;constraints: any.Cabal ==2.4.0.1,
+             any.MonadRandom ==0.5.1.2,
+             any.QuickCheck ==2.13.2,
+             QuickCheck +templatehaskell,
+             any.StateVar ==1.2,
+             any.adjunctions ==4.4,
+             any.ansi-terminal ==0.10.2,
+             ansi-terminal -example,
+             any.ansi-wl-pprint ==0.6.9,
+             ansi-wl-pprint -example,
+             any.array ==0.5.3.0,
+             any.base ==4.12.0.0,
+             any.base-orphans ==0.8.1,
+             any.bifunctors ==5.5.6,
+             bifunctors +semigroups +tagged,
+             any.binary ==0.8.6.0,
+             any.binary-orphans ==1.0.1,
+             any.blaze-builder ==0.4.1.0,
+             any.brick ==0.46,
+             brick -demos,
+             any.bytes ==0.16,
+             bytes +test-doctests,
+             any.bytestring ==0.10.8.2,
+             any.cabal-doctest ==1.0.8,
+             any.call-stack ==0.2.0,
+             any.case-insensitive ==1.2.1.0,
+             any.cereal ==0.5.8.1,
+             cereal -bytestring-builder,
+             any.colour ==2.3.5,
+             any.comonad ==5.0.6,
+             comonad +containers +distributive +test-doctests,
+             any.config-ini ==0.2.4.0,
+             config-ini -enable-doctests,
+             any.containers ==0.6.0.1,
+             any.contravariant ==1.5.2,
+             contravariant +semigroups +statevar +tagged,
+             any.data-clist ==0.1.2.3,
+             any.deepseq ==1.4.4.0,
+             any.directory ==1.3.3.0,
+             any.distributive ==0.6.1,
+             distributive +semigroups +tagged,
+             any.dlist ==0.8.0.7,
+             any.exceptions ==0.10.4,
+             exceptions +transformers-0-4,
+             any.filepath ==1.4.2.1,
+             any.free ==5.1.3,
+             any.ghc-boot-th ==8.6.5,
+             any.ghc-prim ==0.5.3,
+             any.hashable ==1.3.0.0,
+             hashable -examples +integer-gmp +sse2 -sse41,
+             any.integer-gmp ==1.0.2.0,
+             any.integer-logarithms ==1.0.3,
+             integer-logarithms -check-bounds +integer-gmp,
+             any.invariant ==0.5.3,
+             any.kan-extensions ==5.2,
+             any.lens ==4.18.1,
+             lens -benchmark-uniplate -dump-splices +inlining -j -old-inline-pragmas -safe +test-doctests +test-hunit +test-properties +test-templates +trustworthy,
+             any.linear ==1.20.9,
+             linear -herbie +template-haskell,
+             any.megaparsec ==7.0.5,
+             megaparsec -dev,
+             any.microlens ==0.4.11.2,
+             any.microlens-mtl ==0.2.0.1,
+             any.microlens-th ==0.4.3.2,
+             any.mtl ==2.2.2,
+             any.optparse-applicative ==0.15.1.0,
+             any.parallel ==3.2.2.0,
+             any.parsec ==3.1.13.0,
+             any.parser-combinators ==1.2.1,
+             parser-combinators -dev,
+             any.pretty ==1.1.3.6,
+             any.primitive ==0.7.0.0,
+             any.process ==1.6.5.0,
+             any.profunctors ==5.5.1,
+             any.random ==1.1,
+             any.reflection ==2.1.5,
+             reflection -slow +template-haskell,
+             any.rts ==1.0,
+             any.scientific ==0.3.6.2,
+             scientific -bytestring-builder -integer-simple,
+             any.semigroupoids ==5.3.4,
+             semigroupoids +comonad +containers +contravariant +distributive +doctests +tagged +unordered-containers,
+             any.semigroups ==0.19.1,
+             semigroups +binary +bytestring -bytestring-builder +containers +deepseq +hashable +tagged +template-haskell +text +transformers +unordered-containers,
+             any.splitmix ==0.0.3,
+             splitmix -optimised-mixer +random,
+             any.stm ==2.5.0.0,
+             any.tagged ==0.8.6,
+             tagged +deepseq +transformers,
+             any.template-haskell ==2.14.0.0,
+             any.terminfo ==0.4.1.2,
+             any.text ==1.2.3.1,
+             any.text-zipper ==0.10.1,
+             any.th-abstraction ==0.3.1.0,
+             any.time ==1.8.0.2,
+             any.transformers ==0.5.6.2,
+             any.transformers-base ==0.4.5.2,
+             transformers-base +orphaninstances,
+             any.transformers-compat ==0.6.5,
+             transformers-compat -five +five-three -four +generic-deriving +mtl -three -two,
+             any.type-equality ==1,
+             any.unix ==2.7.2.2,
+             any.unordered-containers ==0.2.10.0,
+             unordered-containers -debug,
+             any.utf8-string ==1.0.1.1,
+             any.vector ==0.12.0.3,
+             vector +boundschecks -internalchecks -unsafechecks -wall,
+             any.void ==0.7.3,
+             void -safe,
+             any.vty ==5.26,
+             any.word-wrap ==0.4.1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;cabal.project.freeze&lt;/code&gt; ファイルと &lt;code&gt;&amp;lt;project&amp;gt;.cabal&lt;/code&gt; ファイルでバージョンが異なる場合は &lt;code&gt;&amp;lt;project&amp;gt;.cabal&lt;/code&gt; のバージョンが優先されるようです。&lt;/p&gt;
+&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;library:
+  build-depends:
+      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5
+    , brick ^&amp;gt;= 0.47      -- ビルドが失敗するバージョン制約を指定
+    , containers
+    , linear
+    , microlens
+    , microlens-th
+    , random
+    , vty
+    , MonadRandom&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal build
+...
+[__1] fail (backjumping, conflict set: brick, dino)
+After searching the rest of the dependency tree exhaustively, these were the
+goals I&amp;#39;ve had most trouble fulfilling: brick, dino
+
+$ cabal freeze
+...
+[__1] fail (backjumping, conflict set: brick, dino)
+After searching the rest of the dependency tree exhaustively, these were the
+goals I&amp;#39;ve had most trouble fulfilling: brick, dino&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;そもそも制約を満たさない場合は &lt;code&gt;cabal freeze&lt;/code&gt; が失敗するみたいです。&lt;/p&gt;
+&lt;h2 id=&#34;スナップショットに対応した-freeze-ファイルを使おう&#34;&gt;スナップショットに対応した freeze ファイルを使おう&lt;/h2&gt;
+&lt;p&gt;さて、それではリポジトリを &lt;strong&gt;clone&lt;/strong&gt; した直後に戻しましょう。こんな状態です。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ git clone https://github.com/arcticmatt/dino-brick.git
+$ cd dino-brick
+$ cabal update&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb13-1&#34;&gt;&lt;a href=&#34;#cb13-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-2&#34;&gt;&lt;a href=&#34;#cb13-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;build-depends&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-3&#34;&gt;&lt;a href=&#34;#cb13-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-4&#34;&gt;&lt;a href=&#34;#cb13-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , brick&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-5&#34;&gt;&lt;a href=&#34;#cb13-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , containers&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-6&#34;&gt;&lt;a href=&#34;#cb13-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , linear&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-7&#34;&gt;&lt;a href=&#34;#cb13-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , microlens&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-8&#34;&gt;&lt;a href=&#34;#cb13-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , microlens-th&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-9&#34;&gt;&lt;a href=&#34;#cb13-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , random&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-10&#34;&gt;&lt;a href=&#34;#cb13-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , vty&lt;/span&gt;&lt;/span&gt;
+&lt;span id=&#34;cb13-11&#34;&gt;&lt;a href=&#34;#cb13-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , MonadRandom&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Stackage&lt;/strong&gt; のスナップショットの &lt;strong&gt;URL&lt;/strong&gt; の後ろに &lt;code&gt;cabal.config&lt;/code&gt; を付けた &lt;a href=&#34;https://www.stackage.org/lts-8.23/cabal.config&#34;&gt;https://www.stackage.org/lts-8.23/cabal.config&lt;/a&gt; にアクセスすると &lt;code&gt;cabal.project.freeze&lt;/code&gt; ファイルとして利用可能なテキストファイルが表示されます。&lt;/p&gt;
+&lt;p&gt;これをそのまま保存してビルドするだけで全てが上手くいきます。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ curl https://www.stackage.org/lts-8.23/cabal.config &amp;gt; cabal.project.freeze
+$ cabal build
+[__2] fail (backjumping, conflict set: base, dino, optparse-applicative)
+After searching the rest of the dependency tree exhaustively, these were the
+goals I&amp;#39;ve had most trouble fulfilling: optparse-applicative, base, dino&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;おっと忘れていました。&lt;code&gt;LTS-8.23&lt;/code&gt; は &lt;code&gt;GHC-8.0.2&lt;/code&gt; でしたね。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-w&lt;/code&gt; (&lt;code&gt;with-compiler&lt;/code&gt; の頭文字) オプションで利用する &lt;strong&gt;GHC&lt;/strong&gt; を切り替えてビルドしましょう！&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal build -w ghc-8.0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;stack&lt;/strong&gt; でビルドが通っていれば、&lt;strong&gt;cabal&lt;/strong&gt; でも通る&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cabal freeze&lt;/code&gt; を使うとスナップショットのようにバージョンを記録できる&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stackage&lt;/strong&gt; のスナップショットの &lt;strong&gt;URL&lt;/strong&gt; の最後に &lt;code&gt;cabal.config&lt;/code&gt; を付けると &lt;strong&gt;freeze&lt;/strong&gt; ファイルを取得できる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参考リソース&#34;&gt;参考リソース&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.haskell.org/cabal/users-guide/nix-local-build.html#cabal-v2-freeze&#34;&gt;5.4.6. cabal v2-freeze&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@fommil/why-not-both-8adadb71a5ed&#34;&gt;Why Not Both?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/12-24-ap-monoid.html</id><title type="text">Ap Monoid</title><updated>March  3, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/12-24-ap-monoid.html"/><summary type="html">&lt;p&gt;まずは以下の関数 &lt;code&gt;f&lt;/code&gt; を考えます。&lt;/p&gt;
 &lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; f &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;fmap&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;concat&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;sequence&lt;/span&gt;&lt;/span&gt;
 &lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; e1 &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; [&lt;span class=&#34;dv&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;dv&#34;&gt;4&lt;/span&gt;]]&lt;/span&gt;
 &lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; e2 &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; [&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; [&lt;span class=&#34;dv&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;], &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; [&lt;span class=&#34;dv&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;dv&#34;&gt;4&lt;/span&gt;], &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;]&lt;/span&gt;
@@ -151,294 +437,7 @@
 &lt;span id=&#34;cb13-2&#34;&gt;&lt;a href=&#34;#cb13-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;fmap&lt;/span&gt; fold &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt; sequenceA ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; a, &lt;span class=&#34;dt&#34;&gt;Traversable&lt;/span&gt; t, &lt;span class=&#34;dt&#34;&gt;Applicative&lt;/span&gt; f) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; t (f a) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f a&lt;/span&gt;
 &lt;span id=&#34;cb13-3&#34;&gt;&lt;a href=&#34;#cb13-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
 &lt;span id=&#34;cb13-4&#34;&gt;&lt;a href=&#34;#cb13-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;t getAp &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Ap&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-5&#34;&gt;&lt;a href=&#34;#cb13-5&#34;&gt;&lt;/a&gt;getAp &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Ap&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;    ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; a, &lt;span class=&#34;dt&#34;&gt;Foldable&lt;/span&gt; t, &lt;span class=&#34;dt&#34;&gt;Applicative&lt;/span&gt; f) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; t (f a) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f a&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/01-22-get-freeze-from-stackage.html</id><title type="text">stack で管理されたプロジェクトを cabal でビルドするために</title><updated>January 22, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/01-22-get-freeze-from-stackage.html"/><summary type="html">&lt;p&gt;Haskell のビルドツールといえば &lt;strong&gt;cabal&lt;/strong&gt; と &lt;strong&gt;stack&lt;/strong&gt; です。ちょっと前までは &lt;strong&gt;cabal&lt;/strong&gt; より &lt;strong&gt;stack&lt;/strong&gt; の方が流行っていたのですが、最近は開発も落ち着いているようであまり動きがありません。それよりも &lt;strong&gt;cabal&lt;/strong&gt; の &lt;strong&gt;nix-style local build&lt;/strong&gt; が非常に使いやすく、近頃では &lt;strong&gt;stack&lt;/strong&gt; から &lt;strong&gt;cabal&lt;/strong&gt; に移行しているプロジェクトも多くあります。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;stack&lt;/strong&gt; を使っていて改善したら良いなぁと思う部分としては、新しい &lt;strong&gt;GHC&lt;/strong&gt; やライブラリをすぐに使おうと思っても &lt;strong&gt;LTS&lt;/strong&gt; や &lt;strong&gt;nightly&lt;/strong&gt; に入っていないため使えなかったり、&lt;strong&gt;Backpack&lt;/strong&gt; が未だに使えなかったりするところでしょうか。&lt;/p&gt;
-&lt;p&gt;ただ、ビルドの再現性という点においては &lt;strong&gt;stack&lt;/strong&gt; の方が優秀だと思っているので今は両方使っています。(&lt;strong&gt;index-state&lt;/strong&gt; と &lt;strong&gt;freeze&lt;/strong&gt; ファイルを組み合わせれば &lt;strong&gt;cabal&lt;/strong&gt; でも再現性が保証されそうな気がしますが、どうなんだろう)&lt;/p&gt;
-&lt;p&gt;今回は &lt;strong&gt;stack&lt;/strong&gt; で管理されたプロジェクトを確実に &lt;strong&gt;cabal&lt;/strong&gt; でビルドするための方法についてまとめました。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://medium.com/@fommil/why-not-both-8adadb71a5ed&#34;&gt;Why Not Both?&lt;/a&gt; に載ってた &lt;strong&gt;Stackage&lt;/strong&gt; の使い方の紹介でもあります。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!--more--&gt;
-&lt;h2 id=&#34;モチベーション&#34;&gt;モチベーション&lt;/h2&gt;
-&lt;p&gt;ここでは &lt;code&gt;stack&lt;/code&gt; で管理されていて、&lt;code&gt;cabal&lt;/code&gt; ファイルにバージョン制約が明記されていないという、良くあるシチュエーションを考えます。&lt;/p&gt;
-&lt;p&gt;どんなプロジェクトでも良いのですが、具体的には &lt;a href=&#34;https://github.com/arcticmatt/dino-brick&#34;&gt;arcticmatt/dino-brick&lt;/a&gt; のようなプロジェクトです。&lt;code&gt;stack.yaml&lt;/code&gt; は以下のようになっています。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;resolver&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; lts-8.23&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;packages&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;kw&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;at&#34;&gt; &lt;/span&gt;&lt;span class=&#34;st&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;dino.cabal&lt;/code&gt; の &lt;code&gt;dependencies&lt;/code&gt; には、ほとんどバージョンが明記されていません。(stack の場合はスナップショットが決まると自動的にパッケージのバージョンが決まるため、明示する必要はあまり無いのです)&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb2-1&#34;&gt;&lt;a href=&#34;#cb2-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-2&#34;&gt;&lt;a href=&#34;#cb2-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;build-depends&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-3&#34;&gt;&lt;a href=&#34;#cb2-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-4&#34;&gt;&lt;a href=&#34;#cb2-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , brick&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-5&#34;&gt;&lt;a href=&#34;#cb2-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , containers&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-6&#34;&gt;&lt;a href=&#34;#cb2-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , linear&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-7&#34;&gt;&lt;a href=&#34;#cb2-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , microlens&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-8&#34;&gt;&lt;a href=&#34;#cb2-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , microlens-th&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-9&#34;&gt;&lt;a href=&#34;#cb2-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , random&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-10&#34;&gt;&lt;a href=&#34;#cb2-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , vty&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-11&#34;&gt;&lt;a href=&#34;#cb2-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , MonadRandom&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このプロジェクトを &lt;code&gt;cabal&lt;/code&gt; でビルドするためにはどうしたら良いんだろうか？というお話です。何もしなくてもビルドできるプロジェクトも結構あるんですが、ハマる時もあります・・・。&lt;/p&gt;
-&lt;h2 id=&#34;package.yaml-から-cabal-ファイルを生成する&#34;&gt;package.yaml から cabal ファイルを生成する&lt;/h2&gt;
-&lt;p&gt;リポジトリに &lt;code&gt;package.yaml&lt;/code&gt; しか含まれていない場合は、&lt;code&gt;package.yaml&lt;/code&gt; から &lt;code&gt;cabal&lt;/code&gt; ファイルを生成しましょう。&lt;/p&gt;
-&lt;p&gt;以下のコマンドでビルドすることなくすぐに生成できます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack build --dry-run&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;今回は &lt;code&gt;dino.cabal&lt;/code&gt; が最初からリポジトリに含まれているため何もしなくても良さそうですね。&lt;/p&gt;
-&lt;h2 id=&#34;cabal-でビルドしてみよう&#34;&gt;cabal でビルドしてみよう&lt;/h2&gt;
-&lt;p&gt;とりあえずビルドしてみましょう。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ git clone https://github.com/arcticmatt/dino-brick.git
-$ cd dino-brick
-$ cabal update
-Downloading the latest package list from hackage.haskell.org
-To revert to previous state run:
-    cabal v2-update &amp;#39;hackage.haskell.org,2020-01-19T06:12:36Z&amp;#39;
-
-$ cabal build
-...
-
-src/UI.hs:142:56: error:
-    • Couldn&amp;#39;t match expected type ‘App s0 e0 n0’
-                  with actual type ‘Game’
-    • In the fourth argument of ‘customMain’, namely ‘g’
-      In a stmt of a &amp;#39;do&amp;#39; block:
-        customMain (V.mkVty V.defaultConfig) (Just chan) app g
-      In the expression:
-        do chan &amp;lt;- newBChan 10
-           forkIO
-             $ forever
-                 $ do modifyIORef counter (+ 1)
-                      c&amp;#39; &amp;lt;- readIORef counter
-                      ....
-           g &amp;lt;- initGame 0
-           customMain (V.mkVty V.defaultConfig) (Just chan) app g
-    |
-142 |   customMain (V.mkVty V.defaultConfig) (Just chan) app g
-    |                                                        ^
-cabal: Failed to build dino-0.1.0.0 (which is required by exe:dino from
-dino-0.1.0.0).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;エラーがいくつも出てしまいました。上記の結果はそのうちの最後の1つだけを表示しています。&lt;/p&gt;
-&lt;p&gt;ちなみに &lt;code&gt;stack build&lt;/code&gt; だとビルドできます。&lt;/p&gt;
-&lt;h3 id=&#34;問題点&#34;&gt;問題点&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;stack&lt;/code&gt; だとビルドできて、&lt;code&gt;cabal&lt;/code&gt; だと失敗してしまう原因はビルド時にパッケージのバージョンにあります。どのパッケージが原因かと言うと、今回は &lt;a href=&#34;https://hackage.haskell.org/package/brick&#34;&gt;brick&lt;/a&gt; です。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;stack&lt;/code&gt; の場合は &lt;a href=&#34;https://www.stackage.org/lts-8.23&#34;&gt;LTS-8.23&lt;/a&gt; に含まれるバージョンを利用することになるので &lt;a href=&#34;https://www.stackage.org/lts-8.23/package/brick-0.17.2&#34;&gt;brick-0.17.2&lt;/a&gt; を利用します。&lt;/p&gt;
-&lt;p&gt;一方で &lt;code&gt;cabal&lt;/code&gt; の場合は &lt;code&gt;cabal update&lt;/code&gt; を最後に実行した時の &lt;code&gt;Hackage&lt;/code&gt; の最新バージョンが利用されます。これは明示的なバージョン制約が &lt;code&gt;cabal&lt;/code&gt; ファイルに記述されていないためです。そのため &lt;a href=&#34;https://hackage.haskell.org/package/brick-0.50.1&#34;&gt;brick-0.50.1&lt;/a&gt; などが利用されます。&lt;/p&gt;
-&lt;p&gt;バージョンアップによって後方互換性が保たれている場合は何も考えずにビルドが通るのですが、GHC のバージョンが変わるタイミングなどでは破壊的変更が含まれている場合も多いため、どこかでビルドが壊れます。&lt;/p&gt;
-&lt;p&gt;今回のプロジェクトでは &lt;a href=&#34;https://github.com/jtdaugherty/brick/blob/master/CHANGELOG.md#047&#34;&gt;brick-0.47&lt;/a&gt; の変更によって &lt;code&gt;Brick.Main.customMain&lt;/code&gt; の型が変わり、その結果ビルドエラーになりました。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb5-1&#34;&gt;&lt;a href=&#34;#cb5-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 0.46&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-2&#34;&gt;&lt;a href=&#34;#cb5-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;customMain ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Ord&lt;/span&gt; n &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt;        &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Vty&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;BChan&lt;/span&gt; e) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;App&lt;/span&gt; s e n &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; s &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; s&lt;/span&gt;
-&lt;span id=&#34;cb5-3&#34;&gt;&lt;a href=&#34;#cb5-3&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-4&#34;&gt;&lt;a href=&#34;#cb5-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 0.47&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-5&#34;&gt;&lt;a href=&#34;#cb5-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;customMain ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Ord&lt;/span&gt; n &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Vty&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Vty&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;BChan&lt;/span&gt; e) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;App&lt;/span&gt; s e n &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; s &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; s&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このように、原因が特定できれば、修正は簡単です。&lt;code&gt;brick&lt;/code&gt; にバージョン制約を付けるだけです。(0.47 でビルドできるようにコードを修正する方法ももちろん考えられます)&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;library:
-  build-depends:
-      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5
-    , brick == 0.46       -- 破壊的変更が起きる前のバージョンを指定
-    , containers
-    , linear
-    , microlens
-    , microlens-th
-    , random
-    , vty
-    , MonadRandom&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;このプロジェクトはこれで上手く動きました。&lt;/p&gt;
-&lt;p&gt;しかし、どのバージョンで壊れたかどうかを毎回調べるのはかなりつらいです。そのため、もっと良い方法として &lt;code&gt;LTS-8.23&lt;/code&gt; のバージョン制約を使ってみましょう。&lt;/p&gt;
-&lt;h2 id=&#34;cabal-freeze-コマンド&#34;&gt;cabal freeze コマンド&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;cabal&lt;/code&gt; には &lt;code&gt;cabal freeze&lt;/code&gt; というコマンドがあります。アプリケーション開発で便利な機能です。&lt;/p&gt;
-&lt;p&gt;コマンドを実行すると &lt;code&gt;cabal.project.freeze&lt;/code&gt; というファイルが作られます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal freeze
-Wrote freeze file: dino-brick/cabal.project.freeze&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;このファイルは一言でいえば &lt;code&gt;npm&lt;/code&gt; の &lt;code&gt;package-lock.json&lt;/code&gt; ファイルと同じです。ビルドの再現性を保証するためのものです。&lt;/p&gt;
-&lt;p&gt;例えば、先ほどの &lt;code&gt;dino.cabal&lt;/code&gt; ファイルで &lt;code&gt;brick&lt;/code&gt; のバージョンを &lt;code&gt;^&amp;gt;= 0.46&lt;/code&gt; のように指定した場合を考えてみましょう。この指定方法は &lt;code&gt;brick &amp;gt;= 0.46 &amp;amp;&amp;amp; &amp;lt; 0.47&lt;/code&gt; と同じ意味になります。(cabal 2.0 から使えます)&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;library:
-  build-depends:
-      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5
-    , brick ^&amp;gt;= 0.46      -- brick &amp;gt;= 0.46 &amp;amp;&amp;amp; &amp;lt; 0.47 と同じ意味
-    , containers
-    , linear
-    , microlens
-    , microlens-th
-    , random
-    , vty
-    , MonadRandom&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;例えば、会社のデスクトップPCでビルドしたときに &lt;code&gt;brick-0.46&lt;/code&gt; がインストールされたとしましょう。&lt;/p&gt;
-&lt;p&gt;次の日の朝、バグフィックスされた &lt;code&gt;brick-0.46.1&lt;/code&gt; が Hackage にアップロードされました。&lt;/p&gt;
-&lt;p&gt;その日の午後、自宅のノートPCで &lt;code&gt;cabal update &amp;amp;&amp;amp; cabal build&lt;/code&gt; を行った場合、インストールされるのは &lt;code&gt;brick-0.46.1&lt;/code&gt; になります。&lt;/p&gt;
-&lt;p&gt;つまり、&lt;code&gt;brick ^&amp;gt;= 0.46&lt;/code&gt; という指定方法では環境ごとに同じバージョンが使われていることを保証できません。そのため、&lt;code&gt;cabal freeze&lt;/code&gt; コマンドで &lt;code&gt;cabal.project.freeze&lt;/code&gt; を生成し、コマンドを実行した環境で実際に利用されている具体的なバージョンを記録しておきます。これは &lt;code&gt;stack&lt;/code&gt; のスナップショットと同じようなものです。&lt;/p&gt;
-&lt;p&gt;実際に生成されたファイルの中身はこんな感じです。&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;constraints: any.Cabal ==2.4.0.1,
-             any.MonadRandom ==0.5.1.2,
-             any.QuickCheck ==2.13.2,
-             QuickCheck +templatehaskell,
-             any.StateVar ==1.2,
-             any.adjunctions ==4.4,
-             any.ansi-terminal ==0.10.2,
-             ansi-terminal -example,
-             any.ansi-wl-pprint ==0.6.9,
-             ansi-wl-pprint -example,
-             any.array ==0.5.3.0,
-             any.base ==4.12.0.0,
-             any.base-orphans ==0.8.1,
-             any.bifunctors ==5.5.6,
-             bifunctors +semigroups +tagged,
-             any.binary ==0.8.6.0,
-             any.binary-orphans ==1.0.1,
-             any.blaze-builder ==0.4.1.0,
-             any.brick ==0.46,
-             brick -demos,
-             any.bytes ==0.16,
-             bytes +test-doctests,
-             any.bytestring ==0.10.8.2,
-             any.cabal-doctest ==1.0.8,
-             any.call-stack ==0.2.0,
-             any.case-insensitive ==1.2.1.0,
-             any.cereal ==0.5.8.1,
-             cereal -bytestring-builder,
-             any.colour ==2.3.5,
-             any.comonad ==5.0.6,
-             comonad +containers +distributive +test-doctests,
-             any.config-ini ==0.2.4.0,
-             config-ini -enable-doctests,
-             any.containers ==0.6.0.1,
-             any.contravariant ==1.5.2,
-             contravariant +semigroups +statevar +tagged,
-             any.data-clist ==0.1.2.3,
-             any.deepseq ==1.4.4.0,
-             any.directory ==1.3.3.0,
-             any.distributive ==0.6.1,
-             distributive +semigroups +tagged,
-             any.dlist ==0.8.0.7,
-             any.exceptions ==0.10.4,
-             exceptions +transformers-0-4,
-             any.filepath ==1.4.2.1,
-             any.free ==5.1.3,
-             any.ghc-boot-th ==8.6.5,
-             any.ghc-prim ==0.5.3,
-             any.hashable ==1.3.0.0,
-             hashable -examples +integer-gmp +sse2 -sse41,
-             any.integer-gmp ==1.0.2.0,
-             any.integer-logarithms ==1.0.3,
-             integer-logarithms -check-bounds +integer-gmp,
-             any.invariant ==0.5.3,
-             any.kan-extensions ==5.2,
-             any.lens ==4.18.1,
-             lens -benchmark-uniplate -dump-splices +inlining -j -old-inline-pragmas -safe +test-doctests +test-hunit +test-properties +test-templates +trustworthy,
-             any.linear ==1.20.9,
-             linear -herbie +template-haskell,
-             any.megaparsec ==7.0.5,
-             megaparsec -dev,
-             any.microlens ==0.4.11.2,
-             any.microlens-mtl ==0.2.0.1,
-             any.microlens-th ==0.4.3.2,
-             any.mtl ==2.2.2,
-             any.optparse-applicative ==0.15.1.0,
-             any.parallel ==3.2.2.0,
-             any.parsec ==3.1.13.0,
-             any.parser-combinators ==1.2.1,
-             parser-combinators -dev,
-             any.pretty ==1.1.3.6,
-             any.primitive ==0.7.0.0,
-             any.process ==1.6.5.0,
-             any.profunctors ==5.5.1,
-             any.random ==1.1,
-             any.reflection ==2.1.5,
-             reflection -slow +template-haskell,
-             any.rts ==1.0,
-             any.scientific ==0.3.6.2,
-             scientific -bytestring-builder -integer-simple,
-             any.semigroupoids ==5.3.4,
-             semigroupoids +comonad +containers +contravariant +distributive +doctests +tagged +unordered-containers,
-             any.semigroups ==0.19.1,
-             semigroups +binary +bytestring -bytestring-builder +containers +deepseq +hashable +tagged +template-haskell +text +transformers +unordered-containers,
-             any.splitmix ==0.0.3,
-             splitmix -optimised-mixer +random,
-             any.stm ==2.5.0.0,
-             any.tagged ==0.8.6,
-             tagged +deepseq +transformers,
-             any.template-haskell ==2.14.0.0,
-             any.terminfo ==0.4.1.2,
-             any.text ==1.2.3.1,
-             any.text-zipper ==0.10.1,
-             any.th-abstraction ==0.3.1.0,
-             any.time ==1.8.0.2,
-             any.transformers ==0.5.6.2,
-             any.transformers-base ==0.4.5.2,
-             transformers-base +orphaninstances,
-             any.transformers-compat ==0.6.5,
-             transformers-compat -five +five-three -four +generic-deriving +mtl -three -two,
-             any.type-equality ==1,
-             any.unix ==2.7.2.2,
-             any.unordered-containers ==0.2.10.0,
-             unordered-containers -debug,
-             any.utf8-string ==1.0.1.1,
-             any.vector ==0.12.0.3,
-             vector +boundschecks -internalchecks -unsafechecks -wall,
-             any.void ==0.7.3,
-             void -safe,
-             any.vty ==5.26,
-             any.word-wrap ==0.4.1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;cabal.project.freeze&lt;/code&gt; ファイルと &lt;code&gt;&amp;lt;project&amp;gt;.cabal&lt;/code&gt; ファイルでバージョンが異なる場合は &lt;code&gt;&amp;lt;project&amp;gt;.cabal&lt;/code&gt; のバージョンが優先されるようです。&lt;/p&gt;
-&lt;pre class=&#34;cabal&#34;&gt;&lt;code&gt;library:
-  build-depends:
-      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5
-    , brick ^&amp;gt;= 0.47      -- ビルドが失敗するバージョン制約を指定
-    , containers
-    , linear
-    , microlens
-    , microlens-th
-    , random
-    , vty
-    , MonadRandom&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ ls cabal.project.freeze 
-cabal.project.freeze
-$ cabal build
-...
-[__1] fail (backjumping, conflict set: brick, dino)
-After searching the rest of the dependency tree exhaustively, these were the
-goals I&amp;#39;ve had most trouble fulfilling: brick, dino
-
-$ cabal freeze
-...
-[__1] fail (backjumping, conflict set: brick, dino)
-After searching the rest of the dependency tree exhaustively, these were the
-goals I&amp;#39;ve had most trouble fulfilling: brick, dino&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;そもそも制約を満たさない場合は &lt;code&gt;cabal freeze&lt;/code&gt; が失敗するみたいです。&lt;/p&gt;
-&lt;h2 id=&#34;スナップショットに対応した-freeze-ファイルを使おう&#34;&gt;スナップショットに対応した freeze ファイルを使おう&lt;/h2&gt;
-&lt;p&gt;さて、それではリポジトリを &lt;code&gt;clone&lt;/code&gt; した直後に戻しましょう。こんな状態です。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ git clone https://github.com/arcticmatt/dino-brick.git
-$ cd dino-brick
-$ cabal update&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb13&#34;&gt;&lt;pre class=&#34;sourceCode yaml&#34;&gt;&lt;code class=&#34;sourceCode yaml&#34;&gt;&lt;span id=&#34;cb13-1&#34;&gt;&lt;a href=&#34;#cb13-1&#34;&gt;&lt;/a&gt;&lt;span class=&#34;fu&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-2&#34;&gt;&lt;a href=&#34;#cb13-2&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;build-depends&lt;/span&gt;&lt;span class=&#34;kw&#34;&gt;:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-3&#34;&gt;&lt;a href=&#34;#cb13-3&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;      base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-4&#34;&gt;&lt;a href=&#34;#cb13-4&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , brick&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-5&#34;&gt;&lt;a href=&#34;#cb13-5&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , containers&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-6&#34;&gt;&lt;a href=&#34;#cb13-6&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , linear&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-7&#34;&gt;&lt;a href=&#34;#cb13-7&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , microlens&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-8&#34;&gt;&lt;a href=&#34;#cb13-8&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , microlens-th&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-9&#34;&gt;&lt;a href=&#34;#cb13-9&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , random&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-10&#34;&gt;&lt;a href=&#34;#cb13-10&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , vty&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb13-11&#34;&gt;&lt;a href=&#34;#cb13-11&#34;&gt;&lt;/a&gt;&lt;span class=&#34;at&#34;&gt;    , MonadRandom&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Stackage&lt;/code&gt; のスナップショットの &lt;code&gt;URL&lt;/code&gt; の後ろに &lt;code&gt;cabal.config&lt;/code&gt; を付けた &lt;a href=&#34;https://www.stackage.org/lts-8.23/cabal.config&#34;&gt;https://www.stackage.org/lts-8.23/cabal.config&lt;/a&gt; にアクセスすると &lt;code&gt;cabal.project.freeze&lt;/code&gt; ファイルとして利用可能なテキストファイルが表示されます。&lt;/p&gt;
-&lt;p&gt;これをそのまま保存してビルドするだけで全てが上手くいきます。&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ curl https://www.stackage.org/lts-8.23/cabal.config &amp;gt; cabal.project.freeze
-$ cabal build
-[__2] fail (backjumping, conflict set: base, dino, optparse-applicative)
-After searching the rest of the dependency tree exhaustively, these were the
-goals I&amp;#39;ve had most trouble fulfilling: optparse-applicative, base, dino&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;おっと忘れていました。&lt;code&gt;LTS-8.23&lt;/code&gt; は &lt;code&gt;GHC-8.0.2&lt;/code&gt; でしたね。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;-w&lt;/code&gt; (&lt;code&gt;with-compiler&lt;/code&gt; の頭文字) オプションで利用する &lt;code&gt;GHC&lt;/code&gt; を切り替えてビルドしましょう！&lt;/p&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal build -w ghc-8.0.2&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;stack&lt;/code&gt; でビルドが通っていれば、&lt;code&gt;cabal&lt;/code&gt; でも通る&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cabal freeze&lt;/code&gt; を使うとスナップショットのようにバージョンを記録できる&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Stackage&lt;/code&gt; のスナップショットの URL の最後に &lt;code&gt;cabal.config&lt;/code&gt; を付けると &lt;code&gt;freeze&lt;/code&gt; ファイルを取得できる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;参考リソース&#34;&gt;参考リソース&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.haskell.org/cabal/users-guide/nix-local-build.html#cabal-v2-freeze&#34;&gt;5.4.6. cabal v2-freeze&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://medium.com/@fommil/why-not-both-8adadb71a5ed&#34;&gt;Why Not Both?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/01-18-cabal-build-tool-depends.html</id><title type="text">cabal の build-tool-depends フィールド</title><updated>January 22, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/01-18-cabal-build-tool-depends.html"/><summary type="html">&lt;p&gt;cabal の &lt;a href=&#34;https://www.haskell.org/cabal/users-guide/developing-packages.html#pkg-field-build-tool-depends&#34;&gt;build-tool-depends&lt;/a&gt; というフィールドが便利だったので紹介します。&lt;/p&gt;
+&lt;span id=&#34;cb13-5&#34;&gt;&lt;a href=&#34;#cb13-5&#34;&gt;&lt;/a&gt;getAp &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;foldMap&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Ap&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;    ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Monoid&lt;/span&gt; a, &lt;span class=&#34;dt&#34;&gt;Foldable&lt;/span&gt; t, &lt;span class=&#34;dt&#34;&gt;Applicative&lt;/span&gt; f) &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; t (f a) &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; f a&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/01-18-cabal-build-tool-depends.html</id><title type="text">cabal の build-tool-depends フィールド</title><updated>January 22, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/01-18-cabal-build-tool-depends.html"/><summary type="html">&lt;p&gt;cabal の &lt;a href=&#34;https://www.haskell.org/cabal/users-guide/developing-packages.html#pkg-field-build-tool-depends&#34;&gt;build-tool-depends&lt;/a&gt; というフィールドが便利だったので紹介します。&lt;/p&gt;
 &lt;p&gt;テストを書くときに &lt;a href=&#34;https://hackage.haskell.org/package/hspec-discover&#34;&gt;hspec-discover&lt;/a&gt; や &lt;a href=&#34;https://hackage.haskell.org/package/tasty-discover&#34;&gt;tasty-discover&lt;/a&gt; などを使う場合、このフィールドを設定しておくことで依存している実行ファイルを自動的にダウンロードして使ってくれます。&lt;/p&gt;
 &lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal --version
 cabal-install version 3.0.0.0
