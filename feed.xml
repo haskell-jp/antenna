@@ -722,120 +722,6 @@ version:        1.999999999     -- 変更後&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;a href=&#34;https://iwamototakashi.hatenadiary.jp/entry/20100722/p1&#34;&gt;HUnitで日本語を出力してみる→成功&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/hspec/hspec/issues/384&#34;&gt;Human-readable output of unicode characters in expectation results #384&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://haskell.jp/blog/posts/2019/unicode-show.html&#34;&gt;日本語をshowしてうまく表示されなかったらunicode-showの紹介（と、pretty-simpleを少し）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2019/11-10-megaparsec8.html</id><title type="text">Megaparsec 8 (翻訳)</title><updated>December 24, 2019</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2019/11-10-megaparsec8.html"/><summary type="html">&lt;p&gt;Great original post: &lt;a href=&#34;https://markkarpov.com/post/megaparsec-8.html&#34;&gt;Megaparsec 8&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;一年が経ち、Megaparsecの新しいメジャーバージョンが再び登場する時がきました。 今回の変更は、これまでのメジャーリリースの中で最も破壊的ではない変更です。 実際、ほとんどのユーザはアップグレードのために何もする必要はないと思います。&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;これには次の理由があります。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;それほど多くのissue が開かれておらず、バグも報告されていません。それはMegaparsecが最近、そしてほとんど満足のいく方法で「うまくいく」という事実と関係があると思います。&lt;/li&gt;
-&lt;li&gt;ライブラリは現在幅広く使用されています。この記事の執筆時点で、Megaparsecに直接依存する&lt;a href=&#34;https://packdeps.haskellers.com/reverse/megaparsec&#34;&gt;Hackageのパッケージは146個&lt;/a&gt;あります。Megaparsecの上に構築することを選択した&lt;a href=&#34;https://hackage.haskell.org/package/replace-megaparsec&#34;&gt;新しい刺激的なライブラリ&lt;/a&gt;も現れました。&lt;a href=&#34;https://github.com/idris-lang/Idris-dev&#34;&gt;Idris&lt;/a&gt;や&lt;a href=&#34;https://github.com/dhall-lang/dhall-haskell&#34;&gt;Dhall&lt;/a&gt;などのプロジェクトでは、Megaparsecを使用してパースの問題を解決しています。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;これらはライブラリが枯れ、成熟したことを示しているので、動作しているものを壊さないようにしましょう。 とはいえ、常に改善の余地があります。&lt;/p&gt;
-&lt;h2 id=&#34;nixによる品質保証&#34;&gt;Nixによる品質保証&lt;/h2&gt;
-&lt;p&gt;バージョン8の作業を開始する前に、Nixを使用して品質保証を強化することにしました。 現在のMegaparsecに依存するプロジェクトの数を把握し、Nixを使用して&lt;a href=&#34;https://github.com/tweag/ormolu&#34;&gt;Ormolu&lt;/a&gt;のバグを発見したという成功体験から、依存パッケージによって引き起こされる破壊的変更、パフォーマンスの変更、およびバグのチェックにNixを用いることにしました。&lt;/p&gt;
-&lt;p&gt;結果をMegaparsecのリポジトリにある&lt;a href=&#34;https://github.com/mrkkrp/megaparsec/blob/master/HACKING.md&#34;&gt;HACKING.md&lt;/a&gt;に文書化しました。 開発時のshellとは別に、Nix expressionは以下のターゲットグループを提供します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;base&lt;/code&gt; は &lt;code&gt;parser-combinators&lt;/code&gt; や &lt;code&gt;hspec-megaparsec&lt;/code&gt; などの密接に関連したパッケージとそのテストです。&lt;code&gt;nix-build -A base --no-out-link&lt;/code&gt; を実行することにより、開発者はこれらすべてをビルドし、テストすることができます。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;deps&lt;/code&gt; は選択された依存関係のもとでビルドの破壊とテストスイートの失敗が起きないことを確認します。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;benches&lt;/code&gt; はベンチマークのコレクションです。これには、Megaparsecのマイクロベンチマークと、ライブラリが実際のタスクでどのように実行されるかを示すいくつかのパッケージが含まれます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;これらコマンドのそれぞれで、特定のパッケージまたはベンチマークに「ズームイン」できます。 たとえば、&lt;code&gt;nix-build -A benches.parsers-bench&lt;/code&gt; を実行して、&lt;code&gt;parsers-bench&lt;/code&gt; のベンチマークを確認できます。 要するに、ほとんどのパッケージは新しい変更でも引き続き動作し、修正が容易ではないものでも動作します。 実際、システムを使い続けるためには不備のあるパッケージにパッチを適用する必要があり、そのための&lt;a href=&#34;https://github.com/mrkkrp/megaparsec/tree/31b917b1297950c22925f9ee7f7a588834293103/nix/patches&#34;&gt;アップグレード用のパッチ&lt;/a&gt;も利用可能です。&lt;/p&gt;
-&lt;p&gt;ロジックやパフォーマンスの低下は見つかりませんでした。&lt;/p&gt;
-&lt;h2 id=&#34;パースエラー位置の制御&#34;&gt;パースエラー位置の制御&lt;/h2&gt;
-&lt;p&gt;新機能について話しましょう。 プリミティブ &lt;code&gt;failure&lt;/code&gt; と &lt;code&gt;fancyFailure&lt;/code&gt; は &lt;code&gt;parseError&lt;/code&gt; に置き換わりました。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb1-1&#34;&gt;&lt;a href=&#34;#cb1-1&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;parseError ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadParsec&lt;/span&gt; e s m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ParseError&lt;/span&gt; s e &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a&lt;/span&gt;
-&lt;span id=&#34;cb1-2&#34;&gt;&lt;a href=&#34;#cb1-2&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-3&#34;&gt;&lt;a href=&#34;#cb1-3&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 現在の &amp;#39;failure&amp;#39; と &amp;#39;fancyFailure&amp;#39; は普通の関数:&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-4&#34;&gt;&lt;a href=&#34;#cb1-4&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-5&#34;&gt;&lt;a href=&#34;#cb1-5&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;failure&lt;/span&gt;
-&lt;span id=&#34;cb1-6&#34;&gt;&lt;a href=&#34;#cb1-6&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadParsec&lt;/span&gt; e s m&lt;/span&gt;
-&lt;span id=&#34;cb1-7&#34;&gt;&lt;a href=&#34;#cb1-7&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ErrorItem&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Token&lt;/span&gt; s)) &lt;span class=&#34;co&#34;&gt;-- ^ 期待しないアイテム (あれば)&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-8&#34;&gt;&lt;a href=&#34;#cb1-8&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Set&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ErrorItem&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Token&lt;/span&gt; s)) &lt;span class=&#34;co&#34;&gt;-- ^ 期待するアイテム&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-9&#34;&gt;&lt;a href=&#34;#cb1-9&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a&lt;/span&gt;
-&lt;span id=&#34;cb1-10&#34;&gt;&lt;a href=&#34;#cb1-10&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;failure us ps &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-11&#34;&gt;&lt;a href=&#34;#cb1-11&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  o &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; getOffset&lt;/span&gt;
-&lt;span id=&#34;cb1-12&#34;&gt;&lt;a href=&#34;#cb1-12&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  parseError (&lt;span class=&#34;dt&#34;&gt;TrivialError&lt;/span&gt; o us ps)&lt;/span&gt;
-&lt;span id=&#34;cb1-13&#34;&gt;&lt;a href=&#34;#cb1-13&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-14&#34;&gt;&lt;a href=&#34;#cb1-14&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;fancyFailure&lt;/span&gt;
-&lt;span id=&#34;cb1-15&#34;&gt;&lt;a href=&#34;#cb1-15&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadParsec&lt;/span&gt; e s m&lt;/span&gt;
-&lt;span id=&#34;cb1-16&#34;&gt;&lt;a href=&#34;#cb1-16&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Set&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ErrorFancy&lt;/span&gt; e) &lt;span class=&#34;co&#34;&gt;-- ^ Fancy error components&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-17&#34;&gt;&lt;a href=&#34;#cb1-17&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a&lt;/span&gt;
-&lt;span id=&#34;cb1-18&#34;&gt;&lt;a href=&#34;#cb1-18&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;fancyFailure xs &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb1-19&#34;&gt;&lt;a href=&#34;#cb1-19&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  o &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; getOffset&lt;/span&gt;
-&lt;span id=&#34;cb1-20&#34;&gt;&lt;a href=&#34;#cb1-20&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  parseError (&lt;span class=&#34;dt&#34;&gt;FancyError&lt;/span&gt; o xs)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これはプリミティブの数を減らすという話ではありません (減らすことも良いことですが)。 &lt;code&gt;parseError&lt;/code&gt; の主な特徴は、パーサの状態から現在のオフセットを必要とすることなく、任意のオフセットでパースエラーを報告できることです。 これは、パースエラーにしたい位置を既に超えてしまっている場合でも、入力のその位置でパースエラーを作成したい場合に重要です。 これまでは、まず &lt;code&gt;getOffset&lt;/code&gt; を介して正しいオフセットを取得し、次にパースエラーを報告する直前に &lt;code&gt;setOffset&lt;/code&gt; でオフセットを設定することでしか達成できませんでした。 これは見苦しいだけでなく、エラーが発生しやすくなり、正しいオフセットの復元を忘れることがあります。 &lt;code&gt;mmark&lt;/code&gt;の&lt;a href=&#34;https://github.com/mmark-md/mmark/blob/8f5534d8068c2b7a139b893639ee5920bcaedd84/Text/MMark/Parser.hs#L787-L790&#34;&gt;実例&lt;/a&gt;を次に示します。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb2-1&#34;&gt;&lt;a href=&#34;#cb2-1&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  o&amp;#39; &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; getOffset&lt;/span&gt;
-&lt;span id=&#34;cb2-2&#34;&gt;&lt;a href=&#34;#cb2-2&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  setOffset o&lt;/span&gt;
-&lt;span id=&#34;cb2-3&#34;&gt;&lt;a href=&#34;#cb2-3&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  (void &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; hidden &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; string) &lt;span class=&#34;st&#34;&gt;&amp;quot;[]&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-4&#34;&gt;&lt;a href=&#34;#cb2-4&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;co&#34;&gt;-- ↑ これが失敗した場合、これをオフセット「o」で報告する必要があります&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb2-5&#34;&gt;&lt;a href=&#34;#cb2-5&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  setOffset (o&amp;#39; &lt;span class=&#34;op&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;dv&#34;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ここでは完全な状況を説明しませんが、&lt;code&gt;&#34;[]&#34;&lt;/code&gt;(&lt;code&gt;+ 2&lt;/code&gt;の部分)のパース後にオフセットの増分を考慮するのを忘れたため、このコードにはしばらくバグがあったと言えば十分でしょう。 次のように書けば、同じことをよりうまく表現できます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb3-1&#34;&gt;&lt;a href=&#34;#cb3-1&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  region (setErrorOffset o) &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-2&#34;&gt;&lt;a href=&#34;#cb3-2&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;    (void &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; hidden &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; string) &lt;span class=&#34;st&#34;&gt;&amp;quot;[]&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-3&#34;&gt;&lt;a href=&#34;#cb3-3&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-4&#34;&gt;&lt;a href=&#34;#cb3-4&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 備考&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-5&#34;&gt;&lt;a href=&#34;#cb3-5&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-6&#34;&gt;&lt;a href=&#34;#cb3-6&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;region ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadParsec&lt;/span&gt; e s m&lt;/span&gt;
-&lt;span id=&#34;cb3-7&#34;&gt;&lt;a href=&#34;#cb3-7&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ParseError&lt;/span&gt; s e &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ParseError&lt;/span&gt; s e)&lt;/span&gt;
-&lt;span id=&#34;cb3-8&#34;&gt;&lt;a href=&#34;#cb3-8&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;     &lt;span class=&#34;co&#34;&gt;-- ^ &amp;#39;ParseError&amp;#39; の処理方法&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-9&#34;&gt;&lt;a href=&#34;#cb3-9&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a&lt;/span&gt;
-&lt;span id=&#34;cb3-10&#34;&gt;&lt;a href=&#34;#cb3-10&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;     &lt;span class=&#34;co&#34;&gt;-- ^ 処理を適用する「region」&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb3-11&#34;&gt;&lt;a href=&#34;#cb3-11&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;region&lt;/code&gt;は&lt;code&gt;getOffset&lt;/code&gt; / &lt;code&gt;setOffset&lt;/code&gt; ハックと同じ目的で使用されます。 副作用として、エラーが起きた場合にはパースエラーを更新する関数によって現在のオフセットが変更されます。 &lt;code&gt;region&lt;/code&gt; は &lt;code&gt;parseError&lt;/code&gt; を使用して、古いハックを廃止できます。&lt;/p&gt;
-&lt;pre class=&#34;haskel&#34;&gt;&lt;code&gt;region f m = do
-  r &amp;lt;- observing m
-  case r of
-    Left err -&amp;gt; parseError (f err)
-    Right x -&amp;gt; return x&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;いいね.&lt;/p&gt;
-&lt;h2 id=&#34;マルチエラーパーサのより良いストーリー&#34;&gt;マルチエラーパーサのより良いストーリー&lt;/h2&gt;
-&lt;p&gt;プロジェクトの最初期から、マルチエラーパーサをサポートする方向にゆっくりと動いていました。 バージョン7では、&lt;code&gt;ParseError&lt;/code&gt;の代わりに&lt;code&gt;ParseErrorBundle&lt;/code&gt;を返すようになりました。 マルチエラーをサポートするための準備はすべてが整っていましたが、複数のパースエラーを報告するための方法がまだ提供されていませんでした。&lt;/p&gt;
-&lt;p&gt;マルチエラーパーサに求められる事前条件は、入力に問題のある部分をスキップして、正常であることがわかっている位置からパースを再開できることです。 この部分は、&lt;code&gt;withRecovery&lt;/code&gt;プリミティブ（Megaparsec 4.4.0以降で使用可能）を使用して実現されます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb5-1&#34;&gt;&lt;a href=&#34;#cb5-1&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- | @&amp;#39;withRecovery&amp;#39; r p@ は、パーサー @p@ が失敗した場合でも解析を続行できます。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-2&#34;&gt;&lt;a href=&#34;#cb5-2&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- この場合、実際の &amp;#39;ParseError&amp;#39; を引数とする @r@ が呼び出されます。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-3&#34;&gt;&lt;a href=&#34;#cb5-3&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- よくある使い方として、特定のオブジェクトのパースの失敗を意味する値を返すことで、&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-4&#34;&gt;&lt;a href=&#34;#cb5-4&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- その入力の一部を消費し次のオブジェクトの開始位置に移動します。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-5&#34;&gt;&lt;a href=&#34;#cb5-5&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;--&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-6&#34;&gt;&lt;a href=&#34;#cb5-6&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- @r@ が失敗すると、元のエラーメッセージが &amp;#39;withRecovery&amp;#39; なしで報告されることに注意してください。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-7&#34;&gt;&lt;a href=&#34;#cb5-7&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- パーサ @r@ を回復してもエラーメッセージに影響することはありません。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-8&#34;&gt;&lt;a href=&#34;#cb5-8&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-9&#34;&gt;&lt;a href=&#34;#cb5-9&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-10&#34;&gt;&lt;a href=&#34;#cb5-10&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;withRecovery&lt;/span&gt;
-&lt;span id=&#34;cb5-11&#34;&gt;&lt;a href=&#34;#cb5-11&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;  ::&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ParseError&lt;/span&gt; s e &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a) &lt;span class=&#34;co&#34;&gt;-- ^ 失敗の回復方法&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-12&#34;&gt;&lt;a href=&#34;#cb5-12&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a             &lt;span class=&#34;co&#34;&gt;-- ^ オリジナルのパーサ&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb5-13&#34;&gt;&lt;a href=&#34;#cb5-13&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m a             &lt;span class=&#34;co&#34;&gt;-- ^ 失敗から回復できるパーサ&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Megaparsec 8 までのユーザーは、成功と失敗の可能性を含む直和型になるように型&lt;code&gt;a&lt;/code&gt;を選択する必要がありました。 たとえば、&lt;code&gt;Either (ParseError s e) Result&lt;/code&gt; です。 パースエラーを収集し、後で表示する前に手動で&lt;code&gt;ParseErrorBundle&lt;/code&gt;に追加する必要がありました。 言うまでもなく、これらはすべて、ユーザーフレンドリーではない高度な使用例です。&lt;/p&gt;
-&lt;p&gt;Megaparsec 8 は、遅延パースエラーのサポートを追加します。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;span id=&#34;cb6-1&#34;&gt;&lt;a href=&#34;#cb6-1&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- | 後で報告するために &amp;#39;ParseError&amp;#39;を登録します。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-2&#34;&gt;&lt;a href=&#34;#cb6-2&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- このアクションはパースを終了せず、パースの最後に考慮される&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-3&#34;&gt;&lt;a href=&#34;#cb6-3&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 「遅延」&amp;#39;ParseError&amp;#39;のコレクションに特定の「ParseError」を&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-4&#34;&gt;&lt;a href=&#34;#cb6-4&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 追加する以外は効果がありません。 このコレクションが空の場合のみ、&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-5&#34;&gt;&lt;a href=&#34;#cb6-5&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- パーサは成功します。 これは、複数のパースエラーを一度に報告する&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-6&#34;&gt;&lt;a href=&#34;#cb6-6&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- 主な方法です。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-7&#34;&gt;&lt;a href=&#34;#cb6-7&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-8&#34;&gt;&lt;a href=&#34;#cb6-8&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;registerParseError ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadParsec&lt;/span&gt; e s m &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;ParseError&lt;/span&gt; s e &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m ()&lt;/span&gt;
-&lt;span id=&#34;cb6-9&#34;&gt;&lt;a href=&#34;#cb6-9&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-10&#34;&gt;&lt;a href=&#34;#cb6-10&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- | &amp;#39;failure&amp;#39;に似ていますが、 遅延&amp;#39;ParseError&amp;#39;のためのものです。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-11&#34;&gt;&lt;a href=&#34;#cb6-11&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-12&#34;&gt;&lt;a href=&#34;#cb6-12&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;registerFailure&lt;/span&gt;
-&lt;span id=&#34;cb6-13&#34;&gt;&lt;a href=&#34;#cb6-13&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadParsec&lt;/span&gt; e s m&lt;/span&gt;
-&lt;span id=&#34;cb6-14&#34;&gt;&lt;a href=&#34;#cb6-14&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ErrorItem&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Token&lt;/span&gt; s)) &lt;span class=&#34;co&#34;&gt;-- ^ 期待しないアイテム (あれば)&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-15&#34;&gt;&lt;a href=&#34;#cb6-15&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Set&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ErrorItem&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;Token&lt;/span&gt; s)) &lt;span class=&#34;co&#34;&gt;-- ^ 期待するアイテム&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-16&#34;&gt;&lt;a href=&#34;#cb6-16&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m ()&lt;/span&gt;
-&lt;span id=&#34;cb6-17&#34;&gt;&lt;a href=&#34;#cb6-17&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-18&#34;&gt;&lt;a href=&#34;#cb6-18&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;co&#34;&gt;-- | &amp;#39;fancyFailure&amp;#39;に似ていますが、 遅延&amp;#39;ParseError&amp;#39;のためのものです。&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-19&#34;&gt;&lt;a href=&#34;#cb6-19&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-20&#34;&gt;&lt;a href=&#34;#cb6-20&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;registerFancyFailure&lt;/span&gt;
-&lt;span id=&#34;cb6-21&#34;&gt;&lt;a href=&#34;#cb6-21&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;&lt;span class=&#34;ot&#34;&gt;  ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MonadParsec&lt;/span&gt; e s m&lt;/span&gt;
-&lt;span id=&#34;cb6-22&#34;&gt;&lt;a href=&#34;#cb6-22&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Set&lt;/span&gt; (&lt;span class=&#34;dt&#34;&gt;ErrorFancy&lt;/span&gt; e) &lt;span class=&#34;co&#34;&gt;-- ^ Fancy error components&lt;/span&gt;&lt;/span&gt;
-&lt;span id=&#34;cb6-23&#34;&gt;&lt;a href=&#34;#cb6-23&#34; aria-hidden=&#34;true&#34;&gt;&lt;/a&gt;  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; m ()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これらのエラーは &lt;code&gt;withRecovery&lt;/code&gt; のエラー処理コールバックに登録でき、結果の型は &lt;code&gt;Maybe Result&lt;/code&gt; になります。 これにより、遅延エラーが最終的な &lt;code&gt;ParseErrorBundle&lt;/code&gt; に含まれるようになり、遅延エラーのコレクションが空でない場合に パーサが最終的に失敗するようになります。&lt;/p&gt;
-&lt;p&gt;以上のことから、マルチエラーパーサを書く習慣がユーザ間でより一般的になることを願っています。&lt;/p&gt;
-&lt;h2 id=&#34;その他&#34;&gt;その他&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;いつものように、変更の完全なリストについては、&lt;a href=&#34;https://github.com/mrkkrp/megaparsec/blob/master/CHANGELOG.md&#34;&gt;chagelog&lt;/a&gt; を参照してください。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://markkarpov.com/megaparsec/megaparsec.html&#34;&gt;公式チュートリアル&lt;/a&gt;を含むすべてのテキストをバージョン8と互換性があるように更新しました。新しい機能の使用方法を説明するセクションを含めるように拡張しました。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hspec-megaparsec&lt;/code&gt; などのサテライトパッケージが更新され、バージョン8で動作するようになりました。&lt;/li&gt;
 &lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/03-25-cabal-install.html</id><title type="text">cabal install コマンドについて</title><updated>April  3, 2020</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/03-25-cabal-install.html"/><summary type="html">&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;stack install&lt;/code&gt; と全く同じ動作をする &lt;strong&gt;cabal&lt;/strong&gt; コマンドは &lt;code&gt;cabal install all:exes&lt;/code&gt; です。&lt;/li&gt;
 &lt;/ul&gt;
@@ -1314,7 +1200,35 @@ Plan construction failed.&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/haskell/cabal/pull/6576&#34;&gt;Resolve #6369 and #6393: Allow cabal v2-install pkgname:exename or http://example.com/package.tar.gz(#sha256=abcde…) #6576&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal install &amp;#39;https://hackage.haskell.org/package/cabal-fmt-0.1.2/cabal-fmt-0.1.2.tar.gz#sha256=aae556efbcaddfd65c6a1c1811b122b0d8c8d00624c8c2e36aabb5e9f9ea9840&amp;#39;&lt;/code&gt;&lt;/pre&gt;</summary></entry><entry><id>https://qiita.com/tim-semba/items/ad2b940d74a098403f92</id><title type="text">Haskell でループする</title><updated>2020-07-08T09:45:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tim-semba/items/ad2b940d74a098403f92"/></entry><entry><id>https://qiita.com/Izawa_/items/2a01e774c69efdb665de</id><title type="text">[和訳] 関数型のパール 効果的なアプリカティブ・プログラミング</title><updated>2020-07-07T20:26:38+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/2a01e774c69efdb665de"/></entry><entry><id>https://qiita.com/Izawa_/items/16c8b7434d7fbbcc50fd</id><title type="text">HaskellのApplicativeについて[発展編]</title><updated>2020-07-07T18:08:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/16c8b7434d7fbbcc50fd"/></entry><entry><id>https://qiita.com/oskats1987/items/c3e652862001ad002e17</id><title type="text">HaskellでFunctorを使って簡単な複素数の足し算プログラムーその2</title><updated>2020-07-07T17:18:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/oskats1987/items/c3e652862001ad002e17"/></entry><entry><id>https://qiita.com/lambda_funtaro/items/5ac47f83616f8c07d4db</id><title type="text">Haskellで超簡単にシングルバイナリを作る</title><updated>2020-07-06T00:02:38+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lambda_funtaro/items/5ac47f83616f8c07d4db"/></entry><entry><id>https://qiita.com/sparklingbaby/items/f3fbbea1bd123036a048</id><title type="text">随伴関手とは</title><updated>2020-07-05T13:41:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sparklingbaby/items/f3fbbea1bd123036a048"/></entry><entry><id>https://qiita.com/sand/items/1ecab3f34b613cd61e63</id><title type="text">Haskell の Text と ByteString</title><updated>2020-07-05T11:08:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/1ecab3f34b613cd61e63"/></entry><entry><id>https://qiita.com/takeajioka/items/f5e8e8ec3df7b80b37f2</id><title type="text">Haskellに入門してみる</title><updated>2020-07-05T10:05:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takeajioka/items/f5e8e8ec3df7b80b37f2"/></entry><entry><id>https://qiita.com/Izawa_/items/a982c457e59d2f4beb26</id><title type="text">HaskellのApplicativeについて[基本編]</title><updated>2020-07-02T21:28:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/a982c457e59d2f4beb26"/></entry><entry><id>https://matsubara0507.github.io/posts/2020-07-02-read-featherweight-go.html</id><title type="text">Featherweight Go を読んでみた</title><updated>2020-07-02T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2020-07-02-read-featherweight-go.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ cabal install &amp;#39;https://hackage.haskell.org/package/cabal-fmt-0.1.2/cabal-fmt-0.1.2.tar.gz#sha256=aae556efbcaddfd65c6a1c1811b122b0d8c8d00624c8c2e36aabb5e9f9ea9840&amp;#39;&lt;/code&gt;&lt;/pre&gt;</summary></entry><entry><id>https://qiita.com/Izawa_/items/1a5d2fd99aa49524db03</id><title type="text">HaskellのFoldableはどこから来たのか?</title><updated>2020-07-26T10:55:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/1a5d2fd99aa49524db03"/></entry><entry><id>https://qiita.com/sparklingbaby/items/bfc8c450e680297c14fc</id><title type="text">Haskellにはそもそも+++という演算子が存在する</title><updated>2020-07-20T23:53:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sparklingbaby/items/bfc8c450e680297c14fc"/></entry><entry><id>https://qiita.com/Izawa_/items/706fe36b2b848624a5d4</id><title type="text">Ix―Haskellでのインデックス演算</title><updated>2020-07-20T19:12:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/706fe36b2b848624a5d4"/></entry><entry><id>https://qiita.com/mod_poppo/items/418da906f6621a2898e8</id><title type="text">stylish-haskellをHexFloatLiteralsやNumericUnderscoresに対応させる</title><updated>2020-07-17T23:06:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/418da906f6621a2898e8"/></entry><entry><id>https://qiita.com/oskats1987/items/c26c827575b06b69ac22</id><title type="text">HaskellでMonadを使って簡単な複素数の計算プログラム</title><updated>2020-07-17T16:08:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/oskats1987/items/c26c827575b06b69ac22"/></entry><entry><id>https://qiita.com/AGadget/items/84ec5cba062ea16f753f</id><title type="text">【じゃんけん（っぽい）ゲームで入門】Haskell</title><updated>2020-07-17T01:13:24+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/AGadget/items/84ec5cba062ea16f753f"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2020-07-16T12:08:20.505+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+
+
+スタートメニュー・タスクバーの設定
+
+タスクバーの設定 
+
+小さいタスクバーボタンを使う：オン 
+[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフ
+タスクバーボタンを結合する
+
+「タスクバーに入りきらない場合」を選択
+
+タスクバーをすべての ディスプレイに表示する：オフ
+
+
+
+ Quick Launcherを表示する
+
+クイック起動を復活する 
+Windows 10 タスクバーにクイック起動を表示する
+
+スタートメニューにコントロールパネルを表示する
+
+「Windows 10」のコントロールパネルを表示する方法について
+
+スタートメニューにピン止めするアプリ：
+
+Windowsシステム</summary></entry><entry><id>https://qiita.com/sparklingbaby/items/a46f299dd303d0738f58</id><title type="text">stylish-haskellをBlockArgumentsに対応させる</title><updated>2020-07-13T19:17:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sparklingbaby/items/a46f299dd303d0738f58"/></entry><entry><id>https://qiita.com/lambda_funtaro/items/5ac47f83616f8c07d4db</id><title type="text">Haskellで超簡単にシングルバイナリを作る</title><updated>2020-07-12T19:56:28+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lambda_funtaro/items/5ac47f83616f8c07d4db"/></entry><entry><id>https://qiita.com/mod_poppo/items/b3b415ea72eee210d222</id><title type="text">Haskellのassertを文っぽく使う</title><updated>2020-07-10T18:38:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/b3b415ea72eee210d222"/></entry><entry><id>https://qiita.com/tim-semba/items/ad2b940d74a098403f92</id><title type="text">Haskell でループする</title><updated>2020-07-08T09:45:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tim-semba/items/ad2b940d74a098403f92"/></entry><entry><id>https://qiita.com/Izawa_/items/16c8b7434d7fbbcc50fd</id><title type="text">HaskellのApplicativeについて[発展編]</title><updated>2020-07-07T18:08:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/16c8b7434d7fbbcc50fd"/></entry><entry><id>https://qiita.com/oskats1987/items/c3e652862001ad002e17</id><title type="text">HaskellでFunctorを使って簡単な複素数の足し算プログラムーその2</title><updated>2020-07-07T17:18:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/oskats1987/items/c3e652862001ad002e17"/></entry><entry><id>https://qiita.com/sparklingbaby/items/f3fbbea1bd123036a048</id><title type="text">随伴関手とは</title><updated>2020-07-05T13:41:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sparklingbaby/items/f3fbbea1bd123036a048"/></entry><entry><id>https://qiita.com/sand/items/1ecab3f34b613cd61e63</id><title type="text">Haskell の Text と ByteString</title><updated>2020-07-05T11:08:52+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sand/items/1ecab3f34b613cd61e63"/></entry><entry><id>https://matsubara0507.github.io/posts/2020-07-02-read-featherweight-go.html</id><title type="text">Featherweight Go を読んでみた</title><updated>2020-07-02T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2020-07-02-read-featherweight-go.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;Go言語にジェネリクスを導入するために，その形式的な議論を研究した論文「&lt;a href=&#34;https://arxiv.org/abs/2005.11710&#34;&gt;Featherweight Go&lt;/a&gt;」が6月頭に発表されました． せっかくなので（久々に）全訳をしながら丁寧に読んでみたので，それを簡単にまとめることにします．&lt;/p&gt;
 &lt;p&gt;可能な限りGo言語に馴染みのない人や，プログラミング言語の形式的な議論に馴染みのない人でも理解できるようにしてみます．&lt;/p&gt;
 &lt;h4 id=&#34;注意&#34;&gt;注意&lt;/h4&gt;
@@ -2241,35 +2155,7 @@ $ docker run -it --rm -w /work -v `pwd`/example:/work matsubara0507/hamler run
 &amp;lt;0.792.0&amp;gt; -&amp;gt; &amp;lt;0.793.0&amp;gt;: great hamler! 7715&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;会社単位で作ってるみたい． すごいなぁ，羨ましい．&lt;/p&gt;
-  &lt;/div&gt;</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2020-06-12T13:14:02.963+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
-
-
-スタートメニュー・タスクバーの設定
-
-タスクバーの設定 
-
-小さいタスクバーボタンを使う：オン 
-[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフ
-タスクバーボタンを結合する
-
-「タスクバーに入りきらない場合」を選択
-
-タスクバーをすべての ディスプレイに表示する：オフ
-
-
-
- Quick Launcherを表示する
-
-クイック起動を復活する 
-Windows 10 タスクバーにクイック起動を表示する
-
-スタートメニューにコントロールパネルを表示する
-
-「Windows 10」のコントロールパネルを表示する方法について
-
-スタートメニューにピン止めするアプリ：
-
-Windowsシステム</summary></entry><entry><id>https://haskell.jp/blog/posts/2020/strict-gotchas.html</id><title type="text">Strict拡張を使用する際の注意点</title><updated>2020-06-11T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2020/strict-gotchas.html"/><summary type="html">
+  &lt;/div&gt;</summary></entry><entry><id>https://haskell.jp/blog/posts/2020/strict-gotchas.html</id><title type="text">Strict拡張を使用する際の注意点</title><updated>2020-06-11T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2020/strict-gotchas.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -2556,7 +2442,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;おわりに&lt;span class=&#34;ascii&#3
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/tomo_makes/items/5f88c32b4c2f2f33da92</id><title type="text">数式からいい感じに図表が生成できてしまう! Penroseを試す (SIGGRAPH 2020)</title><updated>2020-06-08T08:24:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tomo_makes/items/5f88c32b4c2f2f33da92"/></entry><entry><id>https://qiita.com/Izawa_/items/63fc45d3c7d056b1e729</id><title type="text">HaskellのBifunctor - Functorの拡張版</title><updated>2020-06-08T07:01:36+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/63fc45d3c7d056b1e729"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/06/06/Haskell_%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E3%83%84%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F</id><title type="text">Haskell 環境構築ツールフローチャートを作りました</title><updated>2020-06-06T12:24:04+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/06/06/Haskell_%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E3%83%84%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F"/><summary type="html">前に環境構築についての記事を書いたのですが、初学者向けにパッと見て分かるようにフローチャートにしました。kakkun61.hatenablog.comGoogle ドライブ 図形描画のファイルはこちらです。コメントを付けることができます。docs.google.com</summary></entry><entry><id>https://qiita.com/Cj-bc/items/362443987a7b8a8658ea</id><title type="text">`~/.stack`のシンボリックリンク先を変えたらおかしくなった</title><updated>2020-06-06T01:26:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Cj-bc/items/362443987a7b8a8658ea"/></entry><entry><id>https://qiita.com/Izawa_/items/9e641d7145fb9d4c4155</id><title type="text">Haskellのnewtypeとdataの違い</title><updated>2020-06-05T23:43:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Izawa_/items/9e641d7145fb9d4c4155"/></entry><entry><id>https://qiita.com/sparklingbaby/items/76a69d9eb573614f566e</id><title type="text">逆状態モナド</title><updated>2020-06-04T22:54:57+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sparklingbaby/items/76a69d9eb573614f566e"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2019/07/30/112634</id><title type="text">CloudNative Days Tokyo 2019 登壇こぼれ話 #CNDT2019</title><updated>2020-05-31T02:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2019/07/30/112634"/><summary type="html">先日行われた CloudNative Days Tokyo 2019 で、Kubernetes のスケジューリングについて発表してきました。公募 CFP 枠です。 www.youtube.com 今回の発表は、実は技術的に目新しい内容をほとんど含んでいません。各トピックは今までいくつかの勉強会で LT として発表しているものがほとんどです。 ただし、普段の発表では時間が短いこともあって断片的になりがちだった内容を 40 分の枠で再構成し、スケジューリングについて初めて聞く人にとっても入り口のギャップを少なく、できるだけ学習曲線がなだらかになるようにすることを念頭に置いてプレゼンを組み立てました…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2020-05-31-create-deps-sensor-part1.html</id><title type="text">自分の Haskell プロジェクトの依存パッケージの古さを可視化する（その１）</title><updated>2020-05-31T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2020-05-31-create-deps-sensor-part1.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/06/06/Haskell_%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E3%83%84%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F</id><title type="text">Haskell 環境構築ツールフローチャートを作りました</title><updated>2020-06-06T12:24:04+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/06/06/Haskell_%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%E3%83%84%E3%83%BC%E3%83%AB%E3%83%95%E3%83%AD%E3%83%BC%E3%83%81%E3%83%A3%E3%83%BC%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F"/><summary type="html">前に環境構築についての記事を書いたのですが、初学者向けにパッと見て分かるようにフローチャートにしました。kakkun61.hatenablog.comGoogle ドライブ 図形描画のファイルはこちらです。コメントを付けることができます。docs.google.com</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2019/07/30/112634</id><title type="text">CloudNative Days Tokyo 2019 登壇こぼれ話 #CNDT2019</title><updated>2020-05-31T02:56:39+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2019/07/30/112634"/><summary type="html">先日行われた CloudNative Days Tokyo 2019 で、Kubernetes のスケジューリングについて発表してきました。公募 CFP 枠です。 www.youtube.com 今回の発表は、実は技術的に目新しい内容をほとんど含んでいません。各トピックは今までいくつかの勉強会で LT として発表しているものがほとんどです。 ただし、普段の発表では時間が短いこともあって断片的になりがちだった内容を 40 分の枠で再構成し、スケジューリングについて初めて聞く人にとっても入り口のギャップを少なく、できるだけ学習曲線がなだらかになるようにすることを念頭に置いてプレゼンを組み立てました…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2020-05-31-create-deps-sensor-part1.html</id><title type="text">自分の Haskell プロジェクトの依存パッケージの古さを可視化する（その１）</title><updated>2020-05-31T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2020-05-31-create-deps-sensor-part1.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;思いついたツールを自作続けるとこうなりますよね&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/assets/create-deps-sensor/myprojects.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;p&gt;時々思いつきで依存パッケージ，Stack プロジェクトであれば resolver をあげるんですけど，いい加減調べるのが大変． と言うことで，どれがどんだけ古くなってるかを可視化するツールを作りました． リポジトリはこちら：&lt;/p&gt;
@@ -6902,7 +6788,82 @@ gtagsの特徴：
 正規表現で一覧絞り込み可能（gtags-find-pattern）
 開いているファイルで絞り込み可能（gtags-parsefiile）
 
-特定文字列</summary></entry><entry><id>http://lotz84.github.io/posts/published_haskell_by_example.html</id><title type="text">Haskell by Exampleを公開しました</title><updated>2015-05-06T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/published_haskell_by_example.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/build-chat-server-on-haskell.html</id><title type="text">Haskellでチャットサーバーを建ててみた</title><updated>2015-04-27T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/build-chat-server-on-haskell.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html</id><title type="text">Unityハンズオン勉強会に参加しました@CAMPHOR-</title><updated>2015-04-25T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html</id><title type="text">Swift で分割コンパイルする方法</title><updated>2015-02-07T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/use-selenium-by-haskell.html</id><title type="text">HaskellでSeleniumを使ってみる＠勉強会</title><updated>2014-12-14T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/use-selenium-by-haskell.html"/><summary type="html"></summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/04-12-cabal-repl.html</id><title type="text">cabal repl コマンドについて</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/04-12-cabal-repl.html"/><summary type="html">&lt;p&gt;&lt;code&gt;cabal repl&lt;/code&gt; コマンドは&lt;/p&gt;
+特定文字列</summary></entry><entry><id>http://lotz84.github.io/posts/published_haskell_by_example.html</id><title type="text">Haskell by Exampleを公開しました</title><updated>2015-05-06T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/published_haskell_by_example.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/build-chat-server-on-haskell.html</id><title type="text">Haskellでチャットサーバーを建ててみた</title><updated>2015-04-27T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/build-chat-server-on-haskell.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html</id><title type="text">Unityハンズオン勉強会に参加しました@CAMPHOR-</title><updated>2015-04-25T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/unity-hands-on-session-at-camphor.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html</id><title type="text">Swift で分割コンパイルする方法</title><updated>2015-02-07T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/the-way-of-separate-compilation-in-swift.html"/><summary type="html"></summary></entry><entry><id>http://lotz84.github.io/posts/use-selenium-by-haskell.html</id><title type="text">HaskellでSeleniumを使ってみる＠勉強会</title><updated>2014-12-14T00:00:00Z</updated><author><name>lotz</name></author><link href="http://lotz84.github.io/posts/use-selenium-by-haskell.html"/><summary type="html"></summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/07-12-haskell-language-server.html</id><title type="text">Haskell Language Server のインストール</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/07-12-haskell-language-server.html"/><summary type="html">&lt;p&gt;HLS(Haskell Language Server) を &lt;strong&gt;手動で&lt;/strong&gt; インストールする方法を説明します。&lt;/p&gt;
+&lt;p&gt;HLSを &lt;strong&gt;自動で&lt;/strong&gt; インストールする方法は以下のPRで開発中です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell/haskell-language-server/pull/165&#34;&gt;GitHub Action static binaries and runtime libdir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/alanz/vscode-hie-server/pull/236&#34;&gt;Automatic installation of haskell-language-server binaries&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--more--&gt;
+&lt;h2 id=&#34;実行環境&#34;&gt;実行環境&lt;/h2&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style=&#34;width: 33%&#34; /&gt;
+&lt;col style=&#34;width: 66%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th style=&#34;text-align: center;&#34;&gt;環境&lt;/th&gt;
+&lt;th style=&#34;text-align: left;&#34;&gt;バージョン&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;OS&lt;/td&gt;
+&lt;td style=&#34;text-align: left;&#34;&gt;Ubuntu 18.04&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;Stack&lt;/td&gt;
+&lt;td style=&#34;text-align: left;&#34;&gt;2.3.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;HLS&lt;/td&gt;
+&lt;td style=&#34;text-align: left;&#34;&gt;ghcide version: 0.2.0.0 (GHC: 8.8.3) (PATH: ~/.local/bin/haskell-language-server) (GIT hash: 768fdcd588f5c37839086c0d787d1cb7438de37b)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;導入手順&#34;&gt;導入手順&lt;/h2&gt;
+&lt;h3 id=&#34;hls-のインストール&#34;&gt;1. HLS のインストール&lt;/h3&gt;
+&lt;p&gt;インストールには以下のものが必要です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.haskellstack.org/en/stable/README/&#34;&gt;stack&lt;/a&gt; (バージョン2.1.1以上)
+&lt;ul&gt;
+&lt;li&gt;または、&lt;a href=&#34;https://www.haskell.org/cabal/users-guide/&#34;&gt;cabal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;icu&lt;/code&gt; のライブラリなど&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;必要に応じてインストールしておきましょう。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ stack upgrade
+$ sudo apt update
+$ sudo apt install libicu-dev libncurses-dev libgmp-dev zlib1g-dev&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;準備ができたらHLSを&lt;a href=&#34;https://github.com/haskell/haskell-language-server&#34;&gt;リポジトリ&lt;/a&gt;からクローンしてインストールしましょう。(以下の例では &lt;strong&gt;GHC-8.8.3&lt;/strong&gt; を対象としています。)&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ git clone https://github.com/haskell/haskell-language-server --recurse-submodules
+$ cd haskell-language-server
+$ stack ./install.hs hls&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;インストールができました。&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;$ haskell-language-server --version
+ghcide version: 0.2.0.0 (GHC: 8.8.3) (PATH: /home/yamada/.local/bin/haskell-language-server) (GIT hash: 768fdcd588f5c37839086c0d787d1cb7438de37b)&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;エディタの設定&#34;&gt;エディタの設定&lt;/h2&gt;
+&lt;h3 id=&#34;vscode&#34;&gt;VSCode&lt;/h3&gt;
+&lt;p&gt;拡張機能 &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=alanz.vscode-hie-server&#34;&gt;Haskell Language Server&lt;/a&gt; をインストールし、 設定から &lt;code&gt;haskell-language-server&lt;/code&gt; を指定します。&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&#34;/images/2020/07-12/hls-vscode.png&#34; alt=&#34;&#34; /&gt;&lt;figcaption&gt;VSCodeの設定&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3 id=&#34;emacs&#34;&gt;Emacs&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;/hie/emacs.html&#34;&gt;こちら&lt;/a&gt;の記事を参考に、 &lt;a href=&#34;https://github.com/emacs-lsp/lsp-mode&#34;&gt;lsp-mode&lt;/a&gt;, &lt;a href=&#34;https://github.com/emacs-lsp/lsp-ui&#34;&gt;lsp-ui&lt;/a&gt;, &lt;a href=&#34;https://github.com/emacs-lsp/lsp-haskell&#34;&gt;lsp-haskell&lt;/a&gt; をEmacsにインストールします。&lt;/p&gt;
+&lt;p&gt;設定ファイルで以下のように &lt;code&gt;haskell-language-server-wrapper&lt;/code&gt; を指定します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(use-package lsp-haskell
+ :ensure t
+ :config
+ (setq lsp-haskell-process-path-hie &amp;quot;haskell-language-server-wrapper&amp;quot;)
+ ;; Comment/uncomment this line to see interactions between lsp client/server.
+ ;;(setq lsp-log-io t)
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell/haskell-language-server&#34;&gt;haskell-language-server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/hie/emacs.html&#34;&gt;Emacs で Haskell IDE Engine を使う&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/04-12-cabal-repl.html</id><title type="text">cabal repl コマンドについて</title><updated></updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/04-12-cabal-repl.html"/><summary type="html">&lt;p&gt;&lt;code&gt;cabal repl&lt;/code&gt; コマンドは&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ghci&lt;/code&gt;, &lt;code&gt;ghc --interactive&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;stack repl&lt;/code&gt;, &lt;code&gt;stack ghci&lt;/code&gt;&lt;/li&gt;
