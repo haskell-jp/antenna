@@ -6670,7 +6670,7 @@ ghcide version: 0.2.0.0 (GHC: 8.8.3) (PATH: /home/yamada/.local/bin/haskell-lang
 &lt;h3 id=&#34;vscode&#34;&gt;VSCode&lt;/h3&gt;
 &lt;p&gt;拡張機能 &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=alanz.vscode-hie-server&#34;&gt;Haskell Language Server&lt;/a&gt; をインストールし、 設定から &lt;code&gt;haskell-language-server&lt;/code&gt; を指定します。&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src=&#34;/images/2020/07-12/hls-vscode.png&#34; alt=&#34;&#34; /&gt;&lt;figcaption&gt;VSCodeの設定&lt;/figcaption&gt;
+&lt;img src=&#34;/images/2020/07-12/hls-vscode.png&#34; alt=&#34;VSCodeの設定&#34; /&gt;&lt;figcaption aria-hidden=&#34;true&#34;&gt;VSCodeの設定&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;h3 id=&#34;emacs&#34;&gt;Emacs&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;/hie/emacs.html&#34;&gt;こちら&lt;/a&gt;の記事を参考に、 &lt;a href=&#34;https://github.com/emacs-lsp/lsp-mode&#34;&gt;lsp-mode&lt;/a&gt;, &lt;a href=&#34;https://github.com/emacs-lsp/lsp-ui&#34;&gt;lsp-ui&lt;/a&gt;, &lt;a href=&#34;https://github.com/emacs-lsp/lsp-haskell&#34;&gt;lsp-haskell&lt;/a&gt; をEmacsにインストールします。&lt;/p&gt;
