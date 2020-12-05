@@ -14,7 +14,7 @@ on:
     - '.gitignore'
 
 jobs:
-  build:
+  update:
     name: ${{ matrix.os }}
     runs-on: ubuntu-18.04
     strategy:
@@ -48,7 +48,7 @@ jobs:
       run: stack --system-ghc build --only-dependencies
 
     - name: Build
-      run: stack --system-ghc install
+      run: stack --system-ghc build
 
     - uses: actions/checkout@v2
       with:
@@ -59,7 +59,7 @@ jobs:
       run: |
         cp sites.yaml temp/sites.yaml
         cp -r image/* temp/image
-        cd temp && antenna sites.yaml
+        cd temp && stack exec -- antenna sites.yaml
 
     - name: Push changes
       run: |
