@@ -1,0 +1,80 @@
+name: Build Application
+
+on:
+  pull_request: null
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    name: ${{ matrix.os }}
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        ghc: ["8.8.4"]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache .stack
+      id: cache-stack
+      uses: actions/cache@v2
+      with:
+        path: ~/.stack
+        key: "\
+          ${{ runner.os }}-stack\
+          -${{ hashFiles('**/stack.yaml.lock') }}\
+          -${{ hashFiles('**/package.yaml') }}\
+        "
+        restore-keys: |
+          ${{ runner.os }}-stack-
+    - uses: actions/setup-haskell@v1.1
+      name: Setup Haskell
+      with:
+        ghc-version: ${{ matrix.ghc }}
+        enable-stack: true
+        stack-version: 'latest'
+
+    - name: Install dependencies
+      run: stack --system-ghc test --only-dependencies
+
+    - name: Build and Test
+      run: stack --system-ghc test --copy-bins --local-bin-path=./bin
+
+    # Build and Push Docker Image
+    - name: Prepare
+      id: prep
+      run: |
+        DOCKER_IMAGE=haskelljp/antenna
+        TAGS="${DOCKER_IMAGE}:latest"
+        if [[ $GITHUB_REF == refs/tags/v* ]]; then
+          TAGS="$TAGS,${DOCKER_IMAGE}:${GITHUB_REF#refs/tags/v}"
+        fi
+        echo ::set-output name=tags::${TAGS}
+    - name: Setup QEMU
+      uses: docker/setup-qemu-action@master
+      with:
+        platforms: all
+
+    - name: Setup Docker Buildx
+      id: buildx
+      uses: docker/setup-buildx-action@master
+      with:
+        version: latest
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        builder: ${{ steps.buildx.outputs.name }}
+        tags: ${{ steps.prep.outputs.tags }}
+        push: ${{ github.event_name != 'pull_request' }}
+        build-args: local_bin_path=./bin
