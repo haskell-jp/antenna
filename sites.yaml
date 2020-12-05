@@ -23,12 +23,6 @@ sites:
     feed: https://qiita.com/tags/haskell/feed
     logo:
       url: ./image/logo/qiita.png
-  - title: "Haskellの記事一覧 | Zenn"
-    author: "Zenn"
-    url: https://zenn.dev/topics/haskell
-    feed: https://zenn.dev/topics/haskell/feed
-    logo:
-      url: ./image/logo/zenn.png
   - title: "Haskell-jp Blog"
     author: "Haskell-jp"
     url: https://haskell.jp/blog/
