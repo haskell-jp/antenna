@@ -6,7 +6,6 @@ on:
   push:
     branches:
     - master
-    - gh-actions # ToDo: remove
     paths-ignore:
     - 'README.md'
     - 'CHANGELOG.md'
