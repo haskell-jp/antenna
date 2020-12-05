@@ -1,0 +1,71 @@
+name: Update Antenna page
+
+on:
+  schedule:
+  - cron: '0 8 * * *'
+  push:
+    branches:
+    - master
+    paths-ignore:
+    - 'README.md'
+    - 'CHANGELOG.md'
+    - 'LICENSE'
+    - '.gitignore'
+
+jobs:
+  update:
+    name: ${{ matrix.os }}
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        ghc: ["8.8.4"]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache .stack
+      id: cache-stack
+      uses: actions/cache@v2
+      with:
+        path: ~/.stack
+        key: "\
+          ${{ runner.os }}-stack\
+          -${{ hashFiles('**/stack.yaml.lock') }}\
+          -${{ hashFiles('**/package.yaml') }}\
+        "
+        restore-keys: |
+          ${{ runner.os }}-stack-
+    - uses: actions/setup-haskell@v1.1.4
+      name: Setup Haskell
+      with:
+        ghc-version: ${{ matrix.ghc }}
+        enable-stack: true
+        stack-version: 'latest'
+
+    - name: Install dependencies
+      run: stack --system-ghc build --only-dependencies
+
+    - name: Build
+      run: stack --system-ghc build
+
+    - uses: actions/checkout@v2
+      with:
+        ref: 'gh-pages'
+        path: 'temp'
+
+    - name: Exec Application
+      run: |
+        cp sites.yaml temp/sites.yaml
+        cp -r image/* temp/image
+        cd temp && stack exec -- antenna sites.yaml
+
+    - name: Push changes
+      run: |
+        git config --local user.email "bot@example.com"
+        git config --local user.name "Bot"
+        git status
+        git add -A
+        git diff --staged --quiet || git commit -m "[skip ci] Update planet haskell. See https://haskell.jp/antenna/ for new entries!"
+        git push origin gh-pages
+      working-directory: ./temp
