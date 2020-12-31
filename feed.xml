@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2020-12-29T19:03:47+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://fumieval.hatenablog.com/entry/2020/12/29/190347</id><title type="text">新しいGHC拡張、NoFieldSelectorsについて</title><updated>2020-12-29T19:03:47+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2020/12/29/190347"/><summary type="html">今まで不満の多かったHaskellのレコードの扱いを改善するための一歩として、NoFieldSelectorsというGHC拡張の実装を進めている。 動機 Haskellにはレコードを定義するための構文がある。 data User = User { userId :: Int , userName :: Text } こう定義すると、各フィールドごとにuserId :: User -&gt; IntとuserName :: User -&gt; Textというゲッターに相当する関数が生成される。これらの関数は特別な意味合いを持っており、以下のレコード操作の構文にも利用できる。 構築 User { userI…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/09/02/%E4%B8%80%E7%95%AA%E7%B0%A1%E5%8D%98%E3%81%AA_MonadFail_%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9</id><title type="text">一番簡単な MonadFail インスタンス</title><updated>2020-12-29T01:32:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/09/02/%E4%B8%80%E7%95%AA%E7%B0%A1%E5%8D%98%E3%81%AA_MonadFail_%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9"/><summary type="html">The English version is at Dev. 導入 fail が Monad から剥がされて早や幾年、私は失敗する可能性のある計算は MonadFail を使って型を付けるのが好きです。 foo :: MonadFail m =&gt; m a こうすると IO の文脈であればその中で、純粋な文脈であれば Maybe などで具体化して呼ぶことができます。 -- IO の文脈では foo :: IO a -- 純粋な文脈では foo :: Maybe a さて、純粋な文脈として Maybe を使うと失敗のメッセージを失ってしまうことが嬉しくありません。では、Either を使えばいいの…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B</id><title type="text">刹那的純粋関数的データ構造と線形型</title><updated>2020-12-29T01:29:36+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B"/><summary type="html">The English version is at Dev. 『純粋関数型データ構造』（以降 PFDS）の5.2章に刹那的純粋関数的キューというものが出てきます。 https://asciidwango.jp/post/160831986220/%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0asciidwango.jp このキューは計算量の関係から1つの値に対して1回しか操作をしてはいけません。例えば下記操作列なら大丈夫ですが、その次の操作列では計算量が大きくな…</summary></entry><entry><id>https://zenn.dev/peg/articles/0eb56eff26aff1</id><title type="text">Haskellの環境構築</title><updated>2020-12-27T13:42:43Z</updated><author><name>Zenn</name></author><link href="https://zenn.dev/peg/articles/0eb56eff26aff1"/><summary type="html">Haskellの環境構築中に以下のコマンドを使う。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2020-12-31T07:32:20Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/autotaker/articles/haskell-setup-2021</id><title type="text">おすすめHaskellプロジェクト作成方法(ほぼ)2021年版</title><updated>2020-12-31T07:32:20Z</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/haskell-setup-2021"/><summary type="html">はじめに
+（あともう少しで）あけましておめでとうございます。
+この記事では2020年12月31日時点での私のおすすめの最新のHaskellプロジェクトの作成方法をまとめます。
+Haskellの環境構築はstackを使うものとcabalを使うものの２種類があります。
+歴史的にはcabalの不便さを改善したのがstackですが、現在はcabalも進化して
+不便さは大幅に解消されているため、筆者の好みでcabalによる環境構築をまとめます。
+ツールのインストール
+ghcup
+ghcupはGHCとcabalとHLSをバージョン管理してくれるインストーラです。
+インストールガイド を参考にインスト...</summary></entry><entry><id>https://zenn.dev/lotz/articles/72d25ac0de149bb3250c</id><title type="text">複雑なアニメーションをプログラムする 〜Reanimate入門〜</title><updated>2020-12-31T07:20:31Z</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/72d25ac0de149bb3250c"/><summary type="html">Reanimateはアニメーションを作成するためのライブラリです。
+
+ReanimateはHaskellのライブラリとして実装されているのでプログラムによってアニメーションを記述することができます。ライブラリに実装されている機能も多く、ドキュメントも豊富ですし、オンラインのPlaygroundまで用意されていてかなり完成度の高いライブラリになっています。さらにLaTeXや物理エンジン（Chipmonk 2D）, POV-Ray, Blenderなど外部ツールとの連携もサポートされています。アニメーションの各フレームはSVGで書き出されるようになっており、幾何学的な図形やSVGフォントを使...</summary></entry><entry><id>https://zenn.dev/lotz/articles/9e47c54994876f25d1e5</id><title type="text">バネ埋め込み法を使って隣接行列からグラフを描画する</title><updated>2020-12-30T14:50:56Z</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/9e47c54994876f25d1e5"/><summary type="html">&#34;グラフからコミュニティ構造を抽出する 〜リッチフローによるグラフの時間発展〜&#34; ではリッチフローによる隣接行列を時間変化を計算するプログラムを実装しました。
+
+しかし隣接行列のリストが得られたとしても、そこから直ちに上記のような可視化を行うことはできません。この記事では隣接行列からどうやってグラフの可視化を行うかについて解説していきたいと思います。
+ベクトルや行列の実装は前の記事で実装したものを使います。この記事で必要になる実装は以下のトグルに記載しておきました。
+線形代数の実装
+      
+        
+        import Data.Vector.Sized (Vec...</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2020/12/29/190347</id><title type="text">新しいGHC拡張、NoFieldSelectorsについて</title><updated>2020-12-29T19:03:47+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2020/12/29/190347"/><summary type="html">今まで不満の多かったHaskellのレコードの扱いを改善するための一歩として、NoFieldSelectorsというGHC拡張の実装を進めている。 動機 Haskellにはレコードを定義するための構文がある。 data User = User { userId :: Int , userName :: Text } こう定義すると、各フィールドごとにuserId :: User -&gt; IntとuserName :: User -&gt; Textというゲッターに相当する関数が生成される。これらの関数は特別な意味合いを持っており、以下のレコード操作の構文にも利用できる。 構築 User { userI…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/09/02/%E4%B8%80%E7%95%AA%E7%B0%A1%E5%8D%98%E3%81%AA_MonadFail_%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9</id><title type="text">一番簡単な MonadFail インスタンス</title><updated>2020-12-29T01:32:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/09/02/%E4%B8%80%E7%95%AA%E7%B0%A1%E5%8D%98%E3%81%AA_MonadFail_%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9"/><summary type="html">The English version is at Dev. 導入 fail が Monad から剥がされて早や幾年、私は失敗する可能性のある計算は MonadFail を使って型を付けるのが好きです。 foo :: MonadFail m =&gt; m a こうすると IO の文脈であればその中で、純粋な文脈であれば Maybe などで具体化して呼ぶことができます。 -- IO の文脈では foo :: IO a -- 純粋な文脈では foo :: Maybe a さて、純粋な文脈として Maybe を使うと失敗のメッセージを失ってしまうことが嬉しくありません。では、Either を使えばいいの…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B</id><title type="text">刹那的純粋関数的データ構造と線形型</title><updated>2020-12-29T01:29:36+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B"/><summary type="html">The English version is at Dev. 『純粋関数型データ構造』（以降 PFDS）の5.2章に刹那的純粋関数的キューというものが出てきます。 https://asciidwango.jp/post/160831986220/%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0asciidwango.jp このキューは計算量の関係から1つの値に対して1回しか操作をしてはいけません。例えば下記操作列なら大丈夫ですが、その次の操作列では計算量が大きくな…</summary></entry><entry><id>https://zenn.dev/peg/articles/0eb56eff26aff1</id><title type="text">Haskellの環境構築</title><updated>2020-12-27T13:42:43Z</updated><author><name>Zenn</name></author><link href="https://zenn.dev/peg/articles/0eb56eff26aff1"/><summary type="html">Haskellの環境構築中に以下のコマンドを使う。
 
       
         
@@ -1620,44 +1638,7 @@ import Control.Monad
 import Control.Monad.ST
 import Data.Array.ST
 import Data.Array.Unboxed (UArray)
-import ...</summary></entry><entry><id>https://qiita.com/kanatatsu64/items/d2fc55cb4e3229578626</id><title type="text">Pipesライブラリ　超図解</title><updated>2020-11-02T17:15:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kanatatsu64/items/d2fc55cb4e3229578626"/></entry><entry><id>https://zenn.dev/forest1040/articles/404b49624d03f51e9772</id><title type="text">HaskellでAtCoderやるぜ</title><updated>2020-11-02T12:45:28Z</updated><author><name>Zenn</name></author><link href="https://zenn.dev/forest1040/articles/404b49624d03f51e9772"/><summary type="html">A-2倍チェック
-蟻本も初級編を読んだので、早速AtCoderをやってみる。
-取り敢えず過去問のA-2倍チェック簡単な問題だ。
-標準入力を受け取りすべてが数値だったら2倍して標準出力に出す。
-数値じゃなければ、errorを出力すればよい。
-ただそれだけだ。うっかり、rubyで書きそうになったけど、Haskellで書く。
-Haskellの1ファイル実行
-Haskellは、stackで環境を作ってstackからbuildして実行していた。
-はて、Haskellのファイルをスクリプトを実行するにはどうすればよいのじゃ？
-そこからだった。
-以下のmain.tsを用意して
-
-      
-    ...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/10/28/Data.Monoid.First_%E3%81%A8_Data.Semigroup.First_%E3%81%82%E3%82%8B%E3%81%84%E3%81%AF_Last</id><title type="text">Data.Monoid.First と Data.Semigroup.First あるいは Last</title><updated>2020-11-01T12:07:47+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/10/28/Data.Monoid.First_%E3%81%A8_Data.Semigroup.First_%E3%81%82%E3%82%8B%E3%81%84%E3%81%AF_Last"/><summary type="html">Data.Monoid.First のドキュメントを見ていたら次の記述を見つけたことから始まる記事です。 This type will be marked deprecated in GHC 8.8, and removed in GHC 8.10. Users are advised to use the variant from Data.Semigroup and wrap it in Maybe. すでに GHC 8.10 がリリースされているのにまだなくなっていない気がしますが（GHC 9.0.1-alpha1 にもまだある）、Data.Monoid.First よりも Data.S…</summary></entry><entry><id>https://zenn.dev/forest1040/articles/98005a0d0b293c3eb1bd</id><title type="text">Haskellで蟻本やるぜ</title><updated>2020-10-31T04:11:44Z</updated><author><name>Zenn</name></author><link href="https://zenn.dev/forest1040/articles/98005a0d0b293c3eb1bd"/><summary type="html">前回の続き。
-しかし、一旦2-5のグラフの最小全域木問題（プリム法）まで飛ぶ。
-冷静に考えると早いプログラムを作るには、配列は必須！
-前回、「HaskellでArrayとかLoopとか使いだすと負けな気がする」と書いた矢先に前言撤回！
-だって、プリム法ArrayもLoopも使うんだもん。
-Haskellで蟻本（初級編） - グラフをパクる。
-
-      
-        
-        -- プリム法
-prim :: Int -&amp;gt; Int -&amp;gt; Int -&amp;gt; [(Int, Int, Int)] -&amp;gt; Int
-prim n m start es = runST ...</summary></entry><entry><id>https://zenn.dev/forest1040/articles/2a4415517ef3460f2250</id><title type="text">競プロやるぜ</title><updated>2020-10-28T21:51:00Z</updated><author><name>Zenn</name></author><link href="https://zenn.dev/forest1040/articles/2a4415517ef3460f2250"/><summary type="html">周りに人たちに、競プロをやってる人が増えてきたので、そろそろやるぜ。
-言語はHaskellを使う。これまで何度かHaskellに入門してきたけど、いつも完全に理解して終了しちゃうので、今回はちゃんと使ってみようと思う。
-Haskell準備
-
-stackインストール
-stack new hoge で hogeプロジェクトを作成する。
-入力データを標準入力から取るのが、だるいので当面変数に直書きする。
-ロジックは、src/Lib.hs にそのまま書く。名前もだるいので、someFuncのままだ。
-stack run
-
-蟻本
-ということで、蟻本を買ってきた。
-
-蟻本のコードはC++（っていうか...</summary></entry><entry><id>https://qiita.com/ringo-apo/items/f21cf842d40dcd8a959c</id><title type="text">HaskellでExcelファイル(xlsx)を読み込む</title><updated>2020-10-27T09:15:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ringo-apo/items/f21cf842d40dcd8a959c"/></entry><entry><id>https://matsubara0507.github.io/posts/2020-10-27-join-hacktoberfest%5B-2020.html</id><title type="text">Hacktoberfest 2020 なので PR を4つ出してみた</title><updated>2020-10-27T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2020-10-27-join-hacktoberfest%5B-2020.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+import ...</summary></entry><entry><id>https://qiita.com/kanatatsu64/items/d2fc55cb4e3229578626</id><title type="text">Pipesライブラリ　超図解</title><updated>2020-11-02T17:15:51+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kanatatsu64/items/d2fc55cb4e3229578626"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/10/28/Data.Monoid.First_%E3%81%A8_Data.Semigroup.First_%E3%81%82%E3%82%8B%E3%81%84%E3%81%AF_Last</id><title type="text">Data.Monoid.First と Data.Semigroup.First あるいは Last</title><updated>2020-11-01T12:07:47+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/10/28/Data.Monoid.First_%E3%81%A8_Data.Semigroup.First_%E3%81%82%E3%82%8B%E3%81%84%E3%81%AF_Last"/><summary type="html">Data.Monoid.First のドキュメントを見ていたら次の記述を見つけたことから始まる記事です。 This type will be marked deprecated in GHC 8.8, and removed in GHC 8.10. Users are advised to use the variant from Data.Semigroup and wrap it in Maybe. すでに GHC 8.10 がリリースされているのにまだなくなっていない気がしますが（GHC 9.0.1-alpha1 にもまだある）、Data.Monoid.First よりも Data.S…</summary></entry><entry><id>https://qiita.com/ringo-apo/items/f21cf842d40dcd8a959c</id><title type="text">HaskellでExcelファイル(xlsx)を読み込む</title><updated>2020-10-27T09:15:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ringo-apo/items/f21cf842d40dcd8a959c"/></entry><entry><id>https://matsubara0507.github.io/posts/2020-10-27-join-hacktoberfest%5B-2020.html</id><title type="text">Hacktoberfest 2020 なので PR を4つ出してみた</title><updated>2020-10-27T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2020-10-27-join-hacktoberfest%5B-2020.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;Hacktoberfest 2020 がきたので今年もPRを出してきました．&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/assets/join-hacktoberfest-2020/status.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;h2 id=&#34;hacktoberfest-2020&#34;&gt;Hacktoberfest 2020&lt;/h2&gt;
