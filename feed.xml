@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-01-18T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://matsubara0507.github.io/posts/2021-01-18-create-rules_elm.html</id><title type="text">rules_elm を作る</title><updated>2021-01-18T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2021-01-18-create-rules_elm.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-01-20T11:27:05.435+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2021-01-20T11:27:05.435+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+
+
+スタートメニュー・タスクバーの設定
+
+タスクバーの設定 
+
+小さいタスクバーボタンを使う：オン 
+[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフ
+タスクバーボタンを結合する
+
+「タスクバーに入りきらない場合」を選択
+
+タスクバーをすべての ディスプレイに表示する：オフシステムアイコンのオン／オフの切り替え
+入力インジケーター： オフ
+
+
+ Quick Launcherを表示する
+
+クイック起動を復活する 
+Windows 10 タスクバーにクイック起動を表示する
+
+スタートメニューにコントロールパネルを表示する
+
+「Windows 10」のコントロールパネルを表示する方法について
+
+</summary></entry><entry><id>https://matsubara0507.github.io/posts/2021-01-18-create-rules_elm.html</id><title type="text">rules_elm を作る</title><updated>2021-01-18T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2021-01-18-create-rules_elm.html"/><summary type="html">&lt;div class=&#34;post-content&#34; itemprop=&#34;articleBody&#34;&gt;
     &lt;p&gt;Elm 用の Bazel ルールがないので作ったという話です． 正確には &lt;a href=&#34;https://github.com/EdSchouten/rules_elm&#34;&gt;EdSchouten/rules_elm&lt;/a&gt; がありますが，最新バージョンの 0.19.1 には対応してなかったので，対応したものを自作しました．&lt;/p&gt;
 &lt;h2 id=&#34;作ったもの&#34;&gt;作ったもの&lt;/h2&gt;
 &lt;iframe width=&#34;320&#34; height=&#34;142&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; src=&#34;https://matsubara0507.github.io/my-github-cards/?target=matsubara0507/rules_elm&#34;&gt;
@@ -2404,35 +2430,7 @@ No latest package revision found for: hamler, dependency callstack: []&lt;/code&
 &lt;p&gt;どうやらこれは &lt;a href=&#34;https://github.com/commercialhaskell/stack/issues/5258&#34;&gt;Stack 側のバグっぽい&lt;/a&gt;． リビジョンを更新する以外に，Pantry 側を削除するしかなさそうなのが痛い． 早く治りますように…&lt;/p&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;その３があるかどうかはわかりません．&lt;/p&gt;
-  &lt;/div&gt;</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2020-07-16T12:08:20.505+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
-
-
-スタートメニュー・タスクバーの設定
-
-タスクバーの設定 
-
-小さいタスクバーボタンを使う：オン 
-[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフ
-タスクバーボタンを結合する
-
-「タスクバーに入りきらない場合」を選択
-
-タスクバーをすべての ディスプレイに表示する：オフ
-
-
-
- Quick Launcherを表示する
-
-クイック起動を復活する 
-Windows 10 タスクバーにクイック起動を表示する
-
-スタートメニューにコントロールパネルを表示する
-
-「Windows 10」のコントロールパネルを表示する方法について
-
-スタートメニューにピン止めするアプリ：
-
-Windowsシステム</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/07-12-haskell-language-server.html</id><title type="text">Haskell Language Server のインストール</title><updated>2020-07-12T00:00:00+09:00</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/07-12-haskell-language-server.html"/><summary type="html">&lt;p&gt;HLS(Haskell Language Server) を &lt;strong&gt;手動で&lt;/strong&gt; インストールする方法を説明します。&lt;/p&gt;
+  &lt;/div&gt;</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2020/07-12-haskell-language-server.html</id><title type="text">Haskell Language Server のインストール</title><updated>2020-07-12T00:00:00+09:00</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2020/07-12-haskell-language-server.html"/><summary type="html">&lt;p&gt;HLS(Haskell Language Server) を &lt;strong&gt;手動で&lt;/strong&gt; インストールする方法を説明します。&lt;/p&gt;
 &lt;p&gt;HLSを &lt;strong&gt;自動で&lt;/strong&gt; インストールする方法は以下のPRで開発中です。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/haskell/haskell-language-server/pull/165&#34;&gt;GitHub Action static binaries and runtime libdir&lt;/a&gt;&lt;/li&gt;
