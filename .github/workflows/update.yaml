@@ -58,7 +58,7 @@ jobs:
       run: |
         cp sites.yaml temp/sites.yaml
         cp -r image/* temp/image
-        cd temp && stack exec -- antenna sites.yaml
+        cd temp && stack --system-ghc exec -- antenna sites.yaml
 
     - name: Push changes
       run: |
