@@ -12,12 +12,12 @@ packages:
   original:
     hackage: drinkery-0.4
 - completed:
-    hackage: extensible-0.7@sha256:12dfa21548aba9f3b02a2f708a935240bae43383945f41e4e9054f37e421035b,2859
+    hackage: extensible-0.8.1@sha256:280840e31d92510b342d6a8d82d7af39cfd250194f9c26fca1d5cd406ee206f6,2946
     pantry-tree:
-      size: 2149
-      sha256: 732d4bf93a15cbbbaa344ae3ee1e2bdbfa12b0c90df9595c18d543da9d29a33c
+      size: 2097
+      sha256: 49d78392bc6da683fe08b01b7e513b5eb471df1b8157616ca4d9dad0a9a23d3d
   original:
-    hackage: extensible-0.7
+    hackage: extensible-0.8.1
 - completed:
     hackage: membership-0@sha256:3a11d8fd53cb1a76bb9273e6c929bbf9d649f109714bf487abb3143be04ddc81,995
     pantry-tree:
@@ -26,56 +26,54 @@ packages:
   original:
     hackage: membership-0
 - completed:
-    subdir: lib/scrapbook-core
-    cabal-file:
-      size: 2889
-      sha256: b879e1a802d7e2ca35dba9bd5a1c562c30625ad4ad98ce50cc2d39b21e1a4d09
-    name: scrapbook-core
-    version: 0.4.0
-    git: https://github.com/matsubara0507/scrapbook.git
+    hackage: incremental-0.3.1@sha256:9c697bae4f7e5ceb144bde13e03ca2f36b4bc2d0c92bbc02e0a604231ee279c2,1153
     pantry-tree:
-      size: 1540
-      sha256: 96a5a5610c6066d2fcf51ad54c95a4860f784e4f661976c2dcf9ff180a4ffa95
-    commit: 9ed6874c12ce53b99569a9952253e89859148cf5
+      size: 370
+      sha256: fd5f40352dbf1602babd2c5db2a120c26e57bbd5ad30b19ce24d04189f6a18d1
+  original:
+    hackage: incremental-0.3.1
+- completed:
+    size: 69976
+    subdir: lib/scrapbook-core
+    url: https://github.com/matsubara0507/scrapbook/archive/1839569c8ca1bb22c1f415b33dbee733e8f7e27c.tar.gz
+    name: scrapbook-core
+    version: 0.5.0
+    sha256: 6e9e988cfb5c0b3a2eef0e391b65d41fc72bec48ad1b9595801c1a3d748b7247
+    pantry-tree:
+      size: 1541
+      sha256: 7763401d03be3f5bc25c2e3b1d3fb7f73924a1fb7715b5574323db764c2752ed
   original:
     subdir: lib/scrapbook-core
-    git: https://github.com/matsubara0507/scrapbook.git
-    commit: 9ed6874c12ce53b99569a9952253e89859148cf5
+    url: https://github.com/matsubara0507/scrapbook/archive/1839569c8ca1bb22c1f415b33dbee733e8f7e27c.tar.gz
 - completed:
-    size: 8280
+    size: 11913
     subdir: mix
-    url: https://github.com/matsubara0507/mix.hs/archive/4978a33dec736799b30c14e215f7fa0f29fa2884.tar.gz
-    cabal-file:
-      size: 1110
-      sha256: 946df4a87070784d7ea659f6a3ad2f346f8cf31fea1135fc342feb5a303fa147
+    url: https://github.com/matsubara0507/mix.hs/archive/75714be080db16f6a4f9d0a22e86947ffcdadc57.tar.gz
     name: mix
     version: 0.1.1
-    sha256: 200ad779113f600d351be1e696d419f4332073dfbe76e5a666b82e17cb7e16d5
+    sha256: c4aa501c544ab35a214e7b07f2f97fb19de644f48874c8d6838809bcf4d8edb9
     pantry-tree:
       size: 598
       sha256: 689bed307dc233a6c50e01f00295a079dc40a4291700646f3ca423d714ba35fc
   original:
     subdir: mix
-    url: https://github.com/matsubara0507/mix.hs/archive/4978a33dec736799b30c14e215f7fa0f29fa2884.tar.gz
+    url: https://github.com/matsubara0507/mix.hs/archive/75714be080db16f6a4f9d0a22e86947ffcdadc57.tar.gz
 - completed:
-    size: 8280
+    size: 11913
     subdir: mix-plugin-shell
-    url: https://github.com/matsubara0507/mix.hs/archive/4978a33dec736799b30c14e215f7fa0f29fa2884.tar.gz
-    cabal-file:
-      size: 1083
-      sha256: ddac0c273cf85cc2629c9bf4cc9a952805e146d601b71324468dcb4ad5aaff95
+    url: https://github.com/matsubara0507/mix.hs/archive/75714be080db16f6a4f9d0a22e86947ffcdadc57.tar.gz
     name: mix-plugin-shell
     version: 0.1.0
-    sha256: 200ad779113f600d351be1e696d419f4332073dfbe76e5a666b82e17cb7e16d5
+    sha256: c4aa501c544ab35a214e7b07f2f97fb19de644f48874c8d6838809bcf4d8edb9
     pantry-tree:
       size: 383
       sha256: 7bbce9d5ea01f6432cecf3151b7c93751d508c0b28444436365eebda58f599d8
   original:
     subdir: mix-plugin-shell
-    url: https://github.com/matsubara0507/mix.hs/archive/4978a33dec736799b30c14e215f7fa0f29fa2884.tar.gz
+    url: https://github.com/matsubara0507/mix.hs/archive/75714be080db16f6a4f9d0a22e86947ffcdadc57.tar.gz
 snapshots:
 - completed:
-    size: 524154
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/20.yaml
-    sha256: 2f5099f69ddb6abfe64400fe1e6a604e8e628f55e6837211cd70a81eb0a8fa4d
-  original: lts-14.20
+    size: 563100
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/17/0.yaml
+    sha256: e93a85871577ea3423d5f3454b2b6bd37c2c2123c79faf511dfb64f5b49a9f8b
+  original: lts-17.0

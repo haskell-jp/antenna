@@ -14,7 +14,6 @@ import qualified RIO.List               as L
 
 import           Antenna.Config
 import           Antenna.Html
-import           Control.Monad          ((<=<))
 import           Data.Extensible
 import           Data.Extensible.GetOpt
 import qualified Data.Yaml              as Y

@@ -13,6 +13,7 @@
     - `--with-push` : push commit
     - add these settings to config file
 - Feat: daily, hourly and minutely cron options
+- Refactor: Update LTS to 17.0
 
 #### 0.2.1
 
