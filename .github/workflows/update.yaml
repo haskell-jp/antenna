@@ -36,7 +36,7 @@ jobs:
         "
         restore-keys: |
           ${{ runner.os }}-stack-
-    - uses: actions/setup-haskell@v1.1.4
+    - uses: haskell/actions/setup@v1.1.7
       name: Setup Haskell
       with:
         ghc-version: ${{ matrix.ghc }}
