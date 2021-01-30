@@ -1,16 +1,17 @@
-resolver: lts-14.20
+resolver: lts-17.0
 packages:
 - .
 extra-deps:
 - drinkery-0.4
-- extensible-0.7
+- extensible-0.8.1
 - membership-0
-- git: https://github.com/matsubara0507/scrapbook.git
-  commit: 9ed6874c12ce53b99569a9952253e89859148cf5
+- incremental-0.3.1
+- github: matsubara0507/scrapbook
+  commit: 1839569c8ca1bb22c1f415b33dbee733e8f7e27c
   subdirs:
   - lib/scrapbook-core
 - github: matsubara0507/mix.hs
-  commit: 4978a33dec736799b30c14e215f7fa0f29fa2884
+  commit: 75714be080db16f6a4f9d0a22e86947ffcdadc57
   subdirs:
   - mix
   - mix-plugin-shell

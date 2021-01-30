@@ -35,6 +35,6 @@ executables:
     - githash
     - mix
     - mix-plugin-shell
-    - scrapbook-core >= 0.4
+    - scrapbook-core >= 0.5
     - shelly
     - yaml
