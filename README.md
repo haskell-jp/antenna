@@ -17,7 +17,7 @@ Haskell stack を使います
 ```
 $ git clone https://github.com/haskell-jp/antenna.git
 $ cd antenna
-$ stack biuld
+$ stack build
 ```
 
 ### Run
