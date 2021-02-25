@@ -460,10 +460,13 @@ Calc &#34;(1 + 1) * (2 + 0) + 10&#34; :: Nat
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
 &lt;p&gt;思いの外，さくっとできた． それよりも作りたいアプリケーションの方を作らないと笑&lt;/p&gt;
   &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/debug-ito/items/ce913f6ed74df8db2430</id><title type="text">cabal v3でdoctestを使うならwrite-ghc-environment-filesを有効にするといい</title><updated>2021-02-11T17:20:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/debug-ito/items/ce913f6ed74df8db2430"/></entry><entry><id>https://zenn.dev/oil/articles/6d443a28acfacf</id><title type="text">表紙みたいなもん</title><updated>2021-02-09T09:55:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oil/articles/6d443a28acfacf"/><summary type="html">https://twitter.com/i0akaten/status/1359076281338318853
-</summary></entry><entry><id>https://qiita.com/espe0n/items/2b59a7d67a78c652462a</id><title type="text">Programming in Haskell の練習問題の実装例 Part 2</title><updated>2021-02-05T21:41:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/espe0n/items/2b59a7d67a78c652462a"/></entry><entry><id>https://zenn.dev/konn/articles/1a60baba9848a1</id><title type="text">Haskell に IDE はないのか？──独断と偏見による Haskell の IDE 十年史</title><updated>2021-02-05T13:05:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/1a60baba9848a1"/><summary type="html">答え：Haskell に IDE はずっとある、今ならHLS使え（内容を読む気がないようという人向けの答え）
-はじめに
+</summary></entry><entry><id>https://qiita.com/espe0n/items/2b59a7d67a78c652462a</id><title type="text">Programming in Haskell の練習問題の実装例 Part 2</title><updated>2021-02-05T21:41:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/espe0n/items/2b59a7d67a78c652462a"/></entry><entry><id>https://zenn.dev/konn/articles/1a60baba9848a1</id><title type="text">Haskell に IDE はないのか？──独断と偏見による Haskell の IDE 十年史</title><updated>2021-02-05T13:05:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/1a60baba9848a1"/><summary type="html">
+ 答え：Haskell に IDE はずっとある、今ならHLS使え（内容を読む気がないようという人向けの答え）
+
+ はじめに
 2021年2月現在、Haskell の IDE 環境は Haskell Language Server (HLS) の登場により劇的な進化を遂げていますが、日本の Haskell コミュニティではその前身の Haskell IDE Engine (HIE) の情報がまだ氾濫しており、十分な周知に至っていない現状があります。
-本稿では、こうした現状を打破すべく、2021 年 2 月現在の Haskell の IDE 環境を取り巻く現状と、そこに至るまでの歴史を完全に独断と...</summary></entry><entry><id>https://zenn.dev/yoshikuni_jujo/articles/tail-call-optimization-cmm</id><title type="text">C--で末尾再帰最適化を試してみる</title><updated>2021-02-05T04:25:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/tail-call-optimization-cmm"/><summary type="html">想定される読者
+本稿では、こうした現状を打破すべく、2021 年 2 月現在の Haskell の IDE 環境を取り巻く現状と、そこに至るまでの歴史を完全...</summary></entry><entry><id>https://zenn.dev/yoshikuni_jujo/articles/tail-call-optimization-cmm</id><title type="text">C--で末尾再帰最適化を試してみる</title><updated>2021-02-05T04:25:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/tail-call-optimization-cmm"/><summary type="html">
+ 想定される読者
 
 Haskellの処理系であるGHCをインストールしたことがある
 
@@ -474,18 +477,21 @@ C言語は、まあまあ読める
 言語の処理系そのものに興味がある
 アセンブリ言語についても、おおまかには知っている
 
-はじめに
+
+ はじめに
 Haskellの代表的な処理系であるGHCでは、ソースコードはC--(を構文木にしたもの)にコンパイルされる。CではなくC--を使う理由のひとつとして、処理系の流れのコントロールをより自由にできることがある。一例としてC--では末尾再帰の(明示的な)最適化が非常にわかりやすく表現できることを示す。
-一例を示すのみで、構文の説明などはしない。また、...</summary></entry><entry><id>https://qiita.com/mod_poppo/items/625677a12ca42aca22e1</id><title type="text">HaskellからBLASを叩く</title><updated>2021-02-02T22:26:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/625677a12ca42aca22e1"/></entry><entry><id>https://zenn.dev/autotaker/articles/random-1-2-is-awesome</id><title type="text">Haskellの最近の乱数生成事情について</title><updated>2021-01-31T02:52:08+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/random-1-2-is-awesome"/><summary type="html">あらすじ
+一例を示すのみで、構文の説明などはしない...</summary></entry><entry><id>https://qiita.com/mod_poppo/items/625677a12ca42aca22e1</id><title type="text">HaskellからBLASを叩く</title><updated>2021-02-02T22:26:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/625677a12ca42aca22e1"/></entry><entry><id>https://zenn.dev/autotaker/articles/random-1-2-is-awesome</id><title type="text">Haskellの最近の乱数生成事情について</title><updated>2021-01-31T02:52:08+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/random-1-2-is-awesome"/><summary type="html">
+ あらすじ
 Haskellでの乱数生成ライブラリは長らく群雄割拠の時代が続いていました。
 その理由は、公式のrandomパッケージの使い勝手がすこぶる悪かったため、
 各々が独自のインターフェースでまともな乱数生成ライブラリを公開していました。
 その時代は、random-1.2の登場により終わりを迎えました。
 これからはrandomパッケージを使えば基本的に問題ないでしょう。
 https://hackage.haskell.org/package/random-1.2.0
-Before random-1.2
+
+ Before random-1.2
 Haskellの公式の乱数生成ライブラリがrandomだったのですが、
-このライブラ...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B</id><title type="text">なぜ Haskell が好きなのか</title><updated>2021-01-28T03:31:56+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B"/><summary type="html">自分は Haskell が好きで休日は Haskell を書いています。そういうことを言うと関数型が好きなんですねと言われるのですが、Haskell のよさはそこじゃないと感じているので書き起こそうかと、筆を執りました。 というわけで、この記事は技術的文書というよりもお話です。Haskell を知らない人向けです。 この記事は Haskell Advent Calendar 2017 その3の6日めの記事です。6日が過ぎても担当のいない日だったため担当します。 関数型プログラミングだから Haskell が好きというわけではない まず、「Haskell というと手続き型とは全然違う関数型なんで…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/01/24/185819</id><title type="text">July Tech Festa 2021 winter で CockroachDB と TLA+ について話してきました</title><updated>2021-01-27T22:38:31+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/01/24/185819"/><summary type="html">こんにちは、チェシャ猫です。 インフラ技術のカンファレンス July Tech Festa 2021 winter で、形式手法ツール TLA+ が CockroachDB の設計に使用された事例について発表してきました。公募 CFP 枠です。 www.youtube.com 今回の登壇は、昨年の CloudNative Days Tokyo 2020 と同じ題材を扱っています。ただ、前回より持ち時間が長くなった分、前回のスライドで説明不足だった部分を拡充してあります。特に、CockroachDB 以外の TLA+ 採用事例や、分散システムにおける Chaos Engineering の位置付…</summary></entry><entry><id>https://qiita.com/espe0n/items/9481cdcbb4159c69986b</id><title type="text">Programming in Haskell の練習問題の実装例 Part.1</title><updated>2021-01-26T21:31:22+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/espe0n/items/9481cdcbb4159c69986b"/></entry><entry><id>https://qiita.com/firedial/items/567335167fef29f62b2d</id><title type="text">麻雀の多面待ちのパターンを全て求めてみた</title><updated>2021-01-23T16:09:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/firedial/items/567335167fef29f62b2d"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2021-01-20T11:27:05.435+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+この...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B</id><title type="text">なぜ Haskell が好きなのか</title><updated>2021-01-28T03:31:56+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2017/12/25/%E3%81%AA%E3%81%9C_Haskell_%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%81%AE%E3%81%8B"/><summary type="html">自分は Haskell が好きで休日は Haskell を書いています。そういうことを言うと関数型が好きなんですねと言われるのですが、Haskell のよさはそこじゃないと感じているので書き起こそうかと、筆を執りました。 というわけで、この記事は技術的文書というよりもお話です。Haskell を知らない人向けです。 この記事は Haskell Advent Calendar 2017 その3の6日めの記事です。6日が過ぎても担当のいない日だったため担当します。 関数型プログラミングだから Haskell が好きというわけではない まず、「Haskell というと手続き型とは全然違う関数型なんで…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/01/24/185819</id><title type="text">July Tech Festa 2021 winter で CockroachDB と TLA+ について話してきました</title><updated>2021-01-27T22:38:31+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/01/24/185819"/><summary type="html">こんにちは、チェシャ猫です。 インフラ技術のカンファレンス July Tech Festa 2021 winter で、形式手法ツール TLA+ が CockroachDB の設計に使用された事例について発表してきました。公募 CFP 枠です。 www.youtube.com 今回の登壇は、昨年の CloudNative Days Tokyo 2020 と同じ題材を扱っています。ただ、前回より持ち時間が長くなった分、前回のスライドで説明不足だった部分を拡充してあります。特に、CockroachDB 以外の TLA+ 採用事例や、分散システムにおける Chaos Engineering の位置付…</summary></entry><entry><id>https://qiita.com/espe0n/items/9481cdcbb4159c69986b</id><title type="text">Programming in Haskell の練習問題の実装例 Part.1</title><updated>2021-01-26T21:31:22+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/espe0n/items/9481cdcbb4159c69986b"/></entry><entry><id>https://qiita.com/firedial/items/567335167fef29f62b2d</id><title type="text">麻雀の多面待ちのパターンを全て求めてみた</title><updated>2021-01-23T16:09:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/firedial/items/567335167fef29f62b2d"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2021-01-20T11:27:05.435+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
@@ -621,35 +627,37 @@ Windows 10 タスクバーにクイック起動を表示する
 &lt;p&gt;(2)は，Toolchain の &lt;code&gt;action&lt;/code&gt; なんかに &lt;code&gt;elm&lt;/code&gt; コマンドの振る舞いを突っ込んだ方がかっこいいかなーっていうだけ．&lt;/p&gt;
 &lt;p&gt;次回，頑張る．&lt;/p&gt;
 &lt;h2 id=&#34;おしまい&#34;&gt;おしまい&lt;/h2&gt;
-  &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/debug-ito/items/34f6fb1403ab40ac7668</id><title type="text">Haskell stackのダウンロードが遅い場合に清華大学のミラーサイトを使う</title><updated>2021-01-11T10:43:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/debug-ito/items/34f6fb1403ab40ac7668"/></entry><entry><id>https://zenn.dev/autotaker/articles/happy-tdd-with-haskell</id><title type="text">HaskellでのTDDを楽しくするライブラリ methodを作りました。</title><updated>2021-01-11T03:03:05+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/happy-tdd-with-haskell"/><summary type="html">はじめに
+  &lt;/div&gt;</summary></entry><entry><id>https://qiita.com/debug-ito/items/34f6fb1403ab40ac7668</id><title type="text">Haskell stackのダウンロードが遅い場合に清華大学のミラーサイトを使う</title><updated>2021-01-11T10:43:56+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/debug-ito/items/34f6fb1403ab40ac7668"/></entry><entry><id>https://zenn.dev/autotaker/articles/happy-tdd-with-haskell</id><title type="text">HaskellでのTDDを楽しくするライブラリ methodを作りました。</title><updated>2021-01-11T03:03:05+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/happy-tdd-with-haskell"/><summary type="html">
+ はじめに
 Haskellでテスト駆動開発を行う際、純粋な関数は単体テストを書きやすいですが、
 返り値がモナドの関数（この記事ではそのような関数をメソッドと呼びます）にたいして単体テストを書くのは簡単ではありません。
 今回、メソッドに対して単体テストを書きやすくなるライブラリ methodを作成しました。
+https://hackage.haskell.org/package/method
 
-methodとは
+ methodとは
 methodでは a1 -&amp;gt; ... -&amp;gt; an -&amp;gt; m b型の関数のことをメソッドと呼びます。
-ここでmはモナドです。(-&amp;gt;) rモナドを除く大抵のモナドはサポートしていますが、独自のモナドをメソッドにするにはMethod型クラスを実装する...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/13/%E3%81%A8%E3%82%8A%E3%81%A8%E3%82%81%E3%81%AE%E3%81%AA%E3%81%84_GHC_%E7%B7%9A%E5%BD%A2%E5%9E%8B%E3%83%A1%E3%83%A2</id><title type="text">とりとめのない GHC 線形型メモ</title><updated>2021-01-09T20:09:49+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/13/%E3%81%A8%E3%82%8A%E3%81%A8%E3%82%81%E3%81%AE%E3%81%AA%E3%81%84_GHC_%E7%B7%9A%E5%BD%A2%E5%9E%8B%E3%83%A1%E3%83%A2"/><summary type="html">GHC 9.0.1 alpha 1 がリリースされたときに線形型をいじってみていたことをメモしていなかったので思い出しながらメモしていく。 mail.haskell.org 使用バージョン GHC 9.0.0.20200925 上記リンクのもの ghcup ならそれ経由でインストールできる。 ghcups の場合は手動インストール後、下記のような設定ファイルで切り替えができるようになる1。 ghc: 9.0.1-alpha1: H:\programs\ghc-9.0.0.20200925-x86_64-unknown-mingw32\bin 線形型とは GHC では引数が1回しか使えない（1回…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B</id><title type="text">刹那的純粋関数的データ構造と線形型</title><updated>2021-01-09T20:03:02+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B"/><summary type="html">The English version is at Dev. 『純粋関数型データ構造』（以降 PFDS）の5.2章に刹那的純粋関数的キューというものが出てきます。 https://asciidwango.jp/post/160831986220/%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0asciidwango.jp このキューは計算量の関係から1つの値に対して1回しか操作をしてはいけません。例えば下記操作列なら大丈夫ですが、その次の操作列では計算量が大きくな…</summary></entry><entry><id>https://zenn.dev/lotz/articles/999fc8b1ab983e5e1395</id><title type="text">SOPを使ってジェネリックにCase Analysis関数を実装する</title><updated>2021-01-08T14:28:19+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/999fc8b1ab983e5e1395"/><summary type="html">case analysis関数が何かについては、まず kakkun61氏 の以下の記事を参照してください。
-
+ここでmはモナドです。(-&amp;gt;) rモナドを除く大抵の...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/13/%E3%81%A8%E3%82%8A%E3%81%A8%E3%82%81%E3%81%AE%E3%81%AA%E3%81%84_GHC_%E7%B7%9A%E5%BD%A2%E5%9E%8B%E3%83%A1%E3%83%A2</id><title type="text">とりとめのない GHC 線形型メモ</title><updated>2021-01-09T20:09:49+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/13/%E3%81%A8%E3%82%8A%E3%81%A8%E3%82%81%E3%81%AE%E3%81%AA%E3%81%84_GHC_%E7%B7%9A%E5%BD%A2%E5%9E%8B%E3%83%A1%E3%83%A2"/><summary type="html">GHC 9.0.1 alpha 1 がリリースされたときに線形型をいじってみていたことをメモしていなかったので思い出しながらメモしていく。 mail.haskell.org 使用バージョン GHC 9.0.0.20200925 上記リンクのもの ghcup ならそれ経由でインストールできる。 ghcups の場合は手動インストール後、下記のような設定ファイルで切り替えができるようになる1。 ghc: 9.0.1-alpha1: H:\programs\ghc-9.0.0.20200925-x86_64-unknown-mingw32\bin 線形型とは GHC では引数が1回しか使えない（1回…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B</id><title type="text">刹那的純粋関数的データ構造と線形型</title><updated>2021-01-09T20:03:02+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B"/><summary type="html">The English version is at Dev. 『純粋関数型データ構造』（以降 PFDS）の5.2章に刹那的純粋関数的キューというものが出てきます。 https://asciidwango.jp/post/160831986220/%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0asciidwango.jp このキューは計算量の関係から1つの値に対して1回しか操作をしてはいけません。例えば下記操作列なら大丈夫ですが、その次の操作列では計算量が大きくな…</summary></entry><entry><id>https://zenn.dev/lotz/articles/999fc8b1ab983e5e1395</id><title type="text">SOPを使ってジェネリックにCase Analysis関数を実装する</title><updated>2021-01-08T14:28:19+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/999fc8b1ab983e5e1395"/><summary type="html">case analysis関数が何かについては、まず kakkun61氏 の以下の記事を参照してください。
+https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_関数
 case analysis関数はデータ型毎に定まる関数ですがよくよく見てみるとシンプルなルールで統一的に実装できそうです。
-
-Haskellで同じ名前の関数を使って複数のデータ型を扱えるようにするには、モジュールを分けたり型クラスを利用したり工夫する必要があります。
-
-この記事ではジェネリックプログラミングの考え方に基づき、様々なデータ型に対応した一つのcase analysis関数を実装してみたいと思います。
-これから実装するgfold&#39;(generic fold)という関数は...</summary></entry><entry><id>https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e</id><title type="text">Yesodにserversession-backend-redisを組み込んで動かしてみたのでメモしておく</title><updated>2021-01-07T00:33:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2</id><title type="text">GHC 演算子優先順位トリビア</title><updated>2021-01-06T07:13:09+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2"/><summary type="html">GHC の演算子の優先順位には -1 がある（たぶん組込でしか使えない #Haskell pic.twitter.com/Xa0OIjvw5i— o̞͑kä̝mo̞͑to̞͑ kä̝zʊ̠kɪ̟ (@kakkun61) January 3, 2021</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0</id><title type="text">Case Analysis 関数</title><updated>2021-01-06T07:10:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0"/><summary type="html">今回は case analysis と呼ばれる関数の話です1。 data D a b c = C0 a b | C1 c 例えば上記のようなデータ型があった場合 case analysis 関数は次のようになります。 d :: (a -&gt; b -&gt; d) -&gt; (c -&gt; d) -&gt; D a b c -&gt; d d f _ (C0 a b) = f a b d _ f (C1 c) = f c 値構築子の数だけ関数を引数とし、対象のデータを最後の引数とします。それぞれの関数の型は値構築子の型に似ます。 C0 :: a -&gt; b -&gt; D a b c C1 :: c -&gt; D a b c d ::…</summary></entry><entry><id>https://zenn.dev/ak2ume/articles/723e20d14b1994eb6528</id><title type="text">MacにHaskell環境を構築する</title><updated>2021-01-04T03:38:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ak2ume/articles/723e20d14b1994eb6528"/><summary type="html">更新ログ
+https://twitter.com/lotz84_/status/1346780048653619200
+Haskellで同じ名前の関数を使って複数のデータ型を扱えるようにするには、モジュールを分けたり型クラスを利用したり工夫...</summary></entry><entry><id>https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e</id><title type="text">Yesodにserversession-backend-redisを組み込んで動かしてみたのでメモしておく</title><updated>2021-01-07T00:33:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2</id><title type="text">GHC 演算子優先順位トリビア</title><updated>2021-01-06T07:13:09+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2"/><summary type="html">GHC の演算子の優先順位には -1 がある（たぶん組込でしか使えない #Haskell pic.twitter.com/Xa0OIjvw5i— o̞͑kä̝mo̞͑to̞͑ kä̝zʊ̠kɪ̟ (@kakkun61) January 3, 2021</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0</id><title type="text">Case Analysis 関数</title><updated>2021-01-06T07:10:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0"/><summary type="html">今回は case analysis と呼ばれる関数の話です1。 data D a b c = C0 a b | C1 c 例えば上記のようなデータ型があった場合 case analysis 関数は次のようになります。 d :: (a -&gt; b -&gt; d) -&gt; (c -&gt; d) -&gt; D a b c -&gt; d d f _ (C0 a b) = f a b d _ f (C1 c) = f c 値構築子の数だけ関数を引数とし、対象のデータを最後の引数とします。それぞれの関数の型は値構築子の型に似ます。 C0 :: a -&gt; b -&gt; D a b c C1 :: c -&gt; D a b c d ::…</summary></entry><entry><id>https://zenn.dev/ak2ume/articles/723e20d14b1994eb6528</id><title type="text">MacにHaskell環境を構築する</title><updated>2021-01-04T03:38:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ak2ume/articles/723e20d14b1994eb6528"/><summary type="html">
+ 更新ログ
 
 2021/Jan./04 Zennに移行
 2020/May./10 HIEの参考リンクを追記
 2020/May./05 HIEの導入について追記
 2020/May./05 Qrunchに新規エントリ
 
-このエントリで言いたいこと
+
+ このエントリで言いたいこと
 MacにHaskellの開発環境を構築してみたので、その手順を残しておきます。
-環境
+
+ 環境
 
 MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)
 プロセッサ：2.4 GHz クアッドコアIntel Core i5
 メモリ：16 GB 2133 MHz LPDDR3
-MacOS Catalina (10...</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html</id><title type="text">ormolu-action</title><updated>2021-01-04T00:00:00+09:00</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html"/><summary type="html">&lt;p&gt;へいしゃでは、ソースコードのフォーマッターに &lt;a href=&#34;https://hackage.haskell.org/package/ormolu&#34;&gt;Ormolu&lt;/a&gt; を利用しています。&lt;/p&gt;
+MacOS Catali...</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html</id><title type="text">ormolu-action</title><updated>2021-01-04T00:00:00+09:00</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html"/><summary type="html">&lt;p&gt;へいしゃでは、ソースコードのフォーマッターに &lt;a href=&#34;https://hackage.haskell.org/package/ormolu&#34;&gt;Ormolu&lt;/a&gt; を利用しています。&lt;/p&gt;
 &lt;p&gt;インデント時のスペース数すらカスタマイズ不可なので好き嫌いが分かれるところですが、プロジェクト全体のコードを統一しておくとコードレビューの際にも有用なので入れています。&lt;/p&gt;
 &lt;p&gt;ちなみにスペース幅を4にしたくてフォークされた &lt;a href=&#34;https://github.com/parsonsmatt/fourmolu&#34;&gt;fourmolu&lt;/a&gt; というフォーマッターもあります。現在ではスペース数以外の設定もできるみたいです。&lt;/p&gt;
 &lt;p&gt;どちらも &lt;a href=&#34;https://github.com/haskell/haskell-language-server&#34;&gt;hls&lt;/a&gt; から利用可能なので、興味がある人は試してみると良いと思います。&lt;/p&gt;
@@ -824,21 +832,25 @@ base-compat &amp;gt;=0.10
 大晦日です。いかがお過ごしでしょうか。
 Haskellでapi server等を作った際、rdbへの問い合わせでPreload的なことを行う箇所で、Type level mapを使った所、なかなかの使い勝手だったので、共有します。
 さらにIndexed Monadを使い、明らかに残念だった箇所を改善します。
-preload?
+
+ preload?
 1+N問題を起こさぬよう、事前に関連リソースを問い合わせておくもの。prefetchとかとも。
 
       
         
-        posts = Post...</summary></entry><entry><id>https://zenn.dev/autotaker/articles/haskell-setup-2021</id><title type="text">おすすめHaskellプロジェクト作成方法(ほぼ)2021年版</title><updated>2020-12-31T07:32:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/haskell-setup-2021"/><summary type="html">はじめに
+        posts = Po...</summary></entry><entry><id>https://zenn.dev/autotaker/articles/haskell-setup-2021</id><title type="text">おすすめHaskellプロジェクト作成方法(ほぼ)2021年版</title><updated>2020-12-31T07:32:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/haskell-setup-2021"/><summary type="html">
+ はじめに
 （あともう少しで）あけましておめでとうございます。
 この記事では2020年12月31日時点での私のおすすめの最新のHaskellプロジェクトの作成方法をまとめます。
 Haskellの環境構築はstackを使うものとcabalを使うものの２種類があります。
 歴史的にはcabalの不便さを改善したのがstackですが、現在はcabalも進化して
 不便さは大幅に解消されているため、筆者の好みでcabalによる環境構築をまとめます。
-ツールのインストール
-ghcup
+
+ ツールのインストール
+
+ ghcup
 ghcupはGHCとcabalとHLSをバージョン管理してくれるインストーラです。
-インストールガイド を参考にインスト...</summary></entry><entry><id>https://zenn.dev/lotz/articles/72d25ac0de149bb3250c</id><title type="text">複雑なアニメーションをプログラムする 〜Reanimate入門〜</title><updated>2020-12-31T07:20:31+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/72d25ac0de149bb3250c"/><summary type="html">Reanimateはアニメーションを作成するためのライブラリです。
+インストールガイド を参...</summary></entry><entry><id>https://zenn.dev/lotz/articles/72d25ac0de149bb3250c</id><title type="text">複雑なアニメーションをプログラムする 〜Reanimate入門〜</title><updated>2020-12-31T07:20:31+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/72d25ac0de149bb3250c"/><summary type="html">Reanimateはアニメーションを作成するためのライブラリです。
 
 ReanimateはHaskellのライブラリとして実装されているのでプログラムによってアニメーションを記述することができます。ライブラリに実装されている機能も多く、ドキュメントも豊富ですし、オンラインのPlaygroundまで用意されていてかなり完成度の高いライブラリになっています。さらにLaTeXや物理エンジン（Chipmonk 2D）, POV-Ray, Blenderなど外部ツールとの連携もサポートされています。アニメーションの各フレームはSVGで書き出されるようになっており、幾何学的な図形やSVGフォントを使...</summary></entry><entry><id>https://zenn.dev/lotz/articles/9e47c54994876f25d1e5</id><title type="text">バネ埋め込み法を使って隣接行列からグラフを描画する</title><updated>2020-12-30T14:50:56+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/9e47c54994876f25d1e5"/><summary type="html">&#34;グラフからコミュニティ構造を抽出する 〜リッチフローによるグラフの時間発展〜&#34; ではリッチフローによる隣接行列を時間変化を計算するプログラムを実装しました。
 
