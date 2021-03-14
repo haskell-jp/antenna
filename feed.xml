@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-03-12T23:42:25+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/lindau/items/2026d77d91a41c0bbb82</id><title type="text">HaskellでFizz Buzz</title><updated>2021-03-12T23:42:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lindau/items/2026d77d91a41c0bbb82"/></entry><entry><id>https://zenn.dev/tobi462/articles/4ae7658d126054</id><title type="text">順を追って理解する MaybeT モナドの使い方</title><updated>2021-03-10T11:26:07+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tobi462/articles/4ae7658d126054"/><summary type="html">モナド変換子の1つである MaybeT について、順を追って説明してみたいと思います。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-03-14T15:02:21+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/lindau/items/2026d77d91a41c0bbb82</id><title type="text">HaskellでFizz Buzz</title><updated>2021-03-14T15:02:21+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lindau/items/2026d77d91a41c0bbb82"/></entry><entry><id>https://zenn.dev/tobi462/articles/9010e7d9c4f759</id><title type="text">[Haskell] asTypeOf の使い方と仕組み</title><updated>2021-03-13T09:02:11+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tobi462/articles/9010e7d9c4f759"/><summary type="html">
+ 想定読者
+
+
+asTypeOf の使い方や仕組みが知りたい。
+
+asTypeOf の代わりに ScopedTypeVariables 拡張を使う方法を知りたい。
+
+
+ 基本的な動作の確認
+Haskell は型推論によって、型を明示しないで済むケースが殆どですが、read関数のように返り値の型を明示する必要のあるケースもあります。
+
+      
+        
+        main = do
+    print (read &#34;123&#34;) -- 変換先の型が特定できないためコンパイルエラー
+
+
+      
+      これを解決する通常の方法は型注釈を利用することです。
+
+  ...</summary></entry><entry><id>https://zenn.dev/tobi462/articles/4ae7658d126054</id><title type="text">順を追って理解する MaybeT モナドの使い方</title><updated>2021-03-10T11:26:07+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tobi462/articles/4ae7658d126054"/><summary type="html">モナド変換子の1つである MaybeT について、順を追って説明してみたいと思います。
 
  想定読者
 
@@ -898,19 +919,7 @@ Haskellでapi server等を作った際、rdbへの問い合わせでPreload的�
 
       
         
-        posts = Po...</summary></entry><entry><id>https://zenn.dev/autotaker/articles/haskell-setup-2021</id><title type="text">おすすめHaskellプロジェクト作成方法(ほぼ)2021年版</title><updated>2020-12-31T07:32:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/haskell-setup-2021"/><summary type="html">
- はじめに
-（あともう少しで）あけましておめでとうございます。
-この記事では2020年12月31日時点での私のおすすめの最新のHaskellプロジェクトの作成方法をまとめます。
-Haskellの環境構築はstackを使うものとcabalを使うものの２種類があります。
-歴史的にはcabalの不便さを改善したのがstackですが、現在はcabalも進化して
-不便さは大幅に解消されているため、筆者の好みでcabalによる環境構築をまとめます。
-
- ツールのインストール
-
- ghcup
-ghcupはGHCとcabalとHLSをバージョン管理してくれるインストーラです。
-インストールガイド を参...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/09/02/%E4%B8%80%E7%95%AA%E7%B0%A1%E5%8D%98%E3%81%AA_MonadFail_%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9</id><title type="text">一番簡単な MonadFail インスタンス</title><updated>2020-12-29T01:32:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/09/02/%E4%B8%80%E7%95%AA%E7%B0%A1%E5%8D%98%E3%81%AA_MonadFail_%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9"/><summary type="html">The English version is at Dev. 導入 fail が Monad から剥がされて早や幾年、私は失敗する可能性のある計算は MonadFail を使って型を付けるのが好きです。 foo :: MonadFail m =&gt; m a こうすると IO の文脈であればその中で、純粋な文脈であれば Maybe などで具体化して呼ぶことができます。 -- IO の文脈では foo :: IO a -- 純粋な文脈では foo :: Maybe a さて、純粋な文脈として Maybe を使うと失敗のメッセージを失ってしまうことが嬉しくありません。では、Either を使えばいいの…</summary></entry><entry><id>https://qiita.com/lotz/items/0894079a44e87dc8b73e</id><title type="text">Haskellのループ処理は flip fix でだいたい書けそう</title><updated>2020-12-26T13:57:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/0894079a44e87dc8b73e"/></entry><entry><id>https://fumieval.hatenablog.com/entry/2020/12/18/214626</id><title type="text">動的配列の無難なHaskell実装</title><updated>2020-12-25T14:17:57+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2020/12/18/214626"/><summary type="html">qiita.com C++、Rust、Pythonなど、他の言語では当たり前のように多用される動的配列だが、Haskell実装は(開発を始めた時点では)見当たらなかったので作ってみたお話*1。 動的配列とはミュータブルな配列の一種で、通常の配列操作だけでなく、末尾への要素の追加・削除が定数時間で行える構造である。確保しておいた領域がいっぱいになったら、その2倍の大きさの領域を確保するという方法によって、漸近的には要素の追加は定数時間となる。 内部の配列には、デファクトスタンダードであるvectorパッケージを用いる。Vectorには無印(boxed)、Unboxed、Storableの三種類の…</summary></entry><entry><id>https://haskell.jp/blog/posts/2020/break-monad-law-with-writer.html</id><title type="text">Writer Monadで気軽にMonad則を破る</title><updated>2020-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2020/break-monad-law-with-writer.html"/><summary type="html">
+        posts = Po...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/09/02/%E4%B8%80%E7%95%AA%E7%B0%A1%E5%8D%98%E3%81%AA_MonadFail_%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9</id><title type="text">一番簡単な MonadFail インスタンス</title><updated>2020-12-29T01:32:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/09/02/%E4%B8%80%E7%95%AA%E7%B0%A1%E5%8D%98%E3%81%AA_MonadFail_%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9"/><summary type="html">The English version is at Dev. 導入 fail が Monad から剥がされて早や幾年、私は失敗する可能性のある計算は MonadFail を使って型を付けるのが好きです。 foo :: MonadFail m =&gt; m a こうすると IO の文脈であればその中で、純粋な文脈であれば Maybe などで具体化して呼ぶことができます。 -- IO の文脈では foo :: IO a -- 純粋な文脈では foo :: Maybe a さて、純粋な文脈として Maybe を使うと失敗のメッセージを失ってしまうことが嬉しくありません。では、Either を使えばいいの…</summary></entry><entry><id>https://qiita.com/lotz/items/0894079a44e87dc8b73e</id><title type="text">Haskellのループ処理は flip fix でだいたい書けそう</title><updated>2020-12-26T13:57:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lotz/items/0894079a44e87dc8b73e"/></entry><entry><id>https://fumieval.hatenablog.com/entry/2020/12/18/214626</id><title type="text">動的配列の無難なHaskell実装</title><updated>2020-12-25T14:17:57+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2020/12/18/214626"/><summary type="html">qiita.com C++、Rust、Pythonなど、他の言語では当たり前のように多用される動的配列だが、Haskell実装は(開発を始めた時点では)見当たらなかったので作ってみたお話*1。 動的配列とはミュータブルな配列の一種で、通常の配列操作だけでなく、末尾への要素の追加・削除が定数時間で行える構造である。確保しておいた領域がいっぱいになったら、その2倍の大きさの領域を確保するという方法によって、漸近的には要素の追加は定数時間となる。 内部の配列には、デファクトスタンダードであるvectorパッケージを用いる。Vectorには無印(boxed)、Unboxed、Storableの三種類の…</summary></entry><entry><id>https://haskell.jp/blog/posts/2020/break-monad-law-with-writer.html</id><title type="text">Writer Monadで気軽にMonad則を破る</title><updated>2020-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2020/break-monad-law-with-writer.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
