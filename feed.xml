@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-03-15T12:07:42+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/autotaker/articles/monad-olympic-1-pure</id><title type="text">モナドオリンピック1-トラック競技-</title><updated>2021-03-15T12:07:42+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/monad-olympic-1-pure"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-03-16T09:23:48+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/tobi462/articles/8190584e7ddc31</id><title type="text">順を追って理解する Reader モナドの使い方</title><updated>2021-03-16T09:23:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tobi462/articles/8190584e7ddc31"/><summary type="html">
+ 前提読者
+
+モナドや bind 記法について基本的なことは理解している。
+Reader モナドの使い方や仕組みを理解したい。
+
+
+ アプリケーション全体から参照したい設定値
+アプリケーションを開発する際に、アプリケーション全体から参照したい設定値のようなものがあるケースがあります。
+例えば、以下のような設定値を考えてみます。
+
+      
+        
+        data Config = Config { verbose :: Bool } -- 冗長なログ出力が有効か
+
+
+      
+      これはアプリケーション起動時に引数として与えられたり、起動時に設定ファ...</summary></entry><entry><id>https://zenn.dev/autotaker/articles/monad-olympic-1-pure</id><title type="text">モナドオリンピック1-トラック競技-</title><updated>2021-03-15T12:07:42+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/autotaker/articles/monad-olympic-1-pure"/><summary type="html">
  はじめに
 最速のモナドを決めるモナドオリンピックを開催することになりました。
 この大会では、各ライブラリの提供するモナドたちが
@@ -740,24 +757,7 @@ methodでは a1 -&amp;gt; ... -&amp;gt; an -&amp;gt; m b型の関数のことを
 https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_関数
 case analysis関数はデータ型毎に定まる関数ですがよくよく見てみるとシンプルなルールで統一的に実装できそうです。
 https://twitter.com/lotz84_/status/1346780048653619200
-Haskellで同じ名前の関数を使って複数のデータ型を扱えるようにするには、モジュールを分けたり型クラスを利用したり工夫...</summary></entry><entry><id>https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e</id><title type="text">Yesodにserversession-backend-redisを組み込んで動かしてみたのでメモしておく</title><updated>2021-01-07T00:33:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2</id><title type="text">GHC 演算子優先順位トリビア</title><updated>2021-01-06T07:13:09+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2"/><summary type="html">GHC の演算子の優先順位には -1 がある（たぶん組込でしか使えない #Haskell pic.twitter.com/Xa0OIjvw5i— o̞͑kä̝mo̞͑to̞͑ kä̝zʊ̠kɪ̟ (@kakkun61) January 3, 2021</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0</id><title type="text">Case Analysis 関数</title><updated>2021-01-06T07:10:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0"/><summary type="html">今回は case analysis と呼ばれる関数の話です1。 data D a b c = C0 a b | C1 c 例えば上記のようなデータ型があった場合 case analysis 関数は次のようになります。 d :: (a -&gt; b -&gt; d) -&gt; (c -&gt; d) -&gt; D a b c -&gt; d d f _ (C0 a b) = f a b d _ f (C1 c) = f c 値構築子の数だけ関数を引数とし、対象のデータを最後の引数とします。それぞれの関数の型は値構築子の型に似ます。 C0 :: a -&gt; b -&gt; D a b c C1 :: c -&gt; D a b c d ::…</summary></entry><entry><id>https://zenn.dev/ak2ume/articles/723e20d14b1994eb6528</id><title type="text">MacにHaskell環境を構築する</title><updated>2021-01-04T03:38:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ak2ume/articles/723e20d14b1994eb6528"/><summary type="html">
- 更新ログ
-
-2021/Jan./04 Zennに移行
-2020/May./10 HIEの参考リンクを追記
-2020/May./05 HIEの導入について追記
-2020/May./05 Qrunchに新規エントリ
-
-
- このエントリで言いたいこと
-MacにHaskellの開発環境を構築してみたので、その手順を残しておきます。
-
- 環境
-
-MacBook Pro (13-inch, 2019, Four Thunderbolt 3 ports)
-プロセッサ：2.4 GHz クアッドコアIntel Core i5
-メモリ：16 GB 2133 MHz LPDDR3
-MacOS Catali...</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html</id><title type="text">ormolu-action</title><updated>2021-01-04T00:00:00+09:00</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html"/><summary type="html">&lt;p&gt;へいしゃでは、ソースコードのフォーマッターに &lt;a href=&#34;https://hackage.haskell.org/package/ormolu&#34;&gt;Ormolu&lt;/a&gt; を利用しています。&lt;/p&gt;
+Haskellで同じ名前の関数を使って複数のデータ型を扱えるようにするには、モジュールを分けたり型クラスを利用したり工夫...</summary></entry><entry><id>https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e</id><title type="text">Yesodにserversession-backend-redisを組み込んで動かしてみたのでメモしておく</title><updated>2021-01-07T00:33:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2</id><title type="text">GHC 演算子優先順位トリビア</title><updated>2021-01-06T07:13:09+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2"/><summary type="html">GHC の演算子の優先順位には -1 がある（たぶん組込でしか使えない #Haskell pic.twitter.com/Xa0OIjvw5i— o̞͑kä̝mo̞͑to̞͑ kä̝zʊ̠kɪ̟ (@kakkun61) January 3, 2021</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0</id><title type="text">Case Analysis 関数</title><updated>2021-01-06T07:10:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0"/><summary type="html">今回は case analysis と呼ばれる関数の話です1。 data D a b c = C0 a b | C1 c 例えば上記のようなデータ型があった場合 case analysis 関数は次のようになります。 d :: (a -&gt; b -&gt; d) -&gt; (c -&gt; d) -&gt; D a b c -&gt; d d f _ (C0 a b) = f a b d _ f (C1 c) = f c 値構築子の数だけ関数を引数とし、対象のデータを最後の引数とします。それぞれの関数の型は値構築子の型に似ます。 C0 :: a -&gt; b -&gt; D a b c C1 :: c -&gt; D a b c d ::…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html</id><title type="text">ormolu-action</title><updated>2021-01-04T00:00:00+09:00</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html"/><summary type="html">&lt;p&gt;へいしゃでは、ソースコードのフォーマッターに &lt;a href=&#34;https://hackage.haskell.org/package/ormolu&#34;&gt;Ormolu&lt;/a&gt; を利用しています。&lt;/p&gt;
 &lt;p&gt;インデント時のスペース数すらカスタマイズ不可なので好き嫌いが分かれるところですが、プロジェクト全体のコードを統一しておくとコードレビューの際にも有用なので入れています。&lt;/p&gt;
 &lt;p&gt;ちなみにスペース幅を4にしたくてフォークされた &lt;a href=&#34;https://github.com/parsonsmatt/fourmolu&#34;&gt;fourmolu&lt;/a&gt; というフォーマッターもあります。現在ではスペース数以外の設定もできるみたいです。&lt;/p&gt;
 &lt;p&gt;どちらも &lt;a href=&#34;https://github.com/haskell/haskell-language-server&#34;&gt;hls&lt;/a&gt; から利用可能なので、興味がある人は試してみると良いと思います。&lt;/p&gt;
