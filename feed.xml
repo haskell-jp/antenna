@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-03-26T23:40:59+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/yumura_s/items/d9a0f5ff7b1de558779f</id><title type="text">Haskell の Stream Fusion は不完全？Step 型のデータ構築子が一つ足りない？？？</title><updated>2021-03-26T23:40:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumura_s/items/d9a0f5ff7b1de558779f"/></entry><entry><id>https://zenn.dev/mod_poppo/books/haskell-forest</id><title type="text">Haskellの森</title><updated>2021-03-26T10:55:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/books/haskell-forest"/><summary type="html">筆者がこれまで書いてきたHaskellお役立ち記事をまとめたものです。内容は随時追加・変更されます。</summary></entry><entry><id>https://blog.miz-ar.info/2021/03/my-first-contribution-to-ghc/</id><title type="text">GHCに初めてコントリビュートした／最近のGHC動向</title><updated>2021-03-19T02:13:32+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2021/03/my-first-contribution-to-ghc/"/><summary type="html">事実上の標準デファクトスタンダードなHaskell処理系であるGHCに貢献するというのが去年掲げた目標だったが、それがようやく実現したので報告する。ついでに、最近のGHC開発状況についても簡単にまとめてみる。 「貢献」と [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/tobi462/articles/8190584e7ddc31</id><title type="text">順を追って理解する Reader モナドの使い方</title><updated>2021-03-16T09:23:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tobi462/articles/8190584e7ddc31"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-03-29T08:50:19+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/k16/articles/cd2d9bfb84ac19</id><title type="text">XMLの親の属性を子に移動する（HXTで）</title><updated>2021-03-29T08:50:19+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k16/articles/cd2d9bfb84ac19"/><summary type="html">XMLで、親についている属性を、子の要素に付け替えたいとする。つまり、たとえば以下のようなHTMLがあったとき…
+
+      
+        
+        &amp;lt;body&amp;gt;
+&amp;lt;table id=&#34;1&#34;&amp;gt;
+  &amp;lt;caption&amp;gt;title&amp;lt;/caption&amp;gt;
+&amp;lt;/table&amp;gt;
+&amp;lt;/body&amp;gt;
+
+
+      
+      以下のように修正したいとする。 id=&#34;1&#34; が &amp;lt;table&amp;gt; から &amp;lt;chapter&amp;gt; に移動しているのがわかると思う。
+
+      
+        
+      ...</summary></entry><entry><id>https://haskell.jp/blog/posts/about_admins.html</id><title type="text">日本Haskellユーザーグループ管理委員会（Haskell-jp Admins）設立のお知らせ</title><updated>2021-03-29T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/about_admins.html"/><summary type="html">
+&lt;article lang=&#34;ja&#34;&gt;
+
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;row&#34;&gt;
+            &lt;div class=&#34;col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10&#34;&gt;
+                &lt;ul class=&#34;social-buttons&#34;&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;a href=&#34;https://twitter.com/share&#34; class=&#34;twitter-share-button&#34;&gt;Tweet&lt;/a&gt;
+                        &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;script type=&#34;text/javascript&#34;&gt;
+                            reddit_target = &#34;haskell_jp&#34;;
+                            reddit_title  = document.title;
+                        &lt;/script&gt;
+                        &lt;script type=&#34;text/javascript&#34; src=&#34;//www.redditstatic.com/button/button1.js&#34;&gt;&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;a data-pocket-label=&#34;pocket&#34; data-pocket-count=&#34;horizontal&#34; class=&#34;pocket-btn&#34; data-lang=&#34;en&#34;&gt;&lt;/a&gt;
+                        &lt;script type=&#34;text/javascript&#34;&gt;!function(d,i){if(!d.getElementById(i)){var j=d.createElement(&#34;script&#34;);j.id=i;j.src=&#34;https://widgets.getpocket.com/v1/j/btn.js?v=1&#34;;var w=d.getElementById(i);d.body.appendChild(j);}}(document,&#34;pocket-btn-js&#34;);&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;row&#34;&gt;
+            &lt;div id=&#34;md-post-content&#34; class=&#34;col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1&#34;&gt;
+              &lt;hr /&gt;
+&lt;p&gt;去る&lt;span class=&#34;ascii&#34;&gt;2021&lt;/span&gt;年&lt;span class=&#34;ascii&#34;&gt;2&lt;/span&gt;月&lt;span class=&#34;ascii&#34;&gt;9&lt;/span&gt;日、任意団体であり明確な会員資格を持たない、&lt;a href=&#34;https://haskell.jp/blog/posts/about_us.html&#34;&gt;日本&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;ユーザーグループ（&lt;span class=&#34;ascii&#34;&gt;Haskell-jp&lt;/span&gt;）&lt;/a&gt;における共有財産やコミュニケーションの場の管理・運営を担う法人として、一般社団法人日本&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;ユーザーグループ管理委員会（通称 &lt;span class=&#34;ascii&#34;&gt;Haskell-jp Admins&lt;/span&gt;。&lt;a href=&#34;https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=5020005014971&#34;&gt;法人番号 &lt;span class=&#34;ascii&#34;&gt;5020005014971&lt;/span&gt;&lt;/a&gt;）を設立しました。法人格を持つことを活かして、&lt;span class=&#34;ascii&#34;&gt;Haskell-jp Admins&lt;/span&gt;は次の事業に取り組みます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プログラミング言語&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;に関するイベントの企画・開催・運営
+&lt;ul&gt;
+&lt;li&gt;イベントの会場を借りたり、ノベルティーを作成したりする際の名義として使用する予定です&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;ascii&#34;&gt;haskell.jp&lt;/span&gt; ドメインの維持・管理&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://haskell.jp/signin-slack.html&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell-jp&lt;/span&gt;の&lt;span class=&#34;ascii&#34;&gt;Slack Workspace&lt;/span&gt;&lt;/a&gt;を始めとする、交流や情報共有を行う場の提供・管理・運営&lt;/li&gt;
+&lt;li&gt;そのほか、上記に関連して必要なこと&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;table-of-contents-outer&#34;&gt;
+&lt;div id=&#34;table-of-contents&#34;&gt;
+&lt;div class=&#34;table-of-contents-title&#34;&gt;
+Contents
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#背景&#34; title=&#34;背景&#34;&gt;背景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#今後の活動と連絡先&#34; title=&#34;今後の活動と連絡先&#34;&gt;今後の活動と連絡先&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#現在の理事社員&#34; title=&#34;現在の理事社員&#34;&gt;現在の理事・社員&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#所在地&#34; title=&#34;所在地&#34;&gt;所在地&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#定款&#34; title=&#34;定款&#34;&gt;定款&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;背景&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#背景&#34; title=&#34;背景&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;背景&lt;/h1&gt;
+&lt;p&gt;そもそもの設立の動機は、山下さん（&lt;a href=&#34;https://twitter.com/nobsun&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;@nobsun&lt;/span&gt;&lt;/a&gt;）の好意によって個人名義で保有していた&lt;span class=&#34;ascii&#34;&gt;haskell.jp&lt;/span&gt; ドメインを共同で管理出来るようにするためでした。ドメインを団体として保有するには、法人格と、法人名義の銀行口座が必要なのです。これ以外にも、&lt;span class=&#34;ascii&#34;&gt;Haskell-jp&lt;/span&gt;として共有する価値のあるアカウントを管理する際の名義として、随時「日本&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;ユーザーグループ管理委員会」を使用します。&lt;/p&gt;
+&lt;h1 id=&#34;今後の活動と連絡先&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#今後の活動と連絡先&#34; title=&#34;今後の活動と連絡先&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;今後の活動と連絡先&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell-jp Admins&lt;/span&gt;が出来たからといって、&lt;span class=&#34;ascii&#34;&gt;Haskell-jp&lt;/span&gt;のあり方が大きく変わることはありません。今後も&lt;span class=&#34;ascii&#34;&gt;Slack&lt;/span&gt;で質問したり議論したり&lt;a href=&#34;https://haskell.jp/blog/&#34;&gt;ブログ&lt;/a&gt;記事を書いたりしましょう！&lt;a href=&#34;https://haskell.jp/&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;haskell.jp&lt;/span&gt;&lt;/a&gt;というドメインを活かし、「公式面して」自由に活動する方をいつでも待っています！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;公の場で提案・相談したい場合は&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt;
+&lt;ul&gt;
+&lt;li&gt;前述の&lt;a href=&#34;https://haskell.jp/signin-slack.html&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell-jp&lt;/span&gt;の&lt;span class=&#34;ascii&#34;&gt;Slack Workspace&lt;/span&gt;&lt;/a&gt;の&lt;span class=&#34;ascii&#34;&gt;#random&lt;/span&gt;チャンネルなどで投稿いただくか、&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/haskell-jp/community/issues&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;haskell-jp/community&lt;/span&gt;に&lt;span class=&#34;ascii&#34;&gt;issue&lt;/span&gt;&lt;/a&gt;として登録したり、&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/haskell_jp&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell-jp&lt;/span&gt;の&lt;span class=&#34;ascii&#34;&gt;Twitter&lt;/span&gt;アカウント &lt;span class=&#34;ascii&#34;&gt;@haskell_jp&lt;/span&gt;&lt;/a&gt;にメンションをください。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;プライベートに提案・相談したい場合は&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;ascii&#34;&gt;haskell-jp-admins@googlegroups.com&lt;/span&gt; にメールを送ってください&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我々&lt;span class=&#34;ascii&#34;&gt;Haskell-jp Admins&lt;/span&gt;は、そうした活動をバックアップするために種々の問題に取り組んでいきます。&lt;/p&gt;
+&lt;h1 id=&#34;現在の理事社員&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#現在の理事社員&#34; title=&#34;現在の理事社員&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;現在の理事・社員&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;代表理事&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt; 山本悠滋（&lt;a href=&#34;https://twitter.com/igrep&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;@igrep&lt;/span&gt;&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;社員&lt;span class=&#34;ascii&#34;&gt;:&lt;/span&gt;
+&lt;ul&gt;
+&lt;li&gt;中嶋大嗣（&lt;a href=&#34;https://twitter.com/nakaji_dayo/&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;@nakaji_dayo&lt;/span&gt;&lt;/a&gt;&lt;span class=&#34;ascii&#34;&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;山下伸夫（&lt;a href=&#34;https://twitter.com/nobsun&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;@nobsun&lt;/span&gt;&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;岡本和樹（&lt;a href=&#34;https://twitter.com/kakkun61&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;@kakkun61&lt;/span&gt;&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;木下郁章（&lt;a href=&#34;https://twitter.com/fumieval&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;@fumieval&lt;/span&gt;&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;廣瀬達也（&lt;a href=&#34;https://twitter.com/lotz84_&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;@lotz84_&lt;/span&gt;&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;所在地&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#所在地&#34; title=&#34;所在地&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;所在地&lt;/h1&gt;
+&lt;p&gt;〒&lt;span class=&#34;ascii&#34;&gt;220-0004&lt;/span&gt; 神奈川県横浜市西区北幸 &lt;span class=&#34;ascii&#34;&gt;1-11-1&lt;/span&gt; 水信ビル&lt;span class=&#34;ascii&#34;&gt;7&lt;/span&gt;階&lt;/p&gt;
+&lt;h1 id=&#34;定款&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#定款&#34; title=&#34;定款&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;定款&lt;/h1&gt;
+&lt;p&gt;こちらに一部個人情報を削除した上で掲載しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/haskell-jp/community/blob/master/admins/article.md&#34;&gt;一般社団法人 日本&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;ユーザーグループ管理委員会 定款&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
+            &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
+                
+            &lt;/div&gt;
+            &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
+                &lt;a href=&#34;/&#34; lang=&#34;ja&#34;&gt;トップに戻る&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;col-lg-3 col-md-4 col-xs-4&#34;&gt;
+                
+                &lt;a href=&#34;/posts/2020/break-monad-law-with-writer.html&#34; style=&#34;margin-left: auto;&#34; lang=&#34;ja&#34;&gt;Writer Monadで気軽にMonad則を破る&lt;/a&gt;
+                &lt;i class=&#34;glyphicon glyphicon-chevron-right&#34; aria-hidden=&#34;true&#34; style=&#34;margin-left: 5px;&#34;&gt;&lt;/i&gt;
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+
+</summary></entry><entry><id>https://qiita.com/yumura_s/items/d9a0f5ff7b1de558779f</id><title type="text">Haskell の Stream Fusion は不完全？Step 型のデータ構築子が一つ足りない？？？</title><updated>2021-03-26T23:40:59+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yumura_s/items/d9a0f5ff7b1de558779f"/></entry><entry><id>https://zenn.dev/mod_poppo/books/haskell-forest</id><title type="text">Haskellの森</title><updated>2021-03-26T10:55:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/books/haskell-forest"/><summary type="html">筆者がこれまで書いてきたHaskellお役立ち記事をまとめたものです。内容は随時追加・変更されます。</summary></entry><entry><id>https://blog.miz-ar.info/2021/03/my-first-contribution-to-ghc/</id><title type="text">GHCに初めてコントリビュートした／最近のGHC動向</title><updated>2021-03-19T02:13:32+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2021/03/my-first-contribution-to-ghc/"/><summary type="html">事実上の標準デファクトスタンダードなHaskell処理系であるGHCに貢献するというのが去年掲げた目標だったが、それがようやく実現したので報告する。ついでに、最近のGHC開発状況についても簡単にまとめてみる。 「貢献」と [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/tobi462/articles/8190584e7ddc31</id><title type="text">順を追って理解する Reader モナドの使い方</title><updated>2021-03-16T09:23:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tobi462/articles/8190584e7ddc31"/><summary type="html">
  前提読者
 
 モナドや bind 記法について基本的なことは理解している。
@@ -753,11 +879,7 @@ https://hackage.haskell.org/package/method
 
  methodとは
 methodでは a1 -&amp;gt; ... -&amp;gt; an -&amp;gt; m b型の関数のことをメソッドと呼びます。
-ここでmはモナドです。(-&amp;gt;) rモナドを除く大抵の...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/13/%E3%81%A8%E3%82%8A%E3%81%A8%E3%82%81%E3%81%AE%E3%81%AA%E3%81%84_GHC_%E7%B7%9A%E5%BD%A2%E5%9E%8B%E3%83%A1%E3%83%A2</id><title type="text">とりとめのない GHC 線形型メモ</title><updated>2021-01-09T20:09:49+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/13/%E3%81%A8%E3%82%8A%E3%81%A8%E3%82%81%E3%81%AE%E3%81%AA%E3%81%84_GHC_%E7%B7%9A%E5%BD%A2%E5%9E%8B%E3%83%A1%E3%83%A2"/><summary type="html">GHC 9.0.1 alpha 1 がリリースされたときに線形型をいじってみていたことをメモしていなかったので思い出しながらメモしていく。 mail.haskell.org 使用バージョン GHC 9.0.0.20200925 上記リンクのもの ghcup ならそれ経由でインストールできる。 ghcups の場合は手動インストール後、下記のような設定ファイルで切り替えができるようになる1。 ghc: 9.0.1-alpha1: H:\programs\ghc-9.0.0.20200925-x86_64-unknown-mingw32\bin 線形型とは GHC では引数が1回しか使えない（1回…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B</id><title type="text">刹那的純粋関数的データ構造と線形型</title><updated>2021-01-09T20:03:02+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B"/><summary type="html">The English version is at Dev. 『純粋関数型データ構造』（以降 PFDS）の5.2章に刹那的純粋関数的キューというものが出てきます。 https://asciidwango.jp/post/160831986220/%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0asciidwango.jp このキューは計算量の関係から1つの値に対して1回しか操作をしてはいけません。例えば下記操作列なら大丈夫ですが、その次の操作列では計算量が大きくな…</summary></entry><entry><id>https://zenn.dev/lotz/articles/999fc8b1ab983e5e1395</id><title type="text">SOPを使ってジェネリックにCase Analysis関数を実装する</title><updated>2021-01-08T14:28:19+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/999fc8b1ab983e5e1395"/><summary type="html">case analysis関数が何かについては、まず kakkun61氏 の以下の記事を参照してください。
-https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_関数
-case analysis関数はデータ型毎に定まる関数ですがよくよく見てみるとシンプルなルールで統一的に実装できそうです。
-https://twitter.com/lotz84_/status/1346780048653619200
-Haskellで同じ名前の関数を使って複数のデータ型を扱えるようにするには、モジュールを分けたり型クラスを利用したり工夫...</summary></entry><entry><id>https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e</id><title type="text">Yesodにserversession-backend-redisを組み込んで動かしてみたのでメモしておく</title><updated>2021-01-07T00:33:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2</id><title type="text">GHC 演算子優先順位トリビア</title><updated>2021-01-06T07:13:09+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2"/><summary type="html">GHC の演算子の優先順位には -1 がある（たぶん組込でしか使えない #Haskell pic.twitter.com/Xa0OIjvw5i— o̞͑kä̝mo̞͑to̞͑ kä̝zʊ̠kɪ̟ (@kakkun61) January 3, 2021</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0</id><title type="text">Case Analysis 関数</title><updated>2021-01-06T07:10:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0"/><summary type="html">今回は case analysis と呼ばれる関数の話です1。 data D a b c = C0 a b | C1 c 例えば上記のようなデータ型があった場合 case analysis 関数は次のようになります。 d :: (a -&gt; b -&gt; d) -&gt; (c -&gt; d) -&gt; D a b c -&gt; d d f _ (C0 a b) = f a b d _ f (C1 c) = f c 値構築子の数だけ関数を引数とし、対象のデータを最後の引数とします。それぞれの関数の型は値構築子の型に似ます。 C0 :: a -&gt; b -&gt; D a b c C1 :: c -&gt; D a b c d ::…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html</id><title type="text">ormolu-action</title><updated>2021-01-04T00:00:00+09:00</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html"/><summary type="html">&lt;p&gt;へいしゃでは、ソースコードのフォーマッターに &lt;a href=&#34;https://hackage.haskell.org/package/ormolu&#34;&gt;Ormolu&lt;/a&gt; を利用しています。&lt;/p&gt;
+ここでmはモナドです。(-&amp;gt;) rモナドを除く大抵の...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/13/%E3%81%A8%E3%82%8A%E3%81%A8%E3%82%81%E3%81%AE%E3%81%AA%E3%81%84_GHC_%E7%B7%9A%E5%BD%A2%E5%9E%8B%E3%83%A1%E3%83%A2</id><title type="text">とりとめのない GHC 線形型メモ</title><updated>2021-01-09T20:09:49+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/13/%E3%81%A8%E3%82%8A%E3%81%A8%E3%82%81%E3%81%AE%E3%81%AA%E3%81%84_GHC_%E7%B7%9A%E5%BD%A2%E5%9E%8B%E3%83%A1%E3%83%A2"/><summary type="html">GHC 9.0.1 alpha 1 がリリースされたときに線形型をいじってみていたことをメモしていなかったので思い出しながらメモしていく。 mail.haskell.org 使用バージョン GHC 9.0.0.20200925 上記リンクのもの ghcup ならそれ経由でインストールできる。 ghcups の場合は手動インストール後、下記のような設定ファイルで切り替えができるようになる1。 ghc: 9.0.1-alpha1: H:\programs\ghc-9.0.0.20200925-x86_64-unknown-mingw32\bin 線形型とは GHC では引数が1回しか使えない（1回…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B</id><title type="text">刹那的純粋関数的データ構造と線形型</title><updated>2021-01-09T20:03:02+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2020/12/25/%E5%88%B9%E9%82%A3%E7%9A%84%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E7%9A%84%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%E3%81%A8%E7%B7%9A%E5%BD%A2%E5%9E%8B"/><summary type="html">The English version is at Dev. 『純粋関数型データ構造』（以降 PFDS）の5.2章に刹那的純粋関数的キューというものが出てきます。 https://asciidwango.jp/post/160831986220/%E7%B4%94%E7%B2%8B%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0asciidwango.jp このキューは計算量の関係から1つの値に対して1回しか操作をしてはいけません。例えば下記操作列なら大丈夫ですが、その次の操作列では計算量が大きくな…</summary></entry><entry><id>https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e</id><title type="text">Yesodにserversession-backend-redisを組み込んで動かしてみたのでメモしておく</title><updated>2021-01-07T00:33:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/masaki_shoji/items/08aa50e6d36cbba7e49e"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2</id><title type="text">GHC 演算子優先順位トリビア</title><updated>2021-01-06T07:13:09+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/GHC_%E6%BC%94%E7%AE%97%E5%AD%90%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D%E3%83%88%E3%83%AA%E3%83%93%E3%82%A2"/><summary type="html">GHC の演算子の優先順位には -1 がある（たぶん組込でしか使えない #Haskell pic.twitter.com/Xa0OIjvw5i— o̞͑kä̝mo̞͑to̞͑ kä̝zʊ̠kɪ̟ (@kakkun61) January 3, 2021</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0</id><title type="text">Case Analysis 関数</title><updated>2021-01-06T07:10:46+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2021/01/06/Case_Analysis_%E9%96%A2%E6%95%B0"/><summary type="html">今回は case analysis と呼ばれる関数の話です1。 data D a b c = C0 a b | C1 c 例えば上記のようなデータ型があった場合 case analysis 関数は次のようになります。 d :: (a -&gt; b -&gt; d) -&gt; (c -&gt; d) -&gt; D a b c -&gt; d d f _ (C0 a b) = f a b d _ f (C1 c) = f c 値構築子の数だけ関数を引数とし、対象のデータを最後の引数とします。それぞれの関数の型は値構築子の型に似ます。 C0 :: a -&gt; b -&gt; D a b c C1 :: c -&gt; D a b c d ::…</summary></entry><entry><id>https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html</id><title type="text">ormolu-action</title><updated>2021-01-04T00:00:00+09:00</updated><author><name>e-bigmoon</name></author><link href="https://haskell.e-bigmoon.com/posts/2021/01-04-ormolu-action.html"/><summary type="html">&lt;p&gt;へいしゃでは、ソースコードのフォーマッターに &lt;a href=&#34;https://hackage.haskell.org/package/ormolu&#34;&gt;Ormolu&lt;/a&gt; を利用しています。&lt;/p&gt;
 &lt;p&gt;インデント時のスペース数すらカスタマイズ不可なので好き嫌いが分かれるところですが、プロジェクト全体のコードを統一しておくとコードレビューの際にも有用なので入れています。&lt;/p&gt;
 &lt;p&gt;ちなみにスペース幅を4にしたくてフォークされた &lt;a href=&#34;https://github.com/parsonsmatt/fourmolu&#34;&gt;fourmolu&lt;/a&gt; というフォーマッターもあります。現在ではスペース数以外の設定もできるみたいです。&lt;/p&gt;
 &lt;p&gt;どちらも &lt;a href=&#34;https://github.com/haskell/haskell-language-server&#34;&gt;hls&lt;/a&gt; から利用可能なので、興味がある人は試してみると良いと思います。&lt;/p&gt;
@@ -1412,6 +1534,9 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;まとめ&lt;/h1&gt;
         &lt;/div&gt;
         &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
             &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
+                
+                &lt;i class=&#34;glyphicon glyphicon-chevron-left&#34; aria-hidden=&#34;true&#34; style=&#34;margin-right: 5px;&#34;&gt;&lt;/i&gt;
+                &lt;a href=&#34;/posts/about_admins.html&#34; lang=&#34;ja&#34;&gt;日本Haskellユーザーグループ管理委員会（Haskell-jp Admins）設立のお知らせ&lt;/a&gt;
                 
             &lt;/div&gt;
             &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
@@ -6651,166 +6776,6 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;まとめ&lt;/h1&gt;
             &lt;div class=&#34;col-lg-3 col-md-4 col-xs-4&#34;&gt;
                 
                 &lt;a href=&#34;/posts/2019/unicode-show.html&#34; style=&#34;margin-left: auto;&#34; lang=&#34;ja&#34;&gt;日本語をshowしてうまく表示されなかったら&lt;/a&gt;
-                &lt;i class=&#34;glyphicon glyphicon-chevron-right&#34; aria-hidden=&#34;true&#34; style=&#34;margin-left: 5px;&#34;&gt;&lt;/i&gt;
-                
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/article&gt;
-
-</summary></entry><entry><id>https://haskell.jp/blog/posts/2019/unicode-show.html</id><title type="text">日本語をshowしてうまく表示されなかったら</title><updated>2019-12-22T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2019/unicode-show.html"/><summary type="html">
-&lt;article lang=&#34;ja&#34;&gt;
-
-    &lt;div class=&#34;container&#34;&gt;
-        &lt;div class=&#34;row&#34;&gt;
-            &lt;div class=&#34;col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10&#34;&gt;
-                &lt;ul class=&#34;social-buttons&#34;&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;a href=&#34;https://twitter.com/share&#34; class=&#34;twitter-share-button&#34;&gt;Tweet&lt;/a&gt;
-                        &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;script type=&#34;text/javascript&#34;&gt;
-                            reddit_target = &#34;haskell_jp&#34;;
-                            reddit_title  = document.title;
-                        &lt;/script&gt;
-                        &lt;script type=&#34;text/javascript&#34; src=&#34;//www.redditstatic.com/button/button1.js&#34;&gt;&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;a data-pocket-label=&#34;pocket&#34; data-pocket-count=&#34;horizontal&#34; class=&#34;pocket-btn&#34; data-lang=&#34;en&#34;&gt;&lt;/a&gt;
-                        &lt;script type=&#34;text/javascript&#34;&gt;!function(d,i){if(!d.getElementById(i)){var j=d.createElement(&#34;script&#34;);j.id=i;j.src=&#34;https://widgets.getpocket.com/v1/j/btn.js?v=1&#34;;var w=d.getElementById(i);d.body.appendChild(j);}}(document,&#34;pocket-btn-js&#34;);&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&#34;row&#34;&gt;
-            &lt;div id=&#34;md-post-content&#34; class=&#34;col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1&#34;&gt;
-              &lt;hr /&gt;
-&lt;div id=&#34;table-of-contents-outer&#34;&gt;
-&lt;div id=&#34;table-of-contents&#34;&gt;
-&lt;div class=&#34;table-of-contents-title&#34;&gt;
-Contents
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#ℹ️この記事は&#34; title=&#34;ℹ️この記事は&#34;&gt;ℹ️この記事は🎄&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#日本語などの話者がhaskellを始めるとあるある&#34; title=&#34;日本語などの話者がhaskellを始めるとあるある&#34;&gt;日本語（などの）話者が&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;を始めるとあるある&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#unicode-showを使おう&#34; title=&#34;unicode-showを使おう&#34;&gt;🌐&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;を使おう&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#unicode-showの最近の修正&#34; title=&#34;unicode-showの最近の修正&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;の最近の修正&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#番外編pretty-simpleも使おう&#34; title=&#34;番外編pretty-simpleも使おう&#34;&gt;（番外編）&lt;span class=&#34;ascii&#34;&gt;pretty-simple&lt;/span&gt;も使おう&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;ℹ️この記事は&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#ℹ️この記事は&#34; title=&#34;ℹ️この記事は&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;ℹ️この記事は🎄&lt;/h1&gt;
-&lt;p&gt;この記事は、&lt;a href=&#34;https://qiita.com/advent-calendar/2019/haskell&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell Advent Calendar 2019&lt;/span&gt;&lt;/a&gt; &lt;span class=&#34;ascii&#34;&gt;22&lt;/span&gt;日目の記事です。&lt;br /&gt;
-例年どおりタイプセーフプリキュア！の話をするつもりでしたが、ネタが実装できなかったので&lt;a href=&#34;http://hackage.haskell.org/package/unicode-show&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;&lt;/a&gt;の話をします&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;。&lt;br /&gt;
-まぁ、こちらの方がみなさんにとっては有益でしょうし🙃&lt;/p&gt;
-&lt;h1 id=&#34;日本語などの話者がhaskellを始めるとあるある&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#日本語などの話者がhaskellを始めるとあるある&#34; title=&#34;日本語などの話者がhaskellを始めるとあるある&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;日本語（などの）話者が&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;を始めるとあるある&lt;/h1&gt;
-&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;GHCi&lt;/span&gt;に日本語を入力したり…&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;みんなで幸せゲットだよ！&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;\12415\12435\12394\12391\24184\12379\12466\12483\12488\12384\12424\65281&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;日本語を&lt;code&gt;print&lt;/code&gt;したり…&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;私、堪忍袋の緒が切れました！&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;\31169\12289\22570\24525\34955\12398\32210\12364\20999\12428\12414\12375\12383\65281&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;日本語を&lt;code&gt;show&lt;/code&gt;したり…&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; iimashita x &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;今、&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;show&lt;/span&gt; x &lt;span class=&#34;op&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;って言いました！？&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;putStrLn&lt;/span&gt; (iimashita &lt;span class=&#34;st&#34;&gt;&amp;quot;ハスケル&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;今、&lt;span class=&#34;st&#34;&gt;&amp;quot;\12495\12473\12465\12523&amp;quot;&lt;/span&gt;って言いました！？&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;すると、日本語の大半が変な文字列に変わってしまいました😥。&lt;/p&gt;
-&lt;p&gt;へ… 変な文字列じゃないし！エスケープシーケンスに変換しただけだから！&lt;/p&gt;
-&lt;p&gt;これは、&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;標準における&lt;code&gt;show&lt;/code&gt;関数の残念な仕様です。&lt;br /&gt;
-&lt;code&gt;show&lt;/code&gt;関数に文字列を渡すと、ダブルクォートで囲った上で、&lt;span class=&#34;ascii&#34;&gt;ASCII&lt;/span&gt;範囲外の文字列や、&lt;span class=&#34;ascii&#34;&gt;ASCII&lt;/span&gt;の非表示文字などをエスケープシーケンスに変換して返します。&lt;br /&gt;
-これは、&lt;code&gt;show&lt;/code&gt;関数をデバッグで使用した際、指定した文字列にどんな文字が含まれているか、簡単にわかるようにするための仕様です。&lt;br /&gt;
-文字の文字コードを表示すれば、&lt;span class=&#34;ascii&#34;&gt;NULL&lt;/span&gt;文字や制御文字、ゼロ幅文字、特殊なスペースなど、視認しにくいおかしな文字が含まれていても、一目でわかるのです。&lt;/p&gt;
-&lt;p&gt;しかしこれは日本語話者である我々にとって、少なくとも日本語の文字に関しては「余計なお世話」です。&lt;br /&gt;
-&lt;span class=&#34;ascii&#34;&gt;NULL&lt;/span&gt;文字や&lt;span class=&#34;ascii&#34;&gt;ASCII&lt;/span&gt;の制御文字といった本来画面に表示することがない文字列ならともかく、&lt;span class=&#34;ascii&#34;&gt;ASCII&lt;/span&gt;範囲外の文字列すべてをエスケープしてしまうのはやり過ぎでしょう。&lt;br /&gt;
-現代は&lt;span class=&#34;ascii&#34;&gt;Unicode&lt;/span&gt;があるおかげで、日本語に限らずとも&lt;span class=&#34;ascii&#34;&gt;ASCII&lt;/span&gt;範囲外の文字を扱うのは当たり前になりましたから。&lt;/p&gt;
-&lt;h1 id=&#34;unicode-showを使おう&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#unicode-showを使おう&#34; title=&#34;unicode-showを使おう&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;🌐&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;を使おう&lt;/h1&gt;
-&lt;p&gt;そこで便利なのが&lt;a href=&#34;http://hackage.haskell.org/package/unicode-show&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;&lt;/a&gt;です。&lt;br /&gt;
-&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;の&lt;code&gt;ushow&lt;/code&gt;関数は、&lt;code&gt;show&lt;/code&gt;がエスケープシーケンスに変換した日本語などの文字列を、元の文字列に戻してくれます。&lt;br /&gt;
-なので、新しい型クラスを定義する必要もなく、そのまま&lt;code&gt;Show&lt;/code&gt;型クラスのインスタンスを再利用できるのです。&lt;/p&gt;
-&lt;p&gt;早速先ほどの&lt;code&gt;show&lt;/code&gt;を使った例に適用してみましょう。&lt;/p&gt;
-&lt;p&gt;まずは👇のコマンドでインストールして、&lt;span class=&#34;ascii&#34;&gt;GHCi&lt;/span&gt;を起動します。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode bash&#34;&gt;&lt;code class=&#34;sourceCode bash&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ex&#34;&gt;stack&lt;/span&gt; build unicode-show&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ex&#34;&gt;stack&lt;/span&gt; exec ghci&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;co&#34;&gt;# あるいは、最近のcabalを使っている場合は...&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-5&#34; title=&#34;5&#34;&gt;&lt;span class=&#34;ex&#34;&gt;cabal&lt;/span&gt; v2-install --lib unicode-show&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-6&#34; title=&#34;6&#34;&gt;&lt;span class=&#34;ex&#34;&gt;cabal&lt;/span&gt; v2-repl -b unicode-show&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Text.Show.Unicode&lt;/code&gt;モジュールを&lt;code&gt;import&lt;/code&gt;して&lt;code&gt;show&lt;/code&gt;を使っている箇所を&lt;code&gt;ushow&lt;/code&gt;に変えれば、お望みどおりの挙動になります。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Text.Show.Unicode&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; iimashita x &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;今、&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;++&lt;/span&gt; ushow x &lt;span class=&#34;op&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;って言いました！？&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;putStrLn&lt;/span&gt; (iimashita &lt;span class=&#34;st&#34;&gt;&amp;quot;ハスケル&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;今、&lt;span class=&#34;st&#34;&gt;&amp;quot;ハスケル&amp;quot;&lt;/span&gt;って言いました！？&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;わくわくもんですね！&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;print&lt;/code&gt;の例も、&lt;code&gt;uprint&lt;/code&gt;に変えれば🆗です。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; uprint &lt;span class=&#34;st&#34;&gt;&amp;quot;私、堪忍袋の緒が切れました！&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;私、堪忍袋の緒が切れました！&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ウルトラハッピーですね！！&lt;/p&gt;
-&lt;p&gt;さらに、次のコマンドを&lt;span class=&#34;ascii&#34;&gt;GHCi&lt;/span&gt;に入力すれば、&lt;span class=&#34;ascii&#34;&gt;GHCi&lt;/span&gt;に直接入力した日本語文字列もそのまま表示されるようになります。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb7&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;set &lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;interactive&lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt;uprint&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-2&#34; title=&#34;2&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;みんなで幸せゲットだよ！&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb7-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;st&#34;&gt;&amp;quot;みんなで幸せゲットだよ！&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;カンペキ✨&lt;/p&gt;
-&lt;p&gt;えっ、常に&lt;code&gt;uprint&lt;/code&gt;したいからいちいち&lt;code&gt;:set -interactive-print=uprint&lt;/code&gt;するのが面倒くさい？&lt;br /&gt;
-そんなあなたは👇を&lt;code&gt;~/.ghci&lt;/code&gt;に書くことけって～いでしょう。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb8&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;qualified&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Text.Show.Unicode&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb8-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;op&#34;&gt;:&lt;/span&gt;set &lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;interactive&lt;span class=&#34;op&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;fu&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt;Text.Show.Unicode.uprint&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&#34;unicode-showの最近の修正&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#unicode-showの最近の修正&#34; title=&#34;unicode-showの最近の修正&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;の最近の修正&lt;/h1&gt;
-&lt;p&gt;そんな&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;ですが、残念ながら一昨年、作者である村主崇行さんが亡くなってしまいました&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;。&lt;br /&gt;
-日本に住む&lt;span class=&#34;ascii&#34;&gt;Haskeller&lt;/span&gt;をサポートする日本&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;ユーザーグループとしては、このパッケージをメンテナンスし続けることに大きな意義があると判断し、私はこのパッケージを&lt;a href=&#34;https://github.com/haskell-jp/&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell-jp&lt;/span&gt;&lt;/a&gt;の&lt;span class=&#34;ascii&#34;&gt;GitHub&lt;/span&gt;リポジトリーでメンテナンスすることにしました。&lt;br /&gt;
-以下がそのリポジトリーです。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/haskell-jp/unicode-show&#34; class=&#34;uri&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;https://github.com/haskell-jp/unicode-show&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;といっても、メンテナーの名前や&lt;code&gt;LICENSE&lt;/code&gt;ファイルを書き換えて最新版をアップロードして以降特に何もしていなかったのですが&lt;small&gt;（&lt;a href=&#34;https://github.com/nushio3/unicode-show/issues/2&#34;&gt;バグはあるけど直すのも難しそう&lt;/a&gt;だし、概ね使えるし）&lt;/small&gt;、なんと先日、&lt;span class=&#34;ascii&#34;&gt;Pull request&lt;/span&gt;が来ました！&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/haskell-jp/unicode-show/pull/4&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Do not show values eagerly by Kaiepi · Pull Request #4 · haskell-jp/unicode-show&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;この修正を適用する前の&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;は、文字列全体を評価してからエスケープシーケンスを元に戻す、という挙動だったため、長い文字列を与えた場合や無限の長さの文字列を与えた場合に、なかなか&lt;small&gt;（あるいは永遠に）&lt;/small&gt;結果が返ってこないという問題がありました。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb9&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; uprint (&lt;span class=&#34;fu&#34;&gt;repeat&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ああああ！&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb9-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- 何も表示されず、Ctrl + C を押すまで処理が返らない&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;修正後はちゃんと遅延評価を利用することで、無限の長さの文字列でも少しずつ変換することができます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb10&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; uprint (&lt;span class=&#34;fu&#34;&gt;repeat&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ああああ！&amp;quot;&lt;/span&gt;)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-2&#34; title=&#34;2&#34;&gt;[&lt;span class=&#34;st&#34;&gt;&amp;quot;ああああ！&amp;quot;&lt;/span&gt;,&lt;span class=&#34;st&#34;&gt;&amp;quot;ああああ！&amp;quot;&lt;/span&gt;, &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;ああああ！&amp;quot;&lt;/span&gt;,&lt;span class=&#34;st&#34;&gt;&amp;quot;ああInterrupted.&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb10-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;st&#34;&gt;-- Ctrl + Cを押すまで出力し続ける&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;今日記事にした一番の理由はこの話をするためです。&lt;br /&gt;
-&lt;a href=&#34;https://github.com/Kaiepi&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Kaiepi&lt;/span&gt;&lt;/a&gt;さんありがとうございます！&lt;br /&gt;
-先ほどリリースしました！🎉&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://hackage.haskell.org/package/unicode-show-0.1.0.4&#34; class=&#34;uri&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;http://hackage.haskell.org/package/unicode-show-0.1.0.4&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;番外編pretty-simpleも使おう&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#番外編pretty-simpleも使おう&#34; title=&#34;番外編pretty-simpleも使おう&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;（番外編）&lt;span class=&#34;ascii&#34;&gt;pretty-simple&lt;/span&gt;も使おう&lt;/h1&gt;
-&lt;p&gt;時間がないので詳しくは省略しますが、実は&lt;a href=&#34;http://hackage.haskell.org/package/pretty-simple&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;pretty-simple&lt;/span&gt;&lt;/a&gt;というパッケージを使えば、日本語をそのまま出力するのに加えて、プリティープリントできます。&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb11&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-1&#34; title=&#34;1&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Text.Pretty.Simple&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-2&#34; title=&#34;2&#34;&gt;ghci&lt;span class=&#34;op&#34;&gt;&amp;gt;&lt;/span&gt; pPrint [&lt;span class=&#34;st&#34;&gt;&amp;quot;きーらーめーくー♪&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;ほーしーの力でー♪&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;あこがーれのー♪&amp;quot;&lt;/span&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;わーたーし描くよー♪&amp;quot;&lt;/span&gt;]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-3&#34; title=&#34;3&#34;&gt;[ &lt;span class=&#34;st&#34;&gt;&amp;quot;きーらーめーくー♪&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-4&#34; title=&#34;4&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;ほーしーの力でー♪&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-5&#34; title=&#34;5&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;あこがーれのー♪&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-6&#34; title=&#34;6&#34;&gt;, &lt;span class=&#34;st&#34;&gt;&amp;quot;わーたーし描くよー♪&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb11-7&#34; title=&#34;7&#34;&gt;]&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;例ではわかりづらいですが、ちゃんと色も着けてくれます！&lt;br /&gt;
-それでは&lt;span class=&#34;ascii&#34;&gt;2020&lt;/span&gt;年も、&lt;span class=&#34;ascii&#34;&gt;Happy Haskell Hacking&lt;/span&gt;🎁&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;例年どおりですとプリキュア&lt;span class=&#34;ascii&#34;&gt;Advent Calendar&lt;/span&gt;と同時投稿をしている予定でしたが、例年参加者が減っていたこともあり、今年はプリキュア&lt;span class=&#34;ascii&#34;&gt;Advent Calendar&lt;/span&gt;はなくなってしまいました😞&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;村主崇行さんは「&lt;a href=&#34;https://shop.ohmsha.co.jp/shopdetail/000000001926/&#34;&gt;すごい&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;たのしく学ぼう！&lt;/a&gt;」の翻訳を担当されるなど、&lt;span class=&#34;ascii&#34;&gt;unicode-show&lt;/span&gt;以外にも日本の&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;界に多大な功績をもたらした方でした。&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
-            &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
-                
-                &lt;i class=&#34;glyphicon glyphicon-chevron-left&#34; aria-hidden=&#34;true&#34; style=&#34;margin-right: 5px;&#34;&gt;&lt;/i&gt;
-                &lt;a href=&#34;/posts/2019/regex-applicative.html&#34; lang=&#34;ja&#34;&gt;regex-applicative: 内部DSLとしての正規表現（ブログ記事版）&lt;/a&gt;
-                
-            &lt;/div&gt;
-            &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
-                &lt;a href=&#34;/&#34; lang=&#34;ja&#34;&gt;トップに戻る&lt;/a&gt;
-            &lt;/div&gt;
-            &lt;div class=&#34;col-lg-3 col-md-4 col-xs-4&#34;&gt;
-                
-                &lt;a href=&#34;/posts/2019/haskell-in-vrchat.html&#34; style=&#34;margin-left: auto;&#34; lang=&#34;ja&#34;&gt;VRのためにHaskellを使った話&lt;/a&gt;
                 &lt;i class=&#34;glyphicon glyphicon-chevron-right&#34; aria-hidden=&#34;true&#34; style=&#34;margin-left: 5px;&#34;&gt;&lt;/i&gt;
                 
             &lt;/div&gt;
