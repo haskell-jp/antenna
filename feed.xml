@@ -22,7 +22,9 @@ RIOモナドはReader + IOの機能を持ったモナドのことです。
  
  この和訳プロジェクトは現在進行中です．和訳に協力してくださる方は是非ご連絡下さい．ガイドライン： https://zenn.dev/taketo1024/articles/4e27d5dfa14eb1
  
- イイネ❤️やサポート💰を頂けるとやる気が上がり，作業スピードが上がることが期待されます．続きを早く読みたい方は是非ご支援よろしくお願いします🙏</summary></entry><entry><id>https://qiita.com/takayuki-uchida/items/6dcb647facb5ce00748c</id><title type="text">Haskellのid関数って何に使うんだろ...。</title><updated>2021-04-20T22:39:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takayuki-uchida/items/6dcb647facb5ce00748c"/></entry><entry><id>https://zenn.dev/tak_uchida/articles/2f2402a9f03cbe</id><title type="text">Haskellのconst関数って何に使うんだろ...。</title><updated>2021-04-20T13:31:59+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tak_uchida/articles/2f2402a9f03cbe"/><summary type="html">Haskellの学習を進めて中でconst関数が出てきた際の疑問
+ イイネ❤️やサポート💰を頂けるとやる気が上がり，作業スピードが上がることが期待されます．続きを早く読みたい方は是非ご支援よろしくお願いします🙏
+ 
+ 和訳担当者： @taketo1024, @unaoya, @dshin, @ashiato45 </summary></entry><entry><id>https://qiita.com/takayuki-uchida/items/6dcb647facb5ce00748c</id><title type="text">Haskellのid関数って何に使うんだろ...。</title><updated>2021-04-20T22:39:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/takayuki-uchida/items/6dcb647facb5ce00748c"/></entry><entry><id>https://zenn.dev/tak_uchida/articles/2f2402a9f03cbe</id><title type="text">Haskellのconst関数って何に使うんだろ...。</title><updated>2021-04-20T13:31:59+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tak_uchida/articles/2f2402a9f03cbe"/><summary type="html">Haskellの学習を進めて中でconst関数が出てきた際の疑問
 
 「Haskellのconst関数って何に使うんだろ...。」
 
