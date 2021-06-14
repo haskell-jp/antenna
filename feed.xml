@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-06-13T02:20:28+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/lotz/articles/fd7cdb6c539d56ac595c</id><title type="text">「Haskellのモナド完全に理解した」試験問題</title><updated>2021-06-13T02:20:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/fd7cdb6c539d56ac595c"/><summary type="html">Haskellは勉強したけどモナドを本当に理解したって言えるのか自信がない…
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-06-14T00:00:00Z</updated><link href="https://haskell.jp/antenna"/><entry><id>https://haskell.jp/blog/posts/2021/haskell-day-2021.html</id><title type="text">Haskell Day 2021を開催します</title><updated>2021-06-14T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/haskell-day-2021.html"/><summary type="html">
+&lt;article lang=&#34;ja&#34;&gt;
+
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;row&#34;&gt;
+            &lt;div class=&#34;col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10&#34;&gt;
+                &lt;ul class=&#34;social-buttons&#34;&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;a href=&#34;https://twitter.com/share&#34; class=&#34;twitter-share-button&#34;&gt;Tweet&lt;/a&gt;
+                        &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;script type=&#34;text/javascript&#34;&gt;
+                            reddit_target = &#34;haskell_jp&#34;;
+                            reddit_title  = document.title;
+                        &lt;/script&gt;
+                        &lt;script type=&#34;text/javascript&#34; src=&#34;//www.redditstatic.com/button/button1.js&#34;&gt;&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;div&gt;
+                        &lt;a data-pocket-label=&#34;pocket&#34; data-pocket-count=&#34;horizontal&#34; class=&#34;pocket-btn&#34; data-lang=&#34;en&#34;&gt;&lt;/a&gt;
+                        &lt;script type=&#34;text/javascript&#34;&gt;!function(d,i){if(!d.getElementById(i)){var j=d.createElement(&#34;script&#34;);j.id=i;j.src=&#34;https://widgets.getpocket.com/v1/j/btn.js?v=1&#34;;var w=d.getElementById(i);d.body.appendChild(j);}}(document,&#34;pocket-btn-js&#34;);&lt;/script&gt;
+                    &lt;/div&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;row&#34;&gt;
+            &lt;div id=&#34;md-post-content&#34; class=&#34;col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1&#34;&gt;
+              &lt;p&gt;&lt;a href=&#34;https://haskell.jp/haskell-day-2021/&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell Day 2021&lt;/span&gt;&lt;/a&gt;を開催します！&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://haskell.jp/haskell-day-2021/&#34;&gt;&lt;img src=&#34;../../img/2021/haskell-day-2021/ogp.png&#34; alt=&#34;Haskell Day 2021&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;こんにちは&lt;span class=&#34;ascii&#34;&gt;kakkun61&lt;/span&gt;こと岡本和樹です。&lt;/p&gt;
+&lt;p&gt;この記事では&lt;a href=&#34;https://haskell.jp/haskell-day-2021/&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell Day 2021&lt;/span&gt;&lt;/a&gt;の紹介と開催の経緯などを記載します。&lt;/p&gt;
+&lt;div id=&#34;table-of-contents-outer&#34;&gt;
+&lt;div id=&#34;table-of-contents&#34;&gt;
+&lt;div class=&#34;table-of-contents-title&#34;&gt;
+Contents
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#経緯&#34; title=&#34;経緯&#34;&gt;経緯&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#発表者募集&#34; title=&#34;発表者募集&#34;&gt;発表者募集&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#参加登録&#34; title=&#34;参加登録&#34;&gt;参加登録&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;経緯&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#経緯&#34; title=&#34;経緯&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;経緯&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell Day&lt;/span&gt;は日本語で開催される&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;に関するイベントとしては最多の参加者を誇るイベントです。これまで&lt;span class=&#34;ascii&#34;&gt;2012&lt;/span&gt;・&lt;span class=&#34;ascii&#34;&gt;2016&lt;/span&gt;・&lt;span class=&#34;ascii&#34;&gt;2018&lt;/span&gt;・&lt;span class=&#34;ascii&#34;&gt;2019&lt;/span&gt;と開催してきました。新型コロナウイルスの影響により、残念ながら&lt;span class=&#34;ascii&#34;&gt;2020&lt;/span&gt;は開催しませんでしたが、&lt;span class=&#34;ascii&#34;&gt;2021&lt;/span&gt;は&lt;em&gt;オンライン&lt;/em&gt;イベントとして開催します。&lt;/p&gt;
+&lt;p&gt;このようなオンラインイベントの開催は未経験だったため、さまざまなイベント形式を検討した結果、今回は事前録画動画の予約公開という形式を採用しました。生放送ももちろん検討しましたが、ノウハウ不足の中で一発勝負という生放送はリスクが大きいという判断をしました。録画公開における臨場感の不足をおぎなうことを期待し、&lt;span class=&#34;ascii&#34;&gt;YouTube&lt;/span&gt;の&lt;a href=&#34;https://creatoracademy.youtube.com/page/course/hype-with-premieres&#34;&gt;プレミア公開&lt;/a&gt;を使用しリアルタイムチャットによる発表者と視聴者・視聴者同士の交流をできるように予定しています。&lt;/p&gt;
+&lt;h1 id=&#34;発表者募集&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#発表者募集&#34; title=&#34;発表者募集&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;発表者募集&lt;/h1&gt;
+&lt;p&gt;現在&lt;a href=&#34;https://haskell.jp/haskell-day-2021/#call-for-papers&#34;&gt;発表者募集&lt;/a&gt;中です！&lt;/p&gt;
+&lt;p&gt;今回はオンライン開催ということで、お手数ですが発表者にもオンサイトのイベントと異なった準備をお願いすることになります。運営としてできるかぎりのサポートをしますので安心して応募いただければと思います。&lt;/p&gt;
+&lt;h1 id=&#34;参加登録&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#参加登録&#34; title=&#34;参加登録&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
+here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;参加登録&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://haskell-jp.connpass.com/event/215363/&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Connpass&lt;/span&gt;&lt;/a&gt;にて参加登録の受け付けもしていますので視聴者の方も登録をお願いします。&lt;/p&gt;
+&lt;p&gt;その他のくわしい情報は&lt;a href=&#34;https://haskell.jp/haskell-day-2021/&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell Day 2021&lt;/span&gt;イベントページ&lt;/a&gt;をご覧ください。&lt;/p&gt;
+&lt;p&gt;みなさまのご応募をお待ちしています。またお体にお気をつけください。&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
+            &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
+                
+            &lt;/div&gt;
+            &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
+                &lt;a href=&#34;/&#34; lang=&#34;ja&#34;&gt;トップに戻る&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;col-lg-3 col-md-4 col-xs-4&#34;&gt;
+                
+                &lt;a href=&#34;/posts/grc.html&#34; style=&#34;margin-left: auto;&#34; lang=&#34;ja&#34;&gt;「相互を尊重したコミュニケーションのためのガイドライン」制定のお知らせ&lt;/a&gt;
+                &lt;i class=&#34;glyphicon glyphicon-chevron-right&#34; aria-hidden=&#34;true&#34; style=&#34;margin-left: 5px;&#34;&gt;&lt;/i&gt;
+                
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+
+</summary></entry><entry><id>https://qiita.com/k42un0k0/items/03d2ad064dcafe09fafe</id><title type="text">Haskellがわかる人のためのfp-ts</title><updated>2021-06-13T18:07:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/k42un0k0/items/03d2ad064dcafe09fafe"/></entry><entry><id>https://zenn.dev/lotz/articles/fd7cdb6c539d56ac595c</id><title type="text">「Haskellのモナド完全に理解した」試験問題</title><updated>2021-06-13T02:20:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/fd7cdb6c539d56ac595c"/><summary type="html">Haskellは勉強したけどモナドを本当に理解したって言えるのか自信がない…
 ＼そんな人向けの試験問題を作りました！／
 これから実施する試験問題を、10問中8問正解すればあなたはHaskellのモナドを完全に理解しています。私が保証します！
 それではさっそく〜〜
@@ -26,7 +101,7 @@ Haskellのモナドは単なる型クラスです。
 
       
         
-  ...</summary></entry><entry><id>https://matsubara0507.github.ioposts/2021-06-13-my-site-use-slick.html</id><title type="text">ここを Hakyll から Slick に移行してみた</title><updated>2021-06-13T00:00:SZ</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.ioposts/2021-06-13-my-site-use-slick.html"/><summary type="text"></summary></entry><entry><id>https://qiita.com/k42un0k0/items/03d2ad064dcafe09fafe</id><title type="text">Haskellがわかる人のためのfp-ts</title><updated>2021-06-12T20:49:38+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/k42un0k0/items/03d2ad064dcafe09fafe"/></entry><entry><id>https://qiita.com/yoshii0110/items/96bcd7ac93b506e30a7c</id><title type="text">Haskellのリストでいろいろやってみた</title><updated>2021-06-08T18:19:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yoshii0110/items/96bcd7ac93b506e30a7c"/></entry><entry><id>https://qiita.com/sparklingbaby/items/e66f48224067647d8e67</id><title type="text">Lensとは</title><updated>2021-06-02T10:58:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sparklingbaby/items/e66f48224067647d8e67"/></entry><entry><id>https://haskell.jp/blog/posts/grc.html</id><title type="text">「相互を尊重したコミュニケーションのためのガイドライン」制定のお知らせ</title><updated>2021-05-30T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/grc.html"/><summary type="html">
+  ...</summary></entry><entry><id>https://matsubara0507.github.ioposts/2021-06-13-my-site-use-slick.html</id><title type="text">ここを Hakyll から Slick に移行してみた</title><updated>2021-06-13T00:00:SZ</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.ioposts/2021-06-13-my-site-use-slick.html"/><summary type="text"></summary></entry><entry><id>https://qiita.com/yoshii0110/items/96bcd7ac93b506e30a7c</id><title type="text">Haskellのリストでいろいろやってみた</title><updated>2021-06-08T18:19:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/yoshii0110/items/96bcd7ac93b506e30a7c"/></entry><entry><id>https://qiita.com/sparklingbaby/items/e66f48224067647d8e67</id><title type="text">Lensとは</title><updated>2021-06-02T10:58:41+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sparklingbaby/items/e66f48224067647d8e67"/></entry><entry><id>https://haskell.jp/blog/posts/grc.html</id><title type="text">「相互を尊重したコミュニケーションのためのガイドライン」制定のお知らせ</title><updated>2021-05-30T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/grc.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -63,6 +138,9 @@ Haskellのモナドは単なる型クラスです。
         &lt;/div&gt;
         &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
             &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
+                
+                &lt;i class=&#34;glyphicon glyphicon-chevron-left&#34; aria-hidden=&#34;true&#34; style=&#34;margin-right: 5px;&#34;&gt;&lt;/i&gt;
+                &lt;a href=&#34;/posts/2021/haskell-day-2021.html&#34; lang=&#34;ja&#34;&gt;Haskell Day 2021を開催します&lt;/a&gt;
                 
             &lt;/div&gt;
             &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
@@ -4236,235 +4314,6 @@ ssh-agentのために秘密鍵セットアップ
 less, lv, manコマンド終了時に画面をクリアしない
 
 [linux][cygwin] less, manの終了直前の画面をクリアしないで端末上に残す方法 
-</summary></entry><entry><id>https://haskell.jp/blog/posts/2020/revenge-of-hourly-antenna.html</id><title type="text">リベンジ・オブ・毎時更新 Haskell Antenna</title><updated>2020-01-19T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2020/revenge-of-hourly-antenna.html"/><summary type="html">
-&lt;article lang=&#34;ja&#34;&gt;
-
-    &lt;div class=&#34;container&#34;&gt;
-        &lt;div class=&#34;row&#34;&gt;
-            &lt;div class=&#34;col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10&#34;&gt;
-                &lt;ul class=&#34;social-buttons&#34;&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;a href=&#34;https://twitter.com/share&#34; class=&#34;twitter-share-button&#34;&gt;Tweet&lt;/a&gt;
-                        &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;script type=&#34;text/javascript&#34;&gt;
-                            reddit_target = &#34;haskell_jp&#34;;
-                            reddit_title  = document.title;
-                        &lt;/script&gt;
-                        &lt;script type=&#34;text/javascript&#34; src=&#34;//www.redditstatic.com/button/button1.js&#34;&gt;&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;div&gt;
-                        &lt;a data-pocket-label=&#34;pocket&#34; data-pocket-count=&#34;horizontal&#34; class=&#34;pocket-btn&#34; data-lang=&#34;en&#34;&gt;&lt;/a&gt;
-                        &lt;script type=&#34;text/javascript&#34;&gt;!function(d,i){if(!d.getElementById(i)){var j=d.createElement(&#34;script&#34;);j.id=i;j.src=&#34;https://widgets.getpocket.com/v1/j/btn.js?v=1&#34;;var w=d.getElementById(i);d.body.appendChild(j);}}(document,&#34;pocket-btn-js&#34;);&lt;/script&gt;
-                    &lt;/div&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&#34;row&#34;&gt;
-            &lt;div id=&#34;md-post-content&#34; class=&#34;col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1&#34;&gt;
-              &lt;hr /&gt;
-&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell-jp&lt;/span&gt;のコンテンツの一つとして&lt;a href=&#34;https://haskell.jp/antenna/&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell Antenna&lt;/span&gt;&lt;/a&gt;という&lt;span class=&#34;ascii&#34;&gt;Web&lt;/span&gt;ページの開発・運用をしております。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/2019/hourly-antenna/antenna-page.jpg&#34; style=&#34;width: 100%;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://haskell.jp/blog/posts/2019/hourly-antenna.html&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;2019&lt;/span&gt;年の今頃、これを自動毎時更新しようと &lt;span class=&#34;ascii&#34;&gt;Drone Cloud&lt;/span&gt;による毎時更新を設定しました&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;しかし。。。なんと去年の&lt;span class=&#34;ascii&#34;&gt;3&lt;/span&gt;月ぐらいからこれが止まっています（どうやら、&lt;a href=&#34;https://discourse.drone.io/t/cron-on-cloud-drone-io/3899/2&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Drone Cloud&lt;/span&gt;のこの機能を利用してマイニングをした人がいたらしく止めてしまった&lt;/a&gt;ようです）。 現在は&lt;strong&gt;僕がだいたい毎朝&lt;span class=&#34;ascii&#34;&gt;1&lt;/span&gt;回、手動で&lt;span class=&#34;ascii&#34;&gt;CI&lt;/span&gt;を回しています&lt;/strong&gt;。。。&lt;/p&gt;
-&lt;p&gt;ずっとなんとかしなきゃなぁと思い続けてはや&lt;span class=&#34;ascii&#34;&gt;9&lt;/span&gt;ヶ月。 やっと重い腰をあげてなんとかしました！ というよりは、なんとかする方法を思い付いたので実装してみました。&lt;/p&gt;
-&lt;div id=&#34;table-of-contents-outer&#34;&gt;
-&lt;div id=&#34;table-of-contents&#34;&gt;
-&lt;div class=&#34;table-of-contents-title&#34;&gt;
-Contents
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#どうするか&#34; title=&#34;どうするか&#34;&gt;どうするか？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#実装する&#34; title=&#34;実装する&#34;&gt;実装する&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#オプションの整理&#34; title=&#34;オプションの整理&#34;&gt;オプションの整理&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#git-コマンドを呼ぶ&#34; title=&#34;git-コマンドを呼ぶ&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;git&lt;/span&gt; コマンドを呼ぶ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#毎時実行&#34; title=&#34;毎時実行&#34;&gt;毎時実行&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#インスタンスで起動する&#34; title=&#34;インスタンスで起動する&#34;&gt;インスタンスで起動する&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#今後やりたいこと&#34; title=&#34;今後やりたいこと&#34;&gt;今後やりたいこと&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;どうするか&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#どうするか&#34; title=&#34;どうするか&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;どうするか？&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://cloud.google.com/free/docs/gcp-free-tier?hl=ja#always-free&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;GCP&lt;/span&gt;には&lt;span class=&#34;ascii&#34;&gt;always free&lt;/span&gt;プランというのがあり&lt;/a&gt;、&lt;span class=&#34;ascii&#34;&gt;GCE&lt;/span&gt;インスタンスの場合は&lt;span class=&#34;ascii&#34;&gt;f1-micro&lt;/span&gt;であれば一台だけ無料です（&lt;span class=&#34;ascii&#34;&gt;2020/1&lt;/span&gt;現在）。 これに、毎時実行して更新をプッシュする&lt;span class=&#34;ascii&#34;&gt;antenna&lt;/span&gt;プログラムを仕込んでおけば良いではないかということに気づきました。&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell Antenna&lt;/span&gt;自体は&lt;span class=&#34;ascii&#34;&gt;GitHub Pages&lt;/span&gt;であり、&lt;span class=&#34;ascii&#34;&gt;HTML&lt;/span&gt;などは&lt;a href=&#34;https://github.com/haskell-jp/antenna&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;haskell-jp/antenna&lt;/span&gt;&lt;/a&gt;という &lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;製&lt;span class=&#34;ascii&#34;&gt;CLI&lt;/span&gt;アプリケーションで生成しています。 これを&lt;span class=&#34;ascii&#34;&gt;cron&lt;/span&gt;か何かで毎時実行すればいいんですけど&lt;/p&gt;
-&lt;ol type=&#34;1&#34;&gt;
-&lt;li&gt;&lt;span class=&#34;ascii&#34;&gt;cron&lt;/span&gt;と&lt;span class=&#34;ascii&#34;&gt;Docker&lt;/span&gt;の組み合わせが割とめんどくさい（&lt;span class=&#34;ascii&#34;&gt;antenna&lt;/span&gt;は&lt;span class=&#34;ascii&#34;&gt;Docker Image&lt;/span&gt;として提供している）&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;ascii&#34;&gt;cron&lt;/span&gt;にした場合更新を&lt;span class=&#34;ascii&#34;&gt;GitHub&lt;/span&gt;にどうやってプッシュしようかなどを考えるのがめんどくさい&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;という問題があります。&lt;/p&gt;
-&lt;p&gt;そこで、&lt;span class=&#34;ascii&#34;&gt;(2)&lt;/span&gt; のプッシュの部分も含めて毎時実行の処理を&lt;span class=&#34;ascii&#34;&gt;antenna&lt;/span&gt;アプリケーションに閉じ込めてしまえば、&lt;code&gt;docker run&lt;/code&gt; しておくだけで良いのではないか？というのを思い付きました！ ということで、そういう風に&lt;span class=&#34;ascii&#34;&gt;antenna&lt;/span&gt;を改良します。&lt;/p&gt;
-&lt;h1 id=&#34;実装する&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#実装する&#34; title=&#34;実装する&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;実装する&lt;/h1&gt;
-&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;antenna&lt;/span&gt;プログラムに「&lt;span class=&#34;ascii&#34;&gt;git&lt;/span&gt;コマンドを使って&lt;span class=&#34;ascii&#34;&gt;GitHub&lt;/span&gt;リポジトリに更新をプッシュする機能」と「全てを毎時実行する機能」の&lt;span class=&#34;ascii&#34;&gt;2&lt;/span&gt;つを組み込む必要があります。 ここで後方互換性を維持するために、これらはオプションでオンする機能にしましょう。 なのでまずは、&lt;span class=&#34;ascii&#34;&gt;antenna CLI&lt;/span&gt;アプリケーションのオプションを整理するところから始めます。&lt;/p&gt;
-&lt;h2 id=&#34;オプションの整理&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#オプションの整理&#34; title=&#34;オプションの整理&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;オプションの整理&lt;/h2&gt;
-&lt;p&gt;改修前の&lt;span class=&#34;ascii&#34;&gt;antenna&lt;/span&gt;はオプションを持っていません。 &lt;code&gt;getArgs&lt;/code&gt; で引数（設定ファイルのパス）を受け取るだけです&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb1&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;System.Environment&lt;/span&gt; (getArgs)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- generate 関数が設定から HTML ファイル群を生成する IO アクション&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-5&#34; title=&#34;5&#34;&gt;main &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; (listToMaybe &lt;span class=&#34;op&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; getArgs) &lt;span class=&#34;op&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; \&lt;span class=&#34;kw&#34;&gt;case&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-6&#34; title=&#34;6&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;   &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;please input config file path.&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb1-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; path &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; generate path &lt;span class=&#34;op&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt; readConfig path&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;これを &lt;a href=&#34;https://hackage.haskell.org/package/extensible-0.7/docs/Data-Extensible-GetOpt.html&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;extensible&lt;/span&gt; の &lt;code&gt;GetOpt&lt;/code&gt;&lt;/a&gt; を使ってオプションを貰えるように拡張します&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb2&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;co&#34;&gt;-- withGetOpt&amp;#39; は usage を独自で扱えるように拡張した Data.Extensible.withGetOpt です&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-3&#34; title=&#34;3&#34;&gt;main &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; withGetOpt&amp;#39; &lt;span class=&#34;st&#34;&gt;&amp;quot;[options] [input-file]&amp;quot;&lt;/span&gt; opts &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; \r args usage &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-4&#34; title=&#34;4&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; r &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;help    &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; hPutBuilder stdout (fromString usage)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-5&#34; title=&#34;5&#34;&gt;     &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; r &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;version &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; hPutBuilder stdout (Version.build version)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-6&#34; title=&#34;6&#34;&gt;     &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;otherwise&lt;/span&gt;     &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; runCmd r &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; listToMaybe args&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-8&#34; title=&#34;8&#34;&gt;    opts &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;help    &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; helpOpt&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-9&#34; title=&#34;9&#34;&gt;        &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;version &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; versionOpt&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-10&#34; title=&#34;10&#34;&gt;        &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;verbose &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; verboseOpt&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-11&#34; title=&#34;11&#34;&gt;        &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-12&#34; title=&#34;12&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-13&#34; title=&#34;13&#34;&gt;&lt;span class=&#34;kw&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Record&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-14&#34; title=&#34;14&#34;&gt;  &amp;#39;[ &lt;span class=&#34;st&#34;&gt;&amp;quot;help&amp;quot;&lt;/span&gt;    &lt;span class=&#34;op&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-15&#34; title=&#34;15&#34;&gt;   , &lt;span class=&#34;st&#34;&gt;&amp;quot;version&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-16&#34; title=&#34;16&#34;&gt;   , &lt;span class=&#34;st&#34;&gt;&amp;quot;verbose&amp;quot;&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;&amp;gt;:&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-17&#34; title=&#34;17&#34;&gt;   ]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-18&#34; title=&#34;18&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-19&#34; title=&#34;19&#34;&gt;&lt;span class=&#34;ot&#34;&gt;helpOpt ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;OptDescr&amp;#39;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-20&#34; title=&#34;20&#34;&gt;helpOpt &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; optFlag [&lt;span class=&#34;ch&#34;&gt;&amp;#39;h&amp;#39;&lt;/span&gt;] [&lt;span class=&#34;st&#34;&gt;&amp;quot;help&amp;quot;&lt;/span&gt;] &lt;span class=&#34;st&#34;&gt;&amp;quot;Show this help text&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-21&#34; title=&#34;21&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-22&#34; title=&#34;22&#34;&gt;&lt;span class=&#34;ot&#34;&gt;versionOpt ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;OptDescr&amp;#39;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-23&#34; title=&#34;23&#34;&gt;versionOpt &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; optFlag [] [&lt;span class=&#34;st&#34;&gt;&amp;quot;version&amp;quot;&lt;/span&gt;] &lt;span class=&#34;st&#34;&gt;&amp;quot;Show version&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-24&#34; title=&#34;24&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-25&#34; title=&#34;25&#34;&gt;&lt;span class=&#34;ot&#34;&gt;verboseOpt ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;OptDescr&amp;#39;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Bool&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb2-26&#34; title=&#34;26&#34;&gt;verboseOpt &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; optFlag [&lt;span class=&#34;ch&#34;&gt;&amp;#39;v&amp;#39;&lt;/span&gt;] [&lt;span class=&#34;st&#34;&gt;&amp;quot;verbose&amp;quot;&lt;/span&gt;] &lt;span class=&#34;st&#34;&gt;&amp;quot;Enable verbose mode: verbosity level \&amp;quot;debug\&amp;quot;&amp;quot;&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;差分全体はこの&lt;a href=&#34;https://github.com/haskell-jp/antenna/pull/20&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;PR&lt;/span&gt;&lt;/a&gt;で確認することができます。 興味のある人はみてみてください。 &lt;code&gt;generate&lt;/code&gt; 関数は以下の &lt;code&gt;runCmd&lt;/code&gt; 関数から呼ばれています&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb3&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Mix&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Mix.Plugin.Logger&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MixLogger&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;runCmd ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-5&#34; title=&#34;5&#34;&gt;runCmd _ &lt;span class=&#34;dt&#34;&gt;Nothing&lt;/span&gt;        &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;please input config file path.&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-6&#34; title=&#34;6&#34;&gt;runCmd opts (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; path) &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-7&#34; title=&#34;7&#34;&gt;  config &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; readConfig path&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-8&#34; title=&#34;8&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; plugin &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; hsequence&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-9&#34; title=&#34;9&#34;&gt;             &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;logger &lt;span class=&#34;op&#34;&gt;&amp;lt;@=&amp;gt;&lt;/span&gt; MixLogger.buildPlugin logOpts&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-10&#34; title=&#34;10&#34;&gt;            &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;config &lt;span class=&#34;op&#34;&gt;&amp;lt;@=&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;pure&lt;/span&gt; config&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-11&#34; title=&#34;11&#34;&gt;            &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-12&#34; title=&#34;12&#34;&gt;  Mix.run plugin &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; generate path&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-13&#34; title=&#34;13&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-14&#34; title=&#34;14&#34;&gt;    logOpts &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;handle  &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; stdout&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-15&#34; title=&#34;15&#34;&gt;           &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;verbose &lt;span class=&#34;op&#34;&gt;@=&lt;/span&gt; (opts &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;verbose)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb3-16&#34; title=&#34;16&#34;&gt;           &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;runCmd&lt;/code&gt; 関数は&lt;a href=&#34;https://github.com/matsubara0507/mix.hs&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;mix.hs&lt;/span&gt;&lt;/a&gt;を使って &lt;code&gt;RIO env ()&lt;/code&gt; のボイラーテンプレートを減らしています。&lt;/p&gt;
-&lt;h2 id=&#34;git-コマンドを呼ぶ&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#git-コマンドを呼ぶ&#34; title=&#34;git-コマンドを呼ぶ&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#34;ascii&#34;&gt;git&lt;/span&gt; コマンドを呼ぶ&lt;/h2&gt;
-&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;アプリケーションから&lt;span class=&#34;ascii&#34;&gt;git&lt;/span&gt;コマンドを実行するには&lt;a href=&#34;https://hackage.haskell.org/package/shelly&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Shelly&lt;/span&gt;&lt;/a&gt;を使うことにします。 &lt;span class=&#34;ascii&#34;&gt;Shelly&lt;/span&gt;は&lt;span class=&#34;ascii&#34;&gt;mix.hs&lt;/span&gt;の&lt;span class=&#34;ascii&#34;&gt;shell&lt;/span&gt;プラグインを使うことで簡単に使用することができます。 まずはコミットを作る部分を実装しましょう&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb4&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;qualified&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Git&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;-- 自作Shelly製gitコマンド関数群&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-2&#34; title=&#34;2&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;qualified&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Mix.Plugin.Shell&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;MixShell&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-3&#34; title=&#34;3&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-4&#34; title=&#34;4&#34;&gt;&lt;span class=&#34;ot&#34;&gt;runCmd ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-5&#34; title=&#34;5&#34;&gt;runCmd opts (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; path) &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-6&#34; title=&#34;6&#34;&gt;  config &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; readConfig path&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-7&#34; title=&#34;7&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;let&lt;/span&gt; plugin &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; hsequence&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-8&#34; title=&#34;8&#34;&gt;             &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;logger &lt;span class=&#34;op&#34;&gt;&amp;lt;@=&amp;gt;&lt;/span&gt; MixLogger.buildPlugin logOpts&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-9&#34; title=&#34;9&#34;&gt;            &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;config &lt;span class=&#34;op&#34;&gt;&amp;lt;@=&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;pure&lt;/span&gt; config&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-10&#34; title=&#34;10&#34;&gt;            &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;work   &lt;span class=&#34;op&#34;&gt;&amp;lt;@=&amp;gt;&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;pure&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-11&#34; title=&#34;11&#34;&gt;            &lt;span class=&#34;op&#34;&gt;&amp;lt;:&lt;/span&gt; nil&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-12&#34; title=&#34;12&#34;&gt;  Mix.run plugin &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-13&#34; title=&#34;13&#34;&gt;    when (opts &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;withCommit) &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; MixShell.exec (Git.pull [])&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-14&#34; title=&#34;14&#34;&gt;    generate path&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-15&#34; title=&#34;15&#34;&gt;    when (opts &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;withCommit) &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; commitGeneratedFiles&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-16&#34; title=&#34;16&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-17&#34; title=&#34;17&#34;&gt;    logOpts &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-18&#34; title=&#34;18&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-19&#34; title=&#34;19&#34;&gt;&lt;span class=&#34;ot&#34;&gt;commitGeneratedFiles ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RIO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-20&#34; title=&#34;20&#34;&gt;commitGeneratedFiles &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-21&#34; title=&#34;21&#34;&gt;  files &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; view &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;files &lt;span class=&#34;op&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; asks (gitConfig &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; view &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;config)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-22&#34; title=&#34;22&#34;&gt;  MixShell.exec &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-23&#34; title=&#34;23&#34;&gt;    Git.add files&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-24&#34; title=&#34;24&#34;&gt;    changes &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; Git.diffFileNames [&lt;span class=&#34;st&#34;&gt;&amp;quot;--staged&amp;quot;&lt;/span&gt;]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-25&#34; title=&#34;25&#34;&gt;    when (&lt;span class=&#34;fu&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;null&lt;/span&gt; changes) &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; Git.commit [&lt;span class=&#34;st&#34;&gt;&amp;quot;-m&amp;quot;&lt;/span&gt;, message]&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-26&#34; title=&#34;26&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb4-27&#34; title=&#34;27&#34;&gt;    message &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;全ての差分はこの&lt;a href=&#34;https://github.com/haskell-jp/antenna/pull/21&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;PR&lt;/span&gt;&lt;/a&gt;から確認できます。 &lt;code&gt;runCmd&lt;/code&gt; 関数に追記したのは &lt;code&gt;when (opts ^. #withCommit)&lt;/code&gt; から始まる&lt;span class=&#34;ascii&#34;&gt;2&lt;/span&gt;行です（&lt;code&gt;Options&lt;/code&gt; に &lt;code&gt;#withCommit&lt;/code&gt; を追加しています）。 &lt;span class=&#34;ascii&#34;&gt;mix.hs&lt;/span&gt;の&lt;span class=&#34;ascii&#34;&gt;shell&lt;/span&gt;プラグインを使うことで&lt;span class=&#34;ascii&#34;&gt;Shelly&lt;/span&gt;のログをだいたいそれっぽく&lt;span class=&#34;ascii&#34;&gt;rio&lt;/span&gt;のロガーに流してくれます。&lt;/p&gt;
-&lt;p&gt;次に、&lt;code&gt;git push&lt;/code&gt;も実装します&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb5&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;ot&#34;&gt;runCmd ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Options&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Maybe&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;FilePath&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-2&#34; title=&#34;2&#34;&gt;runCmd opts (&lt;span class=&#34;dt&#34;&gt;Just&lt;/span&gt; path) &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-3&#34; title=&#34;3&#34;&gt;  &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-4&#34; title=&#34;4&#34;&gt;  Mix.run plugin &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-5&#34; title=&#34;5&#34;&gt;    when (opts &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;withCommit) &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; MixShell.exec (Git.pull [])&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-6&#34; title=&#34;6&#34;&gt;    generate path&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-7&#34; title=&#34;7&#34;&gt;    when (opts &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;withCommit) &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; commitGeneratedFiles&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-8&#34; title=&#34;8&#34;&gt;    when (opts &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;withPush)   &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; pushCommit&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-9&#34; title=&#34;9&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-10&#34; title=&#34;10&#34;&gt;&lt;span class=&#34;ot&#34;&gt;pushCommit ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;RIO&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Env&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-11&#34; title=&#34;11&#34;&gt;pushCommit &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-12&#34; title=&#34;12&#34;&gt;  branch &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; view &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;branch &lt;span class=&#34;op&#34;&gt;&amp;lt;$&amp;gt;&lt;/span&gt; asks (gitConfig &lt;span class=&#34;op&#34;&gt;.&lt;/span&gt; view &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;config)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb5-13&#34; title=&#34;13&#34;&gt;  MixShell.exec (Git.push [&lt;span class=&#34;st&#34;&gt;&amp;quot;origin&amp;quot;&lt;/span&gt;, branch])&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;前から使っている &lt;code&gt;gitConfig&lt;/code&gt; は設定ファイルから&lt;span class=&#34;ascii&#34;&gt;git&lt;/span&gt;コマンドに関する設定を取ってきています（例えば、どのファイルをコミットするかやどのブランチにプッシュするかなど）。&lt;/p&gt;
-&lt;p&gt;これで、差分があった場合は&lt;code&gt;git commit&lt;/code&gt;を実行し、最後に&lt;code&gt;git push&lt;/code&gt;するようなオプション、&lt;code&gt;--with-commit&lt;/code&gt;と&lt;code&gt;--with-push&lt;/code&gt;を実装できました（他にも実装していますが割愛）。&lt;/p&gt;
-&lt;h2 id=&#34;毎時実行&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#毎時実行&#34; title=&#34;毎時実行&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;毎時実行&lt;/h2&gt;
-&lt;p&gt;メインディッシュである毎時実行です。 &lt;span class=&#34;ascii&#34;&gt;Haskell-jp Slack&lt;/span&gt;で、スケジューリング実行を&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;アプリケーション内で行うのにちょうど良いパッケージはありますか？と尋ねたところ&lt;a href=&#34;https://hackage.haskell.org/package/cron&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;cron&lt;/span&gt;&lt;/a&gt;というパッケージを紹介してもらいました（名前がややこしい笑）。 調べてみたところ、ちょうど良さそうなのでこれを使うことにします&lt;/p&gt;
-&lt;div class=&#34;sourceCode&#34; id=&#34;cb6&#34;&gt;&lt;pre class=&#34;sourceCode haskell&#34;&gt;&lt;code class=&#34;sourceCode haskell&#34;&gt;&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-1&#34; title=&#34;1&#34;&gt;&lt;span class=&#34;kw&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;System.Cron&lt;/span&gt; (addJob, execSchedule)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-2&#34; title=&#34;2&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-3&#34; title=&#34;3&#34;&gt;&lt;span class=&#34;ot&#34;&gt;main ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-4&#34; title=&#34;4&#34;&gt;main &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; withGetOpt&amp;#39; &lt;span class=&#34;st&#34;&gt;&amp;quot;[options] [input-file]&amp;quot;&lt;/span&gt; opts &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; \r args usage &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-5&#34; title=&#34;5&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; r &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;help     &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; hPutBuilder stdout (fromString usage)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-6&#34; title=&#34;6&#34;&gt;     &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; r &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;version  &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; hPutBuilder stdout (Version.build version)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-7&#34; title=&#34;7&#34;&gt;     &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; r &lt;span class=&#34;op&#34;&gt;^.&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;#&lt;/span&gt;hourly   &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; runCmd r (listToMaybe args) &lt;span class=&#34;ot&#34;&gt;`withCron`&lt;/span&gt; &lt;span class=&#34;st&#34;&gt;&amp;quot;0 * * * *&amp;quot;&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-8&#34; title=&#34;8&#34;&gt;     &lt;span class=&#34;op&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;fu&#34;&gt;otherwise&lt;/span&gt;      &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; runCmd r (listToMaybe args)&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-9&#34; title=&#34;9&#34;&gt;  &lt;span class=&#34;kw&#34;&gt;where&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-10&#34; title=&#34;10&#34;&gt;    opts &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;op&#34;&gt;...&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-11&#34; title=&#34;11&#34;&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-12&#34; title=&#34;12&#34;&gt;&lt;span class=&#34;ot&#34;&gt;withCron ::&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; () &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;Text&lt;/span&gt; &lt;span class=&#34;ot&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;dt&#34;&gt;IO&lt;/span&gt; ()&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-13&#34; title=&#34;13&#34;&gt;withCron act t &lt;span class=&#34;ot&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kw&#34;&gt;do&lt;/span&gt;&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-14&#34; title=&#34;14&#34;&gt;  _ &lt;span class=&#34;ot&#34;&gt;&amp;lt;-&lt;/span&gt; execSchedule &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; addJob act t&lt;/a&gt;
-&lt;a class=&#34;sourceLine&#34; id=&#34;cb6-15&#34; title=&#34;15&#34;&gt;  forever &lt;span class=&#34;op&#34;&gt;$&lt;/span&gt; threadDelay &lt;span class=&#34;fu&#34;&gt;maxBound&lt;/span&gt; &lt;span class=&#34;co&#34;&gt;-- 無限ループ&lt;/span&gt;&lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;全ての差分はこの&lt;a href=&#34;https://github.com/haskell-jp/antenna/pull/22&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;PR&lt;/span&gt;&lt;/a&gt;から確認できます。 すっごい簡単ですね。 ついでに、毎日実行と毎分実行するオプションも追加しています。&lt;/p&gt;
-&lt;p&gt;これでアプリケーションの方は出来上がったので、こいつを&lt;span class=&#34;ascii&#34;&gt;GCE&lt;/span&gt;インスタンスで動作させてみましょう。&lt;/p&gt;
-&lt;h1 id=&#34;インスタンスで起動する&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#インスタンスで起動する&#34; title=&#34;インスタンスで起動する&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;インスタンスで起動する&lt;/h1&gt;
-&lt;p&gt;まずは&lt;span class=&#34;ascii&#34;&gt;GCP Console&lt;/span&gt;からインスタンス作成します。 構成は次の通りです&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&#34;ascii&#34;&gt;f1-micro&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;オレゴンリージョン&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;ascii&#34;&gt;30GB&lt;/span&gt;の標準ストレージ&lt;/li&gt;
-&lt;li&gt;&lt;span class=&#34;ascii&#34;&gt;OS&lt;/span&gt;は&lt;span class=&#34;ascii&#34;&gt;Ubuntu 18.04&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;GCP Console&lt;/span&gt;から&lt;span class=&#34;ascii&#34;&gt;SSH&lt;/span&gt;して、&lt;span class=&#34;ascii&#34;&gt;docker&lt;/span&gt; コマンドをインストールします（やり方は&lt;a href=&#34;https://docs.docker.com/install/linux/docker-ce/ubuntu/&#34;&gt;公式サイト&lt;/a&gt;のをそのまま）。 ここまでできたら試しに &lt;code&gt;sudo docker pull haskelljp/antenna&lt;/code&gt; して最新のイメージを取得してみましょう。&lt;/p&gt;
-&lt;p&gt;次に、&lt;span class=&#34;ascii&#34;&gt;GitHub&lt;/span&gt;にプッシュするために&lt;span class=&#34;ascii&#34;&gt;SSH Key&lt;/span&gt;を生成してデプロイキーを &lt;span class=&#34;ascii&#34;&gt;haskell-jp/antenna&lt;/span&gt; リポジトリに設定します。 できたら適当に &lt;code&gt;git clone git@github.com:haskell-jp/antenna.git&lt;/code&gt; してブランチを &lt;code&gt;gh-pages&lt;/code&gt; に切り替えます。&lt;/p&gt;
-&lt;p&gt;あとは次のコマンドで&lt;span class=&#34;ascii&#34;&gt;antenna&lt;/span&gt;プログラムを実行するだけです&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ sudo docker run -d \
-  -v `pwd`:/work
-  -v `echo $HOME`/.ssh:/root/.ssh \
-  haskelljp/antenna antenna --verbose --with-commit --with-push --with-copy --hourly sites.yaml&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;docker logs&lt;/code&gt; を使って様子をみてましたが、うまくいってるようです！&lt;/p&gt;
-&lt;h1 id=&#34;今後やりたいこと&#34;&gt;&lt;span class=&#34;link-to-here-outer&#34;&gt;&lt;a href=&#34;#今後やりたいこと&#34; title=&#34;今後やりたいこと&#34;&gt;&lt;span class=&#34;link-to-here&#34;&gt;Link to&lt;br /&gt;
-here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;今後やりたいこと&lt;/h1&gt;
-&lt;p&gt;&lt;span class=&#34;ascii&#34;&gt;igrep&lt;/span&gt;氏が&lt;a href=&#34;https://github.com/haskell-jp/antenna/issues/16&#34;&gt;&lt;span class=&#34;ascii&#34;&gt;Issue&lt;/span&gt;&lt;/a&gt;にしてくれてるように、&lt;span class=&#34;ascii&#34;&gt;Haskell Antenna&lt;/span&gt;の正しい差分を&lt;span class=&#34;ascii&#34;&gt;Haskell-jp Slack&lt;/span&gt;に通知する仕組みを整備しようと考えてます。&lt;/p&gt;
-&lt;p&gt;実はコミットを&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;アプリケーション内で組み立てるようになった結果、&lt;span class=&#34;ascii&#34;&gt;Haskell&lt;/span&gt;アプリケーション側でいい感じに差分を調べ上げ、その結果をコミットメッセージに組み込むことができるようになりました。 さすがに&lt;span class=&#34;ascii&#34;&gt;HTML&lt;/span&gt;やフィードの &lt;code&gt;git diff&lt;/code&gt; を解析するのは大変なので、いい感じに各サイトの最終更新ログを残すようにしてみようかなって考えてます。&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div id=&#34;post-navigation&#34; class=&#34;row&#34; style=&#34;margin-top: 20px;&#34;&gt;
-            &lt;div class=&#34;col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-4 col-xs-4&#34;&gt;
-                
-                &lt;i class=&#34;glyphicon glyphicon-chevron-left&#34; aria-hidden=&#34;true&#34; style=&#34;margin-right: 5px;&#34;&gt;&lt;/i&gt;
-                &lt;a href=&#34;/posts/2020/property-io.html&#34; lang=&#34;ja&#34;&gt;HspecでQuickCheckするときもshouldBeなどが使えます&lt;/a&gt;
-                
-            &lt;/div&gt;
-            &lt;div class=&#34;col-lg-2 col-md-2 col-xs-4 text-center&#34;&gt;
-                &lt;a href=&#34;/&#34; lang=&#34;ja&#34;&gt;トップに戻る&lt;/a&gt;
-            &lt;/div&gt;
-            &lt;div class=&#34;col-lg-3 col-md-4 col-xs-4&#34;&gt;
-                
-                &lt;a href=&#34;/posts/2019/regex-applicative.html&#34; style=&#34;margin-left: auto;&#34; lang=&#34;ja&#34;&gt;regex-applicative: 内部DSLとしての正規表現（ブログ記事版）&lt;/a&gt;
-                &lt;i class=&#34;glyphicon glyphicon-chevron-right&#34; aria-hidden=&#34;true&#34; style=&#34;margin-left: 5px;&#34;&gt;&lt;/i&gt;
-                
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/article&gt;
-
 </summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2020/01/01/083723</id><title type="text">2019 年のスライド一挙公開、あるいは 2020 年の方針</title><updated>2020-01-01T08:54:55+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2020/01/01/083723"/><summary type="html">あけましておめでとうございます。2019 年は大変お世話になりました。2020 年も張り切っていきましょう。 さて、2019 年には結構な回数の外部発表を行いました。これらの発表内容のうち一部は単独のブログ記事としてまとめてありますが、機を逸してしまって記事化されていないものも相当数あります。そこで本記事では、2019 年中に行った発表を一覧としてまとめてみました。 2019 年の活動実績 2019 年の登壇は全部で 19 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 4 件です。 チェシャ猫が普段活動している領域は、Twitter の Bio にも書いてある通り、大…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2019/12/21/212423</id><title type="text">OpenShift.run 2019 で Kubernetes のスケジューリングについて話してきました</title><updated>2019-12-21T21:24:23+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2019/12/21/212423"/><summary type="html">先日行われた OpenShift コミュニティのイベント OpenShift.run 2019 にて、Kubernetes Scheduler とその関連ツールについて講演してきました。公募 CFP 枠です。 OpenShift のイベントでありながら、OpenShift についてはまったく触れずひたすら Kubernetes の内部実装を解説する異色の登壇でした。実際、40 分枠の講演の中で（RedHat 社以外も含め）ベンダニュートラルな立場で登壇したのは自分だけだったようです。これは私見ですが、逆に言えばそういう内容でも CFP 採択されているというのは、運営側も「単なるマーケティングイ…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/12/06/postgresql-pure_%E3%82%92%E9%96%8B%E7%99%BA%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F</id><title type="text">postgresql-pure を開発しました</title><updated>2019-12-06T00:03:21+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/12/06/postgresql-pure_%E3%82%92%E9%96%8B%E7%99%BA%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F"/><summary type="html">この記事は Haskell Advent Calendar 2019 の6日目の記事です。 hackage.haskell.org postgresql-pure は Haskell の PostgreSQL ドライバー（クライアントライブラリー）で次のような目標で開発しました。 マルチコア環境でのパフォーマンス向上 暗黙のロックを回避する マルチプラットフォーム対応 C ライブラリーの libpq への依存をなくして特に Windows でのビルドを容易にする 既存ライブラリーとしては postgres-wire が高速だがそれは Windows をサポートしていない pure Haskel…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2019/12/05/191010</id><title type="text">最強にして最速のビルダー、mason</title><updated>2019-12-05T19:33:25+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2019/12/05/191010"/><summary type="html">Haskell Advent Calendar 2019 5日目 この冬、神速のサンタクロースがやってくる—— Haskellにおいて、バイト列の表現はByteStringが定番である。ByteStringはPinned領域に直接格納され、空間効率はリストに比べればはるかに良い。しかし、Pinned領域にあるとヒープフラグメンテーションが起こりやすくなるということでもあり、細かい文字列をつなぎ合わせるような使い方はパフォーマンスに悪影響が及ぶ。そのような問題を避けるため、ビルダーと呼ばれる構造が用意されている。 Data.ByteString.Builderは、word8 42 &lt;&gt; byte…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2019/11/30/215950</id><title type="text">状態機械を合成してデッドロックを検出できる Go 言語パッケージを作ってみました</title><updated>2019-11-30T21:59:50+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2019/11/30/215950"/><summary type="html">はじめに マルチスレッドで動作するプログラムの設計は難しい問題です。個々のスレッドの動作は単純に見えても、複数が並行して動作する場合の動作は組み合わせ論的に複雑になります。また、タイミングに依存する不具合は狙って再現することが難しく、通常の単体テストによる検出にも限界があります。 そんなとき、有効な手法がモデル検査です。システムの取りうる状態をあらかじめ網羅的に探索することで、「実際に動作させた際にごく低い確率で踏むバグ」であっても、動作させることなく設計段階で発見することが可能になります。 ところでちょうど先日、デッドロック発見器を自作するハンズオンに参加する機会がありました。内容は非常にシ…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/11/21/FFI_%E3%81%A7_Haskell_%E3%81%8B%E3%82%89_Rust_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B</id><title type="text">FFI で Haskell から Rust を利用する</title><updated>2019-11-22T13:28:53+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/11/21/FFI_%E3%81%A7_Haskell_%E3%81%8B%E3%82%89_Rust_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B"/><summary type="html">Rust で作ったライブラリーを静的リンクして Haskell（GHC）から使う例と説明を書いた。 github.com</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/10/23/%E6%9C%80%E8%BF%91%E3%81%AE%E8%87%AA%E5%88%86%E3%81%AE_Haskell_%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%EF%BC%88Windows%EF%BC%89</id><title type="text">最近の自分の Haskell 開発環境（Windows）</title><updated>2019-11-21T09:09:44+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/10/23/%E6%9C%80%E8%BF%91%E3%81%AE%E8%87%AA%E5%88%86%E3%81%AE_Haskell_%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%EF%BC%88Windows%EF%BC%89"/><summary type="html">id:syocy のブログを見たので Windows で自分がどうしているかをメモしておく。 syocy.hatenablog.com Stack 最近は ghcup があるがシェルスクリプト製で自分は PowerShell ユーザーなので stack を使っている。（ghcup はなんで Haskell 製じゃないんだ1？） GHC 8.8 を使うには resolver は ghc-8.8 や nightly を指定する。まだ LTS にはなっていない。 エディター エディターは Spacemacs を使っている。前は IntelliJ IDEA に HaskForce プラグインを入れて使…</summary></entry><entry><id>https://blog.miz-ar.info/2019/10/scanl-and-scanr/</id><title type="text">Haskellのscan系関数を使いこなす</title><updated>2019-10-12T10:14:03+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2019/10/scanl-and-scanr/"/><summary type="html">&lt;img width=&#34;619&#34; height=&#34;146&#34; src=&#34;https://blog.miz-ar.info/wp-content/uploads/2019/09/scanl.png&#34; class=&#34;attachment-large size-large wp-post-image&#34; alt=&#34;&#34; loading=&#34;lazy&#34; style=&#34;float:left; margin:0 15px 15px 0;&#34; srcset=&#34;https://blog.miz-ar.info/wp-content/uploads/2019/09/scanl.png 619w, https://blog.miz-ar.info/wp-content/uploads/2019/09/scanl-300x71.png 300w&#34; sizes=&#34;(max-width: 619px) 100vw, 619px&#34; /&gt;Haskellはリストを操作する関数を多数提供しています。map, filter, foldあたりが代表的で、これらは他の言語でもおなじみかと思います。 一方で、scan系関数（scanl, scanr）は他の言語ではあ [&amp;#8230;]</summary></entry><entry><id>https://syocy.hatenablog.com/entry/init-ghc-8-8-1</id><title type="text">HaskellやっていくGHC8.8.1令和元年白露の候</title><updated>2019-09-20T21:45:08+09:00</updated><author><name>syocy</name></author><link href="https://syocy.hatenablog.com/entry/init-ghc-8-8-1"/><summary type="html">GHC 8.8.1 が出たので雑に環境を整えていきます。 OS: Ubuntu 18.04 LTS on VirtualBox on Windows screenshot GHC, Cabal 最近は ghcup で入れている。 $ ghcup upgrade $ ghcup list --tool all $ ghcup install 8.8 $ ghcup install-cabal latest ~/.ghcup/bin と ~/.cabal/bin にPATHが通っていない場合は通しておく。 stack は手になじまない感じがして最近使っていない。 stack のいいところとしてスク…</summary></entry><entry><id>https://blog.miz-ar.info/2019/09/techbookfest7-announce/</id><title type="text">技術書典7に、Haskellで競技プログラミングをやる本を出します</title><updated>2019-09-19T13:55:03+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2019/09/techbookfest7-announce/"/><summary type="html">今週末の9月22日（日）に池袋で開催される技術書典7に、新刊「Haskellで戦う競技プログラミング」を出します。既刊「LaTeX処理自動化ツールClutTeX 使い方とその仕組み」も改訂して紙の本を頒布します。 技術書 [&amp;#8230;]</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2019/09/07/115437</id><title type="text">単純で頑強なメッセージングシステム、franz</title><updated>2019-09-08T21:41:20+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2019/09/07/115437"/><summary type="html">Haskell製の新しいメッセージングシステムfranz(フランツ)の紹介。 github.com 背景 取引所にあるマシンで取引プログラムを実行するのが我々の仕事だが、朝8時に起動したらあとは昼寝したり酒を飲んだりというわけにはいかない。モニタリングしたり、分析のためにデータを残しておく必要がある。そのため、プログラムによって解析しやすい形でログを出力する。 今までは複数の種類のレコードをシリアライズし、一つのファイルに連結させる独自のフォーマットを10年近く使っていたが、書いていて恥ずかしくなるような多数の問題を抱えていた。 柔軟性が乏しい: 32bit整数や文字列などの単純な値しか格納で…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2019/08/15/195448</id><title type="text">Minecraft 1.14サーバーを運用してみた</title><updated>2019-08-15T19:54:48+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2019/08/15/195448"/><summary type="html">Minecraft 1.14 &#34;Village and Pillage&#34;は、サブタイトルの通り村人と略奪者をテーマにしたアップデートだ。 主な楽しみ方 村人の取引システムが一新され、以前よりもバリエーションに富み、かつリーズナブルな取引ができるようになった。余ったアイテムを換金したり、有益なアイテムを入手できるようになるだろう。 ランタン、焚火などの新たな光源や、壁や階段の変種、さらには鐘なども追加され、建築の楽しみも大きく増した。だが、良いことばかりではない――新たなイリジャー(邪悪な村人)、ピリジャーが出現するようになったのだ。条件を満たすと発生する襲撃から村を守る死闘、そして安全な拠点づ…</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2019/07/29/%E9%96%A2%E6%95%B0%E3%81%AE%E3%83%A1%E3%83%A2%E5%8C%96</id><title type="text">関数のメモ化</title><updated>2019-07-30T13:06:40+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2019/07/29/%E9%96%A2%E6%95%B0%E3%81%AE%E3%83%A1%E3%83%A2%E5%8C%96"/><summary type="html">ブログに書いてみるとよく分からなくなってきました 🙃 Haskell-jp で回答をもらいました。 @lotz84_ さんの記事や GHC のプロファイルに出てくる CAF がよく分かってなかったのをまとめる。 qiita.com fact のメモ化 lotz さんの記事の階乗 fact 関数を題材にする。 fact :: Int -&gt; Integer fact 0 = 1 fact n = fromIntegral n * fact (n-1) lotz さんの記事よれば、次の実装だとメモ化されるとのこと。 -- | 関数をメモ化する関数 memoize :: (Int -&gt; a) -&gt; I…</summary></entry><entry><id>https://kurokawh.blogspot.com/2019/07/mac-el-capitan.html</id><title type="text">[mac] El Capitanへのアップグレード関連作業まとめ</title><updated>2019-07-13T19:19:56.684+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2019/07/mac-el-capitan.html"/><summary type="text">YosemiteからEl Capitan（10.11.2）へアップグレードしました。旧環境で起動できていたアプリケーションが起動できなくなったり、コマンドが見つからなくなる、といった問題が発生しましたが一通り解決できたので、その内容をまとめておきます。
 
 ＃ポストし忘れてた･･･。今更な情報ですが自分の備忘録の意味もあるので公開。
