@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-12-22T15:43:40+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/izu_nori/items/cb0a83db19204b394778</id><title type="text">圏論のモナドからHaskellのモナドの定義を確認する</title><updated>2021-12-22T15:43:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/izu_nori/items/cb0a83db19204b394778"/></entry><entry><id>https://qiita.com/mod_poppo/items/1abc155b5a5265d7dc45</id><title type="text">Apple Silicon MacでのHaskell/GHCの現状・2021年末編</title><updated>2021-12-20T21:27:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/1abc155b5a5265d7dc45"/></entry><entry><id>https://qiita.com/TTsurutani/items/c5d6aa37aa7451076f50</id><title type="text">Haskellの数値変換（wiki.haskell.orgからの邦訳）</title><updated>2021-12-20T20:45:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TTsurutani/items/c5d6aa37aa7451076f50"/></entry><entry><id>https://matsubara0507.github.io/posts/2021-12-20-fix-rules_haskell-for-ghc_9_2_1.html</id><title type="text">Bazel でも GHC 9.2.1 でビルドがしたい</title><updated>2021-12-20T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2021-12-20-fix-rules_haskell-for-ghc_9_2_1.html"/></entry><entry><id>https://qiita.com/nekonibox/items/2f89a17e0e7f4dc14961</id><title type="text">関数型言語におけるMonadクラスはApplicativeを継承するべきなのか？MonadとApplicativeとの関係を再確認する</title><updated>2021-12-18T06:56:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nekonibox/items/2f89a17e0e7f4dc14961"/></entry><entry><id>https://qiita.com/nekonibox/items/ad455f29aa10433509dd</id><title type="text">関数型言語におけるTraversableとは何か？Functorと比較しながら解説する</title><updated>2021-12-18T06:55:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nekonibox/items/ad455f29aa10433509dd"/></entry><entry><id>https://qiita.com/maton/items/2f2566eb44bdfed9a6e3</id><title type="text">brick + vty で TUI パネポンを作ってみる</title><updated>2021-12-17T10:15:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/maton/items/2f2566eb44bdfed9a6e3"/></entry><entry><id>https://zenn.dev/akaregi/articles/ac8eba3608eb8f</id><title type="text">Haskell の Stack のダウンロードの保存先を切り替える</title><updated>2021-12-17T04:00:39+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/akaregi/articles/ac8eba3608eb8f"/><summary type="html">（これは雑記です）
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2021-12-22T15:43:40+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/izu_nori/items/cb0a83db19204b394778</id><title type="text">圏論のモナドからHaskellのモナドの定義を確認する</title><updated>2021-12-22T15:43:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/izu_nori/items/cb0a83db19204b394778"/></entry><entry><id>https://zenn.dev/yoshikuni_jujo/articles/use-c-library</id><title type="text">HaskellからCのライブラリを使う</title><updated>2021-12-22T07:22:38+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/use-c-library"/><summary type="html">
+ はじめにの前に
+これはHaskell Advent Calendar 2021の23日目の記事です。長くなってしまったのと、時間がなくて説明が雑になっているところが多々あるかと。C言語で書かれたライブラリをHaskellから使うときに「ここどうやったらいいかな」というのを自力で解決してきた、いくつかの手法を、ひとつのライブラリをHaskellから使っていくというストーリーのなかで解説してみました。今後また手を入れて洗練させていきたいと思っています。
+
+ はじめに
+ふだんHaskellで楽していたとしても、もっと楽しいことをやろうとしたら、多くの場合にC言語のライブラリを使うことになる...</summary></entry><entry><id>https://zenn.dev/lotz/articles/b77c3434fa9451fcc927</id><title type="text">型安全で高速な連鎖行列積の計算</title><updated>2021-12-21T15:00:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/b77c3434fa9451fcc927"/><summary type="html">この記事は Haskell Advent Calendar 2021 の22日目の記事です。
+
+次のような３つの行列の積を考えてみましょう。
+
+ABC =
+\begin{pmatrix}
+a_{00} &amp;amp; a_{01} &amp;amp; a_{02} \\
+a_{10} &amp;amp; a_{11} &amp;amp; a_{12} \\
+a_{20} &amp;amp; a_{21} &amp;amp; a_{22} \\
+a_{30} &amp;amp; a_{31} &amp;amp; a_{32} \\
+\end{pmatrix}
+\begin{pmatrix}
+b_{00} &amp;amp; b_{01} \\
+b_{10}...</summary></entry><entry><id>https://qiita.com/mod_poppo/items/1abc155b5a5265d7dc45</id><title type="text">Apple Silicon MacでのHaskell/GHCの現状・2021年末編</title><updated>2021-12-20T21:27:08+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/1abc155b5a5265d7dc45"/></entry><entry><id>https://qiita.com/TTsurutani/items/c5d6aa37aa7451076f50</id><title type="text">Haskellの数値変換（wiki.haskell.orgからの邦訳）</title><updated>2021-12-20T20:45:34+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TTsurutani/items/c5d6aa37aa7451076f50"/></entry><entry><id>https://matsubara0507.github.io/posts/2021-12-20-fix-rules_haskell-for-ghc_9_2_1.html</id><title type="text">Bazel でも GHC 9.2.1 でビルドがしたい</title><updated>2021-12-20T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2021-12-20-fix-rules_haskell-for-ghc_9_2_1.html"/></entry><entry><id>https://qiita.com/nekonibox/items/2f89a17e0e7f4dc14961</id><title type="text">関数型言語におけるMonadクラスはApplicativeを継承するべきなのか？MonadとApplicativeとの関係を再確認する</title><updated>2021-12-18T06:56:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nekonibox/items/2f89a17e0e7f4dc14961"/></entry><entry><id>https://qiita.com/nekonibox/items/ad455f29aa10433509dd</id><title type="text">関数型言語におけるTraversableとは何か？Functorと比較しながら解説する</title><updated>2021-12-18T06:55:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nekonibox/items/ad455f29aa10433509dd"/></entry><entry><id>https://qiita.com/maton/items/2f2566eb44bdfed9a6e3</id><title type="text">brick + vty で TUI パネポンを作ってみる</title><updated>2021-12-17T10:15:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/maton/items/2f2566eb44bdfed9a6e3"/></entry><entry><id>https://zenn.dev/akaregi/articles/ac8eba3608eb8f</id><title type="text">Haskell の Stack のダウンロードの保存先を切り替える</title><updated>2021-12-17T04:00:39+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/akaregi/articles/ac8eba3608eb8f"/><summary type="html">（これは雑記です）
 Windows/Scoop 環境で scoop install stack して stack ghc などとしてみたら、あろうことか scoop の persist 環境ではなく AppData を見るようなので、これを改善する。
 
  結論
@@ -331,34 +349,7 @@ Prelude&amp;gt; const 1 2
 Prelude&amp;gt; c...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/05/emacscygwin-visual-studioemacs.html</id><title type="text">[emacs][cygwin] Visual Studioのemacs / emacsclient 連携設定</title><updated>2021-04-18T11:56:12.128+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/05/emacscygwin-visual-studioemacs.html"/><summary type="text">Visual Studioの外部ツール機能を利用して、Visual Studioで開いているファイルをショートカットキー一発で（orメニューから）emacs/emacsclientで開くことができる設定を紹介します。カーソル位置がemacsに引き継がれるのが地味に便利です。職場の都合などでビルド環境がVisual Studioだが、ビルド以外の作業は使い慣れたemacsを利用したい、という方にお勧めです。今の時代になぜWSLでなくcygwinなのか？という疑問をもたれる方がいると思いますが、このエントリはWSLがリリース前にメモを作って、ずっと公開しないまま眠っていたものです。せっかくの情報なので時代遅れを承知の上公開します。 
 
 前提：
-&#34;C:\cygwin64&#34;以下にcygwinをインストールし、cygwin上でemacs/emacsclientを利用している、自分の環境を前提に設定</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/04/17/091533</id><title type="text">DevOpsDays Tokyo 2021 で Infrastructure as Code のテストについて話してきました</title><updated>2021-04-17T09:28:56+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/04/17/091533"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された DevOpsDays Tokyo 2021 で Infrastructure as Code のテストについて発表してきました。公募 CFP 枠です。 今回の発表は、昨年の CloudOperatorDays Tokyo 2020 での講演をほぼそのまま再現しています。内容については前回登壇時に詳細な解説記事を書いたので、こちらもご参照ください。 ccvanishing.hateblo.jp オンサイト登壇 ここしばらく、どのカンファレンスもリモート開催がデフォルトになっていましたが、今回は久しぶりに会場まで行って登壇してきました。最後にオンサイト…</summary></entry><entry><id>https://zenn.dev/tak_uchida/articles/45f5a0f18c3c9e</id><title type="text">Haskellのid関数って何に使うんだろ…。</title><updated>2021-04-07T14:38:47+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tak_uchida/articles/45f5a0f18c3c9e"/><summary type="html">Haskellの学習を進めて中でid関数が出てきた際の疑問
-「Haskellのid関数って何に使うんだろ...。」
-を解消すべく調査しました。
-
- id関数とは
-ひとまずid関数の式の型を見てると下記となります。
-Prelude&amp;gt; :t id
-id :: a -&amp;gt; a
-型変数aが使用されているため多相型で、idは多相関数であることがわります。
-しかし、処理内容は引数を一つ受け取り、そのまま引数を返す処理になってます。
-id関数に数値と文字列を渡してみると下記のようになります。
-Prelude&amp;gt; id 1
-1
-Prelude&amp;gt; id &#34;Hello World&#34;
-&#34;H...</summary></entry><entry><id>https://zenn.dev/tak_uchida/articles/2cf5431c5094d9</id><title type="text">ghcupに関して</title><updated>2021-04-01T04:31:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tak_uchida/articles/2cf5431c5094d9"/><summary type="html">
- ghcupとは
-ghcupはHaskellを利用するにあたり下記3点のインストールとアンインストール、バージョン管理を行えるツールです。
-
-GHC（Glasgow Haskell Compilerの略でHaskellのコンパイラ及び、インタラクティブ環境の提供）
-HLS（Haskell Language Serverの略でHaskell用のLSP）
-Cabal（Haskell用のパッケージ管理ツール）
-
-
- インストール方法
-インストールガイドを参考にインストールしてください。&amp;lt;/br&amp;gt;
-ghcupのリポジトリには手動でインストールする方法も記載されてます。
-
- 各種コマ...</summary></entry><entry><id>https://matsubara0507.github.io/posts/2021-04-01-create-homelyapp-part1.html</id><title type="text">家計簿アプリを作る：HaskellでSQL編</title><updated>2021-04-01T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2021-04-01-create-homelyapp-part1.html"/></entry><entry><id>https://haskell.jp/blog/posts/about_admins.html</id><title type="text">日本Haskellユーザーグループ管理委員会（Haskell-jp Admins）設立のお知らせ</title><updated>2021-03-29T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/about_admins.html"/><summary type="html">
+&#34;C:\cygwin64&#34;以下にcygwinをインストールし、cygwin上でemacs/emacsclientを利用している、自分の環境を前提に設定</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/04/17/091533</id><title type="text">DevOpsDays Tokyo 2021 で Infrastructure as Code のテストについて話してきました</title><updated>2021-04-17T09:28:56+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/04/17/091533"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された DevOpsDays Tokyo 2021 で Infrastructure as Code のテストについて発表してきました。公募 CFP 枠です。 今回の発表は、昨年の CloudOperatorDays Tokyo 2020 での講演をほぼそのまま再現しています。内容については前回登壇時に詳細な解説記事を書いたので、こちらもご参照ください。 ccvanishing.hateblo.jp オンサイト登壇 ここしばらく、どのカンファレンスもリモート開催がデフォルトになっていましたが、今回は久しぶりに会場まで行って登壇してきました。最後にオンサイト…</summary></entry><entry><id>https://matsubara0507.github.io/posts/2021-04-01-create-homelyapp-part1.html</id><title type="text">家計簿アプリを作る：HaskellでSQL編</title><updated>2021-04-01T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2021-04-01-create-homelyapp-part1.html"/></entry><entry><id>https://haskell.jp/blog/posts/about_admins.html</id><title type="text">日本Haskellユーザーグループ管理委員会（Haskell-jp Admins）設立のお知らせ</title><updated>2021-03-29T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/about_admins.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
