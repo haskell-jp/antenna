@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-02-03T07:28:00+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/books/a808e953a39110</id><title type="text">【Haskellで学ぶ】関数型言語とは何か？</title><updated>2022-02-03T07:28:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/books/a808e953a39110"/><summary type="html">「関数型言語とは何か？」について解説します。「オブジェクト指向の複雑さを軽減する」として関数型言語は近年注目を集めています。しかし「関数を中心にプログラムを組み立てる」といっても、具体的なイメージがつかみづらいのではないでしょうか。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-02-04T00:34:17+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/f0f945b0d810fb</id><title type="text">Haskellの環境構築【M1MacでHelloWorld】</title><updated>2022-02-04T00:34:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/f0f945b0d810fb"/><summary type="html">M1MacでHaskellの環境構築をしました。備忘録として書き残しておきますので、お役に立てれば幸いです。
+環境構築としては２つの方法を用意しました。
+１、GHCとテキストエディタ
+２、Visual Studio CodeでのHelloWorld
+
+ １、GHCとテキストエディタ
+GHCはHakellの最もポピュラーなコンパイラです。これとテキストエディタを使えばコマンドラインでカンタンに出力できます。
+まずは以下のコマンドをターミナルで入力します。
+brew install ghc cabal-install stack
+これでHaskellのコンパイラを準備できました。
+次にデスク...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/e54f59af19a89e</id><title type="text">main :: IO()について（Haskellのアクションを解説）</title><updated>2022-02-03T13:29:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/e54f59af19a89e"/><summary type="html">この記事ではmain :: IO()について解説します。HelloWorldを出力するプログラムの中でも冒頭の部分です。
+main :: IO ()
+main = do
+	putStrLn &#34;HelloWorld&#34;
+まず先に結論からです。
+
+main：変数（スタートポイントになる）
+「::」：　変数・関数のデータ型を指定
+IO()：IO()というデータ型を持つ
+
+といった意味となります。
+もっとカンタンに言えば、int appleを宣言しているのと仕組みは同じです。
+
+IO ()型のデータ型を持つ変数main
+int型のデータ型を持つ変数apple
+
+と全く同じです。１つずつ解説していき...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/books/a808e953a39110</id><title type="text">【Haskellで学ぶ】関数型言語とは何か？</title><updated>2022-02-03T07:28:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/books/a808e953a39110"/><summary type="html">「関数型言語とは何か？」について解説します。「オブジェクト指向の複雑さを軽減する」として関数型言語は近年注目を集めています。しかし「関数を中心にプログラムを組み立てる」といっても、具体的なイメージがつかみづらいのではないでしょうか。
 本書では「強い制約を課して、本来すべきことに集中する」という視点から関数型言語の概要を紹介します。「変数の値を後から変更できない・副作用を禁止する」など、関数型言語ならではの特徴を学んでいきましょう。</summary></entry><entry><id>https://qiita.com/kanatatsu64/items/12a0b7ec1e2ab2401a03</id><title type="text">IOモナドのよもやま話 (Haskell)</title><updated>2022-01-28T19:37:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kanatatsu64/items/12a0b7ec1e2ab2401a03"/></entry><entry><id>https://qiita.com/kanatatsu64/items/d5bfe07a6c9a8f839df5</id><title type="text">Fix関数の教科書 (Haskell)</title><updated>2022-01-28T17:10:36+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kanatatsu64/items/d5bfe07a6c9a8f839df5"/></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://qiita.com/mod_poppo/items/1abc155b5a5265d7dc45</id><title type="text">Apple Silicon MacでのHaskell/GHCの現状・2021年末編</title><updated>2022-01-06T11:45:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/mod_poppo/items/1abc155b5a5265d7dc45"/></entry><entry><id>https://zenn.dev/eagle/articles/double-negation-monad</id><title type="text">二重否定モナド</title><updated>2022-01-04T02:49:47+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eagle/articles/double-negation-monad"/><summary type="html">本記事では二重否定モナドを発見し、その正体を探ります。
 なお、例外の発生や無限ループなどは無いものとします。
 
@@ -1391,19 +1417,7 @@ stack 2.7.1
 
  やり方
 
- I. HSpecのAutomatic spec discoveryを使って、複数フ...</summary></entry><entry><id>https://zenn.dev/tak_uchida/articles/4a2ba32ec485ae</id><title type="text">Haskellの畳込関数に関して</title><updated>2021-06-27T07:32:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tak_uchida/articles/4a2ba32ec485ae"/><summary type="html">Haskellを学んでいるとよく出てくる畳込関数についてまとめたいと思います。
-畳込関数に関して参考の「プログラミングHaskell 第2版」には下記の記述があります。
-
-引数にリストを取る関数の多くは、リストに対する再帰を使って、以下のような簡単な様式で定義できます。
-
-f [] = v
-f (x:xs) = x # f xs
-これは下記のことを表しています。
-
-引数のリストが空のときは値vを返す
-引数のリストが空ではない場合は[先頭の要素]と[残りの要素に対して再帰的に呼び出した結果]に対して演算子#を適用させる
-
-例えばsum関数、product関数を下記のように表現することができ...</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/haskell-day-2021.html</id><title type="text">Haskell Day 2021を開催します</title><updated>2021-06-14T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/haskell-day-2021.html"/><summary type="html">
+ I. HSpecのAutomatic spec discoveryを使って、複数フ...</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/haskell-day-2021.html</id><title type="text">Haskell Day 2021を開催します</title><updated>2021-06-14T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/haskell-day-2021.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
@@ -1481,32 +1495,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;参加登録&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://zenn.dev/lotz/articles/fd7cdb6c539d56ac595c</id><title type="text">「Haskellのモナド完全に理解した」試験問題</title><updated>2021-06-13T02:20:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/fd7cdb6c539d56ac595c"/><summary type="html">Haskellは勉強したけどモナドを本当に理解したって言えるのか自信がない…
-＼そんな人向けの試験問題を作りました！／
-これから実施する試験問題を、10問中8問正解すればあなたはHaskellのモナドを完全に理解しています。私が保証します！
-それではさっそく〜〜
-
-
- 第一問
-まずは緊張をほぐしましょう。
-
-Haskellの Monad は○○○○である
-
-○○○○に当てはまるのは以下の選択肢のうちどれでしょう？
-
-型
-関数
-型クラス
-型シノニム
-
-答え
-3. 型クラス
-これは簡単ですね！
-Haskellのモナドは単なる型クラスです。
-
-
- 第二問
-class A t =&amp;gt; B t...</summary></entry><entry><id>https://matsubara0507.github.io/posts/2021-06-13-my-site-use-slick.html</id><title type="text">ここを Hakyll から Slick に移行してみた</title><updated>2021-06-13T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2021-06-13-my-site-use-slick.html"/></entry><entry><id>https://haskell.jp/blog/posts/grc.html</id><title type="text">「相互を尊重したコミュニケーションのためのガイドライン」制定のお知らせ</title><updated>2021-05-30T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/grc.html"/><summary type="html">
+</summary></entry><entry><id>https://matsubara0507.github.io/posts/2021-06-13-my-site-use-slick.html</id><title type="text">ここを Hakyll から Slick に移行してみた</title><updated>2021-06-13T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2021-06-13-my-site-use-slick.html"/></entry><entry><id>https://haskell.jp/blog/posts/grc.html</id><title type="text">「相互を尊重したコミュニケーションのためのガイドライン」制定のお知らせ</title><updated>2021-05-30T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/grc.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
