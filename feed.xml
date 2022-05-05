@@ -211,7 +211,7 @@ IO()：IO()というデータ型を持つ
 IO ()型のデータ型を持つ変数main
 int型のデータ型を持つ変数apple
 
-と全く同じです。１つずつ解説していき...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/books/a808e953a39110</id><title type="text">【Haskellで学ぶ】関数型言語とは何か？</title><updated>2022-02-03T07:28:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/books/a808e953a39110"/><summary type="html">「関数型言語とは何か？」について解説します。「オブジェクト指向の複雑さを軽減する」として関数型言語は近年注目を集めています。しかし「関数を中心にプログラムを組み立てる」といっても、具体的なイメージができない方も多いのではないでしょうか。
+と全く同じです。１つずつ解説していき...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/books/a808e953a39110</id><title type="text">関数型言語とは何か？(Haskellで学ぶ)</title><updated>2022-02-03T07:28:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/books/a808e953a39110"/><summary type="html">「関数型言語とは何か？」について解説します。「オブジェクト指向の複雑さを軽減する」として関数型言語は近年注目を集めています。しかし「関数を中心にプログラムを組み立てる」といっても、具体的なイメージができない方も多いのではないでしょうか。
 本書では「強い制約を課して、本来すべきことに集中する」という視点から関数型言語の概要を紹介します。「変数の値を後から変更できない・副作用を禁止する」など、関数型プログラミングならではの特徴を学んでいきましょう。</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://zenn.dev/eagle/articles/double-negation-monad</id><title type="text">二重否定モナド</title><updated>2022-01-04T02:49:47+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eagle/articles/double-negation-monad"/><summary type="html">本記事では二重否定モナドを発見し、その正体を探ります。
 なお、例外の発生や無限ループなどは無いものとします。
 
