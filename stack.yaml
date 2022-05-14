@@ -1,21 +1,25 @@
-resolver: lts-17.0
+resolver: nightly-2022-05-12
 packages:
 - .
 extra-deps:
-- drinkery-0.4
-- extensible-0.8.1
-- membership-0
+# - drinkery-0.4
+- github: fumieval/drinkery
+  commit: 091238b90ca617ff5676cec0ae4a8cb5f79d37e6
+# - extensible-0.8.3
+- github: fumieval/extensible
+  commit: 4a1edb50c90d377085fcc3bad4c9f6e9d296b00e
+- membership-0.0.1
 - incremental-0.3.1
 - github: matsubara0507/scrapbook
-  commit: 1839569c8ca1bb22c1f415b33dbee733e8f7e27c
+  commit: 9d39a5a90b0985c1e6ecd51809111116be6f6781
   subdirs:
   - lib/scrapbook-core
 - github: matsubara0507/mix.hs
-  commit: 75714be080db16f6a4f9d0a22e86947ffcdadc57
+  commit: 9bcd386526fe10a025a23e951c2de86b05129b17
   subdirs:
   - mix
   - mix-plugin-shell
 
 docker:
-  repo: matsubara0507/stack-build
+  repo: ghcr.io/matsubara0507/stack-build:20.04
   enable: false
