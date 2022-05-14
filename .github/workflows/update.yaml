@@ -15,11 +15,11 @@ on:
 jobs:
   update:
     name: ${{ matrix.os }}
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
-        ghc: ["8.10.3"]
+        ghc: ["9.2.2"]
 
     steps:
     - uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
         "
         restore-keys: |
           ${{ runner.os }}-stack-
-    - uses: haskell/actions/setup@v1.1.7
+    - uses: haskell/actions/setup@v2
       name: Setup Haskell
       with:
         ghc-version: ${{ matrix.ghc }}
