@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-12T14:36:44.619+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-05-12T14:36:44.619+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-16T07:08:34+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/39aa954f402e27</id><title type="text">Haskellで比較を行う4つの方法(if/case/パターンマッチ/ガード)</title><updated>2022-05-16T07:08:34+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/39aa954f402e27"/><summary type="html">この記事ではHaskellで比較を行う4つの方法をまとめています。基本的な構文を整理したいと思います。
+
+ １、if式
+私たちが最も慣れ親しんだifを使った判定です。Haskellのifは文ではなく式である点に注意して下さい。文は命令ですが、式は必ず値を持ちます。Haskellのif式では失敗した場合に返却する値も必ず指定しなくてはいけません。 数値が10以上かどうか？をここでは判定しています。
+keisan :: Int -&amp;gt; String
+keisan x =
+    if x &amp;gt; 10
+        then &#34;10より大きいです&#34;
+        else &#34;10未...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/67c1b3c9e3b809</id><title type="text">リスト内包表記とは？（Haskell）</title><updated>2022-05-16T05:19:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/67c1b3c9e3b809"/><summary type="html">この記事ではリスト内包表記について解説します。
+リスト内包表記を使えばリストを扱う関数を簡潔に定義できます。
+
+ 内包表記とは？
+内包表記とは元々、数学の集合に関する仕組みです。既存の集合から新たな集合を作るために使われます。 具体例として2の倍数の集合を内包表記で作ります。
+{x*2 | x &amp;lt;- [1,2,3,4,5]}
+|(パイプ)で挟んだ右側と左側で役割が異なります。右側が既存の集合、左側が新しく作る集合を意味します。
+つまり既存の集合：[1,2,3,4,5]から新しい集合を作ることを意味しています。元あった集合xを2倍にするよう指定されていますので、新しい集合としては[2...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-05-12T14:36:44.619+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
@@ -117,14 +132,13 @@ Haskellには関数にまつわる概念がたくさんあります。再帰関�
 
  通常の変数
 まずは通常の変数から確認します。こちらはnumへ10を代入し、出力にかけています。
-main :: IO()
 num :: Int
 num = 10
 main = print num
 型宣言::によってデータ型を指定するのは少し特殊ですが、他の言語とキホンは同じですよね。
 
  let、whereの定義
-通常の変数とは別に、Haskellでは特殊な変数が2つ用意されています。let、whereとは局所的に（その場限りで）変数を使うための仕...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/d92823ed9d4844</id><title type="text">Haskellの型推論とは？（静的・動的型付けと比較）</title><updated>2022-04-25T07:22:12+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/d92823ed9d4844"/><summary type="html">この記事では、Haskellが持つ型推論について学びます。
+通常の変数とは別に、Haskellでは特殊な変数が2つ用意されています。let、whereとは局所的に（その場限りで）変数を使うための仕組みです。 主に以下の違い...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/d92823ed9d4844</id><title type="text">Haskellの型推論とは？（静的・動的型付けと比較）</title><updated>2022-04-25T07:22:12+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/d92823ed9d4844"/><summary type="html">この記事では、Haskellが持つ型推論について学びます。
 Haskellでは型推論といって、データ型をコンパイル時に判定・補足する機能を持ちます。 従来の静的型付け・動的型付けと比較しながら、その特徴を考えていきます。
 
  データ型とは何か？
@@ -238,33 +252,7 @@ IO ()型のデータ型を持つ変数main
 int型のデータ型を持つ変数apple
 
 と全く同じです。１つずつ解説していき...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/books/a808e953a39110</id><title type="text">関数型言語とは何か？(Haskellで学ぶ)</title><updated>2022-02-03T07:28:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/books/a808e953a39110"/><summary type="html">「関数型言語とは何か？」について解説します。「オブジェクト指向の複雑さを軽減する」として関数型言語は近年注目を集めています。しかし「関数を中心にプログラムを組み立てる」といっても、具体的なイメージができない方も多いのではないでしょうか。
-本書では「強い制約を課して、本来すべきことに集中する」という視点から関数型言語の概要を紹介します。「変数の値を後から変更できない・副作用を禁止する」など、関数型プログラミングならではの特徴を学んでいきましょう。</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://zenn.dev/eagle/articles/double-negation-monad</id><title type="text">二重否定モナド</title><updated>2022-01-04T02:49:47+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eagle/articles/double-negation-monad"/><summary type="html">本記事では二重否定モナドを発見し、その正体を探ります。
-なお、例外の発生や無限ループなどは無いものとします。
-
- 命題としての型
-命題Pに対してその証拠eを考え、e :: Pと書くことにします。
-「eは型Pの要素である」とも言います。
-命題Pが少なくとも1つ以上の要素を持つとき、その命題は成り立つと言います。
-
- 正当化
-命題Aが成立することの証拠aと、命題A → B(AならばB)が成立することの証拠fを持っているとします。
-このとき命題Bが成立することの証拠も得られます。その証拠をf aと書くことにします。
-ところで、命題AやBを型としてみなし、命題A → Bを関数の型A -&amp;gt; ...</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/12/31/212410</id><title type="text">2021 年のアウトプットを全部一気に思い出す</title><updated>2021-12-31T21:24:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/12/31/212410"/><summary type="html">こんにちは、チェシャ猫です。2021 年中は大変お世話になりました。 今年もいくつか外部で発表を行いましたが、その中には登壇報告の形でこのブログに載せていなかったり、スライドとして公開していないものがあります。自分自身の記録も兼ねて、本記事では 2021 年のアウトプットを一覧としてアーカイブしておきたいと思います。 2021 年の活動実績 2021 年の登壇は 9 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 5 件 です。傾向として以前よりも LT の割合が少なくなり、比較的長尺の登壇がメインになりました。 CockroachDB から覗く型式手法の世界【CFP …</summary></entry><entry><id>https://zenn.dev/matsubara0507/articles/ca4fbfb264272e</id><title type="text">tweag/rules_haskell v0.14 がリリースされました</title><updated>2021-12-29T18:20:49+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/matsubara0507/articles/ca4fbfb264272e"/><summary type="html">https://github.com/tweag/rules_haskell/releases/tag/v0.14
-前バージョンの v0.13 が 2020年9月なので、1年以上ぶりのリリースです。もうリリースされないのかと思ってました。
-
- ハイライト
-せっかくなので、ハイライトだけでも紹介します。
-
-標準のサポートをBazel4系に移行
-新しく GHC 9.0, 9.2 をサポート
-クロスコンパイルをサポート
-Asterius をサポート（Experimental）
-
-haskell_module ルールを追加（Experimental）
-
-
- 標準のサポートをBazel4系に移行
-...</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/text-mono-traversable.html</id><title type="text">文字列型を抽象化するのにはmono-traversableパッケージがいいかも</title><updated>2021-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/text-mono-traversable.html"/><summary type="html">
+本書では「強い制約を課して、本来すべきことに集中する」という視点から関数型言語の概要を紹介します。「変数の値を後から変更できない・副作用を禁止する」など、関数型プログラミングならではの特徴を学んでいきましょう。</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/12/31/212410</id><title type="text">2021 年のアウトプットを全部一気に思い出す</title><updated>2021-12-31T21:24:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/12/31/212410"/><summary type="html">こんにちは、チェシャ猫です。2021 年中は大変お世話になりました。 今年もいくつか外部で発表を行いましたが、その中には登壇報告の形でこのブログに載せていなかったり、スライドとして公開していないものがあります。自分自身の記録も兼ねて、本記事では 2021 年のアウトプットを一覧としてアーカイブしておきたいと思います。 2021 年の活動実績 2021 年の登壇は 9 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 5 件 です。傾向として以前よりも LT の割合が少なくなり、比較的長尺の登壇がメインになりました。 CockroachDB から覗く型式手法の世界【CFP …</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/text-mono-traversable.html</id><title type="text">文字列型を抽象化するのにはmono-traversableパッケージがいいかも</title><updated>2021-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/text-mono-traversable.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
