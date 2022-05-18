@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-16T07:08:34+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/39aa954f402e27</id><title type="text">Haskellで比較を行う4つの方法(if/case/パターンマッチ/ガード)</title><updated>2022-05-16T07:08:34+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/39aa954f402e27"/><summary type="html">この記事ではHaskellで比較を行う4つの方法をまとめています。基本的な構文を整理したいと思います。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-16T07:08:34+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/39aa954f402e27</id><title type="text">Haskellで比較/分岐を行う4つの方法(if/case/パターンマッチ/ガード)</title><updated>2022-05-16T07:08:34+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/39aa954f402e27"/><summary type="html">この記事ではHaskellで比較/分岐を行う4つの方法をまとめています。基本的な構文を整理したいと思います。
 
  １、if式
 私たちが最も慣れ親しんだifを使った判定です。Haskellのifは文ではなく式である点に注意して下さい。文は命令ですが、式は必ず値を持ちます。Haskellのif式では失敗した場合に返却する値も必ず指定しなくてはいけません。 数値が10以上かどうか？をここでは判定しています。
@@ -6,7 +6,7 @@ keisan :: Int -&amp;gt; String
 keisan x =
     if x &amp;gt; 10
         then &#34;10より大きいです&#34;
-        else &#34;10未...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/67c1b3c9e3b809</id><title type="text">リスト内包表記とは？（Haskell）</title><updated>2022-05-16T05:19:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/67c1b3c9e3b809"/><summary type="html">この記事ではリスト内包表記について解説します。
+        else &#34;...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/67c1b3c9e3b809</id><title type="text">リスト内包表記とは？（Haskell）</title><updated>2022-05-16T05:19:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/67c1b3c9e3b809"/><summary type="html">この記事ではリスト内包表記について解説します。
 リスト内包表記を使えばリストを扱う関数を簡潔に定義できます。
 
  内包表記とは？
