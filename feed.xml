@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-16T07:08:34+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/39aa954f402e27</id><title type="text">Haskellで比較/分岐を行う4つの方法(if/case/パターンマッチ/ガード)</title><updated>2022-05-16T07:08:34+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/39aa954f402e27"/><summary type="html">この記事ではHaskellで比較/分岐を行う4つの方法をまとめています。基本的な構文を整理したいと思います。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-19T06:45:15+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/1e56d008423cf8</id><title type="text">高階関数/カリー化/部分適用とは？(Haskell)</title><updated>2022-05-19T06:45:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1e56d008423cf8"/><summary type="html">この記事では高階関数にまつわる用語の意味を確認します。高階関数・カリー化・部分適用についてです。ゴッチャになりがちな3つの意味を整理したいと思います。
+
+
+
+用語
+意味
+
+
+
+
+高階関数
+引数/戻り値として扱える関数のこと
+
+
+カリー化
+複数の引数を１引数化すること
+
+
+部分適用
+引数を一度に全て渡さず、一部だけ渡す
+
+
+
+
+ 高階関数とは？
+引数/戻り値として扱える関数のことです。 従来の命令型言語(Java、C++など)では、引数/戻り値に関数は指定できません。基本のデータ型(Int、Charなど)・構造体・クラスなどしか引数/戻り値に使えませんでした。一方Haskellには関数型と...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/4d2e7dc2215013</id><title type="text">再帰を練習するための関数集(Haskell)</title><updated>2022-05-18T11:16:52+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/4d2e7dc2215013"/><summary type="html">この記事では、Haskellで再帰関数を練習するため色々な関数を集めてみました。どの技術書でもいってますが、再帰関数を練習するには練習あるのみです。参考書でご紹介されていたモノ〜オリジナルで考えたモノまで、ここでは再帰を使って色々な関数をまとめてみます。
+
+ リストではない再帰
+
+ goukei関数(指定された数値までの和)
+指定された数値までの和を計算します。
+goukei :: Int -&amp;gt; Int
+goukei 0 = 0
+goukei n = n + goukei(n-1)
+
+main = print $ goukei 5
+-- 実行結果「15」
+数値は1ずつ減っていき、最...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/581c4c17770616</id><title type="text">再帰による繰り返し処理(Haskell)</title><updated>2022-05-18T08:28:47+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/581c4c17770616"/><summary type="html">この記事では再帰関数に関する基本的なトピックをご紹介します。
+命令型言語では繰り返し処理を行うのにfor/whileを使っていました。しかし関数型言語ではfor/whileの仕組みはありません。カウントした数値を更新する際に値を変更してしまうからです。 Haskellでは変数の値を変更するなどの副作用を禁止しています。
+そこで使われるのが再帰の仕組みです。再帰とは関数の中で自分自身の関数を呼び出す仕組みです。 処理を行う関数を何度も呼び出せばそれだけで繰り返し処理ができますよね。再帰と聞くと難しそうですが日常生活でもたくさんあります。
+
+・レジの会計（商品を取ってスキャン、買い物カゴが空...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/39aa954f402e27</id><title type="text">Haskellで比較/分岐を行う4つの方法(if/case/パターンマッチ/ガード)</title><updated>2022-05-16T07:08:34+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/39aa954f402e27"/><summary type="html">この記事ではHaskellで比較/分岐を行う4つの方法をまとめています。基本的な構文を整理したいと思います。
 
  １、if式
 私たちが最も慣れ親しんだifを使った判定です。Haskellのifは文ではなく式である点に注意して下さい。文は命令ですが、式は必ず値を持ちます。Haskellのif式では失敗した場合に返却する値も必ず指定しなくてはいけません。 数値が10以上かどうか？をここでは判定しています。
@@ -115,9 +156,13 @@ addtwo :: Int -&amp;gt; Int -&amp;gt; Int
 addtwo a b
     = a + b
 main = print (10 `addtwo` 20)
-  -- = print (addtwo 10 20)と全く同じ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/cea68bbe2cc556</id><title type="text">複数の引数の渡し方（カリー化、部分適用について）</title><updated>2022-04-27T08:45:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/cea68bbe2cc556"/><summary type="html">Haskellの関数は少し特殊で、引数は常に1つだけ受け取るようになっています。1引数化されたこの仕組みを難しい言葉でカリー化と呼びます。Haskellの関数はカリー化（＝1引数化）されています。
-複数の引数があったとしても、関数は一度に全てを処理しません。複数ある引数の内、1つずつ関数へ適用していきます。これも難しい言葉で部分適用と呼びます。複数ある引数は部分適用（＝1つずつ関数へ適用）されることで、関数の仕組みをシンプルにすることができます。
-この記事では、関数に対して複数の引数を渡した場合、内部ではどのような処理をするかを学びます。引数が2つの場合、3つの場合を例に挙げてみましょう...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/0e3a926aca9ea6</id><title type="text">基本的な関数の作り方（Haskell）</title><updated>2022-04-27T01:29:55+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/0e3a926aca9ea6"/><summary type="html">この記事では、関数の基本的な作り方について学びます。
+  -- = print (addtwo 10 20)と全く同じ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/cea68bbe2cc556</id><title type="text">複数の引数の渡し方（カリー化、部分適用について）</title><updated>2022-04-27T08:45:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/cea68bbe2cc556"/><summary type="html">Haskellの関数は引数を常に1つだけ受け取るようになっています。1引数化されたこの仕組みを難しい言葉でカリー化と呼びます。この記事では関数に対して複数の引数を渡した場合、内部ではどのような処理をするかを学びます。引数が2つの場合、3つの場合を例に挙げてみましょう。
+
+ 引数が2つの場合
+引数を2つ足し算するaddtwo関数を例に考えます。10、20という引数を2つ受け取っているのですが、関数は1つの引数しか受け取れないルールとなっています。この場合どのように処理されるのでしょうか。
+addtwo :: Int -&amp;gt; Int -&amp;gt; Int
+addtwo a b
+    = ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/0e3a926aca9ea6</id><title type="text">基本的な関数の作り方（Haskell）</title><updated>2022-04-27T01:29:55+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/0e3a926aca9ea6"/><summary type="html">この記事では、関数の基本的な作り方について学びます。
 
 Haskellには関数にまつわる概念がたくさんあります。再帰関数や高階関数など難しいトピックは除いて、ここでは「基本の関数」の作り方を紹介します。
 
@@ -225,34 +270,7 @@ https://github.com/sumisonic/company-tidal
 よく関数型言語は変数再代入できないとか、すべてがイミュータブルであるみたいな違いを意識しがちだけど、僕はどちらかというと文と式という構成要素の違いが、プログラミングのしやすさにかなり影響を与えていると思う。
 
  関数型言語はすべてが式である
-多分文もあると思いますが、理解のしやすさのためにここでは「関数型言...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/f0f945b0d810fb</id><title type="text">Haskellの環境構築【M1MacでHelloWorld】</title><updated>2022-02-04T00:34:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/f0f945b0d810fb"/><summary type="html">M1MacでHaskellの環境構築をしました。備忘録として書き残しておきますので、お役に立てれば幸いです。
-環境構築としては２つの方法を用意しました。
-１、GHCとテキストエディタ
-２、Visual Studio CodeでのHelloWorld
-
- １、GHCとテキストエディタ
-GHCはHakellの最もポピュラーなコンパイラです。これとテキストエディタを使えばコマンドラインでカンタンに出力できます。
-まずは以下のコマンドをターミナルで入力します。
-brew install ghc cabal-install stack
-これでHaskellのコンパイラを準備できました。
-次にデスク...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/e54f59af19a89e</id><title type="text">main :: IO()について（Haskellのアクションを解説）</title><updated>2022-02-03T13:29:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/e54f59af19a89e"/><summary type="html">この記事ではmain :: IO()について解説します。HelloWorldを出力するプログラムの中でも冒頭の部分です。
-main :: IO ()
-main = do
-	putStrLn &#34;HelloWorld&#34;
-まず先に結論からです。
-
-main：変数（スタートポイントになる）
-「::」：　変数・関数のデータ型を指定
-IO()：IO()というデータ型を持つ
-
-といった意味となります。
-もっとカンタンに言えば、int appleを宣言しているのと仕組みは同じです。
-
-IO ()型のデータ型を持つ変数main
-int型のデータ型を持つ変数apple
-
-と全く同じです。１つずつ解説していき...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/books/a808e953a39110</id><title type="text">関数型言語とは何か？(Haskellで学ぶ)</title><updated>2022-02-03T07:28:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/books/a808e953a39110"/><summary type="html">「関数型言語とは何か？」について解説します。「オブジェクト指向の複雑さを軽減する」として関数型言語は近年注目を集めています。しかし「関数を中心にプログラムを組み立てる」といっても、具体的なイメージができない方も多いのではないでしょうか。
-本書では「強い制約を課して、本来すべきことに集中する」という視点から関数型言語の概要を紹介します。「変数の値を後から変更できない・副作用を禁止する」など、関数型プログラミングならではの特徴を学んでいきましょう。</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/12/31/212410</id><title type="text">2021 年のアウトプットを全部一気に思い出す</title><updated>2021-12-31T21:24:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/12/31/212410"/><summary type="html">こんにちは、チェシャ猫です。2021 年中は大変お世話になりました。 今年もいくつか外部で発表を行いましたが、その中には登壇報告の形でこのブログに載せていなかったり、スライドとして公開していないものがあります。自分自身の記録も兼ねて、本記事では 2021 年のアウトプットを一覧としてアーカイブしておきたいと思います。 2021 年の活動実績 2021 年の登壇は 9 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 5 件 です。傾向として以前よりも LT の割合が少なくなり、比較的長尺の登壇がメインになりました。 CockroachDB から覗く型式手法の世界【CFP …</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/text-mono-traversable.html</id><title type="text">文字列型を抽象化するのにはmono-traversableパッケージがいいかも</title><updated>2021-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/text-mono-traversable.html"/><summary type="html">
+多分文もあると思いますが、理解のしやすさのためにここでは「関数型言...</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/12/31/212410</id><title type="text">2021 年のアウトプットを全部一気に思い出す</title><updated>2021-12-31T21:24:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/12/31/212410"/><summary type="html">こんにちは、チェシャ猫です。2021 年中は大変お世話になりました。 今年もいくつか外部で発表を行いましたが、その中には登壇報告の形でこのブログに載せていなかったり、スライドとして公開していないものがあります。自分自身の記録も兼ねて、本記事では 2021 年のアウトプットを一覧としてアーカイブしておきたいと思います。 2021 年の活動実績 2021 年の登壇は 9 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 5 件 です。傾向として以前よりも LT の割合が少なくなり、比較的長尺の登壇がメインになりました。 CockroachDB から覗く型式手法の世界【CFP …</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/text-mono-traversable.html</id><title type="text">文字列型を抽象化するのにはmono-traversableパッケージがいいかも</title><updated>2021-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/text-mono-traversable.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
