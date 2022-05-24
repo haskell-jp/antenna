@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-19T06:45:15+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/1e56d008423cf8</id><title type="text">高階関数/カリー化/部分適用とは？(Haskell)</title><updated>2022-05-19T06:45:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1e56d008423cf8"/><summary type="html">この記事では高階関数にまつわる用語の意味を確認します。高階関数・カリー化・部分適用についてです。ゴッチャになりがちな3つの意味を整理したいと思います。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-24T07:18:36+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/22ed97468d79cb</id><title type="text">高階関数の作り方/読み取り方を学ぼう(Haskell)</title><updated>2022-05-24T07:18:36+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/22ed97468d79cb"/><summary type="html">この記事では高階関数の作り方や読み取り方を学びます。Haskellでは引数/戻り値が区別されないので少し見づらいですよね。引数を2つ足す関数/3つ足す関数を例に、その読み解き方をマスターしたいと思います。
+
+ 引数を2つ足す関数(addtwo関数)
+引数を2つ足し算する関数を例に考えます。addtwoという名前の関数です。10、20という引数を2つ渡して、30という計算結果を得ることができます。『引数を2つ取って10,20を足し算する関数』をイメージしながら高階関数を作っていきたいと思います。
+addtwo :: Int -&amp;gt; Int -&amp;gt; Int
+addtwo a b = ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/7cadae288bd311</id><title type="text">代表的な高階関数5選(Haskell)</title><updated>2022-05-24T00:45:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/7cadae288bd311"/><summary type="html">この記事では代表的な高階関数を５つご紹介します。関数内部の仕組み・使用例を中心にまとめていきたいと思います。
+
+
+
+関数名
+機能
+
+
+
+
+filter
+リストへ述語関数を適用、Trueになるモノを返却
+
+
+map
+リストへ関数を適用する
+
+
+zip/zipWith
+複数のリストを1つのリストへまとめる
+
+
+foldl/foldr
+リストを1つの値へまとめる
+
+
+scanl/scanr
+foldl/rの途中経過を残すver
+
+
+
+（基本的な高階関数の作り方についてはこちらの記事もご参照下さい。）
+
+ filter関数
+リストへ述語関数を適用し、Trueとなるモノを返却します。 述語関数とは...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1cbea721782ecc</id><title type="text">高階関数とは？関数型〜基本的な作り方まで(Haskell)</title><updated>2022-05-23T13:36:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1cbea721782ecc"/><summary type="html">高階関数とは引数/戻り値として扱える関数のことですが、具体的な使い方が少しイメージしづらいですよね。関数型の基本からスタートして、高階関数の読み解きについて学んでいきたいと思います。
+
+ 関数の定義の基本
+まずは関数の基本からです。関数型とその読み方の基本を学びます。Haskellの関数は引数/戻り値がごっちゃで読みづらいですが、まずは基本のルールを覚えていきます。
+
+ 関数型とは？
+関数型とは『ある型の引数を別の型へ変換する型』のことです。 Haskellでは関数にも型が付いています。
+関数名 :: 型 -&amp;gt; 型
+型の定義の中に(型 -&amp;gt; 型)という型が入っています。(型 ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1e56d008423cf8</id><title type="text">高階関数/カリー化/部分適用とは？(Haskell)</title><updated>2022-05-19T06:45:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1e56d008423cf8"/><summary type="html">この記事では高階関数にまつわる用語の意味を確認します。高階関数・カリー化・部分適用についてです。ゴッチャになりがちな3つの意味を整理したいと思います。
 
 
 
@@ -259,18 +306,7 @@ https://ichi.pro/obujyekuto-shiko-puroguramingu-1-cho-doru-no-saigai-16123613248
 Cloud9があればカンタンにHaskellの環境構築を行うことができます。面倒な設定が不要ですぐにコードが書けるのが大きなメリットです（ご使用に応じて料金がかかるので、そこは自己責任でお願い致します）。
 Haskellの場合、コンパイラはあらかじめインストールされていません。自分たちで用意する必要があります。 といってもカンタンに構築できますので、その方法をご紹介します。
 
- ２...</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2022/04/07/181838</id><title type="text">株式会社HERPに転職しました</title><updated>2022-04-07T18:18:38+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2022/04/07/181838"/><summary type="html">GitHubのプロフィールを見た人などはもしかしたら気づいているかもしれないが、Tsuru Capital LLCを退職し、2022年2月16日よりHERPの正社員となった。HERPは、大まかに言えば採用活動を管理するプラットフォームを提供している。 きっかけ Tsuru CapitalはKospi(韓国株のインデックス)のデリバティブを半自動取引する企業で、Haskellを使っているというのが最大の特徴として知られる謎多き会社だ。2015年に入社し、2022年まで6年以上働いた。流石に同じ職場にずっといると経験が偏ってしまうし、感覚としても飽きがきたので転職を考えた。 また、ある時期からRu…</summary></entry><entry><id>https://blog.miz-ar.info/2022/03/writing-type-level-programming-in-haskell/</id><title type="text">執筆中：「Haskellでの型レベルプログラミング」</title><updated>2022-03-29T12:03:28+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2022/03/writing-type-level-programming-in-haskell/"/><summary type="html">最近、「Haskellでの型レベルプログラミング」という「本」を執筆している。まだ完成ではないが、以下のリンクから読める： Haskellでの型レベルプログラミング なぜHaskellか 最近いろんな言語が出てきている中 [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/sumisonic/articles/4eebb9ec083bf4</id><title type="text">Emacs に TidalCycles のコード補完機能を追加する</title><updated>2022-03-19T10:37:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/sumisonic/articles/4eebb9ec083bf4"/><summary type="html">Emacs で TidalCycles を使う場合、Atom などのエディタと違いデフォルトではコード補完機能[1]がない。lsp (haskell-language-server) を使えば動くのかもしれないが、TidalCycles の動く環境が GHCi のためか自分の環境ではうまくいかなかった。そこで Emacs にコード補完を提供する company-mode について少し調べてみると、思いの外シンプルだったので自作することにした。
-https://github.com/sumisonic/company-tidal
-
- 使い方
-上記リポジトリの company-tidal.e...</summary></entry><entry><id>https://qiita.com/wataru86/items/f37d2ad0e9a7eee5b983</id><title type="text">Haskell の好きなところ</title><updated>2022-03-16T09:36:38+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/wataru86/items/f37d2ad0e9a7eee5b983"/></entry><entry><id>https://qiita.com/debug-ito/items/716c9c2bc9a1b6874461</id><title type="text">cabalでGitレポジトリから直接パッケージをインストールする際のダウンロード量を削減するためのworkaround</title><updated>2022-03-16T08:13:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/debug-ito/items/716c9c2bc9a1b6874461"/></entry><entry><id>https://zenn.dev/mod_poppo/books/haskell-type-level-programming</id><title type="text">Haskellでの型レベルプログラミング</title><updated>2022-03-16T04:36:16+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/books/haskell-type-level-programming"/><summary type="html">Haskellでの型レベルプログラミングの解説書です。まだ執筆途中です。</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-03-05-haskell-servant-and-websocket.html</id><title type="text">Haskell Servant + WebSocket で非同期ジョブを作る</title><updated>2022-03-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-03-05-haskell-servant-and-websocket.html"/></entry><entry><id>https://zenn.dev/dove/articles/4c22c0769d1a31</id><title type="text">haskellに入門して数ヶ月経ったので関数の美しさについて語ってみる</title><updated>2022-02-20T00:25:14+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/dove/articles/4c22c0769d1a31"/><summary type="html">前置き
-関数型言語の勉強がしたくて、haskellに入門しました。ノロノロとですが、少しずつ勉強を重ね、今は競プロの練習言語として使っています。実務やアプリ作成での経験はありません。それを踏まえた上での感想として受け止めてね。
-
- 関数型言語と手続き型言語やオブジェクト指向言語の違い
-よく関数型言語は変数再代入できないとか、すべてがイミュータブルであるみたいな違いを意識しがちだけど、僕はどちらかというと文と式という構成要素の違いが、プログラミングのしやすさにかなり影響を与えていると思う。
-
- 関数型言語はすべてが式である
-多分文もあると思いますが、理解のしやすさのためにここでは「関数型言...</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/12/31/212410</id><title type="text">2021 年のアウトプットを全部一気に思い出す</title><updated>2021-12-31T21:24:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/12/31/212410"/><summary type="html">こんにちは、チェシャ猫です。2021 年中は大変お世話になりました。 今年もいくつか外部で発表を行いましたが、その中には登壇報告の形でこのブログに載せていなかったり、スライドとして公開していないものがあります。自分自身の記録も兼ねて、本記事では 2021 年のアウトプットを一覧としてアーカイブしておきたいと思います。 2021 年の活動実績 2021 年の登壇は 9 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 5 件 です。傾向として以前よりも LT の割合が少なくなり、比較的長尺の登壇がメインになりました。 CockroachDB から覗く型式手法の世界【CFP …</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/text-mono-traversable.html</id><title type="text">文字列型を抽象化するのにはmono-traversableパッケージがいいかも</title><updated>2021-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/text-mono-traversable.html"/><summary type="html">
+ ２...</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2022/04/07/181838</id><title type="text">株式会社HERPに転職しました</title><updated>2022-04-07T18:18:38+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2022/04/07/181838"/><summary type="html">GitHubのプロフィールを見た人などはもしかしたら気づいているかもしれないが、Tsuru Capital LLCを退職し、2022年2月16日よりHERPの正社員となった。HERPは、大まかに言えば採用活動を管理するプラットフォームを提供している。 きっかけ Tsuru CapitalはKospi(韓国株のインデックス)のデリバティブを半自動取引する企業で、Haskellを使っているというのが最大の特徴として知られる謎多き会社だ。2015年に入社し、2022年まで6年以上働いた。流石に同じ職場にずっといると経験が偏ってしまうし、感覚としても飽きがきたので転職を考えた。 また、ある時期からRu…</summary></entry><entry><id>https://blog.miz-ar.info/2022/03/writing-type-level-programming-in-haskell/</id><title type="text">執筆中：「Haskellでの型レベルプログラミング」</title><updated>2022-03-29T12:03:28+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2022/03/writing-type-level-programming-in-haskell/"/><summary type="html">最近、「Haskellでの型レベルプログラミング」という「本」を執筆している。まだ完成ではないが、以下のリンクから読める： Haskellでの型レベルプログラミング なぜHaskellか 最近いろんな言語が出てきている中 [&amp;#8230;]</summary></entry><entry><id>https://qiita.com/wataru86/items/f37d2ad0e9a7eee5b983</id><title type="text">Haskell の好きなところ</title><updated>2022-03-16T09:36:38+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/wataru86/items/f37d2ad0e9a7eee5b983"/></entry><entry><id>https://qiita.com/debug-ito/items/716c9c2bc9a1b6874461</id><title type="text">cabalでGitレポジトリから直接パッケージをインストールする際のダウンロード量を削減するためのworkaround</title><updated>2022-03-16T08:13:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/debug-ito/items/716c9c2bc9a1b6874461"/></entry><entry><id>https://matsubara0507.github.io/posts/2022-03-05-haskell-servant-and-websocket.html</id><title type="text">Haskell Servant + WebSocket で非同期ジョブを作る</title><updated>2022-03-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-03-05-haskell-servant-and-websocket.html"/></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/12/31/212410</id><title type="text">2021 年のアウトプットを全部一気に思い出す</title><updated>2021-12-31T21:24:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/12/31/212410"/><summary type="html">こんにちは、チェシャ猫です。2021 年中は大変お世話になりました。 今年もいくつか外部で発表を行いましたが、その中には登壇報告の形でこのブログに載せていなかったり、スライドとして公開していないものがあります。自分自身の記録も兼ねて、本記事では 2021 年のアウトプットを一覧としてアーカイブしておきたいと思います。 2021 年の活動実績 2021 年の登壇は 9 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 5 件 です。傾向として以前よりも LT の割合が少なくなり、比較的長尺の登壇がメインになりました。 CockroachDB から覗く型式手法の世界【CFP …</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/text-mono-traversable.html</id><title type="text">文字列型を抽象化するのにはmono-traversableパッケージがいいかも</title><updated>2021-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/text-mono-traversable.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
