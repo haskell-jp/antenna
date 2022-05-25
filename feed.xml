@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-24T07:18:36+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/22ed97468d79cb</id><title type="text">高階関数の作り方/読み取り方を学ぼう(Haskell)</title><updated>2022-05-24T07:18:36+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/22ed97468d79cb"/><summary type="html">この記事では高階関数の作り方や読み取り方を学びます。Haskellでは引数/戻り値が区別されないので少し見づらいですよね。引数を2つ足す関数/3つ足す関数を例に、その読み解き方をマスターしたいと思います。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-05-24T07:18:36+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/masahiro_toba/articles/22ed97468d79cb</id><title type="text">高階関数の読み解き方を学ぼう(Haskell)</title><updated>2022-05-24T07:18:36+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/22ed97468d79cb"/><summary type="html">この記事では高階関数の読み取り方を学びます。Haskellでは引数/戻り値が区別されないので少し見づらいですよね。引数を2つ足す関数/3つ足す関数を例に、その読み解き方をマスターしたいと思います。
 
  引数を2つ足す関数(addtwo関数)
 引数を2つ足し算する関数を例に考えます。addtwoという名前の関数です。10、20という引数を2つ渡して、30という計算結果を得ることができます。『引数を2つ取って10,20を足し算する関数』をイメージしながら高階関数を作っていきたいと思います。
 addtwo :: Int -&amp;gt; Int -&amp;gt; Int
-addtwo a b = ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/7cadae288bd311</id><title type="text">代表的な高階関数5選(Haskell)</title><updated>2022-05-24T00:45:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/7cadae288bd311"/><summary type="html">この記事では代表的な高階関数を５つご紹介します。関数内部の仕組み・使用例を中心にまとめていきたいと思います。
+addtwo a b = a + ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/7cadae288bd311</id><title type="text">代表的な高階関数5選(Haskell)</title><updated>2022-05-24T00:45:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/7cadae288bd311"/><summary type="html">この記事では代表的な高階関数を５つご紹介します。関数内部の仕組み・使用例を中心にまとめていきたいと思います。
 
 
 
@@ -35,17 +35,17 @@ foldl/rの途中経過を残すver
 
 
 （基本的な高階関数の作り方についてはこちらの記事もご参照下さい。）
+（高階関数の読み解き方についてはこちらの記事でまとめています。）
 
  filter関数
-リストへ述語関数を適用し、Trueとなるモノを返却します。 述語関数とは...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1cbea721782ecc</id><title type="text">高階関数とは？関数型〜基本的な作り方まで(Haskell)</title><updated>2022-05-23T13:36:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1cbea721782ecc"/><summary type="html">高階関数とは引数/戻り値として扱える関数のことですが、具体的な使い方が少しイメージしづらいですよね。関数型の基本からスタートして、高階関数の読み解きについて学んでいきたいと思います。
+リスト...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1cbea721782ecc</id><title type="text">高階関数とは？関数型〜基本的な作り方まで(Haskell)</title><updated>2022-05-23T13:36:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1cbea721782ecc"/><summary type="html">高階関数とは引数/戻り値として扱える関数のことですが、具体的な使い方が少しイメージしづらいですよね。関数型の基本からスタートして、高階関数の読み解きについて学んでいきたいと思います。（高階関数の読み解き方はこちら/代表的な高階関数についてはこちらからどうぞ）
 
  関数の定義の基本
 まずは関数の基本からです。関数型とその読み方の基本を学びます。Haskellの関数は引数/戻り値がごっちゃで読みづらいですが、まずは基本のルールを覚えていきます。
 
  関数型とは？
 関数型とは『ある型の引数を別の型へ変換する型』のことです。 Haskellでは関数にも型が付いています。
-関数名 :: 型 -&amp;gt; 型
-型の定義の中に(型 -&amp;gt; 型)という型が入っています。(型 ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1e56d008423cf8</id><title type="text">高階関数/カリー化/部分適用とは？(Haskell)</title><updated>2022-05-19T06:45:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1e56d008423cf8"/><summary type="html">この記事では高階関数にまつわる用語の意味を確認します。高階関数・カリー化・部分適用についてです。ゴッチャになりがちな3つの意味を整理したいと思います。
+関数名 :: 型 -&amp;g...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1e56d008423cf8</id><title type="text">高階関数/カリー化/部分適用とは？(Haskell)</title><updated>2022-05-19T06:45:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1e56d008423cf8"/><summary type="html">この記事では高階関数にまつわる用語の意味を確認します。高階関数・カリー化・部分適用についてです。ゴッチャになりがちな3つの意味を整理したいと思います。
 
 
 
