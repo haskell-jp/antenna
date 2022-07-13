@@ -114,7 +114,7 @@ foldl/rの途中経過を残すver
 
  関数型とは？
 関数型とは『ある型の引数を別の型へ変換する型』のことです。 Haskellでは関数にも型が付いています。
-関数名 :: 型 -&amp;g...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1e56d008423cf8</id><title type="text">高階関数/カリー化/部分適用とは？(Haskell)</title><updated>2022-05-19T06:45:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1e56d008423cf8"/><summary type="html">この記事では高階関数にまつわる用語の意味を確認します。高階関数・カリー化・部分適用についてです。ゴッチャになりがちな3つの意味を整理したいと思います。
+関数名 :: 型 -&amp;g...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1e56d008423cf8</id><title type="text">高階関数,カリー化,部分適用とは？(Haskell)</title><updated>2022-05-19T06:45:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1e56d008423cf8"/><summary type="html">この記事では高階関数にまつわる用語の意味を確認します。高階関数,カリー化,部分適用についてです。ゴッチャになりがちな3つの意味を整理したいと思います。
 
 
 
