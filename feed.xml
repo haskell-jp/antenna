@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-09-10T04:18:18+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/eijian/articles/raytracing-3-20220814</id><title type="text">レイトレーシング(3): フォトンマップ生成の大枠を考える（ついでに光源も）</title><updated>2022-09-10T04:18:18+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eijian/articles/raytracing-3-20220814"/><summary type="html">(この記事はQiitaからの転載です)
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-09-11T12:21:05+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/gotoki_no_joe/items/48e492c6a7e255034c67</id><title type="text">ABC257 A～E をHaskellで</title><updated>2022-09-11T12:21:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/48e492c6a7e255034c67"/></entry><entry><id>https://qiita.com/gotoki_no_joe/items/6ea0d67bfc8d15b871b0</id><title type="text">ABC268 A～E をHaskellで</title><updated>2022-09-11T11:10:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/6ea0d67bfc8d15b871b0"/></entry><entry><id>https://zenn.dev/eijian/articles/raytracing-14-20220910</id><title type="text">レイトレーシング(14): 光沢面にトライ</title><updated>2022-09-11T00:28:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eijian/articles/raytracing-14-20220910"/><summary type="html">これまでは物体表面での反射として完全拡散反射と完全鏡面反射のみ扱ってきた。ただ現実世界はほとんどが光沢のある表面（光沢面とする）なので、リアルな画像を生成するには光沢面のサポートが必須である。とくにぼやけたハイライトは3DCGの醍醐味(?)である。今回はそれを実装してみる。
+
+ 0. Progressive Photon Mapping法に特化
+その前に・・・
+前回記事では、従来のPhoton Mapping法を用いたレイトレーシングプログラムに対し「オプションとして」Progressive Photon Mapping法（以下PPM法）による画質向上の機能を追加した。しかし作ってみると...</summary></entry><entry><id>https://zenn.dev/eijian/articles/raytracing-13-20220910</id><title type="text">レイトレーシング(13): Progressive Photon Mapping (ただし本家ではない)</title><updated>2022-09-10T12:04:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eijian/articles/raytracing-13-20220910"/><summary type="html">今回のソースはこちら。
+
+ 1. 素のフォトンマッピングの課題
+フォトンマッピング法による画像生成は従来の手法（パストレーシングなど）に比べかなり少ないレイ数でも間接光や集光模様を綺麗に表現できるとても素晴らしい手法だと思う。とはいえフォトンマッピング法も完璧ではない。ある点の色（輝度）を求めるため、有限のフォトンと有限の領域（面積）から放射輝度推定を行っているからである。完璧な画像を得るためには、無限個のフォトン、無限小の領域で推定すればいいのだが、現実的には不可能である。そのため、次のような課題がある（と思う）。
+
+フォトンデータをメモリに読み込む必要があり大量のフォトンを使った計算...</summary></entry><entry><id>https://zenn.dev/eijian/articles/raytracing-3-20220814</id><title type="text">レイトレーシング(3): フォトンマップ生成の大枠を考える（ついでに光源も）</title><updated>2022-09-10T04:18:18+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eijian/articles/raytracing-3-20220814"/><summary type="html">(この記事はQiitaからの転載です)
 レイトレーシング：目次
 以前に書いたように、フォトンマッピング法は(1)フォトンマップの生成、(2)レイトレーシングの二段階で画像を生成する手法だ。だから、まずはフォトンマップを作らないと始まらない。今回からそのプログラムを作っていこう。
 
@@ -19,7 +28,7 @@ https://atcoder.jp/contests/xmascon19/tasks/xmascon19_k
  tl; dr
 Haskell解:
 https://atcoder.jp/contests/xmascon19/submissions/34649748
-...</summary></entry><entry><id>https://qiita.com/algas/items/b8ad90051474322827eb</id><title type="text">Haskeller のための開発環境構築 on GitHub Codespaces</title><updated>2022-09-05T16:07:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/algas/items/b8ad90051474322827eb"/></entry><entry><id>https://qiita.com/gotoki_no_joe/items/f5f265153c7bb995357d</id><title type="text">ABC267 A～E をHaskellで</title><updated>2022-09-04T18:33:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/f5f265153c7bb995357d"/></entry><entry><id>https://qiita.com/gotoki_no_joe/items/94daff1054a1937b66cc</id><title type="text">ABC258 A～E をHaskellで</title><updated>2022-09-03T19:24:58+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/94daff1054a1937b66cc"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-09-01T22:54:03.046+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+...</summary></entry><entry><id>https://qiita.com/algas/items/b8ad90051474322827eb</id><title type="text">Haskeller のための開発環境構築 on GitHub Codespaces</title><updated>2022-09-05T16:07:42+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/algas/items/b8ad90051474322827eb"/></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-09-01T22:54:03.046+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
@@ -174,49 +183,7 @@ less, lv, manコマンド終了時に画面をクリアしない
  引数を2つ足す関数(addtwo関数)
 引数を2つ足し算する関数を例に考えます。addtwoという名前の関数です。10、20という引数を2つ渡して、30という計算結果を得ることができます。『引数を2つ取って10,20を足し算する関数』をイメージしながら高階関数を作っていきたいと思います。
 addtwo :: Int -&amp;gt; Int -&amp;gt; Int
-addtwo a b = a + ...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/7cadae288bd311</id><title type="text">代表的な高階関数5選(Haskell)</title><updated>2022-05-24T00:45:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/7cadae288bd311"/><summary type="html">この記事では代表的な高階関数を５つご紹介します。関数内部の仕組み・使用例を中心にまとめていきたいと思います。
-
-
-
-関数名
-機能
-
-
-
-
-filter
-リストへ述語関数を適用、Trueになるモノを返却
-
-
-map
-リストへ関数を適用する
-
-
-zip/zipWith
-複数のリストを1つのリストへまとめる
-
-
-foldl/foldr
-リストを1つの値へまとめる
-
-
-scanl/scanr
-foldl/rの途中経過を残すver
-
-
-
-（基本的な高階関数の作り方についてはこちらの記事もご参照下さい。）
-（高階関数の読み解き方についてはこちらの記事でまとめています。）
-
- filter関数
-リスト...</summary></entry><entry><id>https://zenn.dev/masahiro_toba/articles/1cbea721782ecc</id><title type="text">高階関数とは？関数型〜基本的な作り方まで(Haskell)</title><updated>2022-05-23T13:36:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/masahiro_toba/articles/1cbea721782ecc"/><summary type="html">高階関数とは引数/戻り値として扱える関数のことですが、具体的な使い方が少しイメージしづらいですよね。関数型の基本からスタートして、高階関数の読み解きについて学んでいきたいと思います。（高階関数の読み解き方はこちら/代表的な高階関数についてはこちらからどうぞ）
-
- 関数の定義の基本
-まずは関数の基本からです。関数型とその読み方の基本を学びます。Haskellの関数は引数/戻り値がごっちゃで読みづらいですが、まずは基本のルールを覚えていきます。
-
- 関数型とは？
-関数型とは『ある型の引数を別の型へ変換する型』のことです。 Haskellでは関数にも型が付いています。
-関数名 :: 型 -&amp;g...</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2022/05/09/113715</id><title type="text">依存関係と階層構造の軛</title><updated>2022-05-09T12:36:23+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2022/05/09/113715"/><summary type="html">21世紀現在のプログラミング言語において、モジュールという機能はほぼ必要不可欠である。ソースコードを分割し、明示的な依存関係を指定する仕組みであるモジュールは、以下のような様々な恩恵をもたらす。 インクリメンタルビルド: モジュールごとにコンパイル結果を保存し、変更されていない部分を再コンパイルするのを防ぐ。 内部の隠蔽: 実装の詳細を隠蔽し、モジュール外から触れないようにする。プログラムの見通しをよくしたり、不正な操作をする機会を減らす。 アーキテクチャの整理: モジュールは他のモジュールを参照できるが、原則として相互参照はしない。依存の向きを定めることで、適切な抽象化と、 それに基づいた実…</summary></entry><entry><id>https://syocy.hatenablog.com/entry/nix-haskell</id><title type="text">NixによるHaskell開発環境の構築</title><updated>2022-04-13T01:45:49+09:00</updated><author><name>syocy</name></author><link href="https://syocy.hatenablog.com/entry/nix-haskell"/><summary type="html">Nix package manager によって Haskell のスクリプティングおよびパッケージ開発の環境構築をしていく。 こいついつも環境構築してんな ここで触れられないこと Nix スクリプティング ちゃんとした開発 haskell-language-server の導入 パッケージの設定 高度な依存関係オーバーライド トラブルシューティング nix-shell の立ち上がりが遅い cabal run で cabal 自体の出力を無視したい Mac で nix-env -i が失敗する Mac で channel が消滅する こいついつも環境構築してんな 環境構築以外はブログに書くよう…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2022/04/07/181838</id><title type="text">株式会社HERPに転職しました</title><updated>2022-04-07T18:18:38+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2022/04/07/181838"/><summary type="html">GitHubのプロフィールを見た人などはもしかしたら気づいているかもしれないが、Tsuru Capital LLCを退職し、2022年2月16日よりHERPの正社員となった。HERPは、大まかに言えば採用活動を管理するプラットフォームを提供している。 きっかけ Tsuru CapitalはKospi(韓国株のインデックス)のデリバティブを半自動取引する企業で、Haskellを使っているというのが最大の特徴として知られる謎多き会社だ。2015年に入社し、2022年まで6年以上働いた。流石に同じ職場にずっといると経験が偏ってしまうし、感覚としても飽きがきたので転職を考えた。 また、ある時期からRu…</summary></entry><entry><id>https://blog.miz-ar.info/2022/03/writing-type-level-programming-in-haskell/</id><title type="text">執筆中：「Haskellでの型レベルプログラミング」</title><updated>2022-03-29T12:03:28+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2022/03/writing-type-level-programming-in-haskell/"/><summary type="html">最近、「Haskellでの型レベルプログラミング」という「本」を執筆している。まだ完成ではないが、以下のリンクから読める： Haskellでの型レベルプログラミング なぜHaskellか 最近いろんな言語が出てきている中 [&amp;#8230;]</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-03-05-haskell-servant-and-websocket.html</id><title type="text">Haskell Servant + WebSocket で非同期ジョブを作る</title><updated>2022-03-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-03-05-haskell-servant-and-websocket.html"/></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/12/31/212410</id><title type="text">2021 年のアウトプットを全部一気に思い出す</title><updated>2021-12-31T21:24:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/12/31/212410"/><summary type="html">こんにちは、チェシャ猫です。2021 年中は大変お世話になりました。 今年もいくつか外部で発表を行いましたが、その中には登壇報告の形でこのブログに載せていなかったり、スライドとして公開していないものがあります。自分自身の記録も兼ねて、本記事では 2021 年のアウトプットを一覧としてアーカイブしておきたいと思います。 2021 年の活動実績 2021 年の登壇は 9 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 5 件 です。傾向として以前よりも LT の割合が少なくなり、比較的長尺の登壇がメインになりました。 CockroachDB から覗く型式手法の世界【CFP …</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/text-mono-traversable.html</id><title type="text">文字列型を抽象化するのにはmono-traversableパッケージがいいかも</title><updated>2021-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/text-mono-traversable.html"/><summary type="html">
+addtwo a b = a + ...</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2022/05/09/113715</id><title type="text">依存関係と階層構造の軛</title><updated>2022-05-09T12:36:23+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2022/05/09/113715"/><summary type="html">21世紀現在のプログラミング言語において、モジュールという機能はほぼ必要不可欠である。ソースコードを分割し、明示的な依存関係を指定する仕組みであるモジュールは、以下のような様々な恩恵をもたらす。 インクリメンタルビルド: モジュールごとにコンパイル結果を保存し、変更されていない部分を再コンパイルするのを防ぐ。 内部の隠蔽: 実装の詳細を隠蔽し、モジュール外から触れないようにする。プログラムの見通しをよくしたり、不正な操作をする機会を減らす。 アーキテクチャの整理: モジュールは他のモジュールを参照できるが、原則として相互参照はしない。依存の向きを定めることで、適切な抽象化と、 それに基づいた実…</summary></entry><entry><id>https://syocy.hatenablog.com/entry/nix-haskell</id><title type="text">NixによるHaskell開発環境の構築</title><updated>2022-04-13T01:45:49+09:00</updated><author><name>syocy</name></author><link href="https://syocy.hatenablog.com/entry/nix-haskell"/><summary type="html">Nix package manager によって Haskell のスクリプティングおよびパッケージ開発の環境構築をしていく。 こいついつも環境構築してんな ここで触れられないこと Nix スクリプティング ちゃんとした開発 haskell-language-server の導入 パッケージの設定 高度な依存関係オーバーライド トラブルシューティング nix-shell の立ち上がりが遅い cabal run で cabal 自体の出力を無視したい Mac で nix-env -i が失敗する Mac で channel が消滅する こいついつも環境構築してんな 環境構築以外はブログに書くよう…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2022/04/07/181838</id><title type="text">株式会社HERPに転職しました</title><updated>2022-04-07T18:18:38+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2022/04/07/181838"/><summary type="html">GitHubのプロフィールを見た人などはもしかしたら気づいているかもしれないが、Tsuru Capital LLCを退職し、2022年2月16日よりHERPの正社員となった。HERPは、大まかに言えば採用活動を管理するプラットフォームを提供している。 きっかけ Tsuru CapitalはKospi(韓国株のインデックス)のデリバティブを半自動取引する企業で、Haskellを使っているというのが最大の特徴として知られる謎多き会社だ。2015年に入社し、2022年まで6年以上働いた。流石に同じ職場にずっといると経験が偏ってしまうし、感覚としても飽きがきたので転職を考えた。 また、ある時期からRu…</summary></entry><entry><id>https://blog.miz-ar.info/2022/03/writing-type-level-programming-in-haskell/</id><title type="text">執筆中：「Haskellでの型レベルプログラミング」</title><updated>2022-03-29T12:03:28+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2022/03/writing-type-level-programming-in-haskell/"/><summary type="html">最近、「Haskellでの型レベルプログラミング」という「本」を執筆している。まだ完成ではないが、以下のリンクから読める： Haskellでの型レベルプログラミング なぜHaskellか 最近いろんな言語が出てきている中 [&amp;#8230;]</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-03-05-haskell-servant-and-websocket.html</id><title type="text">Haskell Servant + WebSocket で非同期ジョブを作る</title><updated>2022-03-05T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-03-05-haskell-servant-and-websocket.html"/></entry><entry><id>https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html</id><title type="text">GitHub の URL を自動で OGP 画像に置き換える</title><updated>2022-01-12T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-01-12-replace-ogimage.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/12/31/212410</id><title type="text">2021 年のアウトプットを全部一気に思い出す</title><updated>2021-12-31T21:24:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/12/31/212410"/><summary type="html">こんにちは、チェシャ猫です。2021 年中は大変お世話になりました。 今年もいくつか外部で発表を行いましたが、その中には登壇報告の形でこのブログに載せていなかったり、スライドとして公開していないものがあります。自分自身の記録も兼ねて、本記事では 2021 年のアウトプットを一覧としてアーカイブしておきたいと思います。 2021 年の活動実績 2021 年の登壇は 9 件でした。うち（先着や抽選ではなく）CFP に応募して採択されたものは 5 件 です。傾向として以前よりも LT の割合が少なくなり、比較的長尺の登壇がメインになりました。 CockroachDB から覗く型式手法の世界【CFP …</summary></entry><entry><id>https://haskell.jp/blog/posts/2021/text-mono-traversable.html</id><title type="text">文字列型を抽象化するのにはmono-traversableパッケージがいいかも</title><updated>2021-12-25T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2021/text-mono-traversable.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
