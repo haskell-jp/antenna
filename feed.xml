@@ -25,9 +25,8 @@ WSL2を含む（WSL1は不具合があった気がするので避けてくださ
 
 Windows (x64)
 
-Arm系CPU搭載のコンピューターを使っている場合は、別途LLVMが必要になる場合があります。...</summary></entry><entry><id>https://zenn.dev/k16/articles/c63a3933ffcfab</id><title type="text">Pandoc謹製シンタックスハイライト機構Skylighting</title><updated>2022-11-30T09:27:52+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k16/articles/c63a3933ffcfab"/><summary type="html">※書きかけです
-「コード片のシンタックスを解釈してキーワードなどをハイライトするツール」というと、おそらくPygmentsがもっとも有名でしょう。PygmentsはPython製で、同じくPython製のドキュメントシステムであるSphinxの内部でも使われています。pigmentize というコマンドとしても利用可能。RubyにもPygments gemというラッパーがあり、こちらはRe:VIEWの内部で使われてるようです。LaTeXにもPygmentsを利用したmintedというパッケージがあります。
-一方、ドキュメントシステムの世界にはPandocという怪物めいた代物がありますが、...</summary></entry><entry><id>https://zenn.dev/ryurock/articles/qiita-20130417-cf7e6e251add75578d3d</id><title type="text">pandocでmarkdownからredmineのwiki文法に変換する</title><updated>2022-11-28T02:34:44+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ryurock/articles/qiita-20130417-cf7e6e251add75578d3d"/><summary type="html">kobitoさんを使い始めてからmarkdownが使いやすくredmineのwiki文法に嫌気が刺したので変換できないか探してたらpandocに出会った
+Arm系CPU搭載のコンピューターを使っている場合は、別途LLVMが必要になる場合があります。...</summary></entry><entry><id>https://zenn.dev/k16/articles/c63a3933ffcfab</id><title type="text">Pandoc謹製シンタックスハイライト機構Skylighting</title><updated>2022-11-30T09:27:52+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k16/articles/c63a3933ffcfab"/><summary type="html">「コード片のシンタックスを解釈してキーワードなどをハイライトするツール」というと、おそらくPygmentsがもっとも有名でしょう。PygmentsはPython製で、同じくPython製のドキュメントシステムであるSphinxの内部でも使われています。pigmentize というコマンドとしても利用可能。RubyにもPygments gemというラッパーがあり、こちらはRe:VIEWの内部で使われてるようです。LaTeXにもPygmentsを利用したmintedというパッケージがあります。
+一方、ドキュメントシステムの世界にはPandocという怪物めいた代物がありますが、こちらではPyg...</summary></entry><entry><id>https://zenn.dev/ryurock/articles/qiita-20130417-cf7e6e251add75578d3d</id><title type="text">pandocでmarkdownからredmineのwiki文法に変換する</title><updated>2022-11-28T02:34:44+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ryurock/articles/qiita-20130417-cf7e6e251add75578d3d"/><summary type="html">kobitoさんを使い始めてからmarkdownが使いやすくredmineのwiki文法に嫌気が刺したので変換できないか探してたらpandocに出会った
 
  環境
 
