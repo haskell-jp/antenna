@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-12-25T18:35:14+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/naoya_ito/articles/50e79d637d55c3</id><title type="text">Haskell で Union-Find とクラスカルのアルゴリズム</title><updated>2022-12-25T18:35:14+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/naoya_ito/articles/50e79d637d55c3"/><summary type="html">Haskell で、優先度付きキューを使ったダイクストラ法 でダイクストラ法を実装したので、続けて最少全域木問題に取り組んでみようと思います。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2022-12-26T20:02:56+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/catminusminus/articles/64715088613417</id><title type="text">「作ってかんたんAlgebraic Effects」をRustに移植した</title><updated>2022-12-26T20:02:56+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/catminusminus/articles/64715088613417"/><summary type="html">
+ はじめに
+Algebraic Effectsについては以下の（素晴らしい）記事（というかPDF）を読んでほしい。
+https://nymphium.github.io/2022/09/17/作ってかんたんAlgebraic-Effects.html
+上のPDFではAlgebraic Effectsを備えた言語、λeffがHaskellで実装されている。
+ところで、こういうものはただ写経するのではなく、別の言語で写経（というか移植）してみるというのが理解に効果的という話がある（かもしれない）。
+そこで勉強のためRustに移植した[1]。
+https://github.com/Catmi...</summary></entry><entry><id>https://zenn.dev/naoya_ito/articles/50e79d637d55c3</id><title type="text">Haskell で Union-Find とクラスカルのアルゴリズム</title><updated>2022-12-25T18:35:14+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/naoya_ito/articles/50e79d637d55c3"/><summary type="html">Haskell で、優先度付きキューを使ったダイクストラ法 でダイクストラ法を実装したので、続けて最少全域木問題に取り組んでみようと思います。
 最少全域木問題といえばクラスカルのアルゴリズムです。以下に詳しい解説があります。
 
 最小全域木（クラスカル法とUnionFind） - アルゴリズム講習会
@@ -139,18 +146,7 @@ Mark P. Jones: Typing Haskell in Haskellという論文があります。この�
 GHCに付属するライブラリーだけで済んでしまう場合は ghc, ghci や runghc を直接使えば良いのですが、もう少し実用的なことをやるにはHackageで公開されたライブラリーを使うことになります。
 プロジェクトを作らずにライブラリーを使うにはグローバルな環境にインストールするという方法がありますが、グローバルな環境というのはいずれ管理しきれなくなることが目に見えてい...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/haskell-script</id><title type="text">Haskellでちょっとしたスクリプトを書く</title><updated>2022-11-17T03:19:50+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/haskell-script"/><summary type="html">Haskellで本格的に開発する際はcabalなりstackなりでプロジェクトを作るわけですが、ファイル一つで済むような（書き捨て）スクリプトをHaskellで書きたい場合があります。
 依存関係のないスクリプトであれば、普通にファイルを作って runghc/runhaskell すれば良いでしょう。しかし、Haskellには標準ライブラリー（base）以外にも「準標準」と呼べる外部のライブラリーが多数あり（例：bytestring, text, vector）、それらに明示的に依存することは runghc ではできません。
-そこで使えるのが、cabal scriptやstack scri...</summary></entry><entry><id>https://zenn.dev/catminusminus/articles/f88f04660787c2</id><title type="text">macOSでHaskell</title><updated>2022-10-30T16:35:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/catminusminus/articles/f88f04660787c2"/><summary type="html">
- はじめに
-本来ghcupを使えばghcもhlsもstackもいい感じになるはずっぽいが、どうしても上手くいかなかった。そこで上手くいくようにした方法を書く。
-
- ghcupのインストール
-https://www.haskell.org/ghcup/
-にある通りにインストールする。
-下の記事も参考になる。
-http://note.kurodigi.com/ghcup-install/
-
- stack.ymlの編集
-ghcupではGHC 9.4.2（等）をインストールして設定していたのに、stack new hogeしてcd hogeしてstack buildするとなぜかGHC 9.0....</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-10-27T16:11:17.486+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+そこで使えるのが、cabal scriptやstack scri...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-10-27T16:11:17.486+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
