@@ -54,7 +54,17 @@ sort = \case
 突然ですが Haskell でダイクストラ法を実装します。
 ダイクストラ法は重み付きグラフで最短経路問題を解くアルゴリズムのひとつです。ダイクストラ法 - Wikipedia に詳しい解説があります。
 ダイクストラ法は、重み付きグラフにおいて、その重みに負の値がない･･･つまり重みが正であることを前提にしています。この構造上の仮定によって、貪欲的手法を取ることができるのがその特徴で、結果ベルマン・フォード法などの汎用的なアルゴリズムよりも計算量的に有利になります。
-ダイク...</summary></entry><entry><id>https://zenn.dev/lotz/articles/c6daee9ab7edf3321110</id><title type="text">超関数型プログラミング</title><updated>2022-12-23T00:46:02+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/c6daee9ab7edf3321110"/><summary type="html">この記事はFOLIO Advent Calendar 2022の23日目です。
+ダイク...</summary></entry><entry><id>https://zenn.dev/f_sh_ee/articles/4f6c1742d94b5d</id><title type="text">UNI Langでゆにゆにしよう / Ook!派生言語のインタプリタをHaskellで実装してみた</title><updated>2022-12-23T15:38:55+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/f_sh_ee/articles/4f6c1742d94b5d"/><summary type="html">
+ はじめに
+「赤月ゆに[1]」というYouTuberをご存じでしょうか。私は存じ上げています。
+赤月ゆにさんへ想いを馳せる際には「ゆにゆに」することが慣例となっています(要出典)
+そこで、赤月ゆにさんへ想いを馳せながらチューリング完全なプログラムを実装できるプログラミング言語「UNI Lang」を開発しました。
+みなさんも使用して赤月ゆにさんへ想いを馳せてみませんか？
+
+ 概要
+
+source.uni
+ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに? ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに. ゆにゆ...</summary></entry><entry><id>https://zenn.dev/lotz/articles/c6daee9ab7edf3321110</id><title type="text">超関数型プログラミング</title><updated>2022-12-23T00:46:02+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/c6daee9ab7edf3321110"/><summary type="html">この記事はFOLIO Advent Calendar 2022の23日目です。
 
  ソフトウェア2.0
 ソフトウェア2.0 という新しいプログラミングのパラダイムがあります。これは Tesla 社のAIのシニアディレクターだった Andrej Karpathy が自身のブログ記事（&#34;Software 2.0&#34;）で提唱した概念で、 ニューラルネットワーク のような最適化を伴うプログラムを例に説明されています。
@@ -147,13 +157,7 @@ Algorithm W が、ボトムアップ、すなわち文脈自由であるのに�
 型付けができない...</summary></entry><entry><id>https://zenn.dev/ksrk/articles/5e4a6858c43d6f</id><title type="text">関数型言語の型推論①　Hindley-Milner型システム</title><updated>2022-11-25T08:45:35+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ksrk/articles/5e4a6858c43d6f"/><summary type="html">
  Damas-Milner 型システム
 Damas-Milner 型システムとは、一階の多相型を持つ、型の注釈を必要としないラムダ計算の型システムである。ブログタイトルでは、より一般的に使われる Hindley-Milner という名称を用いたが、本稿では Damas-Milner の名称を用いたい。というのも、本稿では Robin Milner と Luis Damas の共著論文&#34;Principal type-schemes for functional programs&#34;で示された、Algorithm W と呼ばれる型推論アルゴリズムを直接実装するからである。
-Damas-Mil...</summary></entry><entry><id>https://zenn.dev/ksrk/articles/e3ec05ea3d9809</id><title type="text">Haskellのレイアウトルールの実装</title><updated>2022-11-25T08:44:32+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ksrk/articles/e3ec05ea3d9809"/><summary type="html">
- 背景
- 個人的な目的で、関数型プログラミング言語を開発しており、Haskell に近い文法を実現するため、レイアウトルールやユーザ定義演算子の結合性解決などを実装した。実装を中心として説明をする。
-完成したコードはこちら：https://github.com/ksrky/plato-parser
-
- レイアウトルールとは
- Haskell プログラムではレイアウトに依存したコードを書くことで、ブレースやセミコロンを省略でき、その仕様を定めたものをレイアウト（またはオフサイド）ルールという。うまく説明できないので、ちゃんとした説明は Haskell2010 Language Repor...</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2022/11/23/205855</id><title type="text">CloudNative Days Tokyo 2022 に「謎は全て解けた！ 安楽椅子探偵に捧げる AWS ネットワーク分析入門」というタイトルで登壇してきました</title><updated>2022-11-23T20:58:55+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2022/11/23/205855"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された CloudNative Days Tokyo 2022 で、SMT ソルバを用いた AWS のネットワーク検査機能、VPC Rechability Analyzer と VPC Network Access Analyzer について話してきました。公募 CFP 枠です。 イベントサイトにて録画も視聴可能です。 event.cloudnativedays.jp 今回の登壇は「事前録画を提出」「当日リモートで登壇」「現地で登壇」のいずれの方式が選択可能だったのですが、自分は現地で登壇しました。 現地参加者全員が一つの部屋に集まる Keynote では…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-10-27T16:11:17.486+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+Damas-Mil...</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2022/11/23/205855</id><title type="text">CloudNative Days Tokyo 2022 に「謎は全て解けた！ 安楽椅子探偵に捧げる AWS ネットワーク分析入門」というタイトルで登壇してきました</title><updated>2022-11-23T20:58:55+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2022/11/23/205855"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された CloudNative Days Tokyo 2022 で、SMT ソルバを用いた AWS のネットワーク検査機能、VPC Rechability Analyzer と VPC Network Access Analyzer について話してきました。公募 CFP 枠です。 イベントサイトにて録画も視聴可能です。 event.cloudnativedays.jp 今回の登壇は「事前録画を提出」「当日リモートで登壇」「現地で登壇」のいずれの方式が選択可能だったのですが、自分は現地で登壇しました。 現地参加者全員が一つの部屋に集まる Keynote では…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-10-27T16:11:17.486+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
