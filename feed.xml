@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-03-05T10:46:06+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/gotoki_no_joe/items/afe9848a41470b251559</id><title type="text">ABC292 A～F をHaskellで</title><updated>2023-03-05T10:46:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/afe9848a41470b251559"/></entry><entry><id>https://zenn.dev/hiroshimraz/articles/8da1bcb9579f12</id><title type="text">ubuntu 22.04に GHCup と Visual Studio Code 拡張をセットアップするだけ</title><updated>2023-03-04T22:37:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hiroshimraz/articles/8da1bcb9579f12"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-03-07T13:06:21+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/eagle/articles/learn-haskell-from-ai</id><title type="text">Bing AIにHaskellを教わった</title><updated>2023-03-07T13:06:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eagle/articles/learn-haskell-from-ai"/><summary type="html">
+ 本記事について
+Bing AIにHaskellについて教わったので備忘録を残す。
+
+ Bing AIについて
+(2023/3/7時点)
+
+Bing AIは必要に応じてWebサイトの引用、項目の箇条書き、コード例、絵文字などを駆使して回答する（以下の内容は筆者が脚色しているわけではない）
+Bing AIとの会話はAIの回答6回までに制限されている
+Bing AIには3種類の会話スタイルがあり、今回は「バランス」型AIと会話した
+
+
+ 凡例
+
+「Bing AIに投げた質問」
+
+
+Bing AIからの回答
+
+
+
+筆者注
+AIとの会話に直接現れるものではないコメント
+
+
+
+
+ Bing AI...</summary></entry><entry><id>https://qiita.com/gotoki_no_joe/items/afe9848a41470b251559</id><title type="text">ABC292 A～F をHaskellで</title><updated>2023-03-05T10:46:06+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/afe9848a41470b251559"/></entry><entry><id>https://zenn.dev/hiroshimraz/articles/8da1bcb9579f12</id><title type="text">ubuntu 22.04に GHCup と Visual Studio Code 拡張をセットアップするだけ</title><updated>2023-03-04T22:37:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hiroshimraz/articles/8da1bcb9579f12"/><summary type="html">
  ubuntu 22.04に GHCup と Visual Studio Code 拡張をセットアップするだけ
 Haskellのpyenvやnodebrew的なもの?であるGHCupをubuntu22.04へセットアップするだけの記事です（Visual Studio Codeで使おうとしています）
 system-requirementsのあたりがubuntu22.04に合わせた対応を少しする必要がありました
@@ -177,11 +204,7 @@ sort = \case
  概要
 
 source.uni
-ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに? ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに. ゆにゆ...</summary></entry><entry><id>https://zenn.dev/lotz/articles/c6daee9ab7edf3321110</id><title type="text">超関数型プログラミング</title><updated>2022-12-23T00:46:02+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/c6daee9ab7edf3321110"/><summary type="html">この記事はFOLIO Advent Calendar 2022の23日目です。
-
- ソフトウェア2.0
-ソフトウェア2.0 という新しいプログラミングのパラダイムがあります。これは Tesla 社のAIのシニアディレクターだった Andrej Karpathy が自身のブログ記事（&#34;Software 2.0&#34;）で提唱した概念で、 ニューラルネットワーク のような最適化を伴うプログラムを例に説明されています。
-従来のプログラム（Software 1.0）は人間が命令に基づいたプログラムを作成し、望ましい挙動を行わせます。それに対してニューラルネットワークのようなプログラム（Software...</summary></entry><entry><id>https://syocy.hatenablog.com/entry/kiritanpo2022</id><title type="text">きりたんぽ鍋を作る</title><updated>2022-12-01T22:48:37+09:00</updated><author><name>syocy</name></author><link href="https://syocy.hatenablog.com/entry/kiritanpo2022"/><summary type="html">きりたんぽ鍋を作ります。 きりたんぽ鍋の具材 具材 きりたんぽ さいとうの比内地鶏スープ 鶏肉 ネギ ゴボウ マイタケ 糸コンニャク セリ 手順 鶏肉を手頃な大きさに切る。 鍋に水1200mlを張って火にかけ、鶏肉を水から煮始める。 ゴボウをささがきにしてボウルの水につける。 ゴボウをボウルから出して鍋に入れる。 比内地鶏スープを入れる。 沸騰したら糸コンニャクとマイタケを入れる。 20分ほど煮たらネギを入れる。 ネギに火が通ったあたりできりたんぽを入れる。 きりたんぽを煮る時間は好みで調節する(1～5分くらい?)。 最後にセリを投入する。湯気を通す程度でいい。 完成。 鶏肉とゴボウは水から …</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-12-01-octicons-for-elm.html</id><title type="text">Elm 用の Octicons パッケージを作る</title><updated>2022-12-01T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-12-01-octicons-for-elm.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/09/30/213008</id><title type="text">VPC Reachability Analyzer と形式手法</title><updated>2022-11-26T16:22:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/09/30/213008"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された AWS Dev Day Online Japan 2021 で、AWS の VPC Reachability Analyzer とそのバックエンドである Tiros について発表してきました。公募 CFP 枠です。 www.youtube.com 講演概要 このプレゼンの大きな目標は、VPC Reachability Analyzer のバックエンドである検査エンジン Tiros の論文 [Bac19] を解説することです。そのための道筋として、Section 1 で VPC Reachability Analyzer の機能を簡単に紹介した後、S…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2022/11/23/205855</id><title type="text">CloudNative Days Tokyo 2022 に「謎は全て解けた！ 安楽椅子探偵に捧げる AWS ネットワーク分析入門」というタイトルで登壇してきました</title><updated>2022-11-23T20:58:55+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2022/11/23/205855"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された CloudNative Days Tokyo 2022 で、SMT ソルバを用いた AWS のネットワーク検査機能、VPC Rechability Analyzer と VPC Network Access Analyzer について話してきました。公募 CFP 枠です。 イベントサイトにて録画も視聴可能です。 event.cloudnativedays.jp 今回の登壇は「事前録画を提出」「当日リモートで登壇」「現地で登壇」のいずれの方式が選択可能だったのですが、自分は現地で登壇しました。 現地参加者全員が一つの部屋に集まる Keynote では…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-10-27T16:11:17.486+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに? ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに! ゆにゆに. ゆにゆ...</summary></entry><entry><id>https://syocy.hatenablog.com/entry/kiritanpo2022</id><title type="text">きりたんぽ鍋を作る</title><updated>2022-12-01T22:48:37+09:00</updated><author><name>syocy</name></author><link href="https://syocy.hatenablog.com/entry/kiritanpo2022"/><summary type="html">きりたんぽ鍋を作ります。 きりたんぽ鍋の具材 具材 きりたんぽ さいとうの比内地鶏スープ 鶏肉 ネギ ゴボウ マイタケ 糸コンニャク セリ 手順 鶏肉を手頃な大きさに切る。 鍋に水1200mlを張って火にかけ、鶏肉を水から煮始める。 ゴボウをささがきにしてボウルの水につける。 ゴボウをボウルから出して鍋に入れる。 比内地鶏スープを入れる。 沸騰したら糸コンニャクとマイタケを入れる。 20分ほど煮たらネギを入れる。 ネギに火が通ったあたりできりたんぽを入れる。 きりたんぽを煮る時間は好みで調節する(1～5分くらい?)。 最後にセリを投入する。湯気を通す程度でいい。 完成。 鶏肉とゴボウは水から …</summary></entry><entry><id>https://matsubara0507.github.io/posts/2022-12-01-octicons-for-elm.html</id><title type="text">Elm 用の Octicons パッケージを作る</title><updated>2022-12-01T00:00:00Z</updated><author><name>matsubara0507</name></author><link href="https://matsubara0507.github.io/posts/2022-12-01-octicons-for-elm.html"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2021/09/30/213008</id><title type="text">VPC Reachability Analyzer と形式手法</title><updated>2022-11-26T16:22:10+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2021/09/30/213008"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された AWS Dev Day Online Japan 2021 で、AWS の VPC Reachability Analyzer とそのバックエンドである Tiros について発表してきました。公募 CFP 枠です。 www.youtube.com 講演概要 このプレゼンの大きな目標は、VPC Reachability Analyzer のバックエンドである検査エンジン Tiros の論文 [Bac19] を解説することです。そのための道筋として、Section 1 で VPC Reachability Analyzer の機能を簡単に紹介した後、S…</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2022/11/23/205855</id><title type="text">CloudNative Days Tokyo 2022 に「謎は全て解けた！ 安楽椅子探偵に捧げる AWS ネットワーク分析入門」というタイトルで登壇してきました</title><updated>2022-11-23T20:58:55+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2022/11/23/205855"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された CloudNative Days Tokyo 2022 で、SMT ソルバを用いた AWS のネットワーク検査機能、VPC Rechability Analyzer と VPC Network Access Analyzer について話してきました。公募 CFP 枠です。 イベントサイトにて録画も視聴可能です。 event.cloudnativedays.jp 今回の登壇は「事前録画を提出」「当日リモートで登壇」「現地で登壇」のいずれの方式が選択可能だったのですが、自分は現地で登壇しました。 現地参加者全員が一つの部屋に集まる Keynote では…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2022-10-27T16:11:17.486+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
