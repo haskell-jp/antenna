@@ -5,26 +5,34 @@
 
 packages:
 - completed:
-    hackage: drinkery-0.4@sha256:22eec9a0c918eef0558c58b42b32b0e74fa91b49310e7a7066d9948cd768b16e,1289
+    size: 9919
+    url: https://github.com/fumieval/drinkery/archive/091238b90ca617ff5676cec0ae4a8cb5f79d37e6.tar.gz
+    name: drinkery
+    version: '0.4'
+    sha256: ad89e310b36ea86d21923ea705138b85695da8c3d07a237551f5187714317bdb
     pantry-tree:
-      size: 737
-      sha256: 2ecbf162aa0d7416f3d5db140303ac72e4d190753843b909eae6d7f50cce52e7
+      size: 840
+      sha256: 4938013876453b7d2d2b06c527cbd3681329580a77f2ae42f24655f972b07f4e
   original:
-    hackage: drinkery-0.4
+    url: https://github.com/fumieval/drinkery/archive/091238b90ca617ff5676cec0ae4a8cb5f79d37e6.tar.gz
 - completed:
-    hackage: extensible-0.8.1@sha256:280840e31d92510b342d6a8d82d7af39cfd250194f9c26fca1d5cd406ee206f6,2946
+    size: 374222
+    url: https://github.com/fumieval/extensible/archive/4a1edb50c90d377085fcc3bad4c9f6e9d296b00e.tar.gz
+    name: extensible
+    version: '0.9'
+    sha256: 8005a29db91b0a67018162b69c913ddf722bdc527f5565caef2644f6ffcd0c95
     pantry-tree:
-      size: 2097
-      sha256: 49d78392bc6da683fe08b01b7e513b5eb471df1b8157616ca4d9dad0a9a23d3d
+      size: 2982
+      sha256: 77c619f82592a969dbb6a7f5e303063678feeb965b085b9c926e6887621521af
   original:
-    hackage: extensible-0.8.1
+    url: https://github.com/fumieval/extensible/archive/4a1edb50c90d377085fcc3bad4c9f6e9d296b00e.tar.gz
 - completed:
-    hackage: membership-0@sha256:3a11d8fd53cb1a76bb9273e6c929bbf9d649f109714bf487abb3143be04ddc81,995
+    hackage: membership-0.0.1@sha256:6c4d4ab6e3fb3253c6c670e8a63f74454dc91be50b9f292d0b1355792190aee5,999
     pantry-tree:
       size: 408
-      sha256: 3b593e0d14e848e318e745555776ebb25210e5e3dec4fde5d3c08ab51ceddc62
+      sha256: b918a1a207108313b2bf453b0d9aa65122d9845c4b360c8ade46d3429ff1107a
   original:
-    hackage: membership-0
+    hackage: membership-0.0.1
 - completed:
     hackage: incremental-0.3.1@sha256:9c697bae4f7e5ceb144bde13e03ca2f36b4bc2d0c92bbc02e0a604231ee279c2,1153
     pantry-tree:
@@ -33,47 +41,47 @@ packages:
   original:
     hackage: incremental-0.3.1
 - completed:
-    size: 69976
+    size: 70302
     subdir: lib/scrapbook-core
-    url: https://github.com/matsubara0507/scrapbook/archive/1839569c8ca1bb22c1f415b33dbee733e8f7e27c.tar.gz
+    url: https://github.com/matsubara0507/scrapbook/archive/9d39a5a90b0985c1e6ecd51809111116be6f6781.tar.gz
     name: scrapbook-core
-    version: 0.5.0
-    sha256: 6e9e988cfb5c0b3a2eef0e391b65d41fc72bec48ad1b9595801c1a3d748b7247
+    version: 0.6.0
+    sha256: 9473f9cc87c2cc80e9133b12423f73458e0961d07bd33d38992cc80d7054adf4
     pantry-tree:
       size: 1541
-      sha256: 7763401d03be3f5bc25c2e3b1d3fb7f73924a1fb7715b5574323db764c2752ed
+      sha256: e2160e8618b5fbbd2170bb8e7bbb0c0c5dd76c92e447792e93c1b086745d260d
   original:
     subdir: lib/scrapbook-core
-    url: https://github.com/matsubara0507/scrapbook/archive/1839569c8ca1bb22c1f415b33dbee733e8f7e27c.tar.gz
+    url: https://github.com/matsubara0507/scrapbook/archive/9d39a5a90b0985c1e6ecd51809111116be6f6781.tar.gz
 - completed:
-    size: 11913
+    size: 12123
     subdir: mix
-    url: https://github.com/matsubara0507/mix.hs/archive/75714be080db16f6a4f9d0a22e86947ffcdadc57.tar.gz
+    url: https://github.com/matsubara0507/mix.hs/archive/9bcd386526fe10a025a23e951c2de86b05129b17.tar.gz
     name: mix
     version: 0.1.1
-    sha256: c4aa501c544ab35a214e7b07f2f97fb19de644f48874c8d6838809bcf4d8edb9
+    sha256: e6ddd7f45a74d368fede8656194fbf1dd9928a903852500c3c2cd4985d821649
     pantry-tree:
-      size: 598
-      sha256: 689bed307dc233a6c50e01f00295a079dc40a4291700646f3ca423d714ba35fc
+      size: 663
+      sha256: c1ead54fea3c786e356dadde2301de201599c10e18bc0be32aa8a2e3569930aa
   original:
     subdir: mix
-    url: https://github.com/matsubara0507/mix.hs/archive/75714be080db16f6a4f9d0a22e86947ffcdadc57.tar.gz
+    url: https://github.com/matsubara0507/mix.hs/archive/9bcd386526fe10a025a23e951c2de86b05129b17.tar.gz
 - completed:
-    size: 11913
+    size: 12123
     subdir: mix-plugin-shell
-    url: https://github.com/matsubara0507/mix.hs/archive/75714be080db16f6a4f9d0a22e86947ffcdadc57.tar.gz
+    url: https://github.com/matsubara0507/mix.hs/archive/9bcd386526fe10a025a23e951c2de86b05129b17.tar.gz
     name: mix-plugin-shell
     version: 0.1.0
-    sha256: c4aa501c544ab35a214e7b07f2f97fb19de644f48874c8d6838809bcf4d8edb9
+    sha256: e6ddd7f45a74d368fede8656194fbf1dd9928a903852500c3c2cd4985d821649
     pantry-tree:
       size: 383
-      sha256: 7bbce9d5ea01f6432cecf3151b7c93751d508c0b28444436365eebda58f599d8
+      sha256: 2c30acc53ef040b03bdacf6275dc225c07f01a05fa67b5872b0fcf05c8e8b72c
   original:
     subdir: mix-plugin-shell
-    url: https://github.com/matsubara0507/mix.hs/archive/75714be080db16f6a4f9d0a22e86947ffcdadc57.tar.gz
+    url: https://github.com/matsubara0507/mix.hs/archive/9bcd386526fe10a025a23e951c2de86b05129b17.tar.gz
 snapshots:
 - completed:
-    size: 563100
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/17/0.yaml
-    sha256: e93a85871577ea3423d5f3454b2b6bd37c2c2123c79faf511dfb64f5b49a9f8b
-  original: lts-17.0
+    size: 573008
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2022/5/12.yaml
+    sha256: 2c73222c0a3fc8fa5a9df5de04038e402351652ea28b48604e15c36b693a168d
+  original: nightly-2022-05-12

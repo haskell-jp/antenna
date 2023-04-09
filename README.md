@@ -38,7 +38,7 @@ $ stack exec -- antenna sites.yaml
 ```
 $ stack --docker build -j 1 Cabal # if out of memory in docker
 $ stack --docker --local-bin-path=./bin install
-$ docker build -t haskelljp/antenna . --build-arg local_bin_path=./bin
+$ docker build -t ghcr.io/haskell-jp/antenna . --build-arg local_bin_path=./bin
 ```
 
 利用方法

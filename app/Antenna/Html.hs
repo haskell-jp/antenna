@@ -11,6 +11,7 @@ import qualified RIO.Text.Lazy                 as TL
 import           RIO.Time
 
 import           Antenna.Config
+import           Data.Time.Format.ISO8601 (iso8601ParseM)
 import qualified ScrapBook
 import           Text.Blaze.Html.Renderer.Text (renderHtml)
 import           Text.Blaze.Html5
@@ -99,5 +100,4 @@ formatTimeToDate =
 
 -- take 10 == take (length "2018-02-02")
 formatTimeFromRFC3339 :: String -> Maybe UTCTime
-formatTimeFromRFC3339 =
-  parseTimeM True defaultTimeLocale (iso8601DateFormat Nothing) . take 10
+formatTimeFromRFC3339 = iso8601ParseM . take 10
