@@ -27,7 +27,9 @@ default-extensions:
 executables:
   antenna:
     main: Main.hs
-    source-dirs: app
+    source-dirs:
+    - app
+    - lib
     dependencies:
     - blaze-html
     - cron
