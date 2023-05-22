@@ -4,13 +4,13 @@
 
 自己関手 T
 
-拡張演算子 (\_)^{*}
+拡張演算子 (\_)^{\#}
 
 自然変換 \eta
 
 
-拡張演算子は任意の f : X \rightarrow T Y について f^{*} : TX \rightarrow TY を割り当てます。f : X \rightarrow T Y という射の域（domain）X を TX に拡張しているわけです。
-拡張は f : X \rightarrow TY と g : Y \rightarrow T Z を合成するために必要です。このままでは f の余域（codomain）と g の域が等し...</summary></entry><entry><id>https://zenn.dev/naoya_ito/articles/f5a0b6bec96143</id><title type="text">tessoku-book A45 - Card Elimination の別解</title><updated>2023-05-16T21:31:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/naoya_ito/articles/f5a0b6bec96143"/><summary type="html">鉄則本こと「競技プログラミングの鉄則 | マイナビブックス」のA45 - Card Eliminationという問題に関して、考察したことを記しておきます。
+拡張演算子は任意の f : X \rightarrow T Y について f^{\#} : TX \rightarrow TY を割り当てます。f : X \rightarrow T Y という射の域（domain）X を TX に拡張しているわけです。
+拡張は f : X \rightarrow TY と g : Y \rightarrow T Z を合成するために必要です。このままでは f の余域（codomain）と g の域が...</summary></entry><entry><id>https://zenn.dev/naoya_ito/articles/f5a0b6bec96143</id><title type="text">tessoku-book A45 - Card Elimination の別解</title><updated>2023-05-16T21:31:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/naoya_ito/articles/f5a0b6bec96143"/><summary type="html">鉄則本こと「競技プログラミングの鉄則 | マイナビブックス」のA45 - Card Eliminationという問題に関して、考察したことを記しておきます。
 Google で検索してみましたが、あまり記事もヒットしなかったのでもし誰かの役に立てばと思い。
 
  ChatGPT による本記事の要約
