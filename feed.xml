@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-08-06T12:50:58+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/tttmmmyyyy/items/ddb1c44efd81e3fc2370</id><title type="text">HaskellとRustを足して2で割ったような関数型言語Fixを作っている話</title><updated>2023-08-06T12:50:58+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tttmmmyyyy/items/ddb1c44efd81e3fc2370"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2023/07/27/195634</id><title type="text">Developers Summit 2023 Summer でサーバーレスについて話してきました</title><updated>2023-07-27T19:56:34+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2023/07/27/195634"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された Developers Summit 2023 Summer で、サーバーレスコンピューティングの形式化について登壇してきました。公募 CFP 枠です。 event.shoeisha.jp 内容は Jangda et al. (2019) による論文 &#34;Formal Foundations of Serverless Computing&#34; を軸にしています。この論文はサーバーレスコンピューティングに対して操作的意味論の定式化を行うものであり、プログラミングの国際学会 OOPSLA &#39;19 の Distinguished Paper を受賞しています。…</summary></entry><entry><id>https://zenn.dev/rlysleepynick/articles/57af69fe20dcee</id><title type="text">2023年に Sublime Text で Haskell を書いていく</title><updated>2023-07-26T09:15:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/rlysleepynick/articles/57af69fe20dcee"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-08-06T18:53:06+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/4ergfbv547uezdf/articles/5428f6c6ba5a94</id><title type="text">HaskellでMQTTを使用する。</title><updated>2023-08-06T18:53:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/4ergfbv547uezdf/articles/5428f6c6ba5a94"/><summary type="html">
+ 概要
+HaskellでMQTT通信を行うためのライブラリとしてはnet-mqttがあります。このページにはサンプルコードがありますが整備されていないようでそのまま書いてもエラーが出て動かないかエラー解決しても通信がうまくできません。パケットキャプチャなどを多用しながら苦労してサンプルを動かしておきましたので残しておきます。MQTTの一般的な知識は適宜検索されてください。
+
+ ソフト環境
+
+
+
+名前
+バージョン
+
+
+
+
+OS
+Ubuntu 20.04
+
+
+
+package.xml:dependencies
+- base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5
+- byt...</summary></entry><entry><id>https://qiita.com/tttmmmyyyy/items/ddb1c44efd81e3fc2370</id><title type="text">HaskellとRustを足して2で割ったような関数型言語Fixを作っている話</title><updated>2023-08-06T12:50:58+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tttmmmyyyy/items/ddb1c44efd81e3fc2370"/></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2023/07/27/195634</id><title type="text">Developers Summit 2023 Summer でサーバーレスについて話してきました</title><updated>2023-07-27T19:56:34+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2023/07/27/195634"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された Developers Summit 2023 Summer で、サーバーレスコンピューティングの形式化について登壇してきました。公募 CFP 枠です。 event.shoeisha.jp 内容は Jangda et al. (2019) による論文 &#34;Formal Foundations of Serverless Computing&#34; を軸にしています。この論文はサーバーレスコンピューティングに対して操作的意味論の定式化を行うものであり、プログラミングの国際学会 OOPSLA &#39;19 の Distinguished Paper を受賞しています。…</summary></entry><entry><id>https://zenn.dev/rlysleepynick/articles/57af69fe20dcee</id><title type="text">2023年に Sublime Text で Haskell を書いていく</title><updated>2023-07-26T09:15:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/rlysleepynick/articles/57af69fe20dcee"/><summary type="html">
  まえがき
 うまくいかなかったのがなんとかうまくいったので共有します
 
@@ -251,18 +272,7 @@ import qualified Data.Vector.Unboxed as VU
  1. HLS が動かない
 エラー表示も、定義ジャンプも、型名表示すら無いままコンテストに挑みます。ひもじい気分を味わいます。
 
-...</summary></entry><entry><id>https://zenn.dev/toyboot4e/articles/setup-haskell-for-atcoder</id><title type="text">AtCoder 用 Haskell 逆引き (環境構築編)</title><updated>2023-02-19T08:55:46+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/toyboot4e/articles/setup-haskell-for-atcoder"/><summary type="html">
- この記事は
-AtCoder (Language Test 202001 環境) の環境構築逆引きです。とにかく動かしたい人向けとなります。最低限動作しますが、 正しい方法ではない と思いますのでご留意ください。指摘を頂けると助かります 🙏
-
- 環境構築 逆引き
-
- 1. Haskell をインストールしたい
-GHCup でインストールします。 GHCup 以外のパッケージマネジャでインストールした Haskell は、干渉するためアンインストールします。
-AtCoder 環境の Haskell は古いため気をつけます。
-
-GHC 8.8.3
-Language Test 202001 ...</summary></entry><entry><id>https://zenn.dev/osushi0x/articles/e5bd9fe60abee4</id><title type="text">Haskellでしゃくとり法を攻略する</title><updated>2023-02-16T11:04:45+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/osushi0x/articles/e5bd9fe60abee4"/><summary type="html">
+...</summary></entry><entry><id>https://zenn.dev/osushi0x/articles/e5bd9fe60abee4</id><title type="text">Haskellでしゃくとり法を攻略する</title><updated>2023-02-16T11:04:45+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/osushi0x/articles/e5bd9fe60abee4"/><summary type="html">
  はじめに
 しゃくとり法とは、数列や文字列などの連続部分列に関する問題を効率的に解くためのアルゴリズムです。しゃくとり法では、通常、左端と右端の2つのポインタを用意して、条件を満たす最大（または最小）の部分列を探索します。なるべく、コードの再利用性や可読性を重視して、ライブラリ化していきます。
 結論から言うと、(二項演算、逆演算、単位元)という構造で抽象化できます。
