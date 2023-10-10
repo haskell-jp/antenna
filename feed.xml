@@ -86,11 +86,7 @@ curl
 7.71.1
 
 
-...</summary></entry><entry><id>https://blog.miz-ar.info/2023/08/haskell-simd/</id><title type="text">Haskell/GHCのSIMDについて考える</title><updated>2023-08-17T13:35:53+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/08/haskell-simd/"/><summary type="html">最近のコンピューターの性能を活用するには、何らかの並列化が必須です。具体的にはSIMDの活用やマルチコア（それとGPU）です。プログラミング言語でこれらを利用できれば「C言語よりも速い」を名乗れます。この記事では並列化技 [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-8</id><title type="text">GHC 9.8の新機能</title><updated>2023-08-16T06:24:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-8"/><summary type="html">この記事の公開時点では、GHC 9.8.1-alpha2が出ています。試す方法は
-
-Haskellの環境構築2023 &amp;gt; 補遺：アルファ版・ベータ版のGHCを使う
-
-を参考にしてください。
+...</summary></entry><entry><id>https://blog.miz-ar.info/2023/08/haskell-simd/</id><title type="text">Haskell/GHCのSIMDについて考える</title><updated>2023-08-17T13:35:53+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/08/haskell-simd/"/><summary type="html">最近のコンピューターの性能を活用するには、何らかの並列化が必須です。具体的にはSIMDの活用やマルチコア（それとGPU）です。プログラミング言語でこれらを利用できれば「C言語よりも速い」を名乗れます。この記事では並列化技 [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-8</id><title type="text">GHC 9.8の新機能</title><updated>2023-08-16T06:24:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-8"/><summary type="html">GHC 9.8.1が2023年10月10日にリリースされました。
 この記事では、GHC 9.8の新機能を確認していきます。過去の類似の記事は
 
 GHC 9.2の新機能と、GHCの動向2021
@@ -102,7 +98,9 @@ GHC 9.6の新機能
 この記事は網羅的な紹介記事とはなっていません。是非、公式のリリースノート類も参照してください：
 
 
-2.1. Version 9.8.1 — Glasgow Haskell...</summary></entry><entry><id>https://zenn.dev/funnycat/articles/ed01baa91edeb3</id><title type="text">ReaderTパターンとThree Layer Haskell Cakeから学ぶPureScriptのアプリケーション設計</title><updated>2023-08-13T21:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/funnycat/articles/ed01baa91edeb3"/><summary type="html">
+2.1. Version 9.8.1 — Glasgow Haskell Compiler 9.8.1 User&#39;s Guide
+
+docs/users_guide/9.8.1-notes.rst · ...</summary></entry><entry><id>https://zenn.dev/funnycat/articles/ed01baa91edeb3</id><title type="text">ReaderTパターンとThree Layer Haskell Cakeから学ぶPureScriptのアプリケーション設計</title><updated>2023-08-13T21:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/funnycat/articles/ed01baa91edeb3"/><summary type="html">
  はじめに
 今回は、ReaderTパターンと、ReaderTパターンをベースとしたThree Layer Haskell Cakeという設計についてご紹介したいと思います。
 Three Layer Haskell Cake は Haskell が含まれているように元々は Haskell 向けの記事として書かれたものになります。
