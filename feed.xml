@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-11-24T20:10:30+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/kerupani129/items/949749926400ebbcfa9a</id><title type="text">「Haskellで書かれたおもしろいFizzBuzz」を再考する</title><updated>2023-11-24T20:10:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kerupani129/items/949749926400ebbcfa9a"/></entry><entry><id>https://zenn.dev/ken_okabe/articles/2023-11-24-referential-transparency</id><title type="text">サルでもわかる「参照透過性」</title><updated>2023-11-24T18:48:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/articles/2023-11-24-referential-transparency"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-11-26T06:48:59+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/kirke/articles/a9734aba26728c</id><title type="text">IHP(haskell)でルーティング追加してみた</title><updated>2023-11-26T06:48:59+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/a9734aba26728c"/><summary type="html">
+ IHPとは？
+僕も触りたてなのでchatGPTに聞いてみたです。
+IHP（Integrated Haskell Platform）は、Haskellプログラミング言語向けのウェブフレームワークです。Haskellは強力で型安全な静的型付けのプログラミング言語であり、IHPはこの言語を使用してウェブアプリケーションを開発するためのフレームワークとして提供されています。
+IHPは、以下の特徴を持っています：
+
+
+完全なスタックの統合: IHPはデータベースからフロントエンドまでの完全なスタックを統合しており、これによりアプリケーションの一貫性を高めます。
+
+
+型安全なテンプレート: Ha...</summary></entry><entry><id>https://zenn.dev/kirke/articles/4d2e9faa68509d</id><title type="text">Integrated Haskell Platform (Haskell)の環境構築</title><updated>2023-11-25T17:04:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/4d2e9faa68509d"/><summary type="html">
+ モチベーション
+
+Haskellを勉強したい
+でも、言語の勉強だけだと、実践的じゃないので、WEBフレームワークを使って何か作りたい
+IHPが良さそうだったので、環境構築手順をまとめる
+
+
+ 参照Github
+https://github.com/2814109/haskell-blog
+
+ 手順
+
+Nix Package Managerのインストール
+1-1. mac の場合、以下のコマンドを実行してください
+3. sh &amp;lt;(curl -L https://nixos.org/nix/install)
+
+IHPのインストール
+2-1. 以下コマンドを実行してください
+2-1-...</summary></entry><entry><id>https://qiita.com/kerupani129/items/949749926400ebbcfa9a</id><title type="text">「Haskellで書かれたおもしろいFizzBuzz」を再考する</title><updated>2023-11-24T20:10:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kerupani129/items/949749926400ebbcfa9a"/></entry><entry><id>https://zenn.dev/ken_okabe/articles/2023-11-24-referential-transparency</id><title type="text">サルでもわかる「参照透過性」</title><updated>2023-11-24T18:48:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/articles/2023-11-24-referential-transparency"/><summary type="html">
  Referential transparency for DUMMIES
 
  これは参照透過性（Referential transparency）を解説する記事です
@@ -247,40 +276,7 @@ docs/users_guide/9.8.1-notes.rst · ...</summary></entry><entry><id>https://zenn
 Three Layer Haskell Cake は Haskell が含まれているように元々は Haskell 向けの記事として書かれたものになります。
 しかしこの設計は PureScript にも転用することができます。
 実際、 readworld-halogen はこの設計です。
-冒頭に書いたように Three Layer Cake は ReaderTパターンを使っているため、先にReaderTパターンの話を...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/best-practices-for-haskell-project</id><title type="text">Haskellプロジェクトのベストプラクティス</title><updated>2023-08-08T05:27:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/best-practices-for-haskell-project"/><summary type="html">Haskellプロジェクトの「良い習慣」と考えられるやつをまとめてみます。あくまで私の個人的な意見です。
-
- プロジェクト固有のPrelude
-Prelude に相当するモジュールをプロジェクト独自に持っておくと便利ではないか、という話をします。代替Preludeの話ではありません。
-
- プロジェクト固有のPreludeがあると便利な理由
-理由の一つは、標準 Prelude の変化です。直近では次のような変化がありました：
-
-GHC 9.4: ~ 型演算子が追加（これまでは構文だった）
-GHC 9.6: liftA2 が追加
-GHC 9.10（見込み）: foldl&#39; が追加
-
-もっと昔...</summary></entry><entry><id>https://zenn.dev/4ergfbv547uezdf/articles/5428f6c6ba5a94</id><title type="text">HaskellでMQTTを使用する。</title><updated>2023-08-06T18:53:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/4ergfbv547uezdf/articles/5428f6c6ba5a94"/><summary type="html">
- 概要
-HaskellでMQTT通信を行うためのライブラリとしてはnet-mqttがあります。このページにはサンプルコードがありますが整備されていないようでそのまま書いてもエラーが出て動かないかエラー解決しても通信がうまくできません。パケットキャプチャなどを多用しながら苦労してサンプルを動かしておきましたので残しておきます。MQTTの一般的な知識は適宜検索されてください。
-
- ソフト環境
-
-
-
-名前
-バージョン
-
-
-
-
-OS
-Ubuntu 20.04
-
-
-
-package.xml:dependencies
-- base &amp;gt;= 4.7 &amp;amp;&amp;amp; &amp;lt; 5
-- byt...</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2023/07/27/195634</id><title type="text">Developers Summit 2023 Summer でサーバーレスについて話してきました</title><updated>2023-07-27T19:56:34+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2023/07/27/195634"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された Developers Summit 2023 Summer で、サーバーレスコンピューティングの形式化について登壇してきました。公募 CFP 枠です。 event.shoeisha.jp 内容は Jangda et al. (2019) による論文 &#34;Formal Foundations of Serverless Computing&#34; を軸にしています。この論文はサーバーレスコンピューティングに対して操作的意味論の定式化を行うものであり、プログラミングの国際学会 OOPSLA &#39;19 の Distinguished Paper を受賞しています。…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2019/03/21/172101</id><title type="text">特級シリアライズライブラリ、winery 1.0解禁</title><updated>2023-07-18T14:31:13+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2019/03/21/172101"/><summary type="html">fumieval.hatenablog.com あれから9ヶ月…wineryのバージョン1.0をついにリリースした。 前回までのあらすじ データの保存や通信に直列化は不可欠の概念である。 binaryなどの直列化ライブラリは、レコードのフィールド名などの情報が欠けており、構造が変わると互換性を持たせることができない。 一方、JSONやCBORなどのフォーマットで愚直にフィールド名などを残すと極めて冗長になり、時間・空間効率が悪い。 コード生成が前提のProtobufなどはHaskellの既存のデータ構造との相性がよくない。 そんな現状に殴り込みをかけたのがwineryだ。値を「スキーマ」と「デ…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2023/07/18/134910</id><title type="text">意地でも関心を分離する</title><updated>2023-07-18T13:49:10+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2023/07/18/134910"/><summary type="html">マイクロサービスアーキテクチャにおいて、ある構造化されたデータを、構造を維持したまま別のコンポーネントでも使いたくなる誘惑が存在する。 例えば、ドメインロジックを扱うコンポーネントに「ユーザーの種別（ゲスト、メンバー、管理者）」という概念があり、API トークンの認可情報に含めたいとして、APIトークンを管理するコンポーネントはその概念に関与すべきだろうか。 // 関与しない定義 IssueToken(userType: string, expiresAt: Date): Token // 関与する定義 enum UserType { Guest, Member, Admin, } Issue…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2023/06/08/175748</id><title type="text">リリースされていない変更が溜まるのを防ぐGitHub Action「tocenbough」</title><updated>2023-06-08T17:59:06+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2023/06/08/175748"/><summary type="html">チームでソフトウェア開発をするとき、一度のリリースに含まれる変更が多すぎることにより、動作検証に時間がかかったり、問題が発生した時の原因特定が難しくなることがある。これを防ぐため、tocenboughというGitHub Actionを作った。読み方はもちろん「とおせんぼう」だ。 github.com 内容は至ってシンプルで、前回のlatest releaseからのマージコミットの数を計算し、その数が閾値を上回ったら落ちるというだけのスクリプトである。かなり単純なので、動作を把握するにはソースを見てもらったほうが早いかもしれない。 # GitHubから最新のリリースのタグを取得する。これがプルリ…</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/02/windows-windows11.html</id><title type="text">[windows] Windows11セットアップ・設定項目のメモ</title><updated>2023-05-24T00:42:40.349+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/02/windows-windows11.html"/><summary type="text">スタートメニュー・タスクバーの設定 タスクバーの表示位置を「下」から「右」に変更するWindows 11 - タスクバーの位置を「上・右・左」に変更する方法＜＜以下、未了＞＞タスクバーの設定 小さいタスクバーボタンを使う：オン[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフタスクバーボタンを結合する「タスクバーに入りきらない場合」を選択タスクバーをすべての ディスプレイに表示する：オフシステムアイコンのオン／オフの切り替え入力インジケーター： オフ Quick Launcherを表示するクイック起動を復活するWindows 10 タスクバーにクイック起動を表示するスタートメニューにコントロールパネルを表示する「Windows 10」のコントロールパネルを表示する方法</summary></entry><entry><id>https://syocy.hatenablog.com/entry/2023/05/11/000226</id><title type="text">ローカルk8sの上に色んなサービスを立てて壊す</title><updated>2023-05-11T00:04:29+09:00</updated><author><name>syocy</name></author><link href="https://syocy.hatenablog.com/entry/2023/05/11/000226"/><summary type="html">ローカルに立ち上げた Kubernetes Dashboard モダンなサービス開発はとにかく入用のミドルウェアが多い。ちょっとしたものを作るだけで RDB と NoSQL とインメモリキャッシュと監視ダッシュボードが必要になってしまう。遠い記憶に RDB とキーバリューストアとキャッシュと検索とジョブキューをすべて MySQL にやらせていた牧歌的な時代もあったような気がするがもうそんな時代ではないのだった。 実際にサービスをデプロイする段ではなくローカルで開発するときにもそういったミドルウェアがないと開発自体が進まない。かと言って素の OS の上にミドルウェアを入れまくると設定ファイルディ…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2023-04-07T00:27:02.236+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
+冒頭に書いたように Three Layer Cake は ReaderTパターンを使っているため、先にReaderTパターンの話を...</summary></entry><entry><id>https://ccvanishing.hateblo.jp/entry/2023/07/27/195634</id><title type="text">Developers Summit 2023 Summer でサーバーレスについて話してきました</title><updated>2023-07-27T19:56:34+09:00</updated><author><name>y_taka_23</name></author><link href="https://ccvanishing.hateblo.jp/entry/2023/07/27/195634"/><summary type="html">こんにちは、チェシャ猫です。 先日開催された Developers Summit 2023 Summer で、サーバーレスコンピューティングの形式化について登壇してきました。公募 CFP 枠です。 event.shoeisha.jp 内容は Jangda et al. (2019) による論文 &#34;Formal Foundations of Serverless Computing&#34; を軸にしています。この論文はサーバーレスコンピューティングに対して操作的意味論の定式化を行うものであり、プログラミングの国際学会 OOPSLA &#39;19 の Distinguished Paper を受賞しています。…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2019/03/21/172101</id><title type="text">特級シリアライズライブラリ、winery 1.0解禁</title><updated>2023-07-18T14:31:13+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2019/03/21/172101"/><summary type="html">fumieval.hatenablog.com あれから9ヶ月…wineryのバージョン1.0をついにリリースした。 前回までのあらすじ データの保存や通信に直列化は不可欠の概念である。 binaryなどの直列化ライブラリは、レコードのフィールド名などの情報が欠けており、構造が変わると互換性を持たせることができない。 一方、JSONやCBORなどのフォーマットで愚直にフィールド名などを残すと極めて冗長になり、時間・空間効率が悪い。 コード生成が前提のProtobufなどはHaskellの既存のデータ構造との相性がよくない。 そんな現状に殴り込みをかけたのがwineryだ。値を「スキーマ」と「デ…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2023/07/18/134910</id><title type="text">意地でも関心を分離する</title><updated>2023-07-18T13:49:10+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2023/07/18/134910"/><summary type="html">マイクロサービスアーキテクチャにおいて、ある構造化されたデータを、構造を維持したまま別のコンポーネントでも使いたくなる誘惑が存在する。 例えば、ドメインロジックを扱うコンポーネントに「ユーザーの種別（ゲスト、メンバー、管理者）」という概念があり、API トークンの認可情報に含めたいとして、APIトークンを管理するコンポーネントはその概念に関与すべきだろうか。 // 関与しない定義 IssueToken(userType: string, expiresAt: Date): Token // 関与する定義 enum UserType { Guest, Member, Admin, } Issue…</summary></entry><entry><id>https://fumieval.hatenablog.com/entry/2023/06/08/175748</id><title type="text">リリースされていない変更が溜まるのを防ぐGitHub Action「tocenbough」</title><updated>2023-06-08T17:59:06+09:00</updated><author><name>Fumiaki Kinoshita</name></author><link href="https://fumieval.hatenablog.com/entry/2023/06/08/175748"/><summary type="html">チームでソフトウェア開発をするとき、一度のリリースに含まれる変更が多すぎることにより、動作検証に時間がかかったり、問題が発生した時の原因特定が難しくなることがある。これを防ぐため、tocenboughというGitHub Actionを作った。読み方はもちろん「とおせんぼう」だ。 github.com 内容は至ってシンプルで、前回のlatest releaseからのマージコミットの数を計算し、その数が閾値を上回ったら落ちるというだけのスクリプトである。かなり単純なので、動作を把握するにはソースを見てもらったほうが早いかもしれない。 # GitHubから最新のリリースのタグを取得する。これがプルリ…</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/02/windows-windows11.html</id><title type="text">[windows] Windows11セットアップ・設定項目のメモ</title><updated>2023-05-24T00:42:40.349+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/02/windows-windows11.html"/><summary type="text">スタートメニュー・タスクバーの設定 タスクバーの表示位置を「下」から「右」に変更するWindows 11 - タスクバーの位置を「上・右・左」に変更する方法＜＜以下、未了＞＞タスクバーの設定 小さいタスクバーボタンを使う：オン[スタート]ボタンを右クリックするかWindowsキー＋Xキーを押したときに表示されるメニューで、コマンドプロンプトをWindows PowerShellに置き換える：オフタスクバーボタンを結合する「タスクバーに入りきらない場合」を選択タスクバーをすべての ディスプレイに表示する：オフシステムアイコンのオン／オフの切り替え入力インジケーター： オフ Quick Launcherを表示するクイック起動を復活するWindows 10 タスクバーにクイック起動を表示するスタートメニューにコントロールパネルを表示する「Windows 10」のコントロールパネルを表示する方法</summary></entry><entry><id>https://syocy.hatenablog.com/entry/2023/05/11/000226</id><title type="text">ローカルk8sの上に色んなサービスを立てて壊す</title><updated>2023-05-11T00:04:29+09:00</updated><author><name>syocy</name></author><link href="https://syocy.hatenablog.com/entry/2023/05/11/000226"/><summary type="html">ローカルに立ち上げた Kubernetes Dashboard モダンなサービス開発はとにかく入用のミドルウェアが多い。ちょっとしたものを作るだけで RDB と NoSQL とインメモリキャッシュと監視ダッシュボードが必要になってしまう。遠い記憶に RDB とキーバリューストアとキャッシュと検索とジョブキューをすべて MySQL にやらせていた牧歌的な時代もあったような気がするがもうそんな時代ではないのだった。 実際にサービスをデプロイする段ではなくローカルで開発するときにもそういったミドルウェアがないと開発自体が進まない。かと言って素の OS の上にミドルウェアを入れまくると設定ファイルディ…</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2023-04-07T00:27:02.236+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
 
 主に自分向けの防備録です。windows10上で確認。インストーラーはここからDLする。
 
