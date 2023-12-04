@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-03T04:00:36+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/naoya_ito/articles/87a8a21d52c302</id><title type="text">Haskell の Array</title><updated>2023-12-03T04:00:36+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/naoya_ito/articles/87a8a21d52c302"/><summary type="html">Haskellのカレンダー | Advent Calendar 2023 - Qiita 3日目の記事です。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-03T23:16:29+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/kerupani129/items/ae54f242a56b934b40ec</id><title type="text">イマドキな Haskell で書かないもの: return, &gt;&gt;, forM_, mzero, mplus, `shiftL`, その他</title><updated>2023-12-03T23:16:29+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kerupani129/items/ae54f242a56b934b40ec"/></entry><entry><id>https://zenn.dev/naoya_ito/articles/87a8a21d52c302</id><title type="text">Haskell の Array</title><updated>2023-12-03T04:00:36+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/naoya_ito/articles/87a8a21d52c302"/><summary type="html">Haskellのカレンダー | Advent Calendar 2023 - Qiita 3日目の記事です。
 Haskell の Array (配列) について書こうと思います。Haskell の Array は索引が型クラスの Ix で抽象化されているため、特に配列の次元を拡張する際に柔軟性がありとても便利です。
 そんな便利な Array ですが、もともと Haskell はリスト操作が強力ということもあってか、既存の参考書をみても Array の解説はほんの少しにとどまっているか、解説がないことがほとんどです。
 Array が必要になる場面の多くは「リストだと  !! によるインデッ...</summary></entry><entry><id>https://zenn.dev/ken_okabe/articles/2023-12-03-functional-programming-from-scratch</id><title type="text">【告知】関数型プログラミング入門本をリリースしました〜Functional Programming From Scratch</title><updated>2023-12-02T19:36:07+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/articles/2023-12-03-functional-programming-from-scratch"/><summary type="html">
@@ -26,270 +26,290 @@ Haskellでは、プロパティベーステスト用のライブラリとして�
  
 v(t) = \lim\limits_{\Delta t -&amp;gt; 0} \dfrac {x(t+\frac {\Delta t}2)-x(t - \frac {\Delta t}2)}{\Delta t} 
 
-数学なら：f(x) = \lim\limits_{h -&amp;gt; 0} \dfrac {f(x+h)-f(x)}hですが、vの入力はx+hとxではなく、t + \frac {\Delta t}2...</summary></entry><entry><id>https://qiita.com/lesguillemets/items/cab7652cd243896c2b3e</id><title type="text">Reddit で振り返る今年の英語圏 Haskell 界隈の話題</title><updated>2023-12-01T00:15:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lesguillemets/items/cab7652cd243896c2b3e"/></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 5🔷 SAMPLE CODE</title><updated>2023-11-30T18:50:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5"/><summary type="html">🔎 この本の内容
+数学なら：f(x) = \lim\limits_{h -&amp;gt; 0} \dfrac {f(x+h)-f(x)}hですが、vの入力はx+hとxではなく、t + \frac {\Delta t}2...</summary></entry><entry><id>https://qiita.com/lesguillemets/items/cab7652cd243896c2b3e</id><title type="text">Reddit で振り返る今年の英語圏 Haskell 界隈の話題</title><updated>2023-12-01T00:15:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/lesguillemets/items/cab7652cd243896c2b3e"/></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 5🔷 SAMPLE CODE</title><updated>2023-11-30T18:50:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5"/><summary type="html">🔎 内容
 
-全UNIT 1 ~ 5のうち、この本は、UNIT 5です。
-
-1. OVERVIEW
-関数型プログラミングの一番「外側」を紹介
-関数型プログラミングとは何か？
-最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、関数型言語の紹介、オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal Engine（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
-TypeScriptとF#の開発環境のクイックスタート、セットアップ
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
-
-2. BASIC
-関数型プログラミングを成立させるための骨格となるパーツを紹介
-ファーストクラス関数 、 ラムダ式 、 高階関数 、 二項演算の結合性 、 関数合成 、 Monoid（モノイド）
-これがなければ関数型プログラミングは始まらないので理解は必須
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
-
-3. THEORY
-関数型プログラミングの根底にある理論にかなり深く踏み込む
-難解だと思われている 圏論（Category theory） も含め、特に興味がある読者向け
-著名な論文を引用しながらも、アプローチしやすい解説を試みる
-興味のない読者は無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
-
-4. APPLICATION
-THEORYの内容のまとめ
-Pipeline/List/Option/IO/Timeline/Async Monad を紹介
-Monadの実装、F#とTypeScriptを使って具体的なコードを書いていく
-最終的には ゼロからミニマルなFRPを構築 することを目指す
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
-
-★5. SAMPLE CODE
-サンプルコード（メンバーシップ）
-買い取り方式（月々の料金は発生しません）
-【特典】
-- GitHubのプライベートレポジトリへ招待
-- Issueを通じて著者へ質問自由
-- サンプルコードのリクエスト
-- その他、自由な情報交換
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
-
-■ UNIT 1は完全無料
-■ その他のUNITでは一部有料、多くの部分を無料公開中
-
-学生の読者にむけては、
-すべてのコンテンツが無料で提供されます。
-(サンプルコード・メンバーシップ含む)
-GitHubのプライベートレポジトリへ招待するので、
-GitHubアカウントをご用意していただき、
-GitHubのユーザネームか登録メールアドレスを教えてください。
-
-学校のドメインのEメールなど身分が簡単に確認しやすい手段でご連絡ください。
-kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 4🔷 APPLICATION</title><updated>2023-11-30T18:50:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4"/><summary type="html">🔎 この本の内容
-
-全UNIT 1 ~ 5のうち、この本は、UNIT 4です。
+全UNIT 1~5のうち、この本は、UNIT 5です
 
 1. OVERVIEW
 関数型プログラミングの一番「外側」を紹介
 関数型プログラミングとは何か？
-最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、関数型言語の紹介、オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal Engine（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
-TypeScriptとF#の開発環境のクイックスタート、セットアップ
+最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、
+オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
+TypeScriptとF#の開発環境のセットアップ
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
 
 2. BASIC
-関数型プログラミングを成立させるための骨格となるパーツを紹介
-ファーストクラス関数 、 ラムダ式 、 高階関数 、 二項演算の結合性 、 関数合成 、 Monoid（モノイド）
+関数型プログラミングの骨格となるパーツを紹介
+ファーストクラス関数・ラムダ式・高階関数・二項演算の結合性・関数合成・Monoid（モノイド）
 これがなければ関数型プログラミングは始まらないので理解は必須
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
 
 3. THEORY
-関数型プログラミングの根底にある理論にかなり深く踏み込む
-難解だと思われている 圏論（Category theory） も含め、特に興味がある読者向け
-著名な論文を引用しながらも、アプローチしやすい解説を試みる
-興味のない読者は無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
+関数型プログラミングの理論に深く踏み込む
+難解だと思われている 圏論（Category theory） も含め興味がある読者向け
+著名な論文を引用しながらアプローチしやすい解説
+無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
 
-★4. APPLICATION
-THEORYの内容のまとめ
+4. APPLICATION
 Pipeline/List/Option/IO/Timeline/Async Monad を紹介
-Monadの実装、F#とTypeScriptを使って具体的なコードを書いていく
-最終的には ゼロからミニマルなFRPを構築 することを目指す
+Monadの実装、F#とTypeScriptを使って具体的なコード
+ゼロからミニマルなFRPを構築 することを目指す
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
 
-5. SAMPLE CODE
+⭐5. SAMPLE CODE
 サンプルコード（メンバーシップ）
-買い取り方式（月々の料金は発生しません）
+買い取り（毎月料金は発生しない）
 【特典】
-- GitHubのプライベートレポジトリへ招待
-- Issueを通じて著者へ質問自由
-- サンプルコードのリクエスト
-- その他、自由な情報交換
+- GitHubのプライベートレポジトリ招待
+- 著者へ質問/自由な情報交換
+- サンプルコードリクエスト
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
 
-■ UNIT 1は完全無料
-■ その他のUNITでは一部有料、多くの部分を無料公開中
+✨UNIT 1は無料
+✨その他UNITでは一部有料、多くは無料公開
 
-学生の読者にむけては、
-すべてのコンテンツが無料で提供されます。
+🎅リリース記念強化月間🎄年末特別企画開催中
+🎁全てのコンテンツを無料提供！
+今月12月中に本書レビューできる読者を募集
+- Zennでレビュー記事を書ける人
+- Xアカウント活動履歴が確認できる人
+- プログラマとしての経験は問いません
+詳細はXアカウントを添えてお問い合わせください
+
+🧑🏻‍🎓学生の読者も全コンテンツを無料で提供
 (サンプルコード・メンバーシップ含む)
-GitHubのプライベートレポジトリへ招待するので、
-GitHubアカウントをご用意していただき、
-GitHubのユーザネームか登録メールアドレスを教えてください。
+プライベートレポジトリへ招待の為のGitHubユーザネームを
+学校ドメインのメールなど身分確認しやすい手段でご連絡ください
 
-学校のドメインのEメールなど身分が簡単に確認しやすい手段でご連絡ください。
 kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 3🔷 THEORY</title><updated>2023-11-30T18:50:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3"/><summary type="html">🔎 この本の内容
+https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 4🔷 APPLICATION</title><updated>2023-11-30T18:50:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4"/><summary type="html">🔎 内容
 
-全UNIT 1 ~ 5のうち、この本は、UNIT 3です。
+全UNIT 1~5のうち、この本は、UNIT 4です
 
 1. OVERVIEW
 関数型プログラミングの一番「外側」を紹介
 関数型プログラミングとは何か？
-最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、関数型言語の紹介、オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal Engine（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
-TypeScriptとF#の開発環境のクイックスタート、セットアップ
+最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、
+オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
+TypeScriptとF#の開発環境のセットアップ
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
 
 2. BASIC
-関数型プログラミングを成立させるための骨格となるパーツを紹介
-ファーストクラス関数 、 ラムダ式 、 高階関数 、 二項演算の結合性 、 関数合成 、 Monoid（モノイド）
+関数型プログラミングの骨格となるパーツを紹介
+ファーストクラス関数・ラムダ式・高階関数・二項演算の結合性・関数合成・Monoid（モノイド）
 これがなければ関数型プログラミングは始まらないので理解は必須
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
 
-★3. THEORY
-関数型プログラミングの根底にある理論にかなり深く踏み込む
-難解だと思われている 圏論（Category theory） も含め、特に興味がある読者向け
-著名な論文を引用しながらも、アプローチしやすい解説を試みる
-興味のない読者は無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
+3. THEORY
+関数型プログラミングの理論に深く踏み込む
+難解だと思われている 圏論（Category theory） も含め興味がある読者向け
+著名な論文を引用しながらアプローチしやすい解説
+無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
 
-4. APPLICATION
-THEORYの内容のまとめ
+⭐4. APPLICATION
 Pipeline/List/Option/IO/Timeline/Async Monad を紹介
-Monadの実装、F#とTypeScriptを使って具体的なコードを書いていく
-最終的には ゼロからミニマルなFRPを構築 することを目指す
+Monadの実装、F#とTypeScriptを使って具体的なコード
+ゼロからミニマルなFRPを構築 することを目指す
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
 
 5. SAMPLE CODE
 サンプルコード（メンバーシップ）
-買い取り方式（月々の料金は発生しません）
+買い取り（毎月料金は発生しない）
 【特典】
-- GitHubのプライベートレポジトリへ招待
-- Issueを通じて著者へ質問自由
-- サンプルコードのリクエスト
-- その他、自由な情報交換
+- GitHubのプライベートレポジトリ招待
+- 著者へ質問/自由な情報交換
+- サンプルコードリクエスト
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
 
-■ UNIT 1は完全無料
-■ その他のUNITでは一部有料、多くの部分を無料公開中
+✨UNIT 1は無料
+✨その他UNITでは一部有料、多くは無料公開
 
-学生の読者にむけては、
-すべてのコンテンツが無料で提供されます。
+🎅リリース記念強化月間🎄年末特別企画開催中
+🎁全てのコンテンツを無料提供！
+今月12月中に本書レビューできる読者を募集
+- Zennでレビュー記事を書ける人
+- Xアカウント活動履歴が確認できる人
+- プログラマとしての経験は問いません
+詳細はXアカウントを添えてお問い合わせください
+
+🧑🏻‍🎓学生の読者も全コンテンツを無料で提供
 (サンプルコード・メンバーシップ含む)
-GitHubのプライベートレポジトリへ招待するので、
-GitHubアカウントをご用意していただき、
-GitHubのユーザネームか登録メールアドレスを教えてください。
+プライベートレポジトリへ招待の為のGitHubユーザネームを
+学校ドメインのメールなど身分確認しやすい手段でご連絡ください
 
-学校のドメインのEメールなど身分が簡単に確認しやすい手段でご連絡ください。
 kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 2🔷 BASIC</title><updated>2023-11-30T18:50:23+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2"/><summary type="html">🔎 この本の内容
+https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 3🔷 THEORY</title><updated>2023-11-30T18:50:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3"/><summary type="html">🔎 内容
 
-全UNIT 1 ~ 5のうち、この本は、UNIT 2です。
+全UNIT 1~5のうち、この本は、UNIT 3です
 
 1. OVERVIEW
 関数型プログラミングの一番「外側」を紹介
 関数型プログラミングとは何か？
-最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、関数型言語の紹介、オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal Engine（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
-TypeScriptとF#の開発環境のクイックスタート、セットアップ
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
-
-★2. BASIC
-関数型プログラミングを成立させるための骨格となるパーツを紹介
-ファーストクラス関数 、 ラムダ式 、 高階関数 、 二項演算の結合性 、 関数合成 、 Monoid（モノイド）
-これがなければ関数型プログラミングは始まらないので理解は必須
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
-
-3. THEORY
-関数型プログラミングの根底にある理論にかなり深く踏み込む
-難解だと思われている 圏論（Category theory） も含め、特に興味がある読者向け
-著名な論文を引用しながらも、アプローチしやすい解説を試みる
-興味のない読者は無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
-
-4. APPLICATION
-THEORYの内容のまとめ
-Pipeline/List/Option/IO/Timeline/Async Monad を紹介
-Monadの実装、F#とTypeScriptを使って具体的なコードを書いていく
-最終的には ゼロからミニマルなFRPを構築 することを目指す
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
-
-5. SAMPLE CODE
-サンプルコード（メンバーシップ）
-買い取り方式（月々の料金は発生しません）
-【特典】
-- GitHubのプライベートレポジトリへ招待
-- Issueを通じて著者へ質問自由
-- サンプルコードのリクエスト
-- その他、自由な情報交換
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
-
-■ UNIT 1は完全無料
-■ その他のUNITでは一部有料、多くの部分を無料公開中
-
-学生の読者にむけては、
-すべてのコンテンツが無料で提供されます。
-(サンプルコード・メンバーシップ含む)
-GitHubのプライベートレポジトリへ招待するので、
-GitHubアカウントをご用意していただき、
-GitHubのユーザネームか登録メールアドレスを教えてください。
-
-学校のドメインのEメールなど身分が簡単に確認しやすい手段でご連絡ください。
-kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 1🔷 OVERVIEW</title><updated>2023-11-30T18:50:22+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1"/><summary type="html">🔎 この本の内容
-
-全UNIT 1 ~ 5のうち、この本は、UNIT 1です。
-
-★1. OVERVIEW
-関数型プログラミングの一番「外側」を紹介
-関数型プログラミングとは何か？
-最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、関数型言語の紹介、オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal Engine（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
-TypeScriptとF#の開発環境のクイックスタート、セットアップ
+最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、
+オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
+TypeScriptとF#の開発環境のセットアップ
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
 
 2. BASIC
-関数型プログラミングを成立させるための骨格となるパーツを紹介
-ファーストクラス関数 、 ラムダ式 、 高階関数 、 二項演算の結合性 、 関数合成 、 Monoid（モノイド）
+関数型プログラミングの骨格となるパーツを紹介
+ファーストクラス関数・ラムダ式・高階関数・二項演算の結合性・関数合成・Monoid（モノイド）
 これがなければ関数型プログラミングは始まらないので理解は必須
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
 
-3. THEORY
-関数型プログラミングの根底にある理論にかなり深く踏み込む
-難解だと思われている 圏論（Category theory） も含め、特に興味がある読者向け
-著名な論文を引用しながらも、アプローチしやすい解説を試みる
-興味のない読者は無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
+⭐3. THEORY
+関数型プログラミングの理論に深く踏み込む
+難解だと思われている 圏論（Category theory） も含め興味がある読者向け
+著名な論文を引用しながらアプローチしやすい解説
+無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
 
 4. APPLICATION
-THEORYの内容のまとめ
 Pipeline/List/Option/IO/Timeline/Async Monad を紹介
-Monadの実装、F#とTypeScriptを使って具体的なコードを書いていく
-最終的には ゼロからミニマルなFRPを構築 することを目指す
+Monadの実装、F#とTypeScriptを使って具体的なコード
+ゼロからミニマルなFRPを構築 することを目指す
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
 
 5. SAMPLE CODE
 サンプルコード（メンバーシップ）
-買い取り方式（月々の料金は発生しません）
+買い取り（毎月料金は発生しない）
 【特典】
-- GitHubのプライベートレポジトリへ招待
-- Issueを通じて著者へ質問自由
-- サンプルコードのリクエスト
-- その他、自由な情報交換
+- GitHubのプライベートレポジトリ招待
+- 著者へ質問/自由な情報交換
+- サンプルコードリクエスト
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
 
-■ UNIT 1は完全無料
-■ その他のUNITでは一部有料、多くの部分を無料公開中
+✨UNIT 1は無料
+✨その他UNITでは一部有料、多くは無料公開
 
-学生の読者にむけては、
-すべてのコンテンツが無料で提供されます。
+🎅リリース記念強化月間🎄年末特別企画開催中
+🎁全てのコンテンツを無料提供！
+今月12月中に本書レビューできる読者を募集
+- Zennでレビュー記事を書ける人
+- Xアカウント活動履歴が確認できる人
+- プログラマとしての経験は問いません
+詳細はXアカウントを添えてお問い合わせください
+
+🧑🏻‍🎓学生の読者も全コンテンツを無料で提供
 (サンプルコード・メンバーシップ含む)
-GitHubのプライベートレポジトリへ招待するので、
-GitHubアカウントをご用意していただき、
-GitHubのユーザネームか登録メールアドレスを教えてください。
+プライベートレポジトリへ招待の為のGitHubユーザネームを
+学校ドメインのメールなど身分確認しやすい手段でご連絡ください
 
-学校のドメインのEメールなど身分が簡単に確認しやすい手段でご連絡ください。
+kentutorialbook@gmail.com
+https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 2🔷 BASIC</title><updated>2023-11-30T18:50:23+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2"/><summary type="html">🔎 内容
+
+全UNIT 1~5のうち、この本は、UNIT 2です
+
+1. OVERVIEW
+関数型プログラミングの一番「外側」を紹介
+関数型プログラミングとは何か？
+最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、
+オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
+TypeScriptとF#の開発環境のセットアップ
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
+
+⭐2. BASIC
+関数型プログラミングの骨格となるパーツを紹介
+ファーストクラス関数・ラムダ式・高階関数・二項演算の結合性・関数合成・Monoid（モノイド）
+これがなければ関数型プログラミングは始まらないので理解は必須
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
+
+3. THEORY
+関数型プログラミングの理論に深く踏み込む
+難解だと思われている 圏論（Category theory） も含め興味がある読者向け
+著名な論文を引用しながらアプローチしやすい解説
+無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
+
+4. APPLICATION
+Pipeline/List/Option/IO/Timeline/Async Monad を紹介
+Monadの実装、F#とTypeScriptを使って具体的なコード
+ゼロからミニマルなFRPを構築 することを目指す
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
+
+5. SAMPLE CODE
+サンプルコード（メンバーシップ）
+買い取り（毎月料金は発生しない）
+【特典】
+- GitHubのプライベートレポジトリ招待
+- 著者へ質問/自由な情報交換
+- サンプルコードリクエスト
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
+
+✨UNIT 1は無料
+✨その他UNITでは一部有料、多くは無料公開
+
+🎅リリース記念強化月間🎄年末特別企画開催中
+🎁全てのコンテンツを無料提供！
+今月12月中に本書レビューできる読者を募集
+- Zennでレビュー記事を書ける人
+- Xアカウント活動履歴が確認できる人
+- プログラマとしての経験は問いません
+詳細はXアカウントを添えてお問い合わせください
+
+🧑🏻‍🎓学生の読者も全コンテンツを無料で提供
+(サンプルコード・メンバーシップ含む)
+プライベートレポジトリへ招待の為のGitHubユーザネームを
+学校ドメインのメールなど身分確認しやすい手段でご連絡ください
+
+kentutorialbook@gmail.com
+https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 1🔷 OVERVIEW</title><updated>2023-11-30T18:50:22+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1"/><summary type="html">🔎 内容
+
+全UNIT 1~5のうち、この本は、UNIT 1です
+
+⭐1. OVERVIEW
+関数型プログラミングの一番「外側」を紹介
+関数型プログラミングとは何か？
+最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、
+オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
+TypeScriptとF#の開発環境のセットアップ
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
+
+2. BASIC
+関数型プログラミングの骨格となるパーツを紹介
+ファーストクラス関数・ラムダ式・高階関数・二項演算の結合性・関数合成・Monoid（モノイド）
+これがなければ関数型プログラミングは始まらないので理解は必須
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
+
+3. THEORY
+関数型プログラミングの理論に深く踏み込む
+難解だと思われている 圏論（Category theory） も含め興味がある読者向け
+著名な論文を引用しながらアプローチしやすい解説
+無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
+
+4. APPLICATION
+Pipeline/List/Option/IO/Timeline/Async Monad を紹介
+Monadの実装、F#とTypeScriptを使って具体的なコード
+ゼロからミニマルなFRPを構築 することを目指す
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
+
+5. SAMPLE CODE
+サンプルコード（メンバーシップ）
+買い取り（毎月料金は発生しない）
+【特典】
+- GitHubのプライベートレポジトリ招待
+- 著者へ質問/自由な情報交換
+- サンプルコードリクエスト
+https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
+
+✨UNIT 1は無料
+✨その他UNITでは一部有料、多くは無料公開
+
+🎅リリース記念強化月間🎄年末特別企画開催中
+🎁全てのコンテンツを無料提供！
+今月12月中に本書レビューできる読者を募集
+- Zennでレビュー記事を書ける人
+- Xアカウント活動履歴が確認できる人
+- プログラマとしての経験は問いません
+詳細はXアカウントを添えてお問い合わせください
+
+🧑🏻‍🎓学生の読者も全コンテンツを無料で提供
+(サンプルコード・メンバーシップ含む)
+プライベートレポジトリへ招待の為のGitHubユーザネームを
+学校ドメインのメールなど身分確認しやすい手段でご連絡ください
+
 kentutorialbook@gmail.com
 https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://qiita.com/gotoki_no_joe/items/1e27eec72f60464a51f9</id><title type="text">ABC330 A～F をHaskellで</title><updated>2023-11-30T00:09:23+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/1e27eec72f60464a51f9"/></entry><entry><id>https://qiita.com/kerupani129/items/d71c4bc34a0dd1f86231</id><title type="text">[Haskell] インデントおよび改行のスタイルガイド</title><updated>2023-11-29T19:42:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kerupani129/items/d71c4bc34a0dd1f86231"/></entry><entry><id>https://zenn.dev/kirke/articles/739681d6acd3c5</id><title type="text">IHP(Haskell)でGUIベースのスキーマデザイナーを使ってCRUDを５分で作ってみる</title><updated>2023-11-26T17:37:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/739681d6acd3c5"/><summary type="html">
  はじめに
@@ -335,7 +355,7 @@ Nix Package Managerのインストール
 
 IHPのインストール
 2-1. 以下コマンドを実行してください
-2-1-...</summary></entry><entry><id>https://qiita.com/kerupani129/items/949749926400ebbcfa9a</id><title type="text">「Haskellで書かれたおもしろいFizzBuzz」を再考する</title><updated>2023-11-24T20:10:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kerupani129/items/949749926400ebbcfa9a"/></entry><entry><id>https://zenn.dev/ken_okabe/articles/2023-11-24-monad-at-glance</id><title type="text">🤩 ひと目でわかる FunctorとMonad ~ UNIT3 THEORYの概要をプレビュー</title><updated>2023-11-24T09:12:35+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/articles/2023-11-24-monad-at-glance"/><summary type="html">この記事は、
+2-1-...</summary></entry><entry><id>https://zenn.dev/ken_okabe/articles/2023-11-24-monad-at-glance</id><title type="text">🤩 ひと目でわかる FunctorとMonad ~ UNIT3 THEORYの概要をプレビュー</title><updated>2023-11-24T09:12:35+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/articles/2023-11-24-monad-at-glance"/><summary type="html">この記事は、
 2023-12-1以降に順次 、Zennで公開予定
 関数型プログラミングの入門本
 Functional Programming From Scratch
