@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-07T00:34:41+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/mod_poppo/articles/generalizing-zip</id><title type="text">Haskellのzip関数を一般化すると何になるか</title><updated>2023-12-07T00:34:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/generalizing-zip"/><summary type="html">この記事は Haskell Advent Calendar 2023 の7日目の記事です。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-08T07:03:29+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/At-sushi/items/4e9d02b98d02d732ebba</id><title type="text">以前の記事で書いたHaskellの再帰関数をStateモナドを使ってちゃんと書き直してみる</title><updated>2023-12-08T07:03:29+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/At-sushi/items/4e9d02b98d02d732ebba"/></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-brainfuck</id><title type="text">HaskellでBrainfuckを実装してみる(番外編)</title><updated>2023-12-07T13:31:07+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-brainfuck"/><summary type="html">
+ はじめに
+最近投稿できなかったのですが、Haskellはちまちま触っていました。
+その中でSNS上でBrainfuckというプログラミング言語のインタープリターを書いている方がいて、なんだこれは・・・と思い調べてみました。
+https://ja.wikibooks.org/wiki/Brainfuck#:~:text=Brainfuckは、 Urban Müllerによって,もしくは「.bf」です。
+その方曰く「Brainfuckでプログラムを書くのは大変だが、Brainfuckのインタープリターを書くのは比較的簡単」とのことだったので、自分もHaskellの勉強もかねて作成してみま...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/generalizing-zip</id><title type="text">Haskellのzip関数を一般化すると何になるか</title><updated>2023-12-07T00:34:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/generalizing-zip"/><summary type="html">この記事は Haskell Advent Calendar 2023 の7日目の記事です。
 
  zip関数について
 Haskellには zip 関数というものがあります。この関数は、2つのリストを受け取って、それぞれから取り出した要素を組にしたリストを返します。
@@ -321,7 +326,7 @@ https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
 学校ドメインのメールなど身分確認しやすい手段でご連絡ください
 
 kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://qiita.com/gotoki_no_joe/items/1e27eec72f60464a51f9</id><title type="text">ABC330 A～F をHaskellで</title><updated>2023-11-30T00:09:23+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/1e27eec72f60464a51f9"/></entry><entry><id>https://zenn.dev/kirke/articles/739681d6acd3c5</id><title type="text">IHP(Haskell)でGUIベースのスキーマデザイナーを使ってCRUDを５分で作ってみる</title><updated>2023-11-26T17:37:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/739681d6acd3c5"/><summary type="html">
+https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/kirke/articles/739681d6acd3c5</id><title type="text">IHP(Haskell)でGUIベースのスキーマデザイナーを使ってCRUDを５分で作ってみる</title><updated>2023-11-26T17:37:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/739681d6acd3c5"/><summary type="html">
  はじめに
 IHPを使ってWEB開発をしようと公式ドキュメントを見ていたところ、GUIで簡単にスキーマ定義やDBマイグレーションができたのでまとめてみたいと思います。
 
@@ -450,23 +455,7 @@ solve list = foldr1 (*) list
 
 main = do
     input &amp;lt;- getLine
-    let list = map ...</summary></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-part2-intro</id><title type="text">Haskellで競技プログラミングがしたい！Part2 練習問題を解く(1~3問目)</title><updated>2023-11-12T13:55:23+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-part2-intro"/><summary type="html">
- はじめに
-以下のリンクに、アルゴリズム×数学の練習問題があります。
-今回はまず1~3問目について回答してみましょう。
-https://atcoder.jp/contests/math-and-algorithm/tasks
-
- 1問目
-
- 問題
-りんごが 5 個あり、みかんが N 個あります。
-整数 N が与えられるので、りんごとみかんを合わせて何個あるかを出力するプログラムを作成してください。
-
- 解答
-main = do
-    input &amp;lt;- getLine
-    let n = read input :: Int
-    putStrLn $ show (n + 5...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+    let list = map ...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
