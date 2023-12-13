@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-10T15:00:01+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/arark/articles/079f839d084cd9</id><title type="text">Haskell開発の勘所2023</title><updated>2023-12-10T15:00:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/arark/articles/079f839d084cd9"/><summary type="html">Haskellはいいぞ。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-12T15:01:39+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/lotz/articles/56829a79f883d5</id><title type="text">AI搭載エディタ「Cursor」にHaskellを書かせてみた</title><updated>2023-12-12T15:01:39+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/56829a79f883d5"/><summary type="html">これは「Haskell Advent Calendar 2023」13日目の記事です。
+
+日頃、私は趣味としてAIをHaskellで実装することに没頭しています。しかし、今回は少し違ったアプローチを試してみようと思います。逆に、AIにHaskellを使って自ら実装させ、その過程や成果を共有してみたいと考えています。この新たな取り組みがどのような結果を生むのか、一緒に探ってみましょう。
+
+
+ AI搭載エディタ「Cursor」
+気を取り直して、今回は最近話題のAI搭載エディタ Cursor を使って実際に動くHaskellのアプリを0から作らせてみたいと思います！Cursorをまだ知らない人...</summary></entry><entry><id>https://zenn.dev/arark/articles/079f839d084cd9</id><title type="text">Haskell開発の勘所2023</title><updated>2023-12-10T15:00:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/arark/articles/079f839d084cd9"/><summary type="html">Haskellはいいぞ。
 Haskell自体はいい言語なんですが、歴史的な理由もあってプロジェクト管理に癖があるのでその話をします。
 
  ツールのインストール
@@ -425,17 +431,7 @@ https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1/
 
  ★1. OVERVIEW
 
-関数型プログラミングの一番...</summary></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-part6-mondai12</id><title type="text">素数判定ふたたび！練習問題(12問目)【Haskellで競技プログラミングがしたい！ Part6】</title><updated>2023-11-19T15:12:50+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-part6-mondai12"/><summary type="html">
- はじめに
-最近は研究したいテーマが多く、なかなか手を付けることができませんでした。
-主にNostrに興味があり、プロトコルをもとに実装すれば自由にSNSを扱うことができるという面白さがありその周辺技術の理解を進めたり、GolangやJavascriptで簡単なアプリを動かしながら動作を確かめています。
-ただこのHaskellで問題を解くこと自体は楽しいので、1問でもいいからコツコツ続けようということでやっていきます
-今回は12問目について回答してみましょう。
-https://atcoder.jp/contests/math-and-algorithm/tasks
-
- 12問目
-
- 問...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+関数型プログラミングの一番...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
