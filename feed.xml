@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-13T17:10:35+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/mitsuchi/articles/180912400fbcaa</id><title type="text">foldr の融合則が一般の融合則から導ける件</title><updated>2023-12-13T17:10:35+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mitsuchi/articles/180912400fbcaa"/><summary type="html">『関数プログラミング入門』（オーム社）などを読んでいると foldr や foldl の融合則というのが出てきます。たとえば foldr の融合則は次の形です。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-14T13:52:28+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell</id><title type="text">2023年の Linear Haskell で純粋・並列 FFT を実装する──「Haskell は Rust になれるのか？」補遺</title><updated>2023-12-14T13:52:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell"/><summary type="html">この記事は Haskell Advent Calendar 2023 14 日目の記事です[1]。
+
+ はじめに
+先々月、Linear Haskell のまとまりのない記事を書いたところ、思ったよりも反響を頂いてびっくりしました。
+https://zenn.dev/konn/articles/2023-10-01-linear-haskell-in-2023
+ただかなりまとまりのない長文だった結果、「長い」「結局 Rust になれるのかようわからん」といった御叱りを頂きました。本当にすいません……。
+冒頭に「RustのようになるにはLinear Constraintsに期待」とか、末尾に...</summary></entry><entry><id>https://zenn.dev/mitsuchi/articles/180912400fbcaa</id><title type="text">foldr の融合則が一般の融合則から導ける件</title><updated>2023-12-13T17:10:35+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mitsuchi/articles/180912400fbcaa"/><summary type="html">Haskell Advent Calendar 2023 の12日目の記事です。
+『関数プログラミング入門』（オーム社）などを読んでいると foldr や foldl の融合則というのが出てきます。たとえば foldr の融合則は次の形です。
 
  foldr の融合則
 -- 有限リスト xs と関数 f, g, h について、
@@ -7,8 +14,7 @@
 h (foldr f e xs) = foldr g (h e) xs
 この法則を使うとたとえばリストを2回分走査する計算を1回分にまとめることができたりして便利なわけです。
 -- 例
-foldr f a . map g = foldr (f . g) a
-が、この法則...</summary></entry><entry><id>https://zenn.dev/lotz/articles/56829a79f883d5</id><title type="text">AI搭載エディタ「Cursor」にHaskellを書かせてみた</title><updated>2023-12-12T15:01:39+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/56829a79f883d5"/><summary type="html">これは「Haskell Advent Calendar 2023」13日目の記事です。
+f...</summary></entry><entry><id>https://zenn.dev/lotz/articles/56829a79f883d5</id><title type="text">AI搭載エディタ「Cursor」にHaskellを書かせてみた</title><updated>2023-12-12T15:01:39+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/56829a79f883d5"/><summary type="html">これは「Haskell Advent Calendar 2023」13日目の記事です。
 
 日頃、私は趣味としてAIをHaskellで実装することに没頭しています。しかし、今回は少し違ったアプローチを試してみようと思います。逆に、AIにHaskellを使って自ら実装させ、その過程や成果を共有してみたいと考えています。この新たな取り組みがどのような結果を生むのか、一緒に探ってみましょう。
 
@@ -405,26 +411,7 @@ IHPは、以下の特徴を持っています：
 完全なスタックの統合: IHPはデータベースからフロントエンドまでの完全なスタックを統合しており、これによりアプリケーションの一貫性を高めます。
 
 
-型安全なテンプレート: Ha...</summary></entry><entry><id>https://zenn.dev/kirke/articles/4d2e9faa68509d</id><title type="text">Integrated Haskell Platform (Haskell)の環境構築</title><updated>2023-11-25T17:04:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/4d2e9faa68509d"/><summary type="html">
- モチベーション
-
-Haskellを勉強したい
-でも、言語の勉強だけだと、実践的じゃないので、WEBフレームワークを使って何か作りたい
-IHPが良さそうだったので、環境構築手順をまとめる
-
-
- 参照Github
-https://github.com/2814109/haskell-blog
-
- 手順
-
-Nix Package Managerのインストール
-1-1. mac の場合、以下のコマンドを実行してください
-3. sh &amp;lt;(curl -L https://nixos.org/nix/install)
-
-IHPのインストール
-2-1. 以下コマンドを実行してください
-2-1-...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+型安全なテンプレート: Ha...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
