@@ -1,10 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-16T15:08:45+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/junjihashimoto@github/items/c391845ea8e01f2124da</id><title type="text">inline CUDA</title><updated>2023-12-16T15:08:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/junjihashimoto@github/items/c391845ea8e01f2124da"/></entry><entry><id>https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell</id><title type="text">2023年の Linear Haskell で純粋・並列 FFT を実装する──「Haskell は Rust になれるのか？」補遺</title><updated>2023-12-14T13:52:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell"/><summary type="html">この記事は Haskell Advent Calendar 2023 14 日目の記事です[1]。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-17T12:53:49+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/junjihashimoto@github/items/c391845ea8e01f2124da</id><title type="text">inline CUDA</title><updated>2023-12-17T12:53:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/junjihashimoto@github/items/c391845ea8e01f2124da"/></entry><entry><id>https://qiita.com/wvogel00/items/dfb37f20f990a56bede2</id><title type="text">Haskellを書くときに気をつけていること</title><updated>2023-12-16T21:06:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/wvogel00/items/dfb37f20f990a56bede2"/></entry><entry><id>https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell</id><title type="text">2023年の Linear Haskell で純粋・並列 FFT を実装する──「Haskell は Rust になれるのか？」補遺</title><updated>2023-12-14T13:52:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell"/><summary type="html">この記事は Haskell Advent Calendar 2023 14 日目の記事です[1]。
+
+ 更新履歴
+
+2023-12-15 並列化のパフォーマンスに関する追記。
+2023-12-14 初版公開。
+
 
  はじめに
 先々月、Linear Haskell のまとまりのない記事を書いたところ、思ったよりも反響を頂いてびっくりしました。
 https://zenn.dev/konn/articles/2023-10-01-linear-haskell-in-2023
-ただかなりまとまりのない長文だった結果、「長い」「結局 Rust になれるのかようわからん」といった御叱りを頂きました。本当にすいません……。
-冒頭に「RustのようになるにはLinear Constraintsに期待」とか、末尾に...</summary></entry><entry><id>https://zenn.dev/mitsuchi/articles/180912400fbcaa</id><title type="text">foldr の融合則が一般の融合則から導ける件</title><updated>2023-12-13T17:10:35+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mitsuchi/articles/180912400fbcaa"/><summary type="html">Haskell Advent Calendar 2023 の12日目の記事です。
+ただかなりまとまりのない長文だった結果、「長い」「結局 Rust になれるのかようわからん」といった御叱りを頂きました。...</summary></entry><entry><id>https://zenn.dev/mitsuchi/articles/180912400fbcaa</id><title type="text">foldr の融合則が一般の融合則から導ける件</title><updated>2023-12-13T17:10:35+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mitsuchi/articles/180912400fbcaa"/><summary type="html">Haskell Advent Calendar 2023 の12日目の記事です。
 『関数プログラミング入門』（オーム社）などを読んでいると foldr や foldl の融合則というのが出てきます。たとえば foldr の融合則は次の形です。
 
  foldr の融合則
@@ -58,7 +63,7 @@ https://www.infoq.com/jp/articles/...</summary></entry><entry><id>https://zenn.d
 このワークフローの定義を、以前はDhallで書いてyamlに変換するという形で運用していました。Dhallを使うことで生のyamlを触るよりはるかに安全かつ簡単にワークフローの記述/修正を行うことができていましたが、次のようなつらみがあって少し前にHaskell製のお手製ワークフロージェネレータに一気に鞍替えしました。
 
  型推論が限定的
-ほぼこれがすべて...</summary></entry><entry><id>https://qiita.com/kerupani129/items/1dcfd80e209355e683d3</id><title type="text">[Haskell] do 記法の使い方と型</title><updated>2023-12-08T19:57:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kerupani129/items/1dcfd80e209355e683d3"/></entry><entry><id>https://qiita.com/At-sushi/items/4e9d02b98d02d732ebba</id><title type="text">以前の記事で書いたHaskellの再帰関数をStateモナドを使ってちゃんと書き直してみる</title><updated>2023-12-08T07:03:29+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/At-sushi/items/4e9d02b98d02d732ebba"/></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-brainfuck</id><title type="text">HaskellでBrainfuckを実装してみる(番外編)</title><updated>2023-12-07T13:31:07+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-brainfuck"/><summary type="html">
+ほぼこれがすべて...</summary></entry><entry><id>https://qiita.com/kerupani129/items/1dcfd80e209355e683d3</id><title type="text">[Haskell] do 記法の使い方と型</title><updated>2023-12-08T19:57:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kerupani129/items/1dcfd80e209355e683d3"/></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-brainfuck</id><title type="text">HaskellでBrainfuckを実装してみる(番外編)</title><updated>2023-12-07T13:31:07+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-brainfuck"/><summary type="html">
  はじめに
 最近投稿できなかったのですが、Haskellはちまちま触っていました。
 その中でSNS上でBrainfuckというプログラミング言語のインタープリターを書いている方がいて、なんだこれは・・・と思い調べてみました。
