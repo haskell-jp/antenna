@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-18T19:16:01+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/tnagao7/items/7534bc22ac813d6cf479</id><title type="text">Glasgow Haskell Compiler の書換え規則における高階型のパターン照合</title><updated>2023-12-18T19:16:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tnagao7/items/7534bc22ac813d6cf479"/></entry><entry><id>https://qiita.com/junjihashimoto@github/items/c391845ea8e01f2124da</id><title type="text">inline CUDA</title><updated>2023-12-17T12:53:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/junjihashimoto@github/items/c391845ea8e01f2124da"/></entry><entry><id>https://qiita.com/wvogel00/items/dfb37f20f990a56bede2</id><title type="text">Haskellを書くときに気をつけていること</title><updated>2023-12-16T21:06:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/wvogel00/items/dfb37f20f990a56bede2"/></entry><entry><id>https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell</id><title type="text">2023年の Linear Haskell で純粋・並列 FFT を実装する──「Haskell は Rust になれるのか？」補遺</title><updated>2023-12-14T13:52:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell"/><summary type="html">この記事は Haskell Advent Calendar 2023 14 日目の記事です[1]。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-21T07:22:41+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy</id><title type="text">モナディック関数型リアクティブプログラミング(mFRP)の実装のひとつmoffyの紹介</title><updated>2023-12-21T07:22:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy"/><summary type="html">
+ はじめに
+モナディック関数型リアクティブプログラミング(monadic functional reactive programming, mFRP)の1つの実装であるパッケージmoffyを紹介していく。
+
+サンプルコードの実行には基本的にStackを使用する
+
+Stackを使わなくてもHackageからパッケージを集めれば動かせる(はず)
+
+
+はじめの例では、多くの環境で実行可能なように標準入力と標準出力を使った例で説明する
+
+
+ モナディック関数型リアクティブプログラミングとは何なのか
+
+ 関数型リアクティブプログラミング(FRP)
+FRPの説明でよく引き合いに出されるのは、表計算...</summary></entry><entry><id>https://zenn.dev/hanao/articles/a6ad672163a3a2</id><title type="text">Haskell初級者がAtCoderの問題でプロパティベーステストを試す</title><updated>2023-12-20T16:01:53+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hanao/articles/a6ad672163a3a2"/><summary type="html">
+ はじめに
+『実践プロパティベーステスト』のおかげか、最近プロパティベーステストが流行ってますね！
+この記事は、Haskell初級者の僕がAtCoderの問題を元にHaskellでプロパティベーステストを試してみる記事です。
+まだまだプロパティベーステスト勉強はじめたばかりなので(まだ第一部しか読んでない)、おかしいところがあれば優しく指摘いただけるととても嬉しいです！
+
+ プロパティベーステストって何？
+簡単に説明すると、以下の様な感じになります。
+
+どのような入力値を与え ても常に同じであるような振る舞いをテストする(この実行可能なコードがプロパティ)と言っている(普通のユニットテ...</summary></entry><entry><id>https://qiita.com/tnagao7/items/7534bc22ac813d6cf479</id><title type="text">Glasgow Haskell Compiler の書換え規則における高階型のパターン照合</title><updated>2023-12-18T19:16:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/tnagao7/items/7534bc22ac813d6cf479"/></entry><entry><id>https://qiita.com/junjihashimoto@github/items/c391845ea8e01f2124da</id><title type="text">inline CUDA</title><updated>2023-12-17T12:53:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/junjihashimoto@github/items/c391845ea8e01f2124da"/></entry><entry><id>https://qiita.com/wvogel00/items/dfb37f20f990a56bede2</id><title type="text">Haskellを書くときに気をつけていること</title><updated>2023-12-16T21:06:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/wvogel00/items/dfb37f20f990a56bede2"/></entry><entry><id>https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell</id><title type="text">2023年の Linear Haskell で純粋・並列 FFT を実装する──「Haskell は Rust になれるのか？」補遺</title><updated>2023-12-14T13:52:28+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/2023-12-14-pure-parallel-fft-in-linear-haskell"/><summary type="html">この記事は Haskell Advent Calendar 2023 14 日目の記事です[1]。
 
  更新履歴
 
@@ -391,32 +415,7 @@ https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
 学校ドメインのメールなど身分確認しやすい手段でご連絡ください
 
 kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/kirke/articles/739681d6acd3c5</id><title type="text">IHP(Haskell)でGUIベースのスキーマデザイナーを使ってCRUDを５分で作ってみる</title><updated>2023-11-26T17:37:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/739681d6acd3c5"/><summary type="html">
- はじめに
-IHPを使ってWEB開発をしようと公式ドキュメントを見ていたところ、GUIで簡単にスキーマ定義やDBマイグレーションができたのでまとめてみたいと思います。
-
- 手順
-projectのrootに移動しdevenv upでローカルサーバーを起動
-
-サイドバーのSchemaを選択し、Tableを新規作成
-
-MigrateDBをクリック
-
-Application/Schema.sql が更新される
-Schema.sqlを更新した上で再度MigrateDBをすると変更差分が反映される
-CodegenからControllerを選択して、新規作成する
-
-Previewが出てくるのでGen...</summary></entry><entry><id>https://zenn.dev/kirke/articles/a9734aba26728c</id><title type="text">IHP(haskell)でルーティング追加してみた</title><updated>2023-11-26T06:48:59+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/a9734aba26728c"/><summary type="html">
- IHPとは？
-僕も触りたてなのでchatGPTに聞いてみたです。
-IHP（Integrated Haskell Platform）は、Haskellプログラミング言語向けのウェブフレームワークです。Haskellは強力で型安全な静的型付けのプログラミング言語であり、IHPはこの言語を使用してウェブアプリケーションを開発するためのフレームワークとして提供されています。
-IHPは、以下の特徴を持っています：
-
-
-完全なスタックの統合: IHPはデータベースからフロントエンドまでの完全なスタックを統合しており、これによりアプリケーションの一貫性を高めます。
-
-
-型安全なテンプレート: Ha...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
