@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-21T07:22:41+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy</id><title type="text">モナディック関数型リアクティブプログラミング(mFRP)の実装のひとつmoffyの紹介</title><updated>2023-12-21T07:22:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-22T12:55:05+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/hanaokatomoki/items/058dc40c9d02c95603ba</id><title type="text">Haskellちょっと勉強したのでモナドについてまとめてみた</title><updated>2023-12-22T12:55:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hanaokatomoki/items/058dc40c9d02c95603ba"/></entry><entry><id>https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy</id><title type="text">モナディック関数型リアクティブプログラミング(mFRP)の実装のひとつmoffyの紹介</title><updated>2023-12-21T07:22:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy"/><summary type="html">Haskell advent calendar 2023の22日目の記事です。
+
  はじめに
 モナディック関数型リアクティブプログラミング(monadic functional reactive programming, mFRP)の1つの実装であるパッケージmoffyを紹介していく。
 
@@ -12,8 +13,7 @@ Stackを使わなくてもHackageからパッケージを集めれば動かせ�
 
  モナディック関数型リアクティブプログラミングとは何なのか
 
- 関数型リアクティブプログラミング(FRP)
-FRPの説明でよく引き合いに出されるのは、表計算...</summary></entry><entry><id>https://zenn.dev/hanao/articles/a6ad672163a3a2</id><title type="text">Haskell初級者がAtCoderの問題でプロパティベーステストを試す</title><updated>2023-12-20T16:01:53+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hanao/articles/a6ad672163a3a2"/><summary type="html">
+ 関数型リアク...</summary></entry><entry><id>https://zenn.dev/hanao/articles/a6ad672163a3a2</id><title type="text">Haskell初級者がAtCoderの問題でプロパティベーステストを試す</title><updated>2023-12-20T16:01:53+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hanao/articles/a6ad672163a3a2"/><summary type="html">
  はじめに
 『実践プロパティベーステスト』のおかげか、最近プロパティベーステストが流行ってますね！
 この記事は、Haskell初級者の僕がAtCoderの問題を元にHaskellでプロパティベーステストを試してみる記事です。
@@ -49,21 +49,7 @@ f...</summary></entry><entry><id>https://zenn.dev/lotz/articles/56829a79f883d5</
 
 
  AI搭載エディタ「Cursor」
-気を取り直して、今回は最近話題のAI搭載エディタ Cursor を使って実際に動くHaskellのアプリを0から作らせてみたいと思います！Cursorをまだ知らない人...</summary></entry><entry><id>https://zenn.dev/arark/articles/079f839d084cd9</id><title type="text">Haskell開発の勘所2023</title><updated>2023-12-10T15:00:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/arark/articles/079f839d084cd9"/><summary type="html">Haskellはいいぞ。
-Haskell自体はいい言語なんですが、歴史的な理由もあってプロジェクト管理に癖があるのでその話をします。
-
- ツールのインストール
-開発ツールとしては
-
-コンパイラ: GHC
-ビルド: Cabal, Stack
-Language Server: HLS
-
-の４つが必要です。全部ghcupに任せてください。y押してるだけでいいです。
-
- プロジェクトの作成
-次にプロジェクトを作ります。Haskellのプロジェクト管理にはCabalとStackが使われます。
-Cabalは昔から使われてきたプロジェクト管理ツールです。プロジェクトのビルド、依存関係のインストール、テ...</summary></entry><entry><id>https://qiita.com/nemukyoku/items/e9d20a4e99153e2779bf</id><title type="text">Haskellで楽しむ抽象的なプログラミング</title><updated>2023-12-10T14:13:30+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/nemukyoku/items/e9d20a4e99153e2779bf"/></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-monad-study</id><title type="text">GolangでシンプルなIOモナドを実装してみよう</title><updated>2023-12-09T16:48:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-monad-study"/><summary type="html">
+気を取り直して、今回は最近話題のAI搭載エディタ Cursor を使って実際に動くHaskellのアプリを0から作らせてみたいと思います！Cursorをまだ知らない人...</summary></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-monad-study</id><title type="text">GolangでシンプルなIOモナドを実装してみよう</title><updated>2023-12-09T16:48:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-monad-study"/><summary type="html">
  はじめに
 Haskellなどの純粋関数型言語を勉強している中で出てくる「モナド」という概念があります。
 最初はこの概念についてよくわからず、そして色々調べる中で色々な表現で説明されていました。
@@ -415,7 +401,22 @@ https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
 学校ドメインのメールなど身分確認しやすい手段でご連絡ください
 
 kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/kirke/articles/739681d6acd3c5</id><title type="text">IHP(Haskell)でGUIベースのスキーマデザイナーを使ってCRUDを５分で作ってみる</title><updated>2023-11-26T17:37:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/739681d6acd3c5"/><summary type="html">
+ はじめに
+IHPを使ってWEB開発をしようと公式ドキュメントを見ていたところ、GUIで簡単にスキーマ定義やDBマイグレーションができたのでまとめてみたいと思います。
+
+ 手順
+projectのrootに移動しdevenv upでローカルサーバーを起動
+
+サイドバーのSchemaを選択し、Tableを新規作成
+
+MigrateDBをクリック
+
+Application/Schema.sql が更新される
+Schema.sqlを更新した上で再度MigrateDBをすると変更差分が反映される
+CodegenからControllerを選択して、新規作成する
+
+Previewが出てくるのでGen...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
