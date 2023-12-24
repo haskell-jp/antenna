@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-22T12:55:05+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/hanaokatomoki/items/058dc40c9d02c95603ba</id><title type="text">Haskellちょっと勉強したのでモナドについてまとめてみた</title><updated>2023-12-22T12:55:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hanaokatomoki/items/058dc40c9d02c95603ba"/></entry><entry><id>https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy</id><title type="text">モナディック関数型リアクティブプログラミング(mFRP)の実装のひとつmoffyの紹介</title><updated>2023-12-21T07:22:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy"/><summary type="html">Haskell advent calendar 2023の22日目の記事です。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2023-12-23T10:41:23+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/toyboot4e/books/seriously-haskell</id><title type="text">AtCoder ガチ言語 Haskell 🔥</title><updated>2023-12-23T10:41:23+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/toyboot4e/books/seriously-haskell"/><summary type="html">Haskell で AtCoder に入門しましょう</summary></entry><entry><id>https://qiita.com/hanaokatomoki/items/058dc40c9d02c95603ba</id><title type="text">Haskellちょっと勉強したのでモナドについてまとめてみた</title><updated>2023-12-22T12:55:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/hanaokatomoki/items/058dc40c9d02c95603ba"/></entry><entry><id>https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy</id><title type="text">モナディック関数型リアクティブプログラミング(mFRP)の実装のひとつmoffyの紹介</title><updated>2023-12-21T07:22:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy"/><summary type="html">Haskell advent calendar 2023の22日目の記事です。
 
  はじめに
 モナディック関数型リアクティブプログラミング(monadic functional reactive programming, mFRP)の1つの実装であるパッケージmoffyを紹介していく。
@@ -300,63 +300,6 @@ TypeScriptとF#の開発環境のセットアップ
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
 
 ⭐2. BASIC
-関数型プログラミングの骨格となるパーツを紹介
-ファーストクラス関数・ラムダ式・高階関数・二項演算の結合性・関数合成・Monoid（モノイド）
-これがなければ関数型プログラミングは始まらないので理解は必須
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
-
-3. THEORY
-関数型プログラミングの理論に深く踏み込む
-難解だと思われている 圏論（Category theory） も含め興味がある読者向け
-著名な論文を引用しながらアプローチしやすい解説
-無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
-
-4. APPLICATION
-Pipeline/List/Option/IO/Timeline/Async Monad を紹介
-Monadの実装、F#とTypeScriptを使って具体的なコード
-ゼロからミニマルなFRPを構築 することを目指す
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
-
-5. SAMPLE CODE
-サンプルコード（メンバーシップ）
-買い取り（毎月料金は発生しない）
-【特典】
-- GitHubのプライベートレポジトリ招待
-- 著者へ質問/自由な情報交換
-- サンプルコードリクエスト
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
-
-✨UNIT 1は無料
-✨その他UNITでは一部有料、多くは無料公開
-
-🎅リリース記念強化月間🎄年末特別企画開催中
-🎁全てのコンテンツを無料提供！
-今月12月中に本書レビューできる読者を募集
-- Zennでレビュー記事を書ける人
-- Xアカウント活動履歴が確認できる人
-- プログラマとしての経験は問いません
-詳細はXアカウントを添えてお問い合わせください
-
-🧑🏻‍🎓学生の読者も全コンテンツを無料で提供
-(サンプルコード・メンバーシップ含む)
-プライベートレポジトリへ招待の為のGitHubユーザネームを
-学校ドメインのメールなど身分確認しやすい手段でご連絡ください
-
-kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 1🔷 OVERVIEW</title><updated>2023-11-30T18:50:22+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1"/><summary type="html">🔎 内容
-
-全UNIT 1~5のうち、この本は、UNIT 1です
-
-⭐1. OVERVIEW
-関数型プログラミングの一番「外側」を紹介
-関数型プログラミングとは何か？
-最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、
-オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
-TypeScriptとF#の開発環境のセットアップ
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
-
-2. BASIC
 関数型プログラミングの骨格となるパーツを紹介
 ファーストクラス関数・ラムダ式・高階関数・二項演算の結合性・関数合成・Monoid（モノイド）
 これがなければ関数型プログラミングは始まらないので理解は必須
