@@ -49,7 +49,21 @@ f...</summary></entry><entry><id>https://zenn.dev/lotz/articles/56829a79f883d5</
 
 
  AI搭載エディタ「Cursor」
-気を取り直して、今回は最近話題のAI搭載エディタ Cursor を使って実際に動くHaskellのアプリを0から作らせてみたいと思います！Cursorをまだ知らない人...</summary></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-monad-study</id><title type="text">GolangでシンプルなIOモナドを実装してみよう</title><updated>2023-12-09T16:48:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-monad-study"/><summary type="html">
+気を取り直して、今回は最近話題のAI搭載エディタ Cursor を使って実際に動くHaskellのアプリを0から作らせてみたいと思います！Cursorをまだ知らない人...</summary></entry><entry><id>https://zenn.dev/arark/articles/079f839d084cd9</id><title type="text">Haskell開発の勘所2023</title><updated>2023-12-10T15:00:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/arark/articles/079f839d084cd9"/><summary type="html">Haskellはいいぞ。
+Haskell自体はいい言語なんですが、歴史的な理由もあってプロジェクト管理に癖があるのでその話をします。
+
+ ツールのインストール
+開発ツールとしては
+
+コンパイラ: GHC
+ビルド: Cabal, Stack
+Language Server: HLS
+
+の４つが必要です。全部ghcupに任せてください。y押してるだけでいいです。
+
+ プロジェクトの作成
+次にプロジェクトを作ります。Haskellのプロジェクト管理にはCabalとStackが使われます。
+Cabalは昔から使われてきたプロジェクト管理ツールです。プロジェクトのビルド、依存関係のインストール、テ...</summary></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-monad-study</id><title type="text">GolangでシンプルなIOモナドを実装してみよう</title><updated>2023-12-09T16:48:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-monad-study"/><summary type="html">
  はじめに
 Haskellなどの純粋関数型言語を勉強している中で出てくる「モナド」という概念があります。
 最初はこの概念についてよくわからず、そして色々調べる中で色々な表現で説明されていました。
@@ -344,22 +358,7 @@ https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
 学校ドメインのメールなど身分確認しやすい手段でご連絡ください
 
 kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/kirke/articles/739681d6acd3c5</id><title type="text">IHP(Haskell)でGUIベースのスキーマデザイナーを使ってCRUDを５分で作ってみる</title><updated>2023-11-26T17:37:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/kirke/articles/739681d6acd3c5"/><summary type="html">
- はじめに
-IHPを使ってWEB開発をしようと公式ドキュメントを見ていたところ、GUIで簡単にスキーマ定義やDBマイグレーションができたのでまとめてみたいと思います。
-
- 手順
-projectのrootに移動しdevenv upでローカルサーバーを起動
-
-サイドバーのSchemaを選択し、Tableを新規作成
-
-MigrateDBをクリック
-
-Application/Schema.sql が更新される
-Schema.sqlを更新した上で再度MigrateDBをすると変更差分が反映される
-CodegenからControllerを選択して、新規作成する
-
-Previewが出てくるのでGen...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
