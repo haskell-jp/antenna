@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-04T21:06:44+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/kohki_takatama/items/978c584397e6a57a2046</id><title type="text">GPT、1行のコードを理解できない！！</title><updated>2024-01-04T21:06:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/978c584397e6a57a2046"/></entry><entry><id>https://qiita.com/kohki_takatama/items/ef77d30e2491fd5c1c65</id><title type="text">辺境のHaskell道場で、賢者におもっくそ鍛えられた件</title><updated>2024-01-04T21:06:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/ef77d30e2491fd5c1c65"/></entry><entry><id>https://qiita.com/kohki_takatama/items/5dad692b922e3fd6c1f3</id><title type="text">やる気が出ない人のCodewars</title><updated>2024-01-04T20:05:13+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/5dad692b922e3fd6c1f3"/></entry><entry><id>https://zenn.dev/maple8192/articles/18bd83c15d7b89</id><title type="text">HaskellでAtCoderのA問題</title><updated>2024-01-04T11:45:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/maple8192/articles/18bd83c15d7b89"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-07T13:09:39+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/kohki_takatama/items/29cf2b65d260247ca745</id><title type="text">やる気が出ない人のCodewars 2 @ 7kyu</title><updated>2024-01-07T13:09:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/29cf2b65d260247ca745"/></entry><entry><id>https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b</id><title type="text">圏論ユーザーのレベル10</title><updated>2024-01-06T18:51:58+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b"/><summary type="html">その昔「○○プログラマのレベル10」というネタがあった。それを思い出したので圏論バージョンを作ってみようと思った。私がかく成長したいという独断的な妄想ノートである。誤りや見えていない境地については諸氏のご指導を仰ぐものである。
+元祖はPerlのようだが、もっともっとさかのぼると起源は十牛図ではないかと思われる。章題はこれに則った。
+
+ レベル0：尋牛
+圏論というものがあるらしい。熱心な知り合いがいるものの新興宗教じみており避けている。
+
+ レベル1：見跡
+ポップな表紙の『圏論の歩き方』に手を出して絶望する。関連書籍がアマゾンのレコメンドに出てくるようになった。深遠みを覚えるが想像が及ばな...</summary></entry><entry><id>https://qiita.com/kohki_takatama/items/978c584397e6a57a2046</id><title type="text">GPT、1行のコードを理解できない！！</title><updated>2024-01-04T21:06:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/978c584397e6a57a2046"/></entry><entry><id>https://qiita.com/kohki_takatama/items/ef77d30e2491fd5c1c65</id><title type="text">辺境のHaskell道場で、賢者におもっくそ鍛えられた件</title><updated>2024-01-04T21:06:01+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/ef77d30e2491fd5c1c65"/></entry><entry><id>https://qiita.com/kohki_takatama/items/5dad692b922e3fd6c1f3</id><title type="text">やる気が出ない人のCodewars</title><updated>2024-01-04T20:05:13+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/5dad692b922e3fd6c1f3"/></entry><entry><id>https://zenn.dev/maple8192/articles/18bd83c15d7b89</id><title type="text">HaskellでAtCoderのA問題</title><updated>2024-01-04T11:45:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/maple8192/articles/18bd83c15d7b89"/><summary type="html">
  はじめに
 AtCoderのA問題を解いていきます．
 Haskell初心者なのでなんか色々違うかも．
@@ -19,7 +26,7 @@ main = do
 https://zenn.dev/ueniki/articles/84a1561b979914
 こちらの記事で、2023年に読んだ技術書Top5を紹介しました。
 2023年は、技術書は12、3冊しか読めませんでしたが、毎年大体15冊〜20数冊程度で安定しているようです。（マネジメント系の本を含めるともう少し増えますが、ここではピュアに技術寄りの本のみ対象とします。）
-ということは、2024年も10冊は読めるということですし、すでに発売している（発売を予定している）本でもそれぐらいの数はあるだろうというこ...</summary></entry><entry><id>https://qiita.com/satosystems/items/854d509d37bcd488fa7b</id><title type="text">Monomer という Haskell のハイレベル GUI ライブラリ</title><updated>2023-12-31T02:33:33+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/satosystems/items/854d509d37bcd488fa7b"/></entry><entry><id>https://kakkun61.hatenablog.com/entry/2023/12/25/Haskell_%E3%81%A7_Open_Telemetry_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%92%E5%90%91%E4%B8%8A</id><title type="text">Haskell で Open Telemetry を利用してオブザーバビリティーを向上させよう</title><updated>2023-12-25T17:35:26+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2023/12/25/Haskell_%E3%81%A7_Open_Telemetry_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%92%E5%90%91%E4%B8%8A"/><summary type="html">Open Telemetry って何？ この記事では Open Telemetry のトレースの機能を使います。トレースを使うと、サーバーを越境してコールグラフとその実行時間などを取得することができます。下の画像は Jaeger のスクリーンショットです。Jaeger は Open Telemetry の規格にのっとったコレクター実装のひとつです。 この例では HTTP サーバーと HTTP クライアントでトレースを取得しています。まずサーバーが /1 のパスでリクエストを受けつけたことが分かります。このリクエストに対してレスポンスを返すまでに 845μs かかっていますね。このトレースにおけ…</summary></entry><entry><id>https://zenn.dev/toyboot4e/books/seriously-haskell</id><title type="text">AtCoder ガチ言語 Haskell 🔥</title><updated>2023-12-23T10:41:23+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/toyboot4e/books/seriously-haskell"/><summary type="html">Haskell で AtCoder に入門しましょう</summary></entry><entry><id>https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy</id><title type="text">モナディック関数型リアクティブプログラミング(mFRP)の実装のひとつmoffyの紹介</title><updated>2023-12-21T07:22:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy"/><summary type="html">Haskell advent calendar 2023の22日目の記事です。
+ということは、2024年も10冊は読めるということですし、すでに発売している（発売を予定している）本でもそれぐらいの数はあるだろうというこ...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2023/12/25/Haskell_%E3%81%A7_Open_Telemetry_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%92%E5%90%91%E4%B8%8A</id><title type="text">Haskell で Open Telemetry を利用してオブザーバビリティーを向上させよう</title><updated>2023-12-25T17:35:26+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2023/12/25/Haskell_%E3%81%A7_Open_Telemetry_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%92%E5%90%91%E4%B8%8A"/><summary type="html">Open Telemetry って何？ この記事では Open Telemetry のトレースの機能を使います。トレースを使うと、サーバーを越境してコールグラフとその実行時間などを取得することができます。下の画像は Jaeger のスクリーンショットです。Jaeger は Open Telemetry の規格にのっとったコレクター実装のひとつです。 この例では HTTP サーバーと HTTP クライアントでトレースを取得しています。まずサーバーが /1 のパスでリクエストを受けつけたことが分かります。このリクエストに対してレスポンスを返すまでに 845μs かかっていますね。このトレースにおけ…</summary></entry><entry><id>https://zenn.dev/toyboot4e/books/seriously-haskell</id><title type="text">AtCoder ガチ言語 Haskell 🔥</title><updated>2023-12-23T10:41:23+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/toyboot4e/books/seriously-haskell"/><summary type="html">Haskell で AtCoder に入門しましょう</summary></entry><entry><id>https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy</id><title type="text">モナディック関数型リアクティブプログラミング(mFRP)の実装のひとつmoffyの紹介</title><updated>2023-12-21T07:22:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yoshikuni_jujo/articles/introduction-to-moffy"/><summary type="html">Haskell advent calendar 2023の22日目の記事です。
 
  はじめに
 モナディック関数型リアクティブプログラミング(monadic functional reactive programming, mFRP)の1つの実装であるパッケージmoffyを紹介していく。
@@ -183,63 +190,6 @@ Monadの実装、F#とTypeScriptを使って具体的なコード
 https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
 
 ⭐5. SAMPLE CODE
-サンプルコード（メンバーシップ）
-買い取り（毎月料金は発生しない）
-【特典】
-- GitHubのプライベートレポジトリ招待
-- 著者へ質問/自由な情報交換
-- サンプルコードリクエスト
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-5
-
-✨UNIT 1は無料
-✨その他UNITでは一部有料、多くは無料公開
-
-🎅リリース記念強化月間🎄年末特別企画開催中
-🎁全てのコンテンツを無料提供！
-今月12月中に本書レビューできる読者を募集
-- Zennでレビュー記事を書ける人
-- Xアカウント活動履歴が確認できる人
-- プログラマとしての経験は問いません
-詳細はXアカウントを添えてお問い合わせください
-
-🧑🏻‍🎓学生の読者も全コンテンツを無料で提供
-(サンプルコード・メンバーシップ含む)
-プライベートレポジトリへ招待の為のGitHubユーザネームを
-学校ドメインのメールなど身分確認しやすい手段でご連絡ください
-
-kentutorialbook@gmail.com
-https://www.instagram.com/ken.okabe/</summary></entry><entry><id>https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4</id><title type="text">関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで 🔷UNIT 4🔷 APPLICATION</title><updated>2023-11-30T18:50:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4"/><summary type="html">🔎 内容
-
-全UNIT 1~5のうち、この本は、UNIT 4です
-
-1. OVERVIEW
-関数型プログラミングの一番「外側」を紹介
-関数型プログラミングとは何か？
-最新のプログラミングコミュニティの動向、CPUと命令型プログラミング、システム言語における型、構造化プログラミングへの抽象化、
-オブジェクト指向と関数型プログラミングの用語と数学の関係、Unreal（ゲームエンジン）の関数型言語Verse、SolidJS、FRPの哲学的側面も含む広く一般的な話題
-TypeScriptとF#の開発環境のセットアップ
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-1
-
-2. BASIC
-関数型プログラミングの骨格となるパーツを紹介
-ファーストクラス関数・ラムダ式・高階関数・二項演算の結合性・関数合成・Monoid（モノイド）
-これがなければ関数型プログラミングは始まらないので理解は必須
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-2
-
-3. THEORY
-関数型プログラミングの理論に深く踏み込む
-難解だと思われている 圏論（Category theory） も含め興味がある読者向け
-著名な論文を引用しながらアプローチしやすい解説
-無理をしてすべて理解しようとしなくても良いし、読み飛ばしても構わない
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-3
-
-⭐4. APPLICATION
-Pipeline/List/Option/IO/Timeline/Async Monad を紹介
-Monadの実装、F#とTypeScriptを使って具体的なコード
-ゼロからミニマルなFRPを構築 することを目指す
-https://zenn.dev/ken_okabe/books/functional-programming-from-scratch-4
-
-5. SAMPLE CODE
 サンプルコード（メンバーシップ）
 買い取り（毎月料金は発生しない）
 【特典】
