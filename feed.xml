@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-11T13:45:54+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/flowerhill/items/ce81230c32675dd31cc3</id><title type="text">AtCoder Beginner Contest 335 振り返り</title><updated>2024-01-11T13:45:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/ce81230c32675dd31cc3"/></entry><entry><id>https://zenn.dev/k_ichirof/articles/be5beb29026a0b</id><title type="text">[Haskell]FizzBuzz</title><updated>2024-01-09T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/be5beb29026a0b"/><summary type="html">そろそろ関数型言語に挑戦してみたく、「すごいHaskell楽しく学ぼう！」を読み始めた。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-17T03:16:19+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/flowerhill/items/d5f9f6b81d42ce81ca95</id><title type="text">AtCoder Beginner Contest 336 (バチャ) 振り返り</title><updated>2024-01-17T03:16:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/d5f9f6b81d42ce81ca95"/></entry><entry><id>https://zenn.dev/trap/articles/ce588587c4c8ff</id><title type="text">二種類のリアクティブな値の動的切り替えとモナドの関係</title><updated>2024-01-16T10:21:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/trap/articles/ce588587c4c8ff"/><summary type="html">
+ 前提知識
+コードは PureScript および Haskell っぽく書いていますが、ReactiveX の対応する概念を書いてあるので Rx を知っていればなんとなく読めると思います。モナドはそういうのがあるんだな～と読み飛ばしておけば OK です。
+
+ 結論
+プロダクトにおいて、例えば React ならコンポーネントを動的に差し替えたりしたり、例えば Unity (with UniRx) なら動的にオブジェクトを作成したりするといった、動的にリアクティブな値を切り替えることがある
+リアクティブな値の動的切り替えは次の2つの方法で構成できる
+
+Rx の Switch と同様
+mF...</summary></entry><entry><id>https://qiita.com/flowerhill/items/ce81230c32675dd31cc3</id><title type="text">AtCoder Beginner Contest 335 振り返り</title><updated>2024-01-11T13:45:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/ce81230c32675dd31cc3"/></entry><entry><id>https://zenn.dev/k_ichirof/articles/be5beb29026a0b</id><title type="text">[Haskell]FizzBuzz</title><updated>2024-01-09T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/be5beb29026a0b"/><summary type="html">そろそろ関数型言語に挑戦してみたく、「すごいHaskell楽しく学ぼう！」を読み始めた。
 一旦は3章のcase式まで読んだので、FizzBuzzをやってみた。
 judge :: (Integral a, Show a) =&amp;gt; a -&amp;gt; String
 judge n
@@ -7,7 +16,7 @@ judge n
   | n `mod` 3 == 0 = show &#34;Fizz&#34;
   | otherwise = show n
 
-fizzBuzz :: (Integral t, Show ...</summary></entry><entry><id>https://qiita.com/kohki_takatama/items/ef77d30e2491fd5c1c65</id><title type="text">辺境のHaskell道場で、賢者におもっくそ鍛えられた件</title><updated>2024-01-08T16:38:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/ef77d30e2491fd5c1c65"/></entry><entry><id>https://qiita.com/kohki_takatama/items/9e645732f1eab18a591f</id><title type="text">修正：haskellコードの理解（関数合成・複数の`.`）</title><updated>2024-01-08T16:37:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/9e645732f1eab18a591f"/></entry><entry><id>https://qiita.com/kohki_takatama/items/29cf2b65d260247ca745</id><title type="text">やる気が出ない人のCodewars 2 @ 7kyu</title><updated>2024-01-07T13:09:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/29cf2b65d260247ca745"/></entry><entry><id>https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b</id><title type="text">圏論ユーザーのレベル10</title><updated>2024-01-06T18:51:58+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b"/><summary type="html">その昔「○○プログラマのレベル10」というネタがあった。それを思い出したので圏論バージョンを作ってみようと思った。私がかく成長したいという独断的な妄想ノートである。誤りや見えていない境地については諸氏のご指導を仰ぐものである。
+fizzBuzz :: (Integral t, Show ...</summary></entry><entry><id>https://qiita.com/kohki_takatama/items/9e645732f1eab18a591f</id><title type="text">修正：haskellコードの理解（関数合成・複数の`.`）</title><updated>2024-01-08T16:37:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/9e645732f1eab18a591f"/></entry><entry><id>https://qiita.com/kohki_takatama/items/29cf2b65d260247ca745</id><title type="text">やる気が出ない人のCodewars 2 @ 7kyu</title><updated>2024-01-07T13:09:39+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/29cf2b65d260247ca745"/></entry><entry><id>https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b</id><title type="text">圏論ユーザーのレベル10</title><updated>2024-01-06T18:51:58+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b"/><summary type="html">その昔「○○プログラマのレベル10」というネタがあった。それを思い出したので圏論バージョンを作ってみようと思った。私がかく成長したいという独断的な妄想ノートである。誤りや見えていない境地については諸氏のご指導を仰ぐものである。
 元祖はPerlのようだが、もっともっとさかのぼると起源は十牛図ではないかと思われる。章題はこれに則った。
 
  レベル0：尋牛
@@ -160,14 +169,7 @@ Haskell Advent Calender 2023の2日めの記事です。カレンダーの枠が
 さて、ラムダノート社から「実践プロパティベーステスト」が出版されたので、巷ではプロパティベーステストが流行っていることでしょう (紹介宣伝です)。
 Haskellでは、プロパティベーステスト用のライブラリとして、例えばQuickCheckがあります。
 この記事では、Haskellではソースコードのコメント中に簡単な記述をするだけで、プロパティベーステストを手軽に実行できることを改めて紹介します。
-本格的なコードを開発している局面だけで...</summary></entry><entry><id>https://zenn.dev/eloy/articles/444eded5201e03</id><title type="text">λ Haskell λ で導関数を実装</title><updated>2023-12-01T07:51:27+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/eloy/articles/444eded5201e03"/><summary type="html">今回はHaskellを用い、速度関数及び加速関数を題に導関数の実装を紹介します。
-
- 速度関数
-速度関数のvは位置関数のxの導関数ですが、数学の授業に出てくる導関数と多少違います：
- 
-v(t) = \lim\limits_{\Delta t -&amp;gt; 0} \dfrac {x(t+\frac {\Delta t}2)-x(t - \frac {\Delta t}2)}{\Delta t} 
-
-数学なら：f(x) = \lim\limits_{h -&amp;gt; 0} \dfrac {f(x+h)-f(x)}hですが、vの入力はx+hとxではなく、t + \frac {\Delta t}2...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+本格的なコードを開発している局面だけで...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
