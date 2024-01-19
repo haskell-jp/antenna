@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-17T03:16:19+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/flowerhill/items/d5f9f6b81d42ce81ca95</id><title type="text">AtCoder Beginner Contest 336 (バチャ) 振り返り</title><updated>2024-01-17T03:16:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/d5f9f6b81d42ce81ca95"/></entry><entry><id>https://zenn.dev/trap/articles/ce588587c4c8ff</id><title type="text">二種類のリアクティブな値の動的切り替えとモナドの関係</title><updated>2024-01-16T10:21:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/trap/articles/ce588587c4c8ff"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-19T00:00:00+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/k_ichirof/articles/7a45727c2cc9cc</id><title type="text">[Haskell] replicateを実装する</title><updated>2024-01-19T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/7a45727c2cc9cc"/><summary type="html">すごいHaskellたのしく学ぼう!を読んでいるので、アウトプットします。
+あくまで初学者のアウトプットなので、あまりイケてない記述があるかもしれません。
+第４章で再帰関数を実装する問題があるので、自分なりの回答を載せます。
+
+ replicate
+replicate関数は、指定された回数だけ同じ値を繰り返してリストを生成する標準関数です。2つの引数を取り、繰り返し回数（整数）と繰り返す値です。
+replicate 3 10 -- [10, 10, 10]
+
+replicate 5 &#39;a&#39; -- &#34;aaaaa&#34;
+
+replicate 4 True -- [True, True, True...</summary></entry><entry><id>https://qiita.com/flowerhill/items/d5f9f6b81d42ce81ca95</id><title type="text">AtCoder Beginner Contest 336 (バチャ) 振り返り</title><updated>2024-01-17T03:16:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/d5f9f6b81d42ce81ca95"/></entry><entry><id>https://zenn.dev/trap/articles/ce588587c4c8ff</id><title type="text">二種類のリアクティブな値の動的切り替えとモナドの関係</title><updated>2024-01-16T10:21:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/trap/articles/ce588587c4c8ff"/><summary type="html">
  前提知識
 コードは PureScript および Haskell っぽく書いていますが、ReactiveX の対応する概念を書いてあるので Rx を知っていればなんとなく読めると思います。モナドはそういうのがあるんだな～と読み飛ばしておけば OK です。
 
@@ -163,13 +173,7 @@ Functional Programming From Scratch
 関数型プログラミングをゼロからわかりやすく実用的に幅広い視点から解説！〜 圏論からFRPの構築まで
 🔷UNIT 1🔷 OVERVIEW
 
-ht...</summary></entry><entry><id>https://zenn.dev/takenobu_hs/articles/a4b6bc0847182c</id><title type="text">Haskellで、手軽にプロパティベーステスト</title><updated>2023-12-02T01:42:44+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/takenobu_hs/articles/a4b6bc0847182c"/><summary type="html">
- はじめに
-Haskell Advent Calender 2023の2日めの記事です。カレンダーの枠が空いていたので、久しぶりに勢いで書いてみました。
-さて、ラムダノート社から「実践プロパティベーステスト」が出版されたので、巷ではプロパティベーステストが流行っていることでしょう (紹介宣伝です)。
-Haskellでは、プロパティベーステスト用のライブラリとして、例えばQuickCheckがあります。
-この記事では、Haskellではソースコードのコメント中に簡単な記述をするだけで、プロパティベーステストを手軽に実行できることを改めて紹介します。
-本格的なコードを開発している局面だけで...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+ht...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
