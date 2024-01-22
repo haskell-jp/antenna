@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-21T00:00:00+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/k_ichirof/articles/493cb9840f87b4</id><title type="text">[Haskell] reverseを実装する</title><updated>2024-01-21T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/493cb9840f87b4"/><summary type="html">すごいHaskellたのしく学ぼう!を読んでいるので、アウトプットします。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-22T00:00:00+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/k_ichirof/articles/fcb90c60063f7b</id><title type="text">[Haskell] repeatを実装する</title><updated>2024-01-22T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/fcb90c60063f7b"/><summary type="html">すごいHaskellたのしく学ぼう!を読んでいるので、アウトプットします。
+あくまで初学者のアウトプットなので、あまりイケてない記述があるかもしれません。
+第４章で再帰関数を実装する問題があるので、自分なりの回答を載せます。
+
+ repeat
+repeat関数は、単一の値を無限リストに繰り返すために使用されます。
+repeat 1  -- [1,1,1,1,1,1,........
+repeat &#34;Y&#34; -- [&#34;Y&#34;,&#34;Y&#34;,&#34;Y&#34;,&#34;Y&#34;,&#34;Y&#34;,&#34;Y&#34;,....
+本の回答・自分の回答
+repeat&#39; :: a -&amp;gt; [a]
+repeat&#39; a = a : repeat&#39; a
+...</summary></entry><entry><id>https://zenn.dev/yvvakimoto/articles/498531610198da</id><title type="text">Profunctor Optics を見渡す</title><updated>2024-01-21T13:13:23+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yvvakimoto/articles/498531610198da"/><summary type="html">この記事は圏論のprofunctorとendおよび文献を参考にHaskell で使われるOpticやLensを学んだ備忘録である。とくにLens のいくつかの定式化、すなわちexistential / profunctor / van Laarhoven encoding を見ていく。
+
+ profunctor とは
+profunctor F:\mathcal C\nrightarrow \mathcal Dとは函手
+
+\mathcal C^{op} \times \mathcal D \overset{F}\longrightarrow \mathcal{Sets}
+
+のことである。そ...</summary></entry><entry><id>https://zenn.dev/k_ichirof/articles/493cb9840f87b4</id><title type="text">[Haskell] reverseを実装する</title><updated>2024-01-21T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/493cb9840f87b4"/><summary type="html">すごいHaskellたのしく学ぼう!を読んでいるので、アウトプットします。
 あくまで初学者のアウトプットなので、あまりイケてない記述があるかもしれません。
 第４章で再帰関数を実装する問題があるので、自分なりの回答を載せます。
 
@@ -170,17 +188,7 @@ https://www.infoq.com/jp/articles/...</summary></entry><entry><id>https://zenn.d
 最近投稿できなかったのですが、Haskellはちまちま触っていました。
 その中でSNS上でBrainfuckというプログラミング言語のインタープリターを書いている方がいて、なんだこれは・・・と思い調べてみました。
 https://ja.wikibooks.org/wiki/Brainfuck#:~:text=Brainfuckは、 Urban Müllerによって,もしくは「.bf」です。
-その方曰く「Brainfuckでプログラムを書くのは大変だが、Brainfuckのインタープリターを書くのは比較的簡単」とのことだったので、自分もHaskellの勉強もかねて作成してみま...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/generalizing-zip</id><title type="text">Haskellのzip関数を一般化すると何になるか</title><updated>2023-12-07T00:34:41+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/generalizing-zip"/><summary type="html">この記事は Haskell Advent Calendar 2023 の7日目の記事です。
-
- zip関数について
-Haskellには zip 関数というものがあります。この関数は、2つのリストを受け取って、それぞれから取り出した要素を組にしたリストを返します。
-zip :: [a] -&amp;gt; [b] -&amp;gt; [(a, b)]
-実行例は次の通りです：
-ghci&amp;gt; zip [1,2,3] [&#34;Alpha&#34;,&#34;Bravo&#34;,&#34;Charlie&#34;]
-[(1,&#34;Alpha&#34;),(2,&#34;Bravo&#34;),(3,&#34;Charlie&#34;)]
-リストの要素の個数が異なる場合は、短い方に合わせられます...</summary></entry><entry><id>https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/</id><title type="text">GHCへの私の貢献2023</title><updated>2023-12-05T22:00:00+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/"/><summary type="html">この記事は Haskell Advent Calendar 2023 の6日目の記事です。 私はここ数年、HaskellコンパイラーであるGHCに貢献しています。この記事では、今年（2023年）に私が行った貢献を紹介しま [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/lotz/articles/345f87c5fe0697</id><title type="text">四元数ニューラルネットワークとGHR微積分</title><updated>2023-12-05T15:59:04+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/345f87c5fe0697"/><summary type="html">これは「FOLIO Advent Calendar 2023」6日目の記事です。
-
-ニューラルネットワークで取り扱う数値を実数とは異なる数に拡張することは、機械学習や計算科学の発展における魅力的な課題の一つです。実数を用いた数値表現は多くのタスクにおいて十分な結果をもたらしてきましたが、新たな数値体系を導入することで、今までとは異なる問題が解決できるようになったり実数では見られなかった新たな現象が起こる可能性に期待することができるでしょう。例えば数値が取れる値を±1に制限したBinalized Neural Networksはハードウェアとの相性が良くメモリ効率の良い実装が可能であったり...</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/12/atok.html</id><title type="text">[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまった</title><updated>2023-12-05T12:07:55.681+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/12/atok.html"/><summary type="text">&amp;nbsp;[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまったWindows10上で、特に設定を変更したつもりはないのだが、変換候補ウィンドウ、及び、推測候補ウィンドウが画面中央に固定表示される状態になった。JUST SYSTEMSのサポートページに以下のページがあり、ウィンドウをドラッグ＆ドロップすることで位置を変更できることが分かったが、肝心の「左上のピン」が表示されておらず、カーソル位置表示に戻すことができない。	[サポートFAQ] 候補ウィンドウの表示位置を変更するATOKプロパティ設定の中を確認しても、表示・非表示の切り替えはあるが、表示位置の切り替えが見つからない･･･（FAQは2007年記載なので、古いバージョンの挙動っぽい）。困っていた中、ふと候補ウィンドウ右下の画面の「候補メニュー」の存在に気がつき、表示してみると「表示位置</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+その方曰く「Brainfuckでプログラムを書くのは大変だが、Brainfuckのインタープリターを書くのは比較的簡単」とのことだったので、自分もHaskellの勉強もかねて作成してみま...</summary></entry><entry><id>https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/</id><title type="text">GHCへの私の貢献2023</title><updated>2023-12-05T22:00:00+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/"/><summary type="html">この記事は Haskell Advent Calendar 2023 の6日目の記事です。 私はここ数年、HaskellコンパイラーであるGHCに貢献しています。この記事では、今年（2023年）に私が行った貢献を紹介しま [&amp;#8230;]</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/12/atok.html</id><title type="text">[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまった</title><updated>2023-12-05T12:07:55.681+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/12/atok.html"/><summary type="text">&amp;nbsp;[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまったWindows10上で、特に設定を変更したつもりはないのだが、変換候補ウィンドウ、及び、推測候補ウィンドウが画面中央に固定表示される状態になった。JUST SYSTEMSのサポートページに以下のページがあり、ウィンドウをドラッグ＆ドロップすることで位置を変更できることが分かったが、肝心の「左上のピン」が表示されておらず、カーソル位置表示に戻すことができない。	[サポートFAQ] 候補ウィンドウの表示位置を変更するATOKプロパティ設定の中を確認しても、表示・非表示の切り替えはあるが、表示位置の切り替えが見つからない･･･（FAQは2007年記載なので、古いバージョンの挙動っぽい）。困っていた中、ふと候補ウィンドウ右下の画面の「候補メニュー」の存在に気がつき、表示してみると「表示位置</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
