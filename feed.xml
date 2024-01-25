@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-24T00:00:00+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/k_ichirof/articles/0bb4dcd7439958</id><title type="text">[Haskell] elemを実装する</title><updated>2024-01-24T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/0bb4dcd7439958"/><summary type="html">すごいHaskellたのしく学ぼう!を読んでいるので、アウトプットします。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-01-25T00:00:00+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/k_ichirof/articles/28d60870bc7023</id><title type="text">[Haskell] quicksortを実装する</title><updated>2024-01-25T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/28d60870bc7023"/><summary type="html">すごいHaskellたのしく学ぼう!を読んでいるので、アウトプットします。
+あくまで初学者のアウトプットなので、あまりイケてない記述があるかもしれません。
+第４章で再帰関数を実装する問題があるので、自分なりの回答を載せます。
+
+ quicksort
+本の回答
+qi&#39; :: (Ord t) =&amp;gt; [t] -&amp;gt; [t]
+qi&#39; [] = []
+qi&#39; (x : xs) =
+  let smallOrEq = [a | a &amp;lt;- xs, a &amp;lt;= x]
+      large = [a | a &amp;lt;- xs, a &amp;gt; x]
+   in qi&#39; smallOrE...</summary></entry><entry><id>https://qiita.com/flowerhill/items/b89bc64ede4bbf6471c0</id><title type="text">AtCoder Beginner Contest 336 D 考察</title><updated>2024-01-24T19:37:55+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/b89bc64ede4bbf6471c0"/></entry><entry><id>https://qiita.com/flowerhill/items/335accf6060238758c8e</id><title type="text">AtCoder Beginner Contest 337 D 考察</title><updated>2024-01-24T19:34:14+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/335accf6060238758c8e"/></entry><entry><id>https://qiita.com/flowerhill/items/70846a01bcbbebd03852</id><title type="text">AtCoder Beginner Contest 337 振り返り</title><updated>2024-01-24T19:24:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/70846a01bcbbebd03852"/></entry><entry><id>https://zenn.dev/k_ichirof/articles/0bb4dcd7439958</id><title type="text">[Haskell] elemを実装する</title><updated>2024-01-24T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/0bb4dcd7439958"/><summary type="html">すごいHaskellたのしく学ぼう!を読んでいるので、アウトプットします。
 あくまで初学者のアウトプットなので、あまりイケてない記述があるかもしれません。
 第４章で再帰関数を実装する問題があるので、自分なりの回答を載せます。
 
@@ -68,7 +79,7 @@ replicate 3 10 -- [10, 10, 10]
 
 replicate 5 &#39;a&#39; -- &#34;aaaaa&#34;
 
-replicate 4 True -- [True, True, True...</summary></entry><entry><id>https://qiita.com/flowerhill/items/d5f9f6b81d42ce81ca95</id><title type="text">AtCoder Beginner Contest 336 (バチャ) 振り返り</title><updated>2024-01-17T03:16:19+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/d5f9f6b81d42ce81ca95"/></entry><entry><id>https://zenn.dev/trap/articles/ce588587c4c8ff</id><title type="text">二種類のリアクティブな値の動的切り替えとモナドの関係</title><updated>2024-01-16T10:21:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/trap/articles/ce588587c4c8ff"/><summary type="html">
+replicate 4 True -- [True, True, True...</summary></entry><entry><id>https://zenn.dev/trap/articles/ce588587c4c8ff</id><title type="text">二種類のリアクティブな値の動的切り替えとモナドの関係</title><updated>2024-01-16T10:21:20+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/trap/articles/ce588587c4c8ff"/><summary type="html">
  前提知識
 コードは PureScript および Haskell っぽく書いていますが、ReactiveX の対応する概念を書いてあるので Rx を知っていればなんとなく読めると思います。モナドはそういうのがあるんだな～と読み飛ばしておけば OK です。
 
@@ -77,7 +88,7 @@ replicate 4 True -- [True, True, True...</summary></entry><entry><id>https://qii
 リアクティブな値の動的切り替えは次の2つの方法で構成できる
 
 Rx の Switch と同様
-mF...</summary></entry><entry><id>https://qiita.com/flowerhill/items/ce81230c32675dd31cc3</id><title type="text">AtCoder Beginner Contest 335 振り返り</title><updated>2024-01-11T13:45:54+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/ce81230c32675dd31cc3"/></entry><entry><id>https://zenn.dev/k_ichirof/articles/be5beb29026a0b</id><title type="text">[Haskell]FizzBuzz</title><updated>2024-01-09T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/be5beb29026a0b"/><summary type="html">そろそろ関数型言語に挑戦してみたく、「すごいHaskell楽しく学ぼう！」を読み始めた。
+mF...</summary></entry><entry><id>https://zenn.dev/k_ichirof/articles/be5beb29026a0b</id><title type="text">[Haskell]FizzBuzz</title><updated>2024-01-09T00:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/k_ichirof/articles/be5beb29026a0b"/><summary type="html">そろそろ関数型言語に挑戦してみたく、「すごいHaskell楽しく学ぼう！」を読み始めた。
 一旦は3章のcase式まで読んだので、FizzBuzzをやってみた。
 judge :: (Integral a, Show a) =&amp;gt; a -&amp;gt; String
 judge n
@@ -86,7 +97,7 @@ judge n
   | n `mod` 3 == 0 = show &#34;Fizz&#34;
   | otherwise = show n
 
-fizzBuzz :: (Integral t, Show ...</summary></entry><entry><id>https://qiita.com/kohki_takatama/items/9e645732f1eab18a591f</id><title type="text">修正：haskellコードの理解（関数合成・複数の`.`）</title><updated>2024-01-08T16:37:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohki_takatama/items/9e645732f1eab18a591f"/></entry><entry><id>https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b</id><title type="text">圏論ユーザーのレベル10</title><updated>2024-01-06T18:51:58+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b"/><summary type="html">その昔「○○プログラマのレベル10」というネタがあった。それを思い出したので圏論バージョンを作ってみようと思った。私がかく成長したいという独断的な妄想ノートである。誤りや見えていない境地については諸氏のご指導を仰ぐものである。
+fizzBuzz :: (Integral t, Show ...</summary></entry><entry><id>https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b</id><title type="text">圏論ユーザーのレベル10</title><updated>2024-01-06T18:51:58+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yvvakimoto/articles/efc4edb7d60c9b"/><summary type="html">その昔「○○プログラマのレベル10」というネタがあった。それを思い出したので圏論バージョンを作ってみようと思った。私がかく成長したいという独断的な妄想ノートである。誤りや見えていない境地については諸氏のご指導を仰ぐものである。
 元祖はPerlのようだが、もっともっとさかのぼると起源は十牛図ではないかと思われる。章題はこれに則った。
 
  レベル0：尋牛
@@ -179,23 +190,7 @@ Language Server: HLS
 
  プロジェクトの作成
 次にプロジェクトを作ります。Haskellのプロジェクト管理にはCabalとStackが使われます。
-Cabalは昔から使われてきたプロジェクト管理ツールです。プロジェクトのビルド、依存関係のインストール、テ...</summary></entry><entry><id>https://zenn.dev/shinpallini/articles/haskell-monad-study</id><title type="text">GolangでシンプルなIOモナドを実装してみよう</title><updated>2023-12-09T16:48:01+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/shinpallini/articles/haskell-monad-study"/><summary type="html">
- はじめに
-Haskellなどの純粋関数型言語を勉強している中で出てくる「モナド」という概念があります。
-最初はこの概念についてよくわからず、そして色々調べる中で色々な表現で説明されていました。
-例えば、
-
-プログラムを構造化するための汎用的な抽象概念 [1]
-
-自己関手の圏におけるモノイド対象 [2]
-
-
-bind関数とtoMonad関数を持つ型 [3]
-
-
-のようにいくつかの表現がありました。
-調べている中で一番しっくり来たのが以下の記事(参考3)だったので、これをベースにシンプルなIOモナドを実装していきます。
-https://www.infoq.com/jp/articles/...</summary></entry><entry><id>https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/</id><title type="text">GHCへの私の貢献2023</title><updated>2023-12-05T22:00:00+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/"/><summary type="html">この記事は Haskell Advent Calendar 2023 の6日目の記事です。 私はここ数年、HaskellコンパイラーであるGHCに貢献しています。この記事では、今年（2023年）に私が行った貢献を紹介しま [&amp;#8230;]</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/12/atok.html</id><title type="text">[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまった</title><updated>2023-12-05T12:07:55.681+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/12/atok.html"/><summary type="text">&amp;nbsp;[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまったWindows10上で、特に設定を変更したつもりはないのだが、変換候補ウィンドウ、及び、推測候補ウィンドウが画面中央に固定表示される状態になった。JUST SYSTEMSのサポートページに以下のページがあり、ウィンドウをドラッグ＆ドロップすることで位置を変更できることが分かったが、肝心の「左上のピン」が表示されておらず、カーソル位置表示に戻すことができない。	[サポートFAQ] 候補ウィンドウの表示位置を変更するATOKプロパティ設定の中を確認しても、表示・非表示の切り替えはあるが、表示位置の切り替えが見つからない･･･（FAQは2007年記載なので、古いバージョンの挙動っぽい）。困っていた中、ふと候補ウィンドウ右下の画面の「候補メニュー」の存在に気がつき、表示してみると「表示位置</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+Cabalは昔から使われてきたプロジェクト管理ツールです。プロジェクトのビルド、依存関係のインストール、テ...</summary></entry><entry><id>https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/</id><title type="text">GHCへの私の貢献2023</title><updated>2023-12-05T22:00:00+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/"/><summary type="html">この記事は Haskell Advent Calendar 2023 の6日目の記事です。 私はここ数年、HaskellコンパイラーであるGHCに貢献しています。この記事では、今年（2023年）に私が行った貢献を紹介しま [&amp;#8230;]</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/12/atok.html</id><title type="text">[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまった</title><updated>2023-12-05T12:07:55.681+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/12/atok.html"/><summary type="text">&amp;nbsp;[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまったWindows10上で、特に設定を変更したつもりはないのだが、変換候補ウィンドウ、及び、推測候補ウィンドウが画面中央に固定表示される状態になった。JUST SYSTEMSのサポートページに以下のページがあり、ウィンドウをドラッグ＆ドロップすることで位置を変更できることが分かったが、肝心の「左上のピン」が表示されておらず、カーソル位置表示に戻すことができない。	[サポートFAQ] 候補ウィンドウの表示位置を変更するATOKプロパティ設定の中を確認しても、表示・非表示の切り替えはあるが、表示位置の切り替えが見つからない･･･（FAQは2007年記載なので、古いバージョンの挙動っぽい）。困っていた中、ふと候補ウィンドウ右下の画面の「候補メニュー」の存在に気がつき、表示してみると「表示位置</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
