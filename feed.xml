@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-03-21T20:51:25+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/gotoki_no_joe/items/f9770e81cc38a70b5300</id><title type="text">ABC345 A～F をHaskellで</title><updated>2024-03-21T20:51:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/f9770e81cc38a70b5300"/></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-10</id><title type="text">GHC 9.10の新機能</title><updated>2024-03-20T08:40:59+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-10"/><summary type="html">GHC 9.10.1-alpha1が2024年3月14日にリリースされました。正式版のリリースは4月ごろを目指しているようです（9.10.1 · Milestones · Glasgow Haskell Compiler / GHC · GitLab）。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-03-24T02:47:36+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/amtr/articles/bbcbabff4b5b49</id><title type="text">[読書メモ] プログラミング Haskell 2ed. 第17章</title><updated>2024-03-24T02:47:36+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/amtr/articles/bbcbabff4b5b49"/><summary type="html">プログラミング Haskell 2ed. (以下テキストと呼ぶ) 第17章 について, 自分なりの理解をメモしたもの.
+前回(第16章)
+
+ 1. 概要
+第16章では天下り的に与えられたコンパイラの正しさを構造的帰納法を使って証明した. 第17章では逆に正しさの記述(仕様)からコンパイラを体系的に導く(テキストではソース言語から目標言語への変換と記載されている). 導き方は以下の2通り示されている.
+
+一連の手順を踏んだ変換(スタックの追加, 継続の追加, 高階関数の除去)
+正しさの記述から直接導出
+
+このように導出するメリットは以下のとおり.
+
+体系的に導出できる
+導出過程から正しさが...</summary></entry><entry><id>https://qiita.com/gotoki_no_joe/items/f9770e81cc38a70b5300</id><title type="text">ABC345 A～F をHaskellで</title><updated>2024-03-21T20:51:25+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/f9770e81cc38a70b5300"/></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-10</id><title type="text">GHC 9.10の新機能</title><updated>2024-03-20T08:40:59+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-10"/><summary type="html">GHC 9.10.1-alpha1が2024年3月14日にリリースされました。正式版のリリースは4月ごろを目指しているようです（9.10.1 · Milestones · Glasgow Haskell Compiler / GHC · GitLab）。
 この記事では、GHC 9.10の新機能を確認していきます。過去の類似の記事は
 
 GHC 9.2の新機能と、GHCの動向2021
@@ -170,16 +182,7 @@ Stackを使わなくてもHackageからパッケージを集めれば動かせ�
 
  モナディック関数型リアクティブプログラミングとは何なのか
 
- 関数型リアク...</summary></entry><entry><id>https://zenn.dev/hanao/articles/a6ad672163a3a2</id><title type="text">Haskell初級者がAtCoderの問題でプロパティベーステストを試す</title><updated>2023-12-20T16:01:53+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hanao/articles/a6ad672163a3a2"/><summary type="html">
- はじめに
-『実践プロパティベーステスト』のおかげか、最近プロパティベーステストが流行ってますね！
-この記事は、Haskell初級者の僕がAtCoderの問題を元にHaskellでプロパティベーステストを試してみる記事です。
-まだまだプロパティベーステスト勉強はじめたばかりなので(まだ第一部しか読んでない)、おかしいところがあれば優しく指摘いただけるととても嬉しいです！
-
- プロパティベーステストって何？
-簡単に説明すると、以下の様な感じになります。
-
-どのような入力値を与え ても常に同じであるような振る舞いをテストする(この実行可能なコードがプロパティ)と言っている(普通のユニットテ...</summary></entry><entry><id>https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/</id><title type="text">GHCへの私の貢献2023</title><updated>2023-12-05T22:00:00+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/"/><summary type="html">この記事は Haskell Advent Calendar 2023 の6日目の記事です。 私はここ数年、HaskellコンパイラーであるGHCに貢献しています。この記事では、今年（2023年）に私が行った貢献を紹介しま [&amp;#8230;]</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/12/atok.html</id><title type="text">[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまった</title><updated>2023-12-05T12:07:55.681+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/12/atok.html"/><summary type="text">&amp;nbsp;[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまったWindows10上で、特に設定を変更したつもりはないのだが、変換候補ウィンドウ、及び、推測候補ウィンドウが画面中央に固定表示される状態になった。JUST SYSTEMSのサポートページに以下のページがあり、ウィンドウをドラッグ＆ドロップすることで位置を変更できることが分かったが、肝心の「左上のピン」が表示されておらず、カーソル位置表示に戻すことができない。	[サポートFAQ] 候補ウィンドウの表示位置を変更するATOKプロパティ設定の中を確認しても、表示・非表示の切り替えはあるが、表示位置の切り替えが見つからない･･･（FAQは2007年記載なので、古いバージョンの挙動っぽい）。困っていた中、ふと候補ウィンドウ右下の画面の「候補メニュー」の存在に気がつき、表示してみると「表示位置</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+ 関数型リアク...</summary></entry><entry><id>https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/</id><title type="text">GHCへの私の貢献2023</title><updated>2023-12-05T22:00:00+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/"/><summary type="html">この記事は Haskell Advent Calendar 2023 の6日目の記事です。 私はここ数年、HaskellコンパイラーであるGHCに貢献しています。この記事では、今年（2023年）に私が行った貢献を紹介しま [&amp;#8230;]</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/12/atok.html</id><title type="text">[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまった</title><updated>2023-12-05T12:07:55.681+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/12/atok.html"/><summary type="text">&amp;nbsp;[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまったWindows10上で、特に設定を変更したつもりはないのだが、変換候補ウィンドウ、及び、推測候補ウィンドウが画面中央に固定表示される状態になった。JUST SYSTEMSのサポートページに以下のページがあり、ウィンドウをドラッグ＆ドロップすることで位置を変更できることが分かったが、肝心の「左上のピン」が表示されておらず、カーソル位置表示に戻すことができない。	[サポートFAQ] 候補ウィンドウの表示位置を変更するATOKプロパティ設定の中を確認しても、表示・非表示の切り替えはあるが、表示位置の切り替えが見つからない･･･（FAQは2007年記載なので、古いバージョンの挙動っぽい）。困っていた中、ふと候補ウィンドウ右下の画面の「候補メニュー」の存在に気がつき、表示してみると「表示位置</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
