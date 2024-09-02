@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-08-27T18:27:20+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/gotoki_no_joe/items/c0e0b00ff6874eff6604</id><title type="text">ABCをHaskellで</title><updated>2024-08-27T18:27:20+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/c0e0b00ff6874eff6604"/></entry><entry><id>https://qiita.com/gotoki_no_joe/items/bc6279de3349a35d66ca</id><title type="text">paiza「島探し」と「十億連勝」(paizaランク S 相当)」もHaskellで</title><updated>2024-08-27T18:03:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/bc6279de3349a35d66ca"/></entry><entry><id>https://qiita.com/negisys/items/ac28ca0ec84b7143ea96</id><title type="text">初心者向けHaskellチュートリアル</title><updated>2024-08-25T17:14:07+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/negisys/items/ac28ca0ec84b7143ea96"/></entry><entry><id>https://zenn.dev/funnycat/articles/8f77cf83e4f26a</id><title type="text">Haskellのモックライブラリmockcatで型クラスのモックが簡単に作成できるようになりました</title><updated>2024-08-22T23:29:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/funnycat/articles/8f77cf83e4f26a"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-09-01T11:29:32+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/lanexpr/articles/de512ce5650518</id><title type="text">Heftiaエフェクトシステムライブラリ入門 Part 3 - 限定継続</title><updated>2024-09-01T11:29:32+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lanexpr/articles/de512ce5650518"/><summary type="html">ここでは、Heftiaにおける一階及び高階エフェクトを用いた限定継続の操作について説明します。
+ここまでで出てきた使い方は、既存のエフェクトシステムライブラリで実現可能な部分と被るところがありました。しかし本パートで説明すること[1]は、既存のものでは実現が困難であり、完全に新規な技術です。
+以降、常体で解説を行います。
+
+ Forkエフェクト
+以下で定義するForkエフェクトは、制御構造を非決定性計算的に分枝させるものだ。
+非決定性計算と言えば、リストモナドだ。リストモナドでdo { x &amp;lt;- [1..4]; ... }とやるように、このエフェクトは制御の流れを分枝させ、あたかも...</summary></entry><entry><id>https://zenn.dev/lanexpr/articles/b63f31525c0a4d</id><title type="text">Heftiaエフェクトシステムライブラリ入門 Part 2 - 高階エフェクト</title><updated>2024-09-01T11:29:31+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lanexpr/articles/b63f31525c0a4d"/><summary type="html">ここでは、ロギングのためのエフェクトを通じて、heftia-effectsにおける高階のエフェクトの取り扱い方を説明します。一階エフェクトはほとんど既存のFreerに基づくライブラリと同様であったのに対して、heftia-effectsにおける高階エフェクトの扱われ方はElaboration方式といい、Hefty Algebras (Casper et, al. 2023)に基づく、まったく新しいものです。
+以降、常体で解説を行います。
+
+ 準備
+このパートでは、外部のライブラリとしてtime ^&amp;gt;= 1.11.1, text ^&amp;gt;= 1.2.5を使用する。
+
+ ログ出力のエ...</summary></entry><entry><id>https://zenn.dev/lanexpr/articles/9061f0121f3cf5</id><title type="text">Heftiaエフェクトシステムライブラリ入門 Part 1 - 一階エフェクト</title><updated>2024-09-01T11:29:29+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lanexpr/articles/9061f0121f3cf5"/><summary type="html">
+ はじめに
+本シリーズでは、HaskellのエフェクトシステムライブラリであるHeftiaの解説を、ライブラリ作者である筆者より行います。読者はある程度Haskellを書いたことがあるものと想定します。
+本記事では、同じHaskellのエフェクトシステムライブラリであるPolysemyライブラリの説明に使用されているTeletypeエフェクト型を例として、Heftiaにおける一階のエフェクトの使い方を説明します。基本的にHeftiaは一階のエフェクトに関してはFreer Effectsと呼ばれる方式そのものであり、一階のエフェクトのみをサポートしているfreer-simple系のライブ...</summary></entry><entry><id>https://zenn.dev/lanexpr/articles/5bc6f957a7fde4</id><title type="text">【エフェクトシステムとは一体なんなのか？】なぜ私はHaskellでエフェクトシステムのライブラリを作るに至ったか</title><updated>2024-09-01T11:29:29+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lanexpr/articles/5bc6f957a7fde4"/><summary type="html">
+ はじめに
+本記事は、今回筆者が作成したHaskellのエフェクトシステムライブラリの背景を説明するものです。Haskellに触れたことがない読者のために、理解に必要な事柄や文法等は記事中で簡単に説明します。Haskellやライブラリ自体に興味がなくとも、エフェクトシステムの紹介だけでも今後の参考にしていただければ幸いです。
+https://github.com/sayo-hs/heftia
+
+ エフェクトシステム
+エフェクトシステムというプログラミングパラダイムが以前より研究されていました。
+これは、プログラムのコード内で起こりうる副作用を分類、タグ付けし、実行時より前に分かるように...</summary></entry><entry><id>https://qiita.com/gotoki_no_joe/items/c0e0b00ff6874eff6604</id><title type="text">ABCをHaskellで</title><updated>2024-08-27T18:27:20+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/c0e0b00ff6874eff6604"/></entry><entry><id>https://qiita.com/gotoki_no_joe/items/bc6279de3349a35d66ca</id><title type="text">paiza「島探し」と「十億連勝」(paizaランク S 相当)」もHaskellで</title><updated>2024-08-27T18:03:09+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/bc6279de3349a35d66ca"/></entry><entry><id>https://qiita.com/negisys/items/ac28ca0ec84b7143ea96</id><title type="text">初心者向けHaskellチュートリアル</title><updated>2024-08-25T17:14:07+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/negisys/items/ac28ca0ec84b7143ea96"/></entry><entry><id>https://zenn.dev/funnycat/articles/8f77cf83e4f26a</id><title type="text">Haskellのモックライブラリmockcatで型クラスのモックが簡単に作成できるようになりました</title><updated>2024-08-22T23:29:24+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/funnycat/articles/8f77cf83e4f26a"/><summary type="html">
  はじめに
 先日Haskellのモックライブラリmockcatを作ったのですが、1stリリース時点では入れなかった機能を追加したので紹介させてください。
 （リリースしたときの記事はこちら）
@@ -187,50 +209,7 @@ hmatrix: BLAS/LAPACK の Haskell バインディング
 
 linear: Haskell による純粋な線形代数実装
 
-といったライブラリの導入を検討するのが先決でしょう。ただこれらのライブラリを使用するには BLAS/LAPACK が先に必要だったり依存す...</summary></entry><entry><id>https://zenn.dev/catminusminus/articles/d87fc37ef7e5d0</id><title type="text">Free Monadでコンパイル型言語内DSL</title><updated>2024-04-13T10:18:50+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/catminusminus/articles/d87fc37ef7e5d0"/><summary type="html">
- はじめに
-元記事はこれです。
-https://blog.3qe.us/entry/2024/04/03/130606
-上の記事で言われているDSLを記事内で言及のあるFree Monadで作ります。とはいえ代入と足し算とprint関数だけですが。。。あとHaskellで実装しています。
-DSLというか、普通の（？）言語内DSLって要は（言語内）DSLのインタプリタを作る話だと（勝手に）思っていて、なのでタイトルではとりあえずコンパイル型言語内DSLって名前を付けました。
-
- 実装
-基本的な流れとしては、DSLからASTを作って、それを元にコンパイルします。
-DSLはこんな感じです。
-...</summary></entry><entry><id>https://zenn.dev/fjktkm/articles/047d7c92c4df3f</id><title type="text">Haskell を Dev Container で動かしたい</title><updated>2024-03-30T19:04:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/fjktkm/articles/047d7c92c4df3f"/><summary type="html">!
-Dev Container で Haskell 環境を構築しようとしたら思いのほか沼ったので，備忘録として書いておこうという趣旨の記事になります．Haskell 初心者なので誤った情報が含まれているかもしれません．もしお気づきの際は，大変恐縮ですがやさしい言葉でご指摘くださいませ．
-
-
- 1. Dev Container に Haskell プリセットがない
-Dev Container で Haskell 環境を構築しようとすると，おそらくまず真っ先にプリセットから Haskell を探そうとするでしょう．そしてその試みは失敗に終わります．というのも，has まで入力した時点で，候補...</summary></entry><entry><id>https://zenn.dev/amtr/articles/bbcbabff4b5b49</id><title type="text">[読書メモ] プログラミング Haskell 2ed. 第17章</title><updated>2024-03-24T02:47:36+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/amtr/articles/bbcbabff4b5b49"/><summary type="html">プログラミング Haskell 2ed. (以下テキストと呼ぶ) 第17章 について, 自分なりの理解をメモしたもの.
-前回(第16章)
-
- 1. 概要
-第16章では天下り的に与えられたコンパイラの正しさを構造的帰納法を使って証明した. 第17章では逆に正しさの記述(仕様)からコンパイラを体系的に導く(テキストではソース言語から目標言語への変換と記載されている). 導き方は以下の2通り示されている.
-
-一連の手順を踏んだ変換(スタックの追加, 継続の追加, 高階関数の除去)
-正しさの記述から直接導出
-
-このように導出するメリットは以下のとおり.
-
-体系的に導出できる
-導出過程から正しさが...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-10</id><title type="text">GHC 9.10の新機能</title><updated>2024-03-20T08:40:59+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-10"/><summary type="html">GHC 9.10.1が2024年5月11日にリリースされました。
-
-GHC 9.10.1 is now available! - Announcements - Haskell Community
-
-この記事では、GHC 9.10の新機能を確認していきます。過去の類似の記事は
-
-GHC 9.2の新機能と、GHCの動向2021
-GHC 8.10とGHC 9.0の新機能
-GHC 9.4の新機能
-GHC 9.6の新機能
-GHC 9.8の新機能
-
-です。
-この記事は網羅的な紹介記事とはなっていません。是非、公式のリリースノート類も参照してください：
-
-
-2.1. Version 9.10.1 —...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2023/12/25/Haskell_%E3%81%A7_Open_Telemetry_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%92%E5%90%91%E4%B8%8A</id><title type="text">Haskell で Open Telemetry を利用してオブザーバビリティーを向上させよう</title><updated>2023-12-25T17:35:26+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2023/12/25/Haskell_%E3%81%A7_Open_Telemetry_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%92%E5%90%91%E4%B8%8A"/><summary type="html">Open Telemetry って何？ この記事では Open Telemetry のトレースの機能を使います。トレースを使うと、サーバーを越境してコールグラフとその実行時間などを取得することができます。下の画像は Jaeger のスクリーンショットです。Jaeger は Open Telemetry の規格にのっとったコレクター実装のひとつです。 この例では HTTP サーバーと HTTP クライアントでトレースを取得しています。まずサーバーが /1 のパスでリクエストを受けつけたことが分かります。このリクエストに対してレスポンスを返すまでに 845μs かかっていますね。このトレースにおけ…</summary></entry><entry><id>https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/</id><title type="text">GHCへの私の貢献2023</title><updated>2023-12-05T22:00:00+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/"/><summary type="html">この記事は Haskell Advent Calendar 2023 の6日目の記事です。 私はここ数年、HaskellコンパイラーであるGHCに貢献しています。この記事では、今年（2023年）に私が行った貢献を紹介しま [&amp;#8230;]</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/12/atok.html</id><title type="text">[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまった</title><updated>2023-12-05T12:07:55.681+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/12/atok.html"/><summary type="text">&amp;nbsp;[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまったWindows10上で、特に設定を変更したつもりはないのだが、変換候補ウィンドウ、及び、推測候補ウィンドウが画面中央に固定表示される状態になった。JUST SYSTEMSのサポートページに以下のページがあり、ウィンドウをドラッグ＆ドロップすることで位置を変更できることが分かったが、肝心の「左上のピン」が表示されておらず、カーソル位置表示に戻すことができない。	[サポートFAQ] 候補ウィンドウの表示位置を変更するATOKプロパティ設定の中を確認しても、表示・非表示の切り替えはあるが、表示位置の切り替えが見つからない･･･（FAQは2007年記載なので、古いバージョンの挙動っぽい）。困っていた中、ふと候補ウィンドウ右下の画面の「候補メニュー」の存在に気がつき、表示してみると「表示位置</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
+といったライブラリの導入を検討するのが先決でしょう。ただこれらのライブラリを使用するには BLAS/LAPACK が先に必要だったり依存す...</summary></entry><entry><id>https://kakkun61.hatenablog.com/entry/2023/12/25/Haskell_%E3%81%A7_Open_Telemetry_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%92%E5%90%91%E4%B8%8A</id><title type="text">Haskell で Open Telemetry を利用してオブザーバビリティーを向上させよう</title><updated>2023-12-25T17:35:26+09:00</updated><author><name>岡本和樹</name></author><link href="https://kakkun61.hatenablog.com/entry/2023/12/25/Haskell_%E3%81%A7_Open_Telemetry_%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BC%E3%82%92%E5%90%91%E4%B8%8A"/><summary type="html">Open Telemetry って何？ この記事では Open Telemetry のトレースの機能を使います。トレースを使うと、サーバーを越境してコールグラフとその実行時間などを取得することができます。下の画像は Jaeger のスクリーンショットです。Jaeger は Open Telemetry の規格にのっとったコレクター実装のひとつです。 この例では HTTP サーバーと HTTP クライアントでトレースを取得しています。まずサーバーが /1 のパスでリクエストを受けつけたことが分かります。このリクエストに対してレスポンスを返すまでに 845μs かかっていますね。このトレースにおけ…</summary></entry><entry><id>https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/</id><title type="text">GHCへの私の貢献2023</title><updated>2023-12-05T22:00:00+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2023/12/my-contributions-to-ghc/"/><summary type="html">この記事は Haskell Advent Calendar 2023 の6日目の記事です。 私はここ数年、HaskellコンパイラーであるGHCに貢献しています。この記事では、今年（2023年）に私が行った貢献を紹介しま [&amp;#8230;]</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/12/atok.html</id><title type="text">[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまった</title><updated>2023-12-05T12:07:55.681+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/12/atok.html"/><summary type="text">&amp;nbsp;[ATOK] 候補ウィンドウがカーソル位置ではなく、画面中央に固定表示されるようになってしまったWindows10上で、特に設定を変更したつもりはないのだが、変換候補ウィンドウ、及び、推測候補ウィンドウが画面中央に固定表示される状態になった。JUST SYSTEMSのサポートページに以下のページがあり、ウィンドウをドラッグ＆ドロップすることで位置を変更できることが分かったが、肝心の「左上のピン」が表示されておらず、カーソル位置表示に戻すことができない。	[サポートFAQ] 候補ウィンドウの表示位置を変更するATOKプロパティ設定の中を確認しても、表示・非表示の切り替えはあるが、表示位置の切り替えが見つからない･･･（FAQは2007年記載なので、古いバージョンの挙動っぽい）。困っていた中、ふと候補ウィンドウ右下の画面の「候補メニュー」の存在に気がつき、表示してみると「表示位置</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/02/windows-windows10.html</id><title type="text">[windows] Windows10セットアップ・設定項目のメモ</title><updated>2023-10-02T19:40:04.272+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/02/windows-windows10.html"/><summary type="text">Windows10セットアップ時の設定項目、インストールアプリの備忘録。
 
 
 スタートメニュー・タスクバーの設定
