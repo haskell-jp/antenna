@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-11-04T11:35:39+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/konn/articles/2024-11-04-servant-miso-on-cloudflare-workers</id><title type="text">Haskell で Cloudflare Workers 製のフルスタックブログエンジンを作ったら快適すぎた</title><updated>2024-11-04T11:35:39+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/2024-11-04-servant-miso-on-cloudflare-workers"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-11-05T21:35:47+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/Trubetzkoy/items/61203eaacc3c37d945b8</id><title type="text">Haskellでラムダ計算：論理関数編</title><updated>2024-11-05T21:35:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Trubetzkoy/items/61203eaacc3c37d945b8"/></entry><entry><id>https://zenn.dev/konn/articles/2024-11-04-servant-miso-on-cloudflare-workers</id><title type="text">Haskell で Cloudflare Workers 製のフルスタックブログエンジンを作ったら快適すぎた</title><updated>2024-11-04T11:35:39+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/konn/articles/2024-11-04-servant-miso-on-cloudflare-workers"/><summary type="html">
  TL;DR
 
 
@@ -31,7 +31,7 @@ GHC 9.12.1-alpha1 is now available! - Announcements - Haskell Community
 この記事では、GHC 9.12の新機能を筆者の独断と偏見に基づき確認していきます。過去の類似の記事は
 
 GHC 9.2の新機能と、GHCの動向2021
-GHC 8.10とG...</summary></entry><entry><id>https://qiita.com/kyamaz/items/330c80063a2692e5f299</id><title type="text">スミス数</title><updated>2024-10-21T02:21:05+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyamaz/items/330c80063a2692e5f299"/></entry><entry><id>https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate</id><title type="text">翻訳: Parse, don’t validate (バリデーションせずパースせよ)</title><updated>2024-10-16T00:30:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate"/><summary type="html">!
+GHC 8.10とG...</summary></entry><entry><id>https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate</id><title type="text">翻訳: Parse, don’t validate (バリデーションせずパースせよ)</title><updated>2024-10-16T00:30:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate"/><summary type="html">!
 こちらは2019年に執筆されたParse, don’t validateの翻訳です。
 
 これまで、型駆動設計を実践することが何を意味するのか、簡潔でシンプルな説明を見つけるのに苦労してきました。誰かに「どうやってこのアプローチを思いついたのですか？」と尋ねられることが多いのですが、満足のいく答えを出せないことがよくあります。そのアイデアが突然のひらめきで浮かんだわけではなく、正しいアプローチを空から引っ張り出す必要がない、反復的な設計プロセスがあると分かってはいるのですが、そのプロセスを他の人にうまく伝えることができていませんでした。
