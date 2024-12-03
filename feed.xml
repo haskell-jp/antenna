@@ -75,15 +75,17 @@ Servant の Workers 向けアダプタを実装したよ
 今回の記事では普段あまり考えない式に登場する.(ドット演算子)の型についての独自の考えを述べていきます。ただし、これは「ドット演算子には型がある」という主張を行うものではなく、「もし、ドット演算子がこのような型を持つ場合には辻褄があう」程度の主張です[1]。
 そして、その上でドット演算子と辻褄があう型を持つような演算子を関数型言語で用いた場合のコードの比較を行い、関数型言語のアイデアとそれ以外の言語のアイデアの橋渡しとなることがこの記事の目的です。
 
- メソッド・チェ...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-12</id><title type="text">GHC 9.12の新機能</title><updated>2024-10-21T03:35:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-12"/><summary type="html">GHC 9.12.1-alpha1が2024年10月16日にリリースされました。
+ メソッド・チェ...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-12</id><title type="text">GHC 9.12の新機能</title><updated>2024-10-21T03:35:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-12"/><summary type="html">GHC 9.12.1-rc1が2024年11月29日にリリースされました。
 
-GHC 9.12.1-alpha1 is now available! - Announcements - Haskell Community
+GHC 9.12.1-rc1 is now available - Announcements - Haskell Community
 
-そのうち、GHCupのprerelease channelでも使えるようになるのではないかと思います（Haskellの環境構築2023の「補遺：アルファ版・ベータ版のGHCを使う」も参考）。
+GHCupのprerelease channelで使えます（Haskellの環境構築2023の「補遺：アルファ版・ベータ版のGHCを使う」も参考）。
 この記事では、GHC 9.12の新機能を筆者の独断と偏見に基づき確認していきます。過去の類似の記事は
 
 GHC 9.2の新機能と、GHCの動向2021
-GHC 8.10とG...</summary></entry><entry><id>https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate</id><title type="text">翻訳: Parse, don’t validate (バリデーションせずパースせよ)</title><updated>2024-10-16T00:30:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate"/><summary type="html">!
+GHC 8.10とGHC 9.0の新機能
+GHC 9.4の新機能
+GHC 9...</summary></entry><entry><id>https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate</id><title type="text">翻訳: Parse, don’t validate (バリデーションせずパースせよ)</title><updated>2024-10-16T00:30:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate"/><summary type="html">!
 こちらは2019年に執筆されたParse, don’t validateの翻訳です。
 
 これまで、型駆動設計を実践することが何を意味するのか、簡潔でシンプルな説明を見つけるのに苦労してきました。誰かに「どうやってこのアプローチを思いついたのですか？」と尋ねられることが多いのですが、満足のいく答えを出せないことがよくあります。そのアイデアが突然のひらめきで浮かんだわけではなく、正しいアプローチを空から引っ張り出す必要がない、反復的な設計プロセスがあると分かってはいるのですが、そのプロセスを他の人にうまく伝えることができていませんでした。
