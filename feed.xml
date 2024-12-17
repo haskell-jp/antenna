@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-12-15T09:18:12+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://blog.miz-ar.info/2024/12/compile-time-constant/</id><title type="text">コンパイル時定数しか受け付けない引数</title><updated>2024-12-15T09:18:12+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2024/12/compile-time-constant/"/><summary type="html">普通のプログラミング言語の普通の関数は、実行時に決まる値を受け取ることができます。 これに対して、「コンパイル時に決まる値しか受け付けない引数」を表現できると便利な場面があるのではないかと思うことが最近ありました。 動機 [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/hanao/articles/b0cd30e624aae2</id><title type="text">灰色コーダーがHaskellでAtCoderを1年間やったので振り返り</title><updated>2024-12-14T19:56:22+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hanao/articles/b0cd30e624aae2"/><summary type="html">この記事はHaskell Advent Calender 202412/15の記事になります。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2024-12-17T11:21:45+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/gotoki_no_joe/items/9e7dced0785a2c9415d4</id><title type="text">Advent of Code 2024 を Haskell で</title><updated>2024-12-17T11:21:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/9e7dced0785a2c9415d4"/></entry><entry><id>https://qiita.com/kohapizza/items/d6a86c5325d16279fc72</id><title type="text">HaskellでProjectEuler解いてみたら遅延評価の有り難みわかった</title><updated>2024-12-17T01:07:00+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohapizza/items/d6a86c5325d16279fc72"/></entry><entry><id>https://blog.miz-ar.info/2024/12/compile-time-constant/</id><title type="text">コンパイル時定数しか受け付けない引数</title><updated>2024-12-15T09:18:12+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2024/12/compile-time-constant/"/><summary type="html">普通のプログラミング言語の普通の関数は、実行時に決まる値を受け取ることができます。 これに対して、「コンパイル時に決まる値しか受け付けない引数」を表現できると便利な場面があるのではないかと思うことが最近ありました。 動機 [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/hanao/articles/b0cd30e624aae2</id><title type="text">灰色コーダーがHaskellでAtCoderを1年間やったので振り返り</title><updated>2024-12-14T19:56:22+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hanao/articles/b0cd30e624aae2"/><summary type="html">この記事はHaskell Advent Calender 202412/15の記事になります。
 
  なんの記事？
 1年間ほどAtCoderでHaskell頑張ってたのでふりかえってみました。
@@ -22,7 +22,7 @@ HaskellでEDSLを作る：StableName編では、StableName を使って計算の
 プログラミングをしている様子を傍から見るのは面白いものです。少くとも、この記事の筆者はそう感じています。いろいろな気付きがあって楽しいものです。
 ここでは、シンプルなプログラミングのお題をめぐって、あれこれプログラミングしてみます。Haskellプログラミングのエキスパートにとっては他愛もないものでしょう。それでも、「えぇー、それ、自分とは違う」ところがあれば、あるいは、「あらら、自分ならもっとうまくやる」なんてことがあれば、それはそれで、ツッコんで楽しめると思います（たぶん）。
 
-...</summary></entry><entry><id>https://qiita.com/gotoki_no_joe/items/43ffce43f4bb91022bac</id><title type="text">ABC344Eやりなおし</title><updated>2024-12-12T12:37:23+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/43ffce43f4bb91022bac"/></entry><entry><id>https://qiita.com/kohapizza/items/0269c32bcf2c9d6c1825</id><title type="text">Yesodを用いてWebアプリケーションを開発する</title><updated>2024-12-11T02:40:13+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kohapizza/items/0269c32bcf2c9d6c1825"/></entry><entry><id>https://qiita.com/Yosh31207/items/3006f5473c828293fede</id><title type="text">Rust使用者がHaskellを学んだ感想</title><updated>2024-12-09T07:29:45+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Yosh31207/items/3006f5473c828293fede"/></entry><entry><id>https://zenn.dev/1256/articles/da425eb7aab93a</id><title type="text">C#でHaskellモナド</title><updated>2024-12-09T05:55:29+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/1256/articles/da425eb7aab93a"/><summary type="html">Haskellは純粋関数型パラダイムの代表格です
+...</summary></entry><entry><id>https://qiita.com/gotoki_no_joe/items/43ffce43f4bb91022bac</id><title type="text">ABC344Eやりなおし</title><updated>2024-12-12T12:37:23+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/43ffce43f4bb91022bac"/></entry><entry><id>https://zenn.dev/1256/articles/da425eb7aab93a</id><title type="text">C#でHaskellモナド</title><updated>2024-12-09T05:55:29+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/1256/articles/da425eb7aab93a"/><summary type="html">Haskellは純粋関数型パラダイムの代表格です
 しかし、純粋とはなんでしょうか？
 実際には標準入出力に対する操作手段を有しており、これらは副作用に数えられる動作です
 では、Haskellは非純粋な言語なのでしょうか？
@@ -145,17 +145,21 @@ Servant の Workers 向けアダプタを実装したよ
 今回の記事では普段あまり考えない式に登場する.(ドット演算子)の型についての独自の考えを述べていきます。ただし、これは「ドット演算子には型がある」という主張を行うものではなく、「もし、ドット演算子がこのような型を持つ場合には辻褄があう」程度の主張です[1]。
 そして、その上でドット演算子と辻褄があう型を持つような演算子を関数型言語で用いた場合のコードの比較を行い、関数型言語のアイデアとそれ以外の言語のアイデアの橋渡しとなることがこの記事の目的です。
 
- メソッド・チェ...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-12</id><title type="text">GHC 9.12の新機能</title><updated>2024-10-21T03:35:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-12"/><summary type="html">GHC 9.12.1-rc1が2024年11月29日にリリースされました。
+ メソッド・チェ...</summary></entry><entry><id>https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-12</id><title type="text">GHC 9.12の新機能</title><updated>2024-10-21T03:35:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mod_poppo/articles/whats-new-in-ghc-9-12"/><summary type="html">GHC 9.12.1が2024年12月16日にリリースされました。
 
-GHC 9.12.1-rc1 is now available - Announcements - Haskell Community
+GHC 9.12.1 is now available - Announcements - Haskell Community
 
-GHCupのprerelease channelで使えます（Haskellの環境構築2023の「補遺：アルファ版・ベータ版のGHCを使う」も参考）。
 この記事では、GHC 9.12の新機能を筆者の独断と偏見に基づき確認していきます。過去の類似の記事は
 
 GHC 9.2の新機能と、GHCの動向2021
 GHC 8.10とGHC 9.0の新機能
 GHC 9.4の新機能
-GHC 9...</summary></entry><entry><id>https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate</id><title type="text">翻訳: Parse, don’t validate (バリデーションせずパースせよ)</title><updated>2024-10-16T00:30:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate"/><summary type="html">!
+GHC 9.6の新機能
+GHC 9.8の新機能
+GHC 9.10の新機能
+
+です。
+この記事は網羅的な紹介記事とはなっていません。特に、筆者が詳しくないRTSやTemplate...</summary></entry><entry><id>https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate</id><title type="text">翻訳: Parse, don’t validate (バリデーションせずパースせよ)</title><updated>2024-10-16T00:30:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mj2mkt/articles/2024-10-11-parse-dont-validate"/><summary type="html">!
 こちらは2019年に執筆されたParse, don’t validateの翻訳です。
 
 これまで、型駆動設計を実践することが何を意味するのか、簡潔でシンプルな説明を見つけるのに苦労してきました。誰かに「どうやってこのアプローチを思いついたのですか？」と尋ねられることが多いのですが、満足のいく答えを出せないことがよくあります。そのアイデアが突然のひらめきで浮かんだわけではなく、正しいアプローチを空から引っ張り出す必要がない、反復的な設計プロセスがあると分かってはいるのですが、そのプロセスを他の人にうまく伝えることができていませんでした。
