@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2025-03-20T02:45:32+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/airiswim/articles/90456e4768ca03</id><title type="text">Haskell②型を信じろ! データ型と型クラス、型変数</title><updated>2025-03-20T02:45:32+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/airiswim/articles/90456e4768ca03"/><summary type="html">
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2025-03-20T02:45:32+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/airiswim/articles/90456e4768ca03</id><title type="text">Haskell②型を信じろ! データ型,型クラス,型変数</title><updated>2025-03-20T02:45:32+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/airiswim/articles/90456e4768ca03"/><summary type="html">
  Haskellの基本的な型と概念　-基本型から型クラス・型変数
 !
 参考資料
