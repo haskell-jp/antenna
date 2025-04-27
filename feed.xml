@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2025-04-25T10:52:57+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/coke_126/articles/102d476a4a2750</id><title type="text">Haskellって？</title><updated>2025-04-25T10:52:57+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/coke_126/articles/102d476a4a2750"/><summary type="html">最近何か物足りないな、なんか学びたいなってところで関数型プログラミングに足を突っ込もうかなということでHaskellについて簡単に書き残しておきます。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2025-04-27T15:54:28+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/gotoki_no_joe/items/5b8adea9a9763825dcc6</id><title type="text">ABC402 A～F をHaskellで</title><updated>2025-04-27T15:54:28+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/5b8adea9a9763825dcc6"/></entry><entry><id>https://zenn.dev/coke_126/articles/102d476a4a2750</id><title type="text">Haskellって？</title><updated>2025-04-25T10:52:57+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/coke_126/articles/102d476a4a2750"/><summary type="html">最近何か物足りないな、なんか学びたいなってところで関数型プログラミングに足を突っ込もうかなということでHaskellについて簡単に書き残しておきます。
 
  Haskell
 読み方は「ハスケル」で、1990年に初版がリリースされたみたい。
@@ -38,7 +38,7 @@ describeNumber x =
     else if x == 0
         then &#34;ゼロ&#34;
     else if x `mod` 2 == 0
-        th...</summary></entry><entry><id>https://qiita.com/kyogoku_meta/items/91e09025338626fa220b</id><title type="text">【Haskell初心者向け】ラムダ式の基礎から応用、カリー化まで　たくさんの例で学ぶ</title><updated>2025-04-16T10:37:48+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/kyogoku_meta/items/91e09025338626fa220b"/></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_spec</id><title type="text">Haskell初心者が電卓アプリを作る (1)</title><updated>2025-04-13T12:46:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_spec"/><summary type="html">!
+        th...</summary></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_spec</id><title type="text">Haskell初心者が電卓アプリを作る (1)</title><updated>2025-04-13T12:46:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_spec"/><summary type="html">!
 この記事は 2023/01 頃に書いたものを移行したものです。
 
 電卓アプリには以下の要素が含まれており、どんな言語でも初学者の練習に向いているように思います。
