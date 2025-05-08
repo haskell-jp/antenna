@@ -41,6 +41,8 @@ describeNumber x =
         th...</summary></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_spec</id><title type="text">Haskell初心者が電卓アプリを作る (1)</title><updated>2025-04-13T12:46:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_spec"/><summary type="html">!
 この記事は 2023/01 頃に書いたものを移行したものです。
 
+
+ はじめに
 電卓アプリには以下の要素が含まれており、どんな言語でも初学者の練習に向いているように思います。
 
 
@@ -57,7 +59,9 @@ describeNumber x =
 
 
 Haskell においては、特に 2 と 3 は言語的に強い制限がかけられているので、それをどう解決するかを知るのに適していると思います。Haskell 初心者の私が実装した体験と感想を、それ辺りをふまえて書きたいと思います。
-本記事では電卓アプリの仕様についてのみ記載するので、練習や研修に使って...</summary></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_gui</id><title type="text">GUIと計算部分の実装 (Haskell初心者が電卓アプリを作る 2)</title><updated>2025-04-13T12:46:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_gui"/><summary type="html">!
+本記事では電卓アプリの仕様についてのみ記載するので、練習...</summary></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_gui</id><title type="text">GUIと計算部分の実装 (Haskell初心者が電卓アプリを作る 2)</title><updated>2025-04-13T12:46:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_gui"/><summary type="html">
+ この記事について
+!
 この記事は 2023/01 頃に書いたものを移行したものです。
 
 この記事は連載記事「Haskell初心者が電卓アプリを作る」の2回目の記事です。
@@ -73,8 +77,9 @@ GUIと計算部分の実装 (Haskell初心者が電卓アプリを作る 2) ← 
 Haskellでstateパターンを実装する (Haskell初心者が電卓アプリを作る 3)
 
 
-hspecでHaskellのテストコードを書く (Haskell初心者が電卓アプリを作る 4)
-...</summary></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_test</id><title type="text">hspecでHaskellのテストコードを書く (Haskell初心者が電卓アプリを作る 4)</title><updated>2025-04-13T12:38:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_test"/><summary type="html">!
+hspecでHaskellのテストコードを書く (Haskell初心者が電...</summary></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_test</id><title type="text">hspecでHaskellのテストコードを書く (Haskell初心者が電卓アプリを作る 4)</title><updated>2025-04-13T12:38:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_test"/><summary type="html">
+ この記事について
+!
 この記事は 2023/01 頃に書いたものを移行したものです。
 
 この記事は連載記事「Haskell初心者が電卓アプリを作る」の4回目の記事です。
@@ -90,10 +95,9 @@ GUIと計算部分の実装 (Haskell初心者が電卓アプリを作る 2)
 Haskellでstateパターンを実装する (Haskell初心者が電卓アプリを作る 3)
 
 
-hspecでHaskellのテストコードを書く (Haskell初心者が電卓アプリを作る 4) ← 今ここ
-
-
-ソースコード...</summary></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_state</id><title type="text">HaskellでStateパターンを実装する (Haskell初心者が電卓アプリを作る 3)</title><updated>2025-04-13T12:38:16+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_state"/><summary type="html">!
+hspecでHaskellのテストコードを書く (Haskell初心者が電卓アプリを作る 4) ← 今...</summary></entry><entry><id>https://zenn.dev/oroshi/articles/haskell_calc_state</id><title type="text">HaskellでStateパターンを実装する (Haskell初心者が電卓アプリを作る 3)</title><updated>2025-04-13T12:38:16+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/oroshi/articles/haskell_calc_state"/><summary type="html">
+ この記事について
+!
 この記事は 2023/01 頃に書いたものを移行したものです。
 
 この記事は連載記事「Haskell初心者が電卓アプリを作る」の3回目の記事です。
@@ -110,9 +114,7 @@ Haskellでstateパターンを実装する (Haskell初心者が電卓アプリ�
 
 
 hspecでHaskellのテストコードを書く (Haskell初心者が電卓アプリを作る 4)
-
-
-ソースコードは以下...</summary></entry><entry><id>https://zenn.dev/4ergfbv547uezdf/articles/3697a582d8bd7c</id><title type="text">音楽と数学：コード進行と整数の結合</title><updated>2025-04-11T00:37:38+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/4ergfbv547uezdf/articles/3697a582d8bd7c"/><summary type="html">
+...</summary></entry><entry><id>https://zenn.dev/4ergfbv547uezdf/articles/3697a582d8bd7c</id><title type="text">音楽と数学：コード進行と整数の結合</title><updated>2025-04-11T00:37:38+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/4ergfbv547uezdf/articles/3697a582d8bd7c"/><summary type="html">
  はじめに
 前回の記事の通り、私はランダム関数を用いてランダム且つリアルタイムに楽曲を生成し演奏するということを趣味でやっています。その中で以下のようなコード進行を用いていました。
 
