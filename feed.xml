@@ -26,17 +26,16 @@ https://github.com/wasabina67/Shoeisha40thApp/blob/1f9868134e83c25f69a604739024b
  Program.vb
 https://github.com/wasabina67/Shoeisha40thAppVb/blob/fedacc611666ca60d387dfd2153544e6a01d9ebc/Program.vb#L1-L22
 
- coffee_shop.cof...</summary></entry><entry><id>https://qiita.com/sebayashi-tomoya/items/82a42e12762a41eef12d</id><title type="text">関数型言語初心者がHaskellを触ってみる</title><updated>2025-10-05T19:32:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sebayashi-tomoya/items/82a42e12762a41eef12d"/></entry><entry><id>https://zenn.dev/nobsun/articles/stack-template-for-atcoder</id><title type="text">HaskellでAtCoderを楽しむためのstack-template</title><updated>2025-10-05T15:30:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/nobsun/articles/stack-template-for-atcoder"/><summary type="html">
+ coffee_shop.cof...</summary></entry><entry><id>https://qiita.com/sebayashi-tomoya/items/82a42e12762a41eef12d</id><title type="text">関数型言語初心者がHaskellを触ってみる</title><updated>2025-10-05T19:32:32+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sebayashi-tomoya/items/82a42e12762a41eef12d"/></entry><entry><id>https://zenn.dev/nobsun/articles/stack-template-for-atcoder</id><title type="text">HaskellでAtCoderを楽しむためのstack-template(2025-10-14改訂版)</title><updated>2025-10-05T15:30:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/nobsun/articles/stack-template-for-atcoder"/><summary type="html">
  はじめに
 !
+2025-10-14 テンプレート使い方、および、テンプレートファイルの内容概要ともに、説明を全面改訂しました。
+
+!
+2025-10-14 submittingスクリプトを改訂しましたが、未確認です。2025-10-18に催されるABC 428で確認する予定です。
 2025-10-11 提出用スクリプトsubmittingで問題提出できませんでした。m(..)m ゴメンナサイ。atcoder.hsfilesには含まれたままですが、submittingは現時点では使えません。
 
-この記事は、AtCoderをHaskellで楽しむために筆者が作成したstack-templateおよび筆者のstack-templateでセットアップしたプロジェクト内でのAtCoderの楽しみ方について説明したものです。
-!
-2025-10-11 atcoder.hsfilesの説明の一部を追記しました。のこりは、後日、追記する予定です。
-
-
- おことわ...</summary></entry><entry><id>https://zenn.dev/rokutann/articles/ced177f55b3a23</id><title type="text">モナド結合則で大事だけど書かれていないこと</title><updated>2025-09-20T06:00:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/rokutann/articles/ced177f55b3a23"/><summary type="html">なぜかこのことが書いてある本やブログが見当たらないので書いておく。
+この記事は、AtCoderをHaskellで楽しむために筆者が作成したstackのテンプレー...</summary></entry><entry><id>https://zenn.dev/rokutann/articles/ced177f55b3a23</id><title type="text">モナド結合則で大事だけど書かれていないこと</title><updated>2025-09-20T06:00:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/rokutann/articles/ced177f55b3a23"/><summary type="html">なぜかこのことが書いてある本やブログが見当たらないので書いておく。
 モナド結合則は、
 m &amp;gt;&amp;gt;= (\x -&amp;gt; k x &amp;gt;&amp;gt;= h)   ==   (m &amp;gt;&amp;gt;= k) &amp;gt;&amp;gt;= h
 というもの。有名です。==は、左辺の式と右辺の式は、まったく同じ計算結果を生じるということ。
