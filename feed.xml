@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2025-12-02T15:00:03+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/jij_inc/articles/2025-12-03-haskeller-and-rustacean-1000x-faster</id><title type="text">HaskellerとRustaceanが知恵をあわせてプロダクトを3日で1000倍高速化した話</title><updated>2025-12-02T15:00:03+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/jij_inc/articles/2025-12-03-haskeller-and-rustacean-1000x-faster"/><summary type="html">この記事は Jij Advent Calendar 2025、Rust Advent Calendar 2025 シリーズ1、およびHaskell Advent Calendar 2025の3日目の記事です。
 
+ 更新履歴
+
+2025-12-04 08:50 - 軽微な誤字の修正2
+2025-12-03 08:40 - 軽微な誤字の修正
+2025-12-03 00:00 - 初版自動公開
+
+
  はじめに：Haskeller × Rustacean = ∞
 筆者は比較的年季の入ったHaskellerですが、現在は業務ではRustを書いてくらしています。
-昨年転職一ヶ月後にこんな記事を書いたりしていたように、Rustでのプログラミングはかなり関数型と命令型のいいとこどりという感じでとても快適な一方、Haskellならこんな書き方が出来るなあというような箇所もあり、刺激的な...</summary></entry><entry><id>https://qiita.com/TThaskboy/items/e4d19c08ea9285e508eb</id><title type="text">HaskellでABC434を解く</title><updated>2025-12-01T21:24:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/e4d19c08ea9285e508eb"/></entry><entry><id>https://zenn.dev/nobsun/articles/previous-permutation</id><title type="text">Haskellプログラミング：直前の順列（ABC 276 C）</title><updated>2025-11-30T20:42:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/nobsun/articles/previous-permutation"/><summary type="html">
+昨年転職一ヶ月後にこんな記事を書いた...</summary></entry><entry><id>https://qiita.com/TThaskboy/items/e4d19c08ea9285e508eb</id><title type="text">HaskellでABC434を解く</title><updated>2025-12-01T21:24:10+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/e4d19c08ea9285e508eb"/></entry><entry><id>https://zenn.dev/nobsun/articles/previous-permutation</id><title type="text">Haskellプログラミング：直前の順列（ABC 276 C）</title><updated>2025-11-30T20:42:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/nobsun/articles/previous-permutation"/><summary type="html">
  はじめに
 これは、Haskell Advent Calendar 2025 の第１日目の記事です。
 https://qiita.com/advent-calendar/2025/haskell
