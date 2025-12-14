@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2025-12-11T22:47:16+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/lotz/articles/93f73c17145819</id><title type="text">クロックパズルを単因子論で解く</title><updated>2025-12-11T22:47:16+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/93f73c17145819"/><summary type="html">これは「Haskell Advent Calendar 2025」12日目の記事です。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2025-12-14T11:10:47+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/TThaskboy/items/d981c692d27b9ffc6809</id><title type="text">HaskellでABC436を解く</title><updated>2025-12-14T11:10:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/d981c692d27b9ffc6809"/></entry><entry><id>https://zenn.dev/lotz/articles/93f73c17145819</id><title type="text">クロックパズルを単因子論で解く</title><updated>2025-12-11T22:47:16+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/93f73c17145819"/><summary type="html">これは「Haskell Advent Calendar 2025」12日目の記事です。
 
 タイトルにクロックパズルと銘打ちましたが、このパズルの本当の名前を私は知りません（知ってたら教えて下さい）。パズルというのは例えば、以下のように
 
@@ -464,7 +464,7 @@ here&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;終わりに&lt;/h1&gt;
     &lt;/div&gt;
 &lt;/article&gt;
 
-</summary></entry><entry><id>https://qiita.com/sigma_devsecops/items/41094693d7f95446c2ac</id><title type="text">純粋関数で状態を管理する mapAccumLでよりエレガントに</title><updated>2025-12-06T01:14:22+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/41094693d7f95446c2ac"/></entry><entry><id>https://zenn.dev/jij_inc/articles/2025-12-03-haskeller-and-rustacean-1000x-faster</id><title type="text">HaskellerとRustaceanが知恵をあわせてプロダクトを3日で1000倍高速化した話</title><updated>2025-12-02T15:00:03+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/jij_inc/articles/2025-12-03-haskeller-and-rustacean-1000x-faster"/><summary type="html">この記事は Jij Advent Calendar 2025、Rust Advent Calendar 2025 シリーズ1、およびHaskell Advent Calendar 2025の3日目の記事です。
+</summary></entry><entry><id>https://zenn.dev/jij_inc/articles/2025-12-03-haskeller-and-rustacean-1000x-faster</id><title type="text">HaskellerとRustaceanが知恵をあわせてプロダクトを3日で1000倍高速化した話</title><updated>2025-12-02T15:00:03+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/jij_inc/articles/2025-12-03-haskeller-and-rustacean-1000x-faster"/><summary type="html">この記事は Jij Advent Calendar 2025、Rust Advent Calendar 2025 シリーズ1、およびHaskell Advent Calendar 2025の3日目の記事です。
 
  更新履歴
 
