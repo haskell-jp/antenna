@@ -659,20 +659,30 @@ MacBook Air M2 2022
 
  Haskellってなんやねん
 Haskellは参照透過性を原則とする、静的型付けの純粋関数型プログラミング言語です。
-1 + 1がい...</summary></entry><entry><id>https://zenn.dev/wasabina67/articles/42-zy7n837p7sa25a6n</id><title type="text">6つのコードスニペット</title><updated>2025-10-07T15:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/wasabina67/articles/42-zy7n837p7sa25a6n"/><summary type="html">
- Curry.hs
+1 + 1がい...</summary></entry><entry><id>https://zenn.dev/wasabina67/articles/42-zy7n837p7sa25a6n</id><title type="text">翔泳社40周年カレンダーに採択された6つのサンプルコード</title><updated>2025-10-07T15:00:00+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/wasabina67/articles/42-zy7n837p7sa25a6n"/><summary type="html">
+ はじめに
+この記事は、下記の企画に参加して採択されたサンプルコードをまとめたものです。
+6件のサンプルコードが採択されました。
+https://codezine.jp/news/detail/21708
+
+ サンプルコード
+
+ January 22, Haskell, Curry.hs
+
+コード
 
 
- bash_birthday.sh
+
+ June 8, GNU bash, bash_birthday.sh
+
+コード
 
 
- Program.cs
-https://github.com/wasabina67/Shoeisha40thApp/blob/1f9868134e83c25f69a604739024b6d40ddd75bb/Program.cs#L1-L16
 
- Program.vb
-https://github.com/wasabina67/Shoeisha40thAppVb/blob/fedacc611666ca60d387dfd2153544e6a01d9ebc/Program.vb#L1-L22
+ August 1, C#, Program.cs
 
- coffee_shop.cof...</summary></entry><entry><id>https://zenn.dev/nobsun/articles/stack-template-for-atcoder</id><title type="text">HaskellでAtCoderを楽しむためのstack-template(2025-10-14改訂版)</title><updated>2025-10-05T15:30:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/nobsun/articles/stack-template-for-atcoder"/><summary type="html">
+コード
+https://github.com/wasabina67/Shoeisha40thApp/blob/1f9868134e83c25f6...</summary></entry><entry><id>https://zenn.dev/nobsun/articles/stack-template-for-atcoder</id><title type="text">HaskellでAtCoderを楽しむためのstack-template(2025-10-14改訂版)</title><updated>2025-10-05T15:30:48+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/nobsun/articles/stack-template-for-atcoder"/><summary type="html">
  はじめに
 !
 2025-10-14 テンプレート使い方、および、テンプレートファイルの内容概要ともに、説明を全面改訂しました。
