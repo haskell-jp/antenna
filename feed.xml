@@ -7,10 +7,15 @@ Applicative が合成について閉じているという性質によって, App
 
  Defined in Data.Functor.Compose
 newtype...</summary></entry><entry><id>https://zenn.dev/ikaro1192/articles/ba0105a3d605b8</id><title type="text">MySQL 8.4対応のシンプルなHA管理ツールをHaskellで自作した話</title><updated>2026-03-18T11:03:38+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ikaro1192/articles/ba0105a3d605b8"/><summary type="html">
+ 要約
+MySQL 8.4対応のシンプルなHA管理ツールPureMyHAをHaskellで作成しOSSとして公開しました。
+MySQL 8.4の非同期レプリケーション/準同期レプリケーション環境にて自動フェイルオーバーや手動スイッチオーバーが可能となります。
+https://github.com/ikaro1192/PureMyHA
+本ツールの作成にはClaude Codeを利用しました。
+本記事ではそちらの体験やHaskellを採用した理由などについて説明しています。
+
  はじめに：なぜ今、HA管理ツールを自作したのか
-現代のデータベース運用において、Amazon Aurora等のマネージドサービスを使わず、オンプレミスやIaaS上に自前でMySQLのHA（高可用性）構成を組む機会は減っています。しかし、コストやレイテンシ、既存インフラの要件などから、依然として自前での運用が求められるケースは存在します。
-MySQLのHA管理ツールといえば、長年 MHAやOrchestratorがデファクトスタンダードでした。しかし、これらのツールには「MySQL 8.4に正式対応していない」という致命的な課題があります。
-MySQL 8.4では、SHOW SLAVE...</summary></entry><entry><id>https://qiita.com/sigma_devsecops/items/206874ce5130abe280da</id><title type="text">Haskellのfoldl、foldl&#39;、foldrを比較してみた</title><updated>2026-03-16T12:34:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/206874ce5130abe280da"/></entry><entry><id>https://zenn.dev/sigma_tom/articles/566e68f844cd4f</id><title type="text">Haskellのfoldl、foldl&#39;、foldrを比較してみた</title><updated>2026-03-16T03:36:51+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/sigma_tom/articles/566e68f844cd4f"/><summary type="html">
+現代のデータベース運用において、Amazon Aurora等のマ...</summary></entry><entry><id>https://qiita.com/sigma_devsecops/items/206874ce5130abe280da</id><title type="text">Haskellのfoldl、foldl&#39;、foldrを比較してみた</title><updated>2026-03-16T12:34:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/206874ce5130abe280da"/></entry><entry><id>https://zenn.dev/sigma_tom/articles/566e68f844cd4f</id><title type="text">Haskellのfoldl、foldl&#39;、foldrを比較してみた</title><updated>2026-03-16T03:36:51+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/sigma_tom/articles/566e68f844cd4f"/><summary type="html">
  これは何?
 (この記事はクロス投稿です)
 Haskellの畳み込み関数の3つの使い分けについて解説する。
