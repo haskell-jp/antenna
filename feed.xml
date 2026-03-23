@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-03-22T09:38:47+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/TThaskboy/items/8de2e6584323cd052565</id><title type="text">HaskellでABC450を解く</title><updated>2026-03-22T09:38:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/8de2e6584323cd052565"/></entry><entry><id>https://kurokawh.blogspot.com/2023/02/windows-windows11.html</id><title type="text">[windows] Windows11セットアップ・設定項目のメモ</title><updated>2026-03-19T11:33:37.642+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/02/windows-windows11.html"/><summary type="text">スタートメニュー・タスクバーの設定個人用設定 ＞ タスク バータスクバー項目検索： 「非表示」タスクビュー： オフウィジェット： オフタスクバーの動作タスクバーの配置：　左揃えタスクバーをすべてのディスプレイに表示する：　アンチェック（拡張ディスプレイ接続状態で設定）タスクバーのボタンをまとめラベルを非表示にする：　常時タスクバーのボタンをまとめほかのタスクバーでラベルを非表示にする：常時タスクバーボタンを表示する：　タスクバーに入りきらない場合スタートメニューにコントロールパネルを表示する「Windows 10」のコントロールパネルを表示する方法についてスタートメニューにピン止めするアプリ：（下記以外は「スタートからピン留めをはずす」）WindowsシステムツールコントロールパネルWindowsアクセサリペイントパワーポイントエクセルAcrobat </summary></entry><entry><id>https://zenn.dev/unmummied/articles/20260319000000</id><title type="text">証明: Applicative の合成は Applicative</title><updated>2026-03-18T15:00:11+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/unmummied/articles/20260319000000"/><summary type="html">初投稿です.
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-03-23T00:37:15+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/flowerhill/items/c3e85101207a5bcdc1a7</id><title type="text">AtCoder 450 振り返り</title><updated>2026-03-23T00:37:15+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/c3e85101207a5bcdc1a7"/></entry><entry><id>https://qiita.com/TThaskboy/items/8de2e6584323cd052565</id><title type="text">HaskellでABC450を解く</title><updated>2026-03-22T20:28:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/8de2e6584323cd052565"/></entry><entry><id>https://zenn.dev/38koo/articles/693d2b8e8a1684</id><title type="text">AIはアウトプットだけじゃない。学習ツールとして使ってみた。</title><updated>2026-03-22T09:11:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/38koo/articles/693d2b8e8a1684"/><summary type="html">日々、AIの進化が目覚ましく、実務で使わない日はないほどになってきました。
+アウトプットへのハードルは劇的に下がった一方、私自身はインプット目的でAIを活用することも多くあります。壁打ち相手として使ったり、技術的にわからない箇所を深掘りしたり……。
+そこで今回は、AIを用いたインプットがどれほど学習に効果的かを検証すべく、Haskellを題材にミニマムなCLIアプリケーションを作ってみます。
+
+ 目的
+AIを用いたインプットが学習に有効かどうかを、実際に手を動かして実感する。
+
+ やること
+ミニマムなCLI Todoアプリケーションの作成
+今回の目的はインプットが行えるかを検証したいので...</summary></entry><entry><id>https://kurokawh.blogspot.com/2023/02/windows-windows11.html</id><title type="text">[windows] Windows11セットアップ・設定項目のメモ</title><updated>2026-03-19T11:33:37.642+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2023/02/windows-windows11.html"/><summary type="text">スタートメニュー・タスクバーの設定個人用設定 ＞ タスク バータスクバー項目検索： 「非表示」タスクビュー： オフウィジェット： オフタスクバーの動作タスクバーの配置：　左揃えタスクバーをすべてのディスプレイに表示する：　アンチェック（拡張ディスプレイ接続状態で設定）タスクバーのボタンをまとめラベルを非表示にする：　常時タスクバーのボタンをまとめほかのタスクバーでラベルを非表示にする：常時タスクバーボタンを表示する：　タスクバーに入りきらない場合スタートメニューにコントロールパネルを表示する「Windows 10」のコントロールパネルを表示する方法についてスタートメニューにピン止めするアプリ：（下記以外は「スタートからピン留めをはずす」）WindowsシステムツールコントロールパネルWindowsアクセサリペイントパワーポイントエクセルAcrobat </summary></entry><entry><id>https://zenn.dev/unmummied/articles/20260319000000</id><title type="text">証明: Applicative の合成は Applicative</title><updated>2026-03-18T15:00:11+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/unmummied/articles/20260319000000"/><summary type="html">初投稿です.
 Data.Functor.Compose には次のような説明があります.
 
 The composition of applicative functors is always applicative, but the composition of monads is not always a monad.
@@ -39,7 +48,7 @@ Haskellを勉強し始めたころ、ずっと困っていたことがあった�
 ある時、こんな仕事が入ってきた。HTTP APIからデータを取得して、ちょっと加工して、別のエンドポイントにPOSTする、というやつ。よくある感じの作業だ。いつもならPythonとrequestsライブラリで片付けるところ。URLを叩いてJSONを受け取って、変換して送る、それだけのことが数行で書ける。
 でもふと思った。これ、Haskellでやってみるのにちょうどいい題材じゃないか。
 
- 既存のライブラリを探してみ...</summary></entry><entry><id>https://qiita.com/TThaskboy/items/25130fd1c5ca2dfd45ae</id><title type="text">HaskellでABC448を解く</title><updated>2026-03-08T08:11:53+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/25130fd1c5ca2dfd45ae"/></entry><entry><id>https://zenn.dev/ok_xmonad/articles/dfae5e871539b0</id><title type="text">（仮）絶対できるHaskell 抄「圏論とファンクター」</title><updated>2026-03-06T09:23:40+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ok_xmonad/articles/dfae5e871539b0"/><summary type="html">
+ 既存のライブラリを探してみ...</summary></entry><entry><id>https://zenn.dev/ok_xmonad/articles/dfae5e871539b0</id><title type="text">（仮）絶対できるHaskell 抄「圏論とファンクター」</title><updated>2026-03-06T09:23:40+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ok_xmonad/articles/dfae5e871539b0"/><summary type="html">
  絶対できるHaskell抄
 僕は、しばらく前から「（仮）絶対できるHaskell」という本をZennで書いているのですが、なかなか完成しません。
 「Haskell初心者本」という目線で執筆しだしたのですが、執筆するために色々調べたり、考えたり、例示プログラムを書いているうちに、書き始めた頃よりも僕自身もHaskellの理解が進み、以前の説明の書き方に不満を覚え、書き直し、、、ということの繰り返しが起こっています。
@@ -184,12 +193,7 @@ https://kenkoooo.com/atcoder/#/table/flowert
 
 押しボタン a を押すと、左の時計の針が2時間進み、中央の時計の針が1時間進む
 押しボタン b を押すと、中央の時計の針が2時間進み、右の時計の針が3時間進む
-押しボタン c を押すと...</summary></entry><entry><id>https://zenn.dev/yokop/articles/eb593c9dd72dac</id><title type="text">Peoplemon をソースから實行する</title><updated>2025-12-09T03:13:32+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/yokop/articles/eb593c9dd72dac"/><summary type="html">
- Peoplemon をソースコードから實行する
-Peoplemon は Alex Stuart氏による ポケモンのパロディとも言ふべき作品である
-https://www.reddit.com/r/haskell/comments/c29lks/peoplemon_an_allhaskell_roleplaying_game/
-このゲームの製作には FRPのコンセプトに基づいた Yampaといふライブラリが使はれており これを學ぶ目的としても ソースコードからコンパイルしたかったのだが 今まで全然できなかった
-しかし 今回 GHC 9.8.4 の環境で stack を使ひ packag...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
+押しボタン c を押すと...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
