@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-05-14T18:54:13+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb</id><title type="text">関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答</title><updated>2026-05-14T18:54:13+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb"/></entry><entry><id>https://qiita.com/sigma_devsecops/items/763c109c332d85d9686c</id><title type="text">Zedのv1.0がでたのでHaskell環境を作った。</title><updated>2026-05-10T09:14:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/763c109c332d85d9686c"/></entry><entry><id>https://qiita.com/TThaskboy/items/bcb10b8c44bb73b0f4ee</id><title type="text">HaskellでABC456を解く</title><updated>2026-05-03T09:07:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/bcb10b8c44bb73b0f4ee"/></entry><entry><id>https://qiita.com/touka-io/items/eebd666531ab2704daa1</id><title type="text">数えられる型？代数的データ型</title><updated>2026-04-30T23:57:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/touka-io/items/eebd666531ab2704daa1"/></entry><entry><id>https://zenn.dev/38koo/articles/693d2b8e8a1684</id><title type="text">AIはアウトプットだけじゃない。学習ツールとして使ってみた。</title><updated>2026-03-22T09:11:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/38koo/articles/693d2b8e8a1684"/><summary type="html">日々、AIの進化が目覚ましく、実務で使わない日はないほどになってきました。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-05-15T09:28:04+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb</id><title type="text">関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答</title><updated>2026-05-15T09:28:04+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb"/></entry><entry><id>https://zenn.dev/sigma_tom/articles/haskell-functional-programming-intro</id><title type="text">関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答</title><updated>2026-05-14T12:30:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/sigma_tom/articles/haskell-functional-programming-intro"/><summary type="html">!
+この記事はQiitaとのクロス投稿です。
+https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb
+
+
+ はじめに
+私は息子が産まれて育児休暇に入ったのを機に、
+Haskellという純粋関数型言語を使用した競技プログラミング(AtCoderを始めた。
+Haskellの学習は(多少)膠着状態に入り、(学習を開始してから)八ヶ月あまりが過ぎた。
+少しずつ、Haskellに対する理解も深まってきており、プログラミングを初めた頃のような高揚感を感じているのだが、あまりこの良さが伝わっていないような気がする。
+そのため、この記事を...</summary></entry><entry><id>https://qiita.com/sigma_devsecops/items/763c109c332d85d9686c</id><title type="text">Zedのv1.0がでたのでHaskell環境を作った。</title><updated>2026-05-10T09:14:02+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/763c109c332d85d9686c"/></entry><entry><id>https://qiita.com/TThaskboy/items/bcb10b8c44bb73b0f4ee</id><title type="text">HaskellでABC456を解く</title><updated>2026-05-03T09:07:35+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/bcb10b8c44bb73b0f4ee"/></entry><entry><id>https://qiita.com/touka-io/items/eebd666531ab2704daa1</id><title type="text">数えられる型？代数的データ型</title><updated>2026-04-30T23:57:03+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/touka-io/items/eebd666531ab2704daa1"/></entry><entry><id>https://zenn.dev/38koo/articles/693d2b8e8a1684</id><title type="text">AIはアウトプットだけじゃない。学習ツールとして使ってみた。</title><updated>2026-03-22T09:11:25+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/38koo/articles/693d2b8e8a1684"/><summary type="html">日々、AIの進化が目覚ましく、実務で使わない日はないほどになってきました。
 アウトプットへのハードルは劇的に下がった一方、私自身はインプット目的でAIを活用することも多くあります。壁打ち相手として使ったり、技術的にわからない箇所を深掘りしたり……。
 そこで今回は、AIを用いたインプットがどれほど学習に効果的かを検証すべく、Haskellを題材にミニマムなCLIアプリケーションを作ってみます。
 
@@ -185,15 +195,7 @@ https://kenkoooo.com/atcoder/#/table/flowert
 こちらは株式会社ココナラ Advent Calendar 2025 15 日目の記事です。
 
 普段は業務で TypeScript を書いていますが、今回は技術的な How-to ではなく、「あえて Haskell に入門してみた」という個人の学習記録を書きたいと思います。
-「なぜ今さら Haskell？」と思われるかもしれませんが、普段 TypeScript を書いている人間が、Haskell を学習することで、どのように普段使っている言語（JavaScript/T...</summary></entry><entry><id>https://zenn.dev/lotz/articles/93f73c17145819</id><title type="text">クロックパズルを単因子論で解く</title><updated>2025-12-11T22:47:16+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/lotz/articles/93f73c17145819"/><summary type="html">これは「Haskell Advent Calendar 2025」12日目の記事です。
-
-タイトルにクロックパズルと銘打ちましたが、このパズルの本当の名前を私は知りません（知ってたら教えて下さい）。パズルというのは例えば、以下のように
-
-左、中央、右にそれぞれ3時間と4時間と5時間を計る時計があり、時計の針は 1,2,3 を指しているとします。それぞれの押しボタンを押すと時計の針は以下のように動きます。
-
-押しボタン a を押すと、左の時計の針が2時間進み、中央の時計の針が1時間進む
-押しボタン b を押すと、中央の時計の針が2時間進み、右の時計の針が3時間進む
-押しボタン c を押すと...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
+「なぜ今さら Haskell？」と思われるかもしれませんが、普段 TypeScript を書いている人間が、Haskell を学習することで、どのように普段使っている言語（JavaScript/T...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
