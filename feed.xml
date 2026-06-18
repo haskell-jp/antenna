@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-06-16T11:48:12+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/ueki5/items/817fe6b6746b632fe20a</id><title type="text">各言語用遊び場作成</title><updated>2026-06-16T11:48:12+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ueki5/items/817fe6b6746b632fe20a"/></entry><entry><id>https://qiita.com/flowerhill/items/0898077bd9af4eff294b</id><title type="text">AtCoder 462 振り返り</title><updated>2026-06-14T23:36:44+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/flowerhill/items/0898077bd9af4eff294b"/></entry><entry><id>https://qiita.com/etale_cohomology/items/a831d9ee7b9b2b43c60c</id><title type="text">家族はひとつの圏である ── ご近所散歩ではじめる圏論入門</title><updated>2026-06-14T17:44:18+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/etale_cohomology/items/a831d9ee7b9b2b43c60c"/></entry><entry><id>https://qiita.com/TThaskboy/items/0eb23d38d8e853035224</id><title type="text">HaskellでABC462を解く</title><updated>2026-06-14T15:57:50+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/0eb23d38d8e853035224"/></entry><entry><id>https://zenn.dev/ikaro1192/books/b1e473a060e258</id><title type="text">数学で読み解くHaskell——入門編</title><updated>2026-06-07T09:32:50+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ikaro1192/books/b1e473a060e258"/><summary type="html">Haskellの抽象的な概念（型システムからFunctor、Monadまで）を、集合や代数構造といった「馴染みのある数学の言葉」を補助線にして読み解く入門書。難解な理論を学ぶためではなく、Haskellの挙動を理解するためのツールとして数学を活用するスタイルで解説します。そのため、数学の教科書というより物理の教科書の雰囲気に近いです。</summary></entry><entry><id>https://zenn.dev/sigma_tom/articles/haskell-functional-programming-intro</id><title type="text">関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答</title><updated>2026-05-14T12:30:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/sigma_tom/articles/haskell-functional-programming-intro"/><summary type="html">!
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-06-18T05:12:29+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/spookies/articles/065c20e099ee5a</id><title type="text">GHCJSを使う</title><updated>2026-06-18T05:12:29+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/spookies/articles/065c20e099ee5a"/><summary type="html">!
+この記事ははてなブログ（2016年03月28日公開）からの移行記事です。
+内容が古い場合がありますのでご注意ください。
+
+先日、この記事を読む機会があり、GHCJSを使ってみたくなったので、セットアップ〜DOMを生成してaddEventListenerぐらいまでの流れを書きます。
+
+ GHCJSとは
+GHCJSは、Haskellを書くとJavaScriptを吐いてくれるコンパイラです。
+
+ GHCJSのセットアップ
+
+ 前提
+
+OSが*nix
+以下のツールがインストールされていること
+
+GHC
+Stack
+
+
+StackとHaskellを普通に使ったことがあること
+
+これらの説明はし...</summary></entry><entry><id>https://zenn.dev/ikaro1192/books/b1e473a060e258</id><title type="text">数学で読み解くHaskell——入門編</title><updated>2026-06-07T09:32:50+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/ikaro1192/books/b1e473a060e258"/><summary type="html">Haskellの抽象的な概念（型システムからFunctor、Monadまで）を、集合や代数構造といった「馴染みのある数学の言葉」を補助線にして読み解く入門書。難解な理論を学ぶためではなく、Haskellの挙動を理解するためのツールとして数学を活用するスタイルで解説します。そのため、数学の教科書というより物理の教科書の雰囲気に近いです。</summary></entry><entry><id>https://zenn.dev/sigma_tom/articles/haskell-functional-programming-intro</id><title type="text">関数型プログラミングを知らない人向けに、「Haskellって何が面白いの?」と聞かれた時の回答</title><updated>2026-05-14T12:30:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/sigma_tom/articles/haskell-functional-programming-intro"/><summary type="html">!
 この記事はQiitaとのクロス投稿です。
 https://qiita.com/sigma_devsecops/items/3f2a397e944401fcc6cb
 
@@ -189,9 +211,7 @@ https://kenkoooo.com/atcoder/#/table/flowert
 個人的には難しいのってモナド自体というよりむしろ、仰々しい名前のついたフワッとした抽象、特に高階型まわりのあれやこれや、というジャンルだと思っています。
 その代表例で、まだシンプルなやつであるFunctorというのがあります。
 前半は、ゆっくりとFunctorのチュートリアルを行います。
-だんだんギアをあげて隣接する概念に手を伸ばし、今アツい概念であるProfunctor O...</summary></entry><entry><id>https://zenn.dev/folio_sec/articles/06c4271b96bfb5</id><title type="text">ダンジョン生成に一様分布を求めるのは間違っているだろうか</title><updated>2025-12-16T23:29:21+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/folio_sec/articles/06c4271b96bfb5"/><summary type="html">これは FOLIO Advent Calendar 2025 17日目の記事です。
-
-誰でも一度は魔王になって、勇者のくせになまいきだと、侵入者を撃退するためのダンジョン作りに興じたことがあるでしょう。ダンジョン（長いので以降は迷路と呼ぶ）は古くからある定番コンテンツなだけあって、自動的な生成アルゴリズムにも棒倒し法や穴掘り法など様々なものがあります。しかしアルゴリズムによっては長い直線だらけの通路ができてしまったり、反対に行き止まりが多くなってしまったりと生成される迷路に偏りが生じることも知られています。そこで本稿ではちょっと視点を加えて、特定のパターンに偏りがない完全に公平な迷路生成...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
+だんだんギアをあげて隣接する概念に手を伸ばし、今アツい概念であるProfunctor O...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
