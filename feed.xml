@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-06-21T08:59:21+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/TThaskboy/items/40e8fe45bbb824a71489</id><title type="text">HaskellでABC463を解く</title><updated>2026-06-21T08:59:21+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/40e8fe45bbb824a71489"/></entry><entry><id>https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8</id><title type="text">Haskellでは存在しない値をどう扱うか? 〜Maybeを使う〜</title><updated>2026-06-20T00:43:58+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8"/></entry><entry><id>https://zenn.dev/spookies/articles/065c20e099ee5a</id><title type="text">GHCJSを使う</title><updated>2026-06-18T05:12:29+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/spookies/articles/065c20e099ee5a"/><summary type="html">!
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-06-22T02:26:09+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/sigma_tom/articles/haskell-maybe-optional-null</id><title type="text">Haskellでは存在しない値をどう扱うか? 〜Maybeを使う〜</title><updated>2026-06-22T02:26:09+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/sigma_tom/articles/haskell-maybe-optional-null"/><summary type="html">!
+この記事はQiitaとのクロス投稿です。
+https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8
+
+
+ はじめに: Maybeを過小評価していた
+Haskellで競技プログラミングをやっているとData.Maybe(以降Maybeと記載)を扱うことがある。
+自分は積極的にMaybeを使うことは行っておらず、どちらかというとチェック例外のようにコンパイルエラーがでるからJustとNothingの処理をしている状態であったが、最近Maybeを使うことでコードが読みやすくなることに気がついた。
+そのため、この記事では以前の自...</summary></entry><entry><id>https://qiita.com/TThaskboy/items/40e8fe45bbb824a71489</id><title type="text">HaskellでABC463を解く</title><updated>2026-06-21T08:59:21+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/40e8fe45bbb824a71489"/></entry><entry><id>https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8</id><title type="text">Haskellでは存在しない値をどう扱うか? 〜Maybeを使う〜</title><updated>2026-06-20T00:43:58+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8"/></entry><entry><id>https://zenn.dev/spookies/articles/065c20e099ee5a</id><title type="text">GHCJSを使う</title><updated>2026-06-18T05:12:29+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/spookies/articles/065c20e099ee5a"/><summary type="html">!
 この記事ははてなブログ（2016年03月28日公開）からの移行記事です。
 内容が古い場合がありますのでご注意ください。
 
@@ -204,14 +212,7 @@ int WIN...</summary></entry><entry><id>https://zenn.dev/yvvakimoto/articles/a7c0
 まずは脱灰のために300以降のC埋めをしました。一部を除いてほとんど全て解いています。
 https://kenkoooo.com/atcoder/#/table/flowert
 
- NoviSteps...</summary></entry><entry><id>https://zenn.dev/hand_accident/articles/6596ebc2528fdd</id><title type="text">FunctorチュートリアルとBiinvariant Opticsへの展望</title><updated>2025-12-17T11:24:45+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/hand_accident/articles/6596ebc2528fdd"/><summary type="html">
- はじめに/ロードマップ
-関数型言語の一部にはモナドっていう、難しくて、人々が苦しんでて、わかった暁にはかならずチュートリアルを書きたくなるものがあるらしいですね。
-この記事はモナドチュートリアルではありません。
-個人的には難しいのってモナド自体というよりむしろ、仰々しい名前のついたフワッとした抽象、特に高階型まわりのあれやこれや、というジャンルだと思っています。
-その代表例で、まだシンプルなやつであるFunctorというのがあります。
-前半は、ゆっくりとFunctorのチュートリアルを行います。
-だんだんギアをあげて隣接する概念に手を伸ばし、今アツい概念であるProfunctor O...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
+ NoviSteps...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
