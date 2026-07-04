@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-06-30T15:22:40+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/ueki5/items/817fe6b6746b632fe20a</id><title type="text">各言語用遊び場作成</title><updated>2026-06-30T15:22:40+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/ueki5/items/817fe6b6746b632fe20a"/></entry><entry><id>https://zenn.dev/mitsuchi/articles/ef219e7c606b42</id><title type="text">「関数の型から実装が自動的に決まる」で理解する米田の補題</title><updated>2026-06-29T00:22:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mitsuchi/articles/ef219e7c606b42"/><summary type="html">圏論の米田の補題を Haskell で考えてみるとすごく直感的に理解できる、なんなら当たり前に思える、というアイデアを知って感動したので、興奮しているうちに紹介したいと思います。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-07-04T10:04:38+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/sigma_devsecops/items/3234a53bb3d0e2d8ab8f</id><title type="text">「foldrで短絡できていませんでした」の反省札 #Haskell</title><updated>2026-07-04T10:04:38+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/3234a53bb3d0e2d8ab8f"/></entry><entry><id>https://qiita.com/sen-ltd/items/5f4957219ccf0e685d93</id><title type="text">Haskell で無限列 CLI を作る — 遅延評価と『自分自身を参照するリスト』、素数の篩・Hamming 数</title><updated>2026-07-04T08:18:48+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sen-ltd/items/5f4957219ccf0e685d93"/></entry><entry><id>https://zenn.dev/nolslsls1227/articles/578c46fcce84c8</id><title type="text">Haskell を学んで気付いたこと</title><updated>2026-07-03T15:26:15+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/nolslsls1227/articles/578c46fcce84c8"/><summary type="html">
+ はじめに
+Java を数年書いてきたが、関数型言語には触れてこなかったため、
+最近気になって Haskell を勉強してみたので、初学者の視点で気付いたことをまとめてみようと思う。
+※Learn You a Haskell for Great Good! の第8章までの内容です。
+
+ = についての気付き
+
+ Java の =
+
+まず Java の = を確認する。よく書くコード。
+int x = 0;
+x = x + 1;
+int x = 0; は「x という変数に 0 を格納する」という命令。x = x + 1; は「今の x に1を足したものを、新しい x の値として書き換えろ...</summary></entry><entry><id>https://zenn.dev/seijikohara/articles/functional-programming-languages</id><title type="text">関数型プログラミング言語を概念軸で読み解く</title><updated>2026-07-03T11:50:32+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/seijikohara/articles/functional-programming-languages"/><summary type="html">!
+本記事は、内容の生成に AI を利用しています。
+
+
+ 導入: 「関数型言語」という括りの曖昧さ
+「関数型プログラミング言語」という括りは、実務の会話で広く使われます。しかし、括りが指す対象は一定しません。副作用を型で隔離する純粋な Haskell も、オブジェクト指向と関数型を統合した Scala も、同じ「関数型言語」という語で呼ばれます。純粋性・型付け・評価戦略・実行基盤のどれを取っても、言語ごとに位置取りは大きく異なります。単一の定義で全体を覆う試みは、無理を生みます。
+本記事は、言語を 1 つずつ並べるカタログの体裁を取りません。関数型を成り立たせる概念軸で、複数の言語を横...</summary></entry><entry><id>https://zenn.dev/mitsuchi/articles/ef219e7c606b42</id><title type="text">「関数の型から実装が自動的に決まる」で理解する米田の補題</title><updated>2026-06-29T00:22:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mitsuchi/articles/ef219e7c606b42"/><summary type="html">圏論の米田の補題を Haskell で考えてみるとすごく直感的に理解できる、なんなら当たり前に思える、というアイデアを知って感動したので、興奮しているうちに紹介したいと思います。
 型が a -&amp;gt; a な関数は id しかない、という話から2ステップで米田の補題に辿り着きます。
 
  f :: a -&amp;gt; a な関数はどれだけあるか
@@ -19,7 +38,7 @@ f :: a -&amp;gt; a
 「ただの計算」というのは f(x, y) = (x + y) * 2 のような入力だけで値が決まる式のことです。
 これはいつ、何度、並行して呼ばれるかに影響されず、テストは計算結果が正しいかのチェックだけにできる。
 コードの難しさは 考慮しないといけない範囲 に大きく左右されると筆者は考えています。
-D...</summary></entry><entry><id>https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8</id><title type="text">Haskellでは存在しない値をどう扱うか? 〜Maybeを使う〜</title><updated>2026-06-24T07:25:20+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/sigma_devsecops/items/4c9986b025a47e5bded8"/></entry><entry><id>https://zenn.dev/tkhashi_tkya/articles/organ_development</id><title type="text">有機化合物をソースとするプログラミング言語「Organ」を作ってみた</title><updated>2026-06-23T12:21:45+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tkhashi_tkya/articles/organ_development"/><summary type="html">タイトルの通り，趣味と実益を兼ねてプログラミング言語（コンパイラ）の開発を行ったので，その開発記録を残しておこうと思います．
+D...</summary></entry><entry><id>https://zenn.dev/tkhashi_tkya/articles/organ_development</id><title type="text">有機化合物をソースとするプログラミング言語「Organ」を作ってみた</title><updated>2026-06-23T12:21:45+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/tkhashi_tkya/articles/organ_development"/><summary type="html">タイトルの通り，趣味と実益を兼ねてプログラミング言語（コンパイラ）の開発を行ったので，その開発記録を残しておこうと思います．
 ソースはhttps://github.com/TKhashi-TKya/Organに置いてありますので良ければ遊んでみてください．
 ちなみに初投稿です．
 よろしくお願いします．
@@ -198,25 +217,7 @@ c
  「Haskellはいいぞ」と言われても分からなかったあの頃
 10年以上前の話だと思うんですが、プログラマーの師匠みたいな人に「Haskellいいぞ。主要言語にする必要はないけど、考え方は取り入れた方が良い」と言われて勉強しようとしたことはありました。
 ただ、当時は入門書もそこまで多くなく、ネット記事も充実していなかったので、初学者の自分は良さがわからずに断念しました。
-で、その時に文法の難しさとか以...</summary></entry><entry><id>https://blog.miz-ar.info/2025/12/my-contributions-to-ghc-2025/</id><title type="text">GHCへの私の貢献2025</title><updated>2025-12-28T12:53:38+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2025/12/my-contributions-to-ghc-2025/"/><summary type="html">私はここ数年、Haskellの主要な処理系であるGHCに趣味で貢献しています。この記事では、今年（2025年）行なった貢献を紹介します。バグ報告のみ（修正は他の人）のものも含みますが、その場合はその旨を書いています。 去 [&amp;#8230;]</summary></entry><entry><id>https://zenn.dev/anozon/articles/idiosyncratic-syntax-haskell</id><title type="text">各言語特有っぽい構文: Haskell</title><updated>2025-12-23T16:58:30+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/anozon/articles/idiosyncratic-syntax-haskell"/><summary type="html">この記事はプログラミング言語の特有構文 Advent Calendar 2025 14 日目の記事です。
-個人的な好みを交えて紹介します。
-二分探索のサンプルコード
-言語の特徴をあえて使い実装している。
--- Haskell - ガード + パターンマッチ + モナド
-import Data.Maybe (fromMaybe)
-
-binarySearch :: Ord a =&amp;gt; [a] -&amp;gt; a -&amp;gt; Maybe Int
-binarySearch arr target = go 0 (length arr - 1)
-  where
-    go left right
- ...</summary></entry><entry><id>https://zenn.dev/mozukichi/articles/cbfb9825768897</id><title type="text">HaskellとWin32 APIでウィンドウを表示する</title><updated>2025-12-23T15:00:04+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mozukichi/articles/cbfb9825768897"/><summary type="html">これは「Haskell Advent Calendar 2025」24日目の記事です。
-GHCのSystem.Win32モジュールを使うことでHaskellからWin32 APIを呼び出すことができます。このSystem.Win32モジュールを使って、簡単なウィンドウ表示を試します。
-
- 単純なウィンドウ表示までの手順の全体像
-HaskellでSystem.Win32を使ったウィンドウ表示を試す前に、単純なウィンドウ表示のプログラムをCで書いた場合の処理の流れをおさらいしておきます。処理の流れは以下のようになります。
-#include &amp;lt;windows.h&amp;gt;
-
-int WIN...</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
+で、その時に文法の難しさとか以...</summary></entry><entry><id>https://blog.miz-ar.info/2025/12/my-contributions-to-ghc-2025/</id><title type="text">GHCへの私の貢献2025</title><updated>2025-12-28T12:53:38+00:00</updated><author><name>mod_poppo</name></author><link href="https://blog.miz-ar.info/2025/12/my-contributions-to-ghc-2025/"/><summary type="html">私はここ数年、Haskellの主要な処理系であるGHCに趣味で貢献しています。この記事では、今年（2025年）行なった貢献を紹介します。バグ報告のみ（修正は他の人）のものも含みますが、その場合はその旨を書いています。 去 [&amp;#8230;]</summary></entry><entry><id>https://haskell.jp/blog/posts/2025/wai-sample.html</id><title type="text">簡単なHaskellのみでServant並に高機能なライブラリーを作ろうとした振り返り</title><updated>2025-12-07T00:00:00Z</updated><author><name>Haskell-jp</name></author><link href="https://haskell.jp/blog/posts/2025/wai-sample.html"/><summary type="html">
 &lt;article lang=&#34;ja&#34;&gt;
 
     &lt;div class=&#34;container&#34;&gt;
