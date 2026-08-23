@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-08-20T00:59:46+00:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://zenn.dev/7shi/articles/20260820-haskell-category-theory</id><title type="text">Haskell 圏論 超入門</title><updated>2026-08-20T00:59:46+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/7shi/articles/20260820-haskell-category-theory"/><summary type="html">Haskell の解説で圏論の名前を見かけることがありますが、このシリーズは一貫して圏論に言及せずに進めてきました。最終回となる今回では、コードから圏論の概念を眺めます。圏・関手・自然変換から「モナドは自己関手の圏におけるモノイド対象」まで、既に実装として通ってきたものに名前を与えていきます。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-08-23T14:41:31+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/TThaskboy/items/29461337229ae81bd2cb</id><title type="text">HaskellでABC472を解く</title><updated>2026-08-23T14:41:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/29461337229ae81bd2cb"/></entry><entry><id>https://zenn.dev/7shi/articles/20260820-haskell-category-theory</id><title type="text">Haskell 圏論 超入門</title><updated>2026-08-20T00:59:46+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/7shi/articles/20260820-haskell-category-theory"/><summary type="html">Haskell の解説で圏論の名前を見かけることがありますが、このシリーズは一貫して圏論に言及せずに進めてきました。最終回となる今回では、コードから圏論の概念を眺めます。圏・関手・自然変換から「モナドは自己関手の圏におけるモノイド対象」まで、既に実装として通ってきたものに名前を与えていきます。
 !
 本記事の執筆には Claude Code (Opus 5) を利用しました。
 
@@ -30,7 +30,7 @@ Haskell アクション 超入門
 Haskell ラムダ 超入門
 Haskell アクションとラムダ 超入門
 Haskell IOモナド 超入門
-Haskell リストモナド 超入...</summary></entry><entry><id>https://qiita.com/gotoki_no_joe/items/592e1ede4d062a539702</id><title type="text">ABC468をHaskellで</title><updated>2026-08-11T14:50:43+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/592e1ede4d062a539702"/></entry><entry><id>https://zenn.dev/7shi/articles/20260811-haskell-eff-monad</id><title type="text">Haskell Effモナド 超入門</title><updated>2026-08-10T20:21:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/7shi/articles/20260811-haskell-eff-monad"/><summary type="html">Eff モナドは、複数の効果を混ぜられるよう命令の型を型レベルのリストとして持ちます。モナド変換子でモナドを積み重ねていた役割を置き換えます。実装の変遷を反映して 2 通りの方式を説明します。
+Haskell リストモナド 超入...</summary></entry><entry><id>https://zenn.dev/7shi/articles/20260811-haskell-eff-monad</id><title type="text">Haskell Effモナド 超入門</title><updated>2026-08-10T20:21:06+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/7shi/articles/20260811-haskell-eff-monad"/><summary type="html">Eff モナドは、複数の効果を混ぜられるよう命令の型を型レベルのリストとして持ちます。モナド変換子でモナドを積み重ねていた役割を置き換えます。実装の変遷を反映して 2 通りの方式を説明します。
 !
 本記事の執筆には Claude Code (Opus 5) を利用しました。
 
