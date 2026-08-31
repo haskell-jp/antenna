@@ -1,6 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-08-30T08:32:47+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/TThaskboy/items/b224322490bdbc3bcb8d</id><title type="text">HaskellでABC473を解く</title><updated>2026-08-30T08:32:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/b224322490bdbc3bcb8d"/></entry><entry><id>https://zenn.dev/torudev/articles/388053a79b6acf</id><title type="text">Python も Node.js も Terraform も入れずに、AWS フルスタックアプリを作ってデプロイした</title><updated>2026-08-30T05:15:04+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/torudev/articles/388053a79b6acf"/><summary type="html">新しくプロジェクトに参加した人の初日が、環境構築だけで終わってしまう。READMEに並んだ「Python 3.12 を入れて、Node.js 20 を入れて、Terraform を入れて、AWS CLI を入れて…」を順に辿り、どこかでバージョンが噛み合わずに詰まる。
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Haskell Antenna</title><id>https://haskell.jp/antenna/feed.xml</id><updated>2026-08-31T22:44:37+09:00</updated><link href="https://haskell.jp/antenna"/><entry><id>https://qiita.com/gotoki_no_joe/items/1e74c086e93337fbe29e</id><title type="text">ABC473をHaskellで</title><updated>2026-08-31T22:44:37+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/gotoki_no_joe/items/1e74c086e93337fbe29e"/></entry><entry><id>https://zenn.dev/imamuray/articles/08c248896d72c9</id><title type="text">環境構築をがんばらずに「すごいHaskell」本を読む方法</title><updated>2026-08-31T09:28:44+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/imamuray/articles/08c248896d72c9"/><summary type="html">
+ はじめに
+『すごいHaskell楽しく学ぼう！』（通称：すごいH本）を読むにあたって、環境構築をがんばらずにHaskellを書く方法を紹介します。
+この本は2012年出版のため、いくつか情報が古くなっています。とくにHaskellの実行環境について調べると、本で紹介されているHaskell Platformではなく、Stackがおすすめ、GHCupがおすすめなど複数の意見をみかけます...
+「「「そんなことより、まずはHaskellを書きたい！！！」」」
+という方のためにこの記事ではブラウザで手軽に試せるHaskell Playgroundを使う方法と、HaskellのDockerイ...</summary></entry><entry><id>https://zenn.dev/nobsun/articles/atcoder-beginers-selections</id><title type="text">「精選過去問10問をHaskellで」n+k番煎じ</title><updated>2026-08-30T15:06:17+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/nobsun/articles/atcoder-beginers-selections"/><summary type="html">
+ はじめに
+AtCoderといふものをしてみんとて。。。
+
+
+AtCoder に登録したら次にやること ～ これだけ解けば十分闘える！過去問精選 10 問 ～
+@drken さんの記事：元祖「〜過去問精選10問」
+
+
+AtCoder に登録したら解くべき精選過去問 10 問を Haskell で解いてみた
+@hsjoihs さんの記事：「Haskellで精選過去問10問」の嚆矢
+
+
+ABCをHaskellで
+@gotoki_no_joe さんのシリーズ記事：Haskellらしい、美しく、簡潔で、わかりやすいコードが読めて、Haskellの良さが楽しめます。
+
+
+「HaskellでAtC...</summary></entry><entry><id>https://qiita.com/TThaskboy/items/b224322490bdbc3bcb8d</id><title type="text">HaskellでABC473を解く</title><updated>2026-08-30T08:32:47+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/b224322490bdbc3bcb8d"/></entry><entry><id>https://zenn.dev/torudev/articles/388053a79b6acf</id><title type="text">Python も Node.js も Terraform も入れずに、AWS フルスタックアプリを作ってデプロイした</title><updated>2026-08-30T05:15:04+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/torudev/articles/388053a79b6acf"/><summary type="html">新しくプロジェクトに参加した人の初日が、環境構築だけで終わってしまう。READMEに並んだ「Python 3.12 を入れて、Node.js 20 を入れて、Terraform を入れて、AWS CLI を入れて…」を順に辿り、どこかでバージョンが噛み合わずに詰まる。
 あるいは、同僚の手元では通るテストが自分の環境だけ落ちる。数時間かけて原因を追ったら、ライブラリのマイナーバージョンが違っただけだった。
-こうした「環境の違いによる失敗」を無くしたくて、Lask というタスクランナーを作っています。核になっている考え方は単純で、実行するコマンドと、それを実行する環境（Dockerイメージ）...</summary></entry><entry><id>https://qiita.com/etale_cohomology/items/0abc51fe5e2a3eb02f08</id><title type="text">【Arend Theorem Prover 連載（初回）】「同型なものは等しい」を機械に検査させる ── 定理証明支援系 Arend がHoTTを公理としなかった理由</title><updated>2026-08-29T22:54:48+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/etale_cohomology/items/0abc51fe5e2a3eb02f08"/></entry><entry><id>https://qiita.com/Wanko_IT/items/aeb97fb1dd93de53b501</id><title type="text">モナドってなんだろう？　各言語の実装からモナドの本質を探してみた</title><updated>2026-08-28T21:57:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Wanko_IT/items/aeb97fb1dd93de53b501"/></entry><entry><id>https://qiita.com/TThaskboy/items/29461337229ae81bd2cb</id><title type="text">HaskellでABC472を解く</title><updated>2026-08-23T14:41:31+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/TThaskboy/items/29461337229ae81bd2cb"/></entry><entry><id>https://zenn.dev/7shi/articles/20260820-haskell-category-theory</id><title type="text">Haskell 圏論 超入門</title><updated>2026-08-20T00:59:46+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/7shi/articles/20260820-haskell-category-theory"/><summary type="html">Haskell の解説で圏論の名前を見かけることがありますが、このシリーズは一貫して圏論に言及せずに進めてきました。最終回となる今回では、コードから圏論の概念を眺めます。圏・関手・自然変換から「モナドは自己関手の圏におけるモノイド対象」まで、既に実装として通ってきたものに名前を与えていきます。
+こうした「環境の違いによる失敗」を無くしたくて、Lask というタスクランナーを作っています。核になっている考え方は単純で、実行するコマンドと、それを実行する環境（Dockerイメージ）...</summary></entry><entry><id>https://qiita.com/etale_cohomology/items/0abc51fe5e2a3eb02f08</id><title type="text">【Arend Theorem Prover 連載（初回）】「同型なものは等しい」を機械に検査させる ── 定理証明支援系 Arend がHoTTを公理としなかった理由</title><updated>2026-08-29T22:54:48+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/etale_cohomology/items/0abc51fe5e2a3eb02f08"/></entry><entry><id>https://qiita.com/Wanko_IT/items/aeb97fb1dd93de53b501</id><title type="text">モナドってなんだろう？　各言語の実装からモナドの本質を探してみた</title><updated>2026-08-28T21:57:49+09:00</updated><author><name>Qiita</name></author><link href="https://qiita.com/Wanko_IT/items/aeb97fb1dd93de53b501"/></entry><entry><id>https://zenn.dev/7shi/articles/20260820-haskell-category-theory</id><title type="text">Haskell 圏論 超入門</title><updated>2026-08-20T00:59:46+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/7shi/articles/20260820-haskell-category-theory"/><summary type="html">Haskell の解説で圏論の名前を見かけることがありますが、このシリーズは一貫して圏論に言及せずに進めてきました。最終回となる今回では、コードから圏論の概念を眺めます。圏・関手・自然変換から「モナドは自己関手の圏におけるモノイド対象」まで、既に実装として通ってきたものに名前を与えていきます。
 !
 本記事の執筆には Claude Code (Opus 5) を利用しました。
 
@@ -197,22 +219,7 @@ Java を数年書いてきたが、関数型言語には触れてこなかった
 まず Java の = を確認する。よく書くコード。
 int x = 0;
 x = x + 1;
-int x = 0; は「x という変数に 0 を格納する」という命令。x = x + 1; は「今の x に1を足したものを、新しい x の値として書き換えろ...</summary></entry><entry><id>https://zenn.dev/seijikohara/articles/functional-programming-languages</id><title type="text">関数型プログラミング言語を概念軸で読み解く</title><updated>2026-07-03T11:50:32+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/seijikohara/articles/functional-programming-languages"/><summary type="html">!
-本記事は、内容の生成に AI を利用しています。
-
-
- 導入: 「関数型言語」という括りの曖昧さ
-「関数型プログラミング言語」という括りは、実務の会話で広く使われます。しかし、括りが指す対象は一定しません。副作用を型で隔離する純粋な Haskell も、オブジェクト指向と関数型を統合した Scala も、同じ「関数型言語」という語で呼ばれます。純粋性・型付け・評価戦略・実行基盤のどれを取っても、言語ごとに位置取りは大きく異なります。単一の定義で全体を覆う試みは、無理を生みます。
-本記事は、言語を 1 つずつ並べるカタログの体裁を取りません。関数型を成り立たせる概念軸で、複数の言語を横...</summary></entry><entry><id>https://zenn.dev/mitsuchi/articles/ef219e7c606b42</id><title type="text">「関数の型から実装が自動的に決まる」で理解する米田の補題</title><updated>2026-06-29T00:22:54+00:00</updated><author><name>Zenn</name></author><link href="https://zenn.dev/mitsuchi/articles/ef219e7c606b42"/><summary type="html">圏論の米田の補題を Haskell で考えてみるとすごく直感的に理解できる、なんなら当たり前に思える、というアイデアを知って感動したので、興奮しているうちに紹介したいと思います。
-型が a -&amp;gt; a な関数は id しかない、という話から2ステップで米田の補題に辿り着きます。
-
- f :: a -&amp;gt; a な関数はどれだけあるか
-Haskell で関数を書いていると、型から実装が自動的に決まることがあるのを感じると思います。たとえば次のような型の関数を考えます。
-f :: a -&amp;gt; a
-
-これを実装する人の立場で考えます。まず返り値の型から読むと
-
-「指定された型 a の...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2026-03-02T10:25:15.592+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
+int x = 0; は「x という変数に 0 を格納する」という命令。x = x + 1; は「今の x に1を足したものを、新しい x の値として書き換えろ...</summary></entry><entry><id>https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html</id><title type="text">[cygwin] cygwinセットアップ・環境構築手順メモ</title><updated>2026-03-02T10:25:15.592+09:00</updated><author><name>Hiroyuki Kurokawa (hrkr)</name></author><link href="https://kurokawh.blogspot.com/2018/01/cygwin-cygwin.html"/><summary type="text">
 
 主に自分向けの防備録です。windows10上で確認。インストーラーはここからDLする。
 
